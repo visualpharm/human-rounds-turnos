@@ -1,0 +1,38 @@
+{#
+  templates/admin/roles.html — direct `/admin/roles` screen ("Roles y permisos").
+  Extends the shared admin shell (templates/admin/base.html).
+  Renders the roles and permissions management interface.
+#}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.shell.nav.roles', 'Roles y permisos') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.shell.nav.roles', 'Roles y permisos') }}{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-roles"></div>
+  <p id="roles-status" class="cnt-save-msg" role="status" aria-live="polite" hidden></p>
+  <button id="roles-module-retry" type="button" class="btn" hidden>{{ t('admin.roles.retry', 'Reintentar') }}</button>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+  var host = document.getElementById("sec-roles");
+  var retry = document.getElementById("roles-module-retry");
+  retry.addEventListener("click", function () { location.reload(); });
+  try {
+    var controller = await import({{ static('platform/admin-roles.mjs') | tojson }});
+    await controller.mount(host).ready;
+    window.addEventListener("pageshow", function (event) {
+      if (event.persisted) controller.mount(host);
+    });
+  } catch (error) {
+    var status = document.getElementById("roles-status");
+    status.textContent = {{ t('admin.system.common.load_error_retry', 'No se pudo cargar. Reintentá.') | tojson }};
+    status.hidden = false;
+    retry.hidden = false;
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "Vérification du destinataire des soins…",
+  "wizard.age_check.h1": "Pour qui est ce rendez-vous ?",
+  "wizard.confirm.error": "Nous n'avons pas pu enregistrer ta réponse. Réessaie.",
+  "wizard.confirm.expired": "Ce rendez-vous ne peut plus être confirmé.",
+  "wizard.confirm.saved": "C'est fait, merci de nous avoir prévenus.",
+  "wizard.confirm.wait": "Un instant…",
+  "wizard.contact.call": "Tu bloques sur une étape ? Appelle {name} :",
+  "wizard.contact.center_fallback": "le centre",
+  "wizard.contact.whatsapp": "Tu bloques sur une étape ? Écris à {name} sur WhatsApp :",
+  "wizard.contact.whatsapp_site": "Tu bloques sur une étape ? Écris-nous sur WhatsApp :",
+  "wizard.offer.accepted": "C'est fait ! Ton rendez-vous est confirmé. Nous te redirigeons vers Mes rendez-vous…",
+  "wizard.offer.error": "Nous n'avons pas pu traiter ta réponse. Réessaie.",
+  "wizard.offer.gone": "Ce rendez-vous n'est plus disponible.",
+  "wizard.offer.rejected": "Nous avons prévenu la personne suivante sur la liste. Merci d'avoir répondu.",
+  "wizard.offer.wait": "Un instant…",
+  "wizard.title.orden": "Ordonnance d'orientation",
+  "wizard.title.solicitud": "Prendre rendez-vous",
+  "wizard.upload.sub": "L'hôpital l'examine et te confirme le rendez-vous."
+}

@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "受診される方を確認しています…",
+  "wizard.age_check.h1": "どなたが受診されますか？",
+  "wizard.confirm.error": "回答を保存できませんでした。もう一度お試しください。",
+  "wizard.confirm.expired": "この予約はもう確定できません。",
+  "wizard.confirm.saved": "完了しました。お知らせいただきありがとうございます。",
+  "wizard.confirm.wait": "少々お待ちください…",
+  "wizard.contact.call": "お困りですか？ {name} までお電話ください：",
+  "wizard.contact.center_fallback": "センター",
+  "wizard.contact.whatsapp": "お困りですか？ WhatsAppで {name} にメッセージを送ってください：",
+  "wizard.contact.whatsapp_site": "お困りですか？ WhatsAppでお問い合わせください：",
+  "wizard.offer.accepted": "完了しました！予約が確定しました。「マイ予約」へ移動します…",
+  "wizard.offer.error": "回答を処理できませんでした。もう一度お試しください。",
+  "wizard.offer.gone": "この予約はもう空きがありません。",
+  "wizard.offer.rejected": "リストの次の方へ通知しました。ご回答ありがとうございました。",
+  "wizard.offer.wait": "少々お待ちください…",
+  "wizard.title.orden": "診療情報指示書",
+  "wizard.title.solicitud": "予約を取る",
+  "wizard.upload.sub": "病院側で内容を確認し、予約を確定します。"
+}

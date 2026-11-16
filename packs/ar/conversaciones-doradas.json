@@ -1,0 +1,20 @@
+{
+  "conversations": [
+    {"id": "historia-clinica", "question": "¿Puedo pedir una copia de mi historia clínica?",
+     "articles": ["derechos-paciente"], "facts": ["Ley 26.529", "historia clínica"]},
+    {"id": "consentimiento-informado", "question": "¿Me pueden operar sin firmar un consentimiento informado?",
+     "articles": ["derechos-paciente"], "facts": ["consentimiento informado"]},
+    {"id": "privacidad-datos", "question": "¿Quién puede ver mis datos de salud? ¿Son confidenciales?",
+     "articles": ["datos-personales-salud"], "facts": ["Ley 25.326", "confidencialidad"]},
+    {"id": "adolescente-solo", "question": "Tengo 16 años, ¿puedo sacar un turno e ir al médico sin mis padres?",
+     "articles": ["adolescentes-salud"], "facts": ["autonomía progresiva", "artículo 26"]},
+    {"id": "anticoncepcion", "question": "¿Dónde consulto por anticoncepción y salud sexual?",
+     "articles": ["salud-sexual-nacion"], "facts": ["salud sexual y reproductiva"]},
+    {"id": "vacunas-gratis", "question": "¿Las vacunas del calendario nacional son gratuitas?",
+     "articles": ["calendario-vacunacion"], "facts": ["Calendario Nacional de Vacunación", "gratuitas"]},
+    {"id": "emergencia-911", "question": "Hay una emergencia, ¿a qué número llamo?",
+     "articles": ["emergencias-nacionales"], "facts": ["911", "107"]},
+    {"id": "violencia-144", "question": "Sufro violencia en casa y necesito ayuda, ¿a quién llamo?",
+     "articles": ["linea-144"], "facts": ["Línea 144", "911"]}
+  ]
+}

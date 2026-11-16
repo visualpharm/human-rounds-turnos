@@ -1,0 +1,21 @@
+{
+  "_comment": "Doctor directory and doctor profile page (/doctors, /doctor/<id>) and Grupos y talleres (/d/grupos).",
+  "doctor.agenda_heading": "When they see patients",
+  "doctor.close_photo": "Close photo",
+  "doctor.cta_see_centers": "See the centers",
+  "doctor.demo_note": "Demo schedule — not real data.",
+  "doctor.doctors_meta_desc": "Doctors and professionals in the public health system of {city}, by specialty, center and next availability.",
+  "doctor.meta_intro": "{name}, {specialty} in the public health system of {city}.",
+  "doctor.next_slot_heading": "First available appointment",
+  "doctor.next_slot_heading_service": "First available appointment in {service}",
+  "doctor.next_slot_note": "It's the closest one, not the only one — you can pick another day or time.",
+  "doctor.no_appointment_fallback": "No appointment",
+  "doctor.search_placeholder": "Search doctor or specialty",
+  "doctor.service_link": "See the service: {service}",
+  "doctor.sees_at": "Sees patients at",
+  "doctor.title_f": "Dr.",
+  "doctor.title_m": "Dr.",
+  "doctor.title_specialty_city": "{name} — {specialty} in {city}",
+  "doctor.workshops_meta_desc": "Free groups and workshops at {network}: when they meet, where, and how to join.",
+  "doctor.services_line": "Sees patients for: {services}"
+}

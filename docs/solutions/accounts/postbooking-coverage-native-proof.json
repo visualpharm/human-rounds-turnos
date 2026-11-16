@@ -1,0 +1,45 @@
+{
+  "source": "actual Chromium → native local API → disposable synthetic PostgreSQL",
+  "initial": {
+    "synthetic_only": true,
+    "counts": {
+      "bookings": 1,
+      "events": 1
+    },
+    "coverage": null,
+    "profile_unchanged": true
+  },
+  "swiss_after_reload": {
+    "synthetic_only": true,
+    "counts": {
+      "bookings": 1,
+      "events": 1
+    },
+    "coverage": {
+      "prepaga": {
+        "plan": "SMG20",
+        "nombre": "Swiss Medical",
+        "afiliado": "00042"
+      },
+      "principal": "prepaga"
+    },
+    "profile_unchanged": true
+  },
+  "none_after_reload": {
+    "synthetic_only": true,
+    "counts": {
+      "bookings": 1,
+      "events": 1
+    },
+    "coverage": {
+      "declarada_sin_cobertura": true
+    },
+    "profile_unchanged": true
+  },
+  "mutation_paths": [
+    "/api/requests/1/coverage",
+    "/api/requests/1/coverage"
+  ],
+  "booking_posts": 0,
+  "browser_errors": []
+}

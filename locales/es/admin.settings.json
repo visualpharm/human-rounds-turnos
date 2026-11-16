@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "Días de anticipación",
+  "admin.settings.opening_time": "Hora de apertura de turnos",
+  "admin.settings.horizon_range": "Los días de anticipación van de 1 a 365.",
+  "admin.settings.opening_time_format": "La hora de apertura debe tener formato HH:MM.",
+  "admin.settings.holidays.title": "Feriados",
+  "admin.settings.holidays.lede": "Ese día no se dan turnos en ningún servicio, médico ni centro. Los turnos ya dados no se cancelan: hay que reprogramarlos.",
+  "admin.settings.holidays.empty": "No hay feriados cargados.",
+  "admin.settings.holidays.date": "Fecha",
+  "admin.settings.holidays.name": "Nombre",
+  "admin.settings.holidays.remove": "Quitar",
+  "admin.settings.holidays.add": "+ Agregar feriado",
+  "admin.settings.holidays.load_national": "Cargar feriados nacionales",
+  "admin.settings.holidays.appointments_one": "{n} turno dado ese día",
+  "admin.settings.holidays.appointments": "{n} turnos dados ese día",
+  "admin.settings.holidays.invalid": "La lista de feriados no es válida.",
+  "admin.settings.holidays.bad_date": "Cada feriado necesita una fecha válida.",
+  "admin.settings.holidays.no_name": "Cada feriado necesita un nombre.",
+  "admin.settings.holidays.long_name": "El nombre de un feriado puede tener hasta {max} caracteres.",
+  "admin.settings.holidays.too_many": "Se pueden cargar hasta {max} feriados."
+}

@@ -1,0 +1,21 @@
+{
+  "_comment": "Doctor directory and doctor profile page (/doctors, /doctor/<id>) and Grupos y talleres (/d/grupos).",
+  "doctor.agenda_heading": "График приема",
+  "doctor.close_photo": "Закрыть фото",
+  "doctor.cta_see_centers": "Посмотреть центры",
+  "doctor.demo_note": "Демонстрационный график — данные не настоящие.",
+  "doctor.doctors_meta_desc": "Врачи и специалисты государственной системы здравоохранения города {city} по специальностям, центрам и ближайшему времени приема.",
+  "doctor.meta_intro": "{name}, {specialty} в государственной системе здравоохранения города {city}.",
+  "doctor.next_slot_heading": "Ближайшее свободное время",
+  "doctor.next_slot_heading_service": "Ближайшее свободное время в {service}",
+  "doctor.next_slot_note": "Это самое ближайшее время, но не единственное: ты можешь выбрать другой день или час.",
+  "doctor.no_appointment_fallback": "Нет записи",
+  "doctor.search_placeholder": "Найти врача или специальность",
+  "doctor.service_link": "Посмотреть услугу: {service}",
+  "doctor.sees_at": "Принимает в",
+  "doctor.title_f": "Д-р",
+  "doctor.title_m": "Д-р",
+  "doctor.title_specialty_city": "{name} — {specialty} в {city}",
+  "doctor.workshops_meta_desc": "Бесплатные группы и мастер-классы от {network}: время встреч, место и способы участия.",
+  "doctor.services_line": "Принимает: {services}"
+}

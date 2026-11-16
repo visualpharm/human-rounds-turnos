@@ -1,0 +1,564 @@
+{
+  "status": "design fixtures only; production path inactive",
+  "baseline": "78afa83a0abc5ba0be1c81172d88ceb80b913e79",
+  "synthetic_only": true,
+  "fixtures": [
+    {
+      "id": "missing_opt_in",
+      "given": {
+        "patient": "self",
+        "coverage": "unknown",
+        "whatsapp_opt_in": null,
+        "verified_binding": true
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "coverage_write": 0
+      }
+    },
+    {
+      "id": "prefer_later_not_consent",
+      "given": {
+        "patient": "self",
+        "coverage": "later",
+        "whatsapp_opt_in": null,
+        "verified_binding": true
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "booking_unchanged": true
+      }
+    },
+    {
+      "id": "no_coverage_terminal",
+      "given": {
+        "patient": "self",
+        "coverage": "none_confirmed",
+        "whatsapp_opt_in": true,
+        "verified_binding": true
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "state": "completed"
+      }
+    },
+    {
+      "id": "stored_phone_not_verified",
+      "given": {
+        "patient": "self",
+        "coverage": "unknown",
+        "whatsapp_opt_in": true,
+        "verified_binding": false
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0
+      }
+    },
+    {
+      "id": "changed_phone",
+      "given": {
+        "patient": "self",
+        "coverage": "unknown",
+        "whatsapp_opt_in": true,
+        "binding_matches_current_contact": false
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "state": "stopped"
+      }
+    },
+    {
+      "id": "ambiguous_shared_phone",
+      "given": {
+        "patient": "self",
+        "coverage": "unknown",
+        "whatsapp_opt_in": true,
+        "matching_accounts": 2
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "identity_guess": false
+      }
+    },
+    {
+      "id": "dependent_not_enabled",
+      "given": {
+        "patient": "dependent",
+        "coverage": "unknown",
+        "whatsapp_opt_in": true,
+        "verified_binding": true
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "holder_coverage_write": 0,
+        "dependent_coverage_write": 0
+      }
+    },
+    {
+      "id": "provider_readiness_unknown",
+      "given": {
+        "patient": "self",
+        "coverage": "unknown",
+        "whatsapp_opt_in": true,
+        "verified_binding": true,
+        "template_ready": null
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "probe_send": false
+      }
+    },
+    {
+      "id": "two_workers",
+      "given": {
+        "state": "waiting",
+        "all_eligibility_verified": true
+      },
+      "event": "two_simultaneous_claims",
+      "expect": {
+        "winning_claims": 1,
+        "maximum_outbound": 1
+      }
+    },
+    {
+      "id": "withdraw_before_send",
+      "given": {
+        "state": "claimed",
+        "whatsapp_opt_in": false
+      },
+      "event": "final_recheck",
+      "expect": {
+        "outbound": 0,
+        "state": "stopped"
+      }
+    },
+    {
+      "id": "cancel_before_send",
+      "given": {
+        "state": "claimed",
+        "booking_status": "cancelled"
+      },
+      "event": "final_recheck",
+      "expect": {
+        "outbound": 0,
+        "state": "stopped"
+      }
+    },
+    {
+      "id": "coverage_filled_before_send",
+      "given": {
+        "state": "claimed",
+        "coverage": "confirmed"
+      },
+      "event": "final_recheck",
+      "expect": {
+        "outbound": 0,
+        "state": "completed"
+      }
+    },
+    {
+      "id": "timeout_after_accept_possible",
+      "given": {
+        "state": "claimed"
+      },
+      "event": "transport_timeout_after_request",
+      "expect": {
+        "state": "delivery_unknown",
+        "automatic_resend": false
+      }
+    },
+    {
+      "id": "same_inbound_twice",
+      "given": {
+        "state": "sent",
+        "provider_id": "synthetic-event-001",
+        "verified_context": true
+      },
+      "event": "same_event_delivered_twice",
+      "expect": {
+        "reply_transitions": 1,
+        "coverage_write_before_confirmation": 0,
+        "future_reminders": 0
+      }
+    },
+    {
+      "id": "incomplete_reply_stops",
+      "given": {
+        "state": "sent",
+        "verified_context": true
+      },
+      "event": {
+        "type": "text",
+        "body": "Después lo completo"
+      },
+      "expect": {
+        "state": "replied",
+        "future_reminders": 0,
+        "coverage_write": 0
+      }
+    },
+    {
+      "id": "unrelated_confirmation",
+      "given": {
+        "state": "sent",
+        "verified_context": false,
+        "reply_context": "appointment_confirmation"
+      },
+      "event": {
+        "type": "text",
+        "body": "Sí"
+      },
+      "expect": {
+        "coverage_write": 0,
+        "consume_as_coverage": false
+      }
+    },
+    {
+      "id": "unsigned_or_group_event",
+      "given": {
+        "state": "sent",
+        "verified_webhook": false,
+        "is_group": true
+      },
+      "event": "incoming",
+      "expect": {
+        "coverage_write": 0,
+        "media_fetch": 0,
+        "outbound": 0
+      }
+    },
+    {
+      "id": "photo_unsupported",
+      "given": {
+        "state": "sent",
+        "verified_context": true,
+        "coverage_media_path_enabled": false
+      },
+      "event": {
+        "type": "image",
+        "provider_id": "synthetic-event-002"
+      },
+      "expect": {
+        "state": "replied",
+        "future_reminders": 0,
+        "referral_ai_calls": 0,
+        "new_vendor_calls": 0
+      }
+    },
+    {
+      "id": "ocr_needs_confirmation",
+      "given": {
+        "state": "replied",
+        "verified_context": true,
+        "ocr_fixture": {
+          "insurer": "Synthetic Coverage",
+          "member_number": "00000123"
+        }
+      },
+      "event": "ocr_suggestion",
+      "expect": {
+        "coverage_write": 0,
+        "leading_zeros_preserved": true,
+        "patient_confirmation_required": true
+      }
+    },
+    {
+      "id": "opt_out_after_reply",
+      "given": {
+        "state": "replied",
+        "verified_context": true
+      },
+      "event": {
+        "type": "text",
+        "body": "No me escriban más"
+      },
+      "expect": {
+        "state": "stopped",
+        "future_reminders": 0
+      }
+    },
+    {
+      "id": "quiet_logs",
+      "given": {
+        "patient": "self",
+        "coverage": "unknown"
+      },
+      "event": "any_transition",
+      "expect": {
+        "logs_exclude": [
+          "patient_name",
+          "dni",
+          "phone",
+          "member_number",
+          "message_body",
+          "media_bytes",
+          "auth_token"
+        ]
+      }
+    },
+    {
+      "id": "legacy_false_is_uncertain",
+      "given": {
+        "state": "claimed"
+      },
+      "event": {
+        "transport_result": false,
+        "transport_contract": "legacy_boolean"
+      },
+      "expect": {
+        "state": "delivery_unknown",
+        "automatic_resend": false
+      }
+    },
+    {
+      "id": "reply_during_claim",
+      "given": {
+        "state": "claimed",
+        "verified_context": true
+      },
+      "event": "matching_reply",
+      "expect": {
+        "state": "replied",
+        "future_reminders": 0
+      }
+    },
+    {
+      "id": "reply_during_unknown",
+      "given": {
+        "state": "delivery_unknown",
+        "verified_context": true
+      },
+      "event": "matching_reply",
+      "expect": {
+        "state": "replied",
+        "future_reminders": 0
+      }
+    },
+    {
+      "id": "crash_after_provider_accept",
+      "given": {
+        "state": "claimed",
+        "provider_accepted": true,
+        "local_receipt_saved": false
+      },
+      "event": "worker_restart",
+      "expect": {
+        "automatic_resend": false,
+        "needs_delivery_reconciliation": true
+      }
+    },
+    {
+      "id": "late_ack_after_reply",
+      "given": {
+        "state": "replied"
+      },
+      "event": {
+        "accepted_receipt": "synthetic-outbound-001"
+      },
+      "expect": {
+        "state": "replied",
+        "future_reminders": 0,
+        "delivery_metadata_may_update": true
+      }
+    },
+    {
+      "id": "late_ack_after_optout",
+      "given": {
+        "state": "stopped",
+        "reason": "opt_out"
+      },
+      "event": {
+        "accepted_receipt": "synthetic-outbound-002"
+      },
+      "expect": {
+        "state": "stopped",
+        "future_reminders": 0
+      }
+    },
+    {
+      "id": "grant_for_other_account",
+      "given": {
+        "contact_grant": {
+          "id": "grant-demo-b",
+          "account_id": "account-demo-b",
+          "contact_binding_id": "binding-demo-a",
+          "expires_at": "2026-10-22T13:00:00Z"
+        }
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "identity_guess": false
+      }
+    },
+    {
+      "id": "expired_handoff",
+      "given": {
+        "contact_grant": {
+          "id": "grant-demo-a",
+          "account_id": "account-demo-a",
+          "expires_at": "2026-10-21T13:59:59Z"
+        }
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "state": "stopped"
+      }
+    },
+    {
+      "id": "generic_consent_not_coverage_scope",
+      "given": {
+        "consent": {
+          "account_id": "account-demo-a",
+          "purpose": "appointment_reminder",
+          "version": 1
+        }
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0
+      }
+    },
+    {
+      "id": "consent_for_other_account",
+      "given": {
+        "consent": {
+          "account_id": "account-demo-b",
+          "purpose": "coverage_followup",
+          "version": 1
+        }
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0
+      }
+    },
+    {
+      "id": "booking_patient_mismatch",
+      "given": {
+        "clinical_patient_id": "patient-demo-b"
+      },
+      "event": "sweep",
+      "expect": {
+        "outbound": 0,
+        "holder_coverage_write": 0
+      }
+    },
+    {
+      "id": "duplicate_image_side_effects",
+      "given": {
+        "state": "sent",
+        "verified_context": true,
+        "provider_id": "synthetic-image-001",
+        "coverage_media_path_enabled": true
+      },
+      "event": "same_image_delivered_twice",
+      "expect": {
+        "maximum_media_fetches": 1,
+        "maximum_authorized_ocr_calls": 1,
+        "maximum_reply_emissions": 1,
+        "coverage_write_before_confirmation": 0
+      }
+    },
+    {
+      "id": "unsigned_direct_message",
+      "given": {
+        "verified_webhook": false,
+        "is_group": false,
+        "from_me": false
+      },
+      "event": "incoming_image",
+      "expect": {
+        "media_fetch": 0,
+        "model_calls": 0,
+        "coverage_write": 0,
+        "outbound": 0
+      }
+    },
+    {
+      "id": "signed_group_message",
+      "given": {
+        "verified_webhook": true,
+        "is_group": true,
+        "from_me": false
+      },
+      "event": "incoming_image",
+      "expect": {
+        "media_fetch": 0,
+        "model_calls": 0,
+        "coverage_write": 0,
+        "outbound": 0
+      }
+    },
+    {
+      "id": "signed_echo",
+      "given": {
+        "verified_webhook": true,
+        "is_group": false,
+        "from_me": true
+      },
+      "event": "incoming_image",
+      "expect": {
+        "media_fetch": 0,
+        "model_calls": 0,
+        "coverage_write": 0,
+        "outbound": 0
+      }
+    },
+    {
+      "id": "download_exception_redaction",
+      "given": {
+        "state": "replied",
+        "verified_context": true
+      },
+      "event": "credential_download_exception",
+      "expect": {
+        "logs_exclude": [
+          "request_headers",
+          "signed_url",
+          "auth_token",
+          "patient_name",
+          "dni",
+          "phone",
+          "member_number",
+          "message_body",
+          "media_bytes"
+        ],
+        "coverage_write": 0,
+        "future_reminders": 0
+      }
+    }
+  ],
+  "synthetic_context": {
+    "now": "2026-10-21T14:00:00Z",
+    "account_id": "account-demo-a",
+    "booking_id": "booking-demo-a",
+    "clinical_patient_id": "patient-demo-a",
+    "booking_requester_id": "account-demo-a",
+    "self_patient_id": "patient-demo-a",
+    "consent": {
+      "account_id": "account-demo-a",
+      "purpose": "coverage_followup",
+      "version": 1,
+      "recorded_at": "2026-10-21T13:00:00Z",
+      "withdrawn_at": null
+    },
+    "contact_grant": {
+      "id": "grant-demo-a",
+      "account_id": "account-demo-a",
+      "contact_binding_id": "binding-demo-a",
+      "verified_at": "2026-10-21T13:00:00Z",
+      "expires_at": "2026-10-22T13:00:00Z"
+    }
+  },
+  "context_rule": "Each scenario inherits synthetic_context; given overrides it. Booleans describe outcomes of checks, not substitutes for comparing IDs, purpose/version and expiry."
+}

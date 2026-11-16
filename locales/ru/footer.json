@@ -1,0 +1,12 @@
+{
+  "_comment": "The shared site footer.",
+  "footer.about": "О проекте",
+  "footer.credit": "Иконки от Icons8",
+  "footer.emergency": "Экстренная помощь: {{sitio.emergency_number_link_html}}",
+  "footer.mission": "Создано и поддерживается жителями города {{sitio.city}}. Бесплатно и без коммерческой выгоды: просто чтобы тебе было проще попасть на прием.",
+  "footer.news": "Новости",
+  "footer.powered": "Работает на Human Rounds",
+  "footer.privacy": "Конфиденциальность",
+  "footer.software": "Работает на базе ПО Human Rounds",
+  "footer.terms": "Условия использования"
+}

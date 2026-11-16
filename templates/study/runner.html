@@ -1,0 +1,12 @@
+{% extends "study/base.html" %}
+{% block content %}
+<div id="study-runner"></div>
+<script type="application/json" id="study-data">{{ payload|tojson }}</script>
+{% endblock %}
+{% block scripts %}
+{# The panel's usability screen gets the late copy from admin/base.html. #}
+{% include '_screen_load_late.html' %}
+{% with boot_host='study-runner', boot_url=module_static('modules/turnos/study-runner.mjs'), boot_function='mountRunner', boot_data=true %}
+{% include 'study/boot.html' %}
+{% endwith %}
+{% endblock %}

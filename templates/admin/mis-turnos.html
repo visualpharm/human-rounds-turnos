@@ -1,0 +1,42 @@
+{#
+  The doctor's own upcoming appointments in the shared admin shell.
+  The sole native controller awaits the shared table module and owns its
+  data/render lifetime. The bootstrap owns readiness, recovery and disposal.
+  GET /api/admin/my-appointments and /feed remain the data authorities.
+#}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.queue.my_appointments.title', 'Mis turnos') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.queue.my_appointments.title', 'Mis turnos') }}{% endblock %}
+
+{% block title_band %}
+{# The doctor's calendar subscription (feed without patient data): the button
+   opens #mt-cal, which admin-my-appointments.mjs fills on demand. One screen
+   header (the product owner, 2026-11-08): a bare icon named by its tooltip on the title's
+   own line; the columns gear and «Descargar» follow it (#mt-tools). #}
+<button type="button" class="cnt-gear-btn adm-title-action" id="mt-cal-open" aria-expanded="false" aria-controls="mt-cal"
+        aria-label="{{ t('admin.queue.my_appointments.cal_button', 'Agregar a mi calendario') }}"
+        title="{{ t('admin.queue.my_appointments.cal_button', 'Agregar a mi calendario') }}"><span class="adm-icon adm-icon-calendar-plus" aria-hidden="true"></span></button>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap"><div id="mt-cal" class="mt-cal" hidden></div><div id="sec-mis-turnos"><div class="mt-loading" role="status"><p>{{ t('admin.queue.my_appointments.loading', 'Cargando tus turnos…') }}</p></div></div></div>
+{% endblock %}
+
+{% block scripts %}
+<template id="my-appointments-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.system.common.load_error', 'Could not load this section.') }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Reload') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById('sec-mis-turnos');
+  bootScreen({
+    host,
+    recovery: 'my-appointments-load-recovery',
+    load: () => import("{{ static('platform/admin-my-appointments.mjs') }}"),
+    mount: (mod) => mod.mountMyAppointments({ root: host }),
+  });
+</script>
+{% endblock %}

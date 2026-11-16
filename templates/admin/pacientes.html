@@ -1,0 +1,35 @@
+{# The native controller owns list/detail/new query routes and their lifetime. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.queue.patients.title', 'Pacientes') }}{% endblock %}
+{% block screen_title %}{{ t('admin.queue.patients.title', 'Pacientes') }}{% endblock %}
+
+{% block title_band %}
+{# On every width: "Nuevo paciente" sits on the title's own row, at the right
+   (responsable del producto, 2026-11-02: «Patients, New patient en una línea, a la derecha»); the
+   toolbar keeps only the search and the filters. admin-patients.mjs's
+   document-level click listener intercepts any a[href^="/admin/pacientes"]. #}
+<a class="btn btn-accent pat-title-new adm-title-action" href="/admin/pacientes?new=1">{{ t('admin.queue.patients.new', 'Nuevo paciente') }}</a>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap"><div id="sec-pacientes"></div></div>
+{% endblock %}
+
+{% block scripts %}
+<template id="patients-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.queue.common.load_error', 'No se pudo cargar. Reintentá.') }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Recargar') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-pacientes");
+  bootScreen({
+    host,
+    recovery: "patients-load-recovery",
+    load: () => import("{{ static('platform/admin-patients.mjs') }}"),
+    mount: (Patients) => Patients.mount(host),
+  });
+</script>
+<script type="module" src="{{ static('platform/admin-control-fit.mjs') }}"></script>
+{% endblock %}

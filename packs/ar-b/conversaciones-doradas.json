@@ -1,0 +1,14 @@
+{
+  "conversations": [
+    {"id": "mi-salud-digital-turnos", "question": "¿Puedo sacar turnos online con Mi Salud Digital de la provincia?",
+     "articles": ["mi-salud-digital"], "facts": ["Mi Salud Digital Bonaerense", "turnos"]},
+    {"id": "recetas-electronicas", "question": "¿Dónde veo mis recetas electrónicas y mis vacunas en la provincia de Buenos Aires?",
+     "articles": ["mi-salud-digital"], "facts": ["recetas electrónicas"]},
+    {"id": "vacunatorio-provincia", "question": "¿Dónde me vacuno en la provincia de Buenos Aires? ¿Hay que pagar?",
+     "articles": ["vacunacion-provincia"], "facts": ["gratuitas", "vacunatorios públicos"]},
+    {"id": "dengue-vacuna", "question": "¿Hay vacuna contra el dengue en la provincia? ¿Cómo me cuido del mosquito?",
+     "articles": ["dengue-provincia"], "facts": ["dengue", "repelente", "descacharrado"]},
+    {"id": "salud-mental-0800", "question": "Necesito ayuda por consumo problemático, ¿hay alguna línea provincial?",
+     "articles": ["red-salud-mental-provincia"], "facts": ["0800 222 5462", "salud mental"]}
+  ]
+}

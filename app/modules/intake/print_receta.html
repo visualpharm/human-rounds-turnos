@@ -1,0 +1,5 @@
+{% extends "modules/intake/print_base.html" %}
+{% block title %}{{ t('intake.print.receta.title', 'Receta') }}{% endblock %}
+{% block kind %}receta{% endblock %}
+{% block doc_label %}{{ t('intake.print.receta.doc_label', 'RECETA') }}{% endblock %}
+{% block items %}{% if lineas %}<p class="rp">Rp/</p><ol class="lineas">{% for linea in lineas %}<li>{{ linea }}</li>{% endfor %}</ol>{% else %}<p class="rp">Rp/</p><p class="vacio">{{ t('intake.print.sin_medicacion', '(sin medicación)') }}</p>{% endif %}{% endblock %}

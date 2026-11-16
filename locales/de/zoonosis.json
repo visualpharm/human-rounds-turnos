@@ -1,0 +1,14 @@
+{
+  "_comment": "/zoonosis page chrome — headings and labels. Content (lede, servicios, nota, whatsapp, enlaces_oficiales) is pack data (enlaces.json).",
+  "zoonosis.h1": "Zoonose",
+  "zoonosis.lede_default": "Das Zentrum für Tiergesundheit und Zoonosen der Stadtverwaltung.",
+  "zoonosis.services_h": "Leistungsangebot",
+  "zoonosis.contact_h": "Kontakt",
+  "zoonosis.bite_h": "Wenn du gebissen oder gekratzt wurdest",
+  "zoonosis.neuter_h": "Kastrieren heißt auch, die Nachbarschaft zu schützen",
+  "zoonosis.official_h": "Weitere Informationen",
+  "zoonosis.rodent_h": "Beuge durch Nagetiere übertragenen Krankheiten vor",
+  "zoonosis.whatsapp_lead": "WhatsApp",
+  "zoonosis.nota_default": "Dies ist ein städtischer Gesundheitsdienst — Termine für Haustiere werden nicht über dieses Portal vergeben.",
+  "zoonosis.landline": "Festnetztelefon"
+}

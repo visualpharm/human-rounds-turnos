@@ -1,0 +1,554 @@
+{
+  "articles": [
+    {
+      "id": "provincia-acceso",
+      "type": "categoria",
+      "title": "Provincia de Buenos Aires",
+      "parent_id": null,
+      "jurisdiction": "provincia",
+      "summary": "Plataformas y redes provinciales de salud.",
+      "tags": [
+        "provincia",
+        "buenos aires"
+      ],
+      "status": "publicado"
+    },
+    {
+      "id": "mi-salud-digital",
+      "type": "articulo",
+      "title": "Mi Salud Digital Bonaerense",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Portal provincial para turnos y datos personales de salud.",
+      "content": "Mi Salud Digital Bonaerense permite registrar datos personales, consultar información de salud, vacunas y recetas electrónicas, y reservar o cancelar turnos en establecimientos participantes. También ofrece vías de TeleSalud. La disponibilidad depende de cada establecimiento: no prometas que una prestación o un turno de Pinamar aparezca allí sin verificarlo.",
+      "tags": [
+        "mi salud",
+        "turnos online",
+        "recetas",
+        "vacunas",
+        "telesalud"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Mi Salud Digital Bonaerense",
+        "url": "https://www.ms.gba.gov.ar/sitios/misalud/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 30
+      }
+    },
+    {
+      "id": "vacunacion-provincia",
+      "type": "articulo",
+      "title": "Vacunación en la Provincia",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Calendario y campañas provinciales vigentes.",
+      "content": "La Provincia informa que las vacunas del Calendario Nacional son gratuitas y están disponibles en vacunatorios públicos. Su portal concentra campañas específicas. Consultá la campaña vigente y después confirmá horarios y stock en el vacunatorio local; el chat no determina contraindicaciones.",
+      "tags": [
+        "vacunacion",
+        "vacunas",
+        "campañas",
+        "calendario"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Vacunación",
+        "url": "https://vacunacion.gba.gob.ar/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 14
+      }
+    },
+    {
+      "id": "dengue-provincia",
+      "type": "articulo",
+      "title": "Dengue: prevención y campaña provincial",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Prevención y acceso actual a la campaña contra el dengue.",
+      "content": "El portal provincial reúne prevención, descacharrado, uso de repelente y acceso actualizado a la campaña de vacunación contra el dengue. La edad objetivo, gratuidad y modalidad pueden cambiar: verificá la página en el momento de responder. Ante signos de alarma o una urgencia, indicá atención inmediata y no continúes una conversación diagnóstica.",
+      "tags": [
+        "dengue",
+        "mosquito",
+        "repelente",
+        "descacharrado",
+        "vacuna"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Dengue",
+        "url": "https://dengue.gba.gob.ar/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 7
+      }
+    },
+    {
+      "id": "red-salud-mental-provincia",
+      "type": "articulo",
+      "title": "Red provincial de salud mental y consumos",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Línea y dispositivos comunitarios provinciales.",
+      "content": "La Provincia publica una red comunitaria de salud mental y consumos problemáticos y la línea 0800 222 5462 para apoyo y derivación. Confirmá los horarios actuales en la fuente. En peligro inmediato, no uses esta línea como sustituto de la guardia o del servicio de emergencias.",
+      "tags": [
+        "salud mental",
+        "consumos",
+        "0800",
+        "derivacion",
+        "apoyo"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Red de dispositivos de salud mental y consumo problemático",
+        "url": "https://www.ms.gba.gov.ar/sitios/saludmental/red-de-dispositivos-de-salud-mental-y-consumo-problematico-con-base-en-la-comunidad/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 90
+      }
+    },
+    {
+      "id": "pagina-vacunacion-provincia",
+      "type": "pagina",
+      "slug": "vacunacion",
+      "title": "Vacunación (página pública)",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Página /vacunacion, parte provincial: gratuidad, calendario bonaerense y buscador de vacunatorios.",
+      "content": "En la Provincia de Buenos Aires las vacunas del Calendario Nacional son obligatorias, gratuitas y están disponibles en toda la Provincia.",
+      "tags": [
+        "vacunacion",
+        "vacunas",
+        "calendario",
+        "vacunatorio"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Calendario de vacunación bonaerense",
+        "url": "https://vacunacion.gba.gob.ar/calendario",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-10-07",
+        "review_every_days": 30
+      },
+      "blocks": [
+        {
+          "h2": "Vacunas gratuitas en la Provincia de Buenos Aires",
+          "paragraphs": [
+            "Las vacunas del Calendario Nacional son obligatorias, gratuitas y están disponibles en toda la Provincia.",
+            "Cuando te vacunás, no solo te protegés vos: también cuidás a las personas de tu entorno."
+          ],
+          "source": {
+            "title": "Vacunación - Provincia de Buenos Aires",
+            "url": "https://vacunacion.gba.gob.ar/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Buscá tu vacunatorio",
+          "paragraphs": [
+            "En el portal de vacunación de la Provincia elegís tu partido y tu localidad, y ves los vacunatorios disponibles, sus direcciones y sus horarios de atención."
+          ],
+          "links": [
+            {
+              "title": "Centros de vacunación de la Provincia",
+              "url": "https://vacunacion.gba.gob.ar/centros-de-vacunacion"
+            }
+          ],
+          "source": {
+            "title": "Centros de vacunación",
+            "url": "https://vacunacion.gba.gob.ar/centros-de-vacunacion",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Campañas y vacunas específicas",
+          "paragraphs": [
+            "El portal provincial tiene secciones sobre estos temas:"
+          ],
+          "items": [
+            "Sarampión",
+            "Gripe",
+            "VSR (bronquiolitis)",
+            "Dengue",
+            "Fiebre hemorrágica argentina",
+            "Rabia",
+            "Covid-19"
+          ],
+          "links": [
+            {
+              "title": "Vacuna antigripal {year}: quiénes se vacunan y dónde",
+              "url": "/vacuna-antigripal"
+            },
+            {
+              "title": "Portal de vacunación de la Provincia",
+              "url": "https://vacunacion.gba.gob.ar/"
+            }
+          ],
+          "source": {
+            "title": "Vacunación - Provincia de Buenos Aires",
+            "url": "https://vacunacion.gba.gob.ar/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Calendario bonaerense: recién nacidos y hasta el año",
+          "items": [
+            "Recién nacidos: hepatitis B (dosis neonatal en las primeras 12 horas de vida) y BCG (antes de salir de la maternidad).",
+            "Quíntuple: 2, 4 y 6 meses.",
+            "Neumococo conjugada: 2, 4 y 12 meses.",
+            "Rotavirus: 2 y 4 meses.",
+            "Polio: 2, 4 y 6 meses.",
+            "Meningococo: 3 y 5 meses.",
+            "Triple viral: 12 meses.",
+            "Hepatitis A: 12 meses.",
+            "Antigripal: entre los 6 y los 24 meses."
+          ],
+          "source": {
+            "title": "Calendario de vacunación bonaerense",
+            "url": "https://vacunacion.gba.gob.ar/calendario",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Calendario bonaerense: segundo año, 5 años y 11 años",
+          "items": [
+            "Segundo año de vida: quíntuple (15 a 18 meses), varicela (15 meses) y meningococo (15 meses).",
+            "Triple viral: entre los 15 y los 18 meses para quienes nacieron desde el 1 de julio de 2024.",
+            "5 años (ingreso escolar): triple bacteriana acelular, polio y varicela (refuerzo).",
+            "Triple viral a los 5 años para quienes nacieron hasta el 30 de junio de 2024.",
+            "11 años y adolescentes: VPH (una dosis), triple bacteriana acelular y meningococo (refuerzo)."
+          ],
+          "source": {
+            "title": "Calendario de vacunación bonaerense",
+            "url": "https://vacunacion.gba.gob.ar/calendario",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Calendario bonaerense: adultos, embarazo y mayores de 65",
+          "items": [
+            "Adultos: doble bacteriana con refuerzo cada 10 años.",
+            "Adultos: triple viral e hepatitis B (3 dosis), para iniciar o completar el esquema.",
+            "Fiebre hemorrágica argentina: desde los 15 años, para residentes o personas que viajan a zona endémica.",
+            "Embarazo: triple bacteriana acelular desde la semana 20, una dosis en cada embarazo.",
+            "Embarazo: VSR entre las semanas 32 y 36 inclusive, una dosis en cada embarazo.",
+            "Embarazo: antigripal en cualquier trimestre, una dosis en cada embarazo.",
+            "Embarazo: hepatitis B, para iniciar o completar el esquema.",
+            "Mayores de 65: doble bacteriana con refuerzo cada 10 años y antigripal una dosis anual."
+          ],
+          "paragraphs": [
+            "Si no te aplicaste la hepatitis B o la triple viral a la edad indicada, podés iniciar o completar esos esquemas en cualquier momento de la vida."
+          ],
+          "source": {
+            "title": "Calendario de vacunación bonaerense",
+            "url": "https://vacunacion.gba.gob.ar/calendario",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pagina-vacuna-antigripal-provincia",
+      "type": "pagina",
+      "slug": "vacuna-antigripal",
+      "title": "Vacuna antigripal (página pública)",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Página /vacuna-antigripal, parte provincial: gratuidad, orden médica, contraindicaciones y centros de vacunación.",
+      "content": "En la Provincia de Buenos Aires la vacuna antigripal no requiere orden médica y puede aplicarse junto con otras vacunas.",
+      "tags": [
+        "vacuna antigripal",
+        "gripe",
+        "influenza",
+        "vacunacion",
+        "pami"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Gripe - Vacunación Provincia de Buenos Aires",
+        "url": "https://vacunacion.gba.gob.ar/gripe",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-10-07",
+        "review_every_days": 30
+      },
+      "blocks": [
+        {
+          "h2": "Gratuita en toda la Provincia",
+          "paragraphs": [
+            "Las vacunas del Calendario Nacional son obligatorias, gratuitas y están disponibles en toda la Provincia de Buenos Aires."
+          ],
+          "source": {
+            "title": "Vacunación - Provincia de Buenos Aires",
+            "url": "https://vacunacion.gba.gob.ar/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Sin orden médica y junto con otras vacunas",
+          "items": [
+            "Su aplicación no requiere orden médica.",
+            "Podés aplicártela junto con otras vacunas, como la de COVID-19, la del neumococo u otras del calendario."
+          ],
+          "source": {
+            "title": "Gripe - Vacunación Provincia de Buenos Aires",
+            "url": "https://vacunacion.gba.gob.ar/gripe",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Cuándo no corresponde vacunarte",
+          "paragraphs": [
+            "La vacuna está contraindicada si tuviste:"
+          ],
+          "items": [
+            "Una reacción anafiláctica a una vacunación previa contra la influenza.",
+            "Síndrome de Guillain-Barré dentro de las seis semanas posteriores a una dosis de vacuna antigripal, si no se identificaron otras causas."
+          ],
+          "source": {
+            "title": "Gripe - Vacunación Provincia de Buenos Aires",
+            "url": "https://vacunacion.gba.gob.ar/gripe",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Precauciones",
+          "items": [
+            "Si tenés hipersensibilidad a los componentes de la vacuna, incluidos residuos de huevo y otras proteínas derivadas, se toman precauciones.",
+            "Si estás cursando una enfermedad aguda grave con fiebre, la vacunación se pospone hasta que te recuperes."
+          ],
+          "source": {
+            "title": "Gripe - Vacunación Provincia de Buenos Aires",
+            "url": "https://vacunacion.gba.gob.ar/gripe",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Centros de vacunación",
+          "paragraphs": [
+            "En el portal de vacunación de la Provincia podés consultar los centros de vacunación."
+          ],
+          "links": [
+            {
+              "title": "Centros de vacunación de la Provincia",
+              "url": "https://vacunacion.gba.gob.ar/centros-de-vacunacion"
+            }
+          ],
+          "source": {
+            "title": "Gripe - Vacunación Provincia de Buenos Aires",
+            "url": "https://vacunacion.gba.gob.ar/gripe",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pagina-chip-anticonceptivo-provincia",
+      "type": "pagina",
+      "slug": "chip-anticonceptivo",
+      "title": "Chip anticonceptivo / implante subdérmico (página pública)",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Página /chip-anticonceptivo, parte provincial: implante en hospitales y centros de salud provinciales, edad y consejería.",
+      "content": "En la Provincia de Buenos Aires podés acceder al implante subdérmico en hospitales provinciales y centros de salud, y todos los métodos se entregan gratuitamente.",
+      "tags": [
+        "chip anticonceptivo",
+        "implante subdermico",
+        "anticoncepcion",
+        "salud sexual"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+        "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-10-07",
+        "review_every_days": 90
+      },
+      "blocks": [
+        {
+          "h2": "El implante en la Provincia de Buenos Aires",
+          "paragraphs": [
+            "En todos los Hospitales Provinciales y centros de salud podés acceder al implante subdérmico. Es una varilla muy pequeña que se coloca bajo la piel del brazo, con anestesia local. Libera una hormona de forma continua que inhibe la ovulación. Se puede quitar antes de que termine su duración.",
+            "Se puede usar inmediatamente luego de un parto o aborto, y también mientras se está amamantando."
+          ],
+          "source": {
+            "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+            "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Gratuito y sin autorización desde los 13 años",
+          "paragraphs": [
+            "A partir de los 13 años tenés derecho a acceder de forma autónoma (sin autorización de un adulto) y gratuita a métodos anticonceptivos reversibles, y a partir de los 16 años a los de tipo quirúrgico, en centros de salud y hospitales provinciales."
+          ],
+          "source": {
+            "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+            "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Preguntá por consejerías en salud sexual",
+          "paragraphs": [
+            "Si necesitás información sobre métodos anticonceptivos podés acercarte al hospital provincial o centro de salud más cercano a tu domicilio y preguntar por consejerías en salud sexual. Recordá que todos los métodos se entregan gratuitamente."
+          ],
+          "source": {
+            "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+            "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pagina-cud-provincia",
+      "type": "pagina",
+      "slug": "certificado-unico-de-discapacidad",
+      "title": "Certificado único de discapacidad en la Provincia (página pública)",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Página /certificado-unico-de-discapacidad, parte provincial: el CUD en los trámites de Acceso e Inclusión en Salud.",
+      "content": "En la Provincia de Buenos Aires se pide copia del CUD en varios trámites de Incluir Salud.",
+      "tags": [
+        "CUD",
+        "certificado unico de discapacidad",
+        "discapacidad",
+        "junta evaluadora"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Por discapacidad - Acceso e Inclusión en Salud",
+        "url": "https://www.ms.gba.gov.ar/sitios/accesoeinclusion/por-discapacidad",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-10-07",
+        "review_every_days": 90
+      },
+      "blocks": [
+        {
+          "h2": "El CUD en los trámites de salud de la Provincia",
+          "paragraphs": [
+            "El Ministerio de Salud bonaerense indica iniciar el trámite del CUD online en la consulta de requisitos de argentina.gob.ar. Después, reunís la documentación con tu equipo de salud y pedís turno para la Junta Evaluadora. Es gratuito, voluntario y personal.",
+            "Si tenés Incluir Salud o no tenés cobertura de salud, la Provincia pide copia del CUD en varios trámites (en la mayoría, «en caso de corresponder»):"
+          ],
+          "items": [
+            "Traslados",
+            "Internación domiciliaria y enfermería domiciliaria",
+            "Ortesis, audífonos y lentes",
+            "Silla de ruedas"
+          ],
+          "source": {
+            "title": "Por discapacidad - Acceso e Inclusión en Salud",
+            "url": "https://www.ms.gba.gov.ar/sitios/accesoeinclusion/por-discapacidad",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pagina-salud-reproductiva-provincia",
+      "type": "pagina",
+      "slug": "salud-reproductiva",
+      "title": "Salud reproductiva y anticonceptivos gratis (página pública)",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Página /salud-reproductiva, parte provincial: métodos gratuitos en hospitales y centros de salud, acceso desde los 13 años, pastilla de emergencia y consejerías.",
+      "content": "En la Provincia de Buenos Aires todos los métodos anticonceptivos se entregan gratuitamente en hospitales provinciales y centros de salud.",
+      "tags": [
+        "salud reproductiva",
+        "anticonceptivos gratis",
+        "anticoncepcion",
+        "metodos anticonceptivos",
+        "anticoncepcion de emergencia",
+        "ley 25673",
+        "linea salud sexual"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+        "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-10-07",
+        "review_every_days": 90
+      },
+      "blocks": [
+        {
+          "h2": "Anticonceptivos gratis en la Provincia de Buenos Aires",
+          "paragraphs": [
+            "En todos los Hospitales Provinciales y centros de salud podés acceder a estos métodos anticonceptivos, y todos se entregan gratuitamente:"
+          ],
+          "items": [
+            "Preservativo",
+            "Pastillas anticonceptivas (también las especiales para quienes están amamantando)",
+            "DIU (dispositivo intrauterino)",
+            "SIU (sistema intrauterino)",
+            "Implante subdérmico",
+            "Ligadura tubaria",
+            "Vasectomía",
+            "Anticoncepción de emergencia"
+          ],
+          "source": {
+            "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+            "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Sin autorización de un adulto desde los 13 años",
+          "paragraphs": [
+            "A partir de los 13 años tenés derecho a acceder de forma autónoma (sin autorización de un adulto) y gratuita a métodos anticonceptivos reversibles, en centros de salud y hospitales provinciales.",
+            "Todas las personas, hayan tenido o no embarazos previos, pueden acceder a cualquiera de los métodos."
+          ],
+          "source": {
+            "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+            "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Pastilla de emergencia: qué hace",
+          "paragraphs": [
+            "Se usa para prevenir un embarazo después de una relación sexual en la que no se usó método anticonceptivo, o este falló o se rompió. La pastilla retrasa o inhibe la ovulación.",
+            "No es una pastilla abortiva: si el embarazo ya se produjo, no lo interrumpe."
+          ],
+          "source": {
+            "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+            "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        },
+        {
+          "h2": "Cerca de tu casa: preguntá por consejerías",
+          "paragraphs": [
+            "Si necesitás información sobre métodos anticonceptivos, podés acercarte al hospital provincial o centro de salud más cercano a tu domicilio y preguntar por consejerías en salud sexual. Recordá que todos los métodos se entregan gratuitamente."
+          ],
+          "source": {
+            "title": "Métodos anticonceptivos - Ministerio de Salud de la Provincia de Buenos Aires",
+            "url": "https://www.ms.gba.gov.ar/sitios/aborto/comunidad/metodos-anticonceptivos/",
+            "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+            "verified_at": "2026-10-07"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{# Shared shell owns navigation; the native controller owns Appearance's lifetime. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.system.theme.section_title', 'Apariencia y acceso') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.system.theme.section_title', 'Apariencia y acceso') }}{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-configuracion"></div>
+  <p id="configuracion-status" class="adm-empty" role="status" aria-live="polite" hidden></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<template id="appearance-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.system.theme.load_error', 'Algunas opciones no se pudieron cargar. Recargá la página.') }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Recargar') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-configuracion");
+  const status = document.getElementById("configuracion-status");
+  bootScreen({
+    host,
+    recovery: "appearance-load-recovery",
+    load: () => import("{{ static('platform/admin-appearance.mjs') }}"),
+    mount: (Appearance, onError) => Appearance.mount(host, { status, onError }),
+    // A failed screen leaves no status of its own beside the copy.
+    onFailed: () => { status.hidden = true; },
+  });
+</script>
+{% endblock %}

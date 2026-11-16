@@ -1,0 +1,11 @@
+{
+  "id": "mailjet",
+  "country": "AR",
+  "capability": "email_transport",
+  "config_keys": [
+    "MAILJET_API_KEY",
+    "MAILJET_API_SECRET",
+    "MAIL_FROM"
+  ],
+  "description": "Transactional email via Mailjet's Send API v3.1 (Basic auth with the API key and secret key of the account or sub-account). Selected with CONNECTOR_EMAIL_TRANSPORT=mailjet. MAIL_FROM is required: its address (or its whole domain) must be a validated sender in Mailjet. Open and click tracking are switched off per message."
+}

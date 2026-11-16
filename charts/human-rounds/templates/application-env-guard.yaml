@@ -1,0 +1,6 @@
+{{- if hasKey .Values.applicationEnv "DATABASE_URL" }}
+{{- fail "applicationEnv.DATABASE_URL is reserved; configure database.existingSecret instead" }}
+{{- end }}
+{{- if hasKey .Values.applicationEnv "PORT" }}
+{{- fail "applicationEnv.PORT is reserved; Human Rounds serves HTTP on container port 7700" }}
+{{- end }}

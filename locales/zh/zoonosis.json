@@ -1,0 +1,14 @@
+{
+  "_comment": "/zoonosis page chrome — headings and labels. Content (lede, servicios, nota, whatsapp, enlaces_oficiales) is pack data (enlaces.json).",
+  "zoonosis.h1": "人畜共患病科 (Zoonosis)",
+  "zoonosis.lede_default": "市政府动物健康与人畜共患病中心。",
+  "zoonosis.services_h": "服务项目",
+  "zoonosis.contact_h": "联系方式",
+  "zoonosis.bite_h": "如果你被咬伤或抓伤",
+  "zoonosis.neuter_h": "绝育也是在守护社区",
+  "zoonosis.official_h": "更多信息",
+  "zoonosis.rodent_h": "预防啮齿动物传播的疾病",
+  "zoonosis.whatsapp_lead": "WhatsApp",
+  "zoonosis.nota_default": "这是市政卫生服务——宠物的预约不通过此门户网站办理。",
+  "zoonosis.landline": "固定电话"
+}

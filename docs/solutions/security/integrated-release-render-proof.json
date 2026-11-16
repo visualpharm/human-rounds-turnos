@@ -1,0 +1,133 @@
+{
+  "baseline": "a6d4510d9b57434c35078408d25543bc36b67c10",
+  "application_commit": "fb12d75fadc7707a95dd403a17626be072b32bee",
+  "reviewed_assets": {
+    "static/platform/admin-account.mjs": {
+      "source_commit": "e18da9b3",
+      "sha256": "1eefebbceb5da85c3a5640037ceb2922f74703d2f31c2f946c5ca0ae20638823"
+    },
+    "static/platform/chat-ui.mjs": {
+      "source_commit": "7302942c95f4b7f7030fc8ea74ca6ef3292c7205",
+      "sha256": "caf8375b3cb75ec05f2369d874d032f340badf9600bcc1cf8856be7cb8802dd6"
+    },
+    "static/platform/chat-widget.mjs": {
+      "source_commit": "7302942c95f4b7f7030fc8ea74ca6ef3292c7205",
+      "sha256": "91d4df4c7fe7f8f7c10bf91e8bdd221f413b45a0169ac0fd754ebb3ade73decf"
+    },
+    "modules/intake/entrevista.js": {
+      "source_commit": "7302942c95f4b7f7030fc8ea74ca6ef3292c7205",
+      "sha256": "fcfb166183b37dd7b28fd50bc8a4f4ad0b233e09b71be8e593d3f7bc0e6f203c"
+    },
+    "modules/intake/entrevista.css": {
+      "source_commit": "7302942c95f4b7f7030fc8ea74ca6ef3292c7205",
+      "sha256": "03f7ebfd2474ff11509de4e48fb34f7922449699fd752f13ce144270579b87cc"
+    },
+    "modules/intake/admin-consult.mjs": {
+      "source_commit": "7302942c95f4b7f7030fc8ea74ca6ef3292c7205",
+      "sha256": "d7367724d2bafc2689524f91221c6bf026471025371eb37d8d8767dc00b5af47"
+    }
+  },
+  "reviewed_catalog": "modules/intake/locales/en/intake.json",
+  "catalog_source": "7302942c95f4b7f7030fc8ea74ca6ef3292c7205",
+  "catalog_sha256": "3cc01ffc27227cf753db31ac4100c286128f3f624e2e457fe78fc4e345204537",
+  "catalog_added_keys": [
+    "intake.dialogue.additional",
+    "intake.dialogue.incomplete",
+    "intake.dialogue.opening",
+    "intake.dialogue.unavailable",
+    "intake.dialogue.urgent_home",
+    "intake.dialogue.urgent_qr",
+    "intake.print.borrador"
+  ],
+  "asset_url_reversals": [
+    [
+      "/static/platform/admin-account.0fd0c47f.mjs",
+      "/static/platform/admin-account.1eefebbc.mjs"
+    ],
+    [
+      "/static/platform/chat-ui.49044007.mjs",
+      "/static/platform/chat-ui.caf8375b.mjs"
+    ],
+    [
+      "/static/platform/chat-widget.b82b81f6.mjs",
+      "/static/platform/chat-widget.91d4df4c.mjs"
+    ],
+    [
+      "/static/modules/intake/entrevista.47e8db16.js",
+      "/static/modules/intake/entrevista.fcfb1661.js"
+    ],
+    [
+      "/static/modules/intake/entrevista.ef752f0b.css",
+      "/static/modules/intake/entrevista.03f7ebfd.css"
+    ],
+    [
+      "/static/modules/intake/admin-consult.580bd3fb.mjs",
+      "/static/modules/intake/admin-consult.d7367724.mjs"
+    ]
+  ],
+  "renders": [
+    {
+      "page": "es:/account",
+      "baseline_sha256": "f722d008ffcc5391c7151a674728d020e87eebed286f9d3826da99abb6290b57",
+      "new_sha256": "f30396c2a5e59934e5c049b8948730aa3ab0a97d1f6e42e5d3109347e361ae35",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/account/reset",
+      "baseline_sha256": "00d108191a666c5004de32611a215f9c7ba234a0698a2f3b43894fb461c33e2f",
+      "new_sha256": "fc3088926ce7918ab5cdcdf400fe9314d0aa496d81afa91cbcffd6e97ef3fb9e",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "anon:/account",
+      "baseline_sha256": "f722d008ffcc5391c7151a674728d020e87eebed286f9d3826da99abb6290b57",
+      "new_sha256": "f30396c2a5e59934e5c049b8948730aa3ab0a97d1f6e42e5d3109347e361ae35",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/test",
+      "baseline_sha256": "450e561287ad61dbed5335c073cc5264014e863fd1c6ec422e6517a03a62032f",
+      "new_sha256": "b0ed6a41c44dd41de3aa2984f765964c0c4ab0857be82e86bd088926904e0e31",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/sso",
+      "baseline_sha256": "ea45ed31ca4fe8f179eddbb68737e1387e146a82254a9c7cd52333b1e0e9207b",
+      "new_sha256": "616ffe31bb93e5b46ccf3ee4e9b37765ff3876584534d09a5845b3444f2d1d0a",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account",
+      "baseline_sha256": "757e384c1299838f249fb7ac02ba1587d12c69275c6370a7131d808fc0a42024",
+      "new_sha256": "f76e07885a8c1caf03d88fa3b6eb0c17a1c4b0051b025108eefea57daa95040f",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account/reset",
+      "baseline_sha256": "902d1ecdf7ff34ba713bd2e7c4e4ef60292e732bfb5d00f3c59aec96562e2004",
+      "new_sha256": "9f0457ac21edfd64d05a99de6ba19aed2c252867bbf66df467ba8e8d1d3ed1f3",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/test",
+      "baseline_sha256": "fd8b19b7699090a2a613885ab6dc66201c1baaf40b7a351e159bf2d811dcb6ab",
+      "new_sha256": "38eb7171ecf07d412edf837cdf5e79a8ddb2d2adae577926bba63e344d23a34d",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/sso",
+      "baseline_sha256": "5b2a086d86629c320927957c5303c66dd45dac840ad82029f876625869786ca3",
+      "new_sha256": "0a1dc7eafba74f2675891d2e5745894f6ea94dd60ef583b844af8d6f4af3d66f",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    }
+  ]
+}

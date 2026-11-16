@@ -1,0 +1,306 @@
+{
+  "schema_version": "1.0",
+  "cases": [
+    {
+      "path": "bad-handwriting-cardiologia-1.jpg",
+      "expected_verdict": "dudosa",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_service",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Cardiología",
+        "practicas": [
+          "Interconsulta con Cardiología"
+        ],
+        "diagnostico": "Soplo cardíaco a evaluar"
+      }
+    },
+    {
+      "path": "bad-handwriting-laboratorio-2.jpg",
+      "expected_verdict": "dudosa",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_studies",
+        "prescriber",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Laboratorio",
+        "practicas": [
+          "Hemograma",
+          "Glucemia",
+          "Orina completa",
+          "Colesterol"
+        ]
+      }
+    },
+    {
+      "path": "bad-handwriting-traumatologia-3.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_study",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Traumatología",
+        "practicas": [
+          "Radiografía de tobillo izquierdo frente y perfil"
+        ],
+        "diagnostico": "Esguince de tobillo"
+      }
+    },
+    {
+      "path": "english-referral-1.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_service",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Cardiology",
+        "practicas": [
+          "Cardiology consultation"
+        ],
+        "diagnostico": "Chest pain / shortness of breath"
+      }
+    },
+    {
+      "path": "foreign-jurisdiction-chile-interconsulta.jpg",
+      "expected_verdict": "dudosa",
+      "document_kind": "medical_referral",
+      "jurisdiction": "foreign",
+      "expected_fields": [
+        "patient_name",
+        "requested_service",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Traumatología",
+        "practicas": [
+          "Interconsulta con Traumatología"
+        ]
+      }
+    },
+    {
+      "path": "photographed-folded-imagenes-2.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_study",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Diagnóstico por imágenes",
+        "practicas": [
+          "Ecografía renal y vesical"
+        ]
+      }
+    },
+    {
+      "path": "photographed-folded-laboratorio-1.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_studies",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Laboratorio",
+        "practicas": [
+          "Hemograma",
+          "Glucemia",
+          "Orina completa"
+        ],
+        "diagnostico": "Control de rutina"
+      }
+    },
+    {
+      "path": "portuguese-sus-referral.jpg",
+      "expected_verdict": "dudosa",
+      "document_kind": "medical_referral",
+      "jurisdiction": "foreign",
+      "expected_fields": [
+        "patient_name",
+        "requested_service",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Cardiologia",
+        "practicas": [
+          "Interconsulta com Cardiologia"
+        ],
+        "diagnostico": "Dor torácica atípica"
+      }
+    },
+    {
+      "path": "synthetic-bad-handwriting-ecografia-1.jpg",
+      "expected_verdict": "dudosa",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_study",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Ecografía",
+        "practicas": [
+          "Ecografía obstétrica"
+        ],
+        "diagnostico": "Control de embarazo"
+      }
+    },
+    {
+      "path": "synthetic-clean-digital-ecografia-1.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_study",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Ecografía",
+        "practicas": [
+          "Ecografía abdominal completa"
+        ],
+        "diagnostico": "Dolor abdominal inespecífico"
+      }
+    },
+    {
+      "path": "synthetic-clean-digital-laboratorio-1.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_studies",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Laboratorio",
+        "practicas": [
+          "Hemograma completo",
+          "Glucemia",
+          "Hepatograma",
+          "Orina completa"
+        ],
+        "diagnostico": "Control general"
+      }
+    },
+    {
+      "path": "synthetic-clean-digital-resonancia-1.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_study",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Diagnóstico por imágenes",
+        "practicas": [
+          "Resonancia magnética de rodilla derecha sin contraste"
+        ],
+        "diagnostico": "Dolor persistente luego de lesión deportiva"
+      }
+    },
+    {
+      "path": "synthetic-derivacion-neurologia-1.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_service",
+        "diagnosis",
+        "prescriber",
+        "license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Neurología",
+        "practicas": [
+          "Interconsulta con Neurología"
+        ],
+        "diagnostico": "Cefaleas recurrentes"
+      }
+    },
+    {
+      "path": "synthetic-negative-wrong-document-1.jpg",
+      "expected_verdict": "documento_equivocado",
+      "document_kind": "non_medical",
+      "jurisdiction": "not_applicable",
+      "expected_fields": []
+    },
+    {
+      "path": "synthetic-two-license-cardiologia-1.jpg",
+      "expected_verdict": "parece_correcta",
+      "document_kind": "medical_referral",
+      "jurisdiction": "local",
+      "expected_fields": [
+        "patient_name",
+        "requested_service",
+        "diagnosis",
+        "prescriber",
+        "national_license",
+        "provincial_license",
+        "date"
+      ],
+      "reading": {
+        "especialidad": "Cardiología",
+        "practicas": [
+          "Interconsulta con Cardiología"
+        ],
+        "diagnostico": "Palpitaciones episódicas y control de soplo"
+      }
+    }
+  ]
+}

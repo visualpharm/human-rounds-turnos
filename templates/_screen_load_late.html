@@ -1,0 +1,9 @@
+{# The one copy every late-loading screen shows at its eight-second deadline
+   (static/platform/screen-boot.mjs): the load is late, not failed, so it is
+   not the screen's failure text. A failure keeps the screen's own recovery
+   template. Phrasing content only: a status line that receives it may be a
+   <p>. `late_button_class` lets a page with its own buttons style it. #}
+<template id="screen-load-late">
+  <span class="screen-load-late-text" role="status">{{ t('page.load_late', 'La carga tarda más de lo normal.') }}</span>
+  <button type="button" class="{{ late_button_class | default('btn') }}" data-retry>{{ t('admin.content.common.reload', 'Recargar') }}</button>
+</template>

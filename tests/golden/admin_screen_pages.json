@@ -1,0 +1,4789 @@
+{
+ "/admin/account|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/account|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/account|admisionista|default": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/account|admisionista|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/account|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/account|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/account|reportes|default": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "reportes"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/account|reportes|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/account.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "reportes"
+   ],
+   [
+    "render",
+    "admin/account.html",
+    {
+     "active_section": "cuenta",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>",
+     "portal_logout": null
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/ai-register/print|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/ai-register.html</body></html><!--lang:es--><!--ns:common,nav,admin,ai--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/ai-register.html",
+    {
+     "active_section": "ai-register",
+     "changes": {
+      "len": 0
+     },
+     "nav_items": "<nav>",
+     "printable": true,
+     "rows": {
+      "len": 1
+     },
+     "shared": {
+      "keys": [],
+      "scalars": {}
+     },
+     "state": {
+      "keys": [
+       "k"
+      ],
+      "scalars": {
+       "k": "v"
+      }
+     }
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "ai"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/ai-register/print|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/ai-register.html</body></html><!--lang:es--><!--ns:common,nav,admin,ai--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/ai-register.html",
+    {
+     "active_section": "ai-register",
+     "changes": {
+      "len": 0
+     },
+     "nav_items": "<nav>",
+     "printable": true,
+     "rows": {
+      "len": 1
+     },
+     "shared": {
+      "keys": [],
+      "scalars": {}
+     },
+     "state": {
+      "keys": [
+       "k"
+      ],
+      "scalars": {
+       "k": "v"
+      }
+     }
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "ai"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/ai-register/print|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register/print|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register/print|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register/print|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register/print|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register/print|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/ai-register.html</body></html><!--lang:es--><!--ns:common,nav,admin,ai--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/ai-register.html",
+    {
+     "active_section": "ai-register",
+     "changes": {
+      "len": 0
+     },
+     "nav_items": "<nav>",
+     "printable": false,
+     "rows": {
+      "len": 1
+     },
+     "shared": {
+      "keys": [],
+      "scalars": {}
+     },
+     "state": {
+      "keys": [
+       "k"
+      ],
+      "scalars": {
+       "k": "v"
+      }
+     }
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "ai"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/ai-register|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/ai-register.html</body></html><!--lang:es--><!--ns:common,nav,admin,ai--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/ai-register.html",
+    {
+     "active_section": "ai-register",
+     "changes": {
+      "len": 0
+     },
+     "nav_items": "<nav>",
+     "printable": false,
+     "rows": {
+      "len": 1
+     },
+     "shared": {
+      "keys": [],
+      "scalars": {}
+     },
+     "state": {
+      "keys": [
+       "k"
+      ],
+      "scalars": {
+       "k": "v"
+      }
+     }
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "ai"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/ai-register|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/ai-register|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/appearance|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/appearance.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/appearance.html",
+    {
+     "active_section": "configuracion",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/appearance|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/appearance.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/appearance.html",
+    {
+     "active_section": "configuracion",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/appearance|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/appearance|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/appearance|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/appearance|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/appearance|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/appearance|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/centers|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "centros",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": false,
+       "hours_editor": false,
+       "id": "centros",
+       "path": "/admin/centers",
+       "segment": "centers",
+       "title_es": "Centros",
+       "title_key": "admin.content.catalog.titles.centers"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/centers|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "centros",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": false,
+       "hours_editor": false,
+       "id": "centros",
+       "path": "/admin/centers",
+       "segment": "centers",
+       "title_es": "Centros",
+       "title_key": "admin.content.catalog.titles.centers"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/centers|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/centers|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/centers|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/centers|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/centers|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/centers|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/chats|admin|default": {
+  "body": "<!doctype html><html><head></head><body>modules/chat/admin_chats.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "modules/chat/admin_chats.html",
+    {
+     "active_section": "chats",
+     "nav_items": "<nav>",
+     "rows_failed": true,
+     "rows_json": "null"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/chats|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>modules/chat/admin_chats.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "modules/chat/admin_chats.html",
+    {
+     "active_section": "chats",
+     "nav_items": "<nav>",
+     "rows_failed": true,
+     "rows_json": "null"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/chats|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/chats|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/chats|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/chats|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/chats|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/chats|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/cola|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/cola.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/cola.html",
+    {
+     "active_section": "cola",
+     "nav_items": "<nav>",
+     "queue_data": {
+      "keys": [
+       "dia",
+       "grupos",
+       "hoy",
+       "server_unavailable",
+       "total"
+      ],
+      "scalars": {
+       "hoy": true,
+       "server_unavailable": true,
+       "total": 0
+      }
+     },
+     "queue_display_name": "<function>",
+     "queue_name_age": "<function>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/cola|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/cola.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/cola.html",
+    {
+     "active_section": "cola",
+     "nav_items": "<nav>",
+     "queue_data": {
+      "keys": [
+       "dia",
+       "grupos",
+       "hoy",
+       "server_unavailable",
+       "total"
+      ],
+      "scalars": {
+       "hoy": true,
+       "server_unavailable": true,
+       "total": 0
+      }
+     },
+     "queue_display_name": "<function>",
+     "queue_name_age": "<function>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/cola|admisionista|default": {
+  "body": "<!doctype html><html><head></head><body>admin/cola.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/cola.html",
+    {
+     "active_section": "cola",
+     "nav_items": "<nav>",
+     "queue_data": {
+      "keys": [
+       "dia",
+       "grupos",
+       "hoy",
+       "server_unavailable",
+       "total"
+      ],
+      "scalars": {
+       "hoy": true,
+       "server_unavailable": true,
+       "total": 0
+      }
+     },
+     "queue_display_name": "<function>",
+     "queue_name_age": "<function>",
+     "rol": "admisionista"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/cola|admisionista|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/cola.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/cola.html",
+    {
+     "active_section": "cola",
+     "nav_items": "<nav>",
+     "queue_data": {
+      "keys": [
+       "dia",
+       "grupos",
+       "hoy",
+       "server_unavailable",
+       "total"
+      ],
+      "scalars": {
+       "hoy": true,
+       "server_unavailable": true,
+       "total": 0
+      }
+     },
+     "queue_display_name": "<function>",
+     "queue_name_age": "<function>",
+     "rol": "admisionista"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/cola|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/cola.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/cola.html",
+    {
+     "active_section": "cola",
+     "nav_items": "<nav>",
+     "queue_data": {
+      "keys": [
+       "dia",
+       "grupos",
+       "hoy",
+       "server_unavailable",
+       "total"
+      ],
+      "scalars": {
+       "hoy": true,
+       "server_unavailable": true,
+       "total": 0
+      }
+     },
+     "queue_display_name": "<function>",
+     "queue_name_age": "<function>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/cola|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/cola.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/cola.html",
+    {
+     "active_section": "cola",
+     "nav_items": "<nav>",
+     "queue_data": {
+      "keys": [
+       "dia",
+       "grupos",
+       "hoy",
+       "server_unavailable",
+       "total"
+      ],
+      "scalars": {
+       "hoy": true,
+       "server_unavailable": true,
+       "total": 0
+      }
+     },
+     "queue_display_name": "<function>",
+     "queue_name_age": "<function>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/cola|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/cola|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/consult|admin|default": {
+  "body": "<!doctype html><html><head></head><body>modules/intake/admin_consult.html</body></html><!--lang:es--><!--ns:common,nav,admin,admin.queue--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "modules/intake/admin_consult.html",
+    {
+     "active_section": "consulta",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "admin.queue"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/consult|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>modules/intake/admin_consult.html</body></html><!--lang:es--><!--ns:common,nav,admin,admin.queue--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "modules/intake/admin_consult.html",
+    {
+     "active_section": "consulta",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "admin.queue"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/consult|admisionista|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/consult|admisionista|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/consult|medico|default": {
+  "body": "<!doctype html><html><head></head><body>modules/intake/admin_consult.html</body></html><!--lang:es--><!--ns:common,nav,admin,admin.queue--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "modules/intake/admin_consult.html",
+    {
+     "active_section": "consulta",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "admin.queue"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/consult|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>modules/intake/admin_consult.html</body></html><!--lang:es--><!--ns:common,nav,admin,admin.queue--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "modules/intake/admin_consult.html",
+    {
+     "active_section": "consulta",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "admin.queue"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/consult|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/consult|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/doctors|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "medicos",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": true,
+       "hours_editor": true,
+       "id": "medicos",
+       "path": "/admin/doctors",
+       "segment": "doctors",
+       "title_es": "M\u00e9dicos",
+       "title_key": "admin.content.catalog.titles.doctors"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/doctors|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "medicos",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": true,
+       "hours_editor": true,
+       "id": "medicos",
+       "path": "/admin/doctors",
+       "segment": "doctors",
+       "title_es": "M\u00e9dicos",
+       "title_key": "admin.content.catalog.titles.doctors"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/doctors|admisionista|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/doctors|admisionista|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/doctors|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "medicos",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": true,
+       "hours_editor": true,
+       "id": "medicos",
+       "path": "/admin/doctors",
+       "segment": "doctors",
+       "title_es": "M\u00e9dicos",
+       "title_key": "admin.content.catalog.titles.doctors"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/doctors|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "medicos",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": true,
+       "hours_editor": true,
+       "id": "medicos",
+       "path": "/admin/doctors",
+       "segment": "doctors",
+       "title_es": "M\u00e9dicos",
+       "title_key": "admin.content.catalog.titles.doctors"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/doctors|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/doctors|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/entrevistas|admin|default": {
+  "body": "<!doctype html><html><head></head><body>modules/intake/admin_entrevistas.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "modules/intake/admin_entrevistas.html",
+    {
+     "active_section": "entrevistas",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/entrevistas|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>modules/intake/admin_entrevistas.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "modules/intake/admin_entrevistas.html",
+    {
+     "active_section": "entrevistas",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/entrevistas|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/entrevistas|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/entrevistas|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/entrevistas|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/entrevistas|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/entrevistas|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/hsi.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/hsi.html",
+    {
+     "active_section": "sistema",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/hsi|admin|default|section-visible": {
+  "body": "<!doctype html><html><head></head><body>admin/hsi.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/hsi.html",
+    {
+     "active_section": "hsi",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/hsi|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/hsi.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/hsi.html",
+    {
+     "active_section": "sistema",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/hsi|admin|pinamar|section-visible": {
+  "body": "<!doctype html><html><head></head><body>admin/hsi.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/hsi.html",
+    {
+     "active_section": "hsi",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/hsi|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|admisionista|default|section-visible": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|admisionista|pinamar|section-visible": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|medico|default|section-visible": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|medico|pinamar|section-visible": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|reportes|default|section-visible": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/hsi|reportes|pinamar|section-visible": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/knowledge|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/knowledge.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/knowledge.html",
+    {
+     "active_section": "knowledge",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/knowledge|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/knowledge.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/knowledge.html",
+    {
+     "active_section": "knowledge",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/knowledge|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/knowledge|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/knowledge|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/knowledge|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/knowledge|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/knowledge|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/legal|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/legal.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/legal.html",
+    {
+     "active_section": "legal",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/legal|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/legal.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/legal.html",
+    {
+     "active_section": "legal",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/legal|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/legal|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/legal|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/legal|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/legal|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/legal|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/mis-turnos|admin|default": {
+  "body": "",
+  "cache-control": "no-store",
+  "content-type": null,
+  "location": "/admin/solicitudes",
+  "status": 303,
+  "steps": []
+ },
+ "/admin/mis-turnos|admin|pinamar": {
+  "body": "",
+  "cache-control": "no-store",
+  "content-type": null,
+  "location": "/admin/solicitudes",
+  "status": 303,
+  "steps": []
+ },
+ "/admin/mis-turnos|admisionista|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/mis-turnos|admisionista|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/mis-turnos|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/mis-turnos.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/mis-turnos.html",
+    {
+     "active_section": "mis-turnos",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/mis-turnos|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/mis-turnos.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/mis-turnos.html",
+    {
+     "active_section": "mis-turnos",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/mis-turnos|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/mis-turnos|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-patients|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/my-patients.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/my-patients.html",
+    {
+     "active_section": "mis-pacientes",
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-patients|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/my-patients.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/my-patients.html",
+    {
+     "active_section": "mis-pacientes",
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-patients|admisionista|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-patients|admisionista|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-patients|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/my-patients.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/my-patients.html",
+    {
+     "active_section": "mis-pacientes",
+     "nav_items": "<nav>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-patients|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/my-patients.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/my-patients.html",
+    {
+     "active_section": "mis-pacientes",
+     "nav_items": "<nav>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-patients|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-patients|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-schedules|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/doctor-workspace.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/doctor-workspace.html",
+    {
+     "active_section": "my-schedules",
+     "data": null,
+     "nav_items": "<nav>",
+     "normal_landing": "/admin/solicitudes",
+     "onboarding": false,
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-schedules|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/doctor-workspace.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/doctor-workspace.html",
+    {
+     "active_section": "my-schedules",
+     "data": null,
+     "nav_items": "<nav>",
+     "normal_landing": "/admin/solicitudes",
+     "onboarding": false,
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-schedules|admisionista|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-schedules|admisionista|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-schedules|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/doctor-workspace.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/doctor-workspace.html",
+    {
+     "active_section": "my-schedules",
+     "data": null,
+     "nav_items": "<nav>",
+     "normal_landing": "/admin/cola",
+     "onboarding": false,
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-schedules|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/doctor-workspace.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/doctor-workspace.html",
+    {
+     "active_section": "my-schedules",
+     "data": null,
+     "nav_items": "<nav>",
+     "normal_landing": "/admin/cola",
+     "onboarding": false,
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/my-schedules|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/my-schedules|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/onboarding|admin|default": {
+  "body": "",
+  "cache-control": null,
+  "content-type": null,
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/onboarding|admin|pinamar": {
+  "body": "",
+  "cache-control": null,
+  "content-type": null,
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/onboarding|admisionista|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/onboarding|admisionista|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/onboarding|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/doctor-workspace.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/doctor-workspace.html",
+    {
+     "active_section": "onboarding",
+     "data": null,
+     "nav_items": "<nav>",
+     "normal_landing": "/admin/cola",
+     "onboarding": true,
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/onboarding|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/doctor-workspace.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/doctor-workspace.html",
+    {
+     "active_section": "onboarding",
+     "data": null,
+     "nav_items": "<nav>",
+     "normal_landing": "/admin/cola",
+     "onboarding": true,
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/onboarding|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/onboarding|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/pacientes|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/pacientes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/pacientes.html",
+    {
+     "active_section": "pacientes",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/pacientes|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/pacientes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/pacientes.html",
+    {
+     "active_section": "pacientes",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/pacientes|admisionista|default": {
+  "body": "<!doctype html><html><head></head><body>admin/pacientes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/pacientes.html",
+    {
+     "active_section": "pacientes",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/pacientes|admisionista|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/pacientes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/pacientes.html",
+    {
+     "active_section": "pacientes",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/pacientes|medico|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/pacientes|medico|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/pacientes|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/pacientes|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/plan|admin|default": {
+  "body": "{\"detail\":{\"error\":\"no_encontrado\"}}",
+  "cache-control": null,
+  "content-type": "application/json",
+  "location": null,
+  "status": 404,
+  "steps": []
+ },
+ "/admin/plan|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/plan.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/plan.html",
+    {
+     "active_section": "plan",
+     "emr_sync_enabled": false,
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/plan|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/plan|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/plan|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/plan|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/plan|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/plan|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/preparations|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/preparations.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/preparations.html",
+    {
+     "active_section": "preparaciones",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/preparations|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/preparations.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/preparations.html",
+    {
+     "active_section": "preparaciones",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/preparations|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/preparations|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/preparations|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/preparations|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/preparations|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/preparations|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/prompts|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/prompts.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/prompts.html",
+    {
+     "active_section": "prompts",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/prompts|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/prompts.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/prompts.html",
+    {
+     "active_section": "prompts",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/prompts|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/prompts|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/prompts|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/prompts|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/prompts|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/prompts|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/reportes|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/reportes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/reportes.html",
+    {
+     "active_section": "reportes",
+     "nav_items": "<nav>",
+     "reports_currency_json": "{\"code\": \"ARS\", \"symbol\": \"$\", \"locale\": \"es-AR\", \"iso2\": \"AR\"}"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/reportes|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/reportes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/reportes.html",
+    {
+     "active_section": "reportes",
+     "nav_items": "<nav>",
+     "reports_currency_json": "{\"code\": \"ARS\", \"symbol\": \"$\", \"locale\": \"es-AR\", \"iso2\": \"AR\"}"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/reportes|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/reportes|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/reportes|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/reportes|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/reportes|reportes|default": {
+  "body": "<!doctype html><html><head></head><body>admin/reportes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "reportes"
+   ],
+   [
+    "render",
+    "admin/reportes.html",
+    {
+     "active_section": "reportes",
+     "nav_items": "<nav>",
+     "reports_currency_json": "{\"code\": \"ARS\", \"symbol\": \"$\", \"locale\": \"es-AR\", \"iso2\": \"AR\"}"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/reportes|reportes|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/reportes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "reportes"
+   ],
+   [
+    "render",
+    "admin/reportes.html",
+    {
+     "active_section": "reportes",
+     "nav_items": "<nav>",
+     "reports_currency_json": "{\"code\": \"ARS\", \"symbol\": \"$\", \"locale\": \"es-AR\", \"iso2\": \"AR\"}"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/roles|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/roles.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/roles.html",
+    {
+     "active_section": "roles",
+     "current_user": "screen-page-contract",
+     "identity": {
+      "keys": [
+       "rol",
+       "usuario"
+      ],
+      "scalars": {
+       "rol": "admin",
+       "usuario": "screen-page-contract"
+      }
+     },
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/roles|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/roles.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/roles.html",
+    {
+     "active_section": "roles",
+     "current_user": "screen-page-contract",
+     "identity": {
+      "keys": [
+       "rol",
+       "usuario"
+      ],
+      "scalars": {
+       "rol": "admin",
+       "usuario": "screen-page-contract"
+      }
+     },
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/roles|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/roles|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/roles|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/roles|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/roles|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/roles|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/services|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "servicios",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": false,
+       "hours_editor": true,
+       "id": "servicios",
+       "path": "/admin/services",
+       "segment": "services",
+       "title_es": "Servicios",
+       "title_key": "admin.content.catalog.titles.services"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/services|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/content.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/content.html",
+    {
+     "active_section": "servicios",
+     "editor": {
+      "keys": [
+       "doctors",
+       "hours_editor",
+       "id",
+       "path",
+       "segment",
+       "title_es",
+       "title_key"
+      ],
+      "scalars": {
+       "doctors": false,
+       "hours_editor": true,
+       "id": "servicios",
+       "path": "/admin/services",
+       "segment": "services",
+       "title_es": "Servicios",
+       "title_key": "admin.content.catalog.titles.services"
+      }
+     },
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/services|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/services|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/services|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/services|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/services|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/services|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/settings|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/settings.html</body></html><!--lang:es--><!--ns:common,nav,admin,backup--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/settings.html",
+    {
+     "active_section": "settings",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "backup"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/settings|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/settings.html</body></html><!--lang:es--><!--ns:common,nav,admin,backup--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/settings.html",
+    {
+     "active_section": "settings",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "backup"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/settings|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/settings|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/settings|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/settings|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/settings|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/settings|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/solicitudes|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/solicitudes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/solicitudes.html",
+    {
+     "active_section": "solicitudes",
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/solicitudes|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/solicitudes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/solicitudes.html",
+    {
+     "active_section": "solicitudes",
+     "nav_items": "<nav>",
+     "rol": "admin"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/solicitudes|admisionista|default": {
+  "body": "<!doctype html><html><head></head><body>admin/solicitudes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/solicitudes.html",
+    {
+     "active_section": "solicitudes",
+     "nav_items": "<nav>",
+     "rol": "admisionista"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/solicitudes|admisionista|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/solicitudes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admisionista"
+   ],
+   [
+    "render",
+    "admin/solicitudes.html",
+    {
+     "active_section": "solicitudes",
+     "nav_items": "<nav>",
+     "rol": "admisionista"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/solicitudes|medico|default": {
+  "body": "<!doctype html><html><head></head><body>admin/solicitudes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/solicitudes.html",
+    {
+     "active_section": "solicitudes",
+     "nav_items": "<nav>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/solicitudes|medico|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/solicitudes.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "medico"
+   ],
+   [
+    "render",
+    "admin/solicitudes.html",
+    {
+     "active_section": "solicitudes",
+     "nav_items": "<nav>",
+     "rol": "medico"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/solicitudes|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/solicitudes|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/system|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/system.html</body></html><!--lang:es--><!--ns:common,nav,admin,backup--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/system.html",
+    {
+     "active_section": "sistema",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "backup"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/system|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/system.html</body></html><!--lang:es--><!--ns:common,nav,admin,backup--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/system.html",
+    {
+     "active_section": "sistema",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin",
+     "backup"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/system|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/system|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/system|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/system|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/system|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/system|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/users|admin|default": {
+  "body": "<!doctype html><html><head></head><body>admin/users.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/users.html",
+    {
+     "active_section": "usuarios",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/users|admin|pinamar": {
+  "body": "<!doctype html><html><head></head><body>admin/users.html</body></html><!--lang:es--><!--ns:common,nav,admin--><!--theme-->",
+  "cache-control": "no-store",
+  "content-type": "text/html; charset=utf-8",
+  "location": null,
+  "status": 200,
+  "steps": [
+   [
+    "nav",
+    "admin"
+   ],
+   [
+    "render",
+    "admin/users.html",
+    {
+     "active_section": "usuarios",
+     "current_user": "screen-page-contract",
+     "nav_items": "<nav>"
+    }
+   ],
+   [
+    "html_lang",
+    "es"
+   ],
+   [
+    "bootstrap",
+    null,
+    "es",
+    [
+     "common",
+     "nav",
+     "admin"
+    ]
+   ],
+   [
+    "theme"
+   ]
+  ]
+ },
+ "/admin/users|admisionista|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/users|admisionista|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/users|medico|default": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/users|medico|pinamar": {
+  "body": "{\"error\": \"solo_admin\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/users|reportes|default": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ },
+ "/admin/users|reportes|pinamar": {
+  "body": "{\"error\": \"rol_no_autorizado\"}",
+  "cache-control": "no-store",
+  "content-type": "application/json; charset=utf-8",
+  "location": null,
+  "status": 403,
+  "steps": []
+ }
+}

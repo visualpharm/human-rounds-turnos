@@ -1,0 +1,27 @@
+{
+  "city": "Sampleton",
+  "province": "Greenfield",
+  "hospital": "Sampleton Hospital",
+  "network": "Sampleton Hospital y las clínicas",
+  "network_long": "Sampleton Hospital y las clínicas Riverside y Lakeview",
+  "main_center": "sampleton-hospital",
+  "emergency_number": "112",
+  "venues": {},
+  "network_links_html": "de <a class=\"stz-link\" href=\"/centers\">los centros de salud de Sampleton</a>",
+  "search_examples": [
+    "Pediatría",
+    "Odontología",
+    "Ecografía",
+    "Geriatría",
+    "Lakeview",
+    "Karam"
+  ],
+  "search_examples_en": [
+    "Child",
+    "Pediatric",
+    "Ultrasound",
+    "Cavities",
+    "Lakeview",
+    "Karam"
+  ]
+}

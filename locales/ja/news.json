@@ -1,0 +1,12 @@
+{
+  "_comment": "/news (Novedades) page chrome only — title, tabs, the site's name in the changelog. The changelog entries themselves are editorial content, machine-translated + cached via translate.py (see docs/architecture/i18n.md), not this catalog.",
+  "news.date_long": "{year}年{month}{day}日",
+  "news.desc": "{brand}の更新履歴：毎週追加・改善された内容をお知らせします。",
+  "news.filter.all": "すべて",
+  "news.filter.requested": "リクエストによる更新",
+  "news.h1": "新着情報",
+  "news.month_long": "{year}年{month}",
+  "news.site_phrase": "{city} の健康診断・診療予約",
+  "news.tabs": "お知らせを絞り込む",
+  "news.title": "新着情報"
+}

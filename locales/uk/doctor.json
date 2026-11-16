@@ -1,0 +1,21 @@
+{
+  "_comment": "Doctor directory and doctor profile page (/doctors, /doctor/<id>) and Grupos y talleres (/d/grupos).",
+  "doctor.agenda_heading": "Коли приймає",
+  "doctor.close_photo": "Закрити фото",
+  "doctor.cta_see_centers": "Переглянути центри",
+  "doctor.demo_note": "Демонстраційний розклад — дані не справжні.",
+  "doctor.doctors_meta_desc": "Лікарі та фахівці державної системи охорони здоров'я {city} за спеціальністю, центром та найближчим вільним часом.",
+  "doctor.meta_intro": "{name}, {specialty} у державній системі охорони здоров'я {city}.",
+  "doctor.next_slot_heading": "Перший вільний запис",
+  "doctor.next_slot_heading_service": "Перший вільний запис у {service}",
+  "doctor.next_slot_note": "Це найближчий час, але не єдиний: ти можеш обрати інший день або годину.",
+  "doctor.no_appointment_fallback": "Немає записів",
+  "doctor.search_placeholder": "Шукати лікаря або спеціальність",
+  "doctor.service_link": "Переглянути послугу: {service}",
+  "doctor.sees_at": "Приймає в",
+  "doctor.title_f": "Д-р",
+  "doctor.title_m": "Д-р",
+  "doctor.title_specialty_city": "{name} — {specialty} у {city}",
+  "doctor.workshops_meta_desc": "Безкоштовні групи та семінари {network}: коли вони збираються, де і як взяти участь.",
+  "doctor.services_line": "Приймає: {services}"
+}

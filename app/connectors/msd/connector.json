@@ -1,0 +1,8 @@
+{
+  "id": "msd",
+  "country": "AR",
+  "capability": "slot_source",
+  "default": true,
+  "config_keys": [],
+  "description": "Mi Salud Digital (MSD, Buenos Aires province) — reads the offline-refreshed data/msd_turnos.json dump (tools/msd_pull.py, a LaunchAgent every 30 min; webdata/msd_turnos.json is the committed prod snapshot Coolify actually serves) to show live third-party appointment availability in the patient wizard's 'Cuando' step. No network at request time, no config keys — a missing/stale dump degrades to empty, the wizard falls back to solicitud-con-orden. Hospital de Pinamar itself is NOT in MSD's online system (packs/ar-b/msd-institutions.json only maps the four centers that are). The installation default for slot_source (\"default\": true): the other registered slot_source, webturno, is deliberately not wired live."
+}

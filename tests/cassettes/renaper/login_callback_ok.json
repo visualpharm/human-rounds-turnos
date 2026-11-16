@@ -1,0 +1,63 @@
+{
+  "connector": "renaper",
+  "scenario": "login_callback_ok",
+  "recorded_at": "2026-08-05T23:44:28.959942+00:00",
+  "source": "Hand-driven through the real OIDC client (auth_renaper.py's _claims_reales/_post_form) against an in-process fake upstream — id.argentina.gob.ar is not reachable/credentialed from this environment (the RENAPER/Mi Argentina contract described in auth_renaper.py's module docstring hadn't shipped test credentials as of this recording). Token+userinfo response shapes match the standard OIDC authorization-code exchange auth_renaper.py's own code reads (access_token/id_token, then the userinfo claims _extraer_datos parses). Produced by running the real client through this cassette engine's own recorder (tests/cassettes/_vcr.py, TURNOS_CASSETTE_MODE=record), then PII-scrubbed the same way a live recording would be — though the identity fed in is auth_renaper.py's OWN _claims_fake() placeholder persona ('Prueba Renaper', DNI 99000001, the synthetic test-identity range renaper.py's stub provider already seeds), never a real citizen. Re-record against the real IDP (scripts/record_cassette.py --connector renaper --scenario login_callback_ok) once RENAPER test credentials exist, and diff-review before committing, per Area 3's doctrine.",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/token/",
+      "query": {},
+      "request_body": "grant_type=authorization_code&code=test-authorization-code&client_id=test-client-id&client_secret=test-client-secret&redirect_uri=https%3A%2F%2Fdemo.humanrounds.org%2Fauth%2Frenaper%2Fcallback",
+      "request_body_kind": "text",
+      "request_headers": {
+        "Content-type": "application/x-www-form-urlencoded"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": {
+          "access_token": "[credencial 1]",
+          "id_token": "[credencial 2]",
+          "token_type": "Bearer",
+          "expires_in": 3600
+        },
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/userinfo/",
+      "query": {},
+      "request_body": null,
+      "request_body_kind": null,
+      "request_headers": {
+        "Content-type": "application/x-www-form-urlencoded"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": {
+          "sub": "renaper-test-subject",
+          "dni": "[documento 1]",
+          "given_name": "[nombre 1]",
+          "family_name": "[nombre 2]",
+          "birthdate": "[nacimiento 1]",
+          "gender": "F",
+          "email": "[email 1]"
+        },
+        "body_kind": "json"
+      }
+    }
+  ]
+}

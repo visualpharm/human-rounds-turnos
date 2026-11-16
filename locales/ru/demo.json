@@ -1,0 +1,11 @@
+{
+  "_comment": "The public demo bar and its notices.",
+  "demo.banner.admin": "Демо. Данные вымышленные; изменения сбрасываются.",
+  "demo.banner.aria": "Навигация по демо-версии",
+  "demo.banner.language_label": "Язык",
+  "demo.banner.link_admin": "Управление",
+  "demo.banner.link_doctor_demo": "Консоль врача",
+  "demo.banner.link_patient_demo": "Пациент",
+  "demo.banner.link_public_site": "Публичный сайт",
+  "demo.banner.public": "Демо. Все данные вымышленные."
+}

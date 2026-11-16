@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSI Humanizador — ajustes</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>HSI Humanizador</h1>
+
+    <form id="form">
+      <div class="tarjeta">
+        <fieldset>
+          <legend>¿Con qué HSI trabajás?</legend>
+          <div id="presets"></div>
+          <label class="opcion">
+            <input type="radio" name="hsi" value="otra">
+            <span>Otra dirección</span>
+          </label>
+          <input type="url" id="otra" placeholder="https://" aria-label="Dirección de HSI" hidden>
+        </fieldset>
+
+        <fieldset>
+          <legend id="t-institucion">¿En qué institución de HSI?</legend>
+          <select id="institucion" aria-labelledby="t-institucion"></select>
+          <div class="numero" id="fila-numero" hidden>
+            <input type="text" id="institucionId" inputmode="numeric" autocomplete="off" aria-label="Número de la institución en HSI" placeholder="Número">
+            <button type="button" class="info" id="info" aria-expanded="false" aria-controls="ayuda-numero" title="Dónde encuentro el número">
+              <img src="icons/info.svg" alt="Dónde encuentro el número" width="24" height="24">
+            </button>
+          </div>
+          <div class="ayuda" id="ayuda-numero" hidden>
+            <ol>
+              <li>Entrá a HSI con tu usuario.</li>
+              <li>En «Instituciones», elegí la tuya.</li>
+              <li>Mirá la barra de direcciones: el número va después de <b>/institucion/</b>, por ejemplo …/institucion/<b>1086</b>/…</li>
+            </ol>
+            <a href="guia/guia.html#institucion" target="_blank" rel="noopener">Guía para la mesa de entradas</a>
+          </div>
+        </fieldset>
+
+        <fieldset id="sitios">
+          <legend>¿Dónde ves los turnos?</legend>
+          <div id="sitios-lista"></div>
+          <label class="opcion">
+            <input type="radio" name="turnos" value="otra" id="turnos-otra">
+            <span>Otra dirección</span>
+          </label>
+          <input type="url" id="turnosPropio" placeholder="https://" aria-label="Dirección donde ves los turnos" hidden>
+        </fieldset>
+      </div>
+
+      <div class="tarjeta"><fieldset>
+        <legend>¿Cómo cargo los turnos?</legend>
+        <label class="opcion">
+          <input type="radio" name="modo" value="manual" id="modo-manual">
+          <span>Solo copiar el DNI y abrir HSI</span>
+        </label>
+        <label class="opcion">
+          <input type="radio" name="modo" value="boton" id="modo-boton">
+          <span>Cargar el turno con un toque en la fila</span>
+        </label>
+        <label class="opcion">
+          <input type="radio" name="modo" value="auto" id="modo-auto">
+          <span>Completar el paciente mientras escribo el DNI en HSI</span>
+        </label>
+      </fieldset></div>
+
+      <div class="tarjeta"><fieldset>
+        <legend>Al cargar un turno</legend>
+        <label class="opcion" id="fila-al-aprobar">
+          <input type="checkbox" id="cargarAlAprobar">
+          <span>Cargar en HSI apenas apruebo o creo un turno</span>
+        </label>
+        <label class="opcion" id="fila-guardar-solo" hidden>
+          <input type="checkbox" id="guardarSolo">
+          <span>Guardar solo, sin que yo toque Confirmar</span>
+        </label>
+        <label class="opcion">
+          <input type="checkbox" id="mostrarPasos">
+          <span>Ir despacio, mostrando cada paso</span>
+        </label>
+      </fieldset></div>
+
+      <div class="pie">
+        <button type="submit" id="guardar">Guardar</button>
+        <p id="estado" role="status"></p>
+      </div>
+    </form>
+    <p id="version"></p>
+  </main>
+  <script src="lib/shared.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

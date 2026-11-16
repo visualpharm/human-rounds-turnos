@@ -1,0 +1,4244 @@
+{
+ "base64url": {
+  "app.auth.passkeys:b64u": {
+   "'x'": {
+    "message": "a bytes-like object is required, not 'str'",
+    "raised": "TypeError"
+   },
+   "5": {
+    "message": "a bytes-like object is required, not 'int'",
+    "raised": "TypeError"
+   },
+   "None": {
+    "message": "a bytes-like object is required, not 'NoneType'",
+    "raised": "TypeError"
+   },
+   "b''": {
+    "value": "''"
+   },
+   "b'\\x00'": {
+    "value": "'AA'"
+   },
+   "b'\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\t\\n\\x0b\\x0c\\r\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f !\"#$%&\\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\\x7f\\x80\\x81\\x82\\x83\\x84\\x85\\x86\\x87\\x88\\x89\\x8a\\x8b\\x8c\\x8d\\x8e\\x8f\\x90\\x91\\x92\\x93\\x94\\x95\\x96\\x97\\x98\\x99\\x9a\\x9b\\x9c\\x9d\\x9e\\x9f\\xa0\\xa1\\xa2\\xa3\\xa4\\xa5\\xa6\\xa7\\xa8\\xa9\\xaa\\xab\\xac\\xad\\xae\\xaf\\xb0\\xb1\\xb2\\xb3\\xb4\\xb5\\xb6\\xb7\\xb8\\xb9\\xba\\xbb\\xbc\\xbd\\xbe\\xbf\\xc0\\xc1\\xc2\\xc3\\xc4\\xc5\\xc6\\xc7\\xc8\\xc9\\xca\\xcb\\xcc\\xcd\\xce\\xcf\\xd0\\xd1\\xd2\\xd3\\xd4\\xd5\\xd6\\xd7\\xd8\\xd9\\xda\\xdb\\xdc\\xdd\\xde\\xdf\\xe0\\xe1\\xe2\\xe3\\xe4\\xe5\\xe6\\xe7\\xe8\\xe9\\xea\\xeb\\xec\\xed\\xee\\xef\\xf0\\xf1\\xf2\\xf3\\xf4\\xf5\\xf6\\xf7\\xf8\\xf9\\xfa\\xfb\\xfc\\xfd\\xfe\\xff'": {
+    "value": "'AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0-P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn-AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq-wsbKztLW2t7i5uru8vb6_wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t_g4eLj5OXm5-jp6uvs7e7v8PHy8_T19vf4-fr7_P3-_w'"
+   },
+   "b'\\xfb\\xff'": {
+    "value": "'-_8'"
+   },
+   "b'hello world'": {
+    "value": "'aGVsbG8gd29ybGQ'"
+   },
+   "bytearray(b'ab')": {
+    "value": "'YWI'"
+   }
+  },
+  "app.auth.passkeys:b64u_dec": {
+   "' AA '": {
+    "message": "Incorrect padding",
+    "raised": "Error"
+   },
+   "'%%%%'": {
+    "value": "b''"
+   },
+   "''": {
+    "value": "b''"
+   },
+   "'+/+/'": {
+    "value": "b'\\xfb\\xff\\xbf'"
+   },
+   "'-_-_'": {
+    "value": "b'\\xfb\\xff\\xbf'"
+   },
+   "'////'": {
+    "value": "b'\\xff\\xff\\xff'"
+   },
+   "'A'": {
+    "message": "Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4",
+    "raised": "Error"
+   },
+   "'AA'": {
+    "value": "b'\\x00'"
+   },
+   "'AA='": {
+    "value": "b'\\x00'"
+   },
+   "'AA=='": {
+    "value": "b'\\x00'"
+   },
+   "'AAA'": {
+    "value": "b'\\x00\\x00'"
+   },
+   "'AAAA'": {
+    "value": "b'\\x00\\x00\\x00'"
+   },
+   "'____'": {
+    "value": "b'\\xff\\xff\\xff'"
+   },
+   "'aGVsbG8gd29ybGQ'": {
+    "value": "b'hello world'"
+   },
+   "'aGVsbG8gd29ybGQ='": {
+    "value": "b'hello world'"
+   },
+   "'é'": {
+    "message": "string argument should contain only ASCII characters",
+    "raised": "ValueError"
+   },
+   "0": {
+    "value": "b''"
+   },
+   "123": {
+    "value": "b'\\xd7m'"
+   },
+   "False": {
+    "value": "b''"
+   },
+   "None": {
+    "value": "b''"
+   },
+   "b'AA'": {
+    "value": "b'l\\x00'"
+   }
+  },
+  "app.auth.webauthn_adapter:_b64u": {
+   "'x'": {
+    "message": "a bytes-like object is required, not 'str'",
+    "raised": "TypeError"
+   },
+   "5": {
+    "message": "a bytes-like object is required, not 'int'",
+    "raised": "TypeError"
+   },
+   "None": {
+    "message": "a bytes-like object is required, not 'NoneType'",
+    "raised": "TypeError"
+   },
+   "b''": {
+    "value": "''"
+   },
+   "b'\\x00'": {
+    "value": "'AA'"
+   },
+   "b'\\x00\\x01\\x02\\x03\\x04\\x05\\x06\\x07\\x08\\t\\n\\x0b\\x0c\\r\\x0e\\x0f\\x10\\x11\\x12\\x13\\x14\\x15\\x16\\x17\\x18\\x19\\x1a\\x1b\\x1c\\x1d\\x1e\\x1f !\"#$%&\\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\\\]^_`abcdefghijklmnopqrstuvwxyz{|}~\\x7f\\x80\\x81\\x82\\x83\\x84\\x85\\x86\\x87\\x88\\x89\\x8a\\x8b\\x8c\\x8d\\x8e\\x8f\\x90\\x91\\x92\\x93\\x94\\x95\\x96\\x97\\x98\\x99\\x9a\\x9b\\x9c\\x9d\\x9e\\x9f\\xa0\\xa1\\xa2\\xa3\\xa4\\xa5\\xa6\\xa7\\xa8\\xa9\\xaa\\xab\\xac\\xad\\xae\\xaf\\xb0\\xb1\\xb2\\xb3\\xb4\\xb5\\xb6\\xb7\\xb8\\xb9\\xba\\xbb\\xbc\\xbd\\xbe\\xbf\\xc0\\xc1\\xc2\\xc3\\xc4\\xc5\\xc6\\xc7\\xc8\\xc9\\xca\\xcb\\xcc\\xcd\\xce\\xcf\\xd0\\xd1\\xd2\\xd3\\xd4\\xd5\\xd6\\xd7\\xd8\\xd9\\xda\\xdb\\xdc\\xdd\\xde\\xdf\\xe0\\xe1\\xe2\\xe3\\xe4\\xe5\\xe6\\xe7\\xe8\\xe9\\xea\\xeb\\xec\\xed\\xee\\xef\\xf0\\xf1\\xf2\\xf3\\xf4\\xf5\\xf6\\xf7\\xf8\\xf9\\xfa\\xfb\\xfc\\xfd\\xfe\\xff'": {
+    "value": "'AAECAwQFBgcICQoLDA0ODxAREhMUFRYXGBkaGxwdHh8gISIjJCUmJygpKissLS4vMDEyMzQ1Njc4OTo7PD0-P0BBQkNERUZHSElKS0xNTk9QUVJTVFVWV1hZWltcXV5fYGFiY2RlZmdoaWprbG1ub3BxcnN0dXZ3eHl6e3x9fn-AgYKDhIWGh4iJiouMjY6PkJGSk5SVlpeYmZqbnJ2en6ChoqOkpaanqKmqq6ytrq-wsbKztLW2t7i5uru8vb6_wMHCw8TFxsfIycrLzM3Oz9DR0tPU1dbX2Nna29zd3t_g4eLj5OXm5-jp6uvs7e7v8PHy8_T19vf4-fr7_P3-_w'"
+   },
+   "b'\\xfb\\xff'": {
+    "value": "'-_8'"
+   },
+   "b'hello world'": {
+    "value": "'aGVsbG8gd29ybGQ'"
+   },
+   "bytearray(b'ab')": {
+    "value": "'YWI'"
+   }
+  },
+  "app.auth.webauthn_adapter:_b64u_dec": {
+   "' AA '": {
+    "message": "Incorrect padding",
+    "raised": "Error"
+   },
+   "'%%%%'": {
+    "value": "b''"
+   },
+   "''": {
+    "value": "b''"
+   },
+   "'+/+/'": {
+    "value": "b'\\xfb\\xff\\xbf'"
+   },
+   "'-_-_'": {
+    "value": "b'\\xfb\\xff\\xbf'"
+   },
+   "'////'": {
+    "value": "b'\\xff\\xff\\xff'"
+   },
+   "'A'": {
+    "message": "Invalid base64-encoded string: number of data characters (1) cannot be 1 more than a multiple of 4",
+    "raised": "Error"
+   },
+   "'AA'": {
+    "value": "b'\\x00'"
+   },
+   "'AA='": {
+    "value": "b'\\x00'"
+   },
+   "'AA=='": {
+    "value": "b'\\x00'"
+   },
+   "'AAA'": {
+    "value": "b'\\x00\\x00'"
+   },
+   "'AAAA'": {
+    "value": "b'\\x00\\x00\\x00'"
+   },
+   "'____'": {
+    "value": "b'\\xff\\xff\\xff'"
+   },
+   "'aGVsbG8gd29ybGQ'": {
+    "value": "b'hello world'"
+   },
+   "'aGVsbG8gd29ybGQ='": {
+    "value": "b'hello world'"
+   },
+   "'é'": {
+    "message": "string argument should contain only ASCII characters",
+    "raised": "ValueError"
+   },
+   "0": {
+    "value": "b''"
+   },
+   "123": {
+    "value": "b'\\xd7m'"
+   },
+   "False": {
+    "value": "b''"
+   },
+   "None": {
+    "value": "b''"
+   },
+   "b'AA'": {
+    "value": "b'l\\x00'"
+   }
+  }
+ },
+ "client_host": {
+  "app.auth.admin_auth_router:_client_host": {
+   "('', 0)": {
+    "value": "''"
+   },
+   "('1.2.3.4', 5000)": {
+    "value": "'1.2.3.4'"
+   },
+   "('::1', 1)": {
+    "value": "'::1'"
+   },
+   "('fe80::1%eth0', 9)": {
+    "value": "'fe80::1%eth0'"
+   },
+   "None": {
+    "value": "''"
+   },
+   "no_client_key": {
+    "value": "''"
+   }
+  },
+  "app.auth.passkeys_router:_client_host": {
+   "('', 0)": {
+    "value": "''"
+   },
+   "('1.2.3.4', 5000)": {
+    "value": "'1.2.3.4'"
+   },
+   "('::1', 1)": {
+    "value": "'::1'"
+   },
+   "('fe80::1%eth0', 9)": {
+    "value": "'fe80::1%eth0'"
+   },
+   "None": {
+    "value": "''"
+   },
+   "no_client_key": {
+    "value": "''"
+   }
+  },
+  "app.cuentas.accounts_router:_client_host": {
+   "('', 0)": {
+    "value": "''"
+   },
+   "('1.2.3.4', 5000)": {
+    "value": "'1.2.3.4'"
+   },
+   "('::1', 1)": {
+    "value": "'::1'"
+   },
+   "('fe80::1%eth0', 9)": {
+    "value": "'fe80::1%eth0'"
+   },
+   "None": {
+    "value": "''"
+   },
+   "no_client_key": {
+    "value": "''"
+   }
+  },
+  "app.modules.intake.interview_patient_router:_client_host": {
+   "('', 0)": {
+    "value": "''"
+   },
+   "('1.2.3.4', 5000)": {
+    "value": "'1.2.3.4'"
+   },
+   "('::1', 1)": {
+    "value": "'::1'"
+   },
+   "('fe80::1%eth0', 9)": {
+    "value": "'fe80::1%eth0'"
+   },
+   "None": {
+    "value": "''"
+   },
+   "no_client_key": {
+    "value": "''"
+   }
+  }
+ },
+ "errors": {
+  "app.admin_panel.admin_account:AccountError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "AccountError"
+   }
+  },
+  "app.admin_panel.admin_preferences:PreferenceError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "PreferenceError"
+   }
+  },
+  "app.admin_panel.doctor_patients:DoctorPatientsError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "status"
+    ],
+    "body": "'-'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "DoctorPatientsError"
+   }
+  },
+  "app.modules.turnos.doctor_appointments:DomainError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'error': 'x', 'n': [1]}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "'no'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "['a']",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "5",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "None",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'k': 'v'}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "DomainError"
+   }
+  },
+  "app.ops.demo_installation:DemoAccessError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'error': 'x', 'n': [1]}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "'no'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "['a']",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "5",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "None",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'k': 'v'}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "DemoAccessError"
+   }
+  },
+  "app.patient_web.branding:BrandingError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'error': 'x', 'n': [1]}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "'no'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "['a']",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "5",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "None",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'k': 'v'}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "BrandingError"
+   }
+  },
+  "app.patient_web.doctor_photos:DoctorPhotoError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'error': 'x', 'n': [1]}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "'no'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "['a']",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "5",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "None",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'k': 'v'}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "DoctorPhotoError"
+   }
+  },
+  "app.patient_web.legal:LegalError": {
+   "(400, {'error': 'x', 'n': [1]})": {
+    "args": "({'error': 'x', 'n': [1]},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'error': 'x', 'n': [1]}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "400",
+    "str": "{'error': 'x', 'n': [1]}"
+   },
+   "(403, {})": {
+    "args": "({},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "403",
+    "str": "{}"
+   },
+   "(404, 'no')": {
+    "args": "('no',)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "'no'",
+    "is_exception": true,
+    "runtime": false,
+    "status": "404",
+    "str": "no"
+   },
+   "(409, ['a'])": {
+    "args": "(['a'],)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "['a']",
+    "is_exception": true,
+    "runtime": false,
+    "status": "409",
+    "str": "['a']"
+   },
+   "(418, 5)": {
+    "args": "(5,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "5",
+    "is_exception": true,
+    "runtime": false,
+    "status": "418",
+    "str": "5"
+   },
+   "(500, None)": {
+    "args": "(None,)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "None",
+    "is_exception": true,
+    "runtime": false,
+    "status": "500",
+    "str": "None"
+   },
+   "keywords": {
+    "args": "({'k': 'v'},)",
+    "attrs": [
+     "body",
+     "status"
+    ],
+    "body": "{'k': 'v'}",
+    "is_exception": true,
+    "runtime": false,
+    "status": "422",
+    "str": "{'k': 'v'}"
+   },
+   "raised_and_caught": {
+    "message": "x",
+    "raised": "LegalError"
+   }
+  }
+ },
+ "header": {
+  "app.auth.turnstile:_header_value": {
+   "5": {
+    "value": "''"
+   },
+   "None": {
+    "value": "''"
+   },
+   "['Host']": {
+    "value": "''"
+   },
+   "missing_name": {
+    "value": "''"
+   },
+   "raises": {
+    "value": "''"
+   },
+   "starlette": {
+    "value": "'H.example'"
+   },
+   "{'Host': ' Space.Example '}": {
+    "value": "' Space.Example '"
+   },
+   "{'Host': ''}": {
+    "value": "''"
+   },
+   "{'Host': 'a'}": {
+    "value": "'a'"
+   },
+   "{'Host': 0}": {
+    "value": "''"
+   },
+   "{'Host': None}": {
+    "value": "''"
+   },
+   "{'host': 'x'}": {
+    "value": "''"
+   },
+   "{}": {
+    "value": "''"
+   }
+  },
+  "app.core.proxy_trust:_header_value": {
+   "5": {
+    "value": "''"
+   },
+   "None": {
+    "value": "''"
+   },
+   "['Host']": {
+    "value": "''"
+   },
+   "missing_name": {
+    "value": "''"
+   },
+   "raises": {
+    "value": "''"
+   },
+   "starlette": {
+    "value": "'H.example'"
+   },
+   "{'Host': ' Space.Example '}": {
+    "value": "' Space.Example '"
+   },
+   "{'Host': ''}": {
+    "value": "''"
+   },
+   "{'Host': 'a'}": {
+    "value": "'a'"
+   },
+   "{'Host': 0}": {
+    "value": "''"
+   },
+   "{'Host': None}": {
+    "value": "''"
+   },
+   "{'host': 'x'}": {
+    "value": "''"
+   },
+   "{}": {
+    "value": "''"
+   }
+  }
+ },
+ "json": {
+  "app.auth.admin_auth:parse_json_body": {
+   "None": {
+    "value": "{}"
+   },
+   "b'   '": {
+    "message": "Expecting value: line 1 column 4 (char 3)",
+    "raised": "JSONDecodeError"
+   },
+   "b'\"texto\"'": {
+    "value": "'texto'"
+   },
+   "b''": {
+    "value": "{}"
+   },
+   "b'0'": {
+    "value": "0"
+   },
+   "b'[1, 2]'": {
+    "value": "[1, 2]"
+   },
+   "b'\\xef\\xbb\\xbf{}'": {
+    "message": "Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'\\xff\\xfe\\xff\\xfe{\\x00}\\x00'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'\\xff\\xfe{}'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'not json'": {
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'null'": {
+    "value": "None"
+   },
+   "b'{\"a\": '": {
+    "message": "Expecting value: line 1 column 7 (char 6)",
+    "raised": "JSONDecodeError"
+   },
+   "b'{\"a\": 1, \"b\": [1, 2.5, null]}'": {
+    "value": "{'a': 1, 'b': [1, 2.5, None]}"
+   },
+   "b'{\"a\": NaN}'": {
+    "value": "{'a': nan}"
+   },
+   "b'{\"nombre\": \"\\xc3\\x91and\\xc3\\xba P\\xc3\\xa9rez \\xc2\\xbfok?\"}'": {
+    "value": "{'nombre': 'Ñandú Pérez ¿ok?'}"
+   },
+   "b'{}  \\n'": {
+    "value": "{}"
+   },
+   "b'{}'": {
+    "value": "{}"
+   },
+   "bytearray(b'')": {
+    "value": "{}"
+   },
+   "bytearray(b'[7]')": {
+    "value": "[7]"
+   }
+  },
+  "app.core.api_body:decode": {
+   "None": {
+    "value": "{}"
+   },
+   "b'   '": {
+    "message": "Expecting value: line 1 column 4 (char 3)",
+    "raised": "JSONDecodeError"
+   },
+   "b'\"texto\"'": {
+    "value": "'texto'"
+   },
+   "b''": {
+    "value": "{}"
+   },
+   "b'0'": {
+    "value": "0"
+   },
+   "b'[1, 2]'": {
+    "value": "[1, 2]"
+   },
+   "b'\\xef\\xbb\\xbf{}'": {
+    "message": "Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'\\xff\\xfe\\xff\\xfe{\\x00}\\x00'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'\\xff\\xfe{}'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'not json'": {
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'null'": {
+    "value": "None"
+   },
+   "b'{\"a\": '": {
+    "message": "Expecting value: line 1 column 7 (char 6)",
+    "raised": "JSONDecodeError"
+   },
+   "b'{\"a\": 1, \"b\": [1, 2.5, null]}'": {
+    "value": "{'a': 1, 'b': [1, 2.5, None]}"
+   },
+   "b'{\"a\": NaN}'": {
+    "value": "{'a': nan}"
+   },
+   "b'{\"nombre\": \"\\xc3\\x91and\\xc3\\xba P\\xc3\\xa9rez \\xc2\\xbfok?\"}'": {
+    "value": "{'nombre': 'Ñandú Pérez ¿ok?'}"
+   },
+   "b'{}  \\n'": {
+    "value": "{}"
+   },
+   "b'{}'": {
+    "value": "{}"
+   },
+   "bytearray(b'')": {
+    "value": "{}"
+   },
+   "bytearray(b'[7]')": {
+    "value": "[7]"
+   }
+  },
+  "app.core.native_gate:read_json_body": {
+   "None": {
+    "value": "{}"
+   },
+   "b'   '": {
+    "message": "Expecting value: line 1 column 4 (char 3)",
+    "raised": "JSONDecodeError"
+   },
+   "b'\"texto\"'": {
+    "value": "'texto'"
+   },
+   "b''": {
+    "value": "{}"
+   },
+   "b'0'": {
+    "value": "0"
+   },
+   "b'[1, 2]'": {
+    "value": "[1, 2]"
+   },
+   "b'\\xef\\xbb\\xbf{}'": {
+    "message": "Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'\\xff\\xfe\\xff\\xfe{\\x00}\\x00'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'\\xff\\xfe{}'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'not json'": {
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'null'": {
+    "value": "None"
+   },
+   "b'{\"a\": '": {
+    "message": "Expecting value: line 1 column 7 (char 6)",
+    "raised": "JSONDecodeError"
+   },
+   "b'{\"a\": 1, \"b\": [1, 2.5, null]}'": {
+    "value": "{'a': 1, 'b': [1, 2.5, None]}"
+   },
+   "b'{\"a\": NaN}'": {
+    "value": "{'a': nan}"
+   },
+   "b'{\"nombre\": \"\\xc3\\x91and\\xc3\\xba P\\xc3\\xa9rez \\xc2\\xbfok?\"}'": {
+    "value": "{'nombre': 'Ñandú Pérez ¿ok?'}"
+   },
+   "b'{}  \\n'": {
+    "value": "{}"
+   },
+   "b'{}'": {
+    "value": "{}"
+   },
+   "bytearray(b'')": {
+    "value": "{}"
+   },
+   "bytearray(b'[7]')": {
+    "value": "[7]"
+   }
+  }
+ },
+ "language": {
+  "app.core.site_identity:_lang_primary": {
+   "' en '": {
+    "value": "' en '"
+   },
+   "''": {
+    "value": "''"
+   },
+   "'-'": {
+    "value": "''"
+   },
+   "'-en'": {
+    "value": "''"
+   },
+   "'EN-us'": {
+    "value": "'en'"
+   },
+   "'en'": {
+    "value": "'en'"
+   },
+   "'en-'": {
+    "value": "'en'"
+   },
+   "'es_AR'": {
+    "value": "'es_ar'"
+   },
+   "'pt-BR'": {
+    "value": "'pt'"
+   },
+   "'zh-Hans-CN'": {
+    "value": "'zh'"
+   },
+   "'ÑU-x'": {
+    "value": "'ñu'"
+   },
+   "5": {
+    "message": "'int' object has no attribute 'split'",
+    "raised": "AttributeError"
+   },
+   "False": {
+    "value": "''"
+   },
+   "None": {
+    "value": "''"
+   }
+  },
+  "app.core.translate:_primary": {
+   "' en '": {
+    "value": "' en '"
+   },
+   "''": {
+    "value": "''"
+   },
+   "'-'": {
+    "value": "''"
+   },
+   "'-en'": {
+    "value": "''"
+   },
+   "'EN-us'": {
+    "value": "'en'"
+   },
+   "'en'": {
+    "value": "'en'"
+   },
+   "'en-'": {
+    "value": "'en'"
+   },
+   "'es_AR'": {
+    "value": "'es_ar'"
+   },
+   "'pt-BR'": {
+    "value": "'pt'"
+   },
+   "'zh-Hans-CN'": {
+    "value": "'zh'"
+   },
+   "'ÑU-x'": {
+    "value": "'ñu'"
+   },
+   "5": {
+    "message": "'int' object has no attribute 'split'",
+    "raised": "AttributeError"
+   },
+   "False": {
+    "value": "''"
+   },
+   "None": {
+    "value": "''"
+   }
+  }
+ },
+ "legacy_names": {
+  "app.modules.turnos.waitlist": {
+   "interval_bad_new": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "2"
+    }
+   },
+   "interval_blank": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "2"
+    }
+   },
+   "interval_both": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "5"
+    }
+   },
+   "interval_neg": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "-4"
+    }
+   },
+   "interval_new": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "15"
+    }
+   },
+   "interval_none": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "2"
+    }
+   },
+   "interval_old": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "20"
+    }
+   },
+   "interval_zero": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_INTERVAL_MIN",
+      "",
+      "TURNOS_LISTA_ESPERA_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "0"
+    }
+   },
+   "off_new": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_OFF",
+      "",
+      "TURNOS_LISTA_ESPERA_OFF"
+     ]
+    ],
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[waitlist] desactivado (TURNOS_WAITLIST_OFF=1)\n"
+   },
+   "off_old": {
+    "calls": [
+     [
+      "TURNOS_WAITLIST_OFF",
+      "",
+      "TURNOS_LISTA_ESPERA_OFF"
+     ]
+    ],
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[waitlist] desactivado (TURNOS_WAITLIST_OFF=1)\n"
+   }
+  },
+  "app.notifications.reminders": {
+   "interval_bad_new": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "30"
+    }
+   },
+   "interval_blank": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "30"
+    }
+   },
+   "interval_both": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "5"
+    }
+   },
+   "interval_neg": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "-4"
+    }
+   },
+   "interval_new": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "15"
+    }
+   },
+   "interval_none": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "30"
+    }
+   },
+   "interval_old": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "20"
+    }
+   },
+   "interval_zero": {
+    "calls": [
+     [
+      "TURNOS_REMINDER_INTERVAL_MIN",
+      "",
+      "TURNOS_RECORDATORIO_INTERVAL_MIN"
+     ]
+    ],
+    "result": {
+     "value": "0"
+    }
+   },
+   "off_new": {
+    "calls": [
+     [
+      "TURNOS_REMINDERS_OFF",
+      "",
+      "TURNOS_RECORDATORIOS_OFF"
+     ]
+    ],
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[recordatorios] desactivado (TURNOS_REMINDERS_OFF=1)\n"
+   },
+   "off_old": {
+    "calls": [
+     [
+      "TURNOS_REMINDERS_OFF",
+      "",
+      "TURNOS_RECORDATORIOS_OFF"
+     ]
+    ],
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[recordatorios] desactivado (TURNOS_REMINDERS_OFF=1)\n"
+   }
+  }
+ },
+ "logs": {
+  "app.core.backup_lock:_log": {
+   "''": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] \n"
+   },
+   "'a\\nb'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] a\nb\n"
+   },
+   "'x'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] x\n"
+   },
+   "'ñ ✓'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] ñ ✓\n"
+   },
+   "5": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] 5\n"
+   },
+   "None": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] None\n"
+   }
+  },
+  "app.ops.data_backups:_log": {
+   "''": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] \n"
+   },
+   "'a\\nb'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] a\nb\n"
+   },
+   "'x'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] x\n"
+   },
+   "'ñ ✓'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] ñ ✓\n"
+   },
+   "5": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] 5\n"
+   },
+   "None": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] None\n"
+   }
+  },
+  "app.ops.purge_guard:_log": {
+   "''": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] \n"
+   },
+   "'a\\nb'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] a\nb\n"
+   },
+   "'x'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] x\n"
+   },
+   "'ñ ✓'": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] ñ ✓\n"
+   },
+   "5": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] 5\n"
+   },
+   "None": {
+    "result": {
+     "value": "None"
+    },
+    "stderr": "[backups] None\n"
+   }
+  }
+ },
+ "mail": {
+  "app.connectors.mailgun.adapter:MailgunConnector": {
+   "html": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {
+       "html": "<p>Ñ</p>"
+      }
+     ]
+    ],
+    "result": {
+     "value": "'sent-4'"
+    }
+   },
+   "html_empty": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {
+       "html": ""
+      }
+     ]
+    ],
+    "result": {
+     "value": "'sent-3'"
+    }
+   },
+   "html_none": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {}
+     ]
+    ],
+    "result": {
+     "value": "'sent-2'"
+    }
+   },
+   "html_positional": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {
+       "html": "<p>x</p>"
+      }
+     ]
+    ],
+    "result": {
+     "value": "'sent-5'"
+    }
+   },
+   "keywords": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "S",
+       "T"
+      ],
+      {}
+     ]
+    ],
+    "result": {
+     "value": "'sent-6'"
+    }
+   },
+   "meta": {
+    "abstract": [],
+    "capability": "'email_transport'",
+    "is_transport": true,
+    "send_signature": "(self, to, subject, text, html=None)"
+   },
+   "missing_config": {
+    "calls": [],
+    "result": {
+     "value": "['KEY_A', 'KEY_B']"
+    }
+   },
+   "probe": {
+    "calls": [],
+    "result": {
+     "value": "{'ok': True, 'detail': 'x'}"
+    }
+   },
+   "text_only": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {}
+     ]
+    ],
+    "result": {
+     "value": "'sent-1'"
+    }
+   }
+  },
+  "app.connectors.mailjet.adapter:MailjetConnector": {
+   "html": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {
+       "html": "<p>Ñ</p>"
+      }
+     ]
+    ],
+    "result": {
+     "value": "'sent-4'"
+    }
+   },
+   "html_empty": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {
+       "html": ""
+      }
+     ]
+    ],
+    "result": {
+     "value": "'sent-3'"
+    }
+   },
+   "html_none": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {}
+     ]
+    ],
+    "result": {
+     "value": "'sent-2'"
+    }
+   },
+   "html_positional": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {
+       "html": "<p>x</p>"
+      }
+     ]
+    ],
+    "result": {
+     "value": "'sent-5'"
+    }
+   },
+   "keywords": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "S",
+       "T"
+      ],
+      {}
+     ]
+    ],
+    "result": {
+     "value": "'sent-6'"
+    }
+   },
+   "meta": {
+    "abstract": [],
+    "capability": "'email_transport'",
+    "is_transport": true,
+    "send_signature": "(self, to, subject, text, html=None)"
+   },
+   "missing_config": {
+    "calls": [],
+    "result": {
+     "value": "['KEY_A', 'KEY_B']"
+    }
+   },
+   "probe": {
+    "calls": [],
+    "result": {
+     "value": "{'ok': True, 'detail': 'x'}"
+    }
+   },
+   "text_only": {
+    "calls": [
+     [
+      [
+       "a@b.c",
+       "Asunto",
+       "Texto"
+      ],
+      {}
+     ]
+    ],
+    "result": {
+     "value": "'sent-1'"
+    }
+   }
+  }
+ },
+ "prompts_decoder": {
+  "None": {
+   "value": "{}"
+  },
+  "b'   '": {
+   "message": "Expecting value: line 1 column 4 (char 3)",
+   "raised": "JSONDecodeError"
+  },
+  "b'\"texto\"'": {
+   "value": "'texto'"
+  },
+  "b''": {
+   "value": "{}"
+  },
+  "b'0'": {
+   "value": "{}"
+  },
+  "b'[1, 2]'": {
+   "value": "[1, 2]"
+  },
+  "b'\\xef\\xbb\\xbf{}'": {
+   "message": "Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)",
+   "raised": "JSONDecodeError"
+  },
+  "b'\\xff\\xfe\\xff\\xfe{\\x00}\\x00'": {
+   "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+   "raised": "UnicodeDecodeError"
+  },
+  "b'\\xff\\xfe{}'": {
+   "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+   "raised": "UnicodeDecodeError"
+  },
+  "b'not json'": {
+   "message": "Expecting value: line 1 column 1 (char 0)",
+   "raised": "JSONDecodeError"
+  },
+  "b'null'": {
+   "value": "{}"
+  },
+  "b'{\"a\": '": {
+   "message": "Expecting value: line 1 column 7 (char 6)",
+   "raised": "JSONDecodeError"
+  },
+  "b'{\"a\": 1, \"b\": [1, 2.5, null]}'": {
+   "value": "{'a': 1, 'b': [1, 2.5, None]}"
+  },
+  "b'{\"a\": NaN}'": {
+   "value": "{'a': nan}"
+  },
+  "b'{\"nombre\": \"\\xc3\\x91and\\xc3\\xba P\\xc3\\xa9rez \\xc2\\xbfok?\"}'": {
+   "value": "{'nombre': 'Ñandú Pérez ¿ok?'}"
+  },
+  "b'{}  \\n'": {
+   "value": "{}"
+  },
+  "b'{}'": {
+   "value": "{}"
+  },
+  "bytearray(b'')": {
+   "value": "{}"
+  },
+  "bytearray(b'[7]')": {
+   "value": "[7]"
+  }
+ },
+ "require_admin": {
+  "app.modules.turnos.booking_requests_router:_require_admin": {
+   "crash": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "message": "boom",
+     "raised": "RuntimeError"
+    }
+   },
+   "rejected": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": true
+     }
+    ],
+    "result": {
+     "message": "403: {'error': 'solo_admin'}",
+     "raised": "HTTPException"
+    }
+   },
+   "{'permitir_marca': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": true,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'permitir_medico': True, 'permitir_admisionista': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": true,
+      "permitir_marca": false,
+      "permitir_medico": true,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'permitir_reportes': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": true,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'solo_admin': False, 'permitir_medico': False, 'permitir_admisionista': False, 'permitir_reportes': False, 'permitir_marca': False}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'solo_admin': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": true
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   }
+  },
+  "app.modules.turnos.doctor_appointments_router:_require_admin": {
+   "crash": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "message": "boom",
+     "raised": "RuntimeError"
+    }
+   },
+   "rejected": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": true
+     }
+    ],
+    "result": {
+     "message": "403: {'error': 'solo_admin'}",
+     "raised": "HTTPException"
+    }
+   },
+   "{'permitir_marca': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": true,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'permitir_medico': True, 'permitir_admisionista': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": true,
+      "permitir_marca": false,
+      "permitir_medico": true,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'permitir_reportes': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": true,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'solo_admin': False, 'permitir_medico': False, 'permitir_admisionista': False, 'permitir_reportes': False, 'permitir_marca': False}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{'solo_admin': True}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": true
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   },
+   "{}": {
+    "flags": [
+     {
+      "permitir_admisionista": false,
+      "permitir_marca": false,
+      "permitir_medico": false,
+      "permitir_reportes": false,
+      "solo_admin": false
+     }
+    ],
+    "result": {
+     "value": "{'usuario': 'ana', 'request': 'r'}"
+    }
+   }
+  }
+ },
+ "responses": {
+  "not_found": {
+   "app.admin_panel.native_json:terminal_not_found": {
+    "body": "{\"error\": \"not found\"}",
+    "class": "Response",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "22"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "media_type": null,
+    "status": 404
+   },
+   "app.core.terminal_response:json_not_found_response": {
+    "body": "{\"error\": \"not found\"}",
+    "class": "Response",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "22"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "media_type": null,
+    "status": 404
+   },
+   "app.modules.turnos.appointment_confirm_router:_json_not_found": {
+    "body": "{\"error\": \"not found\"}",
+    "class": "Response",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "22"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "media_type": null,
+    "status": 404
+   }
+  },
+  "redirect": {
+   "app.cuentas.accounts_router:_redirect_response": {
+    "''": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       ""
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/\\r\\nX: y'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/\r\nX: y"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/a'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/a"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/with space'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/with space"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/x?y=1&z=%C3%B1'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/x?y=1&z=%C3%B1"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'https://example.org/ä'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "https://example.org/ä"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "5": {
+     "message": "'int' object has no attribute 'encode'",
+     "raised": "AttributeError"
+    },
+    "None": {
+     "message": "'NoneType' object has no attribute 'encode'",
+     "raised": "AttributeError"
+    }
+   },
+   "app.modules.intake._native_support:redirect_response": {
+    "''": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       ""
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/\\r\\nX: y'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/\r\nX: y"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/a'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/a"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/with space'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/with space"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/x?y=1&z=%C3%B1'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/x?y=1&z=%C3%B1"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'https://example.org/ä'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "https://example.org/ä"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "5": {
+     "message": "'int' object has no attribute 'encode'",
+     "raised": "AttributeError"
+    },
+    "None": {
+     "message": "'NoneType' object has no attribute 'encode'",
+     "raised": "AttributeError"
+    }
+   },
+   "app.patient_web.patient_site_router:_redirect_response": {
+    "''": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       ""
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/\\r\\nX: y'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/\r\nX: y"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/a'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/a"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/with space'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/with space"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'/x?y=1&z=%C3%B1'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "/x?y=1&z=%C3%B1"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "'https://example.org/ä'": {
+     "body": "",
+     "class": "Response",
+     "headers": [
+      [
+       "content-length",
+       "0"
+      ],
+      [
+       "location",
+       "https://example.org/ä"
+      ]
+     ],
+     "media_type": null,
+     "status": 302
+    },
+    "5": {
+     "message": "'int' object has no attribute 'encode'",
+     "raised": "AttributeError"
+    },
+    "None": {
+     "message": "'NoneType' object has no attribute 'encode'",
+     "raised": "AttributeError"
+    }
+   }
+  }
+ },
+ "service_name": {
+  "app.modules.turnos.appointment_page_support:service_name": {
+   "fails ' x '": {
+    "value": "' x '"
+   },
+   "fails ''": {
+    "value": "''"
+   },
+   "fails 'pediatria'": {
+    "value": "'pediatria'"
+   },
+   "fails 0": {
+    "value": "''"
+   },
+   "fails 7": {
+    "value": "'7'"
+   },
+   "fails None": {
+    "value": "''"
+   },
+   "none ' x '": {
+    "value": "None"
+   },
+   "none ''": {
+    "value": "None"
+   },
+   "none 'pediatria'": {
+    "value": "None"
+   },
+   "none 0": {
+    "value": "None"
+   },
+   "none 7": {
+    "value": "None"
+   },
+   "none None": {
+    "value": "None"
+   },
+   "ok ' x '": {
+    "value": "'Servicio  x '"
+   },
+   "ok ''": {
+    "value": "'Servicio '"
+   },
+   "ok 'pediatria'": {
+    "value": "'Servicio pediatria'"
+   },
+   "ok 0": {
+    "value": "'Servicio 0'"
+   },
+   "ok 7": {
+    "value": "'Servicio 7'"
+   },
+   "ok None": {
+    "value": "'Servicio None'"
+   }
+  },
+  "app.modules.turnos.remedies:_service_name": {
+   "fails ' x '": {
+    "value": "' x '"
+   },
+   "fails ''": {
+    "value": "''"
+   },
+   "fails 'pediatria'": {
+    "value": "'pediatria'"
+   },
+   "fails 0": {
+    "value": "''"
+   },
+   "fails 7": {
+    "value": "'7'"
+   },
+   "fails None": {
+    "value": "''"
+   },
+   "none ' x '": {
+    "value": "None"
+   },
+   "none ''": {
+    "value": "None"
+   },
+   "none 'pediatria'": {
+    "value": "None"
+   },
+   "none 0": {
+    "value": "None"
+   },
+   "none 7": {
+    "value": "None"
+   },
+   "none None": {
+    "value": "None"
+   },
+   "ok ' x '": {
+    "value": "'Servicio  x '"
+   },
+   "ok ''": {
+    "value": "'Servicio '"
+   },
+   "ok 'pediatria'": {
+    "value": "'Servicio pediatria'"
+   },
+   "ok 0": {
+    "value": "'Servicio 0'"
+   },
+   "ok 7": {
+    "value": "'Servicio 7'"
+   },
+   "ok None": {
+    "value": "'Servicio None'"
+   }
+  }
+ },
+ "session_user": {
+  "app.cuentas.account_photo:_user": {
+   "boom": {
+    "result": {
+     "value": "None"
+    },
+    "seen": [
+     "REQ"
+    ]
+   },
+   "import_fails": {
+    "value": "None"
+   },
+   "none": {
+    "result": {
+     "value": "None"
+    },
+    "seen": [
+     "REQ"
+    ]
+   },
+   "user": {
+    "result": {
+     "value": "{'dni': '30123456', 'r': 'REQ'}"
+    },
+    "seen": [
+     "REQ"
+    ]
+   }
+  },
+  "app.modules.turnos.calendar_feed:_current_user": {
+   "boom": {
+    "result": {
+     "value": "None"
+    },
+    "seen": [
+     "REQ"
+    ]
+   },
+   "import_fails": {
+    "value": "None"
+   },
+   "none": {
+    "result": {
+     "value": "None"
+    },
+    "seen": [
+     "REQ"
+    ]
+   },
+   "user": {
+    "result": {
+     "value": "{'dni': '30123456', 'r': 'REQ'}"
+    },
+    "seen": [
+     "REQ"
+    ]
+   }
+  }
+ },
+ "settings": {
+  "int_env": {
+   "app.ai.abuse_guard:_int_env": {
+    "' 7 '": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "7"
+     }
+    },
+    "''": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'+4'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "4"
+     }
+    },
+    "'-3'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "-3"
+     }
+    },
+    "'0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "0"
+     }
+    },
+    "'0x10'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'1.5'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'1_0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "10"
+     }
+    },
+    "'1e3'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'5'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "5"
+     }
+    },
+    "'5\\n'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "5"
+     }
+    },
+    "'abc'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'٣'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "3"
+     }
+    },
+    "12": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "12"
+     }
+    },
+    "None": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "RuntimeError('down')": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "message": "down",
+      "raised": "RuntimeError"
+     }
+    },
+    "ValueError('inside')": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "absent": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    }
+   },
+   "app.ai.ai_cooldown:_int_env": {
+    "' 7 '": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "7"
+     }
+    },
+    "''": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'+4'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "4"
+     }
+    },
+    "'-3'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "-3"
+     }
+    },
+    "'0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "0"
+     }
+    },
+    "'0x10'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'1.5'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'1_0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "10"
+     }
+    },
+    "'1e3'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'5'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "5"
+     }
+    },
+    "'5\\n'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "5"
+     }
+    },
+    "'abc'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'٣'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "3"
+     }
+    },
+    "12": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "12"
+     }
+    },
+    "None": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "RuntimeError('down')": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "message": "down",
+      "raised": "RuntimeError"
+     }
+    },
+    "ValueError('inside')": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "absent": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    }
+   },
+   "app.modules.chat.whatsapp_chat:_int_env": {
+    "' 7 '": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "7"
+     }
+    },
+    "''": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'+4'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "4"
+     }
+    },
+    "'-3'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "-3"
+     }
+    },
+    "'0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "0"
+     }
+    },
+    "'0x10'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'1.5'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'1_0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "10"
+     }
+    },
+    "'1e3'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'5'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "5"
+     }
+    },
+    "'5\\n'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "5"
+     }
+    },
+    "'abc'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "'٣'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "3"
+     }
+    },
+    "12": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "12"
+     }
+    },
+    "None": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "RuntimeError('down')": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "message": "down",
+      "raised": "RuntimeError"
+     }
+    },
+    "ValueError('inside')": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    },
+    "absent": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "42"
+     }
+    }
+   }
+  },
+  "text": {
+   "app.notifications.mail:setting": {
+    "'  x  '": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'x'"
+     }
+    },
+    "' ñ '": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'ñ'"
+     }
+    },
+    "''": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "'0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'0'"
+     }
+    },
+    "'\\tv\\n'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'v'"
+     }
+    },
+    "'plain'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'plain'"
+     }
+    },
+    "0": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "5": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "message": "'int' object has no attribute 'strip'",
+      "raised": "AttributeError"
+     }
+    },
+    "False": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "None": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "absent": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ],
+      [
+       "K",
+       "dflt",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "absent_default": {
+     "calls": [
+      [
+       "K",
+       "dflt",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'dflt'"
+     }
+    }
+   },
+   "app.notifications.mailgun:_get": {
+    "'  x  '": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'x'"
+     }
+    },
+    "' ñ '": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'ñ'"
+     }
+    },
+    "''": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "'0'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'0'"
+     }
+    },
+    "'\\tv\\n'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'v'"
+     }
+    },
+    "'plain'": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'plain'"
+     }
+    },
+    "0": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "5": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "message": "'int' object has no attribute 'strip'",
+      "raised": "AttributeError"
+     }
+    },
+    "False": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "None": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "absent": {
+     "calls": [
+      [
+       "K",
+       "",
+       null
+      ],
+      [
+       "K",
+       "dflt",
+       null
+      ]
+     ],
+     "result": {
+      "value": "''"
+     }
+    },
+    "absent_default": {
+     "calls": [
+      [
+       "K",
+       "dflt",
+       null
+      ]
+     ],
+     "result": {
+      "value": "'dflt'"
+     }
+    }
+   }
+  }
+ },
+ "signatures": {
+  "app.admin_panel.admin_account:AccountError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "message",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.admin_panel.admin_preferences:PreferenceError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "message",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.admin_panel.doctor_patients:DoctorPatientsError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "message",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.admin_panel.native_json:terminal_not_found": [],
+  "app.ai.abuse_guard:_int_env": [
+   [
+    "key",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "default",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.ai.ai_cooldown:_int_env": [
+   [
+    "key",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "default",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.admin_auth:parse_json_body": [
+   [
+    "raw_bytes",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.admin_auth_router:_client_host": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.passkeys:b64u": [
+   [
+    "data",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.passkeys:b64u_dec": [
+   [
+    "value",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.passkeys_router:_client_host": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.turnstile:_header_value": [
+   [
+    "headers",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "name",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.webauthn_adapter:_b64u": [
+   [
+    "data",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.auth.webauthn_adapter:_b64u_dec": [
+   [
+    "value",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.connectors.mailgun.adapter:MailgunConnector": [],
+  "app.connectors.mailjet.adapter:MailjetConnector": [],
+  "app.core.api_body:decode": [
+   [
+    "raw",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.core.backup_lock:_log": [
+   [
+    "msg",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.core.db_reports:_local": [
+   [
+    "column",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.core.db_slots:_at_art": [
+   [
+    "column",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.core.native_gate:read_json_body": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.core.proxy_trust:_header_value": [
+   [
+    "headers",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "name",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.core.site_identity:_lang_primary": [
+   [
+    "lang",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.core.terminal_response:json_not_found_response": [],
+  "app.core.translate:_primary": [
+   [
+    "lang",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.cuentas.account_photo:_user": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.cuentas.accounts_router:_client_host": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.cuentas.accounts_router:_redirect_response": [
+   [
+    "location",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.chat.whatsapp_chat:_int_env": [
+   [
+    "key",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "default",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.intake._native_support:redirect_response": [
+   [
+    "location",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.intake.interview_patient_router:_client_host": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.turnos.appointment_confirm_router:_json_not_found": [],
+  "app.modules.turnos.appointment_page_support:service_name": [
+   [
+    "sid",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.turnos.booking_requests_router:_require_admin": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "solo_admin",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_medico",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_admisionista",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_reportes",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_marca",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ]
+  ],
+  "app.modules.turnos.calendar_feed:_current_user": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.turnos.doctor_appointments:DomainError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "body",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.turnos.doctor_appointments_router:_require_admin": [
+   [
+    "request",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "solo_admin",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_medico",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_admisionista",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_reportes",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ],
+   [
+    "permitir_marca",
+    "POSITIONAL_OR_KEYWORD",
+    "False"
+   ]
+  ],
+  "app.modules.turnos.remedies:_service_name": [
+   [
+    "sid",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.modules.turnos.waitlist:_interval_min": [],
+  "app.notifications.mail:setting": [
+   [
+    "name",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "default",
+    "POSITIONAL_OR_KEYWORD",
+    "''"
+   ]
+  ],
+  "app.notifications.mailgun:_get": [
+   [
+    "name",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "default",
+    "POSITIONAL_OR_KEYWORD",
+    "''"
+   ]
+  ],
+  "app.notifications.reminders:_interval_min": [],
+  "app.ops.data_backups:_log": [
+   [
+    "msg",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.ops.demo_installation:DemoAccessError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "body",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.ops.purge_guard:_log": [
+   [
+    "msg",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.patient_web.branding:BrandingError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "body",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.patient_web.doctor_photos:DoctorPhotoError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "body",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.patient_web.legal:LegalError": [
+   [
+    "status",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ],
+   [
+    "body",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ],
+  "app.patient_web.patient_site_router:_redirect_response": [
+   [
+    "location",
+    "POSITIONAL_OR_KEYWORD",
+    "<class 'inspect._empty'>"
+   ]
+  ]
+ },
+ "sql": {
+  "app.core.db_reports:_local": {
+   "column": {
+    "class": "BinaryExpression",
+    "sql": "created AT TIME ZONE 'America/Argentina/Buenos_Aires'"
+   },
+   "now": {
+    "class": "BinaryExpression",
+    "sql": "now() AT TIME ZONE 'America/Argentina/Buenos_Aires'"
+   },
+   "patched_zone": "c AT TIME ZONE 'UTC'",
+   "qualified": {
+    "class": "BinaryExpression",
+    "sql": "appointment_at AT TIME ZONE 'America/Argentina/Buenos_Aires'"
+   }
+  },
+  "app.core.db_slots:_at_art": {
+   "column": {
+    "class": "BinaryExpression",
+    "sql": "created AT TIME ZONE 'America/Argentina/Buenos_Aires'"
+   },
+   "now": {
+    "class": "BinaryExpression",
+    "sql": "now() AT TIME ZONE 'America/Argentina/Buenos_Aires'"
+   },
+   "patched_zone": "c AT TIME ZONE 'UTC'",
+   "qualified": {
+    "class": "BinaryExpression",
+    "sql": "appointment_at AT TIME ZONE 'America/Argentina/Buenos_Aires'"
+   }
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "Если к аккаунту привязана электронная почта, ты получишь ссылку для выбора нового пароля.",
+  "admin.reset.mismatch": "Пароли не совпадают.",
+  "admin.reset.failed": "Не удалось сохранить. Запроси новую ссылку.",
+  "admin.reset.saved": "Пароль сохранён. Перейти в панель управления",
+  "admin.reset.network": "Ошибка сети. Попробуй ещё раз.",
+  "admin.reset.expired_title": "Срок действия ссылки истёк",
+  "admin.reset.expired_body": "Эта ссылка недействительна или уже была использована. Запроси новую на странице входа в панель.",
+  "admin.reset.login": "Вход в панель",
+  "admin.reset.password": "Новый пароль",
+  "admin.reset.title": "Выбери новый пароль",
+  "admin.reset.requirements": "Используй не менее 8 символов. Эту ссылку можно использовать только один раз.",
+  "admin.reset.confirm": "Повтори пароль",
+  "admin.reset.save": "Сохранить пароль",
+  "admin.reset.db_unavailable": "База данных недоступна.",
+  "admin.reset.expired": "Срок действия ссылки истёк или она уже использована. Запроси новую.",
+  "admin.reset.invalid_json": "Некорректный JSON.",
+  "admin.reset.username": "Твоё имя пользователя"
+}

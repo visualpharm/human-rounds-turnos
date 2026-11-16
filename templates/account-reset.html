@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{ '{{lang}}' }}" data-theme="{{ '{{tema}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{i18n_bootstrap}}' }}
+{{ '{{favicon}}' }}
+<title>{{ t('account.reset.title', 'Elegí tu contraseña nueva | {{sitio.brand}}') }}</title>
+<meta name="description" content="{{ t('account.reset.meta_description', 'Elegí una contraseña nueva para tu cuenta de {{sitio.brand}}.') }}">
+<meta name="robots" content="noindex,nofollow">
+{{ '{{fuentes}}' }}
+<link rel="stylesheet" href="{{ static('human-rounds.css') }}">
+{{ static_manifest() }}
+<style>
+  .wrap{max-width:1120px;margin:0 auto;padding:26px 24px 80px;}
+  .h1{margin:26px 0 8px;font-size:34px;line-height:1.16;font-weight:680;letter-spacing:-.02em;}
+  .lede{margin:0 0 6px;font-size:16px;line-height:1.55;color:var(--text-2);max-width:620px;}
+  /* This path runs when the native form itself did not load, so it cannot
+     depend on that module's injected styles. Error copy is not a link. */
+  .account-load-error{margin:18px 0 0;font-size:16px;line-height:1.5;color:var(--danger);}
+  a.stz-link{color:var(--link,var(--accent));}
+  a.stz-link:hover{color:var(--accent-hover);}
+  footer.site{border-top:1px solid var(--border-strong);margin-top:52px;padding-top:24px;display:flex;flex-direction:column;gap:12px;}
+  footer.site .fmision{margin:0;font-size:13.5px;color:var(--text-3);line-height:1.55;}
+  footer.site .flinks{display:flex;flex-wrap:wrap;gap:8px 24px;}
+  footer.site a{color:var(--link,var(--accent));font-size:14px;}
+  footer.site a:hover{color:var(--link-hover,var(--accent-hover));}
+  @media(max-width:600px){.wrap{padding:18px 16px 60px;}.h1{font-size:28px;}}
+</style>
+</head>
+<body>
+<header id="stznav" data-section=""></header>
+<script type="module" src="{{ static('platform/nav.mjs') }}"></script>
+<div class="wrap">
+  <h1 class="h1">{{ t('account.reset.h1', 'Elegí tu contraseña nueva') }}</h1>
+  <p class="lede" id="reset-lede">{{ t('account.reset.lede', 'Escribí la contraseña con la que vas a ingresar de ahora en más.') }}</p>
+  <div id="reset-host"><p style="color:var(--text-3);font-size:14px;">{{ t('account.reset.cargando', 'Cargando…') }}</p></div>
+  {% include "_site_footer.html" %}
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  "use strict";
+  var I18n = null;
+    var i18nReady = (typeof window !== "undefined" && window.SANA_STATIC && window.SANA_STATIC["platform/i18n.mjs"])
+      ? import(window.SANA_STATIC["platform/i18n.mjs"]).then(function (m) { I18n = m; return m; })
+      : Promise.resolve(null);
+    function T(key, vars, fallback) {
+    return I18n ? I18n.t(key, vars, fallback) : (fallback || key);
+  }
+  function showAccountLoadError() {
+    var host = document.getElementById("reset-host");
+    if (host) host.innerHTML = '<p class="account-load-error" role="alert">' +
+      T("account.error.formulario", null, "No se pudo cargar el formulario. Recargá la página.") + "</p>";
+  }
+  var accountUrl = window.SANA_STATIC && window.SANA_STATIC["platform/account-form.mjs"];
+  var accountReady = accountUrl
+    ? import(accountUrl)
+    : Promise.reject(new Error("[static] platform/account-form.mjs is not in window.SANA_STATIC"));
+  Promise.all([i18nReady, accountReady]).then(function (results) {
+  var Account = results[1];
+  var host = document.getElementById("reset-host");
+  var lede = document.getElementById("reset-lede");
+  var params = new URLSearchParams(location.search);
+  var token = params.get("token") || "";
+  if (!Account || typeof Account.renderReset !== "function") {
+    showAccountLoadError();
+    return;
+  }
+  // El link trae adónde volver (la reserva que la persona dejó a medio hacer);
+  // sin eso, o si no es un camino de este sitio, Mi cuenta como siempre.
+  var next = Account.safeNext(params.get("next"));
+  if (!token) {
+    lede.textContent = T("account.reset.link_invalido", null, "Este link no es válido.");
+    var pedir = "/account" + (next ? "?mode=login&next=" + encodeURIComponent(next) : "");
+    host.innerHTML = '<p style="font-size:14.5px;"><a class="stz-link" href="' + pedir.replace(/&/g, "&amp;").replace(/"/g, "&quot;") + '">' + T("account.reset.pedir_nuevo", null, "Pedí un link nuevo") + '</a></p>';
+    return;
+  }
+  Account.renderReset(host, {
+    token: token,
+    next: next,
+    onDone: function () {
+      lede.textContent = T("account.reset.actualizada", null, "Contraseña actualizada. Ya podés sacar turnos.");
+      window.location.href = next || "/account";
+    }
+  });
+}).catch(function () {
+  // Preserve the server-selected language if Account fails before i18n has
+  // finished importing; only an i18n failure itself may use the ES fallback.
+  return i18nReady.catch(function () { return null; }).then(showAccountLoadError);
+});
+});
+</script>
+</body>
+</html>

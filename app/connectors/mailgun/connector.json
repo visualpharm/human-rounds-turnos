@@ -1,0 +1,11 @@
+{
+  "id": "mailgun",
+  "country": "AR",
+  "capability": "email_transport",
+  "default": true,
+  "config_keys": [
+    "MAILGUN_API_KEY",
+    "MAILGUN_DOMAIN"
+  ],
+  "description": "Transactional email via the Mailgun HTTP API (MAILGUN_API_BASE picks the region; empty = US). Implementation stays in notifications/mailgun.py, wrapped in place like otp_send.py for waha/meta. The installation default: nothing configured keeps sending through Mailgun. Shared keys MAIL_FROM, MAIL_REPLY_TO and MAIL_ENABLED belong to notifications/mail.py."
+}

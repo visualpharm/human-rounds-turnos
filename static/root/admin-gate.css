@@ -1,0 +1,120 @@
+/* admin-gate.css — the ONE shared admin login-gate stylesheet (2026-08-31).
+
+   Both surfaces that render the gate load this file and nothing else for it:
+   admin.html (legacy /admin hash shell) and templates/admin/login.html
+   (direct /admin/login screen). The rules below moved VERBATIM out of
+   admin.html's inline <style> — that block no longer carries them, so there
+   is exactly one copy of each. base.html's whole-inline-copy of the old
+   admin.html <style> is the pre-existing declared-bounded Tier 5 exception
+   (see its own comment) and is deliberately untouched.
+
+   Contents: the page-level base the gate needs (:root vars, overflow), the
+   gate family (.gate*/.gp*), the gate brand (.adm-brand), and the button
+   base + [hidden] override the gate's own controls use. Panel-only variants
+   (.btn-accent/.btn-no/.btn-sm) stay in the panel shell; toast chrome lives
+   once in admin-shell.css. The login page has neither toast nor panel
+   buttons. Order inside this file preserves the original source order of
+   the moved rules.
+*/
+:root{ --rojo:var(--danger); --naranja:#c96f2e; }
+html{overflow-x:hidden;}
+
+/* login: standalone screen, ningún chrome de la app puede verse antes de
+   entrar — ni sidebar, ni nav, ni título de sección (responsable del producto, 2026-07-16). */
+.gate-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;}
+.gate-brand{display:flex;align-items:center;gap:9px;margin-bottom:18px;}
+/* Marca del gate de login (logo + "Admin de Turnos" en una línea). */
+.adm-brand{font-size:16px;font-weight:700;letter-spacing:-.01em;}
+
+.gate{max-width:420px;width:100%;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:30px 28px;box-sizing:border-box;}
+.gate h2{margin:0 0 8px;font-size:20px;}
+.gate p{margin:0 0 18px;color:var(--hint-ink);font-size:14px;}
+/* Etiqueta SIEMPRE arriba del campo (responsable del producto, 2026-09-18: el formulario era
+   chico y denso — "make them sparse enough for a fat finger"): input a
+   ancho completo, filas con aire y caja de ≥50px en vez de la grilla de
+   etiqueta lateral a 100px que dejaba inputs de ~250px. */
+.gate-row{display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:18px;}
+.gate-row>label{text-align:left;font-size:14px;color:var(--hint-ink,var(--text-2));}
+.gate input{font:inherit;font-size:16px;min-height:50px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--panel);color:var(--text);}
+.gate-row input{width:100%;}
+/* 6 dígitos + el letter-spacing tienen que entrar enteros: con 9ch el
+   placeholder se cortaba en «00000(» (hook de contenido que entra). */
+#gate-code{width:11ch;min-height:52px;font:600 20px/1.15 var(--font-mono);letter-spacing:.08em;}
+.gate .btn-ok{width:100%;justify-content:center;margin-top:6px;}
+.gate-btns{display:flex;flex-direction:column;gap:10px;}
+.gate-btns .btn{width:100%;justify-content:center;margin-top:0;}
+/* gate-passkey-alt — the passkey entrance is a quiet ALTERNATIVE, not a
+   second big "Entrar" pill (the product owner, 2026-09-15: two identical stacked
+   Entrar-buttons read as a scrambled duplicate). Centrado, link-like;
+   desde 2026-09-18 con caja de ≥44px: sigue siendo el camino secundario
+   pero agarra un dedo gordo. */
+.gate-btns .gate-passkey-alt{width:auto;align-self:center;margin-top:0;background:transparent;border:0;box-shadow:none;color:var(--link,var(--text-2,#5b625b));font-size:14px;padding:12px 18px;min-height:44px;}
+.gate-btns .gate-passkey-alt:hover{background:transparent;border:0;color:var(--link-hover,var(--text,#20231f));}
+.gate-btns .gate-passkey-alt:focus-visible{outline:2px solid var(--text,#20231f);outline-offset:2px;border-radius:6px;}
+/* gate-help — la línea "¿Olvidaste tu contraseña?" (2026-09-15): el staff
+   no tiene recuperación self-service, la dispara administración; el gate le
+   dice a quién pedirle en vez de dejarlo mirando el formulario. */
+.gate-help{margin:18px 2px 0;font-size:14px;line-height:1.5;color:var(--hint-ink);}
+.gate .err{color:var(--rojo);font-size:13.5px;margin:0 0 12px;min-height:1em;}
+/* pista del campo de código: alineada con los inputs (etiquetas arriba,
+   no hay columna de etiquetas que compensar). */
+.gate-hint{margin:-8px 0 14px;font-size:13px;color:var(--hint-ink);}
+
+/* panel del gate: "Humor de guardia" / "Consejos de uso" (panel_login.py) —
+   misma tarjeta que .gate, a la derecha del formulario. .gate-cols alinea
+   los TOPES de las dos tarjetas (las tabs quedan a la altura de la ventana
+   de login y no se mueven al cambiar de pestaña); .gate-wrap sigue
+   centrando el conjunto en el viewport. Abajo de ~920px se apila DEBAJO
+   del login (el form siempre primero). Tabs = links de texto (ui-rules).
+   Sin scroller: una tarjeta por día por persona (hash fingerprint+fecha,
+   ver gpInit). La pestaña elegida queda en localStorage (st_gp_tab) y
+   manda sobre la variante en visitas siguientes. */
+.gate-cols{display:flex;gap:26px;align-items:flex-start;justify-content:center;width:100%;}
+@media(max-width:920px){.gate-cols{flex-direction:column;align-items:center;}}
+/* 460px de tarjeta: los memes traducidos vienen en ~1100px, así que se los
+   puede mostrar más grandes sin pixelar; una imagen chica no se estira más
+   allá de su ancho natural (width:auto + max-width). */
+.gate-side{width:460px;max-width:100%;background:var(--panel);border:1px solid var(--border);
+  border-radius:14px;padding:20px 22px 18px;box-sizing:border-box;
+  display:flex;flex-direction:column;min-height:430px;}
+.gp-tabs{display:flex;gap:18px;margin:0 0 14px;font-size:13.5px;}
+.gp-tabs a{color:var(--hint-ink,var(--text-2));text-decoration:none;cursor:pointer;padding:1px 0;}
+.gp-tabs a:hover{color:var(--hover-ink);}
+.gp-tabs a.on{color:var(--accent);font-weight:650;}
+.gp-img{width:auto;max-width:100%;max-height:520px;margin:0 auto;object-fit:contain;border-radius:8px;display:block;}
+/* mnemónico del consejo (3:2, 1200px): más chico que el meme para que el
+   título+texto sigan entrando sin scroll en la misma tarjeta. */
+.gp-tip-img{max-height:280px;margin:0 auto 4px;}
+/* consejo del día: título + cuerpo con <b> de anclas + dónde vive (writing-
+   for-web: escaneable). El cuerpo va en 15px — se lee de una, no es letra chica. */
+.gp-tip-t{margin:6px 0 8px;font-size:16px;font-weight:700;letter-spacing:-.01em;color:var(--text);}
+.gp-tip{margin:0;font-size:15px;color:var(--hint-ink);line-height:1.6;}
+.gp-tip b{color:var(--text);font-weight:650;}
+.gp-tip-d{margin:12px 0 0;font-size:13px;color:var(--hint-ink);}
+
+/* `hidden` tiene que ganarle a cualquier display: .btn es inline-flex y el
+   atributo del navegador pierde por especificidad, así que un botón marcado
+   hidden se seguía viendo (pasó con el de passkeys). Antes se parcheaba caso
+   por caso (.svc-edit[hidden], .overturn-ctl[hidden]…); esta regla lo
+   resuelve para todo el panel. */
+[hidden]{display:none !important;}
+/* Base de botones del gate (Entrar / Entrar con passkey) — la MISMA base del
+   panel, movida acá para que la página de login independiente la comparta
+   sin copiarla. Las variantes only-panel (.btn-accent/.btn-no/.btn-sm)
+   siguen en el <style> de admin.html. */
+/* La FORMA del botón sale del tema: --btn-radius la define sólo
+   "humanrounds" (999px, la pastilla de cursor.com) y en "pinamar" no existe,
+   así que el fallback deja los 6px de siempre. Va en la base para que TODOS
+   los botones de una fila compartan la forma, no sólo el lleno. */
+.btn{display:inline-flex;align-items:center;gap:7px;border:0;cursor:pointer;font:500 13px var(--font);padding:6px 12px;border-radius:var(--btn-radius,6px);text-decoration:none;transition:filter .12s,transform .1s;}
+.btn:active{transform:translateY(1px);}
+.btn-ok{background:var(--btn-bg,var(--text));color:var(--btn-fg,#fff);}
+.btn-ok:hover{background-image:var(--hover-fill);}
+.btn-quiet{background:var(--btn2-bg,var(--bg-2));color:var(--btn2-fg,var(--text-2));border:1px solid var(--btn2-bd,var(--border));}
+.btn-quiet:hover{background:var(--btn2-bg-hover,var(--hover-bg-soft));border-color:var(--hover-bd);color:var(--hover-ink);}
+/* btn-lg — la variante grande del gate (el storybook sólo reusa la base de
+   13px sin tamaños; el responsable del producto pidió "a larger button from the storybook, and if
+   needed, create ones"). Caja de 52px y 15.5px de letra para el CTA del
+   login; el resto del panel sigue en la base de arriba — esta variante vive
+   sólo acá, DESPUÉS de la base para ganarle el font/padding. */
+.btn-lg{min-height:52px;padding:14px 20px;font:600 15.5px var(--font);gap:9px;}

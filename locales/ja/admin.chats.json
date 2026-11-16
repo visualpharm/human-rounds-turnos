@@ -1,0 +1,10 @@
+{
+  "admin.chats.empty": "まだ会話はありません。",
+  "admin.chats.failed": "会話を読み込めませんでした。",
+  "admin.chats.col_when": "最終アクティビティ",
+  "admin.chats.col_channel": "チャネル",
+  "admin.chats.col_first": "最初の質問",
+  "admin.chats.col_turns": "メッセージ数",
+  "admin.chats.channel_web": "サイト",
+  "admin.chats.channel_whatsapp": "WhatsApp"
+}

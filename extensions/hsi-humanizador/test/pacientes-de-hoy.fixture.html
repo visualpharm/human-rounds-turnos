@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <title>Pacientes de hoy — fixture</title>
+  <style>
+    :root{--accent-bd:#cde7d5;--accent-hover:#0d7d48;--panel:#fff;--hover-bg-soft:#eaf4ec;--text:#1c1f23;}
+    body{font:15px/1.4 system-ui,sans-serif;margin:32px;color:#1c1f23;}
+    h1{font-size:22px;}
+    table{border-collapse:collapse;width:100%;max-width:1100px;}
+    th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #d9dde3;vertical-align:middle;}
+    td[data-col="paciente"]{max-width:380px;white-space:nowrap;}
+  </style>
+</head>
+<body>
+  <!-- The same hooks the real «Pacientes de hoy» renders: tr[data-cola-row]
+       with td[data-col], fed by GET /api/admin/day-queue. -->
+  <h1>Pacientes de hoy</h1>
+  <table>
+    <thead><tr><th>Hora</th><th>Paciente</th><th>DNI</th><th>Médico</th></tr></thead>
+    <tbody id="filas"></tbody>
+  </table>
+  <script>
+    fetch("/api/admin/day-queue?dia=2026-10-09", { credentials: "same-origin" })
+      .then(function (r) { return r.json(); })
+      .then(function (cola) {
+        var filas = document.getElementById("filas");
+        cola.grupos.forEach(function (g) {
+          g.turnos.forEach(function (t) {
+            var tr = document.createElement("tr");
+            tr.className = "cnt-tr";
+            tr.setAttribute("data-cola-row", t.id);
+            [["hora", t.dia_iso.slice(8) + "/" + t.dia_iso.slice(5, 7) + " " + t.hora], ["paciente", t.paciente], ["dni", t.dni], ["medico", g.medico || "—"]].forEach(function (c) {
+              var td = document.createElement("td");
+              td.setAttribute("data-col", c[0]);
+              var span = document.createElement("span");
+              span.textContent = c[1];
+              td.appendChild(span);
+              tr.appendChild(td);
+            });
+            filas.appendChild(tr);
+          });
+        });
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{# Direct Services, Centers and Doctors share one native catalog controller.
+   The template owns import readiness, bounded recovery and page lifecycle;
+   platform/admin-content.mjs owns catalog rendering, requests and child resources.
+   Base owns chrome and the authorized screen identity. Doctor-only dependencies
+   retain their fingerprinted import map and island URL. No classic catalog
+   script or compatibility global is loaded. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t(editor.title_key, editor.title_es) }}{% endblock %}
+
+{% block screen_title %}{{ t(editor.title_key, editor.title_es) }}{% endblock %}
+
+{% block head %}
+{% if editor.doctors %}
+<script type="importmap">
+{
+  "imports": {
+    "preact": "{{ static('vendor/preact.module.js') }}",
+    "preact/hooks": "{{ static('vendor/hooks.module.js') }}",
+    "htm": "{{ static('vendor/htm.module.js') }}",
+    "htm/preact": "{{ static('vendor/htm-preact.module.js') }}",
+    "sana/calendar-grid": "{{ static('platform/calendar-grid.mjs') }}"
+  }
+}
+</script>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  {# The AI translation notice is not a band over the screen: admin-content.mjs
+     (translationNoticeHtml) writes it as the caption right above «Guardar» of
+     an editable item form (2026-11-08). #}
+  <p class="adm-sub" id="adm-sub" style="display:none;"></p>
+  <div id="sec-{{ editor.id }}"></div>
+  <p id="content-status" class="adm-empty" role="status" aria-live="polite" hidden></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Seeded server-side: the route's require_admin resolved the role before
+  // this template rendered. The SANA_ADMIN_SCREEN sentinel is declared by
+  // base.html.
+  window.CURRENT_ROLE = "{{ rol }}";
+</script>
+<script type="module" src="{{ static('platform/admin-control-fit.mjs') }}"></script>
+{% if editor.doctors %}
+<script>window.SANA_ISLAND_URLS={"MedCal":"{{ static('islands/MedCal.mjs') }}"};</script>
+{% endif %}
+<template id="catalog-load-recovery">
+  <span role="alert">{{ t('admin.system.common.load_error', "Couldn't load this section.") }}</span>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Reload') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-{{ editor.id }}");
+  const status = document.getElementById("content-status");
+  const url = "{{ static('platform/admin-content.mjs') }}";
+  // Keep any useful current content: the late and the failure copy both go in
+  // the status line; permission refusal is owned by the controller.
+  bootScreen({
+    host,
+    recovery: "catalog-load-recovery",
+    slowIn: status,
+    failedIn: status,
+    load: () => (url ? import(url) : Promise.reject(new Error("admin-content.mjs"))),
+    mount: (Content) => Content.mount(document),
+    onStart: () => host.setAttribute("aria-busy", "true"),
+    onStop: () => { host.removeAttribute("aria-busy"); status.replaceChildren(); status.hidden = true; },
+    onReady: () => host.removeAttribute("aria-busy"),
+  });
+</script>
+{% endblock %}

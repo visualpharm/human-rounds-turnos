@@ -1,0 +1,104 @@
+{
+  "base": "447e0254",
+  "changed_assets": {
+    "platform/admin-knowledge.mjs": {
+      "before": "/static/platform/admin-knowledge.e004fc56.mjs",
+      "after": "/static/platform/admin-knowledge.39015651.mjs"
+    },
+    "platform/admin-users.mjs": {
+      "before": "/static/platform/admin-users.f47ccbff.mjs",
+      "after": "/static/platform/admin-users.baf53c34.mjs"
+    },
+    "platform/doctor-workspace.mjs": {
+      "before": "/static/platform/doctor-workspace.c4031fae.mjs",
+      "after": "/static/platform/doctor-workspace.391b73e2.mjs"
+    },
+    "platform/admin-legal.mjs": {
+      "before": "/static/platform/admin-legal.da37e59e.mjs",
+      "after": "/static/platform/admin-legal.bcee002c.mjs"
+    },
+    "platform/admin-settings.mjs": {
+      "before": "/static/platform/admin-settings.964477b8.mjs",
+      "after": "/static/platform/admin-settings.070c6c89.mjs"
+    },
+    "admin-direct.css": {
+      "before": "/static/admin-direct.4d2e0349.css",
+      "after": "/static/admin-direct.e01abf09.css"
+    },
+    "platform/admin-content.mjs": {
+      "before": "/static/platform/admin-content.ad689b05.mjs",
+      "after": "/static/platform/admin-content.a83291b6.mjs"
+    },
+    "platform/admin-prompts.mjs": {
+      "before": "/static/platform/admin-prompts.259c4880.mjs",
+      "after": "/static/platform/admin-prompts.eaf847f4.mjs"
+    },
+    "platform/admin-queue.mjs": {
+      "before": "/static/platform/admin-queue.9b998963.mjs",
+      "after": "/static/platform/admin-queue.ebc0671f.mjs"
+    }
+  },
+  "added_role_catalog_keys": [
+    "admin.roles.description",
+    "admin.roles.enabled",
+    "admin.roles.load_error",
+    "admin.roles.name",
+    "admin.roles.new",
+    "admin.roles.no",
+    "admin.roles.not_found",
+    "admin.roles.permissions",
+    "admin.roles.retry",
+    "admin.roles.save",
+    "admin.roles.save_error",
+    "admin.roles.saved",
+    "admin.roles.title",
+    "admin.roles.yes"
+  ],
+  "renders": {
+    "es:/account": {
+      "sha256": "24e0d4637f5a2ff0e6a4819f221833bf1772074d2c215e41dd7b9d0284ac9dec",
+      "prior_sha256": "655dd466dc622a1742815c8c886b56c97520c1d25e6ed854ebe1bf8774f0c39d",
+      "exact_reversal": true
+    },
+    "es:/account/reset": {
+      "sha256": "41a7e2055306fd1d72beb0885043a011b01d4411f42ea537ee3b4ca02d6d10d5",
+      "prior_sha256": "a0050f9c16085d2e4e4f38353cd22049c937f1c6329db8dc30dca2cd2fe069d9",
+      "exact_reversal": true
+    },
+    "es:/auth/test": {
+      "sha256": "05c2c5b75c02eff8b1fb79372e5598f856ca7194da99dba4b2ddff436e55566a",
+      "prior_sha256": "0c3cef705563034f3ee299b86ea89f16d335624e882c2a1205a4c5a016997191",
+      "exact_reversal": true
+    },
+    "es:/auth/sso": {
+      "sha256": "25d316cecc34e38a466b18693d0c6223297d4f959f73bf11291cc715b781cd8e",
+      "prior_sha256": "c4364478bd5bf6681fd488cba0b320f8be003ae5bb43273907c19884d4eb8742",
+      "exact_reversal": true
+    },
+    "en:/account": {
+      "sha256": "ac1cce4f4c2bdf785c74b491fff4eb5951cb71e61ca196c094acea9c31a095c5",
+      "prior_sha256": "065441ce43f0c28c974875433494f61700734a689a736fd042f13301e0de5972",
+      "exact_reversal": true
+    },
+    "en:/account/reset": {
+      "sha256": "0a2b26e1a41be81ec3d4980dde03e3b2e09f428affc1868cac0e9eef0ea591ea",
+      "prior_sha256": "043cf05b479e7e8a336211d444311e60521cccde804529b658046a968a761f6c",
+      "exact_reversal": true
+    },
+    "en:/auth/test": {
+      "sha256": "5ba5f35989bc235642788d15b60668a089e16587a72c6e690cd38de8f3028c12",
+      "prior_sha256": "b82e6ff4f62891a28d790d5ff56862a80660f2a80990ed989a85d155823c2f17",
+      "exact_reversal": true
+    },
+    "en:/auth/sso": {
+      "sha256": "2834b9befdbf41d5e088e6aa43011eb0bd462b804b98885acb6bba79ff5ce221",
+      "prior_sha256": "263233ade90adf34cab7f6e4808520ec8c64bb95b1fb9c76c527ca733e150dd2",
+      "exact_reversal": true
+    },
+    "anon:/account": {
+      "sha256": "24e0d4637f5a2ff0e6a4819f221833bf1772074d2c215e41dd7b9d0284ac9dec",
+      "prior_sha256": "655dd466dc622a1742815c8c886b56c97520c1d25e6ed854ebe1bf8774f0c39d",
+      "exact_reversal": true
+    }
+  }
+}

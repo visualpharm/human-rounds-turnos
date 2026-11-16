@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0",
+  "referral_templates": {
+    "matching": {
+      "paciente": "PERSONA DE PRUEBA REFERENCIA",
+      "dni": "30123456",
+      "especialidad_solicitada": "Cardiología",
+      "diagnostico": "Control administrativo",
+      "practicas": ["Electrocardiograma"],
+      "medico_firmante": "Dra. Ejemplo",
+      "matricula": "MP 12345",
+      "fecha": "01/08/2026",
+      "legible": true,
+      "es_orden_medica": true,
+      "tipo_documento": null,
+      "jurisdiccion_valida": true,
+      "jurisdiccion_detectada": null
+    },
+    "doubtful": {
+      "paciente": "PERSONA DE PRUEBA REFERENCIA",
+      "dni": "41999999",
+      "especialidad_solicitada": "Cardiología",
+      "diagnostico": "Control administrativo",
+      "practicas": ["Electrocardiograma"],
+      "medico_firmante": "Dra. Ejemplo",
+      "matricula": "MP 12345",
+      "fecha": "01/08/2026",
+      "legible": true,
+      "es_orden_medica": true,
+      "tipo_documento": null,
+      "jurisdiccion_valida": true,
+      "jurisdiccion_detectada": null
+    },
+    "foreign": {
+      "paciente": "PERSONA DE PRUEBA REFERENCIA",
+      "dni": "30123456",
+      "especialidad_solicitada": "Cardiología",
+      "diagnostico": "Control administrativo",
+      "practicas": ["Electrocardiograma"],
+      "medico_firmante": "Dra. Ejemplo",
+      "matricula": "MP 12345",
+      "fecha": "01/08/2026",
+      "legible": true,
+      "es_orden_medica": true,
+      "tipo_documento": null,
+      "jurisdiccion_valida": false,
+      "jurisdiccion_detectada": "foreign jurisdiction"
+    },
+    "wrong_document": {
+      "paciente": null,
+      "dni": null,
+      "especialidad_solicitada": null,
+      "diagnostico": null,
+      "practicas": [],
+      "medico_firmante": null,
+      "matricula": null,
+      "fecha": null,
+      "legible": true,
+      "es_orden_medica": false,
+      "tipo_documento": "non-medical document",
+      "jurisdiccion_valida": true,
+      "jurisdiccion_detectada": null
+    }
+  },
+  "chat_tool_turn": {
+    "id": "offline-chat-tool-turn",
+    "type": "function",
+    "function": {
+      "name": "search_services",
+      "arguments": "{\"query\":\"Cardiología\"}"
+    }
+  },
+  "translation": "[en] Cardiology",
+  "dni_ocr": {
+    "es_dni": true,
+    "dni": "30123456",
+    "apellido": "PRUEBA",
+    "nombres": "PERSONA",
+    "sexo": "X",
+    "fecha_nacimiento": "1980-05-09",
+    "foto": {"x": 0.1, "y": 0.2, "w": 0.3, "h": 0.4},
+    "legible": true
+  }
+}

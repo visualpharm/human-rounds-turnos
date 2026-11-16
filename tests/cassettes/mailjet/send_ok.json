@@ -1,0 +1,68 @@
+{
+  "connector": "mailjet",
+  "scenario": "send_ok",
+  "recorded_at": "2026-10-20T14:00:00+00:00",
+  "source": "Hand-authored: we hold no Mailjet credentials (the municipal installation brings its own Premium sub-account). The request matches app/connectors/mailjet/mailjet.py's send() and Mailjet's documented Send API v3.1 contract (POST /v3.1/send, Basic auth with the API key and secret, a Messages array of From{Email,Name}/To[{Email}]/Subject/TextPart/HTMLPart/ReplyTo{Email}, TrackOpens/TrackClicks taking account_default|disabled|enabled). The response is the documented success shape (Messages[].Status = \"success\", To[] with MessageUUID/MessageID/MessageHref). Every address is a repo fixture under example.test. MATCH_FIELDS = {Messages} (fields.py), so replay only answers the exact JSON below. Re-record against a real (test) sub-account with scripts/record_cassette.py --connector mailjet --scenario send_ok once one exists, diff-review before committing.",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/v3.1/send",
+      "query": {},
+      "request_body": {
+        "Messages": [
+          {
+            "From": {
+              "Email": "turnos@mj.salud.example.test",
+              "Name": "Salud Pinamar"
+            },
+            "To": [
+              {
+                "Email": "paciente@example.test"
+              }
+            ],
+            "Subject": "Tu turno",
+            "TextPart": "Tu turno es el 9 de julio a las 09:00.",
+            "HTMLPart": "<p>Tu turno es el 9 de julio a las 09:00.</p>",
+            "ReplyTo": {
+              "Email": "salud@example.test"
+            },
+            "TrackOpens": "disabled",
+            "TrackClicks": "disabled"
+          }
+        ]
+      },
+      "request_body_kind": "json",
+      "request_headers": {
+        "Content-type": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": {
+          "Messages": [
+            {
+              "Status": "success",
+              "CustomID": "",
+              "To": [
+                {
+                  "Email": "paciente@example.test",
+                  "MessageUUID": "1ab23cd4-e567-8901-2345-6789f0a1b2c3",
+                  "MessageID": 288230376151711744,
+                  "MessageHref": "https://api.mailjet.com/v3/REST/message/288230376151711744"
+                }
+              ],
+              "Cc": [],
+              "Bcc": []
+            }
+          ]
+        },
+        "body_kind": "json"
+      }
+    }
+  ]
+}

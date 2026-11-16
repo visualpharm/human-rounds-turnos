@@ -1,0 +1,7 @@
+{
+  "id": "alepo",
+  "country": "AR",
+  "capability": "clinical_history_lookup",
+  "config_keys": ["TURNOS_FAKE_ALEPO"],
+  "description": "Alepo — one of the two systems Pinamar's older clinical history (pre-HSI) was digitized into as scanned PDFs, keyed by DNI; this one covers roughly 2020-2024 (per reference-deployment counterpart, 2026-07-08 hospital meeting notes). Real mode has no access path yet — no API, no DB export, no file share has been identified — and stays an honest ProviderUnavailable until the reference-deployment counterpart points at how the records are reachable. TURNOS_FAKE_ALEPO=1 enables the demo/test fake: fully synthetic OCR-style histories (sample_historias.json) keyed by the demo DNIs, with a deterministic template fallback for unknown DNIs."
+}

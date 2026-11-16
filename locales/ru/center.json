@@ -1,0 +1,13 @@
+{
+  "_comment": "A center's own page (/center/<slug>): services/doctors block chrome, no-booking note, photo/review folds and meta description.",
+  "center.services_title": "Услуги",
+  "center.no_online_booking": "Этот центр не принимает запись через приложение. Свяжись с ним напрямую:",
+  "center.contact_or": "или",
+  "center.photos": "Фотографии",
+  "center.neighbor_quotes": "Что говорят соседи",
+  "center.neighbor_tips": "Советы соседей",
+  "center.meta_with_lede": "{lede} Узнай об услугах, специалистах, расписании и контактных данных.",
+  "center.meta_default": "Услуги, специалисты, расписание и контакты {name} в {city}.",
+  "center.photo_alt": "{name}, фото {n} из {total}",
+  "center.until": "до {date}"
+}

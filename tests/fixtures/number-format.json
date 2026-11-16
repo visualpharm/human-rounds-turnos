@@ -1,0 +1,39 @@
+{
+  "_doc": "One number formatter for the panel and its reports: i18n.mjs formatNumber()/formatPercent() and core/i18n.py format_number()/format_percent() must write every case below the same way (tests/number-format.test.mjs, tests/test_number_format.py).",
+  "number": [
+    {"n": 4188, "d": 0, "lang": "es", "out": "4.188"},
+    {"n": 10238, "d": 0, "lang": "es", "out": "10.238"},
+    {"n": 1466, "d": 1, "lang": "es", "out": "1.466"},
+    {"n": 44.5, "d": 1, "lang": "es", "out": "44,5"},
+    {"n": 6.04, "d": 1, "lang": "es", "out": "6"},
+    {"n": 2.25, "d": 1, "lang": "es", "out": "2,3"},
+    {"n": 1234567.891, "d": 2, "lang": "es", "out": "1.234.567,89"},
+    {"n": -0.04, "d": 1, "lang": "es", "out": "0"},
+    {"n": -1500, "d": 0, "lang": "es", "out": "-1.500"},
+    {"n": 0, "d": 0, "lang": "es", "out": "0"},
+    {"n": 999, "d": 0, "lang": "es", "out": "999"},
+    {"n": 4188, "d": 0, "lang": "en", "out": "4,188"},
+    {"n": 44.5, "d": 1, "lang": "en", "out": "44.5"},
+    {"n": 4188.5, "d": 1, "lang": "fr", "out": "4 188,5"},
+    {"n": 4188.5, "d": 1, "lang": "ru", "out": "4 188,5"},
+    {"n": 4188.5, "d": 1, "lang": "pt", "out": "4.188,5"},
+    {"n": 4188, "d": 0, "lang": "ja", "out": "4,188"},
+    {"n": "  ", "d": 0, "lang": "es", "out": ""},
+    {"n": 1e30, "d": 1, "lang": "en", "out": "1,000,000,000,000,000,000,000,000,000,000"},
+    {"n": 1.005, "d": 2, "lang": "es", "out": "1,01"}
+  ],
+  "percent": [
+    {"n": 52, "lang": "es", "out": "52%"},
+    {"n": 49.0, "lang": "es", "out": "49%"},
+    {"n": 69.2, "lang": "es", "out": "69%"},
+    {"n": 41.5, "lang": "es", "out": "42%"},
+    {"n": 4.3, "lang": "es", "out": "4,3%"},
+    {"n": 4.0, "lang": "es", "out": "4%"},
+    {"n": 0, "lang": "es", "out": "0%"},
+    {"n": 99.6, "lang": "es", "out": "99,6%"},
+    {"n": 100, "lang": "es", "out": "100%"},
+    {"n": 99.95, "lang": "es", "out": "99,95%"},
+    {"n": 99.9996, "lang": "es", "out": "99,9996%"},
+    {"n": 4.3, "lang": "en", "out": "4.3%"}
+  ]
+}

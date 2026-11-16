@@ -1,0 +1,76 @@
+{# The page both printable documents share; print_receta.html and print_orden.html fill title, kind (the sheet class), doc_label and items (what the document lists). #}<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{% endblock %}</title>
+<style>
+@page { size: A4; margin: 0; }
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#eef1f4;}
+body{font-family:Arial,Helvetica,sans-serif;color:#0b2231;}
+.print-bar{position:sticky;top:0;background:#0b2231;color:#fff;padding:10px 16px;
+  display:flex;justify-content:flex-end;gap:10px;z-index:9;}
+.print-bar button{font:600 13px Arial,sans-serif;padding:8px 16px;border:0;border-radius:6px;
+  background:#fff;color:#0b2231;cursor:pointer;}
+.hoja-wrap{display:flex;justify-content:center;padding:18px 0 40px;}
+.hoja{width:210mm;min-height:297mm;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.15);}
+.hoja-receta{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+.hoja-receta .copia:nth-child(1){border-right:1px dashed #c2ccd6;border-bottom:1px dashed #c2ccd6;}
+.hoja-receta .copia:nth-child(2){border-bottom:1px dashed #c2ccd6;}
+.hoja-receta .copia:nth-child(3){border-right:1px dashed #c2ccd6;}
+.hoja-orden{display:flex;flex-direction:column;}
+.hoja-orden .copia{flex:1;}
+.hoja-orden .copia:first-child{border-bottom:1px dashed #c2ccd6;}
+.copia{padding:10mm;display:flex;flex-direction:column;position:relative;}
+.copia-label{font:700 13px/1 Arial;letter-spacing:.06em;text-transform:uppercase;color:#9aa6b2;text-align:right;}
+.titulo-inst{font:700 13px/1.3 Arial;margin:2px 0 0;}
+.titulo-doc{display:flex;justify-content:space-between;align-items:baseline;font:700 13px Arial;margin:1px 0 0;}
+.fecha{font:400 13px Arial;color:#55606c;}
+.divisor{border:0;border-top:1px solid #d7dee6;margin:6px 0;}
+.medico{font:700 13px/1.4 Arial;margin:0;}
+.medico small{font-weight:400;color:#55606c;}
+.paciente-nombre{font:700 13px/1.4 Arial;margin:8px 0 0;}
+.paciente-meta{font:13px/1.4 Arial;color:#55606c;margin:1px 0 0;}
+.rp{font:700 13px Arial;margin:12px 0 3px;}
+.lineas{margin:0;padding:0 0 0 16px;font:13px/1.6 Arial;}
+.lineas--bullet{list-style:disc;}
+.lineas li{margin:0 0 3px;}
+.vacio{color:#9aa6b2;font-style:italic;font:13px Arial;margin:2px 0;}
+.dx-titulo{font:700 13px Arial;margin:10px 0 3px;}
+.notas{font:13px/1.4 Arial;color:#55606c;font-style:italic;margin:10px 0 0;}
+.firma{margin-top:auto;padding-top:18px;}
+.firma-linea{border-top:1px solid #0b2231;width:60%;margin-left:auto;}
+.firma-texto{font:13px Arial;color:#55606c;text-align:center;width:60%;margin-left:auto;padding-top:3px;}
+.pie{font:13px Arial;color:#9aa6b2;text-align:center;margin-top:8px;}
+@media print{
+  .print-bar{display:none;}
+  body{background:#fff;}
+  .hoja-wrap{padding:0;}
+  .hoja{box-shadow:none;}
+}
+
+</style>
+</head>
+<body>
+{% if anulada %}<div class="print-bar" style="background:#b42318;justify-content:flex-start;flex-wrap:wrap;align-items:baseline;font:16px/1.4 Arial">{{ t('intake.print.anulada_aviso', 'Este documento fue reemplazado por uno nuevo y ya no vale. Abajo está tal como se emitió.') }}{% if reemplazo_url %} <a href="{{ reemplazo_url }}" style="color:#fff;font-weight:700">{{ t('intake.print.anulada_ver', 'Abrí el documento nuevo') }}</a>{% if reemplazo_fecha %} · {{ t('intake.print.fecha_label', 'Fecha:') }} {{ reemplazo_fecha }}{% endif %}{% endif %}</div>{% else %}<div class="print-bar"><button type="button" onclick="window.print()">{{ t('intake.print.imprimir', 'Imprimir') }}</button></div>{% endif %}
+<div class="hoja-wrap"><div class="hoja hoja-{% block kind %}{% endblock %}">{% for label in copies %}<div class="copia" style="padding-top:calc(10mm + {{ espacio }}cm)">
+      
+      <div class="copia-label">{{ t('intake.print.copia.' + label, label_defaults[label]) }}</div>
+      <div class="titulo-inst">{{ titulo }}</div>
+      <div class="titulo-doc"><span>{% if anulada %}{{ t('intake.print.anulada', 'ANULADA — REEMPLAZADA') }} · {% elif borrador %}{{ t('intake.print.borrador', 'BORRADOR — REVISAR') }} · {% endif %}{% block doc_label %}{% endblock %}</span><span class="fecha">{{ t('intake.print.fecha_label', 'Fecha:') }} {{ fecha }}</span></div>
+      <hr class="divisor">
+      <p class="medico">{{ medico_nombre }}{% if medico_especialidad or medico_matricula %}<small> — {% if medico_especialidad %}{{ medico_especialidad }}{% endif %}{% if medico_especialidad and medico_matricula %}  ·  {% endif %}{% if medico_matricula %}{{ t('intake.print.matricula_label', 'Mat.') }} {{ medico_matricula }}{% endif %}</small>{% endif %}</p>
+      <p class="paciente-nombre">{{ paciente_nombre }}</p>
+      {% if paciente_dni %}<p class="paciente-meta">{{ t('intake.print.dni_label', 'DNI') }} {{ paciente_dni }}</p>{% endif %}
+
+      {% block items %}{% endblock %}
+      {% if notas %}<p class="notas">{{ t('intake.print.indicaciones_label', 'Indicaciones:') }} {{ notas }}</p>{% endif %}
+      
+      <div class="firma"><div class="firma-linea"></div><div class="firma-texto">{{ t('intake.print.firma', 'Firma y sello') }}</div></div>
+      <div class="pie">{{ pie }}</div>
+
+    </div>{% endfor %}</div></div>
+</body>
+</html>

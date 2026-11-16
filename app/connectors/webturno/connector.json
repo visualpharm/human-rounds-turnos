@@ -1,0 +1,10 @@
+{
+  "id": "webturno",
+  "country": "AR",
+  "capability": "slot_source",
+  "config_keys": [
+    "WEBTURNO_DNI",
+    "WEBTURNO_PASS"
+  ],
+  "description": "webturno.com.ar API client for private-clinic slots. MSD remains the installation default; an operator may explicitly select WebTurno for services carrying clinic_token and idme, and its adapter normalizes results to the shared patient slot-source shape. The retired public clinic directory remains retired. The operator CLI remains available as python3 -m connectors.webturno.webturno."
+}

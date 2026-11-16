@@ -1,0 +1,11 @@
+{
+  "_comment": "/blood-donation page chrome. Content (lede, cuerpo, lugar, horario, nota) is pack data (enlaces.json) — no invented schedules/requirements here; the place falls back to the installation's main center.",
+  "blood_donation.h1": "献血",
+  "blood_donation.before_h": "来院前に",
+  "blood_donation.call": "{phone} に電話する",
+  "blood_donation.cta": "来院前に確認する",
+  "blood_donation.lede_default": "あなたの献血が、誰かの命を救う助けになります。",
+  "blood_donation.nota_default": "献血の時間については病院にお問い合わせください。",
+  "blood_donation.where_h": "献血の場所と時間",
+  "blood_donation.who_h": "献血できる方"
+}

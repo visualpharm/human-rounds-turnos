@@ -1,0 +1,116 @@
+{#
+  modules/chat/admin_chats.html — `/admin/chats`, the chat module's read-only
+  conversation list (see admin_chats_screen.py). Rows arrive server-side as
+  JSON; the table is painted client-side so dates go through the shared
+  dates.mjs formatter in one short form ("Hoy, 10:15", "Vie 6 nov, 17:21") — never raw ISO.
+  Same `cnt-table` engine every other admin list uses.
+#}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.shell.nav.chats', 'Chats') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.shell.nav.chats', 'Chats') }}{% endblock %}
+
+{% block head %}
+<style>
+  /* The base .cnt-table td is nowrap and max-width does nothing on a table
+     cell: a long first question ran over «Mensajes» to the screen edge (demo
+     1440, 08.11). It wraps inside its own column instead, the count stays. */
+  #sec-chats .ch-first{white-space:normal;overflow-wrap:anywhere;min-width:16ch;}
+  .ch-num{text-align:right;white-space:nowrap;}
+  .ch-when{white-space:nowrap;}
+  .cnt-table td,.cnt-table th{vertical-align:top;}
+  /* On a phone a conversation is a card of three lines: when and the channel,
+     the first question whole, the message count with its label. The list runs
+     full bleed (separators span the screen) and every row insets itself onto
+     the panel gutter; before, the rows sat on the screen edge, the table kept
+     its desktop width and the question was cut on the right (demo, 07.11). */
+  @media (max-width:700px){
+    #sec-chats .cnt-table-wrap{overflow:visible;contain:none;}
+    #sec-chats .cnt-table thead{display:none;}
+    #sec-chats .cnt-table,#sec-chats .cnt-table tbody{display:block;width:100%;}
+    #sec-chats .cnt-table tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;
+      padding:12px var(--adm-gutter);border-bottom:1px solid var(--border);box-sizing:border-box;}
+    #sec-chats .cnt-table td{display:block;padding:0;border:0;min-width:0;}
+    #sec-chats .ch-first{grid-column:1/-1;max-width:none;white-space:normal;overflow:visible;text-overflow:clip;}
+    #sec-chats .ch-num{grid-column:1/-1;text-align:left;}
+    #sec-chats .ch-num::before{content:attr(data-label) ": ";}
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  {# data-list-view: the list takes the full width, like Pacientes and the
+     other lists (admin-direct.css lifts the content cap for it). #}
+  <section id="sec-chats" aria-labelledby="adm-h1" data-list-view="1"
+    data-empty="{{ t('admin.chats.empty', 'Todavía no hubo conversaciones.') }}"
+    data-failed="{{ t('admin.chats.failed', 'No se pudieron cargar las conversaciones.') }}"
+    data-col-when="{{ t('admin.chats.col_when', 'Última actividad') }}"
+    data-col-channel="{{ t('admin.chats.col_channel', 'Canal') }}"
+    data-col-first="{{ t('admin.chats.col_first', 'Primera pregunta') }}"
+    data-col-turns="{{ t('admin.chats.col_turns', 'Mensajes') }}"
+    data-channel-web="{{ t('admin.chats.channel_web', 'Sitio') }}"
+    data-channel-whatsapp="{{ t('admin.chats.channel_whatsapp', 'WhatsApp') }}"
+    data-failed-flag="{{ '1' if rows_failed else '' }}"></section>
+  <script type="application/json" id="chats-rows">{{ rows_json|safe }}</script>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+(function () {
+  var host = document.getElementById("sec-chats");
+  var rows = [];
+  try { rows = JSON.parse(document.getElementById("chats-rows").textContent || "[]") || []; } catch (e) { rows = []; }
+  // A chat opened and closed without a word is not a conversation: a row of
+  // «—» and «0» told the desk nothing.
+  // A patient who opened with a photo or a voice note has no first text but
+  // did write: the count decides, the text only when the count is missing.
+  rows = rows.filter(function (r) { return !!r && (Number(r.user_messages) > 0 || !!r.first_message); });
+  var datesUrl = window.SANA_STATIC && window.SANA_STATIC["platform/dates.mjs"];
+  var formatUrl = window.SANA_STATIC && window.SANA_STATIC["platform/format.mjs"];
+  function esc(v) { return String(v == null ? "" : v).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function channelName(c) { return c === "whatsapp" ? host.dataset.channelWhatsapp : host.dataset.channelWeb; }
+  function paint(Dates, Format) {
+    if (host.dataset.failedFlag) { host.innerHTML = '<p class="adm-empty">' + esc(host.dataset.failed) + "</p>"; return; }
+    if (!rows.length) { host.innerHTML = '<p class="adm-empty">' + esc(host.dataset.empty) + "</p>"; return; }
+    // One form for the whole column, the panel lists' short one ("Hoy, 10:15",
+    // "Vie 6 nov, 17:21"): the server sends the installation's wall clock, so
+    // day and hour are read off the text, never re-converted by the browser.
+    function when(iso) {
+      if (!iso) return "";
+      return (Dates && Dates.corta(iso.slice(0, 10), iso.slice(11, 16))) || iso.slice(0, 16).replace("T", " ");
+    }
+    function who(r) {
+      if (r.channel === "whatsapp" && Format && Format.telTexto) return Format.telTexto(r.key);
+      return "";
+    }
+    // Headers wear `cnt-th`, the one header style of every panel list (Roles,
+    // Captura de síntomas, Médicos): before, bare <th> showed 16px bold dark.
+    // «Sitio» in every row said nothing (the product owner, 02.11: what repeats on every
+    // row goes outside the brackets): the channel is named only when the
+    // list mixes channels, and the column stays for a WhatsApp number.
+    var mixed = rows.some(function (r) { return channelName(r.channel) !== channelName(rows[0].channel); });
+    var withWho = rows.some(function (r) { return !!who(r); });
+    var showChannel = mixed || withWho;
+    function channelCell(r) {
+      var w = who(r);
+      var parts = [];
+      if (mixed) parts.push(channelName(r.channel));
+      if (w) parts.push(w);
+      return '<td class="ch-channel">' + esc(parts.join(" · ")) + "</td>";
+    }
+    var html = '<div class="cnt-table-wrap"><table class="cnt-table ch-table"><thead><tr><th scope="col" class="cnt-th ch-when">' + esc(host.dataset.colWhen) + "</th>" + (showChannel ? '<th scope="col" class="cnt-th">' + esc(host.dataset.colChannel) + "</th>" : "") + '<th scope="col" class="cnt-th">' + esc(host.dataset.colFirst) + '</th><th scope="col" class="cnt-th ch-num">' + esc(host.dataset.colTurns) + '</th></tr></thead><tbody>';
+    rows.forEach(function (r) {
+      html += '<tr><td class="ch-when">' + esc(when(r.last_at)) + "</td>" + (showChannel ? channelCell(r) : "") + '<td class="ch-first">' + esc(r.first_message || "—") + '</td><td class="ch-num" data-label="' + esc(host.dataset.colTurns) + '">' + esc(r.user_messages) + '</td></tr>';
+    });
+    host.innerHTML = html + "</tbody></table></div>";
+  }
+  Promise.all([
+    datesUrl ? import(datesUrl).catch(function () { return null; }) : Promise.resolve(null),
+    formatUrl ? import(formatUrl).catch(function () { return null; }) : Promise.resolve(null)
+  ]).then(function (mods) { paint(mods[0], mods[1]); });
+})();
+</script>
+{% endblock %}

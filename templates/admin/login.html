@@ -1,0 +1,116 @@
+{# templates/admin/login.html — the direct, server-routed /admin/login screen
+   (admin_panel/admin_login_screen.py). It owns the login markup and uses the
+   shared admin-gate.css stylesheet plus the canonical
+   static/platform/admin-login.mjs controller.
+
+   Standalone on purpose: no base.html or sidebar — nothing of the
+   panel's chrome may be visible before login (the product owner, 2026-07-16). The
+   `{{ '{{lang}}' }}`/`{{ '{{tema}}' }}`/`{{ '{{favicon}}' }}`/
+   `{{ '{{i18n_bootstrap}}' }}` literal placeholders are the established
+   two-pass idiom (templates/admin/base.html, jinja_env.py's docstring).
+
+   The form's data-next is injected server-side after ?next= validation
+   (only /admin or /admin/<screen> with optional bounded query state survive;
+   anything else falls back to /admin). The native controller reads it after a
+   successful password OR passkey login: a validated data-next wins, and /admin (the server's default
+   injection) or /admin/login falls through to the role-aware direct landing
+   from the login API's returned identity — a retired or unknown role fails
+   safe on the gate and navigates nowhere. This page cannot assume the admin
+   shell's shared module importer: it imports the controller from the emitted
+   fingerprint manifest and holds an early submit until that controller resolves;
+   i18n itself falls back without blocking authentication. #}
+<!DOCTYPE html>
+<html lang="{{ '{{lang}}' }}" data-theme="{{ '{{tema}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{favicon}}' }}
+<title>{{ t('admin.shell.gate.title', 'Acceso administrativo') }} | {{ sitio('brand') }}</title>
+<meta name="robots" content="noindex,nofollow">
+{{ '{{i18n_bootstrap}}' }}
+{{ '{{fuentes}}' }}
+<link rel="stylesheet" href="{{ static('human-rounds.css') }}">
+<link rel="stylesheet" href="{{ static('admin-gate.css') }}">
+{{ static_manifest() }}
+</head>
+<body>
+
+<div id="gate-wrap" class="gate-wrap">
+ <div class="gate-cols">
+  <div id="gate" class="gate">
+    <div class="gate-brand">
+      <span class="adm-brand">{{ t('admin.shell.gate.brand_pre', 'Admin de ') }}<b>{{ t('admin.shell.gate.brand_bold', 'Turnos') }}</b></span>
+    </div>
+    <h2>{{ t('admin.shell.gate.title', 'Acceso administrativo') }}</h2>
+    <p id="gate-intro">{{ t('admin.shell.gate.intro', 'Ingresá tu usuario y contraseña para ver la cola de solicitudes.') }}</p>
+    <p class="err" id="gate-err" data-controller-load-error="{{ t('admin.shell.gate.err_controller_load', 'No se pudo cargar el acceso. Recargá la página.') }}"></p>
+    <form id="gate-form" data-staff-pending="{{ '1' if staff_pending else '' }}" autocomplete="on" data-next="{{ next_target }}">
+      <div id="gate-creds">
+        <div class="gate-row"><label for="gate-user">{{ t('admin.shell.gate.label_identifier', 'Usuario o email') }}</label><input id="gate-user" name="username" value="{{ staff_identifier|default('') }}" type="text" autocomplete="username" autocapitalize="off" spellcheck="false"></div>
+        <div class="gate-row"><label for="gate-pass">{{ t('admin.shell.gate.label_pass', 'Contraseña') }}</label><input id="gate-pass" name="password" type="password" autocomplete="current-password"></div>
+      </div>
+      {# name="otp" + autocomplete="one-time-code": así lo reconocen credential vault
+         y los gestores del sistema cuando el servidor confirma que ESTA
+         cuenta usa verificación en dos pasos. #}
+      <div class="gate-row" id="gate-2fa" style="display:none;">
+        <label for="gate-code">{{ t('admin.shell.gate.label_code', 'Código') }}</label>
+        <input id="gate-code" name="otp" type="text" inputmode="numeric" autocomplete="one-time-code"
+               aria-label="{{ t('admin.shell.gate.code_aria', 'Código de verificación en dos pasos') }}"
+               maxlength="6" pattern="\d{6}" placeholder="000000">
+      </div>
+      <div id="gate-turnstile"></div>
+      <div class="gate-btns">
+        <button class="btn btn-ok btn-lg" id="gate-btn" type="submit">{{ t('admin.shell.gate.btn_enter', 'Entrar') }}</button>
+        <button class="btn btn-quiet gate-passkey-alt" id="gate-passkey" type="button" hidden>{{ t('admin.shell.gate.btn_passkey', 'o entrá con passkey') }}</button>
+      </div>
+      <button class="btn btn-quiet" id="gate-forgot" type="button">{{ t('admin.shell.gate.forgot', '¿Olvidaste tu contraseña?') }}</button>
+      <p id="gate-reset-msg" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  <aside class="gate-side" id="gate-side" style="display:none;">
+    <nav class="gp-tabs" id="gp-tabs">
+      <a data-tab="consejos">{{ t('admin.shell.gate.tab_tips', 'Consejos de uso') }}</a>
+      <a data-tab="humor">{{ t('admin.shell.gate.tab_humor', 'Humor de guardia') }}</a>
+    </nav>
+    <div id="gp-card"></div>
+  </aside>
+ </div>
+</div>
+
+<script>
+  // Hold submit immediately so a delayed controller/i18n/passkey import
+  // cannot fall through to the browser's default form navigation (which
+  // would put the password on the query string). The native module then
+  // binds the real handlers and processes any queued attempt.
+  window.SANA_ADMIN_SCREEN = "login";
+  (function () {
+    var form = document.getElementById("gate-form");
+    var pending = false;
+    var controllerFailed = false;
+    var error = document.getElementById("gate-err");
+    function showControllerLoadError() {
+      controllerFailed = true;
+      if (error) {
+        error.textContent = error.getAttribute("data-controller-load-error")
+          || "No se pudo cargar el acceso. Recargá la página.";
+      }
+    }
+    function holdSubmit(e) {
+      e.preventDefault();
+      pending = true;
+      if (controllerFailed) showControllerLoadError();
+    }
+    if (form) form.addEventListener("submit", holdSubmit);
+    var url = window.SANA_STATIC && window.SANA_STATIC["platform/admin-login.mjs"];
+    if (!url) {
+      showControllerLoadError();
+      return;
+    }
+    import(url).then(function (m) {
+      if (form) form.removeEventListener("submit", holdSubmit);
+      return m.boot({ pendingSubmit: pending });
+    }).catch(showControllerLoadError);
+  })();
+</script>
+</body>
+</html>

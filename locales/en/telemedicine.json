@@ -1,0 +1,11 @@
+{
+  "telemedicine.h1": "Telemedicine",
+  "telemedicine.lede_default": "A video consultation with a general practitioner, 24 hours a day.",
+  "telemedicine.for_h": "What it's for",
+  "telemedicine.how_h": "How it works",
+  "telemedicine.not_for_h": "When you need in-person care",
+  "telemedicine.not_for_label": "Not for emergencies.",
+  "telemedicine.emergency_call": "If it's an emergency, go to the hospital's emergency room or call {number}.",
+  "telemedicine.cta": "Consult by telemedicine",
+  "telemedicine.what_h": "What it is"
+}

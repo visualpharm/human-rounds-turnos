@@ -1,0 +1,44 @@
+{
+  "articles": [
+    {
+      "id": "ojo-manso-acceso",
+      "type": "categoria",
+      "title": "Atención en Sampleton",
+      "parent_id": null,
+      "jurisdiction": "l4",
+      "summary": "Acceso al Sampleton y los CAPS de Sampleton.",
+      "tags": [
+        "ojo manso",
+        "hospital",
+        "caps"
+      ],
+      "status": "publicado"
+    },
+    {
+      "id": "guardia-ojo-manso",
+      "type": "articulo",
+      "title": "Guardia y atención sin turno en Sampleton",
+      "parent_id": "ojo-manso-acceso",
+      "jurisdiction": "l4",
+      "summary": "Dónde ir sin turno en Sampleton: la guardia del hospital regional y la atención sin turno en los CAPS.",
+      "content": "Ante una urgencia o emergencia en Sampleton, la guardia del Sampleton Hospital (Main Rd. 123, +54 11 4000-0001) atiende todos los días, las 24 horas.\n\nPara una consulta del mismo día que no es una emergencia — como tos, fiebre, dolor de garganta o un dolor puntual — el Riverside Clinic (Station St. 456) atiende medicina general sin turno previo; los días y horarios pueden variar, confirmalos antes de ir. La atención sin turno no reemplaza a la guardia: si es algo grave o urgente, andá directo al hospital.\n\nFuera de una urgencia, el CAPS de tu barrio (Riverside Clinic, Lakeview Clinic) sigue siendo la puerta de entrada para medicina general y otros servicios; para lo que se puede planificar, lo que corresponde es pedir un turno.",
+      "tags": [
+        "guardia",
+        "hospital regional",
+        "caps",
+        "urgencia",
+        "tos",
+        "fiebre",
+        "guardia ojo manso"
+      ],
+      "status": "publicado",
+      "source": {
+        "title": "Guardia y atención sin turno (contenido de demostración)",
+        "url": "https://sampleton.example/guardia/",
+        "agency": "Municipalidad de Sampleton (ficticia, contenido de demo)",
+        "verified_at": "2026-08-06",
+        "review_every_days": 7
+      }
+    }
+  ]
+}

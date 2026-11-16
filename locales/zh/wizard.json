@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "正在核实就诊人信息…",
+  "wizard.age_check.h1": "谁需要就诊？",
+  "wizard.confirm.error": "无法保存你的回复。请重试。",
+  "wizard.confirm.expired": "该预约已无法确认。",
+  "wizard.confirm.saved": "好了，谢谢你的告知。",
+  "wizard.confirm.wait": "请稍候…",
+  "wizard.contact.call": "在操作中遇到困难了吗？请致电 {name}：",
+  "wizard.contact.center_fallback": "中心",
+  "wizard.contact.whatsapp": "在操作中遇到困难了吗？请通过 WhatsApp 联系 {name}：",
+  "wizard.contact.whatsapp_site": "在操作中遇到困难了吗？请通过 WhatsApp 联系我们：",
+  "wizard.offer.accepted": "太棒了！你的预约已确认。正在为你跳转到“我的预约”……",
+  "wizard.offer.error": "无法处理你的回复。请重试。",
+  "wizard.offer.gone": "此预约已失效。",
+  "wizard.offer.rejected": "我们已通知候补名单中的下一位。谢谢你的回复。",
+  "wizard.offer.wait": "请稍候…",
+  "wizard.title.orden": "转诊单",
+  "wizard.title.solicitud": "预约挂号",
+  "wizard.upload.sub": "医院将进行审核并为你确认预约。"
+}

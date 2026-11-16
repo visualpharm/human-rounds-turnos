@@ -1,0 +1,21 @@
+{
+  "_comment": "Doctor directory and doctor profile page (/doctors, /doctor/<id>) and Grupos y talleres (/d/grupos).",
+  "doctor.agenda_heading": "診療時間",
+  "doctor.close_photo": "写真を閉じる",
+  "doctor.cta_see_centers": "センターを見る",
+  "doctor.demo_note": "デモ用スケジュールです。実際のデータではありません。",
+  "doctor.doctors_meta_desc": "{city}の公立保健システムの医師と専門家を、診療科、センター、次回の空き状況から探せます。",
+  "doctor.meta_intro": "{city}の公立保健システムの{specialty}、{name}。",
+  "doctor.next_slot_heading": "最短の空き予約",
+  "doctor.next_slot_heading_service": "{service} の最短の空き予約枠",
+  "doctor.next_slot_note": "これは最短の日時です。他の日や時間帯も選べます。",
+  "doctor.no_appointment_fallback": "予約なし",
+  "doctor.search_placeholder": "医師または診療科を検索",
+  "doctor.service_link": "診療科を見る: {service}",
+  "doctor.sees_at": "診療場所",
+  "doctor.title_f": "医師",
+  "doctor.title_m": "医師",
+  "doctor.title_specialty_city": "{name} — {city}の{specialty}",
+  "doctor.workshops_meta_desc": "{network}の無料グループとワークショップ：開催日時、場所、参加方法について。",
+  "doctor.services_line": "担当：{services}"
+}

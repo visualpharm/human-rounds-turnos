@@ -1,0 +1,8 @@
+{
+  "id": "global",
+  "level": 1,
+  "parent": null,
+  "language": "es",
+  "name": "Global",
+  "description": "Contenido médico agnóstico de país: taxonomía de especialidades y de clusters (especialidades.json, clusters.json). Sirve de base compartida para cualquier localidad — un paquete de país/provincia/localidad puede EXTENDERLA (agregar una especialidad propia) sin retipear la lista entera. No incluye ninguna localidad ni institución real."
+}

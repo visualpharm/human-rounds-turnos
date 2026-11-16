@@ -1,0 +1,64 @@
+# Nightly — Tier 3 slice 8, the run ladder's 4th and slowest rung
+# (docs/roadmap/tier3-harness-design.md, Area 4). NOT a merge gate — there is
+# no PR to block, it's scheduled. "Loud" here means exactly what the design
+# says and nothing more: a red job makes the whole workflow RUN red, and
+# GitHub's own default failure-email for scheduled workflows is the v1
+# alert (a richer Telegram alert is an explicit non-goal for this
+# design — see the roadmap's "Out of scope" list).
+#
+# Runs everything ci.yml runs (backend, frontend, e2e, routes, cassettes —
+# reused via `workflow_call`, never re-declared here) PLUS the cassette
+# staleness/shape audit (Area 3's "What nightly DOES check" — audit ONLY,
+# no network, never re-records; recording stays the deliberate manual act
+# `scripts/record_cassette.py` already is, run by a human with real
+# reachability).
+name: Nightly
+
+# Hosted `schedule:` trigger deliberately disabled — cost decision, the product owner
+# 2026-08-05, same reasoning as ci.yml's header. A daily hosted run would
+# keep burning included Actions minutes with no way to cap it, so the
+# ENFORCING nightly path moved to the dev machine: scripts/ci_local.sh run by a
+# scheduled launchd LaunchAgent (scripts/nightly-local.plist, installed
+# separately — see docs/roadmap/tier3-harness-design.md's run-ladder
+# section). This workflow's job graph (full CI + cassette staleness/shape
+# audit) is kept intact as a manual-dispatch spare, not deleted — re-add the
+# `schedule:` block once GitHub's included-minutes budget is restored.
+on:
+  # Manual trigger only: this is how the slice proves the schedule's job
+  # definition is valid before waiting for the first real 24h cycle (design
+  # doc's own Test plan, Area 4) — and now doubles as the only way this
+  # workflow runs at all until hosted CI is re-enabled.
+  workflow_dispatch:
+
+jobs:
+  ci:
+    name: full CI job graph (backend + frontend + e2e + routes + cassettes)
+    uses: ./.github/workflows/ci.yml
+
+  cassette-audit:
+    name: cassette staleness/shape audit (no network, no re-recording)
+    runs-on: ubuntu-latest
+    # Independent of the `ci` job — no network and no Postgres, so it needs
+    # nothing the reused CI graph produces. Runs in parallel for a faster
+    # nightly, not because ordering wouldn't also be correct.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install Python deps
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+
+      # TURNOS_CASSETTE_MODE is deliberately never set here — replay is the
+      # only mode this workflow ever uses, and tests/cassettes/_vcr.py itself
+      # hard-fails a `record` attempt when `CI` is set (GitHub Actions sets
+      # it automatically), so there is no path from this job to a live
+      # network call even by accident.
+      - name: Audit cassette staleness + response shape
+        run: python3 scripts/audit_cassettes.py

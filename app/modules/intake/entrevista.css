@@ -1,0 +1,257 @@
+/* entrevista.css — one conversation layout inside the existing site shell.
+   Desktop keeps site navigation and footer; phone and embedded views give
+   the conversation the available viewport. The message list alone scrolls.
+
+   Dos estados de `#iv-host`:
+     - `.iv-id-screen` — el paso de identidad del QR de puerta (sin token
+       todavía): panel simple, centrado, con su propio scroll.
+     - el resto (con token): la charla — barra superior (título +
+       cerrar), `#iv-msgs` como ÚNICO scroller, composer compartido
+       (chat-ui.js, clases `iv-*`) siempre a la vista abajo, con el safe-area
+       del notch/home-indicator de iOS. Ver docs/architecture/entrevista-previa.md. */
+
+/* `body_class="iv-chat-body"` (site_shell._shell, chrome="chat"): belt and
+   suspenders on top of #iv-host's own `position:fixed` — no page-level
+   scroll, no default body margin peeking out at the edges on a bounce. */
+body.iv-chat-body{margin:0;height:100vh;height:100dvh;overflow:hidden;font-family:var(--font);}
+
+#iv-host{
+  position:fixed;inset:0;z-index:20;
+  display:flex;flex-direction:column;
+  background:var(--bg);color:var(--text);
+  height:100vh;height:100dvh;
+}
+
+/* ---- paso de identidad: panel centrado con su propio scroll ------------ */
+#iv-host .iv-id-screen{
+  flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:28px 20px max(28px,env(safe-area-inset-bottom));
+}
+#iv-host .iv-id-screen .iv-wrap{width:100%;max-width:520px;margin:0 auto;}
+#iv-host .h1{margin:0 0 6px;}
+#iv-host .lede{margin:0 0 22px;color:var(--text-2);font-size:17px;line-height:1.5;}
+
+/* ---- barra superior: título + cerrar ----------------------------------- */
+#iv-host .iv-topbar{
+  flex:0 0 auto;display:flex;align-items:flex-start;justify-content:space-between;
+  gap:14px;padding:max(16px,env(safe-area-inset-top)) 18px 14px 20px;
+  border-bottom:1px solid var(--border);background:var(--bg);
+}
+#iv-host .iv-topbar-text{min-width:0;}
+#iv-host .iv-topbar-title{margin:0;font-size:19px;font-weight:700;line-height:1.25;}
+#iv-host .iv-close{
+  flex-shrink:0;width:40px;height:40px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text-2);text-decoration:none;border:0;background:transparent;cursor:pointer;
+}
+#iv-host .iv-close:hover{background:var(--hover-bg);color:var(--hover-ink);}
+#iv-host .iv-close:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+/* ---- mensajes: EL ÚNICO scroller de la pantalla ------------------------- */
+#iv-host .iv-msgs{
+  flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:18px 16px;display:flex;flex-direction:column;gap:10px;
+}
+#iv-host .iv-msg{
+  max-width:82%;padding:11px 15px;font-size:17px;line-height:1.45;
+  white-space:pre-wrap;overflow-wrap:break-word;
+}
+#iv-host .iv-msg--asst{
+  align-self:flex-start;background:var(--bg-2);color:var(--text);
+  border-radius:15px 15px 15px 4px;
+}
+#iv-host .iv-msg--user{
+  align-self:flex-end;background:var(--accent-soft);color:var(--text);
+  border-radius:15px 15px 4px 15px;
+}
+/* Burbuja de foto adjunta: clip Icons8 (sf-regular) como máscara, en la
+   tinta del texto — chat-ui.mjs arma el span con {adjunto:true}. */
+#iv-host .iv-attach-ico{
+  display:inline-block;width:18px;height:18px;margin-right:6px;vertical-align:-3px;
+  background:currentColor;
+  -webkit-mask:url(/static/icons/chat-attach-sf-regular.svg) center/contain no-repeat;
+  mask:url(/static/icons/chat-attach-sf-regular.svg) center/contain no-repeat;
+}
+
+/* Indicador de "escribiendo…": burbuja del asistente con tres puntitos
+   animados, no texto — se ve y se lee de un vistazo, elderly-first. Misma
+   clase que crearLista({prefix:"iv"}) arma (chat-ui.js). */
+#iv-host .iv-typing{
+  align-self:flex-start;max-width:75%;padding:14px 17px;
+  background:var(--bg-2);border-radius:15px 15px 15px 4px;
+  display:flex;gap:5px;align-items:center;
+}
+#iv-host .iv-typing span{
+  width:7px;height:7px;border-radius:50%;background:var(--text-3);
+  animation:iv-bounce 1.1s infinite ease-in-out;
+}
+#iv-host .iv-typing span:nth-child(2){animation-delay:.15s;}
+#iv-host .iv-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes iv-bounce{
+  0%,80%,100%{transform:translateY(0);opacity:.5;}
+  40%{transform:translateY(-4px);opacity:1;}
+}
+@media(prefers-reduced-motion:reduce){
+  #iv-host .iv-typing span{animation:none;opacity:.75;}
+}
+
+/* ---- opciones: fila de botones tocables bajo la última respuesta -------- */
+#iv-host .iv-chips{display:flex;flex-wrap:wrap;gap:9px;align-self:flex-start;max-width:100%;}
+#iv-host .iv-chip{
+  min-height:46px;padding:0 16px;border-radius:12px;border:1.5px solid var(--border-strong);
+  background:var(--panel);color:var(--accent-hover);font:600 16px var(--font);
+  cursor:pointer;white-space:nowrap;
+}
+#iv-host .iv-chip:hover{border-color:var(--hover-bd-strong);background:var(--hover-bg-soft);}
+#iv-host .iv-chip:disabled{opacity:.55;cursor:default;}
+
+/* ---- composer compartido (chat-ui.js, clases iv-*) ---------------------- */
+#iv-host .iv-composer{
+  flex:0 0 auto;margin:8px 16px max(16px,env(safe-area-inset-bottom));padding:9px 10px;
+  border:1px solid var(--border-strong);border-radius:14px;background:var(--panel);
+  display:flex;flex-direction:column;gap:6px;
+}
+#iv-host .iv-composer[hidden]{display:none}
+#iv-host .iv-composer:focus-within{border-color:var(--focus-border);box-shadow:0 0 0 3px var(--focus-ring);}
+#iv-host .iv-input{
+  /* Explicit flex:0 0 auto — human-rounds.css USED TO carry a same-named
+     `.iv-input{flex:1;...}` from before this redesign (removed 2026-08-01,
+     see human-rounds.css's entrevista-previa comment): that flex:1's
+     flex-basis:0% was overriding `height` for main-axis sizing inside
+     `.iv-composer`'s column flex, silently capping the auto-grow textarea
+     back to ~75px regardless of the JS-set inline height (found via
+     Playwright measurement). Kept explicit here as a defensive pin now
+     that the source is gone, since `.iv-composer` is itself a flex column. */
+  flex:0 0 auto;
+  display:block;width:100%;min-width:0;min-height:28px;max-height:140px;
+  box-sizing:border-box;padding:1px 2px;border:0;outline:0;
+  border-radius:0;background:transparent;color:var(--text);
+  font:400 17px/1.4 var(--font);resize:none;overflow-y:auto;
+}
+#iv-host .iv-input:focus{
+  outline:none;
+}
+#iv-host .iv-input:disabled{opacity:.6;}
+#iv-host .iv-compose-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;min-width:0;}
+#iv-host .iv-compose-status{
+  order:-1;flex:1 0 100%;min-width:0;white-space:normal;overflow-wrap:anywhere;
+  font-size:13px;line-height:1.35;color:var(--text-3);
+}
+#iv-host .iv-compose-status:empty{display:none;}
+#iv-host .iv-attach,#iv-host .iv-mic{
+  flex-shrink:0;width:44px;height:44px;border-radius:10px;border:0;
+  background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+#iv-host .iv-attach:hover,#iv-host .iv-mic:hover{background:var(--hover-bg);}
+#iv-host .iv-attach:disabled,#iv-host .iv-mic:disabled,#iv-host .iv-send:disabled{opacity:.5;cursor:default;}
+#iv-host .iv-mic[hidden]{display:none;}
+#iv-host .iv-attach img,#iv-host .iv-mic img{width:21px;height:21px;opacity:.78;}
+#iv-host .iv-mic[aria-pressed=true]{background:var(--accent-soft);box-shadow:inset 0 0 0 1px var(--accent-bd);}
+#iv-host .iv-mic[aria-pressed=true] img{opacity:1;filter:var(--icon-accent-filter,none);}
+#iv-host .iv-send{
+  flex-shrink:0;margin-left:auto;width:44px;height:44px;border:0;border-radius:50%;
+  background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+#iv-host .iv-send:hover{background-image:var(--hover-fill);}
+#iv-host .iv-send img{width:22px;height:22px;filter:brightness(0) invert(1);}
+
+/* ---- cierre: la conversación no queda como única salida ---------------- */
+#iv-host .iv-done{
+  flex:0 0 auto;margin:0 16px max(16px,env(safe-area-inset-bottom));
+  padding:20px 22px;border-radius:14px;background:var(--accent-soft);
+}
+#iv-host .iv-done p{margin:0 0 12px;font-size:17px;line-height:1.5;color:var(--text);}
+#iv-host .iv-done p:last-child{margin-bottom:0;}
+#iv-host .iv-done a{color:var(--accent);font-weight:600;text-decoration:none;}
+#iv-host .iv-done a:hover{color:var(--accent-hover);}
+/* "Agregar información" (2026-08-01, "Actualizar entrevista"): reusa
+   .iv-primary-btn (mismo chrome que el paso de identidad) — acá es un
+   <button>, no un <a>, así que hace falta resetear el chrome nativo de
+   button (appearance, font-family) que .iv-primary-btn no cubre. Es la
+   única acción disponible en esta pantalla (patient-flow-design regla 2:
+   un solo CTA lleno) — "Ver mi solicitud" sigue siendo un link llano. */
+#iv-host .iv-done .iv-primary-btn{
+  -webkit-appearance:none;appearance:none;cursor:pointer;font-family:inherit;
+  margin:2px 0 12px;
+}
+#iv-host .iv-done .iv-primary-btn:last-child{margin-bottom:0;}
+
+/* ---- paso de identidad del QR: login primero, DNI de respaldo --------- */
+#iv-host .iv-primary-btn{
+  display:block;width:100%;box-sizing:border-box;margin:2px 0 0;
+  min-height:58px;line-height:58px;padding:0;border:0;border-radius:var(--btn-radius,14px);
+  background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);font:700 18px inherit;
+  text-align:center;text-decoration:none;
+}
+#iv-host .iv-primary-btn:hover{background-image:var(--hover-fill);}
+#iv-host .iv-alt{margin-top:28px;padding-top:22px;border-top:1px solid var(--border);}
+#iv-host .iv-alt-label{margin:0 0 12px;color:var(--text-2);font-size:15px;font-weight:600;}
+#iv-host .iv-dni-form{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end;}
+#iv-host .iv-id-label{display:block;margin:0 0 6px;font:600 15px/1.3 inherit;color:var(--text-2);}
+#iv-host .iv-dni-field{display:flex;flex-direction:column;}
+#iv-host .iv-dni-input{
+  width:12ch;min-height:52px;padding:12px 14px;
+  border:1px solid var(--border-strong);border-radius:13px;
+  background:var(--bg);color:var(--text);
+  font:600 21px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+#iv-host .iv-dni-input:focus{
+  outline:none;
+}
+#iv-host .iv-dni-btn{
+  min-height:52px;padding:0 22px;border:1px solid var(--accent);border-radius:13px;
+  background:transparent;color:var(--accent);font:700 16px inherit;cursor:pointer;
+}
+#iv-host .iv-dni-btn:hover{background:var(--hover-bg);}
+#iv-host .iv-dni-btn:disabled{opacity:.55;cursor:default;}
+#iv-host .iv-id-error{margin:12px 0 0;color:var(--danger,#c2452d);font-size:15px;}
+
+@media(max-width:480px){
+  #iv-host .iv-msg{max-width:88%;}
+  #iv-host .iv-topbar-title{font-size:18px;}
+  #iv-host .iv-dni-form{flex-direction:column;align-items:stretch;}
+  #iv-host .iv-dni-input{width:100%;}
+}
+
+/* ---- en el teléfono: la charla ES la pantalla --------------------------- */
+/* La barra y el pie del sitio VIENEN en el HTML (site_shell._shell,
+   chrome="chat") — un solo marcado para las dos anchuras. Abajo de 768px no
+   se muestran: el pulgar tiene la conversación entera y nada más. */
+@media(max-width:767px){
+  body.iv-chat-body>#stznav,
+  body.iv-chat-body footer.site{display:none;}
+}
+
+/* ---- en una computadora: la charla es una PÁGINA del sitio -------------- */
+/* The product owner, 2026-08-01: "if this is the computer browser, don't make the chat so
+   wide — open it on the site, we already have all HTML and design for it".
+   Mismo diseño, no un segundo diseño: el sitio alrededor, la columna al ancho
+   de lectura de siempre, y la conversación con altura acotada para que
+   `#iv-msgs` siga siendo el ÚNICO scroller (el composer nunca se va abajo del
+   pliegue). */
+@media(min-width:768px){
+  body.iv-chat-body{display:flex;flex-direction:column;height:100dvh;overflow:hidden;}
+  body.iv-chat-body>#stznav{flex:0 0 auto;}
+  body.iv-chat-body>.wrap--chat{max-width:860px;width:100%;flex:1;min-height:0;display:flex;flex-direction:column;padding-top:16px;padding-bottom:0;}
+  body.iv-chat-body>.wrap--chat>footer.site{flex:0 0 auto;margin-top:12px;border-top:0;}
+  #iv-host{
+    position:static;z-index:auto;height:auto;flex:1;min-height:0;
+    border:1px solid var(--border);border-radius:16px;overflow:hidden;
+    background:var(--panel,var(--bg));
+  }
+  #iv-host .iv-topbar{padding:18px 20px 14px;}
+
+  /* El asistente de reservas no se ofrece acá: ya estás en una conversación
+     (chat-widget.js tampoco se carga; esto es por el botón de la barra). */
+  body.iv-chat-body [data-nav-accion="abrir-chat"]{display:none;}
+}
+
+/* Embebida en Mi cuenta: el iframe ya es el panel lateral, por lo que la
+   conversación ocupa siempre todo su rectángulo sin chrome exterior. */
+body.iv-embed-body{margin:0;height:100vh;height:100dvh;overflow:hidden;}
+body.iv-embed-body #iv-host{
+  position:fixed;inset:0;z-index:1;width:auto;height:100vh;height:100dvh;
+  border:0;border-radius:0;background:var(--bg);
+}
+body.iv-embed-body #iv-host .iv-composer{margin-bottom:0;}

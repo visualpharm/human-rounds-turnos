@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "id": "guardia-o-turno",
+      "type": "articulo",
+      "title": "¿Guardia o turno? Cuándo ir a la guardia y cuándo pedir un turno",
+      "parent_id": null,
+      "jurisdiction": "global",
+      "summary": "Criterios generales para elegir entre la guardia (urgencias) y un turno programado.",
+      "content": "Si hay peligro inmediato — dolor de pecho, falta de aire, signos de un accidente cerebrovascular (cara caída, un brazo que no responde, hablar raro), sangrado que no para, sobredosis o riesgo de autolesión — no reserves un turno: llamá al número de emergencias de tu país o andá directo a la guardia. En bebés y niños chicos sumá como alarma la fiebre alta, la dificultad para respirar, el llanto que no se calma o los cambios de color en la piel o los labios.\n\nUn cuadro agudo que no es una emergencia — tos, fiebre, dolor de garganta, gripe, un resfrío que te tiene mal, un dolor fuerte, un golpe, una gastroenteritis — tampoco espera un turno programado: se resuelve el mismo día, sin turno previo, en la guardia o en el consultorio de demanda espontánea del centro más cercano. La guardia atiende por gravedad, no por orden de llegada, así que alguien que llegó después puede ser atendido antes que vos si su cuadro es más urgente — puede haber espera.\n\nUn turno programado es para lo que se puede planificar: controles, seguimiento de una enfermedad crónica, renovar recetas, pedir estudios, sacar un certificado, o ver a un especialista con derivación. Si tenés dudas sobre si tu caso es de guardia o de turno, priorizá la guardia — ahí un profesional te va a decir si en realidad correspondía un turno.",
+      "tags": [
+        "guardia",
+        "turno",
+        "urgencia",
+        "demanda espontanea",
+        "tos",
+        "fiebre",
+        "dolor de garganta",
+        "gripe",
+        "resfrio",
+        "no doy mas",
+        "guardia o turno"
+      ],
+      "status": "publicado",
+      "source": {}
+    }
+  ]
+}

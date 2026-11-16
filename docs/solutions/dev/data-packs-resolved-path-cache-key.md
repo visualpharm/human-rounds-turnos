@@ -1,0 +1,17 @@
+# Layered data packs: cache key must be the resolved path, and the legacy fallback must be scoped to ONE pack id
+
+2026-07-30, Phase 2a of the open-source rework (see `docs/architecture/data-packs.md` for the full design).
+
+## The cache-key bug
+
+`catalog._JSON_CACHE` and `site_base._CACHE` both keyed their mtime cache by the bare filename (`especialidades.json`), not by `sitedata.path("especialidades.json")`'s resolved path. That was harmless under single-dir `sitedata.py` (one filename = one path, always), but breaks the moment `path()` can resolve the SAME filename to a DIFFERENT file depending on the active pack chain: a pack-chain change (or a file moving between levels) wouldn't invalidate the cache, silently serving whatever was cached under that filename from a different pack. Fixed by keying both caches on the resolved `path`, not the bare `fname` — same fix in both modules, one-line diff each. `site_identity._CACHE` was already correct (already keyed by `sitedata.path("sitio.json")`'s result). **Any new file-backed cache in this codebase built on top of `sitedata.path()`/`data_packs.resolve_path()` must key by the resolved path.**
+
+## The "legacy fallback" scoping trap
+
+`data_packs.py`'s pilot moved `especialidades.json`/`clusters.json` out of `webdata/` into `packs/global/`, but the REST of Pinamar's locality data (`sitio.json`, `centros-salud.json`, `servicios.json`, `medicos.json`, …) still lives in `webdata/`, unmigrated. The naive fix — "if nothing in the active chain has the file, fall back to `webdata/`" — is correct for PINAMAR's own chain but is a real data leak for any OTHER chain that happens to also resolve through the same generic fallback: `PACK_CHAIN=global,example-town` would silently serve Pinamar's `sitio.json` (and everything else still sitting in `webdata/`) into a supposedly-generic Sampleton render, defeating the entire genericity test. The fix: scope the fallback to ONE specific pack id (`ar-b-pinamar`) — it only fires when `ar-b-pinamar` is literally part of the resolved chain, never for `example-town` or any future town's chain. **A "fall back to the old single directory" migration bridge must be scoped to the ONE deployment whose data actually still lives there — never a chain-agnostic fallback**, or every OTHER chain silently inherits the un-migrated deployment's data the moment the fallback triggers.
+
+## The golden-page-test honesty trap
+
+Comparing "pack mode" output against `TURNOS_WEBDATA_DIR=webdata` (forcing single-dir legacy mode) to prove a file move didn't change any bytes seems obviously right — but the moment a pilot file is physically REMOVED from `webdata/`, that comparison stops being a parity check and starts being a regression: legacy mode genuinely no longer has the file, so `TURNOS_WEBDATA_DIR=webdata` now differs from pack mode for real (a service's derived `categoria` field went from a real cluster name to `""` in one of these tests). The honest baseline for "did this move change anything" is a **reconstructed pre-move snapshot** (real `webdata/`, symlinked into a temp dir, with the moved files symlinked back in from their new pack) — not the CURRENT state of the directory the files were moved out of. See `test/test_golden_pages.py`'s `TestGoldenPagesPinamarChain.setUpClass`.
+
+Related: `docs/solutions/dev/catalogo-overlay-integracion.md` (the analogous DB-overlay gotchas one layer up).

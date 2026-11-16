@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="{{ '{{lang}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{i18n_bootstrap}}' }}
+{{ static_manifest() }}
+<title>{{ t('account.sso.title', 'Iniciá Sesión | Registro Nacional de las Personas (simulador)') }}</title>
+<meta name="description" content="{{ t('account.sso.meta_description', 'Simulador local del inicio de sesión con RENAPER.') }}">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Grays/teals kept in the RENAPER-simulator family but at WCAG AA:
+     --sso-muted 5.6:1 on the white card and 4.9:1 on --sso-bg;
+     --sso-teal-dark 5.3:1 on white, 4.6:1 on --sso-bg, 5.3:1 under the
+     white wedge greeting; --sso-line (the resting field underline) 3.7:1
+     for WCAG 1.4.11 non-text contrast. */
+  :root{--sso-teal:#12aec2;--sso-teal-soft:#7fd6e0;--sso-teal-dark:#0b7683;--sso-ink:#3d474d;--sso-muted:#5f6970;--sso-line:#0e93a4;--sso-bg:#efefef;--sso-danger:#b42318;}
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{margin:0;background:var(--sso-bg);color:var(--sso-ink);font-family:'Encode Sans',Arial,sans-serif;font-size:16px;line-height:1.5;overflow-x:hidden;text-wrap:pretty;}
+  .sso-wedge{position:fixed;inset:0 auto 0 0;width:min(46vw,660px);pointer-events:none;z-index:0;}
+  .sso-wedge::before,.sso-wedge::after{content:"";position:absolute;inset:0;}
+  .sso-wedge::after{background:var(--sso-teal-soft);clip-path:polygon(0 0,66% 50%,0 100%);}
+  .sso-wedge::before{background:var(--sso-teal-dark);clip-path:polygon(0 0,62% 50%,0 100%);z-index:1;}
+  .sso-hola{position:absolute;top:50%;left:7%;transform:translateY(-50%);z-index:2;color:#fff;font-size:clamp(30px,3.4vw,44px);font-weight:500;letter-spacing:.01em;}
+  .sso-main{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 18px 40px;}
+  .sso-card{width:min(460px,100%);background:#fff;border-radius:8px;box-shadow:0 10px 40px rgba(40,50,60,.18);padding:38px 44px 30px;}
+  .sso-logo{display:flex;align-items:center;gap:14px;justify-content:center;margin:0 0 6px;color:var(--sso-muted);}
+  .sso-logo-r{flex:0 0 auto;width:62px;height:62px;border:3px double var(--sso-muted);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:600;color:var(--sso-muted);font-style:italic;}
+  .sso-logo-t{margin:0;font-size:20px;line-height:1.18;font-weight:500;letter-spacing:.01em;color:var(--sso-ink);}
+  .sso-logo-sub{margin:2px 0 0;padding-top:5px;border-top:2px solid #d4dade;text-align:center;color:var(--sso-muted);font-size:16px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;}
+  .sso-field{margin:30px 0 0;}
+  .sso-label{display:block;margin:0 0 2px;font-size:16px;color:var(--sso-ink);}
+  .sso-dni{width:100%;min-height:44px;border:0;border-bottom:2px solid var(--sso-line);background:none;padding:8px 2px 7px;font:400 17px 'Encode Sans',Arial,sans-serif;color:var(--sso-ink);border-radius:0;}
+  .sso-dni:focus{outline:0;border-bottom-color:var(--sso-teal-dark);}
+  .sso-dni::placeholder{color:var(--sso-muted);}
+  .sso-submit{display:block;min-height:44px;margin:30px auto 4px;border:0;background:none;padding:10px 18px;font:500 16px 'Encode Sans',Arial,sans-serif;color:var(--sso-muted);cursor:pointer;}
+  .sso-submit.listo{color:var(--sso-teal-dark);}
+  .sso-submit:hover{color:var(--sso-teal-dark);}
+  .sso-err{min-height:24px;margin:6px 0 0;text-align:center;font-size:16px;color:var(--sso-danger);}
+  .sso-dev{width:min(460px,100%);margin-top:16px;color:var(--sso-muted);font-size:16px;line-height:1.6;text-align:center;}
+  .sso-dev a{color:var(--sso-teal-dark);}
+  .sso-dev-ids{margin:4px 0 0;display:flex;flex-wrap:wrap;gap:5px 10px;justify-content:center;}
+  .sso-dev-ids button{border:0;background:none;padding:12px 8px;min-height:44px;color:var(--sso-muted);font:400 16px 'Encode Sans',Arial,sans-serif;cursor:pointer;}
+  @media(max-width:900px){.sso-wedge{display:none;}}
+</style>
+</head>
+<body>
+<div class="sso-wedge" aria-hidden="true"><span class="sso-hola">{{ t('account.sso.hola', '¡Hola!') }}</span></div>
+<main class="sso-main">
+  <form class="sso-card" id="sso-form" novalidate>
+    <div class="sso-logo">
+      <span class="sso-logo-r" aria-hidden="true">R</span>
+      <h1 class="sso-logo-t">Registro Nacional<br>de las Personas</h1>
+    </div>
+    <p class="sso-logo-sub">Ministerio del Interior</p>
+    <div class="sso-field">
+      <label class="sso-label" for="sso-dni">{{ t('account.sso.label_documento', 'Número de Documento') }}</label>
+      <input class="sso-dni" id="sso-dni" inputmode="numeric" autocomplete="off" placeholder="1234567" maxlength="9">
+    </div>
+    <button class="sso-submit" id="sso-btn" type="submit">{{ t('account.sso.btn_ingresar', 'Iniciá Sesión') }}</button>
+    <p class="sso-err" id="sso-err" aria-live="polite"></p>
+  </form>
+  <div class="sso-dev">
+    <p style="margin:0;"><strong>{{ t('account.sso.dev_strong', 'Simulador local.') }}</strong>{{ t('account.sso.dev_rest', ' Identidades sintéticas, sin datos reales de RENAPER.') }} <a href="/auth/test">{{ t('account.sso.dev_admin_link', 'Administrar identidades') }}</a></p>
+    <div class="sso-dev-ids" id="sso-dev-ids"></div>
+  </div>
+</main>
+<script>
+(function () {
+  "use strict";
+  var I18n = null;
+    var i18nReady = (typeof window !== "undefined" && window.SANA_STATIC && window.SANA_STATIC["platform/i18n.mjs"])
+      ? import(window.SANA_STATIC["platform/i18n.mjs"]).then(function (m) { I18n = m; return m; })
+      : Promise.resolve(null);
+    function T(key, vars, fallback) {
+    return I18n ? I18n.t(key, vars, fallback) : (fallback || key);
+  }
+  i18nReady.then(function () {
+  var params = new URLSearchParams(location.search);
+  var provider = params.get("provider") === "mi_argentina" ? "mi_argentina" : "renaper";
+  var next = params.get("next") || "/account";
+  // "/\host" también es otro host: el navegador lee "\" como "/".
+  if (next.charAt(0) !== "/" || next.charAt(1) === "/" || next.indexOf("\\") !== -1) next = "/account";
+  var dni = document.getElementById("sso-dni");
+  var btn = document.getElementById("sso-btn");
+  var err = document.getElementById("sso-err");
+  var RECORDADO = "st_sso_dni";
+
+  // El documento es lo ÚNICO que se tipea acá y casi siempre es el mismo:
+  // quien prueba el flujo entra y sale varias veces seguidas. Lo dejamos
+  // escrito de entrada (localStorage, sólo el número; el simulador no maneja
+  // datos reales) — igual se puede borrar y escribir otro.
+  try {
+    var ultimo = (window.localStorage.getItem(RECORDADO) || "").replace(/[^0-9]/g, "");
+    if (ultimo.length >= 7) { dni.value = ultimo; btn.classList.add("listo"); }
+  } catch (e) {}
+
+  dni.addEventListener("input", function () {
+    dni.value = dni.value.replace(/[^0-9]/g, "");
+    btn.classList.toggle("listo", dni.value.length >= 7);
+    err.textContent = "";
+  });
+
+  fetch("/api/account/test-identities").then(function (r) { return r.json(); }).then(function (json) {
+    var host = document.getElementById("sso-dev-ids");
+    (json.identidades || []).slice(0, 6).forEach(function (p) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.textContent = p.dni + " " + p.nombre + " " + p.apellido;
+      b.addEventListener("click", function () {
+        dni.value = p.dni;
+        btn.classList.add("listo");
+        err.textContent = "";
+      });
+      host.appendChild(b);
+    });
+  }).catch(function () {});
+
+  document.getElementById("sso-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    err.textContent = "";
+    if (dni.value.length < 7) { err.textContent = T("account.sso.err_vacio", null, "Escrib\u00ed tu n\u00famero de documento."); return; }
+    btn.disabled = true;
+    fetch("/api/account/test-login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ provider: provider, dni: dni.value })
+    }).then(function (r) { return r.json().then(function (json) { return { status: r.status, json: json }; }); })
+      .then(function (res) {
+        if (res.status === 200 && res.json && res.json.ok) {
+          try { window.localStorage.setItem(RECORDADO, dni.value); } catch (e) {}
+          window.location.href = next;
+          return;
+        }
+        btn.disabled = false;
+        if (res.json && res.json.error === "dni_invalido") {
+          err.textContent = T("account.sso.err_invalido", null, "Ese n\u00famero de documento no parece v\u00e1lido.");
+        } else if (res.json && res.json.error === "cuenta_real_no_simulable") {
+          err.textContent = T("account.sso.err_cuenta_real", null, "Ese documento tiene una cuenta real: el simulador s\u00f3lo entra con personas de prueba.");
+        } else {
+          err.textContent = T("account.sso.err_generico", null, "No pudimos validar tu identidad. Prob\u00e1 de nuevo.");
+        }
+      })
+      .catch(function () { btn.disabled = false; err.textContent = T("account.sso.err_generico", null, "No pudimos validar tu identidad. Prob\u00e1 de nuevo."); });
+  });
+  });
+})();
+</script>
+</body>
+</html>

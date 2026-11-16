@@ -1,0 +1,13 @@
+{
+  "id": "example-town",
+  "level": 4,
+  "parent": "global",
+  "language": "es",
+  "name": "Sampleton",
+  "example": true,
+  "description": "Localidad ficticia que cubre los 4 modos de servicio (walkin, walkin_con_orden, solicitud, solicitud_con_orden) — el punto de partida para scaffoldear una localidad nueva. Self-contained: también sirve como fixture del modo legacy TURNOS_WEBDATA_DIR (era webdata-ejemplo/, retirado el 2026-07-30 — ver docs/architecture/data-packs.md). Trae su PROPIO especialidades.json/clusters.json en vez de heredar los de packs/global/, porque el subconjunto de este pack no coincide 1:1 con el catálogo completo de Pinamar (p. ej. 'Nutrición' cae en un cluster distinto en cada uno) — de ahí el 'compose: replace' de abajo (fase 3, 2026-07-30): sin él, compose() FUSIONARÍA las 40 especialidades de packs/global/ con las 6 propias. Se activa con PACK_CHAIN=global,example-town. Nombre elegido 2026-08-04 (\"Villa Ejemplo\" -> \"Sampleton\") y re-elegido 2026-08-05 (\"Sampleton\" -> \"Sampleton\"): Sampleton sobrecorrigió hacia el inglés y conservó estructuras españolas (\"Hospital de X\"); el registro final imita cómo se nombra un hospital en Nuevo México — topónimos de raíz española (Socorro, Mesilla) con palabras de estructura en inglés (\"Regional Hospital\", \"Health Center\") — ni muy inglés ni muy español, y no traduce mal en ningún idioma. Ver el commit para el mapeo completo de nombres.",
+  "compose": {
+    "especialidades.json": "replace",
+    "clusters.json": "replace"
+  }
+}

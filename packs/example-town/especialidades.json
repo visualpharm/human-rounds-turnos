@@ -1,0 +1,81 @@
+{
+  "note": "Catálogo canónico de especialidades médicas -> cluster (clusters.json de este mismo pack). Generado por scripts/generate_example_town_catalog.py — NO editar a mano.",
+  "specialties": [
+    {
+      "nombre": "Medicina general",
+      "cluster": "clinica"
+    },
+    {
+      "nombre": "Geriatría",
+      "cluster": "clinica"
+    },
+    {
+      "nombre": "Pediatría",
+      "cluster": "pediatria"
+    },
+    {
+      "nombre": "Cardiología",
+      "cluster": "cardiologia"
+    },
+    {
+      "nombre": "Nutrición",
+      "cluster": "endocrino"
+    },
+    {
+      "nombre": "Endocrinología",
+      "cluster": "endocrino"
+    },
+    {
+      "nombre": "Ginecología y Obstetricia",
+      "cluster": "gineco"
+    },
+    {
+      "nombre": "Traumatología",
+      "cluster": "trauma-kine"
+    },
+    {
+      "nombre": "Kinesiología",
+      "cluster": "trauma-kine"
+    },
+    {
+      "nombre": "Odontología",
+      "cluster": "odontologia"
+    },
+    {
+      "nombre": "Otorrinolaringología",
+      "cluster": "otorrino-fono"
+    },
+    {
+      "nombre": "Fonoaudiología",
+      "cluster": "otorrino-fono"
+    },
+    {
+      "nombre": "Psicología",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Psiquiatría",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Dermatología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Oftalmología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Diagnóstico por imágenes",
+      "cluster": "diagnostico"
+    },
+    {
+      "nombre": "Laboratorio",
+      "cluster": "diagnostico"
+    },
+    {
+      "nombre": "Urología",
+      "cluster": "otras"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "_comment": "/zoonosis page chrome — headings and labels. Content (lede, servicios, nota, whatsapp, enlaces_oficiales) is pack data (enlaces.json).",
+  "zoonosis.h1": "人獣共通感染症（ズーノーシス）",
+  "zoonosis.lede_default": "市営の動物保健・ズーノーシス（人獣共通感染症）センターです。",
+  "zoonosis.services_h": "提供しているサービス",
+  "zoonosis.contact_h": "お問い合わせ",
+  "zoonosis.bite_h": "動物に噛まれたり、引っかかれたりした場合",
+  "zoonosis.neuter_h": "不妊・去勢手術は地域の安全にもつながります",
+  "zoonosis.official_h": "詳細情報",
+  "zoonosis.rodent_h": "ネズミなどのげっ歯類が媒介する病気を防ぎましょう",
+  "zoonosis.whatsapp_lead": "WhatsApp",
+  "zoonosis.nota_default": "これは市営の保健サービスです。ペットの予約はこのポータルサイトでは受け付けていません。",
+  "zoonosis.landline": "固定電話"
+}

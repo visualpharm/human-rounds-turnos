@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "Si la cuenta tiene un email registrado, recibirás un enlace para elegir una nueva contraseña.",
+  "admin.reset.mismatch": "Las contraseñas no coinciden.",
+  "admin.reset.failed": "No se pudo guardar. Pedí un enlace nuevo.",
+  "admin.reset.saved": "Contraseña guardada. Ir al panel",
+  "admin.reset.network": "Error de red. Reintentá.",
+  "admin.reset.expired_title": "El enlace venció",
+  "admin.reset.expired_body": "Este enlace venció o ya fue usado. Solicitá uno nuevo desde el acceso al panel.",
+  "admin.reset.login": "Acceso al panel",
+  "admin.reset.password": "Nueva contraseña",
+  "admin.reset.title": "Elegí una nueva contraseña",
+  "admin.reset.requirements": "Usá al menos 8 caracteres. Este enlace se puede usar una sola vez.",
+  "admin.reset.confirm": "Repetir contraseña",
+  "admin.reset.save": "Guardar contraseña",
+  "admin.reset.db_unavailable": "Base de datos no disponible.",
+  "admin.reset.expired": "El enlace venció o ya fue usado. Pedí uno nuevo.",
+  "admin.reset.invalid_json": "JSON inválido.",
+  "admin.reset.username": "Tu usuario"
+}

@@ -1,0 +1,6 @@
+{% extends "modules/intake/print_base.html" %}
+{% block title %}{{ t('intake.print.orden.title', 'Orden de estudios') }}{% endblock %}
+{% block kind %}orden{% endblock %}
+{% block doc_label %}{{ t('intake.print.orden.doc_label', 'ORDEN DE ESTUDIOS') }}{% endblock %}
+{% block items %}{% if estudios %}<p class="rp">{{ t('intake.print.solicito', 'Solicito:') }}</p><ul class="lineas lineas--bullet">{% for estudio in estudios %}<li>{{ estudio }}</li>{% endfor %}</ul>{% else %}<p class="rp">{{ t('intake.print.solicito', 'Solicito:') }}</p><p class="vacio">{{ t('intake.print.sin_estudios', '(sin estudios)') }}</p>{% endif %}
+      {% if diagnosticos %}<p class="dx-titulo">{{ t('intake.print.dx_titulo', 'Diagnóstico presuntivo') }}</p><ul class="lineas lineas--bullet">{% for diagnostico in diagnosticos %}<li>{{ diagnostico }}</li>{% endfor %}</ul>{% endif %}{% endblock %}

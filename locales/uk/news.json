@@ -1,0 +1,12 @@
+{
+  "_comment": "/news (Novedades) page chrome only — title, tabs, the site's name in the changelog. The changelog entries themselves are editorial content, machine-translated + cached via translate.py (see docs/architecture/i18n.md), not this catalog.",
+  "news.date_long": "{day} {month} {year} року",
+  "news.desc": "Історія оновлень {brand}: що ми додали та покращили, тиждень за тижнем.",
+  "news.filter.all": "Усі",
+  "news.filter.requested": "На запит",
+  "news.h1": "Новини",
+  "news.month_long": "{month} {year} року",
+  "news.site_phrase": "запис до лікарів у {city}",
+  "news.tabs": "Фільтрувати новини",
+  "news.title": "Новини"
+}

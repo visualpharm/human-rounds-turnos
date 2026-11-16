@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ t('intake.poster.title_label', 'Cartel de entrevista previa') }} — {{ nombre }}</title>
+<style>
+@page { size: A4 portrait; margin: 0; }
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#eef1f4;}
+body{font-family:Arial,Helvetica,sans-serif;color:#0b2231;}
+.print-bar{position:sticky;top:0;background:#0b2231;color:#fff;padding:10px 16px;
+  display:flex;justify-content:flex-end;gap:10px;z-index:9;}
+.print-bar button{font:600 13px Arial,sans-serif;padding:8px 16px;border:0;border-radius:6px;
+  background:#fff;color:#0b2231;cursor:pointer;}
+.hoja-wrap{display:flex;justify-content:center;padding:18px 0 40px;}
+.hoja{width:210mm;min-height:297mm;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.15);
+  padding:20mm;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.cartel-doc{font:700 26px/1.25 Arial;margin:0;}
+.cartel-esp{font:400 15px Arial;color:#55606c;margin:2px 0 0;}
+.cartel-titulo{font:800 30px/1.25 Arial;margin:16mm 0 10mm;max-width:150mm;}
+.cartel-copete{font:400 16px/1.5 Arial;max-width:140mm;margin:0 0 10mm;}
+.cartel-qr{margin:0;}
+.cartel-qr svg{width:100mm;height:100mm;}
+.cartel-qr-fallback{width:100mm;padding:10mm;border:2px dashed #c2ccd6;border-radius:12px;
+  font:700 15px Arial;color:#55606c;}
+.cartel-url{font:700 14px/1.4 monospace;color:#55606c;margin:4mm 0 0;word-break:break-all;}
+@media print{
+  .print-bar{display:none;}
+  body{background:#fff;}
+  .hoja-wrap{padding:0;}
+  .hoja{box-shadow:none;}
+}
+
+</style>
+</head>
+<body>
+<div class="print-bar"><button type="button" onclick="window.print()">{{ t('intake.print.imprimir', 'Imprimir') }}</button></div>
+<div class="hoja-wrap"><div class="hoja">
+  <p class="cartel-doc">{{ nombre }}</p>
+  <p class="cartel-esp">{% if especialidad %}{{ especialidad }}{% endif %}{% if especialidad and matricula %}  ·  {% endif %}{% if matricula %}{{ t('intake.print.matricula_label', 'Mat.') }} {{ matricula }}{% endif %}</p>
+  <p class="cartel-titulo">{{ t('intake.poster.headline', 'Mientras esperás, contanos qué te pasa') }}</p>
+  <p class="cartel-copete">{{ t('intake.poster.copete', 'Escaneá el código con la cámara del celular y respondé unas preguntas — el médico las lee durante la consulta: esto no la reemplaza ni da consejos médicos.') }}</p>
+  {% if qr_svg %}<div class="cartel-qr">{{ qr_svg }}</div><p class="cartel-url">{{ url }}</p>{% else %}<div class="cartel-qr"><div class="cartel-qr-fallback">{{ t('intake.poster.segno_fallback', 'Instalá segno para el QR — mientras tanto, entrá con la dirección de abajo.') }}</div></div><p class="cartel-url">{{ url }}</p>{% endif %}
+</div></div>
+</body>
+</html>

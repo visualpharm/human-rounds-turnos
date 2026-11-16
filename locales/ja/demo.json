@@ -1,0 +1,11 @@
+{
+  "_comment": "The public demo bar and its notices.",
+  "demo.banner.admin": "デモ用。データは架空のものです。変更内容はリセットされます。",
+  "demo.banner.aria": "デモ用ナビゲーション",
+  "demo.banner.language_label": "言語",
+  "demo.banner.link_admin": "管理画面",
+  "demo.banner.link_doctor_demo": "医師用コンソール",
+  "demo.banner.link_patient_demo": "患者",
+  "demo.banner.link_public_site": "公開サイト",
+  "demo.banner.public": "デモ用。すべてのデータは架空のものです。"
+}

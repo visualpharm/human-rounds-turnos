@@ -1,0 +1,2227 @@
+{
+  "_meta": {
+    "generado": "2026-07-09",
+    "generado_por": "Investigación con parallel.ai (psearch), fuentes de diagnóstico por imágenes y clínicas de Argentina; se usó una fuente internacional (MedlinePlus, Mayo Clinic, Quirónsalud) solo cuando no había una fuente argentina equivalente. La preparación no varía por país en lo médico, sí en horarios y trámites locales.",
+    "alcance": "Cubre los estudios estándar de una orden de derivación argentina — de análisis de rutina a estudios especializados (RMN, densitometría, Holter, MAPA, espirometría, endoscopía/colonoscopía, EEG) — y las atenciones que no son estudios: vacunación, consulta médica y pediátrica, odontología, oftalmología, control del embarazo, nutrición, kinesiología, salud mental, diabetología, testeo rápido, anticoncepción, IVE-ILE, enfermería y talleres. Qué de esto ofrece cada centro/localidad concreta es dato local (el _meta de su pack, no de esta base; el despliegue de referencia lo guarda en su pack privado).",
+    "diseno_match": "Las keywords de match van en minúscula y sin tildes: el texto de una orden escaneada u OCR puede perder tildes, igual que el PDF417 del DNI (ver CLAUDE.md del proyecto). Los estudios con calificador (ej. 'ecografia abdominal') son más específicos que su fallback genérico (ej. 'ecografia-general', para cuando la orden solo dice 'Ecografía'). Al matchear contra el texto de una orden: probá primero los estudios con match más largo/específico, y usá el '-general' solo si ninguno específico matcheó.",
+    "advertencia_general": "Ayuno, vejiga llena y suspensión de medicación varían por centro y por indicación médica puntual. Esta base es una guía de referencia, no reemplaza el volante de indicaciones que entrega el servicio de Diagnóstico por Imágenes o Laboratorio. Ante cualquier medicación a suspender (metformina, anticoagulantes, betabloqueantes, broncodilatadores), la instrucción siempre remite a 'consultá con tu médico', nunca a suspender por cuenta propia.",
+    "esquema": "Cada entrada dice lo mismo que le diría una persona en el mostrador, en este orden: `resumen` (una línea: cuánta preparación hay en realidad), `ayuno`, `traer`, `antes` (qué hacer antes de venir), `avisar` (lo que la persona tiene que decirle a quien la atiende — riesgos, alergias, embarazo), `no_hace_falta` (mitos y precauciones de más: sacárselas de encima es información, no relleno) y `despues`. Ninguna sección es obligatoria: la que está vacía no se dibuja. `antes` se llamaba `preparacion` hasta 2026-07-29 y los renderers todavía leen ese nombre viejo, porque quedó guardado dentro de ai_json en solicitudes anteriores a ese día."
+  },
+  "estudios": [
+    {
+      "id": "laboratorio-sangre",
+      "nombre": "Análisis de sangre / laboratorio",
+      "match": [
+        "laboratorio",
+        "analisis de sangre",
+        "analisis clinicos",
+        "extraccion de sangre",
+        "extracciones",
+        "hemograma",
+        "hepatograma",
+        "urea",
+        "creatinina",
+        "orina completa"
+      ],
+      "resumen": "Se hace con ayuno. Fuera de eso, el día anterior es un día normal.",
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "Para perfil lipídico (colesterol, triglicéridos) algunos laboratorios piden hasta 12 horas: confirmá en el consultorio 5 del Hospital de Pinamar (lunes a viernes, 10 a 13 h) o en tu orden."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Podés tomar agua durante el ayuno.",
+        "No fumes durante el ayuno.",
+        "Seguí tomando la medicación de todos los días, salvo que tu médico te haya dicho otra cosa.",
+        "Vení con ropa que deje descubrir el brazo."
+      ],
+      "avisar": [
+        "Tomás anticoagulantes o tenés un problema de coagulación.",
+        "Otras veces te descompusiste al sacarte sangre."
+      ],
+      "no_hace_falta": [
+        "Suspender tu medicación por tu cuenta.",
+        "Estirar el ayuno más de 12 horas: no mejora el resultado."
+      ],
+      "despues": [
+        "Llevá algo para comer: podés desayunar apenas termina la extracción.",
+        "Dejate el apósito un par de horas y evitá esfuerzo con ese brazo.",
+        "Si te mareás, avisá antes de irte. Es común y se pasa acostado unos minutos."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Actualización y cambios de paradigma: ya no más ayuno de 12 horas ni glucemia de 110 mg/dL — Revista Bioquímica y Patología Clínica",
+          "url": "https://www.revistabypc.org.ar/index.php/bypc/article/view/291"
+        },
+        {
+          "title": "Bioquímica Clínica: ayuno y perfil lipídico — SciELO Argentina",
+          "url": "https://www.scielo.org.ar/pdf/abcl/v59n4/0325-2957-abcl-59-4-02.pdf"
+        },
+        {
+          "title": "Ayuno — Cigna Knowledge Center",
+          "url": "https://www.cigna.com/es-us/knowledge-center/hw/temas-de-salud/ayuno-abl0422"
+        }
+      ]
+    },
+    {
+      "id": "glucemia",
+      "nombre": "Glucemia",
+      "match": [
+        "glucemia",
+        "glucosa en sangre",
+        "glucosa basal",
+        "curva de glucemia",
+        "glucemia en ayunas"
+      ],
+      "resumen": "Ayuno de 8 horas y nada más.",
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "No tomes bebidas con azúcar durante el ayuno: ni jugo, ni mate cocido azucarado."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Podés tomar agua. Nada con azúcar: ni jugo, ni mate cocido azucarado, ni caramelos.",
+        "Tomá tu medicación habitual salvo indicación de tu médico."
+      ],
+      "avisar": [
+        "Sos diabético y usás insulina: puede haber que ajustar el horario del ayuno."
+      ],
+      "no_hace_falta": [
+        "Comer distinto los días previos: se mide tu día normal."
+      ],
+      "despues": [
+        "Llevá algo para comer: conviene desayunar al salir."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Actualización y cambios de paradigma: ya no más ayuno de 12 horas ni glucemia de 110 mg/dL — Revista Bioquímica y Patología Clínica",
+          "url": "https://www.revistabypc.org.ar/index.php/bypc/article/view/291"
+        },
+        {
+          "title": "Bioquímica Clínica: ayuno y perfil lipídico — SciELO Argentina",
+          "url": "https://www.scielo.org.ar/pdf/abcl/v59n4/0325-2957-abcl-59-4-02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "perfil-lipidico",
+      "nombre": "Perfil lipídico (colesterol, triglicéridos)",
+      "match": [
+        "perfil lipidico",
+        "colesterol",
+        "trigliceridos",
+        "lipidograma"
+      ],
+      "resumen": "Ayuno largo y sin alcohol el día anterior.",
+      "ayuno": {
+        "required": true,
+        "horas": 12,
+        "agua_permitida": true,
+        "nota": "Las guías clínicas más nuevas permiten tomar el perfil lipídico sin ayuno en la mayoría de los pacientes, pero muchos laboratorios argentinos todavía piden 12 horas. Confirmá con el laboratorio antes de ir."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Podés tomar agua durante el ayuno.",
+        "No tomes alcohol las 24 horas previas: altera el resultado."
+      ],
+      "no_hace_falta": [
+        "Comer distinto la semana previa para «mejorar» el número: se busca tu valor habitual."
+      ],
+      "despues": [
+        "Llevá algo para comer: podés desayunar al salir."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Bioquímica Clínica: ayuno y perfil lipídico — SciELO Argentina",
+          "url": "https://www.scielo.org.ar/pdf/abcl/v59n4/0325-2957-abcl-59-4-02.pdf"
+        },
+        {
+          "title": "Actualización y cambios de paradigma: ya no más ayuno de 12 horas ni glucemia de 110 mg/dL — Revista Bioquímica y Patología Clínica",
+          "url": "https://www.revistabypc.org.ar/index.php/bypc/article/view/291"
+        }
+      ]
+    },
+    {
+      "id": "audiometria",
+      "nombre": "Audiometría",
+      "match": [
+        "audiometria",
+        "audiometria tonal",
+        "evaluacion auditiva"
+      ],
+      "resumen": "Lo único importante es llegar con los oídos descansados.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Evitá ruidos fuertes (auriculares altos, obras, recitales) al menos 14 horas antes.",
+        "Si tenés los oídos tapados con cera o estás muy resfriado, avisá al sacar el turno: puede convenir postergarlo."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Dura unos minutos y no duele. Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Protocolo de evaluación de hipoacusias inducidas por ruido — SMTBA",
+          "url": "https://smtba.org.ar/wp-content/uploads/2019/07/Protocolo-de-evaluaci%C3%B3n-de-hipoacusias-inducidas-por-ruido.pdf"
+        },
+        {
+          "title": "Manual de procedimientos: hipoacusia y sordera en la infancia — Ministerio de Salud de la Provincia de Buenos Aires",
+          "url": "https://www.ms.gba.gov.ar/ssps/residencias/biblio/pdf_fono/Manual-Hipoacusia-sordera-Infancia.pdf"
+        }
+      ]
+    },
+    {
+      "id": "otoemisiones-acusticas",
+      "nombre": "Otoemisiones acústicas",
+      "match": [
+        "otoemisiones",
+        "otoemisiones acusticas",
+        "screening auditivo neonatal",
+        "oea"
+      ],
+      "resumen": "Sale mejor con el bebé alimentado y dormido.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI del bebé o partida de nacimiento",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Dale de comer justo antes: si se duerme, el estudio dura pocos minutos.",
+        "Evitá ruido en la sala de espera.",
+        "Llevá chupete, mantita o lo que lo calme."
+      ],
+      "no_hace_falta": [
+        "Que el bebé esté en ayunas.",
+        "Sedarlo."
+      ],
+      "despues": [
+        "Es indoloro. El bebé puede seguir su día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Manual de procedimientos: hipoacusia y sordera en la infancia — Ministerio de Salud de la Provincia de Buenos Aires",
+          "url": "https://www.ms.gba.gov.ar/ssps/residencias/biblio/pdf_fono/Manual-Hipoacusia-sordera-Infancia.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-general",
+      "nombre": "Ecografía (tipo no especificado)",
+      "match": [
+        "ecografia",
+        "ecografia infantil",
+        "ecografia pediatrica",
+        "eco de"
+      ],
+      "resumen": "La preparación depende de qué parte del cuerpo te van a mirar.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "La preparación depende de qué parte del cuerpo te van a estudiar: ayuno para abdominal, vejiga llena para pélvica/obstétrica temprana, ninguna preparación para partes blandas, mama o vascular periférico."
+      },
+      "traer": [
+        "Orden médica de derivación (original), que aclare qué ecografía es",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Ecografías anteriores, si las tenés"
+      ],
+      "antes": [
+        "Fijate qué dice tu orden: abdominal, pélvica, obstétrica, mamaria o de partes blandas. Cada una se prepara distinto.",
+        "Si es para un chico, el ayuno suele ser más corto (unas 4 horas): preguntalo al sacar el turno."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "¿Te pidieron ayuno para un estudio y no sabes por qué? — Hospital Viera",
+          "url": "https://www.facebook.com/hospitalviera/videos/te-pidieron-ayuno-para-un-estudio-y-no-sabes-por-qu%C3%A9-no-todos-los-ex%C3%A1menes-lo-re/1507265620921917/"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-abdominal",
+      "nombre": "Ecografía abdominal",
+      "match": [
+        "ecografia abdominal",
+        "eco abdominal",
+        "ecografia de abdomen",
+        "ecografia hepato bilio pancreatica",
+        "ecografia renal",
+        "ecografia hepatica",
+        "ecografia abdomen total"
+      ],
+      "resumen": "",
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "El tiempo exacto puede variar entre 6 y 8 horas según el centro."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Ecografías abdominales anteriores, si las tenés"
+      ],
+      "antes": [
+        "Durante el ayuno, sólo agua.",
+        "El día anterior evitá bebidas con gas y chicles: aumentan el gas intestinal.",
+        "Vení con ropa que deje descubrir la panza."
+      ],
+      "avisar": [
+        "Sos diabético y usás insulina: consultá antes cómo manejar el ayuno."
+      ],
+      "no_hace_falta": [
+        "Vejiga llena: eso es para la ecografía pélvica.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Llevá algo para comer: podés comer apenas termina."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ayuno para ecografía abdominal: ¿qué pasa si no se cumple? — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/ayuno-para-ecografia-abdominal/"
+        },
+        {
+          "title": "Ecografía abdominal: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/abdominal-ultrasound/about/pac-20392738"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-pelvica-ginecologica",
+      "nombre": "Ecografía pélvica / ginecológica / transvaginal",
+      "match": [
+        "ecografia pelvica",
+        "ecografia ginecologica",
+        "ecografia transvaginal",
+        "eco transvaginal",
+        "ecografia uterina",
+        "ecografia de ovario",
+        "ecografia de utero"
+      ],
+      "resumen": "Con vejiga llena sólo si la orden pide también la vía abdominal.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Por vía transvaginal no hace falta vejiga llena: podés orinar antes.",
+        "Si la orden pide también vía abdominal, tomá 3 o 4 vasos de agua 1 hora antes y no orines hasta el estudio.",
+        "Te vas a desvestir de la cintura para abajo: vení con ropa cómoda."
+      ],
+      "avisar": [
+        "Estás con la menstruación.",
+        "Estás o podés estar embarazada."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Depilarte."
+      ],
+      "despues": [
+        "Podés seguir tu día normal. Una molestia leve al rato es normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ecografía transvaginal — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003779.htm"
+        },
+        {
+          "title": "Preparación para una ecografía transvaginal — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/preparacion-para-una-ecografia-transvaginal/"
+        },
+        {
+          "title": "Ecografía: preparaciones — Sanatorio Argentino (San Juan)",
+          "url": "https://www.sanatorioargentino.com.ar/especialidades-medicas/ecografia.html"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-vesicoprostatica",
+      "nombre": "Ecografía prostática / vesicoprostática",
+      "match": [
+        "ecografia prostatica",
+        "ecografia vesicoprostatica",
+        "ecografia de prostata",
+        "ecografia de vejiga",
+        "eco prostatica"
+      ],
+      "resumen": "Se hace con la vejiga llena. Es la única preparación, pero es la que importa.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "1 hora antes del turno orina y después tomá 1 litro de agua sin gas, terminando 30 minutos antes.",
+        "No orines hasta después del estudio.",
+        "Si el estudio es por vía transrectal, tu médico puede indicarte además un enema: seguí esa indicación."
+      ],
+      "no_hace_falta": [
+        "Ayunar."
+      ],
+      "despues": [
+        "Podés ir al baño apenas termina."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Instrucciones para ecografía vesico prostática — IDIM",
+          "url": "https://www.idim.com.ar/index.php/59-servicios/imagenes/instrucciones-para-pacientes/188-instrucciones-para-ecografia-vesico-prostatica"
+        },
+        {
+          "title": "Ecografía de vejiga o próstata — Centro Rossi",
+          "url": "https://www.cdrossi.com/estudios-medicos/estudios/ecograf%EF%BF%BDas_5/ecograf%EF%BF%BDa-de-vejiga-o-pr%EF%BF%BDstata_18.html"
+        },
+        {
+          "title": "Preparación previa para estudios ecográficos — Fundación Favaloro",
+          "url": "https://www.fundacionfavaloro.org/preparacion-previa/"
+        }
+      ]
+    },
+    {
+      "id": "mamografia",
+      "nombre": "Mamografía",
+      "match": [
+        "mamografia",
+        "mastografia",
+        "tomosintesis mamaria"
+      ],
+      "resumen": "Ese día, sin desodorante ni crema en axilas y mamas.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Mamografías anteriores, para comparar"
+      ],
+      "antes": [
+        "No uses desodorante, talco, crema ni perfume en axilas o mamas: se ven como manchas en la placa.",
+        "Si podés elegir el día, entre el día 5 y el 10 del ciclo duele menos.",
+        "Vení con ropa de dos piezas: te vas a descubrir de la cintura para arriba."
+      ],
+      "avisar": [
+        "Estás embarazada o dando de mamar.",
+        "Tenés implantes mamarios o cirugías previas en la mama."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "La compresión molesta unos segundos y no deja dolor. Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Preparación: mamografía y tomosíntesis — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/preparacion-para-la-mamografia-convencional-digital-y-tomosintesis-3d/"
+        },
+        {
+          "title": "Preparación para mamografías — MetroWest Medical Center",
+          "url": "https://www.mwmc.com/es/services/diagnostic-imaging/mammogram-prep"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-mamaria",
+      "nombre": "Ecografía mamaria",
+      "match": [
+        "ecografia mamaria",
+        "eco de mama",
+        "ecografia de mamas",
+        "ecografia mama"
+      ],
+      "resumen": "No hay nada que preparar.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Mamografías o ecografías mamarias anteriores, si las tenés"
+      ],
+      "antes": [
+        "Vení con ropa de dos piezas: te vas a descubrir de la cintura para arriba.",
+        "Ese día evitá crema o talco en la zona."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Vejiga llena."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Ecografía: preparaciones (partes blandas) — Sanatorio Argentino (San Juan)",
+          "url": "https://www.sanatorioargentino.com.ar/especialidades-medicas/ecografia.html"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-obstetrica",
+      "nombre": "Ecografía obstétrica",
+      "match": [
+        "ecografia obstetrica",
+        "ecografia de embarazo",
+        "eco obstetrica",
+        "ecografia fetal",
+        "translucencia nucal",
+        "ecografia morfologica"
+      ],
+      "resumen": "Vejiga llena sólo en los primeros meses.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Ecografías obstétricas anteriores y carnet de control del embarazo"
+      ],
+      "antes": [
+        "Hasta la semana 12 o 14 andá con la vejiga llena o con ganas de orinar: mejora la imagen.",
+        "Del segundo trimestre en adelante no hace falta vejiga llena.",
+        "Vení con ropa de dos piezas."
+      ],
+      "no_hace_falta": [
+        "Ayunar."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ecografía del primer trimestre: viabilidad del embarazo — Unidad de la Mujer",
+          "url": "https://www.unidaddelamujer.es/ecografia-del-primer-trimestre-viabilidad-del-embarazo-y-alteraciones-cromosomicas/"
+        },
+        {
+          "title": "Ecografía del Primer Trimestre — Instituto Dra. Gómez Roig",
+          "url": "https://www.gomezroig.com/ecografia-del-primer-trimestre/"
+        },
+        {
+          "title": "Ecografía en el embarazo — Quirónsalud",
+          "url": "https://www.quironsalud.com/es/pruebas-diagnosticas/ecografia-embarazo"
+        }
+      ]
+    },
+    {
+      "id": "ecodoppler-vascular",
+      "nombre": "Ecodoppler vascular",
+      "match": [
+        "ecodoppler",
+        "eco doppler",
+        "doppler venoso",
+        "doppler arterial",
+        "doppler de miembros inferiores",
+        "doppler carotideo",
+        "doppler vascular"
+      ],
+      "resumen": "Ropa que deje descubrir la zona. Nada más.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "El doppler vascular periférico (piernas, carótidas) no necesita ayuno. El eco doppler renal o abdominal sí puede pedir ayuno y, en algunos centros, una medicación previa: confirmá con quien te deriva."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Vení con ropa cómoda que permita descubrir la zona a estudiar.",
+        "Ese día no uses crema en esa zona."
+      ],
+      "no_hace_falta": [
+        "Ayunar, si es de piernas o de cuello.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Ecografía: preparaciones (vascular periférica) — Sanatorio Argentino (San Juan)",
+          "url": "https://www.sanatorioargentino.com.ar/especialidades-medicas/ecografia.html"
+        },
+        {
+          "title": "Indicaciones para estudios de cardiología (ecodoppler renal) — Sanatorio Aconcagua",
+          "url": "https://sanatorioaconcagua.com/indicaciones-para-estudios-cardiologia.html"
+        }
+      ]
+    },
+    {
+      "id": "ecocardiograma",
+      "nombre": "Ecocardiograma",
+      "match": [
+        "ecocardiograma",
+        "eco doppler cardiaco",
+        "ecocardiograma doppler",
+        "eco cardiaco"
+      ],
+      "resumen": "No necesita preparación.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "El ecocardiograma transtorácico habitual no necesita ayuno. Solo el transesofágico, mucho menos frecuente, pide ayuno de 6 horas: si te indicaron ese, seguí esa instrucción puntual."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Vení con ropa cómoda que permita descubrir el torso.",
+        "Ese día no uses crema ni aceite en el pecho."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Eco Doppler Cardíaco: preparación — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/que-preparacion-debes-tener-antes-de-un-eco-doppler-cardiaco/"
+        }
+      ]
+    },
+    {
+      "id": "electrocardiograma",
+      "nombre": "Electrocardiograma",
+      "match": [
+        "electrocardiograma",
+        "ecg",
+        "ekg"
+      ],
+      "resumen": "No necesita preparación. Dura unos minutos.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Vení con ropa cómoda que deje descubrir el torso, las muñecas y los tobillos.",
+        "Ese día no uses crema ni aceite en el pecho.",
+        "Llegá unos minutos antes y sentate a descansar: se toma en reposo."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Electrocardiogram (ECG or EKG): cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/ekg/about/pac-20384983"
+        },
+        {
+          "title": "Electrocardiograma — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/electrocardiograma/"
+        }
+      ]
+    },
+    {
+      "id": "ergometria",
+      "nombre": "Ergometría (prueba de esfuerzo)",
+      "match": [
+        "ergometria",
+        "prueba de esfuerzo",
+        "test de esfuerzo",
+        "ergometria cardiaca"
+      ],
+      "resumen": "Vas a caminar rápido: vení como para hacer ejercicio.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "No hace falta ayuno total, pero no comas alimentos sólidos en las 2 horas previas al estudio."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios cardiológicos previos, si los tenés"
+      ],
+      "antes": [
+        "No comas sólidos en las 2 horas previas.",
+        "Usá calzado y ropa para hacer ejercicio.",
+        "No fumes ni tomes café o mate antes del estudio.",
+        "Preguntale a tu médico si ese día tomás tu medicación: algunos remedios, como los betabloqueantes, cambian el resultado."
+      ],
+      "avisar": [
+        "Tenés una lesión que te impida caminar rápido.",
+        "Sentiste dolor de pecho o te faltó el aire en los últimos días."
+      ],
+      "no_hace_falta": [
+        "Suspender medicación por tu cuenta."
+      ],
+      "despues": [
+        "Vas a quedarte unos minutos en reposo hasta que baje la frecuencia cardíaca.",
+        "Después podés seguir tu día normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ergometría — Centro Rossi",
+          "url": "https://www.cdrossi.com/estudios-medicos/estudios/cardiologia_13/ergometria_3.html"
+        },
+        {
+          "title": "Prueba de esfuerzo con ejercicio — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003878.htm"
+        },
+        {
+          "title": "Preparación para prueba de esfuerzo (ergometría) — Quirónsalud",
+          "url": "https://www.quironsalud.com/ciudad-real/es/pacientes-visitantes/preparacion-pruebas-diagnosticas-quirurgicas/cardiologia.ficheros/3018683-HCR32.1-PPD%209%20PREPARACI%C3%93N%20ERGOMETRIA.pdf"
+        }
+      ]
+    },
+    {
+      "id": "tomografia-general",
+      "nombre": "Tomografía / TAC (sin especificar contraste)",
+      "match": [
+        "tomografia",
+        "tac",
+        "tomografia computada",
+        "tomografia axial computarizada"
+      ],
+      "resumen": "Se pide ayuno por las dudas, por si hay que usar contraste.",
+      "ayuno": {
+        "required": true,
+        "horas": 4,
+        "agua_permitida": true,
+        "nota": "Es un ayuno preventivo, por si el médico decide usar contraste durante el estudio. Si tu orden aclara «sin contraste», normalmente no hace falta: confirmalo en Diagnóstico por Imágenes."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios previos (radiografías, tomografías, resonancias) en CD o en papel",
+        "Análisis de función renal (creatinina) reciente, si tenés"
+      ],
+      "antes": [
+        "Si tu orden aclara «sin contraste», preguntá al sacar el turno si igual necesitás ayuno.",
+        "Sacate objetos metálicos de la zona a estudiar."
+      ],
+      "avisar": [
+        "Sos alérgico al yodo o reaccionaste a un contraste anterior.",
+        "Sos diabético y tomás metformina.",
+        "Tenés problemas de riñón.",
+        "Estás embarazada o podés estarlo."
+      ],
+      "despues": [
+        "Si te dieron contraste, tomá bastante agua el resto del día."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "¿Tenés turno para una tomografía? 4 tips — contenido clínico argentino",
+          "url": "https://www.instagram.com/reel/DXcQACOABs2/?hl=en"
+        },
+        {
+          "title": "TAC con y sin contraste: preparación — Quirónsalud",
+          "url": "https://www.quironsalud.com/hospital-sur/es/servicios-medicos/preparaciones-pruebas-diagnosticas-terapeuticas/tac.ficheros/2477975-TAC%20con%20y%20sin%20contraste.pdf"
+        },
+        {
+          "title": "Por qué te pedimos tus estudios previos en radiología — contenido clínico argentino",
+          "url": "https://www.instagram.com/reel/DV9orDqAE5e/"
+        }
+      ]
+    },
+    {
+      "id": "tomografia-sin-contraste",
+      "nombre": "Tomografía sin contraste",
+      "match": [
+        "tomografia sin contraste",
+        "tac sin contraste",
+        "tomografia simple"
+      ],
+      "resumen": "No necesita ayuno. Sólo sacarse el metal de encima.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios previos (radiografías, tomografías, resonancias) en CD o en papel"
+      ],
+      "antes": [
+        "Sacate objetos metálicos de la zona a estudiar: aros, cadenas, ganchos.",
+        "Vení con ropa cómoda, sin metal en la zona."
+      ],
+      "avisar": [
+        "Estás embarazada o podés estarlo."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "TAC con y sin contraste: preparación — Quirónsalud",
+          "url": "https://www.quironsalud.com/hospital-sur/es/servicios-medicos/preparaciones-pruebas-diagnosticas-terapeuticas/tac.ficheros/2477975-TAC%20con%20y%20sin%20contraste.pdf"
+        },
+        {
+          "title": "Preparación para una tomografía computarizada — Centro médico del norte de Nevada",
+          "url": "https://es.nnmc.com/services/diagnostic-imaging/prepare-for-your-imaging-test/ct-scan/"
+        }
+      ]
+    },
+    {
+      "id": "tomografia-con-contraste",
+      "nombre": "Tomografía con contraste",
+      "match": [
+        "tomografia con contraste",
+        "tac con contraste",
+        "tomografia contrastada",
+        "tac contrastado"
+      ],
+      "resumen": "Ayuno y buena hidratación: el contraste se elimina por el riñón.",
+      "ayuno": {
+        "required": true,
+        "horas": 6,
+        "agua_permitida": true,
+        "nota": "Entre 4 y 6 horas para sólidos, según el centro. El contraste yodado puede provocar náuseas, por eso se pide llegar con el estómago vacío."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Análisis de función renal (creatinina) reciente",
+        "Estudios previos en CD o en papel"
+      ],
+      "antes": [
+        "Llevá un análisis de creatinina reciente si te lo pidieron.",
+        "Tomá agua durante el día previo: llegar bien hidratado protege el riñón.",
+        "Sacate objetos metálicos de la zona a estudiar."
+      ],
+      "avisar": [
+        "Sos alérgico al yodo o al marisco, o reaccionaste a un contraste anterior.",
+        "Tomás metformina.",
+        "Tenés problemas de riñón.",
+        "Estás embarazada o dando de mamar."
+      ],
+      "despues": [
+        "Tomá bastante agua las 24 horas siguientes.",
+        "Si tomás metformina, consultá a tu médico: suele suspenderse 48 horas después del contraste.",
+        "Sentir calor en el cuerpo o gusto metálico durante la inyección es normal y dura segundos."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Medios de contraste en imágenes: suspensión de metformina 48 h — Revista Argentina de Radiología (SciELO)",
+          "url": "https://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1852-99922013000100008"
+        },
+        {
+          "title": "TAC con y sin contraste: preparación — Quirónsalud",
+          "url": "https://www.quironsalud.com/hospital-sur/es/servicios-medicos/preparaciones-pruebas-diagnosticas-terapeuticas/tac.ficheros/2477975-TAC%20con%20y%20sin%20contraste.pdf"
+        },
+        {
+          "title": "Preparaciones, medicamentos y medios de contraste — SERAM (España)",
+          "url": "https://piper.espacio-seram.com/index.php/seram/article/download/7015/5482/6922"
+        }
+      ]
+    },
+    {
+      "id": "resonancia-magnetica",
+      "nombre": "Resonancia magnética (RMN)",
+      "match": [
+        "resonancia",
+        "resonancia magnetica",
+        "rmn",
+        "rm de",
+        "resonancia nuclear magnetica"
+      ],
+      "resumen": "El equipo es un imán enorme: lo que importa es que no entre metal.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "Solo si tu resonancia lleva contraste (gadolinio) el centro puede pedirte 3 a 4 horas de ayuno: confirmalo al sacar el turno."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios previos (resonancias, tomografías) en CD o en papel"
+      ],
+      "antes": [
+        "Sacate todo lo metálico: aros, reloj, anteojos, hebillas, dentadura postiza, audífonos.",
+        "Vení con ropa sin cierres ni broches.",
+        "Calculá entre 30 y 45 minutos dentro del equipo, que hace mucho ruido. Te dan protección para los oídos."
+      ],
+      "avisar": [
+        "Tenés marcapasos, desfibrilador, implante coclear, clips de aneurisma o cualquier implante metálico: en algunos casos no se puede hacer el estudio.",
+        "Tenés claustrofobia.",
+        "Trabajaste con metal y pudo quedarte una esquirla en un ojo.",
+        "Estás embarazada."
+      ],
+      "no_hace_falta": [
+        "Ayunar, salvo que tu estudio lleve contraste.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Seguridad de la RM — RadiologyInfo.org",
+          "url": "https://www.radiologyinfo.org/es/info/safety-mr"
+        },
+        {
+          "title": "Preparación para el examen de resonancia magnética — Capitol Imaging Services",
+          "url": "https://capitolimagingservices.com/es/prepare-for-your-visit/mri-exam-preparation/"
+        },
+        {
+          "title": "Resonancia magnética (MRI Scan): guía para el paciente en español",
+          "url": "https://www.mmclc.org/docs/ahmemorialmedicalcenterlibraries/default-document-library/spanish-mri2e1fad8a-336f-4c93-8b9c-a73f39053602.pdf"
+        }
+      ]
+    },
+    {
+      "id": "radiografia",
+      "nombre": "Radiografía",
+      "match": [
+        "radiografia",
+        "rx",
+        "placa"
+      ],
+      "resumen": "Es rápida y no necesita casi nada.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Sacate lo metálico de la zona: aros, cadenas, cierres, broches, monedas.",
+        "Vení con ropa cómoda, sin metal en la zona a estudiar."
+      ],
+      "avisar": [
+        "Estás embarazada o podés estarlo."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender medicación."
+      ],
+      "despues": [
+        "Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "¿Qué ropa y complementos son adecuados para pruebas de radiología? — Radiología Club",
+          "url": "https://radiologiaclub.com/2016/02/11/que-ropa-y-complementos-son-adecuados-para-pruebas-de-radiologia/"
+        },
+        {
+          "title": "Antes de tu examen de rayos X: 3 tips — contenido clínico argentino",
+          "url": "https://www.instagram.com/p/DXrmsG2jeYI/"
+        }
+      ]
+    },
+    {
+      "id": "densitometria-osea",
+      "nombre": "Densitometría ósea",
+      "match": [
+        "densitometria osea",
+        "densitometria",
+        "dexa",
+        "dxa",
+        "mineralometria osea"
+      ],
+      "resumen": "Sin suplementos de calcio el día anterior y sin metal en la ropa.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Densitometrías anteriores, si las tenés"
+      ],
+      "antes": [
+        "Dejá los suplementos de calcio 24 horas antes.",
+        "Vení con ropa sin broches, cierres ni botones metálicos."
+      ],
+      "avisar": [
+        "Te hicieron hace poco un estudio con bario, contraste yodado o medicina nuclear: puede haber que esperar unos días.",
+        "Estás embarazada o podés estarlo."
+      ],
+      "no_hace_falta": [
+        "Ayunar."
+      ],
+      "despues": [
+        "Dura unos minutos y no duele. Podés seguir tu día normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Preparación para un estudio de densidad ósea — Centro médico del norte de Nevada",
+          "url": "https://es.nnmc.com/services/diagnostic-imaging/prepare-for-your-imaging-test/preparing-bone-density-study/"
+        },
+        {
+          "title": "Examen de densidad ósea (DEXA o DXA) — RadiologyInfo.org",
+          "url": "https://www.radiologyinfo.org/es/info/dexa"
+        },
+        {
+          "title": "Densitometría ósea — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/densitometria-osea/"
+        }
+      ]
+    },
+    {
+      "id": "holter",
+      "nombre": "Holter (monitoreo ambulatorio de ECG)",
+      "match": [
+        "holter",
+        "holter de 24 horas",
+        "holter ecg",
+        "monitoreo ambulatorio de ecg"
+      ],
+      "resumen": "Vas a llevar el equipo puesto uno o dos días: bañate antes.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Bañate antes de ir: no vas a poder mojarte mientras lo tengas puesto.",
+        "Ese día no uses crema ni aceite en el pecho.",
+        "Llevá una remera holgada de algodón, fácil de sacar sin mover los electrodos.",
+        "Si tenés mucho vello en el pecho, puede que haya que rasurar zonas chicas."
+      ],
+      "no_hace_falta": [
+        "Quedarte quieto o en reposo: se mide tu día común."
+      ],
+      "despues": [
+        "Hacé tu vida normal: de eso se trata el estudio.",
+        "Anotá en la planilla lo que hacés y lo que sentís, con la hora.",
+        "Volvé a devolver el equipo el día y la hora que te indiquen."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Monitor Holter (24 horas) — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003877.htm"
+        },
+        {
+          "title": "Monitor Holter: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/holter-monitor/about/pac-20385039"
+        },
+        {
+          "title": "Recomendaciones al paciente portador de Holter ECG — Quirónsalud",
+          "url": "https://www.quironsalud.com/ciudad-real/es/pacientes-visitantes/preparacion-pruebas-diagnosticas-quirurgicas/cardiologia.ficheros/3018684-HCR32.1-PPD10%20RECOMENDACIONES%20AL%20PACIENTE%20PORTADOR%20DE%20HOLTER.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mapa-presurometria",
+      "nombre": "MAPA / Presurometría (monitoreo ambulatorio de presión arterial)",
+      "match": [
+        "mapa",
+        "presurometria",
+        "monitoreo ambulatorio de presion arterial",
+        "holter de presion"
+      ],
+      "resumen": "Mide tu presión durante 24 horas de vida normal.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Lista de la medicación que tomás y a qué hora"
+      ],
+      "antes": [
+        "Vení con ropa de mangas anchas: el manguito va en el brazo todo el día.",
+        "Llevá la lista de tu medicación con los horarios."
+      ],
+      "no_hace_falta": [
+        "Suspender la medicación de la presión, salvo que tu médico lo indique."
+      ],
+      "despues": [
+        "Hacé tu vida normal durante las 24 horas.",
+        "Cuando el equipo se infle, quedate quieto con el brazo relajado y estirado.",
+        "No lo mojes: no te bañes con el equipo puesto.",
+        "Anotá a qué hora te acostaste y a qué hora te levantaste."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Presurometría 24 hs (MAPA): monitoreo ambulatorio de presión arterial — Boskis",
+          "url": "https://boskis.com/estudios/monitoreo-ambulatorio-de-presion-arterial/"
+        },
+        {
+          "title": "Presurometría o Holter de presión — ICBA",
+          "url": "https://www.icba.com.ar/pacientes/servicios-medicos/estudios-y-preparacion/presurometria-o-holter-de-presion"
+        },
+        {
+          "title": "Capítulo 82: monitoreo ambulatorio de presión arterial — Sociedad Argentina de Hipertensión Arterial (SAHA)",
+          "url": "https://www.saha.org.ar/uploads/pdf/Cap.082.pdf"
+        }
+      ]
+    },
+    {
+      "id": "espirometria",
+      "nombre": "Espirometría",
+      "match": [
+        "espirometria",
+        "prueba de funcion pulmonar",
+        "espirometria con broncodilatador"
+      ],
+      "resumen": "Vas a soplar fuerte varias veces: mejor sin fumar ni comer mucho antes.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Tus inhaladores, para llevarlos aunque no los uses antes del estudio"
+      ],
+      "antes": [
+        "No fumes en las 2 horas previas.",
+        "No comas una comida abundante en las 2 horas previas.",
+        "No hagas ejercicio intenso los 30 minutos previos.",
+        "Vení con ropa suelta que no te apriete el pecho ni la panza.",
+        "Llevá tus inhaladores aunque no los uses antes."
+      ],
+      "avisar": [
+        "Te operaron hace poco de los ojos, el tórax o el abdomen.",
+        "Estás cursando una infección respiratoria."
+      ],
+      "no_hace_falta": [
+        "Suspender inhaladores por tu cuenta: preguntale a tu médico."
+      ],
+      "despues": [
+        "Podés sentirte algo mareado unos minutos por soplar fuerte. Se pasa solo."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Espirometría: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/spirometry/about/pac-20385201"
+        },
+        {
+          "title": "Instrucciones de la Prueba de Espirometría — National Jewish Health",
+          "url": "https://www.nationaljewish.org/education/health-information/espanol/instrucciones-de-la-prueba-de-espirometria"
+        },
+        {
+          "title": "Cómo prepararse para hacer una espirometría — semFYC",
+          "url": "https://www.semfyc.es/storage/wp-content/uploads/2021/12/10.pdf"
+        }
+      ]
+    },
+    {
+      "id": "papanicolaou-colposcopia",
+      "nombre": "Papanicolaou / Colposcopía",
+      "match": [
+        "papanicolaou",
+        "pap",
+        "colposcopia",
+        "citologia cervical"
+      ],
+      "resumen": "Elegí un día fuera de la menstruación y sin relaciones ni cremas 48 horas antes.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "No tengas relaciones sexuales las 48 horas previas.",
+        "No uses óvulos, cremas vaginales ni duchas vaginales las 48 horas previas.",
+        "Elegí un día fuera de la menstruación: unos 5 días después de que termine.",
+        "Vení con ropa cómoda de dos piezas."
+      ],
+      "avisar": [
+        "Estás embarazada.",
+        "Te hicieron una cirugía ginecológica hace poco."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Depilarte."
+      ],
+      "despues": [
+        "Un manchado leve durante un día es normal.",
+        "El resultado tarda unos días y lo ve tu médico con vos."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Prueba de Papanicolaou — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-papanicolaou/"
+        },
+        {
+          "title": "Atlas de colposcopia: principios y práctica — IARC Screening Group",
+          "url": "https://screening.iarc.fr/atlascolpoesdetail.php?Index=14&e="
+        }
+      ]
+    },
+    {
+      "id": "endoscopia-digestiva-alta",
+      "nombre": "Endoscopía digestiva alta",
+      "match": [
+        "endoscopia digestiva alta",
+        "endoscopia",
+        "videoendoscopia digestiva alta",
+        "egd"
+      ],
+      "resumen": "El estómago tiene que estar vacío. Si te sedan, no manejes.",
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": false,
+        "nota": "Los líquidos, incluida el agua, se cortan 2 a 4 horas antes. El estómago tiene que estar vacío para que el médico vea bien."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Alguien que te acompañe y te lleve, si te sedan"
+      ],
+      "antes": [
+        "Si te van a sedar, vení con alguien que te lleve de vuelta.",
+        "Preguntale a tu médico si tomás anticoagulantes o antiagregantes: pueden pedirte suspenderlos días antes."
+      ],
+      "avisar": [
+        "Usás prótesis dental.",
+        "Tenés alergias o problemas del corazón o respiratorios.",
+        "Tomás anticoagulantes."
+      ],
+      "no_hace_falta": [
+        "Suspender medicación por tu cuenta."
+      ],
+      "despues": [
+        "Si te sedaron, no manejes ni firmes trámites importantes el resto del día.",
+        "Vas a poder comer cuando te lo indiquen, en general a las pocas horas.",
+        "Molestia de garganta durante un día es normal."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Me indicaron una endoscopia digestiva alta: ¿qué necesito saber? — Hospital Italiano de Buenos Aires",
+          "url": "http://www.hospitalitaliano.org.ar/hiba/es/news/me-indicaron-una-endoscopia-digestiva-alta-que-necesito-saber"
+        },
+        {
+          "title": "Endoscopia superior: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/endoscopy/about/pac-20395197"
+        }
+      ]
+    },
+    {
+      "id": "colonoscopia",
+      "nombre": "Videocolonoscopía",
+      "match": [
+        "colonoscopia",
+        "videocolonoscopia",
+        "rectosigmoidoscopia"
+      ],
+      "resumen": "Todo depende del laxante: si no se toma como está indicado, el estudio no se puede hacer.",
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "Cuenta desde que terminás la preparación con el laxante. Los días previos vas con dieta líquida o de bajo residuo, según el instructivo que te dan al sacar el turno."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "El laxante indicado, comprado con anticipación",
+        "Alguien que te acompañe y te lleve, si te sedan"
+      ],
+      "antes": [
+        "Comprá el laxante con anticipación.",
+        "Empezá la dieta que te indiquen 1 o 2 días antes.",
+        "Tomá el laxante en el horario exacto que te digan.",
+        "Si te van a sedar, vení con alguien que te lleve de vuelta.",
+        "Preguntale a tu médico si tomás anticoagulantes, antiagregantes o hierro."
+      ],
+      "despues": [
+        "Si te sedaron, no manejes el resto del día.",
+        "Es normal tener gases e hinchazón durante unas horas."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Endoscopía y colonoscopía: preparación — Fundación Arturo López Pérez (FALP)",
+          "url": "https://www.falp.org/wp-content/uploads/2022/12/Endoscopi%CC%81a-y-colonoscopi%CC%81a-Preparacio%CC%81n-para-colonoscopi%CC%81a-corta-noviembre2022.pdf"
+        },
+        {
+          "title": "Endoscopia superior: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/endoscopy/about/pac-20395197"
+        }
+      ]
+    },
+    {
+      "id": "electroencefalograma",
+      "nombre": "Electroencefalograma (EEG)",
+      "match": [
+        "electroencefalograma",
+        "eeg",
+        "eeg de sueno",
+        "electroencefalograma con privacion de sueno"
+      ],
+      "resumen": "Andá con el pelo limpio y seco, sin ningún producto.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "No hace falta ayuno: comé normalmente antes del estudio."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Lista de la medicación que tomás"
+      ],
+      "antes": [
+        "El pelo limpio, seco y sin gel ni spray: los electrodos necesitan contacto con el cuero cabelludo.",
+        "Comé normalmente antes.",
+        "Tomá tu medicación como te la recetaron, salvo indicación puntual en contrario.",
+        "Si te pidieron EEG con privación de sueño, dormí las horas que te indicaron y no tomes café ni mate ese día."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender la medicación por tu cuenta: en epilepsia puede ser peligroso."
+      ],
+      "despues": [
+        "Te queda algo de gel en el pelo: llevá una gorra o lavátelo al volver."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "EEG (electroencefalograma): instrucciones — University of New Mexico Health Sciences",
+          "url": "https://hsc.unm.edu/medicine/departments/neurology/_files/eeg-instructions-spanish.pdf"
+        },
+        {
+          "title": "Cómo prepararse para la cita de electroencefalograma — Kaiser Permanente",
+          "url": "https://mydoctor.kaiserpermanente.org/ncal/Images/EEG%20(espanol)_tcm75-1543940.pdf"
+        },
+        {
+          "title": "Electroencefalograma — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003931.htm"
+        }
+      ]
+    },
+    {
+      "id": "fondo-de-ojo",
+      "nombre": "Fondo de ojo",
+      "match": [
+        "fondo de ojo",
+        "examen de fondo de ojo",
+        "oftalmoscopia",
+        "dilatacion de pupilas"
+      ],
+      "resumen": "Las gotas te dejan la vista borrosa varias horas: no vengas manejando.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Anteojos de sol",
+        "Alguien que te acompañe y maneje, si vas en auto"
+      ],
+      "antes": [
+        "Vení acompañado o sin auto.",
+        "Llevá anteojos de sol.",
+        "Si usás lentes de contacto, traé los anteojos: puede que tengas que sacártelos."
+      ],
+      "no_hace_falta": [
+        "Ayunar."
+      ],
+      "despues": [
+        "Vas a ver borroso y con mucha sensibilidad a la luz durante 3 a 6 horas.",
+        "No manejes hasta que se te pase."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Hágase un examen de los ojos con dilatación de las pupilas — National Eye Institute",
+          "url": "https://www.nei.nih.gov/espanol/informacion-sobre-la-salud-ocular/vision-saludable/encontrar-un-oculista/hagase-un-examen-de-los-ojos-con-dilatacion-de-las-pupilas"
+        },
+        {
+          "title": "Qué no hacer después de una dilatación ocular — All About Vision",
+          "url": "https://www.allaboutvision.com/es/cuidado-de-los-ojos/examen-ocular/que-no-hacer-tras-dilatacion-pupila/"
+        },
+        {
+          "title": "Examen de la vista con las pupilas dilatadas — Cigna",
+          "url": "https://www.cigna.com/es-us/knowledge-center/hw/pruebas-mdicas/examen-de-la-vista-con-las-pupilas-dilatadas-abh1895"
+        }
+      ]
+    },
+    {
+      "id": "vacunacion",
+      "nombre": "Vacunación",
+      "match": [
+        "vacuna",
+        "vacunas",
+        "vacunacion",
+        "vacunatorio",
+        "antigripal",
+        "antitetanica",
+        "antineumococica",
+        "calendario de vacunacion",
+        "dosis de refuerzo"
+      ],
+      "resumen": "Casi no hay que prepararse. Comé, tomá agua y vení con manga corta.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Carnet o libreta de vacunación, si tenés",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "La orden médica, si te la dieron"
+      ],
+      "antes": [
+        "Comé y tomá agua como siempre: llegar hidratado baja la chance de que te marees.",
+        "Vení con una remera de manga corta o ropa que deje el hombro libre.",
+        "Si te vacunás por trabajo o por un viaje, averiguá qué vacuna necesitás antes de venir."
+      ],
+      "avisar": [
+        "Tuviste una reacción alérgica fuerte a una vacuna.",
+        "Hoy tenés fiebre de más de 38 °C.",
+        "Estás embarazada.",
+        "Tomás medicación que baja las defensas.",
+        "Tomás anticoagulantes o tenés un problema de coagulación."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Dejar el café, el mate o el ejercicio.",
+        "Tomar un analgésico «por las dudas» antes: puede bajar un poco la respuesta a la vacuna. Si después tenés fiebre o dolor, ahí sí podés tomarlo."
+      ],
+      "despues": [
+        "Quedate 15 minutos en el centro antes de irte. Si alguna vez tuviste una alergia fuerte, 30.",
+        "Usá el brazo normalmente: moverlo hace que duela menos.",
+        "Tomá agua.",
+        "Dolor en el brazo, cansancio o algo de fiebre durante uno o dos días es lo esperable."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Vacunas — Ministerio de Salud de la Nación",
+          "url": "https://www.argentina.gob.ar/salud/vacunas"
+        }
+      ]
+    },
+    {
+      "id": "consulta-medica",
+      "nombre": "Consulta médica",
+      "match": [
+        "medicina general",
+        "clinica medica",
+        "medico clinico",
+        "consulta medica",
+        "demanda espontanea",
+        "cardiologia",
+        "cardiologica",
+        "dermatologia",
+        "dermatologica",
+        "traumatologia",
+        "gastroenterologia",
+        "neumologia",
+        "neurologia",
+        "urologia",
+        "endocrinologia",
+        "geriatria",
+        "infectologia",
+        "otorrinolaringologia",
+        "reumatologia",
+        "cirugia",
+        "patologia mamaria",
+        "alergia",
+        "hematologia",
+        "nefrologia",
+        "flebologia",
+        "proctologia"
+      ],
+      "resumen": "Lo más útil que podés hacer es llevar tus estudios y la lista de lo que tomás.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "La orden o derivación, si te la dieron",
+        "Estudios anteriores relacionados con el motivo de la consulta",
+        "La lista de la medicación que tomás, con las dosis"
+      ],
+      "antes": [
+        "Anotá lo que te pasa: desde cuándo, cada cuánto, qué lo mejora y qué lo empeora.",
+        "Anotá dos o tres preguntas que no te quieras olvidar de hacer.",
+        "Si tomás varios remedios y no te acordás los nombres, sacale una foto a las cajas.",
+        "Llegá 10 minutos antes."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Traer estudios de hace años que no tengan que ver con la consulta."
+      ],
+      "despues": [
+        "Antes de irte, chequeá que entendiste qué tenés que hacer y cuándo volver.",
+        "Si te dan una orden para estudios, fijate ahí mismo si necesita preparación."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "consulta-pediatrica",
+      "nombre": "Consulta pediátrica",
+      "match": [
+        "pediatria",
+        "pediatrica",
+        "nino sano",
+        "nino enfermo",
+        "control del nino",
+        "neonatologia",
+        "puericultura",
+        "demanda espontanea pediatria",
+        "lactancia"
+      ],
+      "resumen": "Llevá la libreta sanitaria y anotá lo que querés preguntar.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Libreta sanitaria o carnet de vacunación",
+        "DNI del chico o partida de nacimiento",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios anteriores, si tiene",
+        "Un cambio de ropa y pañales, si es bebé"
+      ],
+      "antes": [
+        "Anotá lo que querés preguntar: en la consulta es fácil olvidarse.",
+        "Si tiene fiebre, anotá cuánta y a qué hora.",
+        "Vení con ropa fácil de sacar: lo van a pesar y medir.",
+        "Si toma alguna medicación, anotá el nombre y la dosis."
+      ],
+      "no_hace_falta": [
+        "Que esté en ayunas.",
+        "Bañarlo antes."
+      ],
+      "despues": [
+        "Chequeá que quedaron anotados el peso, la talla y las vacunas en la libreta.",
+        "Preguntá cuándo es el próximo control."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "odontologia",
+      "nombre": "Odontología",
+      "match": [
+        "odontologia",
+        "odontologica",
+        "odontologicas",
+        "dental",
+        "dentista",
+        "salud bucal",
+        "caries",
+        "extraccion dental"
+      ],
+      "resumen": "Andá con los dientes cepillados y comé algo antes.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Radiografías dentales anteriores, si tenés",
+        "La lista de la medicación que tomás"
+      ],
+      "antes": [
+        "Cepillate los dientes antes de venir.",
+        "Comé algo liviano antes: después de algunos tratamientos hay que esperar para comer.",
+        "Si te da miedo el dentista, decilo al llegar. Se puede ir más despacio."
+      ],
+      "avisar": [
+        "Tomás anticoagulantes.",
+        "Tenés una válvula cardíaca o una prótesis, o te indicaron tomar antibiótico antes de tratamientos dentales.",
+        "Sos alérgico a algún anestésico o antibiótico.",
+        "Estás embarazada."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Suspender medicación por tu cuenta."
+      ],
+      "despues": [
+        "Si te pusieron anestesia, esperá a que pase el efecto para comer y cuidá de no morderte el labio.",
+        "Después de una extracción: nada caliente, no enjuagues fuerte y no fumes ese día."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "oftalmologia",
+      "nombre": "Oftalmología",
+      "match": [
+        "oftalmologia",
+        "oftalmologica",
+        "oculista",
+        "control de la vista",
+        "agudeza visual",
+        "vision"
+      ],
+      "resumen": "Puede que te dilaten la pupila: mejor no venir manejando.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Los anteojos que usás y la receta anterior, si la tenés",
+        "El estuche de los lentes de contacto",
+        "Anteojos de sol"
+      ],
+      "antes": [
+        "Si usás lentes de contacto, vení con anteojos: te los van a pedir sacar.",
+        "Si podés, vení acompañado o sin auto."
+      ],
+      "no_hace_falta": [
+        "Ayunar."
+      ],
+      "despues": [
+        "Si te pusieron gotas para dilatar, vas a ver borroso y con mucha luz durante 3 a 6 horas.",
+        "No manejes hasta que se te pase.",
+        "Llevá anteojos de sol para la vuelta."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "control-embarazo",
+      "nombre": "Control del embarazo",
+      "match": [
+        "obstetricia",
+        "obstetrica",
+        "control del embarazo",
+        "control prenatal",
+        "prenatal",
+        "embarazada"
+      ],
+      "resumen": "Llevá siempre el carnet perinatal y los estudios que tengas.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Carnet perinatal",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Ecografías y análisis del embarazo",
+        "La orden, si te la dieron"
+      ],
+      "antes": [
+        "Si te pidieron análisis, hacelos antes y traé el resultado.",
+        "Anotá desde cuándo y cómo son los síntomas que querés consultar.",
+        "Vení con ropa cómoda de dos piezas."
+      ],
+      "avisar": [
+        "Tenés pérdidas, contracciones o dolor fuerte, o dejaste de sentir movimientos: eso no espera un turno, andá a la guardia."
+      ],
+      "no_hace_falta": [
+        "Ayunar, salvo que el control incluya análisis."
+      ],
+      "despues": [
+        "Chequeá que quedó todo anotado en el carnet perinatal.",
+        "Preguntá cuándo es el próximo control y qué estudios tenés que hacerte antes."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "nutricion",
+      "nombre": "Nutrición",
+      "match": [
+        "nutricion",
+        "nutricional",
+        "nutricionista",
+        "alimentacion",
+        "plan alimentario",
+        "obesidad"
+      ],
+      "resumen": "Anotá lo que comés unos días: es lo que más sirve en la primera consulta.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Análisis de sangre recientes",
+        "La lista de la medicación y los suplementos que tomás"
+      ],
+      "antes": [
+        "Anotá lo que comés y tomás durante tres días, con los horarios. No lo edites: sirve el real.",
+        "Vení con ropa liviana: te van a pesar y medir.",
+        "Si te pidieron análisis, hacelos antes."
+      ],
+      "no_hace_falta": [
+        "Ayunar, salvo que te lo hayan pedido.",
+        "Empezar una dieta antes de la consulta."
+      ],
+      "despues": [
+        "Preguntá cuándo es el próximo control: el seguimiento es lo que hace la diferencia."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "kinesiologia",
+      "nombre": "Kinesiología y rehabilitación",
+      "match": [
+        "kinesiologia",
+        "kinesiologica",
+        "kinesiologo",
+        "fisioterapia",
+        "rehabilitacion",
+        "terapia ocupacional",
+        "fisiokinesioterapia"
+      ],
+      "resumen": "Ropa cómoda y los estudios de la zona que te duele.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "La orden, con la cantidad de sesiones",
+        "Radiografías, resonancias o informes de la zona a tratar",
+        "Una toalla, si te la piden"
+      ],
+      "antes": [
+        "Vení con ropa cómoda que deje descubrir la zona a tratar.",
+        "Si tenés zapatillas, traelas.",
+        "Comé algo liviano antes: la sesión tiene actividad física."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Venir sin dolor: contá cómo estás realmente."
+      ],
+      "despues": [
+        "Algo de cansancio o molestia leve el primer día es normal.",
+        "Hacé en casa los ejercicios que te indiquen: ahí pasa la mayor parte de la mejora."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "desarrollo-infantil",
+      "nombre": "Psicomotricidad, psicopedagogía y fonoaudiología",
+      "match": [
+        "psicomotricidad",
+        "psicopedagogia",
+        "fonoaudiologia",
+        "desarrollo infantil",
+        "estimulacion temprana"
+      ],
+      "resumen": "Llevá los informes del colegio o del jardín: son la mitad de la consulta.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI del chico",
+        "Credencial de obra social o PAMI, si tenés",
+        "La derivación del pediatra o del colegio",
+        "Informes o cuadernos del colegio o del jardín",
+        "Estudios de audición o de visión, si tiene"
+      ],
+      "antes": [
+        "Contale al chico adónde va y para qué, sin dramatizar: llega más tranquilo.",
+        "Anotá qué te preocupa y desde cuándo.",
+        "Vení con ropa cómoda: se trabaja jugando y moviéndose."
+      ],
+      "no_hace_falta": [
+        "Que el chico esté en ayunas.",
+        "Prepararlo o entrenarlo para la evaluación."
+      ],
+      "despues": [
+        "Preguntá qué se puede sostener en casa entre una sesión y la otra."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "salud-mental",
+      "nombre": "Psicología y salud mental",
+      "match": [
+        "psicologia",
+        "psicologica",
+        "psiquiatria",
+        "psiquiatrica",
+        "salud mental",
+        "adicciones",
+        "suicidio",
+        "trabajo social",
+        "acompanamiento terapeutico"
+      ],
+      "resumen": "No hay nada que preparar. Sólo venir.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "La lista de la medicación que tomás, si tomás alguna",
+        "Informes de tratamientos anteriores, si tenés"
+      ],
+      "antes": [
+        "No tenés que preparar un discurso ni saber por dónde empezar: se arma en la charla.",
+        "Si querés, anotá lo que te viene pasando y desde cuándo.",
+        "Llegá unos minutos antes para entrar tranquilo."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Traer un diagnóstico.",
+        "Contar todo el primer día."
+      ],
+      "despues": [
+        "Preguntá cuándo es la próxima: la continuidad es lo que hace efecto.",
+        "Si estás en riesgo y no podés esperar al turno, andá a la guardia o llamá a emergencias."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "diabetologia",
+      "nombre": "Diabetología",
+      "match": [
+        "diabetologia",
+        "diabetologica",
+        "diabetes",
+        "pie diabetico",
+        "traumatologia - pie diabetico"
+      ],
+      "resumen": "Llevá el registro de tus glucemias y la medicación que usás.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "El registro de tus glucemias de las últimas semanas",
+        "Los últimos análisis: hemoglobina glicosilada y función renal",
+        "La medicación o insulina que usás, con las dosis",
+        "Tu medidor de glucemia"
+      ],
+      "antes": [
+        "Anotá tus glucemias de las últimas dos semanas, con el horario y si fue antes o después de comer.",
+        "No suspendas insulina ni pastillas para venir a la consulta.",
+        "Si venís por pie diabético, traé medias limpias y calzado fácil de sacar."
+      ],
+      "no_hace_falta": [
+        "Ayunar, salvo que te hayan pedido análisis ese mismo día."
+      ],
+      "despues": [
+        "Antes de irte, chequeá que entendiste los cambios de dosis."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "testeo-rapido",
+      "nombre": "Testeo rápido de VIH, sífilis y hepatitis",
+      "match": [
+        "testeo rapido",
+        "test rapido",
+        "vih",
+        "sifilis",
+        "hepatitis b",
+        "hepatitis c",
+        "infecciones de transmision sexual"
+      ],
+      "resumen": "Es gratuito y confidencial, no necesita ayuno y el resultado sale en el momento.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI"
+      ],
+      "antes": [
+        "No necesitás ayuno ni orden médica.",
+        "Si tuviste una situación de riesgo hace menos de un mes, decilo: puede convenir repetir el test más adelante."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Traer orden médica.",
+        "Dar explicaciones: el testeo es voluntario y confidencial."
+      ],
+      "despues": [
+        "El resultado sale en unos 20 minutos y te lo dan en privado.",
+        "Un resultado reactivo siempre se confirma con otro análisis: no es un diagnóstico final.",
+        "Los pasos que siguen te los explican ahí mismo."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "anticoncepcion",
+      "nombre": "Consejería en anticoncepción",
+      "match": [
+        "anticoncepcion",
+        "anticonceptivo",
+        "anticonceptivos",
+        "medicina general - anticoncepcion",
+        "implante subdermico",
+        "colocacion de diu"
+      ],
+      "resumen": "Vas a elegir el método en la consulta. No hace falta decidirlo antes.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "La fecha de tu última menstruación",
+        "Qué método usaste antes, si usaste alguno"
+      ],
+      "antes": [
+        "Anotá la fecha de tu última menstruación.",
+        "Pensá qué te importa del método: no acordarte todos los días, que no tenga hormonas, que sea reversible. Eso guía la charla.",
+        "Si venís por un DIU o un implante, puede colocarse el mismo día o darte otro turno."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Traer orden médica.",
+        "Venir acompañada."
+      ],
+      "despues": [
+        "Salí con el método en la mano y con la fecha del próximo control.",
+        "Los métodos y la consejería son gratuitos en el sistema público."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "ive-ile",
+      "nombre": "IVE-ILE",
+      "match": [
+        "ive-ile",
+        "interrupcion del embarazo",
+        "interrupcion voluntaria",
+        "medicina general - ive-ile"
+      ],
+      "resumen": "Es un derecho y es gratuito. Podés venir sola y no necesitás la autorización de nadie.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "La fecha de tu última menstruación",
+        "Ecografía, si ya te hiciste una"
+      ],
+      "antes": [
+        "Anotá la fecha de tu última menstruación: define qué opciones tenés.",
+        "Podés venir sola. Desde los 16 años decidís vos.",
+        "Si querés, vení acompañada por alguien de confianza."
+      ],
+      "no_hace_falta": [
+        "La autorización de tu pareja o de tu familia.",
+        "Una orden médica previa.",
+        "Dar explicaciones sobre tu decisión."
+      ],
+      "despues": [
+        "Vas a salir con las indicaciones escritas y un teléfono para consultar.",
+        "Se coordina un control posterior y, si querés, anticoncepción."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Ley 27.610 de acceso a la interrupción voluntaria del embarazo",
+          "url": "https://www.argentina.gob.ar/salud/saludsexual/ive-ile"
+        }
+      ]
+    },
+    {
+      "id": "enfermeria",
+      "nombre": "Enfermería: curaciones, inyectables y controles",
+      "match": [
+        "enfermeria",
+        "curaciones",
+        "curacion",
+        "inyectables",
+        "inyectable",
+        "control de presion",
+        "nebulizacion",
+        "toma de presion"
+      ],
+      "resumen": "Llevá la orden o la receta con la indicación exacta.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "La orden o receta con la indicación: qué, cuánto y cada cuánto",
+        "La medicación, si te la dieron en la farmacia",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "antes": [
+        "Vení con ropa que deje descubrir la zona.",
+        "Si es una curación, no le pongas cremas ni pomadas antes, salvo indicación."
+      ],
+      "avisar": [
+        "Sos alérgico a algún medicamento.",
+        "Tomás anticoagulantes.",
+        "Estás embarazada."
+      ],
+      "no_hace_falta": [
+        "Ayunar, salvo que te lo hayan indicado."
+      ],
+      "despues": [
+        "Preguntá cada cuánto tenés que volver y qué señales tienen que hacerte consultar antes."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "taller-grupal",
+      "nombre": "Talleres y grupos",
+      "match": [
+        "taller",
+        "talleres",
+        "grupo terapeutico",
+        "cesacion tabaquica",
+        "estimulacion cognitiva",
+        "prevencion de caidas",
+        "nuevas masculinidades",
+        "relaciones toxicas",
+        "fortalecimiento familiar",
+        "adolescentes",
+        "curso de acompanamiento del embarazo",
+        "curso acompanamiento embarazo",
+        "ansiedad"
+      ],
+      "resumen": "Es un encuentro grupal. No hay nada que preparar, sólo venir.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Algo para anotar, si te sirve"
+      ],
+      "antes": [
+        "Llegá unos minutos antes: los grupos arrancan a horario.",
+        "Vení con ropa cómoda."
+      ],
+      "no_hace_falta": [
+        "Orden médica ni derivación.",
+        "Hablar si no tenés ganas: podés escuchar.",
+        "Comprometerte a venir todas las semanas para empezar: se puede probar una vez."
+      ],
+      "despues": [
+        "Preguntá el día y la hora del próximo encuentro."
+      ],
+      "no_preparation_needed": true
+    },
+    {
+      "id": "ginecologia",
+      "nombre": "Ginecología",
+      "match": [
+        "ginecologia",
+        "ginecologica",
+        "ginecologico",
+        "ginecologa",
+        "ginecologo"
+      ],
+      "resumen": "Anotá la fecha de tu última menstruación. Es lo primero que te van a preguntar.",
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "La fecha de tu última menstruación",
+        "Estudios ginecológicos anteriores: PAP, ecografías, mamografías",
+        "La lista de la medicación que tomás"
+      ],
+      "antes": [
+        "Anotá la fecha de tu última menstruación.",
+        "Vení con ropa cómoda de dos piezas.",
+        "Si la consulta puede incluir un PAP, evitá relaciones sexuales, óvulos y cremas vaginales las 48 horas previas.",
+        "Si estás con la menstruación, avisá al sacar el turno: para algunos controles conviene otro día."
+      ],
+      "avisar": [
+        "Estás o podés estar embarazada.",
+        "Tenés sangrado fuera de lo habitual, dolor o fiebre.",
+        "Te hicieron una cirugía ginecológica hace poco."
+      ],
+      "no_hace_falta": [
+        "Ayunar.",
+        "Depilarte.",
+        "Venir acompañada."
+      ],
+      "despues": [
+        "Si te hicieron un PAP, un manchado leve durante un día es normal.",
+        "Preguntá cuándo tenés que volver y qué estudios necesitás antes."
+      ],
+      "no_preparation_needed": true
+    }
+  ]
+}

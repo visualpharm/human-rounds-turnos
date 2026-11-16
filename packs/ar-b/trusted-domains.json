@@ -1,0 +1,4 @@
+{
+  "_comment": "Phase 2b (4/N), 2026-07-30. Buenos Aires Province official-source domains. catalog.official_sources() composes national, province, and optional private municipality layers.",
+  "domains": ["gba.gob.ar", "ms.gba.gov.ar"]
+}

@@ -1,0 +1,12 @@
+{
+  "_comment": "/news (Novedades) page chrome only — title, tabs, the site's name in the changelog. The changelog entries themselves are editorial content, machine-translated + cached via translate.py (see docs/architecture/i18n.md), not this catalog.",
+  "news.date_long": "{day} {month} {year}",
+  "news.desc": "Cronologia degli aggiornamenti di {brand}: cosa abbiamo aggiunto e migliorato, settimana dopo settimana.",
+  "news.filter.all": "Tutte",
+  "news.filter.requested": "Su richiesta",
+  "news.h1": "Novità",
+  "news.month_long": "{month} {year}",
+  "news.site_phrase": "gli appuntamenti sanitari di {city}",
+  "news.tabs": "Filtra le novità",
+  "news.title": "Novità"
+}

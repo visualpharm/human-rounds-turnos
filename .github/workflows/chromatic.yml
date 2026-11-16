@@ -1,0 +1,64 @@
+# Chromatic — regresión visual del catálogo de Storybook.
+#
+# Storybook (stories/*.stories.js) monta los componentes REALES del sitio
+# (listing.mjs, tiles.mjs, calendar-grid.mjs, chat-ui.mjs, week.mjs, format.mjs) con
+# datos de ejemplo. Chromatic saca una foto de cada story en un disparo manual y la
+# compara contra la última aprobada: si un cambio de CSS mueve una columna o
+# le cambia el color a una pastilla, el diff aparece acá antes de llegar a
+# pinamar.humanrounds.org.
+#
+# Requiere el secreto CHROMATIC_PROJECT_TOKEN en el repo
+# (Settings → Secrets and variables → Actions). Sin él el job se saltea en vez
+# de fallar: el CI de tests no depende de esto.
+name: Chromatic
+
+# Hosted trigger deliberately disabled — cost decision, product owner 2026-08-05,
+# same reasoning as ci.yml/nightly.yml: auto-running on every push/PR was
+# part of the ~$10/day Actions-minutes burn against this private account's
+# $0-hard-stop budget. Kept as a manual-dispatch spare, not deleted — visual
+# regression stays out of the enforcing local ladder (it needs the
+# Chromatic-hosted service either way, not just a runner) until the budget
+# is restored.
+on:
+  workflow_dispatch:
+
+jobs:
+  visual:
+    name: regresión visual (Storybook)
+    runs-on: ubuntu-latest
+    # El contexto `secrets` no existe dentro de un `if:`; se mapea a env, que
+    # sí se puede evaluar por paso.
+    env:
+      CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Chromatic necesita el historial para saber contra qué build
+          # comparar; con un checkout superficial trata cada push como nuevo.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        if: env.CHROMATIC_PROJECT_TOKEN != ''
+        run: npm ci
+
+      - name: Publish to Chromatic
+        if: env.CHROMATIC_PROJECT_TOKEN != ''
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          buildScriptName: build-storybook
+          # Un diff visual NO rompe el push a main: es para mirarlo y
+          # aceptarlo, no para bloquear un deploy que ya verifica
+          # smoke_prod.py. En un PR queda como check para revisar.
+          exitZeroOnChanges: true
+          # Una story que no cambió no se vuelve a fotografiar.
+          onlyChanged: true
+
+      - name: Sin token — nada que hacer
+        if: env.CHROMATIC_PROJECT_TOKEN == ''
+        run: echo "CHROMATIC_PROJECT_TOKEN no está configurado; se saltea la regresión visual."

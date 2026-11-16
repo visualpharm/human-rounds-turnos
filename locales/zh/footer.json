@@ -1,0 +1,12 @@
+{
+  "_comment": "The shared site footer.",
+  "footer.about": "关于",
+  "footer.credit": "图标由 Icons8 提供",
+  "footer.emergency": "急诊：{{sitio.emergency_number_link_html}}",
+  "footer.mission": "由 {{sitio.city}} 的居民开发并维护。免费且无商业背景：只为让你就医更方便。",
+  "footer.news": "最新动态",
+  "footer.powered": "由 Human Rounds 提供技术支持",
+  "footer.privacy": "隐私政策",
+  "footer.software": "基于 Human Rounds 软件运行",
+  "footer.terms": "服务条款"
+}

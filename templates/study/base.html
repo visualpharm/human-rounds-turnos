@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="referrer" content="no-referrer">
+<title>{{ t('study.title', 'Probá Human Rounds') }}</title>
+<link rel="stylesheet" href="{{ static('human-rounds.css') }}">{{ static_manifest() }}
+<style>
+body{font:400 18px/1.5 var(--font,system-ui,sans-serif);color:var(--text,#222);text-wrap:pretty;margin:0}
+.study{max-width:1120px;margin:auto;padding:24px;min-width:0}
+.study h1{font-size:28px;line-height:1.2}.study h2{font-size:22px;line-height:1.3}
+.study p,.study label{color:var(--text,#222)}
+.study button,.study select,.study textarea{font:inherit;color:inherit;max-width:100%;box-sizing:border-box}
+.study button,.study select{min-height:48px;padding:8px 16px}
+.study button{width:auto}.study textarea{width:100%;min-height:90px;padding:10px}
+.study-actions{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
+.study-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:12px;align-items:start;margin:16px 0}
+.study-row label{text-align:right}.study-row select{width:max-content}
+.study input[type=checkbox]{width:24px;height:24px;vertical-align:middle;margin-right:8px}
+.study iframe{width:100%;height:70vh;min-height:420px;border:1px solid var(--border,#bbb);display:block;background:var(--panel,#fff)}
+.study fieldset{border:0;padding:0;margin:16px 0}.study legend{font-size:18px}
+.study [role=alert]{color:var(--text,#222);font-weight:600}
+.screen-load-slow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:16px 0}
+@media(max-width:640px){.study{padding:16px}.study-row{grid-template-columns:1fr}.study-row label{text-align:left}.study iframe{height:65vh;min-height:400px}}
+</style>{% block head %}{% endblock %}</head>
+<body><main class="study">{% block content %}{% endblock %}</main>{% block scripts %}{% endblock %}</body></html>

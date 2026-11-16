@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "Jours d'anticipation",
+  "admin.settings.opening_time": "Heure d'ouverture des rendez-vous",
+  "admin.settings.horizon_range": "Les jours d'anticipation doivent être compris entre 1 et 365.",
+  "admin.settings.opening_time_format": "L'heure d'ouverture doit être au format HH:MM.",
+  "admin.settings.holidays.title": "Jours fériés",
+  "admin.settings.holidays.lede": "Ce jour-là, aucun rendez-vous n'est proposé dans aucun service, médecin ou centre. Les rendez-vous déjà pris ne sont pas annulés : il faut les reprogrammer.",
+  "admin.settings.holidays.empty": "Aucun jour férié n'a été chargé.",
+  "admin.settings.holidays.date": "Date",
+  "admin.settings.holidays.name": "Nom",
+  "admin.settings.holidays.remove": "Retirer",
+  "admin.settings.holidays.add": "+ Ajouter un jour férié",
+  "admin.settings.holidays.load_national": "Charger les jours fériés nationaux",
+  "admin.settings.holidays.appointments_one": "{n} rendez-vous prévu ce jour-là",
+  "admin.settings.holidays.appointments": "{n} rendez-vous pris ce jour-là",
+  "admin.settings.holidays.invalid": "La liste des jours fériés n'est pas valide.",
+  "admin.settings.holidays.bad_date": "Chaque jour férié doit avoir une date valide.",
+  "admin.settings.holidays.no_name": "Chaque jour férié doit avoir un nom.",
+  "admin.settings.holidays.long_name": "Le nom d'un jour férié peut contenir jusqu'à {max} caractères.",
+  "admin.settings.holidays.too_many": "Il est possible de charger jusqu'à {max} jours fériés."
+}

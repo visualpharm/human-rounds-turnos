@@ -1,0 +1,66 @@
+{#
+  templates/admin/knowledge.html — Tier 5 direct Wiki/knowledge screen:
+  the server-routed twin of the legacy `#knowledge` hash section.
+  Extends the shared admin shell (templates/admin/base.html); the actual
+  DATA and MARKUP come from `platform/admin-knowledge.mjs` — this
+  template's ONLY job is to (a) give that script the `#sec-knowledge`
+  container it already knows how to paint into, wrapped in
+  `.adm-content-wrap` the same way the legacy shell wraps it, (b) render
+  the page title server-side. The controller then HIDES `#adm-h1` on the
+  direct screen and paints its own title row inside the section —
+  pre-JS paint shows the real title; post-boot matches the legacy
+  sequence.
+
+  Item deep-link state is `?item=<id>`, owned by the client (pushState +
+  popstate). No hash shim: base.html declares `window.SANA_ADMIN_SCREEN`,
+  `route()` reads it when there is no hash, and the native controller mounts
+  from its fingerprint-manifest URL. It keeps the base shared shell runtime
+  and loads platform/admin-knowledge.mjs as its only controller asset.
+  rendered through the static manifest. No CURRENT_ROLE seed:
+  this controller uses none. The title/h1
+  key `admin.content.knowledge.wiki` exists in both locales; the Spanish
+  fallback is shipped per the fallback rule.
+#}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.content.knowledge.wiki', 'Wiki') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.content.knowledge.wiki', 'Wiki') }}{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  {# Hidden until an article form (where «Generar título» proposes with AI) is
+     on screen; admin-knowledge.mjs syncAiNotice() moves it into that form
+     (progressive disclosure, product owner 2026-10-26). #}
+  <p class="adm-ai-notice" data-ai-notice="knowledge" hidden>{{ t('ai.notice.knowledge', 'La inteligencia artificial propone propiedades del artículo. Revisalas antes de guardar.') }}</p>
+  <div id="sec-knowledge"></div>
+  <p id="knowledge-status" class="adm-empty" role="status" aria-live="polite" hidden
+     data-controller-load-error="{{ t('admin.system.common.load_error_retry', 'No se pudo cargar. Reintentá.') }}"></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  (function () {
+    var sec = document.getElementById("sec-knowledge");
+    var status = document.getElementById("knowledge-status");
+    var controller;
+    function failed() {
+      var msg = {{ t('admin.content.common.load_error', 'Could not load.')|tojson }};
+      if (sec) {
+        sec.innerHTML = '<p class="adm-empty" role="alert"><span data-error-message></span> <button type="button" class="btn" data-retry></button></p>';
+        sec.querySelector("[data-error-message]").textContent = msg;
+        sec.querySelector("[data-retry]").textContent = {{ t('admin.content.common.reload', 'Reload')|tojson }};
+      }
+      var retry = sec && sec.querySelector("[data-retry]");
+      if (retry) retry.addEventListener("click", function () { location.reload(); });
+    }
+    var url = window.SANA_STATIC && window.SANA_STATIC["platform/admin-knowledge.mjs"];
+    if (!url) return failed();
+    function start() { import(url).then(function (m) { controller = m; return m.mount(); }).catch(failed); }
+    window.addEventListener("pagehide", function () { if (controller) controller.destroy(); });
+    window.addEventListener("pageshow", function (event) { if (event.persisted) start(); });
+    start();
+  })();
+</script>
+{% endblock %}

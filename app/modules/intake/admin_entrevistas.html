@@ -1,0 +1,50 @@
+{#
+  Direct symptom-capture settings screen. The shared shell owns the title;
+  the controller owns effective doctor checkboxes and active PDF links. The backend
+  contract remains in modules/intake/intake_admin.py. The template imports the
+  canonical intake module and calls boot() only after a failed-import recovery
+  is in place; there is no classic script or global bridge.
+#}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.reports.entrevistas.titulo', 'Captura de síntomas') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.reports.entrevistas.titulo', 'Captura de síntomas') }}{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  {# What the feature is, told to the doctor (platform/intake-explainer.mjs);
+     painted once by admin-entrevistas.mjs, outside the re-rendered table.
+     data-list-view: the list takes the full width, like Pacientes and the
+     other lists (admin-direct.css lifts the content cap for it). #}
+  <div id="ent-explainer"></div>
+  <section id="sec-entrevistas" aria-labelledby="adm-h1" data-list-view="1"
+    data-load-error="{{ t('admin.reports.entrevistas.error_carga', 'No se pudo cargar.') }}"
+    data-retry="{{ t('admin.reports.entrevistas.retry', 'Reintentar') }}"></section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="{{ static('platform/admin-control-fit.mjs') }}"></script>
+<script type="module">
+(function () {
+  var host = document.getElementById("sec-entrevistas");
+  var url = "{{ module_static('modules/intake/admin-entrevistas.mjs') }}";
+  function showLoadError() {
+    if (!host) return;
+    host.innerHTML = '<p class="adm-empty">' +
+      (host.getAttribute("data-load-error") || "No se pudo cargar.") +
+      '</p><button class="btn" type="button" data-ent-retry>' +
+      (host.getAttribute("data-retry") || "Reintentar") +
+      "</button>";
+    var retry = host.querySelector("[data-ent-retry]");
+    if (retry) retry.addEventListener("click", function () { location.reload(); });
+  }
+  if (!url) {
+    showLoadError();
+    return;
+  }
+  import(url).then(function (m) { return m.boot(); }).catch(showLoadError);
+})();
+</script>
+{% endblock %}

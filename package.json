@@ -1,0 +1,21 @@
+{
+  "name": "human-rounds-turnos",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "storybook": "storybook dev -p 7500",
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --build-script-name build-storybook --exit-zero-on-changes",
+    "e2e": "playwright test",
+    "e2e:dev": "TURNOS_E2E_ALLOW_SKIP=1 playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@storybook/html-vite": "^10.5.6",
+    "c8": "^12.0.0",
+    "chromatic": "^16.10.1",
+    "playwright": "^1.63.0",
+    "storybook": "^10.5.6",
+    "vite": "^8.2.0"
+  }
+}

@@ -1,0 +1,71 @@
+# {{sitio.brand}}
+
+> Portal comunitario y gratuito para encontrar servicios, profesionales, centros, horarios y turnos de la red pública de salud de {{sitio.city}}. Expone además un servidor MCP: el asistente de IA de una persona puede consultar y sacar turnos en su nombre.
+
+{{sitio.brand}} organiza la información del {{sitio.network_long}} y permite pedir turnos online. No reemplaza la atención médica ni es un canal de urgencias: ante una urgencia, {{sitio.emergency_number}} o una guardia.
+
+## Cómo funciona la salud pública acá
+
+La atención es **gratuita y no exige obra social**. La red tiene dos niveles:
+
+- **Hospital** — guardia 24 h, internación, estudios de diagnóstico y las especialidades que no están en los CAPS.
+- **CAPS** (Centros de Atención Primaria de la Salud) — barriales, resuelven lo cotidiano: medicina general, pediatría, ginecología, enfermería, vacunación, controles.
+
+Los centros del partido están a unos 10 minutos entre sí. Por eso, **para elegir dónde atenderse conviene mirar la espera antes que la distancia**: viajar unos minutos suele ser mejor que esperar semanas. Las páginas que comparan centros vienen ordenadas por próxima disponibilidad justamente por eso.
+
+### Las cuatro formas de acceder a un servicio
+
+Cada servicio del catálogo declara cómo se accede. Es el dato que más cambia lo que la persona tiene que hacer:
+
+- **Sin turno** — por orden de llegada, en el horario publicado. No se reserva: se va. Lo que importa es la hora de apertura.
+- **Sin turno, con orden médica** — igual, pero hay que llevar la orden.
+- **Con turno** — se elige día y hora. Algunos los confirma el hospital; otros quedan confirmados en el momento.
+- **Con turno y orden médica** — se sube la orden y el hospital la revisa antes de confirmar.
+
+Un servicio *sin turno* **nunca** ofrece horarios para reservar: prometerlos contradice el cartel del consultorio. La única excepción es la apertura el mismo día, donde algunos consultorios liberan los cupos de esa jornada.
+
+### Qué es la "orden médica"
+
+Es la derivación que escribe un profesional para un estudio o una especialidad. Quien no la tiene, el camino es sacar turno con **Medicina general**: esa consulta no necesita orden y es la que la emite.
+
+## Páginas principales
+
+- [Inicio]({{sitio.public_origin}}/): busca servicios, estudios, profesionales y centros a la vez.
+- [Médicos y profesionales]({{sitio.public_origin}}/doctors): directorio por especialidad, centro y próxima disponibilidad.
+- [Estudios]({{sitio.public_origin}}/d/diagnostico): estudios de diagnóstico y en qué centros se hacen.
+- [Centros de salud]({{sitio.public_origin}}/centers): hospital y CAPS, con dirección, contacto y horarios.
+- [Talleres y grupos]({{sitio.public_origin}}/d/grupos): actividades grupales, con sede y horario.
+- [Subí tu orden]({{sitio.public_origin}}/upload-order): lee la foto de una orden médica y dice qué pide, dónde se hace y cómo prepararse.
+- [Acerca del proyecto]({{sitio.public_origin}}/about.html) · [Privacidad]({{sitio.public_origin}}/privacy.html) · [Términos]({{sitio.public_origin}}/terms.html)
+
+## Servidor MCP
+
+{{sitio.brand}} expone un servidor **MCP** (Model Context Protocol) para que el asistente de IA de una persona consulte y gestione **sus propios** turnos.
+
+- **Endpoint:** `POST {{sitio.public_origin}}/mcp` — JSON-RPC 2.0, streamable HTTP sin estado.
+- **Autenticación:** `Authorization: Bearer <token>`. Cada paciente saca el suyo desde **Mi cuenta**; regenerarlo revoca el anterior.
+- **La identidad sale del token, nunca de los argumentos.** No se puede pedir un turno a nombre de otra persona mandando otro DNI: el servidor ignora cualquier identidad que venga en el cuerpo del pedido.
+
+Herramientas:
+
+- `search_services` — busca servicios por síntoma, especialidad o estudio.
+- `available_appointments` — horarios libres de un servicio.
+- `request_appointment` — pide un turno.
+- `my_requests` — turnos y solicitudes de quien autorizó el token.
+- `cancel_request` — cancela un turno propio.
+- `whoami` — datos de la cuenta del token.
+- `analyze_order` — lee una orden médica (imagen o PDF) y devuelve qué pide.
+
+Sin token el catálogo público igual se puede leer: `GET /api/services` y `GET /api/centers`.
+
+### Reglas al operar en nombre de un paciente
+
+- **Confirmá con la persona antes de reservar o cancelar.** Un turno es un recurso escaso de un hospital público: reservar "por las dudas" le saca el lugar a otro vecino.
+- Un servicio *sin turno* no se reserva: informá el horario de atención.
+- Si el servicio pide orden médica y la persona no la tiene, el paso siguiente es un turno con Medicina general.
+- Los turnos se piden hasta **31 días** hacia adelante; más lejos no hay agenda abierta.
+- Ante síntomas de urgencia, la respuesta es {{sitio.emergency_number}} o la guardia, nunca un turno.
+
+## Alcance y límites
+
+{{sitio.brand}} es un proyecto de bien público hecho por vecinos, en carácter personal. Reúne información de salud pública local y herramientas para pedir turnos. **No es diagnóstico, no es consejo médico y no confirma nada fuera de lo que publica cada página.** Los horarios y la disponibilidad cambian: la página de cada servicio, centro o profesional es la referencia más específica.

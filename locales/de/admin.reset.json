@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "Wenn für das Konto eine E-Mail-Adresse hinterlegt ist, erhältst du einen Link, um ein neues Passwort zu wählen.",
+  "admin.reset.mismatch": "Die Passwörter stimmen nicht überein.",
+  "admin.reset.failed": "Speichern fehlgeschlagen. Bitte fordere einen neuen Link an.",
+  "admin.reset.saved": "Passwort gespeichert. Zum Dashboard",
+  "admin.reset.network": "Netzwerkfehler. Bitte versuch es noch einmal.",
+  "admin.reset.expired_title": "Der Link ist abgelaufen",
+  "admin.reset.expired_body": "Dieser Link ist abgelaufen oder wurde bereits verwendet. Fordere bitte über den Login-Bereich einen neuen an.",
+  "admin.reset.login": "Login-Bereich",
+  "admin.reset.password": "Neues Passwort",
+  "admin.reset.title": "Wähle ein neues Passwort",
+  "admin.reset.requirements": "Verwende mindestens 8 Zeichen. Dieser Link kann nur einmal verwendet werden.",
+  "admin.reset.confirm": "Passwort wiederholen",
+  "admin.reset.save": "Passwort speichern",
+  "admin.reset.db_unavailable": "Datenbank nicht verfügbar.",
+  "admin.reset.expired": "Der Link ist abgelaufen oder wurde bereits verwendet. Fordere einen neuen an.",
+  "admin.reset.invalid_json": "Ungültiges JSON.",
+  "admin.reset.username": "Dein Benutzername"
+}

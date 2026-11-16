@@ -1,0 +1,117 @@
+{
+ "not_found": {
+  "sha256": "c365ad6194853c259517589f606f3ba4860d90f6a2796aee0a1ccecc1165732d"
+ },
+ "orden|anulada": {
+  "length": 5112,
+  "sha256": "917ea18b257ca5d38fab04d202b2b85b88f87977a32eb90753cf291a0cb62312"
+ },
+ "orden|anulada-no-link": {
+  "length": 5004,
+  "sha256": "76887afac4baa13c2082f990280ea42a00a2a94a0e83b3facc8354a9d33af24d"
+ },
+ "orden|blank-payload": {
+  "length": 4077,
+  "sha256": "ec1aec9afeb122be1f699e29a088d2280652a2b48e2520776329b7aefbf4986a"
+ },
+ "orden|borrador": {
+  "length": 4863,
+  "sha256": "140f8627c7ca6020352cac9e15d51fc9335f0242330fabf8d1fa194608fc689a"
+ },
+ "orden|empty-lists": {
+  "length": 4473,
+  "sha256": "ffdcfee0da57c89d6c4b907f85ea57379e1cad508e77b8de8e674b9b45e414d4"
+ },
+ "orden|escaped": {
+  "length": 4787,
+  "sha256": "923f05aceb6aa0cb3f1127585f80f13b039c025a84e1360b88d0d77772d872bc"
+ },
+ "orden|full": {
+  "length": 4821,
+  "sha256": "5eb438d6308f21a43ef4e1f2a9fc3c070bebca31b51651ee67e4e9a20a79b982"
+ },
+ "orden|lists-missing": {
+  "length": 4473,
+  "sha256": "ffdcfee0da57c89d6c4b907f85ea57379e1cad508e77b8de8e674b9b45e414d4"
+ },
+ "orden|no-doctor-details": {
+  "length": 4729,
+  "sha256": "55cb227b9e88a368da7fcd1de1945c9a1bda4ba882296dbf74da6ba8e80e5e07"
+ },
+ "orden|no-notes-no-dni": {
+  "length": 4651,
+  "sha256": "e238ff8693cf02ebba87730b03228afc351e8797b39264b0b2f8eb201c868911"
+ },
+ "orden|not-a-dict": {
+  "length": 4077,
+  "sha256": "ec1aec9afeb122be1f699e29a088d2280652a2b48e2520776329b7aefbf4986a"
+ },
+ "orden|only-license": {
+  "length": 4789,
+  "sha256": "9debdb997cbad1267e21a4b2a115c8d759819436bd67b6f68c4310cfc8eec173"
+ },
+ "orden|only-speciality": {
+  "length": 4787,
+  "sha256": "49cb6ade62a59660324175c88b45ebe04c54390ebf34aecea5284487eefc0684"
+ },
+ "orden|space": {
+  "length": 4821,
+  "sha256": "5eb438d6308f21a43ef4e1f2a9fc3c070bebca31b51651ee67e4e9a20a79b982"
+ },
+ "receta|anulada": {
+  "length": 6433,
+  "sha256": "dd2b0614bc327c462fd511d5fb78dc0e89bfbbe84492f753304998849dd13fce"
+ },
+ "receta|anulada-no-link": {
+  "length": 6325,
+  "sha256": "b81bd069949580a913d114c2736d466642f7f3edb4eab9604cf0c37dcb99d295"
+ },
+ "receta|blank-payload": {
+  "length": 5162,
+  "sha256": "50a295021154607177d3a3c4c145322ff5028e1cd5f1a265b0d7ba1e37b72777"
+ },
+ "receta|borrador": {
+  "length": 6178,
+  "sha256": "d0374d0c60d4f4eb021d30dfc4e8d24ba1235ac6a05c8d22b305f37473d79449"
+ },
+ "receta|empty-lists": {
+  "length": 5954,
+  "sha256": "5faa701ac69765628e8d402824e0462d1b37eb22922c2c489fc35223bd9d9daf"
+ },
+ "receta|escaped": {
+  "length": 6210,
+  "sha256": "f865878e08ea1fed2e088b64fdb9137086b3053a034c9ec617d211bb0105538b"
+ },
+ "receta|full": {
+  "length": 6094,
+  "sha256": "a1303b79d940d459b0191caa5906441fe4481096cdc23268e851b0301cb0bd15"
+ },
+ "receta|lists-missing": {
+  "length": 5954,
+  "sha256": "5faa701ac69765628e8d402824e0462d1b37eb22922c2c489fc35223bd9d9daf"
+ },
+ "receta|no-doctor-details": {
+  "length": 5910,
+  "sha256": "19a73a854445510d88362717c1045625205b4e6937b6621442b7a601771a2975"
+ },
+ "receta|no-notes-no-dni": {
+  "length": 5754,
+  "sha256": "cbe9fd44b7ef8839d255d0f9d74b0cfa670b61b2a8ff50695d752fb94121d050"
+ },
+ "receta|not-a-dict": {
+  "length": 5162,
+  "sha256": "50a295021154607177d3a3c4c145322ff5028e1cd5f1a265b0d7ba1e37b72777"
+ },
+ "receta|only-license": {
+  "length": 6030,
+  "sha256": "b78bfeaa41f82491d69e40abb5d7916d20bf33494a021202249617a0d8c42fbc"
+ },
+ "receta|only-speciality": {
+  "length": 6026,
+  "sha256": "ea6c7bec51afd6b49e1f0305f6ecf367a010c88d8c88c953fcbf7638b9823dd2"
+ },
+ "receta|space": {
+  "length": 6094,
+  "sha256": "a1303b79d940d459b0191caa5906441fe4481096cdc23268e851b0301cb0bd15"
+ }
+}

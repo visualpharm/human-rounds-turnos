@@ -1,0 +1,173 @@
+{
+  "note": "Catálogo canónico de especialidades médicas -> cluster (webdata/clusters.json). El admin elige la especialidad de esta lista (dropdown, admin-contenido.js); el cluster se deriva SIEMPRE server-side (catalogo.py) — no es un campo editable. Variantes casi-duplicadas (sufijo '(Lic.)') se mergearon en su especialidad base el 2026-07-11; la distinción de licenciatura vs médico va en la nota interna del profesional, no en la especialidad.",
+  "specialties": [
+    {
+      "nombre": "Cardiología",
+      "cluster": "cardiologia"
+    },
+    {
+      "nombre": "Medicina general",
+      "cluster": "clinica"
+    },
+    {
+      "nombre": "Clínica médica",
+      "cluster": "clinica"
+    },
+    {
+      "nombre": "Traumatología",
+      "cluster": "trauma-kine"
+    },
+    {
+      "nombre": "Kinesiología",
+      "cluster": "trauma-kine"
+    },
+    {
+      "nombre": "Diagnóstico por imágenes",
+      "cluster": "diagnostico"
+    },
+    {
+      "nombre": "Ecografía",
+      "cluster": "diagnostico"
+    },
+    {
+      "nombre": "Endocrinología",
+      "cluster": "endocrino"
+    },
+    {
+      "nombre": "Nutrición",
+      "cluster": "endocrino"
+    },
+    {
+      "nombre": "Diabetología",
+      "cluster": "endocrino"
+    },
+    {
+      "nombre": "Pediatría",
+      "cluster": "pediatria"
+    },
+    {
+      "nombre": "Ginecología",
+      "cluster": "gineco"
+    },
+    {
+      "nombre": "Obstetricia",
+      "cluster": "gineco"
+    },
+    {
+      "nombre": "Ginecología y obstetricia",
+      "cluster": "gineco"
+    },
+    {
+      "nombre": "Odontología",
+      "cluster": "odontologia"
+    },
+    {
+      "nombre": "Vacunación",
+      "cluster": "vacunas-prevencion"
+    },
+    {
+      "nombre": "Otorrinolaringología",
+      "cluster": "otorrino-fono"
+    },
+    {
+      "nombre": "Fonoaudiología",
+      "cluster": "otorrino-fono"
+    },
+    {
+      "nombre": "Psiquiatría",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Psicología",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Psicología infantil",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Talleres grupales",
+      "cluster": "grupos"
+    },
+    {
+      "nombre": "Otras especialidades",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Cirugía",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Dermatología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Enfermería",
+      "cluster": "vacunas-prevencion"
+    },
+    {
+      "nombre": "Gastroenterología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Infectología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Infectología infantil",
+      "cluster": "pediatria"
+    },
+    {
+      "nombre": "Laboratorio",
+      "cluster": "diagnostico"
+    },
+    {
+      "nombre": "Lic. Psicomotricidad",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Medicina General - Trabajo Social",
+      "cluster": "clinica"
+    },
+    {
+      "nombre": "Neumología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Neurología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Neurología infantil",
+      "cluster": "pediatria"
+    },
+    {
+      "nombre": "Oftalmología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Terapia ocupacional",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Urología",
+      "cluster": "otras"
+    },
+    {
+      "nombre": "Psicomotricidad",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Psicopedagogía",
+      "cluster": "salud-mental"
+    },
+    {
+      "nombre": "Demanda espontánea",
+      "cluster": "clinica"
+    },
+    {
+      "nombre": "Trabajo Social",
+      "cluster": "clinica"
+    }
+  ]
+}

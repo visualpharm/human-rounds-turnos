@@ -1,0 +1,71 @@
+{
+  "baseline": "73a53c4ab35ff6ebac3efe7c221781523203f942",
+  "only_changed_served_asset": "platform/admin-patient-summary.mjs",
+  "old_url": "/static/platform/admin-patient-summary.28106fe6.mjs",
+  "new_url": "/static/platform/admin-patient-summary.66bf20f1.mjs",
+  "responses": [
+    {
+      "path": "/account",
+      "language": "es",
+      "sha256": "f7927ea3b9d4f2021e94f83ce78af383a996c33e93098c0003297c713c2b988d",
+      "baseline_sha256": "1384308148b56aff130263a67130f6e0ae8c5b25b9d47e688f5b9329f2242df7",
+      "reversal_exact": true
+    },
+    {
+      "path": "/account/reset",
+      "language": "es",
+      "sha256": "9a433b2d9754afb9a20050edff7df03594b54039f48517cbc76c8139631e9ff6",
+      "baseline_sha256": "e9df3669779d3710a3dbca7b6579d02850f2e86849a353874f98be3f95e33d07",
+      "reversal_exact": true
+    },
+    {
+      "path": "/account",
+      "language": "anonymous",
+      "sha256": "f7927ea3b9d4f2021e94f83ce78af383a996c33e93098c0003297c713c2b988d",
+      "baseline_sha256": "1384308148b56aff130263a67130f6e0ae8c5b25b9d47e688f5b9329f2242df7",
+      "reversal_exact": true
+    },
+    {
+      "path": "/auth/test",
+      "language": "es",
+      "sha256": "880e17310c68e07269d98744ad6c7aac98c45aebb0b5e1834a05097fe869f246",
+      "baseline_sha256": "8e416444d65097c4d7a2e19d9c671be5f600b6aca5169303d8f7363bfd276a9f",
+      "reversal_exact": true
+    },
+    {
+      "path": "/auth/sso",
+      "language": "es",
+      "sha256": "e0ffcefa1ba3c16c38544adf85b63d7fca3ee6ff735055e5df4a72a9bebb2799",
+      "baseline_sha256": "a4ce97687a7e464d856826845cfb4a4ce40e1fdc43e346dd529c941a856c4b88",
+      "reversal_exact": true
+    },
+    {
+      "path": "/account",
+      "language": "en",
+      "sha256": "0d418f5262515fd17b908d6592cc0b558d757b5ced09b574f9d49e8592353241",
+      "baseline_sha256": "4162aab3e90d6ec143d82ad42bb86debe6004317f434152e70b21b3595ae85e9",
+      "reversal_exact": true
+    },
+    {
+      "path": "/account/reset",
+      "language": "en",
+      "sha256": "903e2178879ddd3f33b30c586ed667dbf846bac68f9b7c2536bba4e601b8e633",
+      "baseline_sha256": "5e9cc16ac5e0fc04e1d9b4b3f521f0b4ee881b4d64f44e3b2078bc0375952154",
+      "reversal_exact": true
+    },
+    {
+      "path": "/auth/test",
+      "language": "en",
+      "sha256": "7a84bd377893b778d97cf31f9669f301fc4adfbbcb9165f1707332dceabc302b",
+      "baseline_sha256": "707a755677825e658a27f8d4531998073a02abea0c3d558b3654d9090990a459",
+      "reversal_exact": true
+    },
+    {
+      "path": "/auth/sso",
+      "language": "en",
+      "sha256": "c36aea48945ed8de0d46abc9b3d18aaa10eb1589eff72ef531b9c047bacf0b5f",
+      "baseline_sha256": "376dbc9c359d937ae66faba270aa53989cb2ed0041a17741b1623ebee9fb2512",
+      "reversal_exact": true
+    }
+  ]
+}

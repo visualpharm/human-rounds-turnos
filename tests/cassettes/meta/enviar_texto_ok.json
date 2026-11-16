@@ -1,0 +1,49 @@
+{
+  "connector": "meta",
+  "scenario": "enviar_texto_ok",
+  "recorded_at": "2026-08-05T23:50:00+00:00",
+  "source": "Hand-authored, not driven through this cassette engine's own recorder like the PUCO/RENAPER slice-6 cassettes: otp_send.py's _enviar_meta() hardcodes the endpoint host as https://graph.facebook.com/{graph_version}/{phone_number_id}/messages with NO env override (unlike PUCO's SISA_URL or RENAPER's TOKEN_URL/USERINFO_URL), so there is no way to point the real client at a local in-process fake upstream without editing otp_send.py itself — out of scope for this slice (connector production code is not touched). The request/response shape below matches otp_send.py's own _enviar_meta() request construction (messaging_product/to/type/text.body) and the WhatsApp Cloud API's documented send-message response (messaging_product/contacts[].input+wa_id/messages[].id — the exact fields otp_send.py reads: result['messages'][0]['id']), cross-checked against docs/architecture/chat-y-whatsapp.md's 'Outbound is its own provider seam' note. phone_number_id below is a placeholder (999999999999999), not humanrounds-pinamar's real Meta asset id documented in that architecture file. Every value is a repo test fixture, never a real patient's phone number. Field-shaped PII (to/contacts[].input/contacts[].wa_id) is tokenized the same way tests/cassettes/_vcr.py's recorder would via tests/cassettes/meta/fields.py's PII_FIELDS, applied by hand here. Re-author or, if otp_send.py ever grows a base-URL override, genuinely re-record (scripts/record_cassette.py --connector meta --scenario enviar_texto_ok) against a real (test) Meta number, diff-review before committing, per Area 3's doctrine.",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/v25.0/999999999999999/messages",
+      "query": {},
+      "request_body": {
+        "messaging_product": "whatsapp",
+        "to": "[teléfono 1]",
+        "type": "text",
+        "text": {
+          "body": "Tu turno de Cardiología es el 9 de julio a las 09:00."
+        }
+      },
+      "request_body_kind": "json",
+      "request_headers": {
+        "Content-type": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": {
+          "messaging_product": "whatsapp",
+          "contacts": [
+            {
+              "input": "[teléfono 1]",
+              "wa_id": "[teléfono 1]"
+            }
+          ],
+          "messages": [
+            {
+              "id": "wamid.HBgLNTQ5MjI1NTAwMDExMRUCABEYEjhBQ0QxMjM0NTY3ODkwQUJDRAA="
+            }
+          ]
+        },
+        "body_kind": "json"
+      }
+    }
+  ]
+}

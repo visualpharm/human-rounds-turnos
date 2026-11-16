@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "如果该账号已注册邮箱，你将收到一个设置新密码的链接。",
+  "admin.reset.mismatch": "两次输入的密码不一致。",
+  "admin.reset.failed": "无法保存。请申请一个新链接。",
+  "admin.reset.saved": "密码已保存。前往控制面板",
+  "admin.reset.network": "网络错误。请重试。",
+  "admin.reset.expired_title": "链接已失效",
+  "admin.reset.expired_body": "此链接已过期或已被使用。请从管理面板入口重新申请。",
+  "admin.reset.login": "管理面板入口",
+  "admin.reset.password": "新密码",
+  "admin.reset.title": "请设置新密码",
+  "admin.reset.requirements": "请至少使用 8 个字符。此链接仅限使用一次。",
+  "admin.reset.confirm": "重复密码",
+  "admin.reset.save": "保存密码",
+  "admin.reset.db_unavailable": "数据库不可用。",
+  "admin.reset.expired": "链接已过期或已被使用。请重新申请。",
+  "admin.reset.invalid_json": "无效的 JSON。",
+  "admin.reset.username": "你的用户名"
+}

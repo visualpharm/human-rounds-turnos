@@ -1,0 +1,29 @@
+{
+  "note": "Formulario de medicación para la receta que el médico arma desde la consulta de la entrevista previa (modules/intake/intake_catalog.py). `dosis_opciones`/`frecuencia_opciones` alimentan los desplegables del panel; el médico puede tipear otra cosa. `especialidades: []` = genérico (cualquier médico lo puede recetar); el resto está tomado del formulario de cardiología del prototipo hermano <workspace>/sana (specialties/cardiologia/index.mjs:medicationFormulary). Dosis por defecto conservadoras — requieren revisión clínica antes de cualquier uso real. `frecuencias` es la lista compartida de frecuencias típicas (freqOptions del prototipo).",
+  "frecuencias": [
+    "cada 24 h", "cada 12 h", "cada 8 h", "cada 6 h",
+    "cada 24 h (mañana)", "cada 24 h (noche)", "a demanda", "única dosis"
+  ],
+  "medicamentos": [
+    { "id": "paracetamol", "nombre": "Paracetamol", "dosis": "500 mg", "dosis_opciones": ["500 mg", "1 g"], "frecuencia": "cada 8 h", "duracion": "5 días", "clase": "Analgésico / antipirético", "especialidades": [] },
+    { "id": "ibuprofeno", "nombre": "Ibuprofeno", "dosis": "400 mg", "dosis_opciones": ["200 mg", "400 mg", "600 mg"], "frecuencia": "cada 8 h", "duracion": "5 días", "clase": "AINE", "especialidades": [] },
+    { "id": "amoxicilina", "nombre": "Amoxicilina", "dosis": "500 mg", "dosis_opciones": ["500 mg", "875 mg"], "frecuencia": "cada 8 h", "duracion": "7 días", "clase": "Antibiótico", "especialidades": [] },
+    { "id": "omeprazol", "nombre": "Omeprazol", "dosis": "20 mg", "dosis_opciones": ["10 mg", "20 mg", "40 mg"], "frecuencia": "cada 24 h", "duracion": "14 días", "clase": "Inhibidor de bomba de protones", "especialidades": [] },
+    { "id": "enalapril", "nombre": "Enalapril", "dosis": "10 mg", "dosis_opciones": ["5 mg", "10 mg", "20 mg"], "frecuencia": "cada 12 h", "duracion": "30 días", "clase": "IECA", "especialidades": [] },
+    { "id": "metformina", "nombre": "Metformina", "dosis": "850 mg", "dosis_opciones": ["500 mg", "850 mg", "1000 mg"], "frecuencia": "cada 12 h", "duracion": "30 días", "clase": "Antidiabético (biguanida)", "especialidades": [] },
+
+    { "id": "bisoprolol", "nombre": "Bisoprolol", "dosis": "2,5 mg", "dosis_opciones": ["1,25 mg", "2,5 mg", "5 mg", "10 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Betabloqueante", "especialidades": ["cardiologia"] },
+    { "id": "carvedilol", "nombre": "Carvedilol", "dosis": "6,25 mg", "dosis_opciones": ["3,125 mg", "6,25 mg", "12,5 mg", "25 mg"], "frecuencia": "cada 12 h", "duracion": "30 días", "clase": "Betabloqueante", "especialidades": ["cardiologia"] },
+    { "id": "valsartan", "nombre": "Valsartán", "dosis": "80 mg", "dosis_opciones": ["80 mg", "160 mg", "320 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "ARA-II", "especialidades": ["cardiologia"] },
+    { "id": "amlodipina", "nombre": "Amlodipina", "dosis": "5 mg", "dosis_opciones": ["2,5 mg", "5 mg", "10 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Bloqueante cálcico", "especialidades": ["cardiologia"] },
+    { "id": "losartan", "nombre": "Losartán", "dosis": "50 mg", "dosis_opciones": ["25 mg", "50 mg", "100 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "ARA-II", "especialidades": ["cardiologia"] },
+    { "id": "hidroclorotiazida", "nombre": "Hidroclorotiazida", "dosis": "25 mg", "dosis_opciones": ["12,5 mg", "25 mg", "50 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Diurético", "especialidades": ["cardiologia"] },
+    { "id": "furosemida", "nombre": "Furosemida", "dosis": "40 mg", "dosis_opciones": ["20 mg", "40 mg", "80 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Diurético de asa", "especialidades": ["cardiologia"] },
+    { "id": "espironolactona", "nombre": "Espironolactona", "dosis": "25 mg", "dosis_opciones": ["25 mg", "50 mg", "100 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Antialdosterónico", "especialidades": ["cardiologia"] },
+    { "id": "rosuvastatina", "nombre": "Rosuvastatina", "dosis": "10 mg", "dosis_opciones": ["5 mg", "10 mg", "20 mg", "40 mg"], "frecuencia": "cada 24 h (noche)", "duracion": "30 días", "clase": "Estatina", "especialidades": ["cardiologia"] },
+    { "id": "atorvastatina", "nombre": "Atorvastatina", "dosis": "20 mg", "dosis_opciones": ["10 mg", "20 mg", "40 mg", "80 mg"], "frecuencia": "cada 24 h (noche)", "duracion": "30 días", "clase": "Estatina", "especialidades": ["cardiologia"] },
+    { "id": "aas", "nombre": "Ácido acetilsalicílico (AAS)", "dosis": "100 mg", "dosis_opciones": ["100 mg", "325 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Antiagregante", "especialidades": ["cardiologia"] },
+    { "id": "clopidogrel", "nombre": "Clopidogrel", "dosis": "75 mg", "dosis_opciones": ["75 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Antiagregante", "especialidades": ["cardiologia"] },
+    { "id": "rivaroxaban", "nombre": "Rivaroxabán", "dosis": "20 mg", "dosis_opciones": ["2,5 mg", "10 mg", "15 mg", "20 mg"], "frecuencia": "cada 24 h", "duracion": "30 días", "clase": "Anticoagulante", "especialidades": ["cardiologia"] }
+  ]
+}

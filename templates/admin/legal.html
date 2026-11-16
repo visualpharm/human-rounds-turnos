@@ -1,0 +1,39 @@
+{# Direct, ASGI-only twin of the legacy #legal section (terms + privacy editor). #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.content.legal.titulo', 'Términos y privacidad') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.content.legal.titulo', 'Términos y privacidad') }}{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-legal"></div>
+  <p id="legal-status" class="adm-empty" role="status" aria-live="polite" hidden></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  (function () {
+    var sec = document.getElementById("sec-legal");
+    var status = document.getElementById("legal-status");
+    var controller;
+    function failed() {
+      var msg = {{ t('admin.content.common.load_error', 'Could not load.')|tojson }};
+      if (sec) {
+        sec.innerHTML = '<p class="adm-empty" role="alert"><span data-error-message></span> <button type="button" class="btn" data-retry></button></p>';
+        sec.querySelector("[data-error-message]").textContent = msg;
+        sec.querySelector("[data-retry]").textContent = {{ t('admin.content.common.reload', 'Reload')|tojson }};
+      }
+      var retry = sec && sec.querySelector("[data-retry]");
+      if (retry) retry.addEventListener("click", function () { location.reload(); });
+    }
+    var url = window.SANA_STATIC && window.SANA_STATIC["platform/admin-legal.mjs"];
+    if (!url) return failed();
+    function start() { import(url).then(function (m) { controller = m; return m.mount(); }).catch(failed); }
+    window.addEventListener("pagehide", function () { if (controller) controller.destroy(); });
+    window.addEventListener("pageshow", function (event) { if (event.persisted) start(); });
+    start();
+  })();
+</script>
+{% endblock %}

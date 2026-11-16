@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "usability-kit"
+version = "0.1.0"
+description = "Shared usability testing: simulated participants with a gaze model, study compilation and the findings dashboard"
+requires-python = ">=3.11"
+license = { text = "UNLICENSED" }
+dependencies = [
+    "playwright>=1.40",   # drives the real rendered screen (full and lite modes)
+    "Pillow>=10.0",       # heatmaps, replay frames, study cards
+]
+
+[tool.setuptools]
+packages = ["usability_kit"]
+
+[tool.setuptools.package-data]
+usability_kit = ["references/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

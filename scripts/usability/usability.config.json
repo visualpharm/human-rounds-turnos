@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "project": "turnos",
+  "base_url": "https://demo.humanrounds.org",
+  "local_url": "http://127.0.0.1:7700",
+  "language": "es-AR",
+  "viewports": [360, 390, 834, 1440],
+  "public_pages": [
+    "/",
+    "/doctors",
+    "/centers",
+    "/d/clinica",
+    "/d/cardiologia",
+    "/service/medicina-general-riverside-clinic",
+    "/service/demanda-espontanea-riverside-clinic",
+    "/service/medicina-general-riverside-clinic/book?slots=1",
+    "/upload-order",
+    "/news",
+    "/blood-donation",
+    "/telemedicine",
+    "/about.html"
+  ],
+  "roles": {
+    "patient": {
+      "login": {
+        "url": "/account/demo-access",
+        "steps": [{ "wait_url": "/account" }]
+      },
+      "pages": ["/account"]
+    },
+    "admin": {
+      "login": {
+        "url": "/admin/demo-access",
+        "steps": [{ "wait_url": "/admin" }]
+      },
+      "pages": ["/admin"]
+    }
+  },
+  "crawl": {
+    "max_pages": 45,
+    "exclude": ["/logout", "/admin/logout", "/account/logout", "/api/", "/feed/", "export", "delete", "cancel"]
+  },
+  "lighthouse": { "pages": ["/", "/service/medicina-general-riverside-clinic"] },
+  "checks": { "disable": [], "severity_overrides": {} },
+  "walkthroughs": [
+    {
+      "name": "Find a service and reach the booking slots",
+      "role": "public",
+      "start": "/",
+      "steps": [
+        "open the general medicine service of Riverside Clinic",
+        "press the button that books the first available time",
+        "stop on the screen that asks for the patient's data; do not fill or confirm anything"
+      ],
+      "expect": "a booking screen with time slots or patient data fields is shown"
+    },
+    {
+      "name": "See walk-in care without an appointment",
+      "role": "public",
+      "start": "/",
+      "steps": [
+        "open the spontaneous demand (walk-in) service of Riverside Clinic"
+      ],
+      "expect": "the page says that no appointment is needed and shows when and where to go"
+    }
+  ],
+  "personas": [
+    {
+      "id": "marta",
+      "language": "es-AR",
+      "device": "phone",
+      "reading": "plower",
+      "brief": "Marta, 68, jubilada, usa WhatsApp y poco más. Lee palabra por palabra. No conoce términos como orden de derivación o cobertura."
+    },
+    {
+      "id": "diego",
+      "language": "es-AR",
+      "device": "phone",
+      "reading": "scanner",
+      "brief": "Diego, 34, repartidor. Maneja bien el celular, no tiene paciencia: elige lo primero que parece correcto."
+    },
+    {
+      "id": "luciana",
+      "language": "es-AR",
+      "device": "desktop",
+      "reading": "scanner",
+      "brief": "Luciana, 45, administrativa. Gestiona los turnos de su hija y de su madre desde la computadora de la oficina."
+    }
+  ],
+  "tasks": [
+    {
+      "id": "find-service",
+      "role": "public",
+      "start": "/",
+      "text": "Necesitás un control de rutina con un médico clínico. Buscá en el sitio dónde atenderte y llegá hasta ver los horarios disponibles. No confirmes ningún turno.",
+      "success": { "url_includes": "/book" }
+    },
+    {
+      "id": "book-or-nothing",
+      "role": "public",
+      "start": "/",
+      "text": "Hoy te duele mucho la panza y querés que te vea un médico lo antes posible. Averiguá en el sitio cómo conseguir atención hoy. Si hay que sacar turno, llegá hasta la pantalla de confirmación y no la confirmes.",
+      "success": { "url_includes": "/service/" }
+    },
+    {
+      "id": "upload-order",
+      "role": "public",
+      "start": "/",
+      "text": "Tu médico te dio una orden en papel para hacerte un estudio. Averiguá en el sitio cómo cargarla y llegá hasta la pantalla donde se sube. No subas ningún archivo.",
+      "success": { "url_includes": "/upload-order" }
+    },
+    {
+      "id": "my-account",
+      "role": "patient",
+      "start": "/account",
+      "text": "Ya iniciaste sesión. Querés ver tus próximos turnos y encontrar dónde cargar a tu hija como persona a cargo. No cancelés nada ni cambies datos.",
+      "success": { "url_includes": "/account" }
+    }
+  ],
+  "llm": { "model": "z-ai/glm-5.3-flash" },
+  "store": { "path": "usability/store" }
+}

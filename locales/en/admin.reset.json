@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "If the account has a registered email, you will receive a link to choose a new password.",
+  "admin.reset.mismatch": "The passwords do not match.",
+  "admin.reset.failed": "Could not save. Request a new link.",
+  "admin.reset.saved": "Password saved. Sign in",
+  "admin.reset.network": "Network error. Try again.",
+  "admin.reset.expired_title": "This link has expired",
+  "admin.reset.expired_body": "This link expired or was already used. Request a new one from the sign-in page.",
+  "admin.reset.login": "Panel sign-in",
+  "admin.reset.password": "New password",
+  "admin.reset.title": "Choose a new password",
+  "admin.reset.requirements": "Use at least 8 characters. This link can only be used once.",
+  "admin.reset.confirm": "Repeat password",
+  "admin.reset.save": "Save password",
+  "admin.reset.db_unavailable": "Database unavailable.",
+  "admin.reset.expired": "This link expired or was already used. Request a new one.",
+  "admin.reset.invalid_json": "Invalid JSON.",
+  "admin.reset.username": "Your username"
+}

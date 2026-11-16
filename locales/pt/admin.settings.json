@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "Dias de antecedência",
+  "admin.settings.opening_time": "Horário de abertura de agendamentos",
+  "admin.settings.horizon_range": "Os dias de antecedência devem ser entre 1 e 365.",
+  "admin.settings.opening_time_format": "O horário de abertura deve ter o formato HH:MM.",
+  "admin.settings.holidays.title": "Feriados",
+  "admin.settings.holidays.lede": "Nesse dia não serão oferecidos agendamentos em nenhum serviço, médico ou centro. Os agendamentos já marcados não são cancelados: é necessário reagendá-los.",
+  "admin.settings.holidays.empty": "Não há feriados cadastrados.",
+  "admin.settings.holidays.date": "Data",
+  "admin.settings.holidays.name": "Nome",
+  "admin.settings.holidays.remove": "Remover",
+  "admin.settings.holidays.add": "+ Adicionar feriado",
+  "admin.settings.holidays.load_national": "Carregar feriados nacionais",
+  "admin.settings.holidays.appointments_one": "{n} agendamento marcado nesse dia",
+  "admin.settings.holidays.appointments": "{n} agendamentos marcados para esse dia",
+  "admin.settings.holidays.invalid": "A lista de feriados não é válida.",
+  "admin.settings.holidays.bad_date": "Cada feriado precisa de uma data válida.",
+  "admin.settings.holidays.no_name": "Cada feriado precisa de um nome.",
+  "admin.settings.holidays.long_name": "O nome de um feriado pode ter até {max} caracteres.",
+  "admin.settings.holidays.too_many": "Podem ser carregados até {max} feriados."
+}

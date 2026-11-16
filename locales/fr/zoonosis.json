@@ -1,0 +1,14 @@
+{
+  "_comment": "/zoonosis page chrome — headings and labels. Content (lede, servicios, nota, whatsapp, enlaces_oficiales) is pack data (enlaces.json).",
+  "zoonosis.h1": "Zoonoses",
+  "zoonosis.lede_default": "Le Centre de santé animale et de zoonoses de la municipalité.",
+  "zoonosis.services_h": "Ce que nous proposons",
+  "zoonosis.contact_h": "Contact",
+  "zoonosis.bite_h": "Si tu as été mordu ou griffé",
+  "zoonosis.neuter_h": "La stérilisation, c'est aussi prendre soin du quartier",
+  "zoonosis.official_h": "Plus d'informations",
+  "zoonosis.rodent_h": "Prévenir les maladies transmises par les rongeurs",
+  "zoonosis.whatsapp_lead": "WhatsApp",
+  "zoonosis.nota_default": "C'est un service de santé municipal — les rendez-vous pour les animaux de compagnie ne se prennent pas sur ce portail.",
+  "zoonosis.landline": "Téléphone fixe"
+}

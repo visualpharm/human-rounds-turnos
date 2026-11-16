@@ -1,0 +1,13 @@
+{
+  "_comment": "A center's own page (/center/<slug>): services/doctors block chrome, no-booking note, photo/review folds and meta description.",
+  "center.services_title": "服务项目",
+  "center.no_online_booking": "该中心不通过应用预约。请直接联系：",
+  "center.contact_or": "或",
+  "center.photos": "照片",
+  "center.neighbor_quotes": "居民评价",
+  "center.neighbor_tips": "居民建议",
+  "center.meta_with_lede": "{lede} 查询服务项目、医生、门诊时间及联系方式。",
+  "center.meta_default": "查询位于 {city} 的 {name} 的服务项目、医生、门诊时间及联系方式。",
+  "center.photo_alt": "{name}，第 {n} 张照片，共 {total} 张",
+  "center.until": "有效期至 {date}"
+}

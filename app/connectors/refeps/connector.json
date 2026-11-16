@@ -1,0 +1,8 @@
+{
+  "id": "refeps",
+  "country": "AR",
+  "capability": "license_lookup",
+  "default": true,
+  "config_keys": [],
+  "description": "REFEPS (Buscador Nacional de Profesionales de la Salud, argentina.gob.ar) — looks up a health professional's national license by number, no credentials needed (a public Drupal form). TURNOS_REFEPS_URL overrides the search URL for tests/mirrors. The provincial colmed9 (Colegio de Medicos PBA Distrito IX) lookup, which HAS photos REFEPS lacks, is intentionally NOT a connector here — it's the doctor-lookup operator skill's own tooling, queried by a human/agent during cartilla curation, never called at runtime by the app."
+}

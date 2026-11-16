@@ -1,0 +1,120 @@
+{
+  "scope": "Local synthetic backend focused checks; no deployment or full-suite claim",
+  "base": "78afa83a0abc5ba0be1c81172d88ceb80b913e79",
+  "tests_run": 240,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "modules": [
+    {
+      "pattern": "test_postbooking_coverage.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 15,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_accounts.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 44,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_accounts_store_contract.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 5,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_account_me_session.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 6,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_health_coverage.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 9,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_puco.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 51,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_renaper_auth.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 23,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_portal_identity.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 25,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_connector_rewire.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 28,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_reports.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 31,
+      "unexpected_successes": 0
+    },
+    {
+      "pattern": "test_app_composition.py",
+      "errors": 0,
+      "expected_failures": 0,
+      "failures": 0,
+      "schema_version": 1,
+      "skipped": [],
+      "tests_run": 3,
+      "unexpected_successes": 0
+    }
+  ]
+}

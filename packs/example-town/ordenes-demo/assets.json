@@ -1,0 +1,275 @@
+{
+  "manifest_version": "1.0",
+  "assets": [
+    {
+      "path": "bad-handwriting-cardiologia-1.jpg",
+      "sha256": "842afad889bddeca4c4f884ae7f3f83161fc80d95f9e81b812a6555671f8b5fa",
+      "bytes": 116092,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "bad-handwriting-laboratorio-2.jpg",
+      "sha256": "d28731a184037c8164a9912dd592f07c5ae40b1117014e76de9187bb8c1f6a6a",
+      "bytes": 125830,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "bad-handwriting-traumatologia-3.jpg",
+      "sha256": "c88f6a8db4eea7bbc3d0fb8937a5a8b29f9bd5a950a5ee3055f7a2d316e4564c",
+      "bytes": 118912,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "english-referral-1.jpg",
+      "sha256": "025073cba6c3d3d29e41344dbccec94e704533f3e5f2a2c1dee4fc37d1e93084",
+      "bytes": 92615,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "foreign-jurisdiction-chile-interconsulta.jpg",
+      "sha256": "94067898331308846de604b8d90e455d2b8c2dc1cf70fe7f956bc0cb1beff362",
+      "bytes": 531880,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "photographed-folded-imagenes-2.jpg",
+      "sha256": "8894876c6b70d4ec141fc5aae802a46a0b666cb7b9236e529e7eb6d9e58cad83",
+      "bytes": 97250,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "photographed-folded-laboratorio-1.jpg",
+      "sha256": "f01f22d503f20498f56cc8950faf4d1aa2a295d5195f6fb07e92b6736703cde9",
+      "bytes": 105049,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "portuguese-sus-referral.jpg",
+      "sha256": "565d9db0c4238840c91b803ea017a43387894e08b2d8b557da663bc59bddc47b",
+      "bytes": 208320,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "synthetic-bad-handwriting-ecografia-1.jpg",
+      "sha256": "7faec91431614bcef1af2f18559f502be2db224ae42f4773c49065d4b0ac2933",
+      "bytes": 328493,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "synthetic-clean-digital-ecografia-1.jpg",
+      "sha256": "5f6046cc258bb1a0b74384c4b1fa91947c5db715d7206706e0be432bb43228fe",
+      "bytes": 305730,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "synthetic-clean-digital-laboratorio-1.jpg",
+      "sha256": "38cb8083dad007a703228c4249dd0e65de45f593c867efa02209b9d0b60bff4d",
+      "bytes": 299546,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "synthetic-clean-digital-resonancia-1.jpg",
+      "sha256": "ea2a6415bc6740cb4525f426eebb68a610e6019ebcc13628e4cc87cde29fcccc",
+      "bytes": 287967,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "synthetic-derivacion-neurologia-1.jpg",
+      "sha256": "5e54255128f15f0438d59e2f79ca57ebaf8888cff177aa5d040df906b896e74f",
+      "bytes": 320151,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "synthetic-negative-wrong-document-1.jpg",
+      "sha256": "e5ad6ce3d75b5cc8a7ae39af0ab65df2a5add65f38f89095b68218eaa609d5fa",
+      "bytes": 309684,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    },
+    {
+      "path": "synthetic-two-license-cardiologia-1.jpg",
+      "sha256": "b7d40fe14f4c29f4e9415035f7b03e8288a004992fe81e729a230bf03b8242d3",
+      "bytes": 288775,
+      "media_type": "image/jpeg",
+      "provenance": {
+        "classification": "synthetic",
+        "source": "from_scratch",
+        "from_scratch": true,
+        "no_real": true,
+        "no_derived": true
+      },
+      "review": {
+        "attested": true,
+        "reviewer_id": "hr-a9d37c5e10b84f62",
+        "date": "2026-08-19"
+      }
+    }
+  ]
+}

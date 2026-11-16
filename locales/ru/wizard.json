@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "Проверяем, кому нужна помощь…",
+  "wizard.age_check.h1": "Кому нужна помощь?",
+  "wizard.confirm.error": "Не удалось сохранить твой ответ. Попробуй еще раз.",
+  "wizard.confirm.expired": "Эту запись уже нельзя подтвердить.",
+  "wizard.confirm.saved": "Готово, спасибо, что сообщил(а).",
+  "wizard.confirm.wait": "Минутку…",
+  "wizard.contact.call": "Возникли трудности? Позвони в {name}:",
+  "wizard.contact.center_fallback": "центр",
+  "wizard.contact.whatsapp": "Возникли трудности? Напиши в {name} через WhatsApp:",
+  "wizard.contact.whatsapp_site": "Возникли трудности? Напиши нам в WhatsApp:",
+  "wizard.offer.accepted": "Готово! Твоя запись подтверждена. Переходим в раздел Мои записи…",
+  "wizard.offer.error": "Не удалось обработать твой ответ. Попробуй еще раз.",
+  "wizard.offer.gone": "Эта запись больше не доступна.",
+  "wizard.offer.rejected": "Мы оповестили следующего человека в списке. Спасибо за ответ.",
+  "wizard.offer.wait": "Минутку…",
+  "wizard.title.orden": "Направление",
+  "wizard.title.solicitud": "Записаться на прием",
+  "wizard.upload.sub": "Больница проверит направление и подтвердит вашу запись."
+}

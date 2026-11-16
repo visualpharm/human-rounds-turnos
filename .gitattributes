@@ -1,0 +1,60 @@
+# Public source cut (scripts/public_cut_build.py archives HEAD with `git archive`).
+# Paths marked export-ignore stay in this working repository and never enter the
+# public tree: agent harness and its tests, installation-specific operations
+# notes, and design working files. Keep the list in step with the forbidden
+# paths of scripts/public_cut_policy.json, which re-checks the cut by name.
+# A directory is named twice: bare, so the archive leaves no empty folder, and
+# with /**, so `git check-attr` on a file under it answers too.
+/.claude export-ignore
+/.claude/** export-ignore
+/CLAUDE.md export-ignore
+/docs/design/plans export-ignore
+/docs/design/plans/** export-ignore
+/docs/design/design-qa.md export-ignore
+# The design working files' former root places: tools outside the repository may still
+# write there, and what they write must not reach the public cut either.
+/design-plans export-ignore
+/design-plans/** export-ignore
+/design-qa.md export-ignore
+/docs/pinamar export-ignore
+/docs/pinamar/** export-ignore
+/docs/portal-gateway-identity.md export-ignore
+/scripts/usability/usability.pinamar.config.json export-ignore
+/scripts/check_caps_movil.py export-ignore
+/scripts/nightly-local.plist export-ignore
+/scripts/public_cut_private_digests.json export-ignore
+/scripts/fixes/staff_portal_admin.py export-ignore
+/tests/test_demo_deploy_after_push.py export-ignore
+# Research records made against the real installation's catalog (screenshots and
+# model transcripts that name its real doctors and centers).
+/docs/studies export-ignore
+/docs/studies/** export-ignore
+/docs/usability-study export-ignore
+/docs/usability-study/** export-ignore
+# June 2026 notes and screenshots of the predecessor's client for a private clinics'
+# booking service: real doctors' names and a real booking id.
+/docs/coneiturno-findings.md export-ignore
+/docs/home.png export-ignore
+/docs/list.png export-ignore
+/docs/mobile.png export-ignore
+/docs/modal-book.png export-ignore
+/docs/settings.png export-ignore
+/docs/slots-grouped.png export-ignore
+/docs/turnos-slots.png export-ignore
+/docs/turnos-ui.png export-ignore
+# The login screen's humor images are third-party memes and photos of people with
+# no license to redistribute; without them the panel shows only the usage tips.
+/static/humor export-ignore
+/static/humor/** export-ignore
+/scripts/translate_memes_lote2.py export-ignore
+# The tree-hygiene audit lists the private markers it hunts for, so it stays here.
+/scripts/public_tree_hygiene_audit.py export-ignore
+/tests/test_public_tree_hygiene.py export-ignore
+# Tests of what the lines above keep out (the agents' hooks, CLAUDE.md, an
+# installation-only script) run here only; the cut's own suite stays whole.
+/tests/test_admin_simplification_guard.py export-ignore
+/tests/test_credential_boundary.py export-ignore
+/tests/test_story_coverage_guard.py export-ignore
+/tests/test_story_coverage_ratchet.py export-ignore
+/tests/test_claude_md_size.py export-ignore
+/tests/test_check_caps_movil.py export-ignore

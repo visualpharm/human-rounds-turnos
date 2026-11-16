@@ -1,0 +1,20 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {mounted, click, flush, patient, queue, overlayDOM} from './lineage/queue-fixture.mjs';
+test('lineage: queue SSE refresh replaces identity and AI fields before opening the overlay', async t => {
+  const f = await mounted(t), overlays = overlayDOM(f);
+  click(f,'[data-cola-abrir]',{'data-cola-abrir':'r1'});
+  assert.match(overlays.at(-1).html,/Ana Original/);
+  assert.match(overlays.at(-1).html,/Original Health/);
+  const fresh = {...patient,paciente:'Ana Corrected',dni:'30999888',ai_campos:{prepaga:{valor:'Current Health'},afiliado:{valor:'NEW-42'}}};
+  assert.equal(f.streams.length,1);
+  f.streams[0].emit('queue-update',{data:JSON.stringify({day:'2026-09-16'})});
+  const request = f.requests.at(-1);
+  assert.equal(request.url,'/api/admin/day-queue?dia=2026-09-16');
+  request.resolve(new Response(JSON.stringify(queue(fresh)))); await flush(); await flush();
+  click(f,'[data-cola-abrir]',{'data-cola-abrir':'r1'});
+  const html = overlays.at(-1).html;
+  assert.match(html,/Ana Corrected/); assert.match(html,/Current Health/); assert.match(html,/NEW-42/);
+  assert.match(html,/30\.999\.888/);
+  assert.doesNotMatch(html,/Ana Original|Original Health|30\.123\.456/);
+});

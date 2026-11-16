@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSI Humanizador — cargas recientes</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <!-- Help first: with a long history it must never be a scroll away. -->
+    <header>
+      <a id="video" target="_blank" rel="noopener" hidden>Video: cómo se usa</a>
+      <button type="button" id="ajustes">Ajustes</button>
+    </header>
+    <div id="sitios"></div>
+    <details id="ayuda">
+      <summary>Cómo se usa</summary>
+      <ol id="pasos">
+        <li>Abrí «Pacientes de hoy» en Human Rounds.</li>
+        <li>En la fila del paciente, tocá <b>Cargar en HSI</b>.</li>
+        <li>Revisá los datos en HSI y tocá <b>Confirmar</b>.</li>
+      </ol>
+    </details>
+    <section id="recientes" hidden>
+      <h1>Cargas recientes</h1>
+      <ol id="cargas"></ol>
+    </section>
+  </main>
+  <script src="lib/shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

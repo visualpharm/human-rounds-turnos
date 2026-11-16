@@ -1,0 +1,33 @@
+{# Intake owns the native consultation controller. The shared shell owns title
+   and navigation; this entry owns readiness, recovery and page lifetime. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.reports.consulta.h1_titulo', 'Consulta') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.reports.consulta.h1_titulo', 'Consulta') }}{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-consulta"></div>
+  <p id="consult-status" class="adm-empty" role="status" aria-live="polite" hidden></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<template id="consult-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.system.common.load_error', "Couldn't load this section.") }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Reload') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-consulta");
+  const url = "{{ module_static('modules/intake/admin-consult.mjs') }}";
+  bootScreen({
+    host,
+    recovery: "consult-load-recovery",
+    load: () => (url ? import(url) : Promise.reject(new Error("admin-consult.mjs"))),
+    mount: (Consultation) => Consultation.mount(host),
+    onStop: () => host.replaceChildren(),
+  });
+</script>
+{% endblock %}

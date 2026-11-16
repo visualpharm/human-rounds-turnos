@@ -1,0 +1,619 @@
+{
+  "sistema": "marqui",
+  "descripcion": "Datos de demostración — pacientes sintéticos, sin relación con personas reales.",
+  "cobertura": "1996-2016",
+  "pacientes": {
+    "99000001": [
+      {
+        "fecha": "2005-03-14",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Pte de 51 años. Consulta control gral.\nBEG, CsPs.\nNiega antecedentes de relevancia.\nTA 128/82.\nSe solicita laboratorio de rutina.\nCto en 1 año.",
+        "valores": {
+          "ta_sistolica": 128,
+          "ta_diastolica": 82
+        },
+        "fuente": "legajo 4821, fs. 3",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2008-06-02",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Pte refiere cefa1ea occipital de 3 días.\nTA 152/96. FC 88 x'.\nDx: HTA de reciente diagnóstico.\nSe indica tto farmacológico (ver Rp/).\nCto en 15 días.",
+        "valores": {
+          "ta_sistolica": 152,
+          "ta_diastolica": 96
+        },
+        "fuente": "legajo 4821, fs. 5",
+        "calidad_ocr": "baja"
+      },
+      {
+        "fecha": "2008-06-02",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Rp/ Enalapril 10 mg/día.\nIndicación: HTA.",
+        "medicamentos": [
+          {
+            "nombre": "Enalapril",
+            "dosis": "10 mg/día",
+            "indicacion": "HTA"
+          }
+        ],
+        "fuente": "legajo 4821, fs. 5",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2008-09-10",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Control post enalapril.\nTA 14O/88.\nBEG, buena tolerancia.\nCto en 3 meses.",
+        "valores": {
+          "ta_sistolica": 140,
+          "ta_diastolica": 88
+        },
+        "fuente": "legajo 4821, fs. 6",
+        "calidad_ocr": "baja"
+      },
+      {
+        "fecha": "2009-11-05",
+        "tipo": "imagen",
+        "servicio": "Ginecología",
+        "profesional": "Dra. C. Ferreyra (M.P. 60218)",
+        "texto": "MAMOGRAFÍA BILATERAL\nParénquima mamario heterogéneamente denso.\nNo se observan imágenes nodulares ni microcalcificaciones sospechosas.\nBI-RADS 2.\nCto anual.",
+        "fuente": "legajo 4821, fs. 8",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2010-02-18",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Central",
+        "profesional": "Bioq. S. Roldán (M.P. Bioq. 3312)",
+        "texto": "LABORATORIO CENTRAL\nGlucemia: 104 mg/dl (VR 70-110)\nCol total: 252 mg/dl (VR <200)\nLDL: 168 mg/dl\nHDL: 42 mg/dl\nTriglicéridos: 198 mg/dl",
+        "valores": {
+          "glucemia_mg_dl": 104,
+          "colesterol_total_mg_dl": 252,
+          "ldl_mg_dl": 168,
+          "hdl_mg_dl": 42,
+          "trigliceridos_mg_dl": 198
+        },
+        "fuente": "legajo 4821, fs. 9",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2010-02-25",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Se evalúa laboratorio.\nDx: Dislipemia.\nSe indica dieta hipograsa e incremento de actividad física.\nPor ahora s/c farmacológico.\nCto en 6 meses.",
+        "fuente": "legajo 4821, fs. 10",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2011-05-12",
+        "tipo": "epicrisis",
+        "servicio": "Cirugía General",
+        "profesional": "Dr. O. Peralta (M.P. 44902)",
+        "texto": "EPICRISIS\nPte femenina, 57 años.\nMotivo de internación: dolor en hipocondrio derecho de 48 hs de evolución, Murphy (+).\nEcografía: litiasis vesicular múltiple, pared vesicular engrosada.\nDx: Colecistitis aguda litiásica.\nSe realiza colecistectomía laparoscópica sin complicaciones.\nPO inmediato sin particularidades.\nAlta a las 48 hs, BEG, herida limpia.\nIndicaciones: dieta hipograsa progresiva, control de herida en 7 días.\nCto por consultorio externo.",
+        "fuente": "legajo 4821, fs. 14",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2011-08-20",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Central",
+        "profesional": "Bioq. S. Roldán (M.P. Bioq. 3312)",
+        "texto": "LABORATORIO CENTRAL\nGlucemia: 112 mg/dl (VR 70-110)\nCol total: 238 mg/dl (VR <200)\nLDL: 155 mg/dl\nHDL: 44 mg/dl",
+        "valores": {
+          "glucemia_mg_dl": 112,
+          "colesterol_total_mg_dl": 238,
+          "ldl_mg_dl": 155,
+          "hdl_mg_dl": 44
+        },
+        "fuente": "legajo 4821, fs. 16",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2013-04-15",
+        "tipo": "imagen",
+        "servicio": "Traumatología",
+        "profesional": "Dr. H. Bianchi (M.P. 51344)",
+        "texto": "RX RODILLAS (F/P) BILATERAL\nPinzamiento del espacio articular medial bilateral.\nOsteofitos marginales.\nEsclerosis subcondral leve.\nDx: Gonartrosis bilateral leve-moderada.",
+        "fuente": "legajo 4821, fs. 19",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2013-04-22",
+        "tipo": "interconsulta",
+        "servicio": "Traumatología",
+        "profesional": "Dr. H. Bianchi (M.P. 51344)",
+        "texto": "Interconsulta por gonalgia bilateral.\nEvaluada RX previa.\nDx: Gonartrosis bilateral.\nSe indica kinesiología x 10 sesiones + AINEs SOS.\nCto en 2 meses.",
+        "medicamentos": [
+          {
+            "nombre": "Ibuprofeno",
+            "dosis": "400 mg SOS",
+            "indicacion": "gonalgia"
+          }
+        ],
+        "fuente": "legajo 4821, fs. 20",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2014-03-10",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Control anual.\nPersiste dislipemia pese a medidas higiénico-dietéticas.\nCT 220, LDL 152.\nSe indica inicio de estatina (ver Rp/).\nTA 138/86.",
+        "valores": {
+          "ta_sistolica": 138,
+          "ta_diastolica": 86,
+          "colesterol_total_mg_dl": 220,
+          "ldl_mg_dl": 152
+        },
+        "fuente": "legajo 4821, fs. 24",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2014-03-10",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Rp/ Atorvastatina 20 mg/día.\nIndicación: Dislipemia.",
+        "medicamentos": [
+          {
+            "nombre": "Atorvastatina",
+            "dosis": "20 mg/día",
+            "indicacion": "dislipemia"
+          }
+        ],
+        "fuente": "legajo 4821, fs. 24",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2014-09-18",
+        "tipo": "imagen",
+        "servicio": "Ginecología",
+        "profesional": "Dra. C. Ferreyra (M.P. 60218)",
+        "texto": "MAMOGRAFÍA BILATERAL\nSin cambios significativos respecto a estudio previo.\nNo se observan hallazgos sospechosos.\nBI-RADS 1.\nCto anual.",
+        "fuente": "legajo 4821, fs. 27",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2016-01-20",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Central",
+        "profesional": "Bioq. S. Roldán (M.P. Bioq. 3312)",
+        "texto": "LABORATORIO CENTRAL\nGlucemia: 119 mg/dl (VR 70-110)\nCol total: 198 mg/dl (VR <200)\nLDL: 118 mg/dl\nHDL: 46 mg/dl\n[ilegible]",
+        "valores": {
+          "glucemia_mg_dl": 119,
+          "colesterol_total_mg_dl": 198,
+          "ldl_mg_dl": 118,
+          "hdl_mg_dl": 46
+        },
+        "fuente": "legajo 4821, fs. 30",
+        "calidad_ocr": "baja"
+      },
+      {
+        "fecha": "2016-06-05",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Control anual.\nTA 138/86.\nBEG, CsPs.\nGlucemia límite, se reitera dieta.\nCto anual.",
+        "valores": {
+          "ta_sistolica": 138,
+          "ta_diastolica": 86
+        },
+        "fuente": "legajo 4821, fs. 31",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99000002": [
+      {
+        "fecha": "1996-07-22",
+        "tipo": "evolucion",
+        "servicio": "Neumonología",
+        "profesional": "Dra. L. Suárez (M.P. 58033)",
+        "texto": "Pte pediátrico, 10 años.\nCrisis de broncoespasmo, sibilancias bilaterales.\nSat O2 94%.\nSe nebuliza con salbutamol, buena rta.\nDx: Crisis asmática.\nAlta con indicación de salbutamol SOS.",
+        "fuente": "legajo 3390, fs. 2",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "1996-07-22",
+        "tipo": "receta",
+        "servicio": "Neumonología",
+        "profesional": "Dra. L. Suárez (M.P. 58033)",
+        "texto": "Rp/ Salbutamol aerosol SOS.\nIndicación: Asma.",
+        "medicamentos": [
+          {
+            "nombre": "Salbutamol",
+            "dosis": "2 puff SOS",
+            "indicacion": "asma"
+          }
+        ],
+        "fuente": "legajo 3390, fs. 2",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2002-04-11",
+        "tipo": "evolucion",
+        "servicio": "Neumonología",
+        "profesional": "Dra. L. Suárez (M.P. 58033)",
+        "texto": "Pte de 16 años. Nueva crisis de broncoespasmo.\nSibilancias espiratorias difusas.\n[ilegible] nebulizaciones seriadas.\nBuena rta, alta con plan de crisis.",
+        "fuente": "legajo 3390, fs. 5",
+        "calidad_ocr": "baja"
+      },
+      {
+        "fecha": "2006-09-05",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Pte de 20 años.\nRefiere tabaquismo activo, inicio reciente.\nSe aconseja cesación tabáquica.\nBEG. CsPs.",
+        "fuente": "legajo 3390, fs. 7",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2013-03-18",
+        "tipo": "epicrisis",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "EPICRISIS\nPte masculino, 27 años, tabaquista.\nMotivo de consulta: fiebre, tos productiva y puntada de costado de 4 días.\nRx tórax: opacidad en base derecha.\nDx: Neumonía adquirida en la comunidad.\nSe trata en forma ambulatoria con ATB.\nEvolución favorable.\nCto en 10 días con Rx control.",
+        "fuente": "legajo 3390, fs. 11",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2013-03-25",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Rp/ Amoxicilina-clavulánico 875/125 mg c/12 hs x 7 días.\nIndicación: NAC.",
+        "medicamentos": [
+          {
+            "nombre": "Amoxicilina-clavulánico",
+            "dosis": "875/125 mg c/12hs x 7 días",
+            "indicacion": "neumonía"
+          }
+        ],
+        "fuente": "legajo 3390, fs. 11",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2016-02-14",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Control.\nTabaquismo activo, 1 paq/día.\nTos matinal crónica.\nTA 128/82.\nSe reitera consejo de cesación tabáquica.\nCto SOS.",
+        "valores": {
+          "ta_sistolica": 128,
+          "ta_diastolica": 82
+        },
+        "fuente": "legajo 3390, fs. 15",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99000003": [
+      {
+        "fecha": "2015-12-10",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. P. Insúa (M.P. 61120)",
+        "texto": "Control niño sano, 13 meses.\nPeso 9.8 kg, talla 76 cm.\nBuena curva pondoestatural.\nVacunas al día.\nCto a los 18 meses.",
+        "valores": {
+          "peso_kg": 9.8,
+          "talla_cm": 76
+        },
+        "fuente": "legajo 9982, fs. 1",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2016-11-08",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. P. Insúa (M.P. 61120)",
+        "texto": "Control niño sano, 2 años.\nPeso 12.1 kg, talla 86 cm.\nDesarrollo madurativo acorde a edad.\nVacunas al día.\nCto anual.",
+        "valores": {
+          "peso_kg": 12.1,
+          "talla_cm": 86
+        },
+        "fuente": "legajo 9982, fs. 2",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "20456781": [
+      {
+        "fecha": "1996-04-03",
+        "tipo": "epicrisis",
+        "servicio": "Cirugía General",
+        "profesional": "Dr. O. Peralta (M.P. 44902)",
+        "texto": "EPICRISIS\nPte masculino, 17 años.\nMotivo de consulta: dolor en FID de 12 hs, Blumberg (+), fiebre 38.2°C.\nDx: Apendicitis aguda.\nSe realiza apendicectomía convencional de urgencia.\nHallazgo intraop: apéndice congestivo, sin perforación.\nPO inmediato sin complicaciones.\nAlta a las 72 hs, herida limpia.\nCto por consultorio externo en 7 días.",
+        "fuente": "legajo 1187, fs. 1",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "1996-04-10",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Control post-quirúrgico.\nHerida limpia, sin signos de infección.\nBEG.\nSe retiran puntos.\nAlta definitiva.",
+        "fuente": "legajo 1187, fs. 2",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2006-08-15",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Consulta por pirosis y dolor epigástrico postprandial de varias semanas de evolución.\nNiega alarma.\nSe indica omeprazol (ver Rp/) y medidas dietéticas.\nCto en 1 mes.",
+        "fuente": "legajo 1187, fs. 5",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2006-08-15",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Rp/ Omeprazol 20 mg/día.\nIndicación: ERGE.",
+        "medicamentos": [
+          {
+            "nombre": "Omeprazol",
+            "dosis": "20 mg/día",
+            "indicacion": "ERGE"
+          }
+        ],
+        "fuente": "legajo 1187, fs. 5",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2014-05-20",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Central",
+        "profesional": "Bioq. S. Roldán (M.P. Bioq. 3312)",
+        "texto": "LABORATORIO CENTRAL\nCol total: 216 mg/dl (VR <200)\nLDL: 142 mg/dl\nHDL: 48 mg/dl\nGlucemia: 96 mg/dl (VR 70-110)",
+        "valores": {
+          "colesterol_total_mg_dl": 216,
+          "ldl_mg_dl": 142,
+          "hdl_mg_dl": 48,
+          "glucemia_mg_dl": 96
+        },
+        "fuente": "legajo 1187, fs. 9",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2014-05-27",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Se evalúa laboratorio.\nDx: Dislipemia leve.\nSe indica dieta, s/c farmacológico por ahora.\nCto en 6 meses.",
+        "fuente": "legajo 1187, fs. 10",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2015-09-14",
+        "tipo": "imagen",
+        "servicio": "Gastroenterología",
+        "profesional": "Dr. J. Molina (M.P. 52771)",
+        "texto": "VIDEOENDOSCOPÍA DIGESTIVA ALTA\nEsófago sin lesiones.\nMucosa gástrica con eritema difuso leve en cuerpo y antro.\nTest rápido de ureasa: negativo.\nDx: Gastritis crónica leve. H. pylori negativo.\nSe indica IBP x 4 semanas.",
+        "fuente": "legajo 1187, fs. 13",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2016-03-02",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Consulta por cervicalgia postural de 1 semana.\nContractura muscular paravertebral.\nROT ++.\nSin déficit neurológico.\nSe indica AINEs + kinesiología.\nTA 122/78.",
+        "valores": {
+          "ta_sistolica": 122,
+          "ta_diastolica": 78
+        },
+        "fuente": "legajo 1187, fs. 15",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2016-07-19",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Central",
+        "profesional": "Bioq. S. Roldán (M.P. Bioq. 3312)",
+        "texto": "LABORATORIO CENTRAL\nCol total: 198 mg/dl (VR <200)\nLDL: 121 mg/dl\nHDL: 51 mg/dl",
+        "valores": {
+          "colesterol_total_mg_dl": 198,
+          "ldl_mg_dl": 121,
+          "hdl_mg_dl": 51
+        },
+        "fuente": "legajo 1187, fs. 17",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99389856": [
+      {
+        "fecha": "2016-11-22",
+        "tipo": "evolucion",
+        "servicio": "Guardia",
+        "profesional": "Dr. F. Cabrera (M.P. 49087)",
+        "texto": "Pte de 18 años.\nConsulta por cefalea holocraneana de 2 días, sin signos de alarma.\nAfebril. Sin foco neurológico.\nSe medica con ibuprofeno EV.\nMejoría franca.\nAlta con pautas de alarma.",
+        "fuente": "legajo 8801, fs. 1",
+        "calidad_ocr": "media"
+      }
+    ]
+  },
+  "plantillas": {
+    "adulto_f": [
+      {
+        "fecha": "1999-05-10",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Pte femenina consulta por astenia y aumento de peso de varios meses.\nPiel seca. Intolerancia al frío.\nSe solicita perfil tiroideo.",
+        "fuente": "legajo 5500, fs. 1",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "1999-05-20",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Central",
+        "profesional": "Bioq. S. Roldán (M.P. Bioq. 3312)",
+        "texto": "LABORATORIO CENTRAL\nTSH: 8.9 mUI/L (VR 0.4-4.5)\nT4 libre: normal.",
+        "valores": {
+          "tsh_mui_l": 8.9
+        },
+        "fuente": "legajo 5500, fs. 2",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "1999-05-27",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Dx: Hipotiroidismo.\nSe indica levotiroxina 50 mcg/día en ayunas (ver Rp/).\nCto en 2 meses con TSH.",
+        "fuente": "legajo 5500, fs. 3",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "1999-05-27",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Rp/ Levotiroxina 50 mcg/día.\nIndicación: Hipotiroidismo.",
+        "medicamentos": [
+          {
+            "nombre": "Levotiroxina",
+            "dosis": "50 mcg/día",
+            "indicacion": "hipotiroidismo"
+          }
+        ],
+        "fuente": "legajo 5500, fs. 3",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2005-06-15",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Central",
+        "profesional": "Bioq. S. Roldán (M.P. Bioq. 3312)",
+        "texto": "LABORATORIO CENTRAL\nTSH: 2.1 mUI/L (VR 0.4-4.5)\nBuen control con tto actual.",
+        "valores": {
+          "tsh_mui_l": 2.1
+        },
+        "fuente": "legajo 5500, fs. 8",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "adulto_m": [
+      {
+        "fecha": "2003-02-11",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Pte masculino, consulta por lumbalgia mecánica post esfuerzo.\nSin irradiación. ROT ++.\nSin déficit motor.\nSe indica reposo relativo + AINEs.",
+        "fuente": "legajo 5501, fs. 1",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2003-02-11",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Rp/ Diclofenac 75 mg/día x 5 días.\nIndicación: Lumbalgia.",
+        "medicamentos": [
+          {
+            "nombre": "Diclofenac",
+            "dosis": "75 mg/día x 5 días",
+            "indicacion": "lumbalgia"
+          }
+        ],
+        "fuente": "legajo 5501, fs. 1",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2003-02-25",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Mejoría del cuadro.\nSin dolor en reposo.\nCto SOS.",
+        "fuente": "legajo 5501, fs. 2",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2010-11-08",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. M. Aramburu (M.P. 55123)",
+        "texto": "Nuevo episodio de lumbalgia mecánica.\n[ilegible] irradiación a MMII.\nSe indica kinesiología x 10 sesiones.",
+        "fuente": "legajo 5501, fs. 6",
+        "calidad_ocr": "baja"
+      },
+      {
+        "fecha": "2010-11-08",
+        "tipo": "imagen",
+        "servicio": "Traumatología",
+        "profesional": "Dr. H. Bianchi (M.P. 51344)",
+        "texto": "RX COLUMNA LUMBOSACRA (F/P)\nRectificación de la lordosis lumbar fisiológica.\nSin otras alteraciones óseas significativas.",
+        "fuente": "legajo 5501, fs. 6",
+        "calidad_ocr": "media"
+      }
+    ],
+    "menor": [
+      {
+        "fecha": "2001-03-05",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. P. Insúa (M.P. 61120)",
+        "texto": "Control niño sano, 6 meses.\nPeso 7.2 kg.\nDesarrollo madurativo acorde.\nVacunas al día.",
+        "valores": {
+          "peso_kg": 7.2
+        },
+        "fuente": "legajo 5502, fs. 1",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2001-09-12",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. P. Insúa (M.P. 61120)",
+        "texto": "Control niño sano, 1 año.\nPeso 9.5 kg, talla 74 cm.\nBuena curva de crecimiento.\nCto a los 18 meses.",
+        "valores": {
+          "peso_kg": 9.5,
+          "talla_cm": 74
+        },
+        "fuente": "legajo 5502, fs. 2",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2008-04-22",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. P. Insúa (M.P. 61120)",
+        "texto": "Consulta por odinofagia y fiebre de 2 días.\nFaringe congestiva con exudado.\nDx: Faringitis aguda.\nSe indica amoxicilina.",
+        "fuente": "legajo 5502, fs. 5",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2008-04-22",
+        "tipo": "receta",
+        "servicio": "Pediatría",
+        "profesional": "Dra. P. Insúa (M.P. 61120)",
+        "texto": "Rp/ Amoxicilina 50 mg/kg/día c/8 hs x 10 días.\nIndicación: Faringitis aguda.",
+        "medicamentos": [
+          {
+            "nombre": "Amoxicilina",
+            "dosis": "50 mg/kg/día c/8hs x 10 días",
+            "indicacion": "faringitis"
+          }
+        ],
+        "fuente": "legajo 5502, fs. 5",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2012-06-30",
+        "tipo": "vacunacion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. P. Insúa (M.P. 61120)",
+        "texto": "VACUNACIÓN\nSe administra refuerzo triple bacteriana.\nEsquema de vacunación completo para la edad.\nSin reacciones adversas inmediatas.",
+        "fuente": "legajo 5502, fs. 9",
+        "calidad_ocr": "alta"
+      }
+    ]
+  }
+}

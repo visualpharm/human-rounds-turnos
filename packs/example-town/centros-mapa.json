@@ -1,0 +1,58 @@
+{
+  "pins": {
+    "sampleton-hospital": {
+      "lat": 34.0588,
+      "lng": -106.8921,
+      "place": "main rd. 123"
+    },
+    "riverside-clinic": {
+      "lat": 34.0552,
+      "lng": -106.8804,
+      "place": "station st. 456"
+    },
+    "lakeview-clinic": {
+      "lat": 34.0718,
+      "lng": -106.8968,
+      "place": "harbor ave. 789"
+    },
+    "maternity-center": {
+      "lat": 34.0452,
+      "lng": -106.9016,
+      "place": "garden ave. 500"
+    },
+    "diagnostic-center": {
+      "lat": 34.0641,
+      "lng": -106.9062,
+      "place": "central dr. 234"
+    }
+  },
+  "areas": [
+    {
+      "name": "Sampleton",
+      "lat": 34.0505,
+      "lng": -106.893
+    },
+    {
+      "name": "Riverside",
+      "lat": 34.047,
+      "lng": -106.876
+    },
+    {
+      "name": "Lakeview",
+      "lat": 34.078,
+      "lng": -106.904
+    }
+  ],
+  "svg": "centros-mapa.svg",
+  "bbox": [
+    -106.93504,
+    34.02392,
+    -106.85156,
+    34.09308
+  ],
+  "width": 1000.0,
+  "height": 1000.0,
+  "attribution": "© OpenStreetMap",
+  "attribution_url": "https://www.openstreetmap.org/copyright",
+  "osm_date": "2026-11-05"
+}

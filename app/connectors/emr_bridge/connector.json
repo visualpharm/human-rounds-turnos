@@ -1,0 +1,7 @@
+{
+  "id": "emr_bridge",
+  "country": "",
+  "capability": "emr_sync",
+  "config_keys": ["EMR_BRIDGE_URL", "EMR_BRIDGE_TOKEN"],
+  "description": "Versioned HTTP bridge to an institution-owned Enterprise EMR adapter. Core sends normalized intents and observations only; EMR credentials and vendor wire details remain in the bridge."
+}

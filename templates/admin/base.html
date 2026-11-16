@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+{#
+  templates/admin/base.html — Tier 5 slice 4 (docs/roadmap/
+  tier5-frontend-design.md, "admin screen decomposition into
+  /admin/<screen>"): the Jinja layout every server-routed admin screen
+  extends. The server-rendered sidebar is a real simplification: it loops
+  `app_modules.sections_payload_for_role()` server-side instead of
+  client-fetching `GET /api/admin/modules`, so the FIRST response byte is
+  already correct — no fetch race, no FAILSAFE_SECTIONS net needed for a
+  fully-migrated screen).
+
+  Auth already happened server-side (the `screen_router` mounted this
+  route behind `Depends(deps.require_admin(...))` before this template
+  ever renders), so a server-routed screen answers 401/403 before any
+  application HTML is sent. There is no client-side gate or shell sentinel.
+
+  `{{ '{{tema}}' }}`/`{{ '{{fuentes}}' }}`/`{{ '{{favicon}}' }}` are the
+  SAME literal-placeholder idiom `templates/index.html` already uses
+  (Jinja emits the literal string via `{{ '...' }}`, then `theme.inject()`
+  substitutes it post-render — see that template and jinja_env.py's
+  module docstring for why a real `{{tema}}` Jinja variable would collide
+  with this established two-pass pipeline instead of composing with it).
+#}
+<html lang="{{ '{{lang}}' }}" data-theme="{{ '{{tema}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{favicon}}' }}
+<title>{% block title %}{{ t('admin.shell.meta.title', 'Panel') }}{% endblock %} | {{ sitio('brand') }}</title>
+<meta name="description" content="{{ t('admin.shell.meta.description', 'Gestión de turnos y pacientes del hospital') }}">
+<meta name="robots" content="noindex,nofollow">
+<script>
+  // Browser errors of the staff screens -> POST /api/admin/client-errors ->
+  // core.error_tracking (scrubbed there; Sentry only when configured). First
+  // in <head> so it sees every later script. Sends the message, the script
+  // file and line, the stack and the screen PATH — never the query string,
+  // the page text or form values. At most five distinct errors per page.
+  (function(){
+    var sent = {}, count = 0;
+    function report(kind, message, source, line, col, stack){
+      try {
+        var key = kind + "|" + message + "|" + source + "|" + line;
+        if (sent[key] || count >= 5) return;
+        sent[key] = 1; count++;
+        fetch("/api/admin/client-errors", {
+          method: "POST", credentials: "same-origin", keepalive: true,
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({kind: kind, message: String(message || "").slice(0, 500),
+            source: String(source || "").split(/[?#]/)[0], line: line || null, col: col || null,
+            stack: String(stack || "").slice(0, 4000), screen: location.pathname})
+        }).catch(function(){});
+      } catch (e) {}
+    }
+    window.addEventListener("error", function(ev){
+      if (!ev || !ev.message) return;  // a failed <img>/<link> load, not a script error
+      report("error", ev.message, ev.filename, ev.lineno, ev.colno, ev.error && ev.error.stack);
+    });
+    window.addEventListener("unhandledrejection", function(ev){
+      var r = ev && ev.reason;
+      report("unhandledrejection", r && r.message ? r.message : String(r), "", null, null, r && r.stack);
+    });
+  })();
+</script>
+{{ '{{i18n_bootstrap}}' }}
+{{ '{{fuentes}}' }}
+<!-- `{{fuentes}}` resolves the body typography, never Material Symbols;
+     cuerpo (theme.py:fonts()), nunca este set de íconos, así que un botón
+     con .adm-icon acá (el engranaje "Elegir columnas", por ejemplo) se veía
+     como texto literal ("view_column") en vez del ícono. -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..24,400,0,0&display=block" rel="stylesheet">
+<link rel="stylesheet" href="{{ static('human-rounds.css') }}">
+<link rel="stylesheet" href="{{ static('admin-gate.css') }}">
+<link rel="stylesheet" href="{{ static('admin-shell.css') }}">
+<link rel="stylesheet" href="{{ static('admin-direct.css') }}">
+{{ static_manifest() }}
+<script>window.SANA_COUNTRY_PHONE={{ country_phone_json() }};</script>
+{% block head %}{% endblock %}
+</head>
+<body>
+<div class="adm5-shell">
+  {# A doctor has a handful of screens and works from a phone between
+     patients: at compact width the panel shows them as one row of tabs
+     (Cuenta as an icon at the header's right) instead of the «Menú»
+     disclosure every other role keeps (demo check 07.11). The disclosure
+     stays in the markup, always open, so desktop and the tests read one
+     structure. #}
+  {% set nav_tabs = screen_rol() == 'medico' %}
+  {# On the phone the four tabs carry a one-word label so the whole row fits
+     390px without scrolling (audit 08.11: «Mis agendas» sat past the edge);
+     the link keeps its full name for screen readers and the desktop sidebar. #}
+  {% set tab_shorts = {
+    'cola': t('admin.shell.nav.tab.cola', 'Hoy'),
+    'mis-turnos': t('admin.shell.nav.tab.mis_turnos', 'Turnos'),
+    'mis-pacientes': t('admin.shell.nav.tab.mis_pacientes', 'Pacientes'),
+    'my-schedules': t('admin.shell.nav.tab.my_schedules', 'Agendas'),
+  } if nav_tabs else {} %}
+  <aside class="adm5-side{% if nav_tabs %} adm5-side--tabs{% endif %}" aria-label="{{ t('admin.shell.nav.admin_aria', 'Administración') }}">
+    <a class="adm5-brand" href="/admin/solicitudes">{{ sitio('brand') }}</a>
+    <details class="adm5-menu" open>
+    <summary>{{ t('admin.shell.nav.menu', 'Menú') }}</summary>
+    <nav class="adm5-nav" id="adm-nav" aria-label="{{ t('admin.shell.nav.sections_aria', 'Secciones de administración') }}">
+      {% for item in nav_items %}
+      {% if loop.changed(item.group) %}
+      {% if not loop.first %}</div>{% endif %}
+      <div class="adm5-nav-group{% if not item.group_label %} adm5-nav-group--standalone{% endif %}"{% if item.group_label %} role="group" aria-labelledby="adm-nav-group-{{ item.group }}"{% endif %}>
+      {% if item.group_label %}<span class="adm5-nav-group-title" id="adm-nav-group-{{ item.group }}">{{ item.group_label }}</span>{% endif %}
+      {% endif %}
+      {% set tab_icon = nav_tabs and item.id == 'cuenta' %}
+      {% set tab_short = tab_shorts.get(item.id) if nav_tabs else None %}
+      {% set nav_class = (['on'] if item.id == active_section else []) + (['adm5-tab-account'] if tab_icon else []) %}
+      <a href="{{ item.href }}" data-nav="{{ item.id }}"{% if nav_class %} class="{{ nav_class|join(' ') }}"{% endif %}{% if item.id == active_section %} aria-current="page"{% endif %}{% if tab_icon %} title="{{ item.label }}"><span class="adm5-tab-icon" aria-hidden="true"></span><span class="adm5-tab-label">{{ item.label }}</span></a>{% elif tab_short %} aria-label="{{ item.label }}"><span class="adm5-tab-full">{{ item.label }}</span><span class="adm5-tab-short" aria-hidden="true">{{ tab_short }}</span></a>{% else %}>{{ item.label }}</a>{% endif %}
+      {% if loop.last %}</div>{% endif %}
+      {% endfor %}
+    </nav>
+    </details>
+    {# The legacy sidebar footer (#adm-2fa-note + #adm-logout): empty on
+       every screen except the direct Account screen, which carries the
+       controller that owns both. Rendered before the script below, which
+       moves it into the menu at compact widths. #}
+    {% block nav_footer %}{% endblock %}
+    <script>
+      // Desktop keeps the full sidebar; compact widths start with one native
+      // disclosure instead of an off-screen horizontal strip of destinations.
+      // The viewport can change after load (rotation, split-screen and the
+      // responsive test matrix), so entering compact mode closes it and
+      // returning to desktop reopens the native disclosure.
+      // A doctor's row of tabs never closes; at compact width the current
+      // tab scrolls into view when the row is wider than the screen.
+      // At compact width «Cerrar sesión» is one more item of the menu, not a
+      // second line of the header (one screen header, product owner 2026-11-08); the
+      // desktop sidebar keeps it under the menu. A doctor's row of tabs has
+      // no room for it (audit 08.11: the row grew to 601px on Cuenta), so
+      // there it closes the Account screen, after its last block.
+      (function () {
+        var menu = document.querySelector(".adm5-menu");
+        var tabs = !!menu.closest(".adm5-side--tabs");
+        var compact = window.matchMedia("(max-width:900px)");
+        var footer = document.querySelector(".adm5-side > .adm-nav-footer");
+        var nav = menu.querySelector(".adm5-nav");
+        function placeFooter() {
+          var home = !compact.matches ? null : tabs ? document.querySelector(".adm5-main") : nav;
+          if (home) { if (footer.parentNode !== home) home.appendChild(footer); }
+          else if (footer.parentNode !== menu.parentNode) menu.parentNode.insertBefore(footer, menu.nextSibling);
+        }
+        function syncMenu() {
+          if (compact.matches && !tabs) menu.removeAttribute("open");
+          else menu.setAttribute("open", "");
+          if (footer && nav) {
+            placeFooter();
+            // <main> comes after this script: place it again once it exists.
+            if (tabs && compact.matches && document.readyState === "loading") document.addEventListener("DOMContentLoaded", placeFooter);
+          }
+          var on = tabs && compact.matches && menu.querySelector(".adm5-nav a.on:not(.adm5-tab-account)");
+          if (on) {
+            var row = on.closest(".adm5-nav");
+            var left = on.getBoundingClientRect().left - row.getBoundingClientRect().left + row.scrollLeft;
+            row.scrollLeft = Math.max(0, left - (row.clientWidth - on.offsetWidth) / 2);
+          }
+        }
+        syncMenu();
+        if (compact.addEventListener) compact.addEventListener("change", syncMenu);
+        else compact.addListener(syncMenu);
+      })();
+    </script>
+  </aside>
+  <main class="adm5-main">
+    {# Pre-deadline 2FA nudge (2026-09-15): every account without a second
+       factor carries a 7-day enrolment deadline, but the notice only lived
+       on the Account screen — a doctor who works in /admin/cola all week
+       hit the day-8 hard lock with zero warning. screen_2fa() is the same
+       request-scoped verified state as screen_rol(); {} when there is
+       nothing to nudge (2FA active, no deadline, or no gate ran). The
+       Account screen is excluded: it already owns a richer notice. #}
+    {% set dos_pasos = screen_2fa() %}
+    {% if dos_pasos and active_section != 'cuenta' %}
+    <div class="adm-2fa-nudge" role="status">
+      <span>{{ t('admin.shell.nudge_2fa.text', 'El panel va a pedir verificación en 2 pasos desde el {fecha}. Configurala antes para no perder acceso.', fecha=dos_pasos.fecha) }}</span>
+      <a class="btn btn-ok" href="/admin/account?setup=2fa">{{ t('admin.shell.nudge_2fa.cta', 'Configurar ahora') }}</a>
+    </div>
+    {% endif %}
+    {# The shared title band (2026-08-31): the one screen element the triage
+       bell mounts into — .adm-h1row is the header row that persists across
+       sections, which is exactly why admin-alerts.js chose it in the legacy
+       shell. Owning the band HERE puts the bell on every direct screen; a
+       child only fills in its title (and, for solicitudes, its create-
+       appointment hook via the title_band block). Same markup/ CSS the two
+       children that rendered it themselves already used. #}
+    <header class="adm-topbar"><div class="adm-h1row">
+      <h1 id="adm-h1" class="adm-h1">{% block screen_title %}{{ t('admin.shell.meta.title', 'Panel') }}{% endblock %}</h1>
+      {% block title_band %}{% endblock %}
+    </div></header>
+    {% block content %}{% endblock %}
+  </main>
+</div>
+<script>
+  // Contrato de pantalla server-routed (auditoría Tier 5, 2026-08-06): la
+  // page declares the controller it owns. Templates never synthesize routes.
+  window.SANA_ADMIN_SCREEN = "{{ active_section }}";
+</script>
+{# ---- Shared shell runtime (2026-08-31) ----------------------------------
+   The facilities EVERY authenticated direct screen inherits from the base,
+   in the same dependency order the legacy shell loads them: i18n's resolver
+   first (every controller below calls T()), then the toast provider and red-
+   triage bell. The session boundary is canonical admin-session.mjs, published
+   in the head manifest and imported by consumers — not a classic script.
+   Children that used to load the first three themselves were
+   deduplicated onto THIS block; a child's {% block scripts %} now carries
+   only its own controller. The login screen does not extend this base and
+   loads none of this — it is the unauthenticated gate. #}
+<script>window.CURRENT_PERMISSIONS = {{ screen_permisos()|tojson }};</script>
+<script src="{{ static('admin-shell.js') }}"></script>
+{% include '_screen_load_late.html' %}
+<template id="admin-alerts-recovery">
+  <span role="alert"><span>{{ t('admin.system.alerts.load_error', 'Could not load alerts.') }}</span> <button type="button" class="btn btn-quiet" data-alerts-reload>{{ t('admin.content.common.reload', 'Reload') }}</button></span>
+</template>
+<script type="module">
+  // The server-verified role owns this shell resource; API authorization remains authoritative.
+  const role = {{ screen_rol()|tojson }};
+  const host = document.querySelector('.adm-h1row');
+  let owner = null, generation = 0, deadline = null, recovery = null;
+  function stop() {
+    generation++;
+    clearTimeout(deadline); deadline = null;
+    if (owner) owner(); owner = null;
+    if (recovery) recovery.remove(); recovery = null;
+  }
+  function failed(token) {
+    if (token !== generation || !host) return;
+    stop();
+    const fragment = document.getElementById('admin-alerts-recovery').content.cloneNode(true);
+    recovery = fragment.firstElementChild;
+    recovery.querySelector('[data-alerts-reload]').addEventListener('click', () => location.reload());
+    host.appendChild(fragment);
+  }
+  function start() {
+    stop();
+    if (!host || (role !== 'admin' && role !== 'medico')) return;
+    const token = generation;
+    deadline = setTimeout(() => failed(token), 8000);
+    import("{{ static('platform/admin-alerts.mjs') }}").then(mod => {
+      if (token !== generation) return;
+      owner = mod.mountAlerts({ root: document, role });
+      return owner.ready;
+    }).then(() => {
+      if (token === generation) { clearTimeout(deadline); deadline = null; }
+    }).catch(() => failed(token));
+  }
+  addEventListener('pagehide', stop);
+  addEventListener('pageshow', event => { if (event.persisted) start(); });
+  start();
+</script>
+<script type="module">
+  // Every panel date/time field speaks the panel's language, not the
+  // browser's (platform/date-field.mjs). Fetched only once such a field
+  // exists — no extra request on screens without one. Fail-open: without it
+  // the native field stays.
+  (() => {
+    const fields = 'input[type=date]:not([name]),input[type=time]:not([name])';
+    let observer = null, started = false;
+    const load = () => {
+      if (started) return;
+      started = true;
+      if (observer) observer.disconnect();
+      import("{{ static('platform/date-field.mjs') }}").then(mod => mod.install(document)).catch(() => {});
+    };
+    if (document.querySelector(fields)) { load(); return; }
+    observer = new MutationObserver(() => { if (document.querySelector(fields)) load(); });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+  })();
+</script>
+<script type="module" src="{{ static('platform/print-head.mjs') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

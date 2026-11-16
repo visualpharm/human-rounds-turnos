@@ -1,0 +1,21 @@
+{
+  "_comment": "Doctor directory and doctor profile page (/doctors, /doctor/<id>) and Grupos y talleres (/d/grupos).",
+  "doctor.agenda_heading": "接诊时间",
+  "doctor.close_photo": "关闭照片",
+  "doctor.cta_see_centers": "查看中心",
+  "doctor.demo_note": "演示排班表 —— 非真实数据。",
+  "doctor.doctors_meta_desc": "{city} 公立医疗系统的医生和专业人员，按科室、中心及最近可用时间排序。",
+  "doctor.meta_intro": "{name}，{city} 公立医疗系统的 {specialty}。",
+  "doctor.next_slot_heading": "最早可用预约",
+  "doctor.next_slot_heading_service": "{service} 的第一个空闲预约",
+  "doctor.next_slot_note": "这是最近的一个时间，但不是唯一的：你也可以选择其他日期或时段。",
+  "doctor.no_appointment_fallback": "暂无预约",
+  "doctor.search_placeholder": "搜索医生或科室",
+  "doctor.service_link": "查看服务：{service}",
+  "doctor.sees_at": "接诊地点",
+  "doctor.title_f": "医生",
+  "doctor.title_m": "医生",
+  "doctor.title_specialty_city": "{name} — {city} 的 {specialty}",
+  "doctor.workshops_meta_desc": "{network} 的免费小组和工作坊：了解活动时间、地点及如何参加。",
+  "doctor.services_line": "接诊范围：{services}"
+}

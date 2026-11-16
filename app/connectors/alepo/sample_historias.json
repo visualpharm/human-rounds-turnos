@@ -1,0 +1,832 @@
+{
+  "sistema": "alepo",
+  "descripcion": "Datos de demostración — pacientes sintéticos, sin relación con personas reales.",
+  "cobertura": "2020-2024",
+  "pacientes": {
+    "99000001": [
+      {
+        "fecha": "2020-04-14",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Control.\nTA 138/85.\nRefiere poliuria y polidipsia leve de algunas semanas.\nSe solicita laboratorio con glucemia.",
+        "valores": {
+          "ta_sistolica": 138,
+          "ta_diastolica": 85
+        },
+        "fuente": "HC digital nro. 220145-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2020-04-20",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nGlucemia: 138 mg/dl (VR 70-110)\nHbA1c: 7.2% (VR <5.7%)\nCol total: 210 mg/dl",
+        "valores": {
+          "glucemia_mg_dl": 138,
+          "hba1c_pct": 7.2,
+          "colesterol_total_mg_dl": 210
+        },
+        "fuente": "HC digital nro. 220145-02",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-05-03",
+        "tipo": "evolucion",
+        "servicio": "Endocrinología",
+        "profesional": "Dr. Ezequiel Lima (M.P. 68890)",
+        "texto": "Se evalúa laboratorio previo.\nDx: Diabetes tipo 2.\nSe indica metformina 850 mg c/12hs (ver Rp/) + plan alimentario.\nCto en 3 meses con HbA1c.",
+        "fuente": "HC digital nro. 220145-04",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-05-03",
+        "tipo": "receta",
+        "servicio": "Endocrinología",
+        "profesional": "Dr. Ezequiel Lima (M.P. 68890)",
+        "texto": "Rp/ Metformina 850 mg c/12hs.\nIndicación: Diabetes tipo 2.",
+        "medicamentos": [
+          {
+            "nombre": "Metformina",
+            "dosis": "850 mg c/12hs",
+            "indicacion": "DBT2"
+          }
+        ],
+        "fuente": "HC digital nro. 220145-04",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-11-10",
+        "tipo": "vacunacion",
+        "servicio": "Vacunatorio",
+        "profesional": "Enf. M. Paz",
+        "texto": "VACUNACIÓN\nSe administra COVID-19 (2da dosis) + antigripal.\nSin reacciones adversas inmediatas.",
+        "fuente": "HC digital nro. 220145-06",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-02-15",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nHbA1c: 6.4% (VR <5.7%)\nGlucemia: 110 mg/dl (VR 70-110)\nCreatinina: 0.9 mg/dl (VR 0.6-1.1)",
+        "valores": {
+          "hba1c_pct": 6.4,
+          "glucemia_mg_dl": 110,
+          "creatinina_mg_dl": 0.9
+        },
+        "fuente": "HC digital nro. 220145-08",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-06-20",
+        "tipo": "imagen",
+        "servicio": "Oftalmología",
+        "profesional": "Dra. Rocío Beltrán (M.P. 72410)",
+        "texto": "FONDO DE OJO\nMedios transparentes.\nPapila de bordes netos.\nRelación A/V conservada.\nSin signos de retinopatía diabética.\nCto anual.",
+        "fuente": "HC digital nro. 220145-09",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2023-03-08",
+        "tipo": "evolucion",
+        "servicio": "Cardiología",
+        "profesional": "Dr. Nicolás Farías (M.P. 70213)",
+        "texto": "Control cardiovascular por DBT2 e HTA.\nTA 146/90.\nECG: ritmo sinusal, signos de hipertrofia ventricular izquierda leve.\nSe ajusta plan antihipertensivo.",
+        "valores": {
+          "ta_sistolica": 146,
+          "ta_diastolica": 90
+        },
+        "fuente": "HC digital nro. 220145-11",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-03-08",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nCreatinina: 1.1 mg/dl (VR 0.6-1.1)",
+        "valores": {
+          "creatinina_mg_dl": 1.1
+        },
+        "fuente": "HC digital nro. 220145-11",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-01-17",
+        "tipo": "evolucion",
+        "servicio": "Endocrinología",
+        "profesional": "Dr. Ezequiel Lima (M.P. 68890)",
+        "texto": "Control.\nRefiere abandono parcial del plan alimentario.\nHbA1c 6.9%, leve empeoramiento respecto a control previo.\nSe refuerza plan alimentario y adherencia a metformina.",
+        "fuente": "HC digital nro. 220145-14",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-01-17",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nHbA1c: 6.9% (VR <5.7%)\nGlucemia: 145 mg/dl (VR 70-110)\nCreatinina: 1.24 mg/dl (VR 0.6-1.1)",
+        "valores": {
+          "hba1c_pct": 6.9,
+          "glucemia_mg_dl": 145,
+          "creatinina_mg_dl": 1.24
+        },
+        "fuente": "HC digital nro. 220145-15",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-08-05",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Control.\nTA 146/92.\nBEG, CsPs.\nSe reitera importancia de adherencia al tto.\nCto en 6 meses.",
+        "valores": {
+          "ta_sistolica": 146,
+          "ta_diastolica": 92
+        },
+        "fuente": "HC digital nro. 220145-17",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99000002": [
+      {
+        "fecha": "2020-03-11",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Control.\nTabaquismo activo.\nTos crónica matinal.\nSobrepeso, IMC 28.\nSe aconseja cesación tabáquica.",
+        "valores": {
+          "imc": 28
+        },
+        "fuente": "HC digital nro. 220389-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-07-19",
+        "tipo": "evolucion",
+        "servicio": "Neumonología",
+        "profesional": "Dra. Antonella Ríos (M.P. 69187)",
+        "texto": "Consulta por disnea de esfuerzo leve de varios meses.\nTabaquista activo.\nAuscultación: MV conservado, sin ruidos agregados.\nSe solicita espirometría.",
+        "fuente": "HC digital nro. 220389-03",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-08-02",
+        "tipo": "imagen",
+        "servicio": "Neumonología",
+        "profesional": "Dra. Antonella Ríos (M.P. 69187)",
+        "texto": "ESPIROMETRÍA\nVEF1/CVF disminuido.\nPatrón obstructivo leve.\nSe indica cesación tabáquica estricta + broncodilatador SOS.",
+        "fuente": "HC digital nro. 220389-05",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2022-08-02",
+        "tipo": "receta",
+        "servicio": "Neumonología",
+        "profesional": "Dra. Antonella Ríos (M.P. 69187)",
+        "texto": "Rp/ Salbutamol aerosol SOS.\nIndicación: patrón obstructivo leve.",
+        "medicamentos": [
+          {
+            "nombre": "Salbutamol",
+            "dosis": "2 puff SOS",
+            "indicacion": "obstrucción bronquial leve"
+          }
+        ],
+        "fuente": "HC digital nro. 220389-05",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-05-14",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Consulta por lumbalgia mecánica post esfuerzo laboral.\nROT ++.\nSin irradiación a MMII.\nSe indica kinesiología.",
+        "fuente": "HC digital nro. 220389-07",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-05-14",
+        "tipo": "imagen",
+        "servicio": "Traumatología",
+        "profesional": "Dr. Franco Almada (M.P. 66754)",
+        "texto": "RX COLUMNA LUMBOSACRA (F/P)\nSin alteraciones óseas significativas.\nEspacios intervertebrales conservados.",
+        "fuente": "HC digital nro. 220389-07",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-02-09",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Control.\nTA 134/86 (limítrofe).\nSobrepeso persiste, IMC 29.\nSe reitera plan de descenso de peso y cesación tabáquica.",
+        "valores": {
+          "ta_sistolica": 134,
+          "ta_diastolica": 86,
+          "imc": 29
+        },
+        "fuente": "HC digital nro. 220389-09",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99000003": [
+      {
+        "fecha": "2020-05-06",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Pte de 5 años.\nOtalgia derecha + fiebre 38.5°C de 24 hs.\nOtoscopía: MT derecha eritematosa, abombada.\nDx: Otitis media aguda derecha.\nSe indica amoxicilina.",
+        "fuente": "HC digital nro. 221007-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2020-05-06",
+        "tipo": "receta",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Rp/ Amoxicilina 50 mg/kg/día c/8hs x 10 días.\nIndicación: OMA.",
+        "medicamentos": [
+          {
+            "nombre": "Amoxicilina",
+            "dosis": "50 mg/kg/día c/8hs x 10 días",
+            "indicacion": "otitis media aguda"
+          }
+        ],
+        "fuente": "HC digital nro. 221007-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2020-09-14",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Nuevo episodio de otitis media, esta vez izquierda.\nTercer episodio en el año.\nSe indica ATB y se deriva a ORL para seguimiento por otitis recurrente.",
+        "fuente": "HC digital nro. 221007-03",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2021-06-22",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Antecedente de bronquiolitis en lactancia.\nRefiere sibilancias recurrentes con cuadros virales.\nSe sospecha asma del lactante/preescolar.\nSe deriva a Neumonología.",
+        "fuente": "HC digital nro. 221007-05",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-03-11",
+        "tipo": "evolucion",
+        "servicio": "Neumonología",
+        "profesional": "Dra. Antonella Ríos (M.P. 69187)",
+        "texto": "Pte de 7 años derivada por sibilancias recurrentes.\nAntecedente de bronquiolitis y otitis a repetición.\nDx: Asma leve intermitente.\nSe indica salbutamol SOS.",
+        "fuente": "HC digital nro. 221007-07",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-03-11",
+        "tipo": "receta",
+        "servicio": "Neumonología",
+        "profesional": "Dra. Antonella Ríos (M.P. 69187)",
+        "texto": "Rp/ Salbutamol aerosol SOS.\nIndicación: Asma leve intermitente.",
+        "medicamentos": [
+          {
+            "nombre": "Salbutamol",
+            "dosis": "2 puff SOS",
+            "indicacion": "asma"
+          }
+        ],
+        "fuente": "HC digital nro. 221007-07",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-11-05",
+        "tipo": "vacunacion",
+        "servicio": "Vacunatorio",
+        "profesional": "Enf. M. Paz",
+        "texto": "VACUNACIÓN\nSe administra refuerzo de calendario correspondiente a la edad.\nEsquema completo.\nSin reacciones adversas.",
+        "fuente": "HC digital nro. 221007-09",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-07-18",
+        "tipo": "evolucion",
+        "servicio": "Traumatología",
+        "profesional": "Dr. Franco Almada (M.P. 66754)",
+        "texto": "Pte de 8 años.\nCaída de altura de propia estatura, dolor e impotencia funcional en muñeca izq.\nRX: fractura de radio distal izq sin desplazamiento.\nSe coloca yeso braquiopalmar x 4 semanas.",
+        "fuente": "HC digital nro. 221007-11",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-02-20",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Control niño sano, 9 años.\nPeso 32 kg, talla 132 cm.\nBEG.\nBuena evolución del asma, sin crisis en el último año.\nCto anual.",
+        "valores": {
+          "peso_kg": 32,
+          "talla_cm": 132
+        },
+        "fuente": "HC digital nro. 221007-13",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "20456781": [
+      {
+        "fecha": "2022-04-11",
+        "tipo": "evolucion",
+        "servicio": "Traumatología",
+        "profesional": "Dr. Franco Almada (M.P. 66754)",
+        "texto": "Consulta por esguince de tobillo derecho jugando al fútbol.\nDolor e impotencia funcional.\nEstabilidad ligamentaria conservada.\nDx: Esguince grado 1.\nSe indica RICE + kinesiología.",
+        "fuente": "HC digital nro. 219456-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-04-11",
+        "tipo": "imagen",
+        "servicio": "Traumatología",
+        "profesional": "Dr. Franco Almada (M.P. 66754)",
+        "texto": "RX TOBILLO DERECHO (F/P)\nSin signos de fractura.\nPartes blandas con aumento de volumen periarticular.",
+        "fuente": "HC digital nro. 219456-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-02-08",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nCol total: 205 mg/dl (VR <200)\nLDL: 128 mg/dl\nHDL: 52 mg/dl\nGlucemia: 92 mg/dl (VR 70-110)",
+        "valores": {
+          "colesterol_total_mg_dl": 205,
+          "ldl_mg_dl": 128,
+          "hdl_mg_dl": 52,
+          "glucemia_mg_dl": 92
+        },
+        "fuente": "HC digital nro. 219456-03",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-02-15",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Control.\nBEG, CsPs.\nResto del examen sin particularidades.\nSe reitera dieta por dislipemia leve.\nCto anual.",
+        "fuente": "HC digital nro. 219456-04",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99389856": [
+      {
+        "fecha": "2021-03-09",
+        "tipo": "evolucion",
+        "servicio": "Neurología",
+        "profesional": "Dra. Ivana Correa (M.P. 71098)",
+        "texto": "Consulta por cefalea hemicraneana pulsátil, con fotofobia y náuseas, episodios de 4 a 8 hs, 2-3 veces por mes.\nExamen neurológico sin foco.\nDx: Migraña sin aura.",
+        "fuente": "HC digital nro. 220981-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-03-09",
+        "tipo": "receta",
+        "servicio": "Neurología",
+        "profesional": "Dra. Ivana Correa (M.P. 71098)",
+        "texto": "Rp/ Ibuprofeno 400 mg SOS en episodio agudo.\nIndicación: Migraña.",
+        "medicamentos": [
+          {
+            "nombre": "Ibuprofeno",
+            "dosis": "400 mg SOS",
+            "indicacion": "migraña"
+          }
+        ],
+        "fuente": "HC digital nro. 220981-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-05-17",
+        "tipo": "evolucion",
+        "servicio": "Salud Mental",
+        "profesional": "Dr. Matías Roldán (M.P. 74221)",
+        "texto": "Consulta por síntomas de ansiedad de varios meses: inquietud, dificultad para conciliar el sueño, preocupación excesiva.\nDx: Trastorno de ansiedad generalizada.\nSe indica sertralina 50 mg/día.",
+        "fuente": "HC digital nro. 220981-03",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-05-17",
+        "tipo": "receta",
+        "servicio": "Salud Mental",
+        "profesional": "Dr. Matías Roldán (M.P. 74221)",
+        "texto": "Rp/ Sertralina 50 mg/día.\nIndicación: Trastorno de ansiedad generalizada.",
+        "medicamentos": [
+          {
+            "nombre": "Sertralina",
+            "dosis": "50 mg/día",
+            "indicacion": "ansiedad"
+          }
+        ],
+        "fuente": "HC digital nro. 220981-03",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-01-20",
+        "tipo": "evolucion",
+        "servicio": "Neurología",
+        "profesional": "Dra. Ivana Correa (M.P. 71098)",
+        "texto": "Control.\nAumento de la frecuencia de episodios migrañosos, más de 4 por mes.\nSe indica profilaxis con propranolol.",
+        "fuente": "HC digital nro. 220981-05",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-01-20",
+        "tipo": "receta",
+        "servicio": "Neurología",
+        "profesional": "Dra. Ivana Correa (M.P. 71098)",
+        "texto": "Rp/ Propranolol 40 mg/día.\nIndicación: Profilaxis de migraña.",
+        "medicamentos": [
+          {
+            "nombre": "Propranolol",
+            "dosis": "40 mg/día",
+            "indicacion": "profilaxis migraña"
+          }
+        ],
+        "fuente": "HC digital nro. 220981-05",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-08-14",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nHb: 10.8 g/dl (VR 12-16)\nFerremia baja.\nDx: Anemia ferropénica.",
+        "valores": {
+          "hb_g_dl": 10.8
+        },
+        "fuente": "HC digital nro. 220981-07",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-08-21",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Rp/ Sulfato ferroso 1 comp/día en ayunas.\nIndicación: Anemia ferropénica.",
+        "medicamentos": [
+          {
+            "nombre": "Sulfato ferroso",
+            "dosis": "1 comp/día",
+            "indicacion": "anemia ferropénica"
+          }
+        ],
+        "fuente": "HC digital nro. 220981-08",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-04-10",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nHb: 12.9 g/dl (VR 12-16)\nBuena respuesta a ferroterapia oral.",
+        "valores": {
+          "hb_g_dl": 12.9
+        },
+        "fuente": "HC digital nro. 220981-10",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99306818": [
+      {
+        "fecha": "2020-06-02",
+        "tipo": "evolucion",
+        "servicio": "Guardia",
+        "profesional": "Dra. Yamila Vega (M.P. 70556)",
+        "texto": "Lactante de 2 años y medio.\nDificultad respiratoria, sibilancias, tiraje subcostal leve, Sat O2 93%.\nDx: Bronquiolitis.\nSe interna para observación y nebulizaciones.",
+        "fuente": "HC digital nro. 221390-01",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2020-06-05",
+        "tipo": "epicrisis",
+        "servicio": "Guardia",
+        "profesional": "Dra. Yamila Vega (M.P. 70556)",
+        "texto": "EPICRISIS\nInternación por bronquiolitis, 3 días.\nEvolución favorable con nebulizaciones y O2 suplementario.\nSat O2 al alta 98% aire ambiente.\nAlta a domicilio con pautas de alarma.",
+        "fuente": "HC digital nro. 221390-02",
+        "calidad_ocr": "media"
+      },
+      {
+        "fecha": "2021-02-18",
+        "tipo": "evolucion",
+        "servicio": "Dermatología",
+        "profesional": "Dra. Yamila Vega (M.P. 70556)",
+        "texto": "Brote de dermatitis atópica en pliegues de codos y rodillas.\nPrurito intenso, lesiones eccematosas.\nSe indica corticoide tópico + emoliente.",
+        "fuente": "HC digital nro. 221390-04",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-02-18",
+        "tipo": "receta",
+        "servicio": "Dermatología",
+        "profesional": "Dra. Yamila Vega (M.P. 70556)",
+        "texto": "Rp/ Hidrocortisona crema 1% c/12hs x 7 días.\nIndicación: Dermatitis atópica.",
+        "medicamentos": [
+          {
+            "nombre": "Hidrocortisona",
+            "dosis": "crema 1% c/12hs x 7 días",
+            "indicacion": "dermatitis atópica"
+          }
+        ],
+        "fuente": "HC digital nro. 221390-04",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-03-25",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Control niño sano, 4 años.\nPeso 15.2 kg, talla 98 cm.\nBuena curva de crecimiento.\nVacunas al día.",
+        "valores": {
+          "peso_kg": 15.2,
+          "talla_cm": 98
+        },
+        "fuente": "HC digital nro. 221390-06",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-09-10",
+        "tipo": "evolucion",
+        "servicio": "Dermatología",
+        "profesional": "Dra. Yamila Vega (M.P. 70556)",
+        "texto": "Nuevo brote de dermatitis atópica, esta vez leve.\nSe indica emoliente diario + corticoide tópico SOS en brotes.",
+        "fuente": "HC digital nro. 221390-08",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-06-14",
+        "tipo": "evolucion",
+        "servicio": "Traumatología",
+        "profesional": "Dr. Franco Almada (M.P. 66754)",
+        "texto": "Pte de 6 años.\nCaída de bicicleta, dolor e impotencia funcional en hombro derecho.\nRX: fractura de clavícula derecha, sin desplazamiento significativo.\nSe indica tratamiento ortopédico con cabestrillo x 3 semanas.",
+        "fuente": "HC digital nro. 221390-10",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "99620834": [
+      {
+        "fecha": "2020-04-08",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Control niño sano, 9 años.\nPeso 38 kg, talla 140 cm, IMC 19.4.\nSobrepeso incipiente.\nSe aconseja alimentación saludable y actividad física.",
+        "valores": {
+          "peso_kg": 38,
+          "talla_cm": 140,
+          "imc": 19.4
+        },
+        "fuente": "HC digital nro. 220778-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-03-15",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Apto físico deportivo.\nExamen cardiovascular sin hallazgos patológicos.\nSin contraindicaciones para la práctica deportiva.",
+        "fuente": "HC digital nro. 220778-03",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-02-21",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Control niño sano, 11 años.\nPeso 48 kg, talla 148 cm, IMC 21.9.\nSobrepeso.\nSe reitera consejo nutricional.",
+        "valores": {
+          "peso_kg": 48,
+          "talla_cm": 148,
+          "imc": 21.9
+        },
+        "fuente": "HC digital nro. 220778-05",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-05-30",
+        "tipo": "evolucion",
+        "servicio": "Traumatología",
+        "profesional": "Dr. Franco Almada (M.P. 66754)",
+        "texto": "Pte de 12 años.\nEsguince de rodilla derecha jugando al fútbol.\nDolor e inestabilidad leve.\nSe indica reposo + kinesiología.",
+        "fuente": "HC digital nro. 220778-07",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-09-12",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Apto físico deportivo anual.\nSin contraindicaciones.\nRodilla derecha recuperada del esguince previo.",
+        "fuente": "HC digital nro. 220778-09",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-01-25",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Consulta por cefaleas tensionales frecuentes, asociadas a uso prolongado de pantallas.\nExamen neurológico normal.\nSe indica higiene de sueño y pausas en el uso de dispositivos.",
+        "fuente": "HC digital nro. 220778-11",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-06-18",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Control niño sano, 13 años.\nPeso 55 kg, talla 152 cm, IMC 23.8.\nSobrepeso persiste.\nSe deriva a nutrición.",
+        "valores": {
+          "peso_kg": 55,
+          "talla_cm": 152,
+          "imc": 23.8
+        },
+        "fuente": "HC digital nro. 220778-13",
+        "calidad_ocr": "alta"
+      }
+    ]
+  },
+  "plantillas": {
+    "adulto_f": [
+      {
+        "fecha": "2020-09-02",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Pte femenina consulta control.\nTA 142/90.\nSe indica enalapril 10 mg/día (ver Rp/) y control en 1 mes.",
+        "valores": {
+          "ta_sistolica": 142,
+          "ta_diastolica": 90
+        },
+        "fuente": "HC digital nro. 229001-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2020-09-02",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Rp/ Enalapril 10 mg/día.\nIndicación: HTA.",
+        "medicamentos": [
+          {
+            "nombre": "Enalapril",
+            "dosis": "10 mg/día",
+            "indicacion": "HTA"
+          }
+        ],
+        "fuente": "HC digital nro. 229001-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-10-15",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Control.\nTA 132/84.\nBuena respuesta al tto antihipertensivo.\nCto en 6 meses.",
+        "valores": {
+          "ta_sistolica": 132,
+          "ta_diastolica": 84
+        },
+        "fuente": "HC digital nro. 229001-03",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-04-20",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nPerfil lipídico dentro de parámetros normales.\nGlucemia: 92 mg/dl (VR 70-110)",
+        "valores": {
+          "glucemia_mg_dl": 92
+        },
+        "fuente": "HC digital nro. 229001-06",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "adulto_m": [
+      {
+        "fecha": "2021-01-11",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nTSH: 6.8 mUI/L (VR 0.4-4.5)",
+        "valores": {
+          "tsh_mui_l": 6.8
+        },
+        "fuente": "HC digital nro. 229002-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-01-18",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Se evalúa laboratorio.\nDx: Hipotiroidismo subclínico.\nSe indica levotiroxina 50 mcg/día.\nCto en 2 meses.",
+        "fuente": "HC digital nro. 229002-02",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-01-18",
+        "tipo": "receta",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Rp/ Levotiroxina 50 mcg/día.\nIndicación: Hipotiroidismo subclínico.",
+        "medicamentos": [
+          {
+            "nombre": "Levotiroxina",
+            "dosis": "50 mcg/día",
+            "indicacion": "hipotiroidismo subclínico"
+          }
+        ],
+        "fuente": "HC digital nro. 229002-02",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-07-25",
+        "tipo": "laboratorio",
+        "servicio": "Laboratorio Alepo",
+        "profesional": "Bioq. D. Escudero (M.P. Bioq. 4408)",
+        "texto": "LABORATORIO ALEPO - RED DE ANÁLISIS CLÍNICOS\nTSH: 2.5 mUI/L (VR 0.4-4.5)\nNormalizada con tto actual.",
+        "valores": {
+          "tsh_mui_l": 2.5
+        },
+        "fuente": "HC digital nro. 229002-04",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2023-08-09",
+        "tipo": "evolucion",
+        "servicio": "Clínica Médica",
+        "profesional": "Dra. Valentina Achával (M.P. 71542)",
+        "texto": "Control anual.\nBEG, CsPs.\nBuen control del hipotiroidismo.\nCto anual.",
+        "fuente": "HC digital nro. 229002-05",
+        "calidad_ocr": "alta"
+      }
+    ],
+    "menor": [
+      {
+        "fecha": "2020-02-14",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Control niño sano, 3 años.\nPeso 18 kg, talla 105 cm.\nDesarrollo madurativo acorde a la edad.",
+        "valores": {
+          "peso_kg": 18,
+          "talla_cm": 105
+        },
+        "fuente": "HC digital nro. 229003-01",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2021-08-20",
+        "tipo": "vacunacion",
+        "servicio": "Vacunatorio",
+        "profesional": "Enf. M. Paz",
+        "texto": "VACUNACIÓN\nSe administra refuerzo de calendario.\nEsquema completo para la edad.\nSin reacciones adversas.",
+        "fuente": "HC digital nro. 229003-03",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-11-03",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Consulta por odinofagia y fiebre.\nFaringe congestiva.\nDx: Faringitis aguda.\nSe indica amoxicilina.",
+        "fuente": "HC digital nro. 229003-05",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2022-11-03",
+        "tipo": "receta",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Rp/ Amoxicilina 50 mg/kg/día c/8hs x 10 días.\nIndicación: Faringitis aguda.",
+        "medicamentos": [
+          {
+            "nombre": "Amoxicilina",
+            "dosis": "50 mg/kg/día c/8hs x 10 días",
+            "indicacion": "faringitis"
+          }
+        ],
+        "fuente": "HC digital nro. 229003-05",
+        "calidad_ocr": "alta"
+      },
+      {
+        "fecha": "2024-03-17",
+        "tipo": "evolucion",
+        "servicio": "Pediatría",
+        "profesional": "Dra. Carla Núñez (M.P. 73305)",
+        "texto": "Control niño sano, 7 años.\nPeso 24 kg, talla 118 cm.\nBEG, buena curva de crecimiento.\nCto anual.",
+        "valores": {
+          "peso_kg": 24,
+          "talla_cm": 118
+        },
+        "fuente": "HC digital nro. 229003-07",
+        "calidad_ocr": "alta"
+      }
+    ]
+  }
+}

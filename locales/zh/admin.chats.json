@@ -1,0 +1,10 @@
+{
+  "admin.chats.empty": "暂无对话记录。",
+  "admin.chats.failed": "无法加载对话。",
+  "admin.chats.col_when": "最后活动",
+  "admin.chats.col_channel": "渠道",
+  "admin.chats.col_first": "首个问题",
+  "admin.chats.col_turns": "消息数",
+  "admin.chats.channel_web": "网站",
+  "admin.chats.channel_whatsapp": "WhatsApp"
+}

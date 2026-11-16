@@ -1,0 +1,23 @@
+{
+  "admin.settings.horizon_days": "Глибина запису (днів)",
+  "admin.settings.opening_time": "Час відкриття запису",
+  "admin.settings.horizon_range": "Кількість днів для запису має бути від 1 до 365.",
+  "admin.settings.opening_time_format": "Час відкриття має бути у форматі ГГ:ХХ.",
+  "admin.settings.holidays.title": "Святкові дні",
+  "admin.settings.holidays.lede": "У цей день запис на прийом не ведеться в жодній службі, у жодного лікаря чи центру. Вже призначені візити не скасовуються автоматично: їх потрібно перенести.",
+  "admin.settings.holidays.empty": "Святкові дні ще не додані.",
+  "admin.settings.holidays.date": "Дата",
+  "admin.settings.holidays.name": "Назва",
+  "admin.settings.holidays.remove": "Видалити",
+  "admin.settings.holidays.add": "+ Додати святковий день",
+  "admin.settings.holidays.load_national": "Завантажити державні свята",
+  "admin.settings.holidays.appointments_one": "{n} запис призначено на цей день",
+  "admin.settings.holidays.appointments_few": "{n} записи, призначені на цей день",
+  "admin.settings.holidays.appointments_many": "{n} записів, призначених на цей день",
+  "admin.settings.holidays.appointments": "{n} записів призначено на цей день",
+  "admin.settings.holidays.invalid": "Список святкових днів недійсний.",
+  "admin.settings.holidays.bad_date": "Для кожного свята потрібна коректна дата.",
+  "admin.settings.holidays.no_name": "Кожне свято повинно мати назву.",
+  "admin.settings.holidays.long_name": "Назва свята може містити до {max} символів.",
+  "admin.settings.holidays.too_many": "Можна додати не більше {max} святкових днів."
+}

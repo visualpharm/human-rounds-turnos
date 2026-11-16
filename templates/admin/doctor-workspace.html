@@ -1,0 +1,206 @@
+{% extends 'admin/base.html' %}
+{% block title %}{{ t('admin.doctor.setup' if onboarding else 'admin.doctor.schedules', 'Tu perfil' if onboarding else 'Mis agendas') }}{% endblock %}
+{% block screen_title %}{{ t('admin.doctor.setup' if onboarding else 'admin.doctor.schedules', 'Tu perfil' if onboarding else 'Mis agendas') }}{% endblock %}
+{% block head %}<link rel="stylesheet" href="{{ static('platform/doctor-workspace.css') }}">{% endblock %}
+{% block content %}
+
+<div class="dw-workspace{% if onboarding %} dw-workspace--setup{% else %} dw-workspace--agendas{% endif %}" id="doctor-workspace"{% if onboarding and data and data.doctors %} inert aria-busy="true"{% endif %}>
+{% if not data and not onboarding %}
+{# The database did not answer: no red text, no Retry — the page reloads
+   itself after 1, 1, 2, 3, 5, 8… s (cap 60) until it does (design-approach §5). #}
+<p role="status" data-agendas-waiting>{{ t('admin.doctor.agendas_loading', 'Cargando tus agendas…') }}</p>
+<script>(function(){var k='dw-agendas-retry',n=+(sessionStorage.getItem(k)||0),f=[1,1,2,3,5,8,13,21,34,55,60];sessionStorage.setItem(k,n+1);setTimeout(function(){location.reload();},1000*f[Math.min(n,f.length-1)]);})();</script>
+{% elif not data %}
+<p role="alert">{{ t('admin.doctor.load_failed', 'No se pudo cargar tu perfil.') }}</p>
+<button type="button" class="btn" onclick="location.reload()">{{ t('admin.content.common.reload', 'Recargar') }}</button>
+{% elif not data.doctors %}
+<p>{{ t('admin.doctor.unlinked', 'Pedile a administración que vincule tu cuenta con tu perfil médico.') }}</p>
+{% else %}
+{% set doctor = data.doctors[0] %}
+{% if onboarding %}
+<form data-profile class="dw-section dw-card">
+  <h2><span class="dw-step" aria-hidden="true">1</span> {{ t('admin.doctor.review', 'Revisá tus datos') }}</h2>
+  <div class="dw-fields">
+    <label>{{ t('admin.content.catalog.common.field_firstname', 'Nombre') }}<input name="nombre_pila" autocomplete="given-name" value="{{ doctor.nombre_pila or data.first_name }}" required></label>
+    <label>{{ t('admin.content.catalog.common.field_lastname', 'Apellido') }}<input name="apellido" autocomplete="family-name" value="{{ doctor.apellido or data.last_name }}" required></label>
+    <label>{{ t('admin.doctor.specialty', 'Especialidad') }}<select name="especialidad" required>
+      {% if not doctor.especialidad %}<option value="" selected>{{ t('admin.doctor.pick_specialty', 'Elegí tu especialidad') }}</option>{% endif %}
+      {% for specialty in data.specialties %}<option value="{{ specialty.nombre }}"{% if specialty.nombre == doctor.especialidad %} selected{% endif %}>{{ specialty.nombre }}</option>{% endfor %}
+    </select></label>
+    <label>{{ t('admin.doctor.email', 'Email') }}<input type="email" name="email" autocomplete="email" value="{{ doctor.email or '' }}" required></label>
+    <label>{{ t('admin.doctor.phone', 'Teléfono') }}<input type="tel" name="telefono" autocomplete="tel" value="{{ doctor.telefono or '' }}"></label>
+  </div>
+  <p role="status" aria-live="polite"></p>
+</form>
+<section data-photo class="dw-section dw-card" tabindex="0" aria-describedby="dw-photo-help">
+  <h2><span class="dw-step" aria-hidden="true">2</span> {{ t('admin.doctor.photo', 'Tu foto') }}</h2>
+  <p id="dw-photo-help">{{ t('admin.doctor.photo_input_help', 'Elegí una foto, arrastrala o pegala acá con ⌘V / Ctrl+V.') }}</p>
+  <div class="dw-photo-row"><div data-photo-preview class="dw-portrait" role="img" aria-label="{{ t('admin.doctor.portrait', 'Foto institucional') }}"{% if data.photo and data.photo.style %} style="{{ data.photo.style }}"{% endif %}></div>
+    <div><input id="dw-upload" class="dw-upload-input" data-upload type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" aria-label="{{ t('admin.doctor.replace_photo', 'Reemplazar foto') }}">
+      <div class="dw-actions"><button type="button" class="btn" data-photo-action="left" hidden>{{ t('admin.doctor.rotate', 'Rotar') }}</button><label for="dw-upload" class="btn dw-upload-label">{{ t('admin.doctor.replace_photo', 'Reemplazar foto') }}</label><button type="button" class="btn" data-photo-action="original" hidden>{{ t('admin.doctor.view_original', 'Ver original') }}</button></div>
+      <p role="status" aria-live="polite"></p>
+    </div>
+  </div>
+<dialog data-original-dialog class="dw-original"><p role="status" data-original-error></p><img alt="{{ t('admin.doctor.original', 'Original') }}"><button type="button" class="btn" data-close-original>{{ t('admin.doctor.close_original', 'Cerrar') }}</button></dialog>
+</section>
+{% endif %}
+<form data-schedule class="dw-section{% if onboarding %} dw-card{% endif %}">
+{% if onboarding %}<h2><span class="dw-step" aria-hidden="true">3</span> {{ t('admin.doctor.agenda', 'Tu agenda') }}</h2>{% endif %}
+{% set managed_rows = data.schedules|rejectattr('editable')|list %}
+{% if managed_rows and onboarding %}<p>{{ managed_rows[0].message }}</p>{% endif %}
+{# What repeats goes outside the brackets (the product owner, 02.11): the length most
+   bands share is said once, and a doctor's next consultorio at the same
+   center continues the same card instead of repeating «doctor · center». #}
+{% if not onboarding and data.common_minutes %}<p class="dw-common">{{ t('admin.doctor.common_length', 'Turnos de {minutes} min', minutes=data.common_minutes) }}</p>{% endif %}
+{# The admin sees every doctor's agendas: one list, one row per agenda, no
+   framed cards (critical review 08.11, D1; the product owner R33 «way less bounding
+   boxes»). The doctor's own view keeps its 1–2 cards (decision 27.10). The
+   doctor's name opens the doctor's card, where the hours are edited. #}
+{% set admin_list = not onboarding and rol == 'admin' and data.doctors|length > 1 %}
+{% if admin_list %}
+{% if managed_rows %}<p class="dw-list-note">{{ managed_rows[0].message }}</p>{% endif %}
+<table class="dw-list" data-agenda-list>
+<thead><tr><th scope="col">{{ t('admin.content.catalog.doctors.col_doctor', 'Médico') }}</th><th scope="col">{{ t('admin.content.catalog.columns.center', 'Centro') }}</th><th scope="col">{{ t('admin.content.catalog.columns.schedule', 'Horario') }}</th></tr></thead>
+<tbody>
+{% for row in data.schedules %}
+{% set same_doc = not loop.first and loop.previtem.doctor_id == row.doctor_id %}
+<tr{% if same_doc %} class="dw-same"{% endif %} data-center="{{ row.centro }}">
+<th scope="row" class="dw-l-doc">{% if same_doc %}<span class="sr-only">{{ row.doctor_name }}</span>{% else %}<a href="/admin/doctors?item={{ row.doctor_id|urlencode }}">{{ row.doctor_name }}</a>{% endif %}</th>
+<td class="dw-l-center">{{ row.center }}{% if row.consultorio %}<span class="dw-l-room">{{ row.consultorio }}</span>{% endif %}</td>
+<td class="dw-l-hours">{% for band in row.franjas or [] %}<span class="dw-l-band">{{ schedule_band(band, common=data.common_minutes) }}</span>{% endfor %}{% if not row.franjas and row.editable %}<a class="btn" href="/admin/doctors?item={{ row.doctor_id|urlencode }}">{{ t('admin.doctor.add_hours_first', 'Cargar horarios') }}</a>{% endif %}{% for closure in row.closures or [] %}<span class="dw-l-band dw-closure">{{ closure }}</span>{% endfor %}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+{% if not onboarding %}<div class="dw-agendas">{% endif %}
+{% for row in data.schedules %}
+{% set same_prev = not onboarding and not loop.first and loop.previtem.doctor_id == row.doctor_id and loop.previtem.centro == row.centro %}
+{% set same_next = not onboarding and not loop.last and loop.nextitem.doctor_id == row.doctor_id and loop.nextitem.centro == row.centro %}
+<section class="dw-center{% if not onboarding %} dw-card{% endif %}{% if same_prev %} dw-cont{% endif %}{% if same_next %} dw-has-cont{% endif %}" data-center="{{ row.centro }}"{% if onboarding and row.editable %} data-editable data-services='{{ (row.servicios or [])|tojson }}'{% endif %}>
+  {% if not same_prev %}<h3>{% if not onboarding and rol == 'admin' %}{{ row.doctor_name }} · {% endif %}{{ row.center }}</h3>{% endif %}
+  {% if row.consultorio %}<p>{{ row.consultorio }}</p>{% endif %}
+  {% if row.franjas and (not onboarding or not row.editable) %}
+    {# The sentence already names the days: no second, button-looking row of
+       day chips next to it. Chips are only the editable day picker. #}
+    {% for band in row.franjas %}
+    <p class="dw-summary">{{ schedule_band(band, common=None if onboarding else data.common_minutes) }}</p>{% endfor %}
+  {% elif not onboarding and row.editable %}
+    <p data-no-hours>{{ t('admin.doctor.no_hours_yet', 'Todavía no cargaste tus horarios. Cuando los cargues, acá vas a ver tus días y horas de atención, y los pacientes van a poder sacar turno.') }}</p>
+  {% endif %}
+  {% if not onboarding and managed_rows and row is sameas managed_rows[0] %}<p>{{ row.message }}</p>{% endif %}
+  {% if row.editable and onboarding %}
+  {% if not row.franjas %}<p>{{ t('admin.doctor.enter_schedule', 'Ahora ingresá tu agenda: marcá los días y horarios.') }}</p>{% endif %}
+  {# One explicit card per selected weekday: every day shows its own hours,
+     separately editable, split shifts included. A stored band that spans
+     several days splits into one card per day, each anchored to that band's
+     index so its own facts survive the edit (the client collects the same
+     way, doctor-workspace.mjs `collectCenter`). #}
+  {% set picked = {} %}
+  {% for band in row.franjas or [] %}{% for day in band.dias or [] %}{% if picked.update({day: true}) %}{% endif %}{% endfor %}{% endfor %}
+  <div class="dw-days" data-day-pick>
+    {% for day in data.days %}<label><input type="checkbox" data-day="{{ day.id }}"{% if picked.get(day.id) %} checked{% endif %}><span>{{ t(day.key, day.label) }}</span></label>{% endfor %}
+  </div>
+  <div data-days>
+  {% for day in data.days %}
+  {% if picked.get(day.id) %}
+    <div class="dw-day" data-day-row="{{ day.id }}">
+      <div class="dw-day-head"><h4>{{ t(day.name_key or day.key, day.name or day.label) }}</h4>
+        <button type="button" class="dw-copy-btn" data-copy-day="{{ day.id }}">{{ t('admin.doctor.copy_day', 'Copiar a otros días') }}</button></div>
+      <div data-slots>
+      {% for band in row.franjas %}{% if day.id in (band.dias or []) %}
+        <div class="dw-slot" data-source="{{ loop.index0 }}">
+        <div class="dw-times">
+          <label>{{ t('admin.doctor.from', 'Desde') }}<input class="dw-time" type="text" inputmode="numeric" autocomplete="off" maxlength="5" pattern="([01]\d|2[0-3]):[0-5]\d" placeholder="08:00" data-time="desde" value="{{ band.desde or '08:00' }}" required title="{{ t('admin.doctor.time_hint', 'Escribí la hora en formato 24 horas, por ejemplo 08:30.') }}"></label>
+          <label>{{ t('admin.doctor.to', 'Hasta') }}<input class="dw-time" type="text" inputmode="numeric" autocomplete="off" maxlength="5" pattern="([01]\d|2[0-3]):[0-5]\d" placeholder="12:00" data-time="hasta" value="{{ band.hasta or '12:00' }}" required title="{{ t('admin.doctor.time_hint', 'Escribí la hora en formato 24 horas, por ejemplo 08:30.') }}"></label>
+          <label>{{ t('admin.doctor.interval', 'Cada (minutos)') }}<span class="hor-stepper"><button type="button" data-step="-1" aria-label="{{ t('admin.content.limits.decrease', 'Reducir {label}', label=t('admin.doctor.interval', 'Cada (minutos)')) }}">−</button><input class="hor-in hor-in--num" type="number" min="1" max="240" step="1" data-time="cada_min" aria-label="{{ t('admin.doctor.interval', 'Cada (minutos)') }}" value="{{ band.cada_min or 20 }}" required><button type="button" data-step="1" aria-label="{{ t('admin.content.limits.increase', 'Aumentar {label}', label=t('admin.doctor.interval', 'Cada (minutos)')) }}">+</button></span></label>
+          <label>{{ t('admin.content.hours.col.service', 'Servicio') }}<select data-service>
+            <option value="">{{ t('admin.content.hours.service.none', 'Sin especificar') }}</option>
+            {% for svc in row.servicios or [] %}<option value="{{ svc.id }}"{% if band.servicio == svc.id %} selected{% endif %}>{{ svc.nombre }}{% if svc.consultorio %} · {{ svc.consultorio }}{% endif %}</option>{% endfor %}
+          </select></label>
+          <button type="button" class="dw-x hr-x" data-remove-slot title="{{ t('admin.content.hours.remove_slot', 'Quitar horario') }}" aria-label="{{ t('admin.content.hours.remove_slot', 'Quitar horario') }}"></button>
+        </div>
+        </div>
+      {% endif %}{% endfor %}
+      </div>
+      <button type="button" class="dw-add-slot" data-add-slot="{{ day.id }}">+ {{ t('admin.doctor.add_hours', 'Agregar horario') }}</button>
+    </div>
+  {% endif %}
+  {% endfor %}
+  </div>
+  {% endif %}
+  {% if not onboarding %}{% for closure in row.closures or [] %}<p class="dw-closure">{{ closure }}</p>{% endfor %}{% endif %}
+</section>
+{% endfor %}
+{# The screen's main action is its one filled button, right under the
+   schedule it edits (the product owner, 2026-10-27: «the most important action, yet it is
+   a link»), the site holidays after it (on-site tester, 2026-10-21). #}
+{% if not onboarding and data.editable %}{% for doc in data.doctors %}{% if rol == 'medico' or data.doctors|length == 1 %}<div class="dw-edit-actions"><a class="btn btn-accent" href="/admin/doctors?item={{ doc.id|urlencode }}">{{ t('admin.doctor.edit_hours', 'Editar horarios') if data.schedules|selectattr('franjas')|list else t('admin.doctor.add_hours_first', 'Cargar horarios') }}</a></div>{% endif %}{% endfor %}{% endif %}
+{% if not onboarding %}</div>{% endif %}
+{% endif %}
+{% if onboarding and data.needs_center %}
+{# Invited without a center: where they see patients, then their hours there. #}
+<section class="dw-center" data-center="" data-center-new data-editable data-services="[]">
+  <div class="dw-fields"><label>{{ t('admin.doctor.center', 'Centro') }}<select name="centro" data-center-select required>
+    <option value="" selected>{{ t('admin.doctor.pick_center', 'Elegí dónde atendés') }}</option>
+    {% for center in data.center_options %}<option value="{{ center.slug }}">{{ center.name }}</option>{% endfor %}
+  </select></label></div>
+  <p>{{ t('admin.doctor.enter_schedule', 'Ahora ingresá tu agenda: marcá los días y horarios.') }}</p>
+  <div class="dw-days" data-day-pick>
+    {% for day in data.days %}<label><input type="checkbox" data-day="{{ day.id }}"><span>{{ t(day.key, day.label) }}</span></label>{% endfor %}
+  </div>
+  <div data-days></div>
+</section>
+{% endif %}
+{% if onboarding and not data.needs_center and data.other_centers %}
+<section class="dw-center" data-other-centers>
+  <h3>{{ t('admin.doctor.other_centers', 'Otros centros de la red') }}</h3>
+  {# The admin step is said once, not after every center (the product owner, 02.11: what
+     repeats on every row goes outside the brackets). #}
+  <ul class="dw-other">
+    {% for center in data.other_centers %}<li>{{ center.name }}</li>{% endfor %}
+  </ul>
+  <p class="dw-other-ask">{{ t('admin.doctor.ask_admin_center', 'Para atender en otro centro, pedile a administración que lo agregue a tu perfil.') }}</p>
+</section>
+{% endif %}
+{% if not onboarding and data.holidays %}<section class="dw-holidays" data-site-holidays>
+  <p>{{ data.holidays.line }}</p>
+  {% if data.holidays.rows %}<details><summary>{{ data.holidays.more }}</summary>
+    <ul>{% for h in data.holidays.rows %}<li><span class="dw-hol-date">{{ h.dia }}</span><span>{{ h.nombre }}</span></li>{% endfor %}</ul>
+  </details>{% endif %}
+</section>{% endif %}
+{% if not onboarding %}<script>sessionStorage.removeItem('dw-agendas-retry');</script>{% endif %}
+<p role="status" aria-live="polite"></p>
+</form>
+{% if onboarding %}<section data-finish-section class="dw-actions">
+  <button class="btn btn-accent" type="button" data-finish>{{ t('admin.doctor.save_start', 'Guardar y empezar') }}</button>
+  <a href="{{ normal_landing }}">{{ t('admin.doctor.later', 'Después') }}</a>
+  <p role="status" aria-live="polite"></p>
+</section>{% endif %}
+{% endif %}
+</div>
+<div id="doctor-recovery"></div>
+{% endblock %}
+{% block scripts %}
+{% if onboarding and data and data.doctors %}
+<template id="doctor-load-error"><span role="alert">{{ t('admin.doctor.load_failed', 'No se pudo cargar tu perfil.') }}</span><button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Recargar') }}</button></template>
+<script type="module">
+import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+const host = document.getElementById('doctor-workspace');
+const recovery = document.getElementById('doctor-recovery');
+const interactive = {{ onboarding|tojson }};
+const data = {{ data|tojson }};
+function gate(busy){if(interactive){host.inert=busy;host.setAttribute('aria-busy',String(busy));}}
+bootScreen({
+  host,
+  recovery: 'doctor-load-error',
+  slowIn: recovery,
+  failedIn: recovery,
+  load: () => import('{{ static("platform/doctor-workspace.mjs") }}'),
+  mount: (module) => module.mount(host, data),
+  onStop: () => gate(true),
+  onReady: () => gate(false),
+});
+</script>
+{% endif %}
+{% endblock %}

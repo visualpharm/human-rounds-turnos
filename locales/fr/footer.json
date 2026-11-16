@@ -1,0 +1,12 @@
+{
+  "_comment": "The shared site footer.",
+  "footer.about": "À propos",
+  "footer.credit": "Icônes par Icons8",
+  "footer.emergency": "Urgences : {{sitio.emergency_number_link_html}}",
+  "footer.mission": "Créé et soutenu par des habitants de {{sitio.city}}. Gratuit et sans but lucratif : simplement pour faciliter tes soins.",
+  "footer.news": "Nouveautés",
+  "footer.powered": "Propulsé par Human Rounds",
+  "footer.privacy": "Confidentialité",
+  "footer.software": "Fonctionne avec le logiciel Human Rounds",
+  "footer.terms": "Conditions"
+}

@@ -1,0 +1,251 @@
+{
+  "baseline_commit": "6a7cf29816a6e861cf38c1bf83b139029603d681",
+  "asset_deltas": [
+    {
+      "name": "platform/backup-key.mjs",
+      "current_url": "/static/platform/backup-key.d901b7ab.mjs",
+      "prior_url": null,
+      "operation": "remove only this new manifest entry"
+    }
+  ],
+  "unchanged_client_loaded_assets": [
+    {
+      "name": "platform/account-form.mjs",
+      "sha256": "4568f1562c9831b823369680db866f9aa860adf945190b82738a7fa68f961615"
+    },
+    {
+      "name": "platform/account-labs.mjs",
+      "sha256": "447da86e357ab028a7d7922569e1f1bd8d0f187619df670a08c03fb321a2c3a6"
+    },
+    {
+      "name": "platform/account-requests.mjs",
+      "sha256": "0374288728d7e1162da554d86cd16e000fd4617ee484183ce005965d56f5dcc1"
+    },
+    {
+      "name": "platform/admin-charts.mjs",
+      "sha256": "098c1c8b9c2f95f8ee776d0ec1252d84f39d40636f3c3c823551059605b9ae9f"
+    },
+    {
+      "name": "platform/admin-combo.mjs",
+      "sha256": "b2fd43753375909dc0d9a1be0aefb991ac85f7fe48a2f4b0f996fc8a39d73bc6"
+    },
+    {
+      "name": "platform/admin-create-appointment.mjs",
+      "sha256": "27629ddf2c69b3b77300ff9ad33dab7a228b07f7b4bfddf572fc63b85f05b375"
+    },
+    {
+      "name": "platform/admin-filter-controls.mjs",
+      "sha256": "e8c69ad01f7727d2823b7a28ad3ddf7c457397ff7a2da9a30ce8d98d9b7a8c87"
+    },
+    {
+      "name": "platform/admin-hours-editor.mjs",
+      "sha256": "c066cb9f9b4321297e1fe55b9ff7e3b885e8564882ad02974696d1e6aa1f0956"
+    },
+    {
+      "name": "platform/admin-knowledge.mjs",
+      "sha256": "e004fc56b8290eafd3145862dbd0d25c986192cd98d86183b231ef02b3174e57"
+    },
+    {
+      "name": "platform/admin-legal.mjs",
+      "sha256": "da37e59e696fee17d77f20705f0e38e80a09a6dd484eae9fa9eb0293c5c53ed6"
+    },
+    {
+      "name": "platform/admin-login.mjs",
+      "sha256": "687b4d0a666789e726d2bf8daf2b80bd29ee9c5664c816552be752da000902aa"
+    },
+    {
+      "name": "platform/admin-patient-summary.mjs",
+      "sha256": "18bcd443b1ed3668a3ffed7be6ccec69459a546f45ae745427dca2c5e6fb2161"
+    },
+    {
+      "name": "platform/admin-preferences.mjs",
+      "sha256": "13b68946857c6f7228b684b55443964fe3acee8f5f2e2693f938a7315bad8686"
+    },
+    {
+      "name": "platform/admin-prompts.mjs",
+      "sha256": "259c48809c06e443576cc3e6514a6c5529f5a26182bd6361e55c0eddce6f54fa"
+    },
+    {
+      "name": "platform/admin-session.mjs",
+      "sha256": "1b2ecccc789833f0370110b828e892bbe6f7c5846359efb6baefb0df4c212d5a"
+    },
+    {
+      "name": "platform/admin-solicitudes.mjs",
+      "sha256": "5324d1babf3b2eb56bed882be8f2c230dd64e5f4397e1b4e020bcba6f63ccb2a"
+    },
+    {
+      "name": "platform/admin-table.mjs",
+      "sha256": "2f977cdd851ffe7d751a56a7983a5ec1b88e47685520c7c1f7b9c9f7605b1322"
+    },
+    {
+      "name": "platform/admin-users.mjs",
+      "sha256": "5a6e11526734b302621a423c38b2ed6ef9ccf3be09f2c823973257481a7c70de"
+    },
+    {
+      "name": "platform/age.mjs",
+      "sha256": "3ae618849d66af1577166d2b6123334c2fb0ffe993b34be81e1491cdfd81b320"
+    },
+    {
+      "name": "platform/calendar-grid.mjs",
+      "sha256": "b6e84845d4dafb4dba806c7818b2a91389336bcd89171ccc6a2fdcf2e9fa28b0"
+    },
+    {
+      "name": "platform/chat-ui.mjs",
+      "sha256": "521b997a867c79ef1830f162b83a27ce21b55880e533c42c888c186aa2f1fcb8"
+    },
+    {
+      "name": "platform/chat-widget.mjs",
+      "sha256": "27a414c822a91ef80bcf40893016d34ef6f9e355da9e1cb81e4ed6234473a4e3"
+    },
+    {
+      "name": "platform/dates.mjs",
+      "sha256": "d2a81e6547fdacfc20174b33de0ff80a123ede6ff895a30ec3a14ffb49f8db76"
+    },
+    {
+      "name": "platform/dependents.mjs",
+      "sha256": "beaf354e2304e3ca16a7e2c8f2b6f3e688e3833117889d585ec562f2c00b1d6d"
+    },
+    {
+      "name": "platform/directory.mjs",
+      "sha256": "7a12cd1500a5058b3dc625b589188f635af8e407d8286879671ce416bed71b94"
+    },
+    {
+      "name": "platform/dni-barcode.mjs",
+      "sha256": "f7cb831b6c4f9ba600e6e0e26088c2c13d93b28845a7b147b457f97b66244e36"
+    },
+    {
+      "name": "platform/dni-scan.mjs",
+      "sha256": "c98f35d964a6ea6430d2642f04714d4e6b72ad5177607086ebe7dec359ad1868"
+    },
+    {
+      "name": "platform/format.mjs",
+      "sha256": "d292aeceab26f20ddf9e2ee5f2cf04f5e585fea455b5da9a693315e1b69839b5"
+    },
+    {
+      "name": "platform/hours.mjs",
+      "sha256": "e6e902c2147133caafee842acf41885231d1ae1893e37a5ada64b9cebeb076ae"
+    },
+    {
+      "name": "platform/i18n.mjs",
+      "sha256": "a8668c048c4a8efed912778a9c903c2f65c97483b05249489448c9fd924c3611"
+    },
+    {
+      "name": "platform/islands.mjs",
+      "sha256": "6c476338cca3050f058cc21ef051cc95e4da8b16d02a69a724c3496ce606a981"
+    },
+    {
+      "name": "platform/listing.mjs",
+      "sha256": "30a6fee7a741c9ce56195013bc03919518480668711f8a2b68c1bb9836b951d9"
+    },
+    {
+      "name": "platform/nav.mjs",
+      "sha256": "acf0fa3bc9df1bdabfd09f549b4bfc2607a3eebeb797301549ef835aa01de539"
+    },
+    {
+      "name": "platform/passkeys.mjs",
+      "sha256": "0836d6aac031f8e9cd99f0ea949cee6fb829fa91d8102e57b38750cfd60a7d79"
+    },
+    {
+      "name": "platform/prep.mjs",
+      "sha256": "e88a8fbffe07c32a4776d5702a95d21198b0a527add4d4f3d4a74195efae54bd"
+    },
+    {
+      "name": "platform/search.mjs",
+      "sha256": "543e08470e5e696e8a4d66c3183eb6256d6a82ba91dde411dd99470092c40534"
+    },
+    {
+      "name": "platform/turnstile.mjs",
+      "sha256": "5a8b94d726531e273149be824a8287b14b62f1acc33b002fa297116e22cecb47"
+    },
+    {
+      "name": "platform/week.mjs",
+      "sha256": "535db96436491bde195cbab824471261eb12fde660aa43459c71f8ae04970562"
+    }
+  ],
+  "locale_additions": [],
+  "renders": [
+    {
+      "path": "/account",
+      "lang": "es",
+      "sha256": "0f7e7f1ed7efe1928b5c418ebdffada85664c510a01b99956f304bcb65b46f67",
+      "prior_sha256": "f10c1de034a1cf381578824a587e3a0c80db15c18733cc9684754464aa732e94",
+      "reversed_sha256": "f10c1de034a1cf381578824a587e3a0c80db15c18733cc9684754464aa732e94",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account/reset",
+      "lang": "es",
+      "sha256": "3b7aedeeb04c91141ca9b7f65e5c92b897d93536b5174287a9a778304e6bcb6f",
+      "prior_sha256": "c88e09d6d8bc92dbd4ffee459cda5fa6e8f9cba8c8e98f543521f0285098f268",
+      "reversed_sha256": "c88e09d6d8bc92dbd4ffee459cda5fa6e8f9cba8c8e98f543521f0285098f268",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account",
+      "lang": "anonymous",
+      "sha256": "0f7e7f1ed7efe1928b5c418ebdffada85664c510a01b99956f304bcb65b46f67",
+      "prior_sha256": "f10c1de034a1cf381578824a587e3a0c80db15c18733cc9684754464aa732e94",
+      "reversed_sha256": "f10c1de034a1cf381578824a587e3a0c80db15c18733cc9684754464aa732e94",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/test",
+      "lang": "es",
+      "sha256": "e36412fd566e6dcf89fe87e03f6410050ea3a459a39930706ec610edadd9c3b6",
+      "prior_sha256": "c1741e6a746936aa6d8eea6fee87ff0ca100289084246446ecce912240df1961",
+      "reversed_sha256": "c1741e6a746936aa6d8eea6fee87ff0ca100289084246446ecce912240df1961",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/sso",
+      "lang": "es",
+      "sha256": "48790b0a503ea9902e8f9d7789e6b7f80d2b5d029d16d3cd4cce981a91e3f8f2",
+      "prior_sha256": "79f8b9fa6adc7f487004a31681457f8b2e89768b48a10ba5671340cb3556c886",
+      "reversed_sha256": "79f8b9fa6adc7f487004a31681457f8b2e89768b48a10ba5671340cb3556c886",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account",
+      "lang": "en",
+      "sha256": "7e4c7018952e64eb9f70e36ad1324ffe672e25e8157bb08627a0b118b2298f87",
+      "prior_sha256": "8b374af09eb4004a40546cb1ac1298195a18e3a93053d641221ebe94c8b35a7b",
+      "reversed_sha256": "8b374af09eb4004a40546cb1ac1298195a18e3a93053d641221ebe94c8b35a7b",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account/reset",
+      "lang": "en",
+      "sha256": "8b25c0248bcf9dc3b8d335ca61213583281372cb8eccda598d13e568473003e2",
+      "prior_sha256": "3baf70052ccbc0f876b01a0831c5b21a98a87a021a7fba4ca15693d3417f81bd",
+      "reversed_sha256": "3baf70052ccbc0f876b01a0831c5b21a98a87a021a7fba4ca15693d3417f81bd",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/test",
+      "lang": "en",
+      "sha256": "cf1908d341eb8b372614f6378bf98df1d77b00ce3369655e5ae06a719afa4b99",
+      "prior_sha256": "64e04496493ecb7ce72bdcdcb4db1870877a35ba1d76376c1542acfc576c92b0",
+      "reversed_sha256": "64e04496493ecb7ce72bdcdcb4db1870877a35ba1d76376c1542acfc576c92b0",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/sso",
+      "lang": "en",
+      "sha256": "238ff72e0ca12afd60f9bcc026023f9e30deb2fc499cff250b330e7cf72a83d8",
+      "prior_sha256": "08bc8bf6df05a40bbc0c28a2d20b091bf6be1a4ad7dab83cfa2b4585628ddc17",
+      "reversed_sha256": "08bc8bf6df05a40bbc0c28a2d20b091bf6be1a4ad7dab83cfa2b4585628ddc17",
+      "raw_bytes_equal_after_exact_reversal": true,
+      "unexpected_byte_rejected": true
+    }
+  ],
+  "reference_script": "artifacts/backup-slice7/fix/prove-account-renders.py",
+  "regeneration_command": "TURNOS_ENV_FILE=/dev/null TURNOS_FAKE_AI=1 python3 test/regen_accounts_pins.py"
+}

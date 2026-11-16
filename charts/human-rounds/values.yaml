@@ -1,0 +1,59 @@
+# The default repository matches the Tier 6 GHCR release workflow. No image
+# has been published from this repository yet; choose an actually released tag
+# or digest before installing this chart.
+image:
+  repository: ghcr.io/visualpharm/sana-turnos
+  tag: latest
+  # An immutable value such as sha256:<64 hexadecimal characters>. When set,
+  # it wins over image.tag and the rendered image is repository@digest.
+  digest: ""
+  pullPolicy: IfNotPresent
+
+replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 7700
+
+# Production state (uploaded referrals, install-owned packs, and durable
+# runtime configuration) belongs on this PVC. Disabling it uses emptyDir and
+# is only suitable for disposable development instances.
+persistence:
+  enabled: true
+  accessModes:
+    - ReadWriteOnce
+  size: 10Gi
+  storageClass: ""
+  existingClaim: ""
+
+# DATABASE_URL is deliberately sourced from a Secret supplied by the operator.
+# The chart does not generate a database credential or duplicate its values.
+database:
+  existingSecret: human-rounds-database
+  existingSecretKey: DATABASE_URL
+
+# Arbitrary non-secret app configuration is passed through unchanged as
+# environment variables. Keep secrets in Kubernetes Secrets and add them with
+# a separate reviewed deployment extension, rather than placing them here.
+applicationEnv: {}
+
+# This reserved switch is intentionally disabled. Built-in PostgreSQL is only
+# scaffolding at this stage: setting it true fails rendering instead of
+# pretending to provide backups, credentials, upgrades, or HA guarantees.
+postgresql:
+  enabled: false
+
+resources: {}
+
+podSecurityContext:
+  fsGroup: 1000
+
+securityContext:
+  allowPrivilegeEscalation: false
+  capabilities:
+    drop:
+      - ALL
+  readOnlyRootFilesystem: false
+  runAsNonRoot: true
+  runAsUser: 1000
+  runAsGroup: 1000

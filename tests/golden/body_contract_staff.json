@@ -1,0 +1,2042 @@
+{
+ "POST /api/admin/account/2fa/confirm": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La configuración venció. Empezá de nuevo.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La configuración venció. Empezá de nuevo.\"}"
+  },
+  "valid": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La configuración venció. Empezá de nuevo.\"}"
+  },
+  "valid + unknown field": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La configuración venció. Empezá de nuevo.\"}"
+  },
+  "setup_token=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo setup_token: se esperaba texto\"}"
+  },
+  "setup_token=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo setup_token: se esperaba texto\"}"
+  },
+  "setup_token=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo setup_token: se esperaba texto\"}"
+  },
+  "setup_token=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo setup_token: se esperaba texto\"}"
+  },
+  "setup_token=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La configuración venció. Empezá de nuevo.\"}"
+  },
+  "codigo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La configuración venció. Empezá de nuevo.\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/account/2fa/remove": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña actual no coincide.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"2fa_deadline\": \"<ts>\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"2fa_deadline\": \"<ts>\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"2fa_deadline\": \"<ts>\"}"
+  },
+  "actual=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña actual no coincide.\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/account/password": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña actual no coincide.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "actual=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo actual: se esperaba texto\"}"
+  },
+  "actual=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña actual no coincide.\"}"
+  },
+  "nueva=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nueva: se esperaba texto\"}"
+  },
+  "nueva=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nueva: se esperaba texto\"}"
+  },
+  "nueva=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nueva: se esperaba texto\"}"
+  },
+  "nueva=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nueva: se esperaba texto\"}"
+  },
+  "nueva=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña nueva tiene que tener al menos 8 caracteres.\"}"
+  },
+  "usuario=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/account/profile": {
+  "empty": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"email\": null}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"email\": \"staff@example.com\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"email\": \"staff@example.com\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"email\": \"staff@example.com\"}"
+  },
+  "email=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"email\": null}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/login": {
+  "empty": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"credenciales\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"usuario\": \"staff.pin\", \"rol\": \"admin\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"usuario\": \"staff.pin\", \"rol\": \"admin\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"usuario\": \"staff.pin\", \"rol\": \"admin\"}"
+  },
+  "usuario=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=null": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"credenciales\"}"
+  },
+  "password=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=null": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"credenciales\"}"
+  },
+  "codigo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo codigo: se esperaba texto\"}"
+  },
+  "codigo=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"usuario\": \"staff.pin\", \"rol\": \"admin\"}"
+  },
+  "turnstile_token=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo turnstile_token: se esperaba texto\"}"
+  },
+  "turnstile_token=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo turnstile_token: se esperaba texto\"}"
+  },
+  "turnstile_token=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo turnstile_token: se esperaba texto\"}"
+  },
+  "turnstile_token=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo turnstile_token: se esperaba texto\"}"
+  },
+  "turnstile_token=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"usuario\": \"staff.pin\", \"rol\": \"admin\"}"
+  }
+ },
+ "POST /api/admin/passkeys/delete": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta_credential_id\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_encontrada\"}"
+  },
+  "valid": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_encontrada\"}"
+  },
+  "valid + unknown field": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_encontrada\"}"
+  },
+  "credential_id=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo credential_id: se esperaba texto\"}"
+  },
+  "credential_id=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo credential_id: se esperaba texto\"}"
+  },
+  "credential_id=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo credential_id: se esperaba texto\"}"
+  },
+  "credential_id=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo credential_id: se esperaba texto\"}"
+  },
+  "credential_id=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta_credential_id\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/passkeys/login": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "valid": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "valid + unknown field": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "challenge=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "id=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  }
+ },
+ "POST /api/admin/passkeys/register": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "valid": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "valid + unknown field": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "challenge=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo challenge: se esperaba texto\"}"
+  },
+  "challenge=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "nombre=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "id=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo id: se esperaba texto\"}"
+  },
+  "id=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"desafio_invalido\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/passkeys/reset": {
+  "empty": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"borradas\": 0}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"borradas\": 0}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"borradas\": 0}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"borradas\": 0}"
+  },
+  "usuario=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"borradas\": 0}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/reset-password": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña tiene que tener al menos 8 caracteres.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "valid as text/plain": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"El enlace venció o ya fue usado. Pedí uno nuevo.\"}"
+  },
+  "valid": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"El enlace venció o ya fue usado. Pedí uno nuevo.\"}"
+  },
+  "valid + unknown field": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"El enlace venció o ya fue usado. Pedí uno nuevo.\"}"
+  },
+  "token=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "token=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "token=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "token=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "token=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"El enlace venció o ya fue usado. Pedí uno nuevo.\"}"
+  },
+  "password=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "password=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "password=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "password=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido.\"}"
+  },
+  "password=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña tiene que tener al menos 8 caracteres.\"}"
+  }
+ },
+ "POST /api/login-panel/event": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"evento inválido\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "valid as text/plain": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "valid": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "valid + unknown field": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "sid=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "sid=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "sid=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "sid=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "sid=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"evento inválido\"}"
+  },
+  "variante=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "variante=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "variante=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "variante=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "variante=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"evento inválido\"}"
+  },
+  "evento=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "evento=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "evento=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "evento=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "evento=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"evento inválido\"}"
+  },
+  "tab=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "tab=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "tab=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "tab=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "tab=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "item=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "item=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "item=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "item=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "item=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "ms=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "ms=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "ms=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "ms=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido\"}"
+  },
+  "ms=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  }
+ },
+ "PUT /api/admin/preferences": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"preferencia inválida\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": \"oscuro\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": \"oscuro\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": \"oscuro\"}"
+  },
+  "key=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo key: se esperaba texto\"}"
+  },
+  "key=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo key: se esperaba texto\"}"
+  },
+  "key=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo key: se esperaba texto\"}"
+  },
+  "key=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo key: se esperaba texto\"}"
+  },
+  "key=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"preferencia inválida\"}"
+  },
+  "value=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": 12345}"
+  },
+  "value=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": true}"
+  },
+  "value=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": []}"
+  },
+  "value=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": {}}"
+  },
+  "value=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"value\": null}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ }
+}

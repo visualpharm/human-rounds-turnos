@@ -1,0 +1,1168 @@
+{
+ "appointment": {
+  "app.modules.turnos.appointment_confirm": {
+   "center_name": {
+    "empty:''": "",
+    "empty:'caps-1'": "",
+    "empty:'hospital'": "",
+    "empty:'nope'": "",
+    "empty:7": "",
+    "empty:None": "",
+    "first_wins:''": "",
+    "first_wins:'caps-1'": "",
+    "first_wins:'hospital'": "Uno",
+    "first_wins:'nope'": "",
+    "first_wins:7": "",
+    "first_wins:None": "",
+    "junk:''": "",
+    "junk:'caps-1'": "",
+    "junk:'hospital'": "Tras la basura",
+    "junk:'nope'": "",
+    "junk:7": "",
+    "junk:None": "",
+    "match_id:''": "",
+    "match_id:'caps-1'": "CAPS Uno",
+    "match_id:'hospital'": "",
+    "match_id:'nope'": "",
+    "match_id:7": "Centro Siete",
+    "match_id:None": "",
+    "match_slug:''": "",
+    "match_slug:'caps-1'": "",
+    "match_slug:'hospital'": "Hospital de Pinamar",
+    "match_slug:'nope'": "",
+    "match_slug:7": "",
+    "match_slug:None": "",
+    "no_name:''": "",
+    "no_name:'caps-1'": "",
+    "no_name:'hospital'": "",
+    "no_name:'nope'": "",
+    "no_name:7": "",
+    "no_name:None": "",
+    "none:''": "",
+    "none:'caps-1'": "",
+    "none:'hospital'": "",
+    "none:'nope'": "",
+    "none:7": "",
+    "none:None": "",
+    "raises": ""
+   },
+   "data_token_attribute": {
+    "\"<x>&'\"": "data-token=\"&lt;x&gt;&amp;&#x27;\"",
+    "''": "data-token=\"\"",
+    "'a\"b'": "data-token=\"a&quot;b\"",
+    "'abc'": "data-token=\"abc\"",
+    "'ñandú'": "data-token=\"ñandú\"",
+    "None": "data-token=\"\""
+   },
+   "friendly": {
+    "''": "el ",
+    "'2026-10-28 09:30'": "el 2026-10-28 09:30",
+    "0": "el 0",
+    "None": "el None",
+    "datetime.datetime(2026, 10, 28, 12, 30, tzinfo=datetime.timezone.utc)": "el 2026-10-28 12:30:00+00:00",
+    "raises:''": "",
+    "raises:'2026-10-28 09:30'": "2026-10-28 09:30",
+    "raises:0": "",
+    "raises:None": "",
+    "raises:datetime.datetime(2026, 10, 28, 12, 30, tzinfo=datetime.timezone.utc)": "2026-10-28 12:30:00+00:00"
+   },
+   "service_name": {
+    "''": "Servicio ",
+    "'pediatria'": "Servicio pediatria",
+    "0": "Servicio 0",
+    "7": "Servicio 7",
+    "None": "Servicio None",
+    "raises:''": "",
+    "raises:'pediatria'": "pediatria",
+    "raises:0": "",
+    "raises:7": "7",
+    "raises:None": ""
+   }
+  },
+  "app.modules.turnos.appointment_offer": {
+   "center_name": {
+    "empty:''": "",
+    "empty:'caps-1'": "",
+    "empty:'hospital'": "",
+    "empty:'nope'": "",
+    "empty:7": "",
+    "empty:None": "",
+    "first_wins:''": "",
+    "first_wins:'caps-1'": "",
+    "first_wins:'hospital'": "Uno",
+    "first_wins:'nope'": "",
+    "first_wins:7": "",
+    "first_wins:None": "",
+    "junk:''": "",
+    "junk:'caps-1'": "",
+    "junk:'hospital'": "Tras la basura",
+    "junk:'nope'": "",
+    "junk:7": "",
+    "junk:None": "",
+    "match_id:''": "",
+    "match_id:'caps-1'": "CAPS Uno",
+    "match_id:'hospital'": "",
+    "match_id:'nope'": "",
+    "match_id:7": "Centro Siete",
+    "match_id:None": "",
+    "match_slug:''": "",
+    "match_slug:'caps-1'": "",
+    "match_slug:'hospital'": "Hospital de Pinamar",
+    "match_slug:'nope'": "",
+    "match_slug:7": "",
+    "match_slug:None": "",
+    "no_name:''": "",
+    "no_name:'caps-1'": "",
+    "no_name:'hospital'": "",
+    "no_name:'nope'": "",
+    "no_name:7": "",
+    "no_name:None": "",
+    "none:''": "",
+    "none:'caps-1'": "",
+    "none:'hospital'": "",
+    "none:'nope'": "",
+    "none:7": "",
+    "none:None": "",
+    "raises": ""
+   },
+   "data_token_attribute": {
+    "\"<x>&'\"": "data-token=\"&lt;x&gt;&amp;&#x27;\"",
+    "''": "data-token=\"\"",
+    "'a\"b'": "data-token=\"a&quot;b\"",
+    "'abc'": "data-token=\"abc\"",
+    "'ñandú'": "data-token=\"ñandú\"",
+    "None": "data-token=\"\""
+   },
+   "friendly": {
+    "''": "el ",
+    "'2026-10-28 09:30'": "el 2026-10-28 09:30",
+    "0": "el 0",
+    "None": "el None",
+    "datetime.datetime(2026, 10, 28, 12, 30, tzinfo=datetime.timezone.utc)": "el 2026-10-28 12:30:00+00:00",
+    "raises:''": "",
+    "raises:'2026-10-28 09:30'": "2026-10-28 09:30",
+    "raises:0": "",
+    "raises:None": "",
+    "raises:datetime.datetime(2026, 10, 28, 12, 30, tzinfo=datetime.timezone.utc)": "2026-10-28 12:30:00+00:00"
+   },
+   "service_name": {
+    "''": "Servicio ",
+    "'pediatria'": "Servicio pediatria",
+    "0": "Servicio 0",
+    "7": "Servicio 7",
+    "None": "Servicio None",
+    "raises:''": "",
+    "raises:'pediatria'": "pediatria",
+    "raises:0": "",
+    "raises:7": "7",
+    "raises:None": ""
+   }
+  }
+ },
+ "auth_response": {
+  "app.auth.admin_auth_router._response": {
+   "0/200": {
+    "background": false,
+    "body": "{\"ok\": true}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "12"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 200
+   },
+   "1/200": {
+    "background": false,
+    "body": "{\"ok\": true, \"usuario\": \"Ñandú\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "34"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ],
+     [
+      "set-cookie",
+      "sid=abc; Path=/; HttpOnly"
+     ]
+    ],
+    "status": 200
+   },
+   "2/401": {
+    "background": false,
+    "body": "{\"error\": \"credenciales\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "25"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 401
+   },
+   "3/429": {
+    "background": false,
+    "body": "{\"error\": \"demasiados_intentos\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "32"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 429
+   },
+   "4/200": {
+    "background": false,
+    "body": "{\"n\": [1, 2.5, null], \"t\": \"¿Cómo está? — «bien»\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "57"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ],
+     [
+      "set-cookie",
+      "x=1"
+     ]
+    ],
+    "status": 200
+   }
+  },
+  "app.auth.api_models._auth_response": {
+   "0/200": {
+    "background": false,
+    "body": "{\"ok\": true}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "12"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 200
+   },
+   "1/200": {
+    "background": false,
+    "body": "{\"ok\": true, \"usuario\": \"Ñandú\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "34"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 200
+   },
+   "2/401": {
+    "background": false,
+    "body": "{\"error\": \"credenciales\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "25"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 401
+   },
+   "3/429": {
+    "background": false,
+    "body": "{\"error\": \"demasiados_intentos\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "32"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 429
+   },
+   "4/200": {
+    "background": false,
+    "body": "{\"n\": [1, 2.5, null], \"t\": \"¿Cómo está? — «bien»\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "57"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 200
+   }
+  },
+  "app.auth.passkeys_router._response": {
+   "0/200": {
+    "background": false,
+    "body": "{\"ok\": true}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "12"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 200
+   },
+   "1/200": {
+    "background": false,
+    "body": "{\"ok\": true, \"usuario\": \"Ñandú\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "34"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ],
+     [
+      "set-cookie",
+      "sid=abc; Path=/; HttpOnly"
+     ]
+    ],
+    "status": 200
+   },
+   "2/401": {
+    "background": false,
+    "body": "{\"error\": \"credenciales\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "25"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 401
+   },
+   "3/429": {
+    "background": false,
+    "body": "{\"error\": \"demasiados_intentos\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "32"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ]
+    ],
+    "status": 429
+   },
+   "4/200": {
+    "background": false,
+    "body": "{\"n\": [1, 2.5, null], \"t\": \"¿Cómo está? — «bien»\"}",
+    "headers": [
+     [
+      "cache-control",
+      "no-store"
+     ],
+     [
+      "content-length",
+      "57"
+     ],
+     [
+      "content-type",
+      "application/json; charset=utf-8"
+     ],
+     [
+      "set-cookie",
+      "x=1"
+     ]
+    ],
+    "status": 200
+   }
+  }
+ },
+ "chain_alive": {
+  "app.modules.turnos.hsi_journal_queue": {
+   "given/False": [
+    false,
+    [
+     [
+      "task_chain_alive",
+      "given",
+      "connectors.hsi.hsi_sync.tick"
+     ]
+    ]
+   ],
+   "given/True": [
+    true,
+    [
+     [
+      "task_chain_alive",
+      "given",
+      "connectors.hsi.hsi_sync.tick"
+     ]
+    ]
+   ],
+   "own/False": [
+    false,
+    [
+     [
+      "connect_open"
+     ],
+     [
+      "cursor_open",
+      "own"
+     ],
+     [
+      "task_chain_alive",
+      "own",
+      "connectors.hsi.hsi_sync.tick"
+     ],
+     [
+      "cursor_close",
+      "own"
+     ],
+     [
+      "connect_close"
+     ]
+    ]
+   ],
+   "own/True": [
+    true,
+    [
+     [
+      "connect_open"
+     ],
+     [
+      "cursor_open",
+      "own"
+     ],
+     [
+      "task_chain_alive",
+      "own",
+      "connectors.hsi.hsi_sync.tick"
+     ],
+     [
+      "cursor_close",
+      "own"
+     ],
+     [
+      "connect_close"
+     ]
+    ]
+   ]
+  },
+  "app.ops.data_backups_queue": {
+   "given/False": [
+    false,
+    [
+     [
+      "task_chain_alive",
+      "given",
+      "ops.data_backups.sweep"
+     ]
+    ]
+   ],
+   "given/True": [
+    true,
+    [
+     [
+      "task_chain_alive",
+      "given",
+      "ops.data_backups.sweep"
+     ]
+    ]
+   ],
+   "own/False": [
+    false,
+    [
+     [
+      "connect_open"
+     ],
+     [
+      "cursor_open",
+      "own"
+     ],
+     [
+      "task_chain_alive",
+      "own",
+      "ops.data_backups.sweep"
+     ],
+     [
+      "cursor_close",
+      "own"
+     ],
+     [
+      "connect_close"
+     ]
+    ]
+   ],
+   "own/True": [
+    true,
+    [
+     [
+      "connect_open"
+     ],
+     [
+      "cursor_open",
+      "own"
+     ],
+     [
+      "task_chain_alive",
+      "own",
+      "ops.data_backups.sweep"
+     ],
+     [
+      "cursor_close",
+      "own"
+     ],
+     [
+      "connect_close"
+     ]
+    ]
+   ]
+  }
+ },
+ "errors": {
+  "app.ai.chart_summary.PatientSummaryError": {
+   "'texto'": {
+    "args": "('texto',)",
+    "body": "texto",
+    "status": 400,
+    "str": "texto"
+   },
+   "5": {
+    "args": "('5',)",
+    "body": 5,
+    "status": 400,
+    "str": "5"
+   },
+   "None": {
+    "args": "('None',)",
+    "body": null,
+    "status": 400,
+    "str": "None"
+   },
+   "['a']": {
+    "args": "(\"['a']\",)",
+    "body": [
+     "a"
+    ],
+    "status": 400,
+    "str": "['a']"
+   },
+   "caught_as_exception": true,
+   "is_exception": true,
+   "module": "app.ai.chart_summary",
+   "name": "PatientSummaryError",
+   "raised": [
+    "PatientSummaryError",
+    503,
+    {
+     "error": "x"
+    }
+   ],
+   "{'error': 'falta medico'}": {
+    "args": "('falta medico',)",
+    "body": {
+     "error": "falta medico"
+    },
+    "status": 400,
+    "str": "falta medico"
+   },
+   "{'error': None}": {
+    "args": "(None,)",
+    "body": {
+     "error": null
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{'otro': 1}": {
+    "args": "(None,)",
+    "body": {
+     "otro": 1
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{}": {
+    "args": "(None,)",
+    "body": {},
+    "status": 400,
+    "str": "None"
+   }
+  },
+  "app.ai.prompts.PromptSaveError": {
+   "'texto'": {
+    "args": "('texto',)",
+    "body": "texto",
+    "status": 400,
+    "str": "texto"
+   },
+   "5": {
+    "args": "('5',)",
+    "body": 5,
+    "status": 400,
+    "str": "5"
+   },
+   "None": {
+    "args": "('None',)",
+    "body": null,
+    "status": 400,
+    "str": "None"
+   },
+   "['a']": {
+    "args": "(\"['a']\",)",
+    "body": [
+     "a"
+    ],
+    "status": 400,
+    "str": "['a']"
+   },
+   "caught_as_exception": true,
+   "is_exception": true,
+   "module": "app.ai.prompts",
+   "name": "PromptSaveError",
+   "raised": [
+    "PromptSaveError",
+    503,
+    {
+     "error": "x"
+    }
+   ],
+   "{'error': 'falta medico'}": {
+    "args": "('falta medico',)",
+    "body": {
+     "error": "falta medico"
+    },
+    "status": 400,
+    "str": "falta medico"
+   },
+   "{'error': None}": {
+    "args": "(None,)",
+    "body": {
+     "error": null
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{'otro': 1}": {
+    "args": "(None,)",
+    "body": {
+     "otro": 1
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{}": {
+    "args": "(None,)",
+    "body": {},
+    "status": 400,
+    "str": "None"
+   }
+  },
+  "app.modules.intake.consult_admin.ConsultAdminError": {
+   "'texto'": {
+    "args": "('texto',)",
+    "body": "texto",
+    "status": 400,
+    "str": "texto"
+   },
+   "5": {
+    "args": "('5',)",
+    "body": 5,
+    "status": 400,
+    "str": "5"
+   },
+   "None": {
+    "args": "('None',)",
+    "body": null,
+    "status": 400,
+    "str": "None"
+   },
+   "['a']": {
+    "args": "(\"['a']\",)",
+    "body": [
+     "a"
+    ],
+    "status": 400,
+    "str": "['a']"
+   },
+   "caught_as_exception": true,
+   "is_exception": true,
+   "module": "app.modules.intake.consult_admin",
+   "name": "ConsultAdminError",
+   "raised": [
+    "ConsultAdminError",
+    503,
+    {
+     "error": "x"
+    }
+   ],
+   "{'error': 'falta medico'}": {
+    "args": "('falta medico',)",
+    "body": {
+     "error": "falta medico"
+    },
+    "status": 400,
+    "str": "falta medico"
+   },
+   "{'error': None}": {
+    "args": "(None,)",
+    "body": {
+     "error": null
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{'otro': 1}": {
+    "args": "(None,)",
+    "body": {
+     "otro": 1
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{}": {
+    "args": "(None,)",
+    "body": {},
+    "status": 400,
+    "str": "None"
+   }
+  },
+  "app.modules.intake.intake_admin.IntakeAdminError": {
+   "'texto'": {
+    "args": "('texto',)",
+    "body": "texto",
+    "status": 400,
+    "str": "texto"
+   },
+   "5": {
+    "args": "('5',)",
+    "body": 5,
+    "status": 400,
+    "str": "5"
+   },
+   "None": {
+    "args": "('None',)",
+    "body": null,
+    "status": 400,
+    "str": "None"
+   },
+   "['a']": {
+    "args": "(\"['a']\",)",
+    "body": [
+     "a"
+    ],
+    "status": 400,
+    "str": "['a']"
+   },
+   "caught_as_exception": true,
+   "is_exception": true,
+   "module": "app.modules.intake.intake_admin",
+   "name": "IntakeAdminError",
+   "raised": [
+    "IntakeAdminError",
+    503,
+    {
+     "error": "x"
+    }
+   ],
+   "{'error': 'falta medico'}": {
+    "args": "('falta medico',)",
+    "body": {
+     "error": "falta medico"
+    },
+    "status": 400,
+    "str": "falta medico"
+   },
+   "{'error': None}": {
+    "args": "(None,)",
+    "body": {
+     "error": null
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{'otro': 1}": {
+    "args": "(None,)",
+    "body": {
+     "otro": 1
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{}": {
+    "args": "(None,)",
+    "body": {},
+    "status": 400,
+    "str": "None"
+   }
+  },
+  "app.modules.intake.interview_patient.InterviewApiError": {
+   "'texto'": {
+    "args": "('texto',)",
+    "body": "texto",
+    "status": 400,
+    "str": "texto"
+   },
+   "5": {
+    "args": "('5',)",
+    "body": 5,
+    "status": 400,
+    "str": "5"
+   },
+   "None": {
+    "args": "('None',)",
+    "body": null,
+    "status": 400,
+    "str": "None"
+   },
+   "['a']": {
+    "args": "(\"['a']\",)",
+    "body": [
+     "a"
+    ],
+    "status": 400,
+    "str": "['a']"
+   },
+   "caught_as_exception": true,
+   "is_exception": true,
+   "module": "app.modules.intake.interview_patient",
+   "name": "InterviewApiError",
+   "raised": [
+    "InterviewApiError",
+    503,
+    {
+     "error": "x"
+    }
+   ],
+   "{'error': 'falta medico'}": {
+    "args": "('falta medico',)",
+    "body": {
+     "error": "falta medico"
+    },
+    "status": 400,
+    "str": "falta medico"
+   },
+   "{'error': None}": {
+    "args": "(None,)",
+    "body": {
+     "error": null
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{'otro': 1}": {
+    "args": "(None,)",
+    "body": {
+     "otro": 1
+    },
+    "status": 400,
+    "str": "None"
+   },
+   "{}": {
+    "args": "(None,)",
+    "body": {},
+    "status": 400,
+    "str": "None"
+   }
+  }
+ },
+ "especialidad": {
+  "app.modules.intake.analysis": {
+   "blank:None": null,
+   "blank:{'doctor_id': '7'}": null,
+   "blank:{'doctor_id': 'ghost'}": null,
+   "blank:{'doctor_id': 0}": null,
+   "blank:{'doctor_id': 7}": null,
+   "blank:{'doctor_id': None}": null,
+   "blank:{}": null,
+   "empty:None": null,
+   "empty:{'doctor_id': '7'}": null,
+   "empty:{'doctor_id': 'ghost'}": null,
+   "empty:{'doctor_id': 0}": null,
+   "empty:{'doctor_id': 7}": null,
+   "empty:{'doctor_id': None}": null,
+   "empty:{}": null,
+   "first_wins:None": null,
+   "first_wins:{'doctor_id': '7'}": "Uno",
+   "first_wins:{'doctor_id': 'ghost'}": null,
+   "first_wins:{'doctor_id': 0}": null,
+   "first_wins:{'doctor_id': 7}": "Uno",
+   "first_wins:{'doctor_id': None}": null,
+   "first_wins:{}": null,
+   "junk:None": null,
+   "junk:{'doctor_id': '7'}": null,
+   "junk:{'doctor_id': 'ghost'}": null,
+   "junk:{'doctor_id': 0}": null,
+   "junk:{'doctor_id': 7}": null,
+   "junk:{'doctor_id': None}": null,
+   "junk:{}": null,
+   "missing:None": null,
+   "missing:{'doctor_id': '7'}": null,
+   "missing:{'doctor_id': 'ghost'}": null,
+   "missing:{'doctor_id': 0}": null,
+   "missing:{'doctor_id': 7}": null,
+   "missing:{'doctor_id': None}": null,
+   "missing:{}": null,
+   "none:None": null,
+   "none:{'doctor_id': '7'}": null,
+   "none:{'doctor_id': 'ghost'}": null,
+   "none:{'doctor_id': 0}": null,
+   "none:{'doctor_id': 7}": null,
+   "none:{'doctor_id': None}": null,
+   "none:{}": null,
+   "none_value:None": null,
+   "none_value:{'doctor_id': '7'}": null,
+   "none_value:{'doctor_id': 'ghost'}": null,
+   "none_value:{'doctor_id': 0}": null,
+   "none_value:{'doctor_id': 7}": null,
+   "none_value:{'doctor_id': None}": null,
+   "none_value:{}": null,
+   "other_only:None": null,
+   "other_only:{'doctor_id': '7'}": null,
+   "other_only:{'doctor_id': 'ghost'}": null,
+   "other_only:{'doctor_id': 0}": null,
+   "other_only:{'doctor_id': 7}": null,
+   "other_only:{'doctor_id': None}": null,
+   "other_only:{}": null,
+   "padded:None": null,
+   "padded:{'doctor_id': '7'}": "Pediatría",
+   "padded:{'doctor_id': 'ghost'}": null,
+   "padded:{'doctor_id': 0}": null,
+   "padded:{'doctor_id': 7}": "Pediatría",
+   "padded:{'doctor_id': None}": null,
+   "padded:{}": null,
+   "plain:None": null,
+   "plain:{'doctor_id': '7'}": "Cardiología",
+   "plain:{'doctor_id': 'ghost'}": null,
+   "plain:{'doctor_id': 0}": null,
+   "plain:{'doctor_id': 7}": "Cardiología",
+   "plain:{'doctor_id': None}": null,
+   "plain:{}": null,
+   "raises:None": null,
+   "raises:{'doctor_id': '7'}": null,
+   "raises:{'doctor_id': 'ghost'}": null,
+   "raises:{'doctor_id': 0}": null,
+   "raises:{'doctor_id': 7}": null,
+   "raises:{'doctor_id': None}": null,
+   "raises:{}": null
+  },
+  "app.modules.intake.interview_agent": {
+   "blank:None": null,
+   "blank:{'doctor_id': '7'}": null,
+   "blank:{'doctor_id': 'ghost'}": null,
+   "blank:{'doctor_id': 0}": null,
+   "blank:{'doctor_id': 7}": null,
+   "blank:{'doctor_id': None}": null,
+   "blank:{}": null,
+   "empty:None": null,
+   "empty:{'doctor_id': '7'}": null,
+   "empty:{'doctor_id': 'ghost'}": null,
+   "empty:{'doctor_id': 0}": null,
+   "empty:{'doctor_id': 7}": null,
+   "empty:{'doctor_id': None}": null,
+   "empty:{}": null,
+   "first_wins:None": null,
+   "first_wins:{'doctor_id': '7'}": "Uno",
+   "first_wins:{'doctor_id': 'ghost'}": null,
+   "first_wins:{'doctor_id': 0}": null,
+   "first_wins:{'doctor_id': 7}": "Uno",
+   "first_wins:{'doctor_id': None}": null,
+   "first_wins:{}": null,
+   "junk:None": null,
+   "junk:{'doctor_id': '7'}": null,
+   "junk:{'doctor_id': 'ghost'}": null,
+   "junk:{'doctor_id': 0}": null,
+   "junk:{'doctor_id': 7}": null,
+   "junk:{'doctor_id': None}": null,
+   "junk:{}": null,
+   "missing:None": null,
+   "missing:{'doctor_id': '7'}": null,
+   "missing:{'doctor_id': 'ghost'}": null,
+   "missing:{'doctor_id': 0}": null,
+   "missing:{'doctor_id': 7}": null,
+   "missing:{'doctor_id': None}": null,
+   "missing:{}": null,
+   "none:None": null,
+   "none:{'doctor_id': '7'}": null,
+   "none:{'doctor_id': 'ghost'}": null,
+   "none:{'doctor_id': 0}": null,
+   "none:{'doctor_id': 7}": null,
+   "none:{'doctor_id': None}": null,
+   "none:{}": null,
+   "none_value:None": null,
+   "none_value:{'doctor_id': '7'}": null,
+   "none_value:{'doctor_id': 'ghost'}": null,
+   "none_value:{'doctor_id': 0}": null,
+   "none_value:{'doctor_id': 7}": null,
+   "none_value:{'doctor_id': None}": null,
+   "none_value:{}": null,
+   "other_only:None": null,
+   "other_only:{'doctor_id': '7'}": null,
+   "other_only:{'doctor_id': 'ghost'}": null,
+   "other_only:{'doctor_id': 0}": null,
+   "other_only:{'doctor_id': 7}": null,
+   "other_only:{'doctor_id': None}": null,
+   "other_only:{}": null,
+   "padded:None": null,
+   "padded:{'doctor_id': '7'}": "Pediatría",
+   "padded:{'doctor_id': 'ghost'}": null,
+   "padded:{'doctor_id': 0}": null,
+   "padded:{'doctor_id': 7}": "Pediatría",
+   "padded:{'doctor_id': None}": null,
+   "padded:{}": null,
+   "plain:None": null,
+   "plain:{'doctor_id': '7'}": "Cardiología",
+   "plain:{'doctor_id': 'ghost'}": null,
+   "plain:{'doctor_id': 0}": null,
+   "plain:{'doctor_id': 7}": "Cardiología",
+   "plain:{'doctor_id': None}": null,
+   "plain:{}": null,
+   "raises:None": null,
+   "raises:{'doctor_id': '7'}": null,
+   "raises:{'doctor_id': 'ghost'}": null,
+   "raises:{'doctor_id': 0}": null,
+   "raises:{'doctor_id': 7}": null,
+   "raises:{'doctor_id': None}": null,
+   "raises:{}": null
+  }
+ },
+ "sniff": {
+  "app.core.photo_guard.sniff": {
+   "bytearray_png": "png",
+   "empty": null,
+   "gif": null,
+   "heic": "heic",
+   "jpg": "jpg",
+   "jpg_short": null,
+   "none": "raises TypeError",
+   "pdf": null,
+   "png": "png",
+   "png_short": null,
+   "riff_not_webp": null,
+   "str": null,
+   "svg": null,
+   "text": null,
+   "webp": "webp"
+  },
+  "app.cuentas.account_photo._sniff": {
+   "bytearray_png": [
+    "png",
+    "image/png"
+   ],
+   "empty": null,
+   "gif": null,
+   "heic": null,
+   "jpg": [
+    "jpg",
+    "image/jpeg"
+   ],
+   "jpg_short": null,
+   "none": "raises TypeError",
+   "pdf": null,
+   "png": [
+    "png",
+    "image/png"
+   ],
+   "png_short": null,
+   "riff_not_webp": null,
+   "str": null,
+   "svg": null,
+   "text": null,
+   "webp": [
+    "webp",
+    "image/webp"
+   ]
+  }
+ }
+}

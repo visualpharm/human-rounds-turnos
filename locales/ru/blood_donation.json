@@ -1,0 +1,11 @@
+{
+  "_comment": "/blood-donation page chrome. Content (lede, cuerpo, lugar, horario, nota) is pack data (enlaces.json) — no invented schedules/requirements here; the place falls back to the installation's main center.",
+  "blood_donation.h1": "Донорство крови",
+  "blood_donation.before_h": "Перед визитом",
+  "blood_donation.call": "Позвонить по номеру {phone}",
+  "blood_donation.cta": "Уточнить перед визитом",
+  "blood_donation.lede_default": "Каждая донация может помочь спасти жизнь.",
+  "blood_donation.nota_default": "Уточни график приема доноров в больнице.",
+  "blood_donation.where_h": "Где и когда сдать кровь",
+  "blood_donation.who_h": "Кто может стать донором"
+}

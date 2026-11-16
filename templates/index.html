@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="{{ '{{lang}}' }}" data-theme="{{ '{{tema}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{favicon}}' }}
+{% set home_title = sitio('brand') if brand_is_page_title() else t('home.meta.title', 'Turnos y servicios públicos en {{sitio.city}} | {{sitio.brand}}') %}
+<title>{{ home_title }}</title>
+<meta name="description" content="{{ t('home.meta.description', 'Encontrá servicios, médicos, estudios, vacunación y grupos del {{sitio.network}}. Consultá horarios y sacá turnos online.') }}">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="{{ sitio('public_origin') }}/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="{{ sitio('brand') }}">
+<meta property="og:title" content="{{ home_title }}">
+<meta property="og:description" content="{{ t('home.meta.description', 'Encontrá servicios, médicos, estudios, vacunación y grupos del {{sitio.network}}. Consultá horarios y sacá turnos online.') }}">
+<meta property="og:url" content="{{ sitio('public_origin') }}/">
+<meta property="og:image" content="{{ sitio('public_origin') }}/logo.png">
+<meta property="og:image:alt" content="{{ sitio('brand') }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ home_title }}">
+<meta name="twitter:description" content="{{ t('home.meta.description', 'Encontrá servicios, médicos, estudios, vacunación y grupos del {{sitio.network}}. Consultá horarios y sacá turnos online.') }}">
+<meta name="twitter:image" content="{{ sitio('public_origin') }}/logo.png">
+{{ '{{fuentes}}' }}
+<link rel="stylesheet" href="{{ static('human-rounds.css') }}">
+{{ static_manifest() }}
+<style>
+  .wrap{--home-gap-s:12px;--home-gap-m:24px;--home-gap-l:40px;
+    max-width:1120px;margin:0 auto;padding:0 24px 80px;}
+  /* nav.js mounts after the first parse. Reserve its measured flow footprint
+     on this direct Jinja shell so the hero does not move when the real nav
+     arrives. The compact phone nav is one pixel shorter because its 44px
+     burger, rather than the 45px desktop mark, is the tallest child. */
+  :root{--stznav-h:92px;}
+  #stznav:empty{display:block;min-height:92px;}
+  @media(max-width:420px){:root{--stznav-h:73px;}#stznav:empty{min-height:73px;}}
+  /* Link de contenido: sin `text-decoration:none` (el tema pinta el subrayado
+     tenue) y sin peso propio — hereda el de la frase que lo contiene
+     (the product owner, 2026-09-14: "if it's in regular text, regular"). */
+  a.stz-link{display:inline-block;color:var(--link,var(--accent));}
+  a.stz-link:hover{color:var(--accent-hover);}
+  .hero{margin:var(--home-gap-l) 0;}
+  .hero h1{margin:0 0 12px;font-size:clamp(30px,4.1vw,44px);line-height:1.14;font-weight:700;letter-spacing:-.035em;text-wrap:balance;}
+  .hero p{margin:0;font-size:18px;line-height:1.5;color:var(--text);max-width:620px;text-wrap:pretty;}
+  /* Sólo el BUSCADOR queda fijo al scrollear; el menú superior NO (responsable del producto,
+     2026-09-15: "make the search sticky, but not the menu"): la barra de nav
+     de la portada vuelve a ser estática y se va con la página — el override
+     de #stznav acá gana por orden de hoja al sticky global de
+     human-rounds.css, que sigue vigente en el resto de las páginas (chat
+     alcanzable, 2026-08-05). La franja es TRANSPARENTE (responsable del producto, 2026-10-25:
+     «el input debe tirar sombra, no una sombra sobre fondo blanco»): sólo se
+     ve la caja con su sombra y el contenido pasa por debajo. El aire de
+     arriba pegado lo da `top`, no un relleno; el margen superior sólo
+     conserva el lugar en reposo. La caja ya
+     es casi opaca (--panel al 94 % + blur), así el encabezado del directorio
+     no se lee a través del texto del campo. */
+  .searchbar{position:sticky;top:10px;z-index:5;background:transparent;padding:0;margin:10px 0 var(--home-gap-s);}
+  /* Pegado arriba, el texto que pasa por debajo ya no queda rebanado por el
+     borde de la caja (responsable del producto 05.11, a 1440 un renglón cortado por la mitad):
+     detrás de la caja la página se funde con su propio fondo y se desvanece
+     en los 20px de abajo. No es una franja: no tiene borde ni color propio,
+     la caja sigue tirando su sombra sobre la página. En reposo no hay nada. */
+  .searchbar::before{content:"";position:absolute;z-index:-1;left:0;right:0;top:-10px;bottom:-20px;pointer-events:none;
+    background:linear-gradient(to bottom,var(--bg) 0,var(--bg) calc(100% - 20px),transparent);
+    opacity:0;transition:opacity .12s;}
+  .searchbar.searchbar--stuck::before{opacity:1;}
+  #stznav{position:static;}
+  /* Buscador prominente del mockup: caja con lupa adentro, más aire y sombra
+     suave — no un input pelado (handoff Claude Design). */
+  .searchbox{display:flex;align-items:center;gap:13px;cursor:text;min-height:54px;
+    background:color-mix(in srgb,var(--panel) 94%,transparent);backdrop-filter:blur(12px);
+    border:1px solid var(--border);border-radius:14px;padding:5px 20px;
+    box-shadow:0 12px 30px rgba(35,47,39,.14),0 3px 9px rgba(35,47,39,.08);
+    transition:border-color .12s,box-shadow .12s;}
+  /* La paleta Human Rounds banea la sombra ("las tarjetas se separan con
+     borde, no con sombra") — el mockup del home la muestra plana. El otro
+     tema (verde) no cambia: sigue con la sombra + blur que ya tenía. */
+  :root[data-theme="humanrounds"] .searchbox{box-shadow:none;backdrop-filter:none;background:var(--panel);}
+  .searchbox-ico{flex-shrink:0;width:24px;height:24px;background:var(--text-2);
+    -webkit-mask:url(/static/icons/search-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/search-sf-regular.svg) center/contain no-repeat;}
+  .searchbox input{flex:1;min-width:0;border:0;background:none;outline:none;
+    min-height:44px;font-size:19px;color:var(--text);font-family:inherit;padding:0;}
+  .searchbox input::placeholder{color:var(--text-3);}
+  .searchbox:focus-within{border-color:var(--focus-border);box-shadow:0 0 0 3px var(--focus-ring),var(--shadow-card);}
+  /* Ejemplos de búsqueda (demo review 2026-11-15): oscuros y de 16px, y los
+     MISMOS en el teléfono y en la computadora: si no entran en una línea
+     pasan a la siguiente, nunca se esconden ni se cortan (antes 13.5px gris
+     claro, una sola línea con los que no entraban ocultos). */
+  .ejemplos{margin:0 2px var(--home-gap-l);font-size:16px;line-height:1.4;color:var(--text);
+    display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--home-gap-s);}
+  .ejemplos a{display:inline-flex;align-items:center;min-height:44px;color:var(--link,var(--accent));white-space:nowrap;}
+  .ejemplos a:hover{color:var(--link-hover,var(--accent-hover));}
+  #directorio-host .dir-sec{margin:0;}
+  #directorio-host .dir-sec+.dir-sec,.sec{margin:var(--home-gap-l) 0 0;}
+  /* El directorio y las tiles de centros los dibuja el JS después de traer
+     /api/services y /api/centers. Con los scripts en `defer` el primer pintado
+     llega ANTES que esos datos, así que sin reservar lugar el pie de página
+     arrancaba visible y de golpe se iba 4000px para abajo: eso es el 0,235 de
+     CLS que midió Lighthouse. Reservando espacio el pie nace debajo del fold y
+     el relleno posterior ya no mueve nada que se esté viendo.
+     Va con `:empty` a propósito: la reserva DESAPARECE sola en cuanto el
+     contenedor tiene hijos, así que nunca deja un hueco si el contenido rinde
+     más corto — y no hay que mantener sincronizada ninguna altura exacta. */
+  #directorio-host:empty{min-height:460px;}
+  /* The map has a fixed height (centers-map.mjs: 560 px on a phone, 520
+     above) plus the row of CAPS Móvil under it. */
+  #centros:empty{min-height:650px;}
+  @media(min-width:601px){
+    #centros:empty{min-height:610px;}
+  }
+  @media(min-width:900px){
+    #directorio-host:empty{min-height:640px;}
+  }
+  /* Un solo título de sección en la portada (tokens.css --section-h-*): el
+     de «Centros de salud», el de cada grupo del directorio (.dir-h) y el de
+     «Guías y trámites» miden lo mismo. */
+  .sec-h{margin:0 0 var(--home-gap-s);font-size:var(--section-h-size);line-height:1.3;font-weight:var(--section-h-weight);letter-spacing:-.01em;color:var(--text);}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:13px;overflow:hidden;}
+
+  /* filas de resultado de búsqueda: estado fuerte a la IZQUIERDA */
+  .srow{display:grid;grid-template-columns:118px 1fr;align-items:center;gap:14px;padding:12px 16px;
+    text-decoration:none;color:var(--text);border-top:1px solid var(--border);transition:background .1s;}
+  .srow:first-child{border-top:0;}
+  .srow:hover{background:var(--hover-bg);}
+  .s-status{display:flex;flex-direction:column;gap:2px;min-width:0;}
+  .ss-top{display:flex;align-items:center;gap:6px;font:600 13px/1.2 var(--font);letter-spacing:-.01em;}
+  .ss-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:currentColor;}
+  .ss-sub{font-size:13px;line-height:1.25;color:var(--text-4);}
+  .s-status--green .ss-top{color:var(--done);}
+  .s-status--amber .ss-top{color:var(--warn);}
+  .s-status--accent .ss-top{color:var(--accent);}
+  .s-status--neutral .ss-top{color:var(--text-2);}
+  .s-status--gray .ss-top{color:var(--text-4);}
+  .s-status--gray .ss-dot{background:var(--border-strong);}
+  .s-main{min-width:0;}
+  .s-name{font-weight:600;font-size:14.5px;letter-spacing:-.01em;}
+  /* Menos contraste (responsable del producto, 2026-09-14): tinta #2a2521 en vez de casi negro, y
+     el hover NO cambia de color — lo dice el subrayado del tema. */
+  :root[data-theme="humanrounds"] .s-name{color:#2a2521;}
+  .srow:hover .s-name{color:var(--link,var(--accent));}
+  .s-sub{font-size:13px;color:var(--text-3);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .agenote{font-size:13px;color:var(--text-3);margin:10px 2px 0;}
+  .agenote a{color:var(--accent);}
+
+  .empty{padding:26px 4px;color:var(--text-4);font-size:14px;}
+  .citizen{margin:var(--home-gap-l) 0 0;}
+  {#- Guías y trámites (sitio.json info_links): a plain list of the pack's
+      informational pages, so the home page links each of them. Only when
+      the pack has them: a pack without the key gets the same bytes. #}
+  {%- set info = info_links() %}
+  {%- if info %}
+  .info-links{margin:var(--home-gap-l) 0 0;}
+  {#- Short links at their own width, one after another (demo review
+      2026-11-15: six short links stretched over three wide columns). #}
+  .info-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 32px;}
+  .info-links h2{margin:0 0 var(--home-gap-s);font-size:var(--section-h-size);line-height:1.3;font-weight:var(--section-h-weight);letter-spacing:-.01em;}
+  .info-list a{display:flex;align-items:center;min-height:44px;font-size:16px;line-height:1.4;color:var(--link,var(--accent));}
+  .info-list a:hover{color:var(--link-hover,var(--accent-hover));}
+  {%- endif %}
+  .campaign-list{display:flex;flex-direction:column;gap:12px;}
+  .campaign-banner{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;
+    padding:20px 22px;border:1px solid var(--border);border-radius:14px;background:var(--panel);}
+  .campaign-banner h3{margin:0 0 5px;font-size:19px;letter-spacing:-.015em;}
+  .campaign-banner p{margin:0;max-width:680px;color:var(--text);font-size:16px;line-height:1.48;text-wrap:pretty;}
+  .campaign-cta{position:relative;display:inline-flex;align-items:center;justify-content:center;justify-self:start;min-height:44px;
+    padding:10px 16px;border-radius:var(--btn-radius,10px);background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);text-decoration:none;font-weight:650;white-space:nowrap;
+    transition:filter .12s,transform .1s,background .12s;overflow:hidden;}
+  .campaign-cta:hover{background-image:var(--hover-fill);color:var(--btn-fg,#fff);}.campaign-cta:active{transform:translateY(1px);}
+  /* Los tres botones son iguales: rótulo solo, del ancho de su texto, sin
+     flecha en uno y no en los otros (demo review 2026-11-15). */
+  @media(min-width:900px){
+    .campaign-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+    .campaign-banner{display:flex;flex-direction:column;align-items:stretch;gap:14px;padding:18px;min-width:0;}
+    .campaign-banner>div{min-width:0;}
+    .campaign-cta{align-self:flex-start;margin-top:auto;}
+  }
+  /* The footer (shape, edge, type) is ONE shared component in human-rounds.css:
+     no bleed or padding here, so it starts on the same left edge as the page
+     (2026-10-25: the -16px/-24px bleed met a zero padding and left the text
+     flush against the screen edge). */
+  @media(max-width:600px){
+    .wrap{padding:0 16px 60px;}
+    .hero{margin-top:var(--home-gap-l);}
+    .searchbox{gap:11px;padding:5px 16px;}
+    .searchbox input{font-size:18px;}
+    .srow{grid-template-columns:96px 1fr;gap:11px;padding:12px 14px;}
+    .s-sub{white-space:normal;}
+    .campaign-banner{grid-template-columns:1fr;gap:15px;padding:18px;}
+  }
+</style>
+</head>
+<body>
+<header id="stznav"></header>
+{{ '{{i18n_bootstrap}}' }}
+<script type="module" src="{{ static('platform/nav.mjs') }}"></script>
+{% include "_chat_bootstrap.html" %}
+<main class="wrap">
+
+  <section class="hero">
+    {#- The installation's own headline (sitio.json hero_title / hero_lede)
+        wins over the engine's; the emergency number lives in the footer of
+        every page, so the lede no longer repeats it. #}
+    <h1>{% if sitio('hero_title') %}{{ sitio('hero_title') }}{% else %}{{ t('home.hero.title', 'Turnos de la medicina pública de {{sitio.city}}') }}{% endif %}</h1>
+    <p>{% if sitio('hero_lede') %}{{ sitio('hero_lede') }}{% else %}{{ t('home.hero.lede', 'Sacá turnos y encontrá los servicios {{sitio.network_links_html}}.') }}{% endif %}</p>
+  </section>
+
+  <div class="searchbar">
+    <label class="searchbox" for="q">
+      <span class="searchbox-ico" aria-hidden="true"></span>
+      <input id="q" type="search" autocomplete="off" placeholder="{{ t('home.search.placeholder', 'Servicio, estudio o especialidad') }}" aria-label="{{ t('home.search.aria_label', 'Buscar servicio, estudio o especialidad') }}">
+    </label>
+  </div>
+  <script>
+  /* Marca el buscador cuando queda pegado arriba (top:10px): recién ahí se
+     enciende el fundido de .searchbar::before. Sin IntersectionObserver no
+     hay fundido, el buscador sigue igual. */
+  (function () {
+    var bar = document.currentScript && document.currentScript.previousElementSibling;
+    if (!bar || typeof IntersectionObserver !== "function") return;
+    new IntersectionObserver(function (entries) {
+      var e = entries[entries.length - 1];
+      bar.classList.toggle("searchbar--stuck", e.intersectionRatio < 1 && e.boundingClientRect.top < 12);
+    }, { rootMargin: "-11px 0px 0px 0px", threshold: [1] }).observe(bar);
+  })();
+  </script>
+  <!-- ejemplos de búsqueda: cada uno TIENE que devolver resultados — enseñan
+       qué entiende el buscador (especialidad, estudio, palabra clave que el
+       catálogo no usa, localidad, apellido). Ya no se escriben a mano: los
+       elige scripts/search_examples.py contra los datos del pack activo,
+       verificando cada término con el buscador REAL (platform/search.mjs), y los deja
+       en sitio.json → `search_examples`. Los términos NO se traducen: son
+       consultas contra un catálogo escrito en el idioma del pack
+       (the product owner/i18n.md, 2026-07-30). -->
+  <p class="ejemplos" id="ejemplos">{{ t('home.examples.label', 'Probá:') }}
+    {{ sitio('search_examples_html') }}
+  </p>
+
+  <div id="resultados" style="display:none;"></div>
+  <div id="directorio-host"></div>
+
+  {#- No heading over these three cards (Pinamar press office, 2026-10-22:
+      telemedicine is not «Buen vecino»): each card names itself. #}
+  <section class="citizen">
+    <div class="campaign-list">
+      <article class="campaign-banner">
+        <div><h3>{{ t('home.citizen.blood_title', 'Donar sangre') }}</h3><p>{{ t('home.citizen.blood_text', 'Una acción que salva vidas.') }}</p></div>
+        <a class="campaign-cta" href="/blood-donation">{{ t('home.citizen.blood_cta', 'Coordiná tu donación') }}</a>
+      </article>
+      <article class="campaign-banner">
+        <div><h3>{{ t('home.citizen.tele_title', 'Telemedicina') }}</h3><p>{{ t('home.citizen.tele_text', 'Consulta médica desde tu casa, las 24 horas.') }}</p></div>
+        <a class="campaign-cta campaign-cta--tele" href="/telemedicine"><span class="campaign-cta-label">{{ t('home.citizen.tele_cta', 'Consultá por telemedicina') }}</span></a>
+      </article>
+      <article class="campaign-banner">
+        <div><h3>{{ t('home.citizen.zoonosis_title', 'Cuidá a tus animales') }}</h3><p>{{ t('home.citizen.zoonosis_text', 'Castración, antirrábica y cuidado.') }}</p></div>
+        <a class="campaign-cta" href="/zoonosis">{{ t('home.citizen.zoonosis_cta', 'Coordiná una castración') }}</a>
+      </article>
+    </div>
+  </section>
+
+  {%- if info %}
+  <section class="info-links" aria-labelledby="info-links-title">
+    <h2 id="info-links-title">{{ t('home.info.title', 'Guías y trámites') }}</h2>
+    <ul class="info-list">
+      {% for row in info %}<li><a href="{{ row.href }}">{{ row.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </section>
+  {%- endif %}
+
+  <div class="sec" id="centros-sec">
+    <h2 class="sec-h">{{ t('home.centers.heading', 'Centros de salud') }}</h2>
+    <div id="centros"></div>
+  </div>
+
+{% include "_site_footer.html" -%}
+</main>
+
+<script>
+(function () {
+"use strict";
+var directoryMod = import("{{ static('platform/directory.mjs') }}");
+directoryMod.catch(function () {});
+// The field is usable before deferred i18n/catalog boot completes. Remember
+// any edit immediately so a URL fallback never overwrites a fast typist —
+// including someone who explicitly clears the URL's suggested query.
+var homeQuery = document.getElementById("q");
+var homeQueryEdited = false;
+var initialQ = new URLSearchParams(window.location.search).get("q") || "";
+// URL state belongs to visible input, not successful catalog/module loading.
+// Keep one implementation for early typing, later typing and example clicks.
+function syncUrl(q) {
+  try {
+    var u = new URL(window.location.href);
+    if (q) u.searchParams.set("q", q); else u.searchParams.delete("q");
+    history.replaceState(null, "", u.pathname + u.search + u.hash);
+  } catch (e) {}
+}
+if (homeQuery) homeQuery.addEventListener("input", function () {
+  homeQueryEdited = true;
+  syncUrl(homeQuery.value);
+});
+var Search = null;
+var searchFailed = false;
+var searchUrl = (typeof window !== "undefined" && window.SANA_STATIC && window.SANA_STATIC["platform/search.mjs"]) || null;
+if (!searchUrl && typeof console !== "undefined" && console.error) {
+  console.error("[static] platform/search.mjs is not in window.SANA_STATIC (the shell must emit static_fingerprint.manifest_script())");
+}
+var searchReady = searchUrl
+  ? import(searchUrl).then(function (m) { Search = m; return m; })
+  : Promise.reject(new Error("[static] platform/search.mjs is not in window.SANA_STATIC"));
+searchReady = searchReady.catch(function () { searchFailed = true; Search = null; return null; });
+var Listing = null;
+var listingFailed = false;
+var listingUrl = (typeof window !== "undefined" && window.SANA_STATIC && window.SANA_STATIC["platform/listing.mjs"]) || null;
+if (!listingUrl && typeof console !== "undefined" && console.error) {
+  console.error("[static] platform/listing.mjs is not in window.SANA_STATIC (the shell must emit static_fingerprint.manifest_script())");
+}
+var listingReady = listingUrl
+  ? import(listingUrl).then(function (m) { Listing = m; return m; })
+  : Promise.reject(new Error("[static] platform/listing.mjs is not in window.SANA_STATIC"));
+listingReady = listingReady.catch(function () { listingFailed = true; Listing = null; return null; });
+/* Los imports de arriba no bloquean el primer pintado (el
+   LCP de la home es el texto del hero). Este bloque
+   -- que sí depende de Search/Listing -- se
+   engancha a DOMContentLoaded. */
+document.addEventListener("DOMContentLoaded", function () {
+var $ = function (s, r) { return (r || document).querySelector(s); };
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+  });
+}
+function norm(s) {
+  return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+/* Interface strings via the catalog (i18n.js loads before this page's own
+   script). Third argument = the Spanish this call site replaced, so with no
+   catalog the page renders exactly what it always did. */
+var I18n = null;
+  var i18nReady = (typeof window !== "undefined" && window.SANA_STATIC && window.SANA_STATIC["platform/i18n.mjs"])
+    ? import(window.SANA_STATIC["platform/i18n.mjs"]).then(function (m) { I18n = m; return m; })
+    : Promise.resolve(null);
+  // A rejected catalog must not leave the home search permanently unwired.
+  // The visible strings below retain their server-rendered Spanish fallbacks.
+  i18nReady = i18nReady.catch(function () { I18n = null; return null; });
+  function T(key, vars, fallback) {
+  return I18n ? I18n.t(key, vars, fallback) : (fallback || key);
+}
+// Number agreement through i18n.mjs tn() — «1 opción», never «1 opciones».
+function Tn(key, n, vars, one, other) {
+  if (I18n && I18n.tn) return I18n.tn(key, n, vars, one, other);
+  var single = Number(n) === 1 && typeof one === "string", all = Object.assign({ n: n }, vars), text = T(single ? key + "_one" : key, null, single ? one : other);
+  return Object.keys(all).reduce(function (s, k) { return s.split("{" + k + "}").join(String(all[k])); }, text);
+}
+i18nReady.then(function () {
+
+var SERV = [], CENT = {}, CENTLIST = [], MAPA = null, MEDS = [], ENLACES = [];
+var q = homeQuery || $("#q");
+if (initialQ && !homeQueryEdited && !q.value) {
+  q.value = initialQ;
+  $("#ejemplos").style.display = "none";
+}
+var ULTIMOS_RES = 0;  // resultados del último render — lo consume el log de búsquedas
+var NOW = new Date();
+var EDAD = null; // se decide para quién es el turno dentro del flujo, no en la home
+
+/* age.mjs (el ruteo por edad) es un módulo ES canónico servido con huella: un
+   archivo servido no puede conocer su URL vigente, así que el manifiesto de
+   <head> la publica como window.SANA_STATIC y staticUrl() resuelve a través
+   de ese mapa — fail-closed (null + console.error, nunca una URL fallback
+   hardcodeada), la misma forma que islands.mjs's resolveUrl(). El import
+   arranca ya, en paralelo con el catálogo, y aterriza en un binding LOCAL —
+   nunca un global. Si una búsqueda ya está pintada cuando el módulo llega
+   (se renderizó sin filtro por edad), se vuelve a renderizar para que el
+   filtro aplique; import fallado → el binding queda null y el filtro por
+   edad no aplica, el camino de siempre. */
+function staticUrl(name) {
+  var m = (typeof window !== "undefined") && window.SANA_STATIC;
+  var u = m && m[name];
+  if (!u && typeof console !== "undefined" && console.error) console.error("[static] " + name + " is not in window.SANA_STATIC (the shell must emit static_fingerprint.manifest_script())");
+  return u || null;
+}
+var ageMod = null; // namespace de platform/age.mjs cuando el import resuelve
+(function () {
+  var u = staticUrl("platform/age.mjs");
+  var carga = u ? import(u) : Promise.reject(new Error("[static] platform/age.mjs is not in window.SANA_STATIC"));
+  carga.then(function (mod) {
+    ageMod = mod;
+    // Sólo con el catálogo ya cargado: re-renderizar antes pintaría "no
+    // encontramos nada" para una búsqueda que sí tiene resultados.
+    if (q.value && SERV.length && Search && Listing) renderResultados(q.value);
+  }).catch(function () { /* fail-open: sin módulo no hay filtro por edad */ });
+})();
+
+/* tiles.mjs is the canonical renderer. Start its immutable import alongside
+   the catalogs and keep the namespace local to this page; there is no
+   compatibility browser global. */
+var tilesUrl = "{{ static('platform/tiles.mjs') }}";
+var tilesMod = tilesUrl
+  ? import(tilesUrl)
+  : Promise.reject(new Error("[static] tiles.mjs URL was not rendered by the shell"));
+// The catalog request may finish after a fast module failure. Mark the
+// rejection handled now; renderCentros() still takes the same promise and
+// turns that failure into the visible retry message below.
+tilesMod.catch(function () {});
+/* The map of the centers (the product owner, 2026-11-05): centers-map.mjs lays the names
+   over the pack's drawing; without it the plain list of tiles.mjs stays. */
+var mapUrl = "{{ static('platform/centers-map.mjs') }}";
+var mapMod = mapUrl
+  ? import(mapUrl).catch(function () { return null; })
+  : Promise.resolve(null);
+
+/* Los resultados se dibujan con el MISMO componente que todo el sitio
+   (listing.js): orden canónico entidad-primero, un dato por celda. El row
+   builder en sí vive en platform/search.mjs (Search.servRow) — "Subí tu orden"
+   (preparacion.js) arma sus filas de servicio con el MISMO builder, así que
+   vive una sola vez (responsable del producto, 2026-07-16). */
+function servRow(s) {
+  return Search.servRow(s, CENT);
+}
+/* Claves del registro canónico de listing.js — orden entidad-primero en todo
+   el sitio: entidad · contexto · Orden · Próxima disponibilidad (la pastilla
+   ES el botón cuando hay turno reservable). */
+var SERV_COLS = ["servicio", { preset: "centro", label: T("home.results.context", null, "Atención") }, "orden", "proximo"];
+var MED_COLS = ["medico", "especialidad", "orden", "proximo"];
+
+/* La búsqueda filtra servicios y médicos; sin búsqueda se ve el directorio.
+   Cada servicio puede traer `palabras` (sinónimos que la gente busca: pedido de
+   La contraparte técnica 2026-07-09 — "certificado", "control de salud", "chequeo" tienen que
+   llevar al consultorio correcto). Si la cuenta tiene edad, las opciones que no
+   corresponden a esa edad se apartan (pediatría vs adultos), con link para verlas. */
+function campoServicio(s) {
+  var c = CENT[s.centro] || {};
+  return { principal: [s.nombre],
+           resto: [s.categoria, c.name, s.sede, s.horario].concat(s.palabras || []),
+           excluidas: s.palabras_excluidas || [] };
+}
+function campoMedico(m) {
+  return { principal: [m.nombre],
+           resto: [m.especialidad, m.centro].concat(m.palabras || []),
+           excluidas: m.palabras_excluidas || [] };
+}
+/* Resultados que llevan a una página informativa, no a un consultorio
+   (telemedicina/zoonosis/donar sangre — reunión hospital 2026-08-27): MISMO
+   motor de búsqueda que servicios/médicos (Search.buscar, mismos tiers +
+   stemming + exclusiones — nunca un camino paralelo), sólo cambia el campo:
+   el nombre pesa como principal y las palabras clave (síntomas incluidos)
+   como resto, igual que un servicio y sus sinónimos. */
+function campoEnlace(e) {
+  return { principal: [e.nombre], resto: (e.palabras || []),
+           excluidas: e.palabras_excluidas || [] };
+}
+function enlaceRow(e) {
+  return { nombre: e.nombre, href: e.href, centro: e.descripcion || "", centro_href: "",
+           orden: null,
+           proximo: { kind: "turno", action: e.accion_texto || "", nota: e.disponibilidad || "", sort: "0" },
+           turno_href: e.accion_href || e.href, info_href: e.href };
+}
+// Vocabulario SOLO para "quizás quisiste decir…" (Search.sugerirQuery):
+// nombres propios (médico, centro) y horarios quedan AFUERA a propósito —
+// corregir un typo random contra el apellido de un médico real es un
+// resultado sin sentido, no una ayuda (responsable del producto, 2026-08-04;
+// por ejemplo, "pelegrina" corregido a "pellegrini", un apellido). Sólo el vocabulario curado por el
+// admin (especialidad/categoría del servicio + sinónimos) es candidato.
+function vocabServicio(s) {
+  return { principal: [s.nombre], resto: [s.categoria].concat(s.palabras || []) };
+}
+function vocabMedico(m) {
+  return { principal: [m.especialidad], resto: m.palabras || [] };
+}
+// Match + orden por relevancia viven en platform/search.mjs (Search.buscar):
+// stemming de profesiones (ginecólogo→Ginecología) + tiers nombre-primero
+// (un match en el NOMBRE gana a un match en sinónimos), popularidad dentro
+// de cada tier. El nombre va como campo principal; el resto desempata.
+function buscarTodo(q, verTodas) {
+  var svs = Search.buscar(SERV, q, campoServicio);
+  var otras = [];
+  if (EDAD != null && ageMod && !verTodas) {
+    var aptos = [];
+    svs.forEach(function (s) {
+      (ageMod.aptoPorEdad(s, EDAD).ok ? aptos : otras).push(s);
+    });
+    svs = aptos;
+  }
+  var mds = Search.buscar(MEDS, q, campoMedico);
+  var lnks = Search.buscar(ENLACES, q, campoEnlace);
+  // Los centros por su nombre y dirección («hospital» → el hospital, con su
+  // dirección): mismo motor, filas del mismo componente que los servicios.
+  var cens = Search.buscar(CENTLIST.map(Search.centroRow), q, Search.centroCampos);
+  // `lnks` son filas ya armadas: primero las páginas informativas, después
+  // los centros. Un centro cuya página ES una página informativa (Zoonosis →
+  // /zoonosis) no se repite si esa página ya salió como resultado.
+  var filasLnk = lnks.map(enlaceRow);
+  var vistos = {};
+  filasLnk.forEach(function (r) { vistos[r.href] = true; });
+  cens = cens.filter(function (r) { return !vistos[r.href]; });
+  return { svs: svs, mds: mds, otras: otras, lnks: filasLnk.concat(cens) };
+}
+
+function renderResultados(q, verTodas) {
+  if (!Search || !Listing) return;
+  var res = $("#resultados"), dir = $("#directorio-host"), cen = $("#centros-sec");
+  q = norm(q || "");
+  $("#ejemplos").style.display = q ? "none" : "";
+  if (!q) {
+    res.style.display = "none";
+    dir.style.display = "";
+    cen.style.display = "";
+    return;
+  }
+  var r = buscarTodo(q, verTodas);
+  // Cero resultados → "quizás quisiste decir…" (como Google): se corrige el
+  // query contra el vocabulario CURADO (especialidad/categoría + sinónimos,
+  // nunca nombres propios) y, SOLO si el corregido trae algo, se muestra eso
+  // en vez del vacío — nunca a ciegas.
+  var sugerido = null;
+  if (!r.svs.length && !r.mds.length && !r.otras.length && !r.lnks.length) {
+    var q2 = Search.sugerirQuery(
+      [{ rows: SERV, getCampos: vocabServicio }, { rows: MEDS, getCampos: vocabMedico }], q);
+    if (q2) {
+      var r2 = buscarTodo(q2, verTodas);
+      if (r2.svs.length || r2.mds.length || r2.otras.length || r2.lnks.length) { r = r2; sugerido = q2; }
+    }
+  }
+  var svs = r.svs, mds = r.mds, otras = r.otras, lnks = r.lnks;
+  ULTIMOS_RES = svs.length + mds.length + otras.length + lnks.length;
+  res.innerHTML = "";
+  if (!svs.length && !mds.length && !otras.length && !lnks.length) {
+    res.innerHTML = '<p class="empty">'
+      + esc(T("home.results.empty", { q: q },
+              "No encontramos nada para “{q}”. Probá con otra palabra.")) + "</p>";
+  } else {
+    if (sugerido) {
+      var nota = document.createElement("p");
+      nota.className = "agenote";
+      nota.textContent = T("home.results.suggested", { q: q, s: sugerido },
+        "No encontramos nada para “" + q + "” — te mostramos resultados de “" + sugerido + "”.");
+      res.appendChild(nota);
+    }
+    // Los servicios informativos ocupan filas normales en la MISMA tabla que
+    // los consultorios. Van primero, pero no tienen un diseño paralelo.
+    // Sin títulos "Servicios"/"Médicos": son resultados de lo que buscaste y el
+    // encabezado de cada tabla ya dice SERVICIO / MÉDICO — repetir el rótulo
+    // arriba es duplicar el dato (responsable del producto, 2026-07-12 y 2026-07-16).
+    if (svs.length || lnks.length) {
+      var m1 = document.createElement("div");
+      res.appendChild(m1);
+      // el orden ya lo decidió Search.buscar (relevancia + popularidad):
+      // defaultSort:false le dice a listing.js que lo respete tal cual.
+      Listing.render(m1, { cols: SERV_COLS, rows: lnks.concat(svs.map(servRow)),
+        options: { search: false, sort: false, profile: false, defaultSort: false } });
+    }
+    if (mds.length) {
+      var m2 = document.createElement("div");
+      // aire entre la tabla de servicios y la de médicos: son dos tablas
+      // distintas, no filas de la misma (responsable del producto, 2026-07-16).
+      if (svs.length || lnks.length) m2.style.marginTop = "44px";
+      res.appendChild(m2);
+      Listing.render(m2, { cols: MED_COLS, rows: mds,
+        options: { title: "", search: false, sort: false, profile: false, defaultSort: false } });
+    }
+    // si servicios y médicos colapsaron a la MISMA nota, dejarla una sola
+    // vez y al final (ui-rules: cada dato aparece una vez en pantalla)
+    var notes = res.querySelectorAll(".lst-note");
+    for (var i = 0; i < notes.length - 1; i++)
+      for (var j = i + 1; j < notes.length; j++)
+        if (notes[j].textContent === notes[i].textContent) { notes[i].remove(); break; }
+    if (otras.length) {
+      var note = document.createElement("p");
+      note.className = "agenote";
+      note.innerHTML = esc(Tn("home.results.other_ages", otras.length, null,
+              "{n} opción es para otras edades", "{n} opciones son para otras edades"))
+        + ' — <a href="#" id="ver-otras">'
+        + esc(T("home.results.other_ages_show", null, "mostrarlas")) + "</a>";
+      res.appendChild(note);
+      $("#ver-otras", note).addEventListener("click", function (ev) {
+        ev.preventDefault();
+        renderResultados($("#q").value, true);
+      });
+    }
+  }
+  res.style.display = "";
+  dir.style.display = "none";
+  // los tiles de centros abajo parecen resultados de la búsqueda — se esconden
+  cen.style.display = "none";
+}
+
+function renderBusquedaNoDisponible() {
+  var res = $("#resultados"), dir = $("#directorio-host"), cen = $("#centros-sec");
+  if (!res) return;
+  // Clearing a failed search remains usable without Search/Listing: return to
+  // the server-rendered directory and centers instead of leaving stale error
+  // results on screen.
+  if (!q.value) {
+    res.innerHTML = "";
+    res.style.display = "none";
+    if (dir) dir.style.display = "";
+    if (cen) cen.style.display = "";
+    return;
+  }
+  res.innerHTML = '<p class="empty">' + esc(T("home.results.unavailable", null,
+    "No pudimos buscar los turnos ahora. Recargá para intentar de nuevo.")) + "</p>";
+  res.style.display = "";
+  if (dir) dir.style.display = "none";
+  if (cen) cen.style.display = "none";
+}
+
+// The home shows the centers on a map (centers-map.mjs, product owner 2026-11-05): a
+// dot per PLACE and the names over the pack's drawing, each name opening the
+// route in Google Maps; centers without a point (CAPS Móvil) in rows under
+// it. Without a map in the pack (/api/centers' `mapa`) it is the compact list
+// of tiles.mjs: one row per place with an icon-only «cómo llegar» button.
+// The photo tiles stay on /centers.
+function renderCentros() {
+  // bookables primero.
+  var order = CENTLIST.filter(function (c) { return c.bookable; })
+    .concat(CENTLIST.filter(function (c) { return !c.bookable; }));
+  return Promise.all([tilesMod, mapMod]).then(function (mods) {
+    if (mods[1] && MAPA) mods[1].render($("#centros"), order, MAPA, T, mods[0]);
+    else mods[0].renderList($("#centros"), order, T);
+  }).catch(function () {
+    $("#centros").textContent = T("upload.result.load_error", null,
+      "No pudimos cargar esta pantalla. Recargá para intentar de nuevo.");
+  });
+}
+
+directoryMod.then(function (mod) {
+  mod.render($("#directorio-host"));
+}).catch(function () {
+  $("#directorio-host").textContent = T("upload.result.load_error", null,
+    "No pudimos cargar esta pantalla. Recargá para intentar de nuevo.");
+});
+
+/* /api/directory NO va acá: lo pide directory.mjs arriba, y esta
+   copia no se leía nunca (res[2] no se usaba). Era un round trip entero de
+   más, en paralelo con el bueno y sin caché que lo deduplique (la respuesta
+   es `no-store`), sobre un origen que está a ~0,8 s del paciente. */
+Promise.all([
+  fetch("/api/services").then(function (r) { return r.json(); }),
+  fetch("/api/centers").then(function (r) { return r.json(); }),
+]).then(function (res) {
+  SERV = (res[0] && res[0].servicios) || [];
+  CENTLIST = (res[1] && res[1].centros) || [];
+  MAPA = (res[1] && res[1].mapa) || null;
+  CENTLIST.forEach(function (c) { CENT[c.slug] = c; });
+  renderCentros();
+  // qué busca la gente: misma analítica que el buscador de las tablas
+  // (listing.js) — query asentada con debounce, flush en blur/Enter
+  q.addEventListener("input", function () {
+    if (Search && Listing) renderResultados(q.value);
+    else if (searchFailed || listingFailed) renderBusquedaNoDisponible();
+    if (Search && Listing) Listing.logSearch(q.value, ULTIMOS_RES);
+  });
+  q.addEventListener("blur", function () {
+    if (Search && Listing) Listing.flushSearchLog(q.value, ULTIMOS_RES);
+  });
+  q.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && Search && Listing) Listing.flushSearchLog(q.value, ULTIMOS_RES);
+  });
+  // los ejemplos llenan el buscador sin recargar (el href /?q= queda como
+  // fallback real para middle-click / sin JS)
+  var ej = $("#ejemplos");
+  if (ej) ej.addEventListener("click", function (ev) {
+    var a = ev.target.closest("a"); if (!a) return;
+    ev.preventDefault();
+    q.value = a.textContent;
+    renderResultados(q.value);
+    syncUrl(q.value);
+  });
+  // A fast typist can enter text before the catalog requests finish and
+  // before the input listener above exists. Never discard that visible
+  // value: replay it once the data is ready. A value the person already
+  // typed wins over the URL's initial fallback.
+  if (!homeQueryEdited && !q.value && initialQ) q.value = initialQ;
+  function replayQuery() {
+    if (!q.value || !SERV.length) return;
+    if (!Search || !Listing) {
+      if (searchFailed || listingFailed) renderBusquedaNoDisponible();
+      return;
+    }
+    renderResultados(q.value);
+    syncUrl(q.value);
+    Listing.logSearch(q.value, ULTIMOS_RES);
+  }
+  searchReady.then(replayQuery);
+  listingReady.then(replayQuery);
+  replayQuery();
+}).catch(function () {});
+
+// médicos buscables — filas enriquecidas (próximo turno propio) para listing.js
+fetch("/api/doctors").then(function (r) { return r.ok ? r.json() : null; })
+  .then(function (d) { if (d && d.medicos) MEDS = d.medicos; })
+  .catch(function () {});
+
+// enlaces informativos buscables (telemedicina/zoonosis/donar sangre)
+fetch("/api/links").then(function (r) { return r.ok ? r.json() : null; })
+  .then(function (d) {
+    if (d && d.enlaces) {
+      ENLACES = d.enlaces;
+      if (q.value.trim() && Search && Listing) renderResultados(q.value);
+    }
+  })
+  .catch(function () {});
+
+// No filtramos por la edad del titular: puede estar buscando para un hijo. La
+// persona se elige y se valida dentro del wizard antes de enviar la solicitud.
+});
+});
+})();
+</script>
+</body>
+</html>

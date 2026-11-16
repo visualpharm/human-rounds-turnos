@@ -1,0 +1,10 @@
+{
+  "conversations": [
+    {"id": "guardia-dolor-pecho", "question": "Tengo dolor de pecho y falta de aire, ¿pido un turno o voy a la guardia?",
+     "articles": ["guardia-o-turno"], "facts": ["dolor de pecho", "no reserves un turno"]},
+    {"id": "guardia-tos", "question": "Tengo tos hace tres días, ¿tengo que ir a la guardia?",
+     "articles": ["guardia-o-turno"], "facts": ["guardia"]},
+    {"id": "guardia-acv", "question": "Creo que mi papá está teniendo un ACV, ¿voy a la guardia o saco un turno?",
+     "articles": ["guardia-o-turno"], "facts": ["accidente cerebrovascular", "emergencias"]}
+  ]
+}

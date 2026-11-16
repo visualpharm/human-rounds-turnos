@@ -1,0 +1,54 @@
+/* The panel sits over HSI, so it brings its own colours and borrows nothing.
+   Bottom-left on purpose: «Nuevo turno» keeps its buttons at the bottom
+   right, and nothing may ever cover Confirmar. */
+.hr-hsi-panel{position:fixed;left:16px;bottom:16px;z-index:2147483000;width:290px;max-width:calc(100vw - 32px);
+  box-sizing:border-box;padding:16px 18px;background:#fff;color:#1c1f23;border:1px solid #c9ced6;border-radius:12px;
+  box-shadow:0 12px 32px rgba(15,23,42,.22);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-wrap:pretty;}
+.hr-hsi-cabeza{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:0 0 10px;}
+.hr-hsi-titulo{font-size:16px;font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hr-hsi-cancelar{flex:none;border:0;background:none;padding:0;font:inherit;color:#0b5cad;cursor:pointer;}
+.hr-hsi-cancelar:hover{color:#0a4a8a;}
+.hr-hsi-pasos{list-style:none;margin:0;padding:0;}
+.hr-hsi-paso{position:relative;padding:3px 0 3px 22px;color:#4a515b;}
+.hr-hsi-paso::before{content:"";position:absolute;left:3px;top:.62em;width:9px;height:9px;border-radius:50%;
+  box-sizing:border-box;border:2px solid #9aa2ad;background:#fff;}
+.hr-hsi-paso[data-estado="curso"]{color:#1c1f23;font-weight:600;}
+.hr-hsi-paso[data-estado="curso"]::before{border-color:#0b5cad;background:#0b5cad;animation:hr-hsi-pulso 1s ease-in-out infinite;}
+.hr-hsi-paso[data-estado="espera"]{color:#1c1f23;font-weight:600;}
+.hr-hsi-paso[data-estado="espera"]::before{border-color:#b26a00;background:#b26a00;}
+.hr-hsi-paso[data-estado="listo"]{color:#1c1f23;}
+.hr-hsi-paso[data-estado="listo"]::before{border-color:#0d7d48;background:#0d7d48;}
+.hr-hsi-paso[data-estado="error"]{color:#a4161a;font-weight:600;}
+.hr-hsi-paso[data-estado="error"]::before{border-color:#a4161a;background:#a4161a;}
+.hr-hsi-panel .hr-hsi-mensaje{margin:14px 0 0;font-weight:600;color:#1c1f23;}
+.hr-hsi-panel .hr-hsi-mensaje:empty{display:none;}
+.hr-hsi-panel .hr-hsi-mensaje[data-tono="error"]{color:#a4161a;}
+.hr-hsi-panel .hr-hsi-mensaje[data-tono="bien"]{color:#0a6238;}
+.hr-hsi-datos{display:grid;gap:10px;margin-top:12px;}
+.hr-hsi-dato{display:grid;gap:4px;font-weight:600;color:#1c1f23;}
+.hr-hsi-dato input,.hr-hsi-dato select{font:inherit;font-weight:400;width:100%;box-sizing:border-box;padding:8px 10px;
+  border:1px solid #9aa2ad;border-radius:8px;background:#fff;color:#1c1f23;}
+.hr-hsi-datos .hr-hsi-accion{justify-self:start;}
+.hr-hsi-acciones{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.hr-hsi-acciones:empty{display:none;}
+.hr-hsi-panel[data-fin] .hr-hsi-cancelar{display:none;}
+.hr-hsi-accion{font:inherit;font-size:14px;font-weight:600;white-space:nowrap;padding:8px 12px;border-radius:8px;border:1px solid #c9ced6;background:#fff;color:#1c1f23;cursor:pointer;}
+.hr-hsi-accion:hover{background:#f1f3f6;}
+.hr-hsi-accion--principal{border-color:#0b5cad;background:#0b5cad;color:#fff;}
+.hr-hsi-accion--principal:hover{background:#0a4a8a;}
+.hr-hsi-foco{outline:3px solid #f5a623 !important;outline-offset:2px !important;border-radius:4px;}
+@keyframes hr-hsi-pulso{50%{opacity:.35;}}
+@media (prefers-reduced-motion:reduce){.hr-hsi-paso[data-estado="curso"]::before{animation:none;}}
+/* The window HSI opens on a turno, tidied by lib/hsi-tidy.js: what the
+   extension marks is hidden (never removed — the controls it drives stay in
+   the page), and the patient's name is the link to the patient. */
+[data-hr-oculto]{display:none !important;}
+app-appointment #window[data-hr-sin-datos] #appointment{grid-column:1 / -1 !important;}
+/* The label link stays at the foot: with HSI's dividers hidden, its auto-placement
+   jumps above the state buttons. With no coverage/phone block the empty rows go too. */
+app-appointment #window > app-appointment-label{grid-row:-2 / -1 !important;grid-column:1 / -1 !important;}
+app-appointment #window[data-hr-sin-datos]{grid-template-areas:"personal-data personal-data" "appointment appointment" "state-observations reports" "etiquetas etiquetas" !important;grid-template-rows:auto !important;}
+app-appointment #window[data-hr-sin-datos] app-appointment-label{grid-area:etiquetas !important;}
+app-appointment .info .title[data-hr-enlace]{color:#0b5cad;cursor:pointer;}
+app-appointment .info .title[data-hr-enlace]:hover{color:#0a4a8a;}
+app-appointment .info .title[data-hr-enlace]:focus-visible{outline:3px solid #f5a623;outline-offset:2px;border-radius:4px;}

@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "Verifica del destinatario dell'assistenza in corso…",
+  "wizard.age_check.h1": "Per chi è l'appuntamento?",
+  "wizard.confirm.error": "Non siamo riusciti a salvare la tua risposta. Riprova.",
+  "wizard.confirm.expired": "Non è più possibile confermare questo appuntamento.",
+  "wizard.confirm.saved": "Fatto, grazie per averci avvisato.",
+  "wizard.confirm.wait": "Un momento…",
+  "wizard.contact.call": "Ti sei bloccato in qualche passaggio? Chiama {name}:",
+  "wizard.contact.center_fallback": "il centro",
+  "wizard.contact.whatsapp": "Ti sei bloccato in qualche passaggio? Scrivi a {name} su WhatsApp:",
+  "wizard.contact.whatsapp_site": "Hai difficoltà con qualche passaggio? Scrivici su WhatsApp:",
+  "wizard.offer.accepted": "Fatto! Il tuo appuntamento è confermato. Ti stiamo portando a I miei appuntamenti…",
+  "wizard.offer.error": "Non siamo riusciti a elaborare la tua risposta. Riprova.",
+  "wizard.offer.gone": "Questo appuntamento non è più disponibile.",
+  "wizard.offer.rejected": "Abbiamo avvisato la persona successiva in lista. Grazie per aver risposto.",
+  "wizard.offer.wait": "Un momento…",
+  "wizard.title.orden": "Impegnativa di invio",
+  "wizard.title.solicitud": "Prenota appuntamento",
+  "wizard.upload.sub": "L'ospedale la esaminerà e ti confermerà l'appuntamento."
+}

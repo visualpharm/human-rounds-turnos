@@ -1,0 +1,2375 @@
+{
+ "digits": {
+  "app.ai.ai_referral._digits": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "²³",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "①2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.ai.lab_results._digits": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "²³",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "①2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.core.format._digits": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "0",
+   "0.0": "00",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.core.log_pii._digits": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.core.log_pii.dni": {
+   "' 12 345 678 '": "*****678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "**********456",
+   "'12.345.678'": "*****678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "******569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "*١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "",
+   "0.0": "",
+   "12345678": "*****678",
+   "False": "",
+   "None": ""
+  },
+  "app.core.patient_contact._dni": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.core.pii._digitos": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.cuentas.accounts._norm_dni": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.cuentas.ocr_dni._digits": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  },
+  "app.modules.chat.whatsapp_chat._digits": {
+   "' 12 345 678 '": "12345678",
+   "''": "",
+   "'+54 9 2254 12-3456'": "5492254123456",
+   "'12.345.678'": "12345678",
+   "'1\\xa02'": "12",
+   "'DNI: 30.123.456-9'": "301234569",
+   "'ab'": "",
+   "'²³'": "",
+   "'٠١٢x3'": "٠١٢3",
+   "'٣٤٥'": "٣٤٥",
+   "'①2'": "2",
+   "0": "",
+   "0.0": "",
+   "12345678": "12345678",
+   "False": "",
+   "None": ""
+  }
+ },
+ "json": {
+  "app.ai.ai_referral.extract_json": {
+   "'   '": {},
+   "'\"solo texto\"'": {},
+   "''": {},
+   "'42'": {},
+   "'Claro: {\"a\": 4} listo'": {
+    "a": 4
+   },
+   "'[1, 2, 3]'": {},
+   "'[{\"a\": 5}]'": {
+    "a": 5
+   },
+   "'```JSON\\n{\"a\": 3}\\n```'": {
+    "a": 3
+   },
+   "'```\\n{\"a\": 2}\\n```'": {
+    "a": 2
+   },
+   "'```json\\n{\"a\": 1}\\n```'": {
+    "a": 1
+   },
+   "'```json\\n{\"a\": 8}'": {
+    "a": 8
+   },
+   "'nada'": {},
+   "'texto ```json\\n{\"a\": 6}\\n``` cola'": {
+    "a": 6
+   },
+   "'{\"a\": \"}\"} y {\"b\": 2}'": {},
+   "'{\"a\": '": {},
+   "'{\"a\": 1} {\"b\": 2}'": {},
+   "'{\"a\": 1}'": {
+    "a": 1
+   },
+   "'{\"a\": 7}\\n```'": {
+    "a": 7
+   },
+   "'{\"a\": {\"b\": [1, 2]}}'": {
+    "a": {
+     "b": [
+      1,
+      2
+     ]
+    }
+   },
+   "'}{'": {},
+   "None": {}
+  },
+  "app.ai.chart_summary._extract_json": {
+   "'   '": null,
+   "'\"solo texto\"'": "solo texto",
+   "''": null,
+   "'42'": 42,
+   "'Claro: {\"a\": 4} listo'": {
+    "a": 4
+   },
+   "'[1, 2, 3]'": [
+    1,
+    2,
+    3
+   ],
+   "'[{\"a\": 5}]'": [
+    {
+     "a": 5
+    }
+   ],
+   "'```JSON\\n{\"a\": 3}\\n```'": {
+    "a": 3
+   },
+   "'```\\n{\"a\": 2}\\n```'": {
+    "a": 2
+   },
+   "'```json\\n{\"a\": 1}\\n```'": {
+    "a": 1
+   },
+   "'```json\\n{\"a\": 8}'": {
+    "a": 8
+   },
+   "'nada'": null,
+   "'texto ```json\\n{\"a\": 6}\\n``` cola'": {
+    "a": 6
+   },
+   "'{\"a\": \"}\"} y {\"b\": 2}'": null,
+   "'{\"a\": '": null,
+   "'{\"a\": 1} {\"b\": 2}'": null,
+   "'{\"a\": 1}'": {
+    "a": 1
+   },
+   "'{\"a\": 7}\\n```'": {
+    "a": 7
+   },
+   "'{\"a\": {\"b\": [1, 2]}}'": {
+    "a": {
+     "b": [
+      1,
+      2
+     ]
+    }
+   },
+   "'}{'": null,
+   "None": null
+  },
+  "app.ai.lab_analysis._extract_json": {
+   "'   '": null,
+   "'\"solo texto\"'": "solo texto",
+   "''": null,
+   "'42'": 42,
+   "'Claro: {\"a\": 4} listo'": {
+    "a": 4
+   },
+   "'[1, 2, 3]'": [
+    1,
+    2,
+    3
+   ],
+   "'[{\"a\": 5}]'": [
+    {
+     "a": 5
+    }
+   ],
+   "'```JSON\\n{\"a\": 3}\\n```'": {
+    "a": 3
+   },
+   "'```\\n{\"a\": 2}\\n```'": {
+    "a": 2
+   },
+   "'```json\\n{\"a\": 1}\\n```'": {
+    "a": 1
+   },
+   "'```json\\n{\"a\": 8}'": {
+    "a": 8
+   },
+   "'nada'": null,
+   "'texto ```json\\n{\"a\": 6}\\n``` cola'": {
+    "a": 6
+   },
+   "'{\"a\": \"}\"} y {\"b\": 2}'": null,
+   "'{\"a\": '": null,
+   "'{\"a\": 1} {\"b\": 2}'": null,
+   "'{\"a\": 1}'": {
+    "a": 1
+   },
+   "'{\"a\": 7}\\n```'": {
+    "a": 7
+   },
+   "'{\"a\": {\"b\": [1, 2]}}'": {
+    "a": {
+     "b": [
+      1,
+      2
+     ]
+    }
+   },
+   "'}{'": null,
+   "None": null
+  },
+  "app.modules.intake.analysis._extract_json": {
+   "'   '": {},
+   "'\"solo texto\"'": {},
+   "''": {},
+   "'42'": {},
+   "'Claro: {\"a\": 4} listo'": {
+    "a": 4
+   },
+   "'[1, 2, 3]'": {},
+   "'[{\"a\": 5}]'": {
+    "a": 5
+   },
+   "'```JSON\\n{\"a\": 3}\\n```'": {
+    "a": 3
+   },
+   "'```\\n{\"a\": 2}\\n```'": {
+    "a": 2
+   },
+   "'```json\\n{\"a\": 1}\\n```'": {
+    "a": 1
+   },
+   "'```json\\n{\"a\": 8}'": {
+    "a": 8
+   },
+   "'nada'": {},
+   "'texto ```json\\n{\"a\": 6}\\n``` cola'": {
+    "a": 6
+   },
+   "'{\"a\": \"}\"} y {\"b\": 2}'": {},
+   "'{\"a\": '": {},
+   "'{\"a\": 1} {\"b\": 2}'": {},
+   "'{\"a\": 1}'": {
+    "a": 1
+   },
+   "'{\"a\": 7}\\n```'": {
+    "a": 7
+   },
+   "'{\"a\": {\"b\": [1, 2]}}'": {
+    "a": {
+     "b": [
+      1,
+      2
+     ]
+    }
+   },
+   "'}{'": {},
+   "None": {}
+  },
+  "app.modules.intake.consult_compose._extract_json": {
+   "'   '": {},
+   "'\"solo texto\"'": {},
+   "''": {},
+   "'42'": {},
+   "'Claro: {\"a\": 4} listo'": {
+    "a": 4
+   },
+   "'[1, 2, 3]'": {},
+   "'[{\"a\": 5}]'": {
+    "a": 5
+   },
+   "'```JSON\\n{\"a\": 3}\\n```'": {
+    "a": 3
+   },
+   "'```\\n{\"a\": 2}\\n```'": {
+    "a": 2
+   },
+   "'```json\\n{\"a\": 1}\\n```'": {
+    "a": 1
+   },
+   "'```json\\n{\"a\": 8}'": {
+    "a": 8
+   },
+   "'nada'": {},
+   "'texto ```json\\n{\"a\": 6}\\n``` cola'": {
+    "a": 6
+   },
+   "'{\"a\": \"}\"} y {\"b\": 2}'": {},
+   "'{\"a\": '": {},
+   "'{\"a\": 1} {\"b\": 2}'": {},
+   "'{\"a\": 1}'": {
+    "a": 1
+   },
+   "'{\"a\": 7}\\n```'": {
+    "a": 7
+   },
+   "'{\"a\": {\"b\": [1, 2]}}'": {
+    "a": {
+     "b": [
+      1,
+      2
+     ]
+    }
+   },
+   "'}{'": {},
+   "None": {}
+  }
+ },
+ "limiters": {
+  "app.connectors.puco.puco._permitido": [
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    false
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "hits",
+    {
+     "?": [
+      1022000.0,
+      1023600.0,
+      1024000.0
+     ],
+     "a": [
+      1028500.0
+     ],
+     "b": [
+      1028100.0
+     ]
+    }
+   ],
+   [
+    "burst",
+    true,
+    1
+   ],
+   [
+    "limit",
+    0,
+    true
+   ],
+   [
+    "limit",
+    1,
+    true
+   ],
+   [
+    "limit",
+    2,
+    true
+   ],
+   [
+    "limit",
+    3,
+    false
+   ],
+   [
+    "limit",
+    4,
+    false
+   ],
+   [
+    "limit",
+    5,
+    false
+   ],
+   [
+    "limit",
+    6,
+    false
+   ],
+   [
+    "limit",
+    7,
+    false
+   ],
+   [
+    "limit",
+    8,
+    false
+   ],
+   [
+    "limit",
+    9,
+    false
+   ],
+   [
+    "limit",
+    10,
+    false
+   ],
+   [
+    "limit",
+    11,
+    false
+   ],
+   [
+    "limit",
+    12,
+    false
+   ],
+   [
+    "limit",
+    13,
+    false
+   ],
+   [
+    "limit",
+    14,
+    false
+   ],
+   [
+    "limit",
+    15,
+    false
+   ],
+   [
+    "limit",
+    16,
+    false
+   ],
+   [
+    "limit",
+    17,
+    false
+   ],
+   [
+    "limit",
+    18,
+    false
+   ],
+   [
+    "limit",
+    19,
+    false
+   ],
+   [
+    "limit",
+    20,
+    false
+   ],
+   [
+    "limit",
+    21,
+    false
+   ],
+   [
+    "limit",
+    22,
+    false
+   ],
+   [
+    "limit",
+    23,
+    false
+   ],
+   [
+    "limit",
+    24,
+    false
+   ]
+  ],
+  "app.cuentas.auth_renaper._permitido": [
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    false
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "hits",
+    {
+     "?": [
+      1022000.0,
+      1023600.0,
+      1024000.0
+     ],
+     "a": [
+      1028500.0
+     ],
+     "b": [
+      1028100.0
+     ]
+    }
+   ],
+   [
+    "burst",
+    true,
+    1
+   ],
+   [
+    "limit",
+    0,
+    true
+   ],
+   [
+    "limit",
+    1,
+    true
+   ],
+   [
+    "limit",
+    2,
+    true
+   ],
+   [
+    "limit",
+    3,
+    false
+   ],
+   [
+    "limit",
+    4,
+    false
+   ],
+   [
+    "limit",
+    5,
+    false
+   ],
+   [
+    "limit",
+    6,
+    false
+   ],
+   [
+    "limit",
+    7,
+    false
+   ],
+   [
+    "limit",
+    8,
+    false
+   ],
+   [
+    "limit",
+    9,
+    false
+   ],
+   [
+    "limit",
+    10,
+    false
+   ],
+   [
+    "limit",
+    11,
+    false
+   ],
+   [
+    "limit",
+    12,
+    false
+   ],
+   [
+    "limit",
+    13,
+    false
+   ],
+   [
+    "limit",
+    14,
+    false
+   ],
+   [
+    "limit",
+    15,
+    false
+   ],
+   [
+    "limit",
+    16,
+    false
+   ],
+   [
+    "limit",
+    17,
+    false
+   ],
+   [
+    "limit",
+    18,
+    false
+   ],
+   [
+    "limit",
+    19,
+    false
+   ],
+   [
+    "limit",
+    20,
+    false
+   ],
+   [
+    "limit",
+    21,
+    false
+   ],
+   [
+    "limit",
+    22,
+    false
+   ],
+   [
+    "limit",
+    23,
+    false
+   ],
+   [
+    "limit",
+    24,
+    false
+   ]
+  ],
+  "app.cuentas.ocr_dni._permitido": [
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    false
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "hits",
+    {
+     "?": [
+      1022000.0,
+      1023600.0,
+      1024000.0
+     ],
+     "a": [
+      1028500.0
+     ],
+     "b": [
+      1028100.0
+     ]
+    }
+   ],
+   [
+    "burst",
+    true,
+    1
+   ],
+   [
+    "limit",
+    0,
+    true
+   ],
+   [
+    "limit",
+    1,
+    true
+   ],
+   [
+    "limit",
+    2,
+    true
+   ],
+   [
+    "limit",
+    3,
+    false
+   ],
+   [
+    "limit",
+    4,
+    false
+   ],
+   [
+    "limit",
+    5,
+    false
+   ],
+   [
+    "limit",
+    6,
+    false
+   ],
+   [
+    "limit",
+    7,
+    false
+   ],
+   [
+    "limit",
+    8,
+    false
+   ],
+   [
+    "limit",
+    9,
+    false
+   ],
+   [
+    "limit",
+    10,
+    false
+   ],
+   [
+    "limit",
+    11,
+    false
+   ],
+   [
+    "limit",
+    12,
+    false
+   ],
+   [
+    "limit",
+    13,
+    false
+   ],
+   [
+    "limit",
+    14,
+    false
+   ],
+   [
+    "limit",
+    15,
+    false
+   ],
+   [
+    "limit",
+    16,
+    false
+   ],
+   [
+    "limit",
+    17,
+    false
+   ],
+   [
+    "limit",
+    18,
+    false
+   ],
+   [
+    "limit",
+    19,
+    false
+   ],
+   [
+    "limit",
+    20,
+    false
+   ],
+   [
+    "limit",
+    21,
+    false
+   ],
+   [
+    "limit",
+    22,
+    false
+   ],
+   [
+    "limit",
+    23,
+    false
+   ],
+   [
+    "limit",
+    24,
+    false
+   ]
+  ],
+  "app.modules.chat.chat_api._allowed": [
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    false
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "hits",
+    {
+     "?": [
+      1022000.0,
+      1023600.0,
+      1024000.0
+     ],
+     "a": [
+      1028500.0
+     ],
+     "b": [
+      1028100.0
+     ]
+    }
+   ],
+   [
+    "burst",
+    true,
+    1
+   ],
+   [
+    "limit",
+    0,
+    true
+   ],
+   [
+    "limit",
+    1,
+    true
+   ],
+   [
+    "limit",
+    2,
+    true
+   ],
+   [
+    "limit",
+    3,
+    false
+   ],
+   [
+    "limit",
+    4,
+    false
+   ],
+   [
+    "limit",
+    5,
+    false
+   ],
+   [
+    "limit",
+    6,
+    false
+   ],
+   [
+    "limit",
+    7,
+    false
+   ],
+   [
+    "limit",
+    8,
+    false
+   ],
+   [
+    "limit",
+    9,
+    false
+   ],
+   [
+    "limit",
+    10,
+    false
+   ],
+   [
+    "limit",
+    11,
+    false
+   ],
+   [
+    "limit",
+    12,
+    false
+   ],
+   [
+    "limit",
+    13,
+    false
+   ],
+   [
+    "limit",
+    14,
+    false
+   ],
+   [
+    "limit",
+    15,
+    false
+   ],
+   [
+    "limit",
+    16,
+    false
+   ],
+   [
+    "limit",
+    17,
+    false
+   ],
+   [
+    "limit",
+    18,
+    false
+   ],
+   [
+    "limit",
+    19,
+    false
+   ],
+   [
+    "limit",
+    20,
+    false
+   ],
+   [
+    "limit",
+    21,
+    false
+   ],
+   [
+    "limit",
+    22,
+    false
+   ],
+   [
+    "limit",
+    23,
+    false
+   ],
+   [
+    "limit",
+    24,
+    false
+   ]
+  ],
+  "app.modules.chat.voice._allowed": [
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "hits",
+    {
+     "?": [
+      1022000.0,
+      1023600.0,
+      1024000.0
+     ],
+     "a": [
+      1028500.0
+     ],
+     "b": [
+      1028100.0
+     ]
+    }
+   ],
+   [
+    "burst",
+    true,
+    5002
+   ],
+   [
+    "limit",
+    0,
+    true
+   ],
+   [
+    "limit",
+    1,
+    true
+   ],
+   [
+    "limit",
+    2,
+    true
+   ],
+   [
+    "limit",
+    3,
+    true
+   ],
+   [
+    "limit",
+    4,
+    true
+   ],
+   [
+    "limit",
+    5,
+    true
+   ],
+   [
+    "limit",
+    6,
+    true
+   ],
+   [
+    "limit",
+    7,
+    true
+   ],
+   [
+    "limit",
+    8,
+    true
+   ],
+   [
+    "limit",
+    9,
+    true
+   ],
+   [
+    "limit",
+    10,
+    true
+   ],
+   [
+    "limit",
+    11,
+    true
+   ],
+   [
+    "limit",
+    12,
+    true
+   ],
+   [
+    "limit",
+    13,
+    true
+   ],
+   [
+    "limit",
+    14,
+    true
+   ],
+   [
+    "limit",
+    15,
+    true
+   ],
+   [
+    "limit",
+    16,
+    true
+   ],
+   [
+    "limit",
+    17,
+    true
+   ],
+   [
+    "limit",
+    18,
+    true
+   ],
+   [
+    "limit",
+    19,
+    true
+   ],
+   [
+    "limit",
+    20,
+    false
+   ],
+   [
+    "limit",
+    21,
+    false
+   ],
+   [
+    "limit",
+    22,
+    false
+   ],
+   [
+    "limit",
+    23,
+    false
+   ],
+   [
+    "limit",
+    24,
+    false
+   ]
+  ],
+  "app.modules.intake.interview_patient._allowed": [
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    false
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "hits",
+    {
+     "?": [
+      1022000.0,
+      1023600.0,
+      1024000.0
+     ],
+     "a": [
+      1028500.0
+     ],
+     "b": [
+      1028100.0
+     ]
+    }
+   ],
+   [
+    "burst",
+    true,
+    1
+   ],
+   [
+    "limit",
+    0,
+    true
+   ],
+   [
+    "limit",
+    1,
+    true
+   ],
+   [
+    "limit",
+    2,
+    true
+   ],
+   [
+    "limit",
+    3,
+    false
+   ],
+   [
+    "limit",
+    4,
+    false
+   ],
+   [
+    "limit",
+    5,
+    false
+   ],
+   [
+    "limit",
+    6,
+    false
+   ],
+   [
+    "limit",
+    7,
+    false
+   ],
+   [
+    "limit",
+    8,
+    false
+   ],
+   [
+    "limit",
+    9,
+    false
+   ],
+   [
+    "limit",
+    10,
+    false
+   ],
+   [
+    "limit",
+    11,
+    false
+   ],
+   [
+    "limit",
+    12,
+    false
+   ],
+   [
+    "limit",
+    13,
+    false
+   ],
+   [
+    "limit",
+    14,
+    false
+   ],
+   [
+    "limit",
+    15,
+    false
+   ],
+   [
+    "limit",
+    16,
+    false
+   ],
+   [
+    "limit",
+    17,
+    false
+   ],
+   [
+    "limit",
+    18,
+    false
+   ],
+   [
+    "limit",
+    19,
+    false
+   ],
+   [
+    "limit",
+    20,
+    false
+   ],
+   [
+    "limit",
+    21,
+    false
+   ],
+   [
+    "limit",
+    22,
+    false
+   ],
+   [
+    "limit",
+    23,
+    false
+   ],
+   [
+    "limit",
+    24,
+    false
+   ]
+  ],
+  "app.modules.turnos.slot_holds._allowed": [
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    false
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    null,
+    true
+   ],
+   [
+    "",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "b",
+    true
+   ],
+   [
+    "a",
+    true
+   ],
+   [
+    "hits",
+    {
+     "?": [
+      1022000.0,
+      1023600.0,
+      1024000.0
+     ],
+     "a": [
+      1028500.0
+     ],
+     "b": [
+      1028100.0
+     ]
+    }
+   ],
+   [
+    "burst",
+    true,
+    1
+   ],
+   [
+    "limit",
+    0,
+    true
+   ],
+   [
+    "limit",
+    1,
+    true
+   ],
+   [
+    "limit",
+    2,
+    true
+   ],
+   [
+    "limit",
+    3,
+    false
+   ],
+   [
+    "limit",
+    4,
+    false
+   ],
+   [
+    "limit",
+    5,
+    false
+   ],
+   [
+    "limit",
+    6,
+    false
+   ],
+   [
+    "limit",
+    7,
+    false
+   ],
+   [
+    "limit",
+    8,
+    false
+   ],
+   [
+    "limit",
+    9,
+    false
+   ],
+   [
+    "limit",
+    10,
+    false
+   ],
+   [
+    "limit",
+    11,
+    false
+   ],
+   [
+    "limit",
+    12,
+    false
+   ],
+   [
+    "limit",
+    13,
+    false
+   ],
+   [
+    "limit",
+    14,
+    false
+   ],
+   [
+    "limit",
+    15,
+    false
+   ],
+   [
+    "limit",
+    16,
+    false
+   ],
+   [
+    "limit",
+    17,
+    false
+   ],
+   [
+    "limit",
+    18,
+    false
+   ],
+   [
+    "limit",
+    19,
+    false
+   ],
+   [
+    "limit",
+    20,
+    false
+   ],
+   [
+    "limit",
+    21,
+    false
+   ],
+   [
+    "limit",
+    22,
+    false
+   ],
+   [
+    "limit",
+    23,
+    false
+   ],
+   [
+    "limit",
+    24,
+    false
+   ]
+  ]
+ },
+ "norm": {
+  "app.ai.ai_referral._norm": {
+   "\"O'Brien\"": "o brien",
+   "'  Niño-Sano, ¿ok?  '": "nino sano ok",
+   "''": "",
+   "'1º A'": "1o a",
+   "'Cardiología'": "cardiologia",
+   "'Dr./Dra. Pérez (guardia)'": "dr dra perez guardia",
+   "'Sí!'": "si",
+   "'tab\\tsep\\n'": "tab sep",
+   "'x́'": "x",
+   "'ÁÉÍÓÚ ñ ü'": "aeiou n u",
+   "'ß ı İ'": "ß ı i",
+   "'ﬁnal'": "final",
+   "'２０２６'": "2026",
+   "5": "5",
+   "None": ""
+  },
+  "app.modules.intake.redflags._norm": {
+   "\"O'Brien\"": "o brien",
+   "'  Niño-Sano, ¿ok?  '": "nino sano ok",
+   "''": "",
+   "'1º A'": "1o a",
+   "'Cardiología'": "cardiologia",
+   "'Dr./Dra. Pérez (guardia)'": "dr dra perez guardia",
+   "'Sí!'": "si",
+   "'tab\\tsep\\n'": "tab sep",
+   "'x́'": "x",
+   "'ÁÉÍÓÚ ñ ü'": "aeiou n u",
+   "'ß ı İ'": "ß ı i",
+   "'ﬁnal'": "final",
+   "'２０２６'": "2026",
+   "5": "5",
+   "None": ""
+  }
+ },
+ "sweepers": {
+  "app.ai.abuse_guard._HITS": [
+   "fresh",
+   "mixed"
+  ],
+  "app.ai.ai_cooldown._STATE": [
+   "edge",
+   "fresh",
+   "mixed"
+  ],
+  "app.ai.ai_costs._WINDOW": [
+   "fresh",
+   "mixed"
+  ],
+  "app.auth.panel_login._HITS": [
+   "fresh",
+   "mixed"
+  ],
+  "app.modules.turnos.searches._HITS": [
+   "fresh",
+   "mixed"
+  ]
+ }
+}

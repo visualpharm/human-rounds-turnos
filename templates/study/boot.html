@@ -1,0 +1,24 @@
+{# One bounded native entry for public runner and staff review. #}
+<template id="study-load-recovery">
+<p role="alert">{{ t('study.load_error', 'No se pudo cargar. Probá de nuevo.') }}</p>
+<button type="button" class="btn" data-retry>{{ t('study.reload', 'Recargar') }}</button>
+</template>
+<script type="module">
+import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+const host = document.getElementById({{ boot_host|tojson }});
+bootScreen({
+  host,
+  recovery: 'study-load-recovery',
+  onStart: () => {
+    const loading = document.createElement('p'); loading.setAttribute('role', 'status');
+    loading.textContent = {{ t('study.loading', 'Cargando…')|string|tojson }};
+    host.replaceChildren(loading);
+  },
+  load: () => import({{ boot_url|tojson }}),
+  mount: (mod) => {
+    host.replaceChildren();
+    return mod[{{ boot_function|tojson }}](host{% if boot_data %}, JSON.parse(document.getElementById('study-data').textContent){% endif %});
+  },
+  pageshow: {% if boot_data %}'reload'{% else %}'start'{% endif %},
+});
+</script>

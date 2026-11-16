@@ -1,0 +1,114 @@
+# Human Rounds — dependencias Python de runtime.
+# Driver de Postgres + Pillow para normalizar órdenes antes de Gemini +
+# segno para el QR del cartel de puerta (modules/intake/, fase 6 —
+# entrevista_qr_token). Instalar en dev con:
+#   python3 -m pip install --break-system-packages -r requirements.txt
+# [pool] añadido 2026-08-06 (auditoría de conexiones): psycopg_pool ya venía
+# instalado transitivamente vía procrastinate (requiere psycopg[pool]
+# incondicionalmente), pero db.py ahora lo importa DIRECTO — se pinea acá en
+# vez de confiar en que otra dependencia lo siga arrastrando.
+psycopg[binary,pool]==3.3.4
+# 13.0.0 (2026-10-26): pip-audit reports 50 advisories on 12.2.0, the lowest
+# version that clears them all is 13.0.0 (no API we call changed).
+Pillow==13.0.0
+# HEIC/HEIF decode for the photo upload gate (core/photo_guard.py): an
+# iPhone's default camera format. Optional at runtime — without it a HEIC
+# upload is refused with the export-to-JPG remedy, never a 500 — but every
+# real installation wants it.
+pillow-heif==1.8.1
+segno==1.6.6
+
+# Tier 4 slice 0 (docs/roadmap/tier4-replatform-design.md) — coexistence
+# scaffold. Primera vez que este repo suma dependencias reales más allá de
+# las tres de arriba (política de cero-deps documentada y superada
+# explícitamente por el diseño, ver "Deps, lockfile y Docker story"). Sólo
+# lo que slice 0 usa: FastAPI + uvicorn sirven el puerto público,
+# httpx reenvía al server legacy. Slices futuros (auth, i18n, Alembic, cola)
+# suman las suyas cuando esas rutas migren de verdad — no antes.
+fastapi==0.141.1
+# The application imports pydantic itself (core/api_body.py, every */api_models.py), so it is pinned
+# here rather than left to whatever FastAPI's range resolves to when an image is built (2.14.3, of
+# 2026-11-05, is the latest release that range takes); pydantic pins its own pydantic-core exactly.
+pydantic==2.14.3
+starlette==1.4.1
+anyio==4.14.2
+uvicorn[standard]==0.52.1
+httpx==0.28.1
+# Multipart body parsing — FastAPI needs it for the one endpoint that takes a
+# real file upload: the patient uploading their own lab result
+# (ai/lab_results_router.py). The referral upload travels as base64 JSON and
+# does not use it.
+# 0.0.32 (2026-10-26): pip-audit reports six advisories on 0.0.20 (fixed by 0.0.31).
+python-multipart==0.0.32
+
+# Tier 4 slice 1 (docs/roadmap/tier4-replatform-design.md, "Auth
+# replacement") — sólo las piezas genuinamente riesgosas de hand-rollear
+# (verificación criptográfica) se reemplazan por librerías; el gate de
+# sesión/rol sigue siendo código propio (deps.py, puerto estructural de
+# admin_auth.require_admin). itsdangerous mintea y verifica la cookie de sesión;
+# la compatibilidad HMAC manual se retiró al vencer su ventana de 30 días.
+# pyotp calcula TOTP contra el MISMO secreto base32 de siempre, cero
+# migración; webauthn verifica las ceremonias completas. cbor2 sólo
+# reconstruye COSE estándar desde filas ES256/RS256 históricas.
+itsdangerous==2.2.0
+pyotp==2.9.0
+webauthn==3.0.0
+cbor2==6.1.4
+cryptography==50.0.0
+# Current password hashing; cryptography above verifies only the bounded legacy
+# scrypt envelope so successful logins can migrate it atomically to Argon2id.
+pwdlib[argon2]==0.3.1
+argon2-cffi==25.1.0
+
+# Tier 4 slice 2 (docs/roadmap/tier4-replatform-design.md, "i18n → Jinja2 +
+# jinja2-fragments") — el pilot de las cuatro páginas de site_identity.py.
+# jinja2-fragments existe para partial re-renders de pantallas de panel
+# interactivas (precursor de Tier 5) — el pilot de slice 2 no lo necesita
+# todavía (páginas estáticas), se suma ahora porque el diseño lo pide como
+# parte de la dependencia, no como uso real recién en slice 3.
+jinja2==3.1.6
+jinja2-fragments==1.12.0
+
+# Tier 4 slice 4 (docs/roadmap/tier4-replatform-design.md, "Alembic") —
+# replaces migrations/__init__.py's hand-rolled apply_pending() as the
+# schema-migration RUNNER. sqlalchemy.create_engine() is the execution
+# vehicle Alembic's own env.py uses to run plain SQL.
+# 2026-10-25: SQLAlchemy Core (never the ORM) is also the schema description
+# (core/schema_model.py) and the query language of new code (core/sqlcore.py,
+# which compiles a statement and runs it on the psycopg cursor db.py already
+# hands out — no second pool, no Engine). ONE pin, used by the Dockerfile and
+# the CI jobs alike, so Alembic's autogenerate and the app compile alike.
+sqlalchemy==2.0.51
+alembic==1.19.0
+
+# Tier 4 slice 5 (docs/roadmap/tier4-replatform-design.md, "Background
+# daemon threads -> Postgres-backed queue") — the waitlist.py sweep pilot.
+# procrastinate ships a first-class periodic-task decorator matching every
+# existing daemon's interval-loop shape, and its sync connector (psycopg,
+# pulled in transitively via its `psycopg[pool]` extra — resolves against
+# the SAME pinned psycopg above, no separate pin needed) lets the task body
+# call db.py's synchronous query functions directly, no async rewrite. Its
+# OWN schema is applied lazily and only when TURNOS_WAITLIST_QUEUE=1 (see
+# waitlist_queue.py) — never on every boot, never part of the Alembic
+# chain (design's own explicit call).
+procrastinate==3.9.0
+
+# Tier 4 slice 7 (docs/roadmap/tier4-replatform-design.md, "/health +
+# /ready + graceful shutdown + optional Sentry") — OPTIONAL, shipped
+# wired-but-off. error_tracking.py imports this LAZILY, only inside
+# init(), only when TURNOS_SENTRY_DSN is set — a checkout that never sets
+# that env var never imports it, so this being installed costs nothing at
+# boot. Turning it on for real needs an explicit PII-scrubbing review
+# first (see error_tracking.py's module docstring).
+sentry-sdk==2.66.1
+# Reads the .xlsx roster of the doctor import (admin_panel/doctor_import.py); imported only when a
+# spreadsheet is uploaded.
+openpyxl==3.1.5
+# openpyxl's only dependency, left unpinned by openpyxl itself: pinned here to the release the
+# suite has run against (2.0.0 today) so an image rebuild cannot pull a different one.
+et_xmlfile==2.0.0
+# The process keys (HOST, PORT, DATABASE_URL, pools, queue worker...) are typed BaseSettings classes
+# (core/settings.py). python-dotenv is its required dependency (uvicorn[standard] pulls it too, unpinned):
+# pinned so an image rebuild cannot pull a different one. The env file itself is read by core/config.py.
+pydantic-settings==2.16.2
+python-dotenv==1.2.4

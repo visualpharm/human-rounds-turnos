@@ -1,0 +1,102 @@
+{
+ "js": {
+  "app/core": {
+   "branches": 0.0,
+   "lines": 0.0
+  },
+  "app/modules": {
+   "branches": 71.4,
+   "lines": 29.2
+  },
+  "extensions": {
+   "branches": 83.2,
+   "lines": 8.0
+  },
+  "scripts": {
+   "branches": 60.0,
+   "lines": 82.7
+  },
+  "static/islands": {
+   "branches": 72.2,
+   "lines": 97.3
+  },
+  "static/platform": {
+   "branches": 71.8,
+   "lines": 63.9
+  },
+  "static/root": {
+   "branches": 0.0,
+   "lines": 0.0
+  }
+ },
+ "margin_points": 0.5,
+ "min_js_tests": 2855,
+ "min_tests": 8629,
+ "python": {
+  "(root)": {
+   "branches": 69.4,
+   "lines": 78.0
+  },
+  "alembic": {
+   "branches": 73.7,
+   "lines": 89.5
+  },
+  "app": {
+   "branches": 69.4,
+   "lines": 78.0
+  },
+  "app/admin_panel": {
+   "branches": 81.5,
+   "lines": 89.0
+  },
+  "app/ai": {
+   "branches": 71.4,
+   "lines": 80.1
+  },
+  "app/auth": {
+   "branches": 83.8,
+   "lines": 89.4
+  },
+  "app/connectors": {
+   "branches": 62.9,
+   "lines": 75.1
+  },
+  "app/core": {
+   "branches": 88.8,
+   "lines": 94.3
+  },
+  "app/cuentas": {
+   "branches": 84.2,
+   "lines": 90.4
+  },
+  "app/modules": {
+   "branches": 79.7,
+   "lines": 84.9
+  },
+  "app/notifications": {
+   "branches": 78.1,
+   "lines": 82.5
+  },
+  "app/ops": {
+   "branches": 71.1,
+   "lines": 78.7
+  },
+  "app/patient_web": {
+   "branches": 79.6,
+   "lines": 88.5
+  },
+  "app/routers": {
+   "branches": 54.1,
+   "lines": 71.6
+  },
+  "app/services": {
+   "branches": 80.7,
+   "lines": 86.2
+  },
+  "scripts": {
+   "branches": 68.7,
+   "lines": 74.1
+  }
+ },
+ "schema_version": 1
+}

@@ -1,0 +1,203 @@
+{
+  "policy_version": "2.3.0-tier7",
+  "policy_name": "Human Rounds public cut preflight - Tier 7",
+  "_comment": "Data-driven policy. The script is generic; every repo-specific rule lives here. Value-free by construction: rules match NAMES and credential SHAPES, and the script never reports a matched value, file content, remote URL, or object name.",
+
+  "required_public_artifacts": [
+    {"path": "README.md", "min_bytes": 4096, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "LICENSE", "min_bytes": 16384, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "CONTRIBUTING.md", "min_bytes": 4096, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "SECURITY.md", "min_bytes": 1024, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "CODE_OF_CONDUCT.md", "min_bytes": 1024, "required_sections": ["Our standard", "Enforcement", "Contact"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": ".github/GOVERNANCE.md", "min_bytes": 1024, "required_sections": ["Decision making", "Roles", "Approvals and review", "Changes to this document"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": "docs/policies/MAINTAINERS.md", "min_bytes": 512, "required_sections": ["Current maintainers", "Reachability", "Scope", "Emeritus"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": ".github/SUPPORT.md", "min_bytes": 512, "required_sections": ["Support channels", "Response expectations", "LTS", "Commercial support"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": "docs/policies/DPA.md", "min_bytes": 1536, "required_sections": ["Current posture", "Data processors inventory", "Sub-processing", "Changes"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": "docs/policies/DATA_MAP.md", "min_bytes": 2048, "required_sections": ["Data categories", "Storage", "Processors and flows", "Retention", "Jurisdictions"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": "docs/policies/CLINICAL_SAFETY.md", "min_bytes": 1536, "required_sections": ["Safety ownership", "Clinical safety case", "In-product mitigations", "Limitations"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": "docs/policies/INCIDENT_RESPONSE.md", "min_bytes": 1024, "required_sections": ["Severity levels", "Reporting", "Response runbook", "Post-incident review"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": "docs/policies/HIGH_AVAILABILITY.md", "min_bytes": 1024, "required_sections": ["Availability model", "RTO and RPO", "Backups", "Degradation contracts"], "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN", "record: pending"], "approval_record": {"required": true, "record_prefix": "approval:"}},
+    {"path": "CHANGELOG.md", "min_bytes": 1024, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "docs/INSTALL.md", "min_bytes": 2048, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "docs/UPGRADING.md", "min_bytes": 4096, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": ".github/workflows/release.yml", "min_bytes": 8192, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "Dockerfile", "min_bytes": 2048, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "docker-compose.yml", "min_bytes": 1024, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "docker-compose.release.yml", "min_bytes": 1024, "placeholder_markers": ["TODO", "TBD", "FIXME", "XXX", "PLACEHOLDER", "Lorem ipsum", "<fill", "FILL IN"]},
+    {"path": "scripts/public_cut_preflight.py", "min_bytes": 16384},
+    {"path": "scripts/public_cut_policy.json", "min_bytes": 2048},
+    {"path": "tests/test_public_cut_preflight.py", "min_bytes": 32768},
+    {"path": "docs/publication/preflight.md", "min_bytes": 2048}
+  ],
+
+  "public_binary_asset_sets": [
+    {
+      "id": "example-town-referral-images",
+      "root": "packs/example-town/ordenes-demo",
+      "manifest": "packs/example-town/ordenes-demo/assets.json",
+      "extensions": [".jpg"]
+    }
+  ],
+
+  "forbidden_paths": [
+    {
+      "id": "private-town-pack",
+      "match": "prefix",
+      "pattern": "packs/ar-b-pinamar",
+      "description": "real production town data pack for Pinamar (live doctors, patients, contacts)"
+    },
+    {
+      "id": "private-pack-family",
+      "match": "regex",
+      "pattern": "(^|/)packs/[^/]+-private($|/)",
+      "description": "any *-private pack family"
+    },
+    {
+      "id": "private-local-config",
+      "match": "name",
+      "pattern": "CLAUDE.local.md",
+      "description": "private per-install override file"
+    },
+    {
+      "id": "claude-local-settings",
+      "match": "name",
+      "pattern": "settings.local.json",
+      "description": "local harness settings (may carry personal tokens)"
+    },
+    {
+      "id": "claude-private-state",
+      "match": "regex",
+      "pattern": "(^|/)\\.claude/(inbox|parking|memory|control-plane)(/|$)",
+      "description": "private Claude harness state directories"
+    },
+    {
+      "id": "scheduled-tasks",
+      "match": "name",
+      "pattern": "scheduled_tasks.json",
+      "description": "persistent scheduled-task state"
+    },
+    {
+      "id": "ops-secrets-env",
+      "match": "regex",
+      "pattern": "(^|/)\\.env($|\\.(?!example$))",
+      "description": "environment secrets file (.env and .env.<x>, but NOT the public .env.example template)"
+    },
+    {
+      "id": "ops-repo",
+      "match": "prefix",
+      "pattern": "humanrounds-pinamar",
+      "description": "private operations repository"
+    },
+    {
+      "id": "private-docs",
+      "match": "prefix",
+      "pattern": "docs/private",
+      "description": "private documentation folder"
+    },
+    {
+      "id": "git-worktree-metadata",
+      "match": "prefix",
+      "pattern": ".git/worktrees",
+      "description": "git worktrees metadata directory (linked worktree state)"
+    },
+    {
+      "id": "claude-harness-dir",
+      "match": "prefix",
+      "pattern": ".claude",
+      "allow": [],
+      "description": "the whole agent harness directory (hooks with local paths, skills, snapshots); a public file inside it goes into allow by exact path"
+    },
+    {
+      "id": "private-working-files",
+      "match": "regex",
+      "pattern": "^(CLAUDE\\.md|docs/design/design-qa\\.md|design-qa\\.md|scripts/usability/usability\\.pinamar\\.config\\.json|docs/design/plans(/.*)?|design-plans(/.*)?|docs/pinamar(/.*)?|docs/portal-gateway-identity\\.md|scripts/check_caps_movil\\.py|scripts/nightly-local\\.plist|scripts/public_cut_private_digests\\.json|scripts/fixes/staff_portal_admin\\.py|tests/test_demo_deploy_after_push\\.py|tests/test_admin_simplification_guard\\.py|tests/test_credential_boundary\\.py|tests/test_story_coverage_guard\\.py|tests/test_story_coverage_ratchet\\.py|tests/test_claude_md_size\\.py|tests/test_check_caps_movil\\.py|docs/studies(/.*)?|docs/usability-study(/.*)?|docs/coneiturno-findings\\.md|docs/(home|list|mobile|modal-book|settings|slots-grouped|turnos-slots|turnos-ui)\\.png|static/humor(/.*)?|scripts/translate_memes_lote2\\.py|scripts/public_tree_hygiene_audit\\.py|tests/test_public_tree_hygiene\\.py)$",
+      "description": "installation operations notes and design working files kept out of the cut by .gitattributes export-ignore"
+    },
+    {
+      "id": "git-commondir-override",
+      "match": "name",
+      "pattern": "commondir",
+      "description": "git commondir override file (linked worktree or submodule marker)"
+    }
+  ],
+
+  "secret_marker_classes": [
+    {"id": "anthropic-key", "format": "regex", "patterns": ["sk-ant-[A-Za-z0-9_-]{20,}"]},
+    {"id": "openrouter-key", "format": "regex", "patterns": ["sk-or-[A-Za-z0-9-]{20,}"]},
+    {"id": "google-api-key", "format": "regex", "patterns": ["AIza[0-9A-Za-z_-]{30,}"]},
+    {"id": "aws-access-key", "format": "regex", "patterns": ["AKIA[0-9A-Z]{16}"]},
+    {"id": "github-token", "format": "regex", "patterns": ["gh[pousr]_[A-Za-z0-9]{36,}"]},
+    {"id": "gitlab-token", "format": "regex", "patterns": ["glpat-[A-Za-z0-9_-]{20,}"]},
+    {"id": "slack-token", "format": "regex", "patterns": ["xox[baprs]-[0-9A-Za-z-]{10,}"]},
+    {"id": "private-key-block", "format": "regex", "patterns": ["-----BEGIN [A-Z ]*PRIVATE KEY-----"]},
+    {"id": "secret-assignment", "format": "regex", "patterns": ["(?i)(password|passwd|secret|api[_-]?key|apikey|token|access[_-]?key|private[_-]?key)\\s*[:=]\\s*['\"][^'\"]{16,}['\"]"]}
+  ],
+
+  "private_marker_classes": [
+    {
+      "id": "tailnet-host",
+      "format": "regex",
+      "description": "a Tailscale MagicDNS host name (private network)",
+      "patterns": [
+        "(?i)\\b[a-z0-9-]+\\.ts\\.net\\b"
+      ]
+    },
+    {
+      "id": "coolify-resource-id",
+      "format": "regex",
+      "description": "a 24-character Coolify resource id written next to the word Coolify",
+      "patterns": [
+        "(?i)coolify.{0,80}?(?<![a-z0-9])(?=[a-z0-9]{0,23}[0-9])(?=[a-z0-9]{0,23}[a-z])[a-z0-9]{24}(?![a-z0-9])",
+        "(?i)(?<![a-z0-9])(?=[a-z0-9]{0,23}[0-9])(?=[a-z0-9]{0,23}[a-z])[a-z0-9]{24}(?![a-z0-9]).{0,80}?coolify"
+      ]
+    },
+    {
+      "id": "public-ip-address",
+      "format": "public-ip",
+      "description": "a globally routable IPv4/IPv6 address outside tests/ (use RFC 5737/3849 documentation ranges); the listed networks are flagged in tests too",
+      "exempt_prefixes": [
+        "tests"
+      ],
+      "salt": "hr-public-cut:networks:v1:",
+      "network_prefixes_v4": [
+        32,
+        19
+      ],
+      "network_prefixes_v6": [
+        128,
+        64
+      ],
+      "hashes_file": "public_cut_private_digests.json"
+    },
+    {
+      "id": "known-private-token",
+      "format": "token-sha256",
+      "description": "a person's name, account id or infrastructure id of this installation, listed only as a salted digest",
+      "salt": "hr-public-cut:tokens:v1:",
+      "hashes_file": "public_cut_private_digests.json"
+    }
+  ],
+
+  "external_evidence": [
+    {
+      "id": "github-publication-readiness",
+      "description": "GitHub repository visibility, protections, secret scanning, and push/secret scanning configured; publishing entity authorized and maintained",
+      "note": "REQUIRED EXTERNAL EVIDENCE / NOT EVALUATED"
+    },
+    {
+      "id": "project-governance-approval",
+      "description": "Project maintainers, support/LTS plan, DPA and data governance, clinical safety owner approval, incident/HA RTO-RPO owner and budget, and first release approval confirmed",
+      "note": "REQUIRED EXTERNAL EVIDENCE / NOT EVALUATED"
+    },
+    {
+      "id": "credential-and-platform-provisioning",
+      "description": "Old maintainer/Brila Google Places key revocation, and Meta Business number/templates/production-access provisioning verified",
+      "note": "REQUIRED EXTERNAL EVIDENCE / NOT EVALUATED"
+    }
+  ],
+
+  "prune_dirs": [".git", "node_modules", "__pycache__", ".venv", "venv", "dist", "build", ".pytest_cache", ".story-cache", ".next", ".mypy_cache", ".ruff_cache"],
+  "text_scan_extensions": [".py", ".js", ".mjs", ".json", ".md", ".txt", ".sh", ".yml", ".yaml", ".toml", ".cfg", ".ini", ".html", ".css", ".sql"],
+  "text_scan_extensionless": ["Dockerfile", "Makefile", "LICENSE", ".gitignore", ".dockerignore", ".env.example"],
+  "max_scan_bytes": 1048576
+}

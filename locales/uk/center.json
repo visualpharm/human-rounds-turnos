@@ -1,0 +1,13 @@
+{
+  "_comment": "A center's own page (/center/<slug>): services/doctors block chrome, no-booking note, photo/review folds and meta description.",
+  "center.services_title": "Послуги",
+  "center.no_online_booking": "Цей центр не приймає записи через додаток. Зв'яжися з ним напряму:",
+  "center.contact_or": "або",
+  "center.photos": "Фото",
+  "center.neighbor_quotes": "Що кажуть сусіди",
+  "center.neighbor_tips": "Поради сусідів",
+  "center.meta_with_lede": "{lede} Переглянь послуги, фахівців, графік роботи та контактні дані.",
+  "center.meta_default": "Послуги, фахівці, графік роботи та контакти {name} у {city}.",
+  "center.photo_alt": "{name}, фото {n} з {total}",
+  "center.until": "до {date}"
+}

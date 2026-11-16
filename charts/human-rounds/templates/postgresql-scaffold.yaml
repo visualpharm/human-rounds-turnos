@@ -1,0 +1,3 @@
+{{- if .Values.postgresql.enabled }}
+{{- fail "postgresql.enabled is scaffolding-only: provide an externally managed DATABASE_URL Secret instead" }}
+{{- end }}

@@ -1,0 +1,23 @@
+{
+  "_note": "Sampleton es una localidad ficticia: estas fotos NO son de ningún edificio real — las genera scripts/gen_demo_center_photos.py con gpt-image-2, sin carteles ni nombres legibles. Fotos en /webdata/centro-photos/<slug>.webp.",
+  "diagnostic-center": {
+    "photo": "/webdata/centro-photos/diagnostic-center.webp?v=2",
+    "credit": "Imagen generada (localidad ficticia)"
+  },
+  "riverside-clinic": {
+    "photo": "/webdata/centro-photos/riverside-clinic.webp?v=2",
+    "credit": "Imagen generada (localidad ficticia)"
+  },
+  "lakeview-clinic": {
+    "photo": "/webdata/centro-photos/lakeview-clinic.webp?v=2",
+    "credit": "Imagen generada (localidad ficticia)"
+  },
+  "maternity-center": {
+    "photo": "/webdata/centro-photos/maternity-center.webp?v=2",
+    "credit": "Imagen generada (localidad ficticia)"
+  },
+  "sampleton-hospital": {
+    "photo": "/webdata/centro-photos/sampleton-hospital.webp?v=2",
+    "credit": "Imagen generada (localidad ficticia)"
+  }
+}

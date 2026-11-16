@@ -1,0 +1,77 @@
+{
+  "note": "Agrupación de servicios y médicos en 'clusters' tipo Sacoturno para el directorio (home, /d/<id>, nav). top = aparece como card en Más buscadas (orden ascendente). pinned = va primero en Más especialidades (orden ascendente); catch_all = el rubro comodín, siempre último. kind \"walkin\" = página de demanda espontánea (todos los consultorios sin turno, por centro), links = ids de enlaces.json que encabezan esa página.",
+  "clusters": [
+    {
+      "id": "salud-mental",
+      "nombre": "Salud mental",
+      "top": 5,
+      "icon": "/static/icons/salud-mental.png"
+    },
+    {
+      "id": "clinica",
+      "nombre": "Clínica y medicina general",
+      "top": 1,
+      "icon": "/static/icons/clinica.png"
+    },
+    {
+      "id": "trauma-kine",
+      "nombre": "Traumatología y kinesiología",
+      "top": 3,
+      "icon": "/static/icons/trauma-kine.png"
+    },
+    {
+      "id": "diagnostico",
+      "nombre": "Diagnóstico y imagen",
+      "top": 2,
+      "icon": "/static/icons/diagnostico.png"
+    },
+    {
+      "id": "endocrino",
+      "nombre": "Endocrinología, diabetes y nutrición",
+      "top": 6,
+      "icon": "/static/icons/endocrino.png"
+    },
+    {
+      "id": "pediatria",
+      "nombre": "Pediatría",
+      "top": 4,
+      "icon": "/static/icons/pediatria.png"
+    },
+    {
+      "id": "cardiologia",
+      "nombre": "Cardiología",
+      "icon": "/static/icons/cardiologia.png"
+    },
+    {
+      "id": "gineco",
+      "nombre": "Ginecología y obstetricia",
+      "icon": "/static/icons/gineco.png"
+    },
+    {
+      "id": "odontologia",
+      "nombre": "Odontología",
+      "icon": "/static/icons/odontologia.png"
+    },
+    {
+      "id": "vacunas-prevencion",
+      "nombre": "Vacunas y prevención",
+      "icon": "/static/icons/vacunas-prevencion.png"
+    },
+    {
+      "id": "otorrino-fono",
+      "nombre": "Otorrinolaringología y fono",
+      "icon": "/static/icons/otorrino-fono.png"
+    },
+    {
+      "id": "grupos",
+      "nombre": "Grupos y talleres",
+      "icon": "/static/icons/grupos.png"
+    },
+    {
+      "id": "otras",
+      "nombre": "Otras especialidades",
+      "catch_all": true,
+      "icon": "/static/icons/otras.png"
+    }
+  ]
+}

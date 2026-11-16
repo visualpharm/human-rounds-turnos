@@ -1,0 +1,191 @@
+{# _chat_bootstrap.html — inline bootstrap for the native chat widget
+   (static/platform/chat-widget.mjs), shared by the public templates
+   (index/about/terms/privacy/account) and site_shell._shell()'s f-string
+   shells. The classic `<script src="chat-widget.js" defer>` loader was
+   retired with the classic widget (row 4.1 cutover, 2026-09-05): the module
+   is imported from the client manifest, fail-closed — a missing manifest
+   entry or a rejected import never falls back to an unversioned URL, and
+   the failed open never silently no-ops. The launcher is painted HERE so an
+   early click queues open instead of disappearing or navigating away; a
+   matching `stzc-close` event on the launcher cancels that queued open.
+   Generation-checked callbacks must not reopen a closed or replaced
+   instance. The module renders its OWN degraded panel when a dependency IT
+   loads fails (platform/chat-ui.mjs); this recovery line covers the one
+   failure it cannot render itself — the widget module never evaluating. A
+   rejected dynamic import is cached for the document's life, so the retry
+   reloads the page (the same contract as the intake admin's data-ent-retry).
+   Styling is self-contained inline (tokens still come from the shell's
+   tokens.css): same spot and radius as the widget launcher, the widget's
+   own alert line style, and its own action-button spec (.stzc-login-btn) —
+   no new chrome.
+
+   No AI key, or TURNOS_AI_DISABLED=1: there is no chat to open, so nothing is
+   painted (responsable del producto, 2026-10-28: salud's launcher led to «El asistente no está
+   disponible»). A key whose provider is down keeps the launcher: the chat
+   answers with the services and centers links instead (chat_agent._outage). #}
+{% if ai_chat_configured() -%}
+<style>
+  #stz-chat-launcher{position:fixed;right:20px;bottom:20px;z-index:8999;height:52px;padding:0 17px;border:0;border-radius:var(--btn-radius,14px);cursor:pointer;background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);box-shadow:var(--shadow-pop);display:inline-flex;align-items:center;justify-content:center;gap:9px;font:650 14px var(--font);white-space:nowrap;max-width:calc(100vw - 32px);transition:background .12s;}
+  {# Un solo "Chateá con IA" visible (responsable del producto, 2026-09-19): con el site nav en
+     pantalla — #stznav existe desde este HTML, sin flash — el launcher
+     flotante no se pinta; el botón de la barra hace ese trabajo. Vuelve
+     cuando el nav colapsa al burger (compacto incluido: el botón de chat
+     queda dentro del desplegable cerrado) o en páginas sin nav. #}
+  body:has(#stznav:not(.stznav--collapsed):not(.stznav--compact)) #stz-chat-launcher:not(.stzc-booking-inline){display:none;}
+  #stz-chat-launcher:hover{background-image:var(--hover-fill);}
+  #stz-chat-launcher img{width:22px;height:22px;aspect-ratio:1/1;flex-shrink:0;filter:brightness(0) invert(1);}
+  #stz-chat-launcher.stzc-booking-inline{position:static;right:auto;bottom:auto;width:auto;height:52px;min-height:52px;margin:var(--space-3,24px) 0 0;padding:0 17px;max-width:100%;}
+  @media (max-width:480px) {
+    {# Phones keep the caption (the product owner, 2026-10-17: an icon-only button told nobody
+       it was the AI chat): same pill, tighter, label always visible. #}
+    #stz-chat-launcher{right:12px;bottom:12px;height:44px;padding:0 14px;gap:7px;font-size:14px;}
+  }
+  #stz-chat-launcher[hidden]{display:none;}
+  body:has(#stznav.open) #stz-chat-launcher:not(.stzc-booking-inline){display:none;}
+  {# El pie guarda sus 76px para el launcher desde 601px, en la misma condición
+     en que el launcher se dibuja (nav colapsado/compacto o página sin nav; el
+     inline del booking queda afuera). La regla vive también en chat-widget.mjs,
+     pero ese módulo llega después del primer cuadro: sin esta copia, en una
+     conexión lenta el botón tapaba el texto del pie hasta que el módulo cargaba
+     (test/ui-evals.test.mjs y public-chrome.spec.mjs la mantienen igual). #}
+  @media (min-width:601px){body:has(#stz-chat-launcher:not(.stzc-booking-inline)):not(:has(#stznav:not(.stznav--collapsed):not(.stznav--compact))) :is(footer.site,footer.about-footer,.wrap>footer){padding-bottom:76px;}}
+  .stzc-booking-launcher-anchor.stzc-booking-recovery{display:block;}
+</style>
+<button type="button" id="stz-chat-launcher"
+        aria-label="{{ t('chat.open', 'Abrir Chat con IA') }}"
+        aria-controls="stz-chat-panel" aria-expanded="false"
+        data-chat-intent="closed">
+  <img src="/static/icons/chat-robot-sf-regular.png" alt="" aria-hidden="true" width="22" height="22">
+  <span class="stzc-launcher-label">{{ t('nav.chat', 'Chateá con IA') }}</span>
+</button>
+<div id="chat-boot-error" role="alert"
+     style="display:none;position:fixed;right:20px;bottom:20px;z-index:8999;flex-direction:column;gap:10px;max-width:min(300px,calc(100vw - 40px));padding:14px 16px;border:1px solid var(--border-strong);border-radius:14px;background:var(--panel);box-shadow:var(--shadow-pop);">
+  <p style="margin:0;font-size:16px;line-height:1.5;color:var(--text-2);">{{ t('chat.connect_error', 'No pudimos conectar. Probá de nuevo en un rato.') }}</p>
+  <button type="button" id="chat-boot-retry"
+          style="align-self:flex-start;height:38px;padding:0 16px;border:none;border-radius:var(--btn-radius,10px);background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);font:600 14.5px var(--font);cursor:pointer;">{{ t('chat.open', 'Abrir Chat con IA') }}</button>
+</div>
+<script>
+(function () {
+  var launcher = document.getElementById("stz-chat-launcher");
+  var generation = 0;
+  var wantOpen = false;
+  var api = null;
+  var failed = false;
+  var loadPromise = null;
+  var bookingMedia = window.matchMedia("(max-width:1100px)");
+  function bookingAnchor() {
+    return document.getElementById("stzc-booking-launcher-anchor");
+  }
+  function placeBookingControl(control) {
+    var anchor = bookingAnchor();
+    var inline = !!anchor && bookingMedia.matches;
+    if (!control) return inline;
+    control.classList.toggle("stzc-booking-inline", inline);
+    if (inline) anchor.appendChild(control);
+    else if (control.parentNode !== document.body) {
+      document.body.insertBefore(control, document.getElementById("stz-chat-panel"));
+    }
+    return inline;
+  }
+  function placeBootstrapControls() {
+    placeBookingControl(launcher);
+    var error = document.getElementById("chat-boot-error");
+    var anchor = bookingAnchor();
+    // The recovery message is wider than the launcher: it must stay in the
+    // booking flow even on desktop, where the launcher itself fits beside it.
+    if (anchor) anchor.classList.toggle("stzc-booking-recovery", failed);
+    if (error && anchor) {
+      error.style.position = "static";
+      error.style.right = "auto";
+      error.style.bottom = "auto";
+      error.style.margin = "24px 0 0";
+      anchor.appendChild(error);
+    } else if (error) {
+      error.style.position = "fixed";
+      error.style.right = "20px";
+      error.style.bottom = "20px";
+      error.style.margin = "0";
+      if (error.parentNode !== document.body) {
+        document.body.insertBefore(error, document.getElementById("stz-chat-panel"));
+      }
+    }
+  }
+  function staticUrl(name) {
+    var m = (typeof window !== "undefined") && window.SANA_STATIC;
+    var u = m && m[name];
+    if (!u && typeof console !== "undefined" && console.error) console.error("[static] " + name + " is not in window.SANA_STATIC (the shell must emit static_fingerprint.manifest_script())");
+    return u || null;
+  }
+  function markIntent() {
+    if (!launcher) return;
+    launcher.setAttribute("data-chat-intent", wantOpen ? "open" : "closed");
+  }
+  function mostrarErrorBoot() {
+    failed = true;
+    if (launcher) {
+      launcher.hidden = true;
+      launcher.style.display = "none";
+    }
+    var box = document.getElementById("chat-boot-error");
+    if (!box || box.style.display === "flex") return;
+    placeBootstrapControls();
+    box.style.display = "flex";
+    var retry = document.getElementById("chat-boot-retry");
+    if (retry && !retry.getAttribute("data-wired")) {
+      retry.setAttribute("data-wired", "1");
+      retry.addEventListener("click", function () { window.location.reload(); });
+    }
+  }
+  function ensureLoad() {
+    if (loadPromise) return loadPromise;
+    var chatWidgetUrl = staticUrl("platform/chat-widget.mjs");
+    if (!chatWidgetUrl) {
+      loadPromise = Promise.reject(new Error("[static] platform/chat-widget.mjs is not in window.SANA_STATIC"));
+    } else {
+      loadPromise = import(chatWidgetUrl);
+    }
+    loadPromise.then(function (m) { api = m; }, function () {
+      failed = true;
+      mostrarErrorBoot();
+    });
+    return loadPromise;
+  }
+  function applyIntent(myGen) {
+    if (myGen !== generation || !api) return;
+    if (wantOpen) api.abrir();
+    else api.cerrar();
+  }
+  function requestOpen() {
+    var my = ++generation;
+    wantOpen = true;
+    markIntent();
+    if (failed) { mostrarErrorBoot(); return; }
+    ensureLoad().then(function () { applyIntent(my); }).catch(function () {
+      if (my === generation) mostrarErrorBoot();
+    });
+  }
+  function requestClose() {
+    var my = ++generation;
+    wantOpen = false;
+    markIntent();
+    if (api) { api.cerrar(); return; }
+    if (failed) return;
+    ensureLoad().then(function () { applyIntent(my); }).catch(function () {});
+  }
+  if (launcher) {
+    launcher.addEventListener("click", requestOpen);
+    launcher.addEventListener("stzc-close", requestClose);
+  }
+  // Header bootstrap runs before #svc-form-host is parsed. The booking page
+  // provides a server-rendered anchor which reserves the control's footprint;
+  // relocate at DOMContentLoaded before the native module can mount.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", placeBootstrapControls, { once: true });
+  } else {
+    placeBootstrapControls();
+  }
+  bookingMedia.addEventListener("change", placeBootstrapControls);
+  ensureLoad();
+})();
+</script>
+{%- endif %}

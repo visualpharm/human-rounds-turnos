@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es" data-theme="{{ tid }}"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>No tenés permiso · {{ brand }}</title>
+<meta name="robots" content="noindex,nofollow">
+{{ fonts }}
+<link rel="stylesheet" href="{{ human_rounds_css }}">
+<link rel="stylesheet" href="{{ admin_gate_css }}">
+<style>
+body{background:#f6f7f5;margin:0;color:#20231f}
+.forb{width:min(100% - 32px,460px);margin:10vh auto;background:#fff;border:1px solid #dfe3dd;border-radius:16px;padding:28px;box-sizing:border-box}
+.forb h1{font-size:26px;margin:0 0 10px} .forb p{line-height:1.5;color:#5b625b}
+.forb .forb-path{font-family:ui-monospace,monospace;font-size:14px;color:#7b827b;word-break:break-all}
+.forb .btn{margin-top:18px}
+</style></head><body>
+<main class="forb">
+<h1>No tenés permiso para esta pantalla</h1>
+<p>Tu cuenta puede entrar al panel, pero no a<span class="forb-path">&nbsp;{{ shown }}</span>.</p>
+<p>Si necesitás este acceso, pedile a administración que lo habilite.</p>
+<a class="btn btn-ok btn-lg" href="/admin">Ir al panel</a>
+</main></body></html>

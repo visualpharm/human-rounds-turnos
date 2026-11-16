@@ -1,0 +1,10 @@
+{
+  "admin.chats.empty": "Il n'y a pas encore eu de conversations.",
+  "admin.chats.failed": "Impossible de charger les conversations.",
+  "admin.chats.col_when": "Dernière activité",
+  "admin.chats.col_channel": "Canal",
+  "admin.chats.col_first": "Première question",
+  "admin.chats.col_turns": "Messages",
+  "admin.chats.channel_web": "Site",
+  "admin.chats.channel_whatsapp": "WhatsApp"
+}

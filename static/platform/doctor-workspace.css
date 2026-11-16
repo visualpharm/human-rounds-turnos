@@ -1,0 +1,94 @@
+body{text-wrap:pretty}
+.dw-workspace{max-width:780px;color:var(--text);font-size:15px;overflow-wrap:anywhere}
+.dw-section{margin:0 0 16px}.dw-section h2{display:flex;align-items:center;gap:10px;font-size:18px;margin:0 0 16px;color:var(--text)}.dw-center{margin:0 0 12px}.dw-center h3{font-size:17px;margin:0 0 4px;color:var(--text)}.dw-center>p{margin:0 0 12px;color:#3D443E}
+.dw-card{border:1px solid var(--border);border-radius:10px;padding:16px;background:var(--panel)}.dw-step{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;flex:none;border-radius:8px;background:var(--state-done-bg);color:var(--text);font-size:16px}
+.dw-fields{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;max-width:560px}
+.dw-workspace label{display:flex;flex-direction:column;gap:4px;min-width:0;font-size:15px;color:var(--text)}
+.dw-workspace input:not([type=checkbox]),.dw-workspace select{box-sizing:border-box;max-width:100%;min-width:0;width:100%;min-height:40px;font-size:16px;padding:8px 12px;border:1px solid var(--border-strong);border-radius:8px;background:var(--panel);color:var(--text)}
+.dw-workspace input[type=file]{padding:8px 0;border:0;background:transparent;width:min(280px,100%)}
+.dw-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:12px}.dw-workspace>[data-finish-section]{padding:0 16px 16px}.dw-actions p{margin:0}.dw-workspace .btn{white-space:normal}.dw-workspace [role=status]:empty{display:none}.dw-workspace [role=status]{font-size:15px}
+.dw-photo-row{display:flex;align-items:center;flex-wrap:wrap;gap:16px}.dw-portrait{background-color:var(--state-done-bg);width:112px;height:112px;border-radius:50%;flex:none;background-repeat:no-repeat;background-size:cover;background-position:center}.dw-photo-row>div{min-width:0;max-width:100%}.dw-photo-status:not(:empty){display:inline-block;margin:0 0 10px;padding:3px 8px;background:var(--state-done-bg);border-radius:6px;font-size:14px;color:var(--text)}
+.dw-days{display:flex;flex-wrap:wrap;gap:6px}.dw-days label{position:relative;cursor:pointer}
+.dw-days input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.dw-days span{display:flex;align-items:center;justify-content:center;width:44px;min-height:40px;border:1px solid var(--border-strong);border-radius:8px;color:var(--text);background:var(--panel);font-size:15px;box-sizing:border-box}
+.dw-days input:checked+span{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:500}.dw-days input:focus-visible+span{outline:2px solid var(--focus-border);outline-offset:2px}
+.dw-day{margin:0 0 16px}.dw-day-head{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;margin:14px 0 0}.dw-day-head h4{margin:0;font-size:16px;font-weight:600;color:var(--text)}
+.dw-times{display:grid;grid-template-columns:104px 104px 134px minmax(0,1fr) 44px;gap:12px;max-width:100%;margin:12px 0 0}.dw-slot>.dw-times{margin-top:0}
+.dw-slot{margin:12px 0 0}.dw-slot:first-child{margin-top:0}
+.dw-time{text-align:left}
+/* Icon, color and 44 px zone: the shared close button .hr-x (human-rounds.css). */
+.dw-x{align-self:center}
+.dw-x:hover{background:var(--danger-soft);color:var(--danger)}.dw-x:focus-visible{outline:2px solid var(--focus-border);outline-offset:2px}
+/* .dw-add-slot and .dw-copy-btn are the panel's secondary button: their look
+   lives in admin-direct.css with .hor-add (one button system, 2026-11-08). */
+.dw-copy{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 0;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+.dw-copy-label{font-size:15px;color:var(--text)}.dw-copy-warn{flex-basis:100%;margin:0;font-size:14px;color:var(--danger)}.dw-copy-actions{display:flex;gap:8px;flex-basis:100%}
+.dw-other{list-style:none;margin:0;padding:0}.dw-other li{margin:0 0 10px;color:#3D443E}.dw-other li:last-child{margin-bottom:0}.dw-other-ask{margin:12px 0 0;color:var(--text)}
+.dw-summary{margin:12px 0 0!important;font-weight:500;color:var(--text)!important}.dw-error{color:var(--danger)}.dw-edit-actions{display:flex;margin:4px 0 0}.dw-original{width:min(560px,calc(100vw - 32px));box-sizing:border-box;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text)}.dw-original img{display:block;max-width:100%;max-height:70vh;margin:0 auto 16px}.dw-original::backdrop{background:#1117}
+@media(max-width:640px){.dw-slot{position:relative;padding-top:4px}.dw-times{grid-template-columns:minmax(0,1fr)}.dw-times>label{flex-direction:row;align-items:center;justify-content:space-between}.dw-times input:not([type=checkbox]){width:130px}.dw-times .dw-time{width:110px}.dw-times>label:nth-child(4){flex-direction:column;align-items:stretch;gap:4px}.dw-x{position:static;justify-self:end}.dw-section{margin-bottom:16px}.dw-actions{align-items:flex-start}}
+
+.dw-upload-input{position:absolute;width:1px!important;height:1px!important;min-height:1px!important;padding:0!important;opacity:0;overflow:hidden}.dw-upload-label{cursor:pointer;display:inline-flex!important;align-items:center;justify-content:center}.dw-upload-input:focus-visible~.dw-actions .dw-upload-label{outline:2px solid var(--focus-border);outline-offset:2px}
+/* Phone gutter: at ≤720px the admin shell drops .adm-content-wrap's side
+   padding, so every bare workspace child (the service-owned schedule note,
+   the recovery fallback, the finish row, the edit-hours links) gets the same
+   16px gutter as the h1 and the cards. .dw-card children already self-pad.
+   Specificity beats the ≤640px sticky shorthand above, keeping its 12px
+   vertical padding on .dw-edit-actions. */
+@media(max-width:720px){.dw-workspace>p,.dw-workspace>button,.dw-workspace>section.dw-actions,#doctor-recovery,.dw-workspace>form:not(.dw-card)>p,.dw-workspace>form:not(.dw-card)>.dw-edit-actions{padding-left:var(--adm-gutter,16px);padding-right:var(--adm-gutter,16px)}}
+/* «Mis agendas» (the product owner, 2026-10-27): ONE left edge with the panel's other
+   screens — the 16px content gutter «Pacientes de hoy» uses at every width —
+   for the cards, the main button and the holidays line alike; the bare-child
+   phone gutter above would double it here. The reset matches that rule's
+   specificity (`form:not(.dw-card)`) and wins by coming later. */
+.dw-workspace--agendas{padding:16px;box-sizing:border-box}
+/* The onboarding keeps the same 16px edge: its cards never touch the sidebar
+   or the screen edge. The finish row and the bare children drop their own
+   padding, so the edge is 16px on every side, the bottom too. */
+.dw-workspace--setup{padding:16px;box-sizing:border-box}.dw-workspace--setup>[data-finish-section]{padding:0}
+@media(max-width:720px){.dw-workspace--setup>p,.dw-workspace--setup>button,.dw-workspace--setup>section.dw-actions,.dw-workspace--setup>form:not(.dw-card)>p{padding-left:0;padding-right:0}}
+@media(max-width:720px){.dw-workspace--agendas>p,.dw-workspace--agendas>form:not(.dw-card)>p,.dw-workspace--agendas>form:not(.dw-card)>.dw-edit-actions{padding-left:0;padding-right:0}}
+.dw-agendas{display:flex;flex-direction:column;gap:12px}.dw-agendas>.dw-center{margin:0}
+.dw-agendas .dw-card>p{margin:4px 0 0;color:var(--text)}.dw-agendas .dw-card>.dw-summary{margin-top:12px!important}
+/* A doctor's next consultorio at the same center continues the card above:
+   one border around both, a hairline between them, no second heading. */
+/* The length every card shares is said only here: it reads as a fact of the
+   list, not as a hint (ui-expert 08.11). */
+.dw-common{margin:0 0 12px;font-size:16px;font-weight:600;color:var(--text)}
+.dw-agendas>.dw-has-cont{border-bottom-left-radius:0;border-bottom-right-radius:0;padding-bottom:12px}
+.dw-agendas>.dw-cont{margin-top:-13px;border-top-left-radius:0;border-top-right-radius:0;border-top-color:var(--hairline,var(--border));padding-top:12px}
+.dw-agendas .dw-cont>p:first-child{margin-top:0}
+.dw-holidays{margin:24px 0 0}.dw-holidays>p{margin:0;color:var(--text)}
+/* The full list opens with the screen's own quiet secondary button
+   (.dw-copy-btn), date first, the holiday's name next to it. */
+/* .dw-holidays summary is the panel's secondary button: its look lives in admin-direct.css. */
+.dw-holidays summary{margin:12px 0 0;list-style:none}
+.dw-holidays summary::-webkit-details-marker{display:none}
+.dw-holidays ul{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:8px 16px}
+.dw-holidays li{display:contents}.dw-hol-date{font-weight:500;color:var(--text)}
+/* The admin's «Mis agendas» (critical review 08.11, D1): every doctor's
+   agendas are ONE list, a row per agenda (doctor, center with its
+   consultorio, days and hours) divided by hairlines, never framed cards.
+   A doctor's name heads its first row only. On the phone each row stacks
+   (name, center, hours) and the column heads go. */
+.dw-workspace--agendas:has(.dw-list){max-width:1100px}
+.dw-list-note{margin:0 0 12px;color:var(--text)}
+.dw-list{width:100%;border-collapse:collapse;font-size:16px;line-height:1.4;color:var(--text)}
+.dw-list th,.dw-list td{padding:12px 24px 12px 0;text-align:left;vertical-align:top;font-weight:400}
+.dw-list thead th{padding-top:0;padding-bottom:8px;font-size:14px;font-weight:500;color:var(--hint-ink);border-bottom:1px solid var(--border)}
+.dw-list tbody tr{border-top:1px solid var(--hairline,var(--border))}
+.dw-list tbody tr:first-child,.dw-list tbody tr.dw-same{border-top:0}
+.dw-list tbody tr.dw-same>*{padding-top:0}
+.dw-list .dw-l-doc{width:30%;font-weight:600}
+.dw-list .dw-l-center{width:30%}
+.dw-l-room,.dw-l-band{display:block}
+.dw-l-band+.dw-l-band{margin-top:4px}
+@media(max-width:640px){
+  .dw-list thead{display:none}
+  .dw-list,.dw-list tbody,.dw-list tr,.dw-list th,.dw-list td{display:block;width:auto}
+  .dw-list th,.dw-list td{padding:0}
+  .dw-list tbody tr{padding:12px 0}
+  .dw-list tbody tr.dw-same{padding-top:4px}
+  .dw-list tbody tr.dw-same>*{padding-top:0}
+  .dw-list .dw-l-doc,.dw-list .dw-l-center{width:auto;margin-bottom:4px}
+  .dw-list tr.dw-same .dw-l-doc{margin:0}
+}

@@ -1,0 +1,125 @@
+{
+  "baseline": "4d9b3aa11f696b09465b9ca5639b372c42f633af",
+  "change": "English panel keys (d717313): five panel module fingerprints move in the shared manifest (admin-charts, admin-create-appointment, admin-legal, admin-table, admin-users); the English bootstrap gains the reviewed en entries account.mine.lab.{chart_range,evolution_empty,pending_note,sensitive,sensitive_link,tab_evolution,tab_results}, home.results.suggested, date.day_month, info_page.source, service.announcement, service.info_page_lead, which previously fell back to Spanish.",
+  "spanish_and_anonymous": "reversing only the moved asset URLs restores every baseline byte",
+  "english": "token diff = the moved asset URLs plus exactly the en catalog entries listed above",
+  "renders": [
+    {
+      "page": "es /account",
+      "baseline_sha256": "52fcdd6ce41352d037407ce14062af5aa0f30ddf9e4fa244cf512878e4de87ec",
+      "new_sha256": "541da30795ce4b4155c74dbdb2ea5b4655885e2bcf0c67b5e5d51a177f6716f4",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": true
+    },
+    {
+      "page": "es /account/reset",
+      "baseline_sha256": "b7f4358e4a8e901f373b652841ea45391108d2382317953e03ac728b146c6bb2",
+      "new_sha256": "af2b43f99af750c84b47a748780a86075be815542d33dc3662905dd4bc878d82",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": true
+    },
+    {
+      "page": "es /auth/test",
+      "baseline_sha256": "b3ab38bd7c327ed3ea68cf55d24af0d13b3d4eb039b99fbd550bd8e1005e38c2",
+      "new_sha256": "bc16ad23ee870e38c44373dd7079dd77c4317a2ceb903b6a9326a9be14db9cfe",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": true
+    },
+    {
+      "page": "es /auth/sso",
+      "baseline_sha256": "d8371cff7131d6373704b4d5e275393ce7c1d9aafc2fd1409f6e5efd460560e4",
+      "new_sha256": "6224d90eff11b738faa688333fcf3d904f8fa16cb8083cf5180d5456fda65315",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": true
+    },
+    {
+      "page": "anon /account",
+      "baseline_sha256": "52fcdd6ce41352d037407ce14062af5aa0f30ddf9e4fa244cf512878e4de87ec",
+      "new_sha256": "541da30795ce4b4155c74dbdb2ea5b4655885e2bcf0c67b5e5d51a177f6716f4",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": true
+    },
+    {
+      "page": "en /account",
+      "baseline_sha256": "a04ea155371f812135aa0ea805857062ab975dacdf7700ebfdf17cd8a60fdb32",
+      "new_sha256": "f107daa1449d05355b9d22c32a682541d9c4691b626db9b358ed883666e3cdee",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": false
+    },
+    {
+      "page": "en /account/reset",
+      "baseline_sha256": "872ec7324b958e4ab74ebdbacfaa3f374128f96f3e95d3075367c8c62e47579d",
+      "new_sha256": "a505bbd3f930fe8744c7c54276b204eb25a4a4e33e7187355b4014349c923bf4",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": false
+    },
+    {
+      "page": "en /auth/test",
+      "baseline_sha256": "6bbd05107a55cfacbf9dd41ed76d02c83ba27693aab580cccd720f73cc90d47f",
+      "new_sha256": "2caf3d153c80e339737de0d00e7364a9e0e975e5f04ea8d4f608b9ee89d52a76",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": false
+    },
+    {
+      "page": "en /auth/sso",
+      "baseline_sha256": "99b2eb2abff9dc2d6dd22d831c63df12b90a88d5792be286dd1b4786de6cea17",
+      "new_sha256": "07feec744a4cf3a2d93587ed22e1c1bca3ec67df90464b35a0b926db039c9fd5",
+      "moved_assets": [
+        "admin-charts.fbf226de.mjs",
+        "admin-create-appointment.64c989ab.mjs",
+        "admin-legal.eaa6f8d2.mjs",
+        "admin-table.0d961b57.mjs",
+        "admin-users.5ca2134d.mjs"
+      ],
+      "url_reversal_restores_baseline": false
+    }
+  ]
+}

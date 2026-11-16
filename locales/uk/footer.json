@@ -1,0 +1,12 @@
+{
+  "_comment": "The shared site footer.",
+  "footer.about": "Про нас",
+  "footer.credit": "Іконки від Icons8",
+  "footer.emergency": "Екстрена допомога: {{sitio.emergency_number_link_html}}",
+  "footer.mission": "Створено та підтримується мешканцями {{sitio.city}}. Безкоштовно і без жодної комерційної мети: просто щоб тобі було легше отримати медичну допомогу.",
+  "footer.news": "Новини",
+  "footer.powered": "Працює на базі Human Rounds",
+  "footer.privacy": "Конфіденційність",
+  "footer.software": "Працює на програмному забезпеченні Human Rounds",
+  "footer.terms": "Умови"
+}

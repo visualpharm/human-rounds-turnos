@@ -1,0 +1,45 @@
+{# Direct platform-core twin of the legacy #usuarios section. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.system.users.title', 'Users') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.system.users.title', 'Users') }}{% endblock %}
+
+{# One screen header (the product owner, 2026-11-08): the create action sits on the
+   title's own line (.adm-title-action, admin-direct.css); hidden with the
+   title on a user's own page. #}
+{% block title_band %}
+<a class="btn btn-accent adm-title-action" href="/admin/users?new=1" data-users-state="new">{{ t('admin.system.users.new_button', 'Nuevo usuario') }}</a>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-usuarios"></div>
+  <p id="users-status" class="adm-empty" role="status" aria-live="polite" hidden
+     data-controller-load-error="{{ t('admin.system.common.load_error_retry', 'No se pudo cargar. Reintentá.') }}"></p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.CURRENT_USER = {{ current_user | tojson }};
+</script>
+<script type="module" src="{{ static('platform/admin-control-fit.mjs') }}"></script>
+<script>
+  (function () {
+    var sec = document.getElementById("sec-usuarios");
+    var status = document.getElementById("users-status");
+    function showControllerLoadError() {
+      var msg = (status && status.getAttribute("data-controller-load-error"))
+        || "No se pudo cargar. Reintentá.";
+      if (sec) sec.innerHTML = '<p class="adm-empty" role="alert">' + msg + "</p>";
+    }
+    var url = window.SANA_STATIC && window.SANA_STATIC["platform/admin-users.mjs"];
+    if (!url) {
+      showControllerLoadError();
+      return;
+    }
+    import(url).then(function (m) { return m.boot(); }).catch(showControllerLoadError);
+  })();
+</script>
+{% endblock %}

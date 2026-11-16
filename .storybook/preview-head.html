@@ -1,0 +1,9 @@
+<!-- Storybook renders BOTH themes from the same canvas (toolbar switch in
+     preview.mjs), so it loads both themes' Google Fonts families up front
+     instead of theme.py's per-theme swap (that optimization is for the
+     live site's first paint, not for a dev catalog). Exact family strings
+     copied from theme.py:_FONT_FAMILIES so the catalog matches production
+     type, not an approximation. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">

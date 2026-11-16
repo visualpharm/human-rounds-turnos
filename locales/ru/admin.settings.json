@@ -1,0 +1,23 @@
+{
+  "admin.settings.horizon_days": "Глубина записи (в днях)",
+  "admin.settings.opening_time": "Время открытия записи",
+  "admin.settings.horizon_range": "Срок записи должен быть от 1 до 365 дней.",
+  "admin.settings.opening_time_format": "Время открытия должно быть в формате ЧЧ:ММ.",
+  "admin.settings.holidays.title": "Праздничные дни",
+  "admin.settings.holidays.lede": "В этот день запись не ведется ни в одной службе, ни к врачу, ни в центре. Уже выданные талоны не отменяются автоматически: их нужно перенести.",
+  "admin.settings.holidays.empty": "Праздничные дни не загружены.",
+  "admin.settings.holidays.date": "Дата",
+  "admin.settings.holidays.name": "Название",
+  "admin.settings.holidays.remove": "Удалить",
+  "admin.settings.holidays.add": "+ Добавить праздничный день",
+  "admin.settings.holidays.load_national": "Загрузить государственные праздники",
+  "admin.settings.holidays.appointments_one": "{n} запись на этот день",
+  "admin.settings.holidays.appointments_few": "{n} записи, выданные в этот день",
+  "admin.settings.holidays.appointments_many": "{n} записей, выданных в этот день",
+  "admin.settings.holidays.appointments": "Выдано талонов на этот день: {n}",
+  "admin.settings.holidays.invalid": "Список праздничных дней недействителен.",
+  "admin.settings.holidays.bad_date": "Для каждого праздника нужна корректная дата.",
+  "admin.settings.holidays.no_name": "У каждого праздника должно быть название.",
+  "admin.settings.holidays.long_name": "Название праздника может содержать до {max} символов.",
+  "admin.settings.holidays.too_many": "Можно загрузить не более {max} праздничных дней."
+}

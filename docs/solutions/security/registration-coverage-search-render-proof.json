@@ -1,0 +1,104 @@
+{
+  "baseline": "289c3c64",
+  "reviewed_assets": {
+    "static/platform/account-form.mjs": "06957eac6c0c0102dc823e9b8de9f70ad8ba1dc07770996f5971bcb5187cb60d",
+    "static/platform/listing.mjs": "47b04ae9aca4bf643ff8f27ab0209b1e8512bc069eb676cab5049561a57f674b",
+    "static/platform/nav.mjs": "4572e3d1d98b9b8756b90586df1d569d4123db6746d3c02f635714b153d86ee6",
+    "static/platform/search.mjs": "d7acceddbb36779ee816eb5caf822ba26ca48b72ada247ff781504372551f500"
+  },
+  "allowed_catalog_additions": {
+    "account.form.json": [
+      "account.form.coverage.combined_label",
+      "account.form.coverage.manual_insurer",
+      "account.form.coverage.manual_private",
+      "account.form.coverage.already_added",
+      "account.form.coverage.one_private",
+      "account.form.coverage.insurer_limit",
+      "account.form.coverage.remove_named",
+      "account.form.coverage.add_coverage"
+    ]
+  },
+  "asset_url_reversals": [
+    [
+      "/static/platform/account-form.89416f97.mjs",
+      "/static/platform/account-form.06957eac.mjs"
+    ],
+    [
+      "/static/platform/listing.0515de5c.mjs",
+      "/static/platform/listing.47b04ae9.mjs"
+    ],
+    [
+      "/static/platform/nav.f476fea5.mjs",
+      "/static/platform/nav.4572e3d1.mjs"
+    ],
+    [
+      "/static/platform/search.65115770.mjs",
+      "/static/platform/search.d7accedd.mjs"
+    ]
+  ],
+  "renders": [
+    {
+      "page": "es:/account",
+      "baseline_sha256": "6c936597bcb7a129aa666078928a01904a3a3ab8bdd6db513525a31afe9ce206",
+      "new_sha256": "f722d008ffcc5391c7151a674728d020e87eebed286f9d3826da99abb6290b57",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/account/reset",
+      "baseline_sha256": "1c1a6391881213e672855d79fcbf6a51b22e11d71f0fe1cb718b69f2ce91dddd",
+      "new_sha256": "00d108191a666c5004de32611a215f9c7ba234a0698a2f3b43894fb461c33e2f",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "anon:/account",
+      "baseline_sha256": "6c936597bcb7a129aa666078928a01904a3a3ab8bdd6db513525a31afe9ce206",
+      "new_sha256": "f722d008ffcc5391c7151a674728d020e87eebed286f9d3826da99abb6290b57",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/test",
+      "baseline_sha256": "0dc82809918b29e5f3bdc542fd108af81739ef58213f4c6d4fa19765dc293d5a",
+      "new_sha256": "450e561287ad61dbed5335c073cc5264014e863fd1c6ec422e6517a03a62032f",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/sso",
+      "baseline_sha256": "b0f8483dc67bd2886c29028d7fbe004ff787ad95962b6a63a18fce4dde1e7bf7",
+      "new_sha256": "ea45ed31ca4fe8f179eddbb68737e1387e146a82254a9c7cd52333b1e0e9207b",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account",
+      "baseline_sha256": "273d62527b79f076c6210acee02c478db1d321e024217ceec4793860eccc9257",
+      "new_sha256": "757e384c1299838f249fb7ac02ba1587d12c69275c6370a7131d808fc0a42024",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account/reset",
+      "baseline_sha256": "0c86a2cab462f1514e97afe4477a55237f12878136ebefffea39f28f01ff29b8",
+      "new_sha256": "902d1ecdf7ff34ba713bd2e7c4e4ef60292e732bfb5d00f3c59aec96562e2004",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/test",
+      "baseline_sha256": "f2f89a43ed621cff7ad92a209babd1785844dd2fc4e634e0dfb569f78c698fbc",
+      "new_sha256": "fd8b19b7699090a2a613885ab6dc66201c1baaf40b7a351e159bf2d811dcb6ab",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/sso",
+      "baseline_sha256": "f056c6807a5087ecceb8354891bd0e237c78e586c0f644fcac1f5746e73aa18b",
+      "new_sha256": "5b2a086d86629c320927957c5303c66dd45dac840ad82029f876625869786ca3",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    }
+  ]
+}

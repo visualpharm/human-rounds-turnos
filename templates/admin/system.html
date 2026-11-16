@@ -1,0 +1,38 @@
+{# Direct platform-core twin of the legacy #sistema status section. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.system.sistema.title', 'Status') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.system.sistema.title', 'Status') }}{% endblock %}
+
+{% block head %}
+<style>
+  #sec-sistema [role="alert"]{font-size:16px;color:var(--text);}
+  #sec-sistema [data-retry]{min-height:44px;min-width:44px;font-size:16px;}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-sistema"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<template id="system-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.system.sistema.load_error', 'Could not load system status.') }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Reload') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-sistema");
+  bootScreen({
+    host,
+    recovery: "system-load-recovery",
+    load: () => import("{{ static('platform/admin-system.mjs') }}"),
+    mount: (System, onError) => System.mount(host, { onError }),
+  });
+  // Leaving the page also empties the screen (after the loader's own stop).
+  window.addEventListener("pagehide", function () { host.replaceChildren(); });
+</script>
+{% endblock %}

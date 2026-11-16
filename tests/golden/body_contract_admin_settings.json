@@ -1,0 +1,2657 @@
+{
+ "POST /api/admin/auth-mode": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"modo de ingreso inválido\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"auth_mode\": \"password\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"auth_mode\": \"password\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"auth_mode\": \"password\"}"
+  },
+  "auth_mode=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo auth_mode: se esperaba texto\"}"
+  },
+  "auth_mode=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo auth_mode: se esperaba texto\"}"
+  },
+  "auth_mode=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo auth_mode: se esperaba texto\"}"
+  },
+  "auth_mode=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo auth_mode: se esperaba texto\"}"
+  },
+  "auth_mode=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"modo de ingreso inválido\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/branding": {
+  "empty": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": null, \"derivados\": null}"
+  },
+  "malformed": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": null, \"derivados\": null}"
+  },
+  "not utf-8": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": null, \"derivados\": null}"
+  },
+  "utf-8 bom": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": null, \"derivados\": null}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": \"#336699\", \"derivados\": {\"accent\": \"#336699\", \"accent_hover\": \"#285077\", \"accent_soft\": \"#ebf0f5\", \"accent_bd\": \"#c6d4e2\"}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": \"#336699\", \"derivados\": {\"accent\": \"#336699\", \"accent_hover\": \"#285077\", \"accent_soft\": \"#ebf0f5\", \"accent_bd\": \"#c6d4e2\"}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": \"#336699\", \"derivados\": {\"accent\": \"#336699\", \"accent_hover\": \"#285077\", \"accent_soft\": \"#ebf0f5\", \"accent_bd\": \"#c6d4e2\"}}"
+  },
+  "color=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo color: se esperaba texto\"}"
+  },
+  "color=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo color: se esperaba texto\"}"
+  },
+  "color=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo color: se esperaba texto\"}"
+  },
+  "color=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo color: se esperaba texto\"}"
+  },
+  "color=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"color\": null, \"derivados\": null}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/branding/logo": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"archivo vacío\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"archivo vacío\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"archivo vacío\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"archivo vacío\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"logo\": true}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"logo\": true}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"logo\": true}"
+  },
+  "data_b64=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo data_b64: se esperaba texto\"}"
+  },
+  "data_b64=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo data_b64: se esperaba texto\"}"
+  },
+  "data_b64=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo data_b64: se esperaba texto\"}"
+  },
+  "data_b64=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo data_b64: se esperaba texto\"}"
+  },
+  "data_b64=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"archivo vacío\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/chat-voice": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Usá fal-ai/wizper.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Usá fal-ai/wizper.\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Usá fal-ai/wizper.\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Usá fal-ai/wizper.\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"model\": \"fal-ai/wizper\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"model\": \"fal-ai/wizper\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"model\": \"fal-ai/wizper\"}"
+  },
+  "model=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo model: se esperaba texto\"}"
+  },
+  "model=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo model: se esperaba texto\"}"
+  },
+  "model=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo model: se esperaba texto\"}"
+  },
+  "model=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo model: se esperaba texto\"}"
+  },
+  "model=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Usá fal-ai/wizper.\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/content/centers": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta nombre\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"zz_unknown\": 1, \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"12345\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"True\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"[]\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"{}\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=null": {
+   "status": 409,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"ya existe un centro con id 'sampleton-hospital'\"}"
+  },
+  "name=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"12345\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"True\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"[]\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"{}\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta nombre\"}"
+  },
+  "address=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"12345\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"True\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"[]\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"{}\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": null, \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"12345\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"True\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"[]\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"{}\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": null, \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"12345\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"True\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"[]\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"{}\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": null, \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"12345\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"True\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"[]\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"{}\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": null, \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"12345\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"True\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"[]\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"{}\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": null, \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jobs=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": null, \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"12345\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"True\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"[]\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"{}\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": null, \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=str": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": false, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": false, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"centro-de-prueba\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": null, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/content/knowledge/properties": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí el contenido antes de actualizar las propiedades.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"properties\": {\"title\": \"La guardia atiende las 24 horas\", \"summary\": \"La guardia atiende las 24 horas.\", \"tags\": [\"guardia\", \"atiende\", \"horas\"], \"parent_id\": null, \"jurisdiction\": \"pinamar\"}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"properties\": {\"title\": \"La guardia atiende las 24 horas\", \"summary\": \"La guardia atiende las 24 horas.\", \"tags\": [\"guardia\", \"atiende\", \"horas\"], \"parent_id\": null, \"jurisdiction\": \"pinamar\"}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"properties\": {\"title\": \"La guardia atiende las 24 horas\", \"summary\": \"La guardia atiende las 24 horas.\", \"tags\": [\"guardia\", \"atiende\", \"horas\"], \"parent_id\": null, \"jurisdiction\": \"pinamar\"}}"
+  },
+  "content=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo content: se esperaba texto\"}"
+  },
+  "content=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo content: se esperaba texto\"}"
+  },
+  "content=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo content: se esperaba texto\"}"
+  },
+  "content=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo content: se esperaba texto\"}"
+  },
+  "content=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí el contenido antes de actualizar las propiedades.\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/intake/my-settings": {
+  "empty": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no encontrado\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no encontrado\"}"
+  },
+  "valid": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no encontrado\"}"
+  },
+  "valid + unknown field": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no encontrado\"}"
+  },
+  "override=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo override: se esperaba true o false\"}"
+  },
+  "override=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo override: se esperaba true o false\"}"
+  },
+  "override=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo override: se esperaba true o false\"}"
+  },
+  "override=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo override: se esperaba true o false\"}"
+  },
+  "override=null": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no encontrado\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/intake/settings": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta sistema o medico_id\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "sistema=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sistema: se esperaba true o false\"}"
+  },
+  "sistema=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sistema: se esperaba true o false\"}"
+  },
+  "sistema=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sistema: se esperaba true o false\"}"
+  },
+  "sistema=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sistema: se esperaba true o false\"}"
+  },
+  "sistema=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/prompts/chat_sistema/guardar": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el texto\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el texto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el texto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 409,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no se puede combinar con el inglés: falta la traducción base o no está alineada. Editá el inglés directamente.\"}"
+  },
+  "valid": {
+   "status": 409,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no se puede combinar con el inglés: falta la traducción base o no está alineada. Editá el inglés directamente.\"}"
+  },
+  "valid + unknown field": {
+   "status": 409,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no se puede combinar con el inglés: falta la traducción base o no está alineada. Editá el inglés directamente.\"}"
+  },
+  "texto_es=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_es: se esperaba texto\"}"
+  },
+  "texto_es=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_es: se esperaba texto\"}"
+  },
+  "texto_es=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_es: se esperaba texto\"}"
+  },
+  "texto_es=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_es: se esperaba texto\"}"
+  },
+  "texto_es=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el texto\"}"
+  },
+  "texto_en=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_en: se esperaba texto\"}"
+  },
+  "texto_en=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Quedó afuera algo que el sistema necesita para entender la respuesta de la IA: request_appointment, analyze_order, {hospital}, {localidad}, {emergencia}.\", \"faltantes\": [\"request_appointment\", \"analyze_order\", \"{hospital}\", \"{localidad}\", \"{emergencia}\"]}"
+  },
+  "texto_en=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_en: se esperaba texto\"}"
+  },
+  "texto_en=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_en: se esperaba texto\"}"
+  },
+  "texto_en=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo texto_en: se esperaba texto\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/settings": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"grupo desconocido\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"grupo desconocido\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"grupo desconocido\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"grupo desconocido\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"grupo desconocido\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"grupo desconocido\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"chat\": {\"greetings\": [{\"lang\": \"de\", \"key\": \"CHAT_GREETING_DE\", \"value\": \"**Hallo, ich bin der KI-Chat von {brand}.**\\n\\nDu kannst:\\n* eine Untersuchung oder einen Vorgang suchen\\n* Fachpersonal finden\\n* einen Termin vereinbaren\\n* eine ärztliche Verordnung hochladen\", \"custom\": false}, {\"lang\": \"en\", \"key\": \"CHAT_GREETING_EN\", \"value\": \"**Hi, I’m the AI chat for {brand}.**\\n\\nI can help you:\\n* find a study or procedure\\n* find a doctor\\n* book an appointment\\n* upload a medical referral\", \"custom\": false}, {\"lang\": \"es\", \"key\": \"CHAT_GREETING_ES\", \"value\": \"**Hola, soy el chat con IA de {brand}.**\\n\\nPodés:\\n* buscar un estudio o trámite\\n* encontrar un profesional\\n* sacar un turno\\n* subir una orden médica\", \"custom\": false}, {\"lang\": \"fr\", \"key\": \"CHAT_GREETING_FR\", \"value\": \"**Bonjour, je suis le chat avec IA de {brand}.**\\n\\nTu peux :\\n* chercher un examen ou une démarche\\n* trouver un professionnel\\n* prendre un rendez-vous\\n* télécharger une ordonnance médicale\", \"custom\": false}, {\"lang\": \"it\", \"key\": \"CHAT_GREETING_IT\", \"value\": \"**Ciao, sono la chat con IA di {brand}.**\\n\\nPuoi:\\n* cercare un esame o una pratica\\n* trovare un professionista\\n* prenotare un appuntamento\\n* caricare un'impegnativa medica\", \"custom\": false}, {\"lang\": \"ja\", \"key\": \"CHAT_GREETING_JA\", \"value\": \"**こんにちは、{brand}のAIチャットです。**\\n\\nお手伝いできること：\\n* 検査や手続きを探す\\n* 医師を探す\\n* 予約を取る\\n* 診療情報提供書（紹介状）をアップロードする\", \"custom\": false}, {\"lang\": \"pt\", \"key\": \"CHAT_GREETING_PT\", \"value\": \"**Olá, sou o chat com IA da {brand}.**\\n\\nVocê pode:\\n* buscar um exame ou procedimento\\n* encontrar um profissional\\n* marcar uma consulta\\n* subir um pedido médico\", \"custom\": false}, {\"lang\": \"ru\", \"key\": \"CHAT_GREETING_RU\", \"value\": \"**\u041f\u0440\u0438\u0432\u0435\u0442, \u044f \u0447\u0430\u0442-\u0431\u043e\u0442 \u0441 \u0418\u0418 \u043e\u0442 {brand}.**\\n\\n\u042f \u043c\u043e\u0433\u0443 \u043f\u043e\u043c\u043e\u0447\u044c:\\n* \u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u043d\u0430\u0439\u0442\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0430\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0435\u043c\\n* \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435\", \"custom\": false}, {\"lang\": \"uk\", \"key\": \"CHAT_GREETING_UK\", \"value\": \"**\u041f\u0440\u0438\u0432\u0456\u0442, \u044f \u0447\u0430\u0442 \u0437 \u0428\u0406 \u0432\u0456\u0434 {brand}.**\\n\\n\u0422\u0438 \u043c\u043e\u0436\u0435\u0448:\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u0442\u0435\u0436\u0435\u043d\u043d\u044f \u0430\u0431\u043e \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u0444\u0430\u0445\u0456\u0432\u0446\u044f\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0439\u043e\u043c\\n* \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0438\u0442\u0438 \u043c\u0435\u0434\u0438\u0447\u043d\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044f\", \"custom\": false}, {\"lang\": \"zh\", \"key\": \"CHAT_GREETING_ZH\", \"value\": \"**你好，我是 {brand} 的 AI 助手。**\\n\\n我可以帮你：\\n* 查找检查或流程\\n* 寻找医生\\n* 预约挂号\\n* 上传医疗单\", \"custom\": false}], \"max_length\": 1200}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"chat\": {\"greetings\": [{\"lang\": \"de\", \"key\": \"CHAT_GREETING_DE\", \"value\": \"**Hallo, ich bin der KI-Chat von {brand}.**\\n\\nDu kannst:\\n* eine Untersuchung oder einen Vorgang suchen\\n* Fachpersonal finden\\n* einen Termin vereinbaren\\n* eine ärztliche Verordnung hochladen\", \"custom\": false}, {\"lang\": \"en\", \"key\": \"CHAT_GREETING_EN\", \"value\": \"**Hi, I’m the AI chat for {brand}.**\\n\\nI can help you:\\n* find a study or procedure\\n* find a doctor\\n* book an appointment\\n* upload a medical referral\", \"custom\": false}, {\"lang\": \"es\", \"key\": \"CHAT_GREETING_ES\", \"value\": \"**Hola, soy el chat con IA de {brand}.**\\n\\nPodés:\\n* buscar un estudio o trámite\\n* encontrar un profesional\\n* sacar un turno\\n* subir una orden médica\", \"custom\": false}, {\"lang\": \"fr\", \"key\": \"CHAT_GREETING_FR\", \"value\": \"**Bonjour, je suis le chat avec IA de {brand}.**\\n\\nTu peux :\\n* chercher un examen ou une démarche\\n* trouver un professionnel\\n* prendre un rendez-vous\\n* télécharger une ordonnance médicale\", \"custom\": false}, {\"lang\": \"it\", \"key\": \"CHAT_GREETING_IT\", \"value\": \"**Ciao, sono la chat con IA di {brand}.**\\n\\nPuoi:\\n* cercare un esame o una pratica\\n* trovare un professionista\\n* prenotare un appuntamento\\n* caricare un'impegnativa medica\", \"custom\": false}, {\"lang\": \"ja\", \"key\": \"CHAT_GREETING_JA\", \"value\": \"**こんにちは、{brand}のAIチャットです。**\\n\\nお手伝いできること：\\n* 検査や手続きを探す\\n* 医師を探す\\n* 予約を取る\\n* 診療情報提供書（紹介状）をアップロードする\", \"custom\": false}, {\"lang\": \"pt\", \"key\": \"CHAT_GREETING_PT\", \"value\": \"**Olá, sou o chat com IA da {brand}.**\\n\\nVocê pode:\\n* buscar um exame ou procedimento\\n* encontrar um profissional\\n* marcar uma consulta\\n* subir um pedido médico\", \"custom\": false}, {\"lang\": \"ru\", \"key\": \"CHAT_GREETING_RU\", \"value\": \"**\u041f\u0440\u0438\u0432\u0435\u0442, \u044f \u0447\u0430\u0442-\u0431\u043e\u0442 \u0441 \u0418\u0418 \u043e\u0442 {brand}.**\\n\\n\u042f \u043c\u043e\u0433\u0443 \u043f\u043e\u043c\u043e\u0447\u044c:\\n* \u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u043d\u0430\u0439\u0442\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0430\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0435\u043c\\n* \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435\", \"custom\": false}, {\"lang\": \"uk\", \"key\": \"CHAT_GREETING_UK\", \"value\": \"**\u041f\u0440\u0438\u0432\u0456\u0442, \u044f \u0447\u0430\u0442 \u0437 \u0428\u0406 \u0432\u0456\u0434 {brand}.**\\n\\n\u0422\u0438 \u043c\u043e\u0436\u0435\u0448:\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u0442\u0435\u0436\u0435\u043d\u043d\u044f \u0430\u0431\u043e \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u0444\u0430\u0445\u0456\u0432\u0446\u044f\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0439\u043e\u043c\\n* \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0438\u0442\u0438 \u043c\u0435\u0434\u0438\u0447\u043d\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044f\", \"custom\": false}, {\"lang\": \"zh\", \"key\": \"CHAT_GREETING_ZH\", \"value\": \"**你好，我是 {brand} 的 AI 助手。**\\n\\n我可以帮你：\\n* 查找检查或流程\\n* 寻找医生\\n* 预约挂号\\n* 上传医疗单\", \"custom\": false}], \"max_length\": 1200}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"chat\": {\"greetings\": [{\"lang\": \"de\", \"key\": \"CHAT_GREETING_DE\", \"value\": \"**Hallo, ich bin der KI-Chat von {brand}.**\\n\\nDu kannst:\\n* eine Untersuchung oder einen Vorgang suchen\\n* Fachpersonal finden\\n* einen Termin vereinbaren\\n* eine ärztliche Verordnung hochladen\", \"custom\": false}, {\"lang\": \"en\", \"key\": \"CHAT_GREETING_EN\", \"value\": \"**Hi, I’m the AI chat for {brand}.**\\n\\nI can help you:\\n* find a study or procedure\\n* find a doctor\\n* book an appointment\\n* upload a medical referral\", \"custom\": false}, {\"lang\": \"es\", \"key\": \"CHAT_GREETING_ES\", \"value\": \"**Hola, soy el chat con IA de {brand}.**\\n\\nPodés:\\n* buscar un estudio o trámite\\n* encontrar un profesional\\n* sacar un turno\\n* subir una orden médica\", \"custom\": false}, {\"lang\": \"fr\", \"key\": \"CHAT_GREETING_FR\", \"value\": \"**Bonjour, je suis le chat avec IA de {brand}.**\\n\\nTu peux :\\n* chercher un examen ou une démarche\\n* trouver un professionnel\\n* prendre un rendez-vous\\n* télécharger une ordonnance médicale\", \"custom\": false}, {\"lang\": \"it\", \"key\": \"CHAT_GREETING_IT\", \"value\": \"**Ciao, sono la chat con IA di {brand}.**\\n\\nPuoi:\\n* cercare un esame o una pratica\\n* trovare un professionista\\n* prenotare un appuntamento\\n* caricare un'impegnativa medica\", \"custom\": false}, {\"lang\": \"ja\", \"key\": \"CHAT_GREETING_JA\", \"value\": \"**こんにちは、{brand}のAIチャットです。**\\n\\nお手伝いできること：\\n* 検査や手続きを探す\\n* 医師を探す\\n* 予約を取る\\n* 診療情報提供書（紹介状）をアップロードする\", \"custom\": false}, {\"lang\": \"pt\", \"key\": \"CHAT_GREETING_PT\", \"value\": \"**Olá, sou o chat com IA da {brand}.**\\n\\nVocê pode:\\n* buscar um exame ou procedimento\\n* encontrar um profissional\\n* marcar uma consulta\\n* subir um pedido médico\", \"custom\": false}, {\"lang\": \"ru\", \"key\": \"CHAT_GREETING_RU\", \"value\": \"**\u041f\u0440\u0438\u0432\u0435\u0442, \u044f \u0447\u0430\u0442-\u0431\u043e\u0442 \u0441 \u0418\u0418 \u043e\u0442 {brand}.**\\n\\n\u042f \u043c\u043e\u0433\u0443 \u043f\u043e\u043c\u043e\u0447\u044c:\\n* \u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u043d\u0430\u0439\u0442\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0430\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0435\u043c\\n* \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435\", \"custom\": false}, {\"lang\": \"uk\", \"key\": \"CHAT_GREETING_UK\", \"value\": \"**\u041f\u0440\u0438\u0432\u0456\u0442, \u044f \u0447\u0430\u0442 \u0437 \u0428\u0406 \u0432\u0456\u0434 {brand}.**\\n\\n\u0422\u0438 \u043c\u043e\u0436\u0435\u0448:\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u0442\u0435\u0436\u0435\u043d\u043d\u044f \u0430\u0431\u043e \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u0444\u0430\u0445\u0456\u0432\u0446\u044f\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0439\u043e\u043c\\n* \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0438\u0442\u0438 \u043c\u0435\u0434\u0438\u0447\u043d\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044f\", \"custom\": false}, {\"lang\": \"zh\", \"key\": \"CHAT_GREETING_ZH\", \"value\": \"**你好，我是 {brand} 的 AI 助手。**\\n\\n我可以帮你：\\n* 查找检查或流程\\n* 寻找医生\\n* 预约挂号\\n* 上传医疗单\", \"custom\": false}], \"max_length\": 1200}}"
+  },
+  "grupo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo grupo: se esperaba texto\"}"
+  },
+  "grupo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo grupo: se esperaba texto\"}"
+  },
+  "grupo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo grupo: se esperaba texto\"}"
+  },
+  "grupo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo grupo: se esperaba texto\"}"
+  },
+  "grupo=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"grupo desconocido\"}"
+  },
+  "valores=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo valores: se esperaba un objeto\"}"
+  },
+  "valores=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo valores: se esperaba un objeto\"}"
+  },
+  "valores=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo valores: se esperaba un objeto\"}"
+  },
+  "valores=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo valores: se esperaba un objeto\"}"
+  },
+  "valores=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"chat\": {\"greetings\": [{\"lang\": \"de\", \"key\": \"CHAT_GREETING_DE\", \"value\": \"**Hallo, ich bin der KI-Chat von {brand}.**\\n\\nDu kannst:\\n* eine Untersuchung oder einen Vorgang suchen\\n* Fachpersonal finden\\n* einen Termin vereinbaren\\n* eine ärztliche Verordnung hochladen\", \"custom\": false}, {\"lang\": \"en\", \"key\": \"CHAT_GREETING_EN\", \"value\": \"**Hi, I’m the AI chat for {brand}.**\\n\\nI can help you:\\n* find a study or procedure\\n* find a doctor\\n* book an appointment\\n* upload a medical referral\", \"custom\": false}, {\"lang\": \"es\", \"key\": \"CHAT_GREETING_ES\", \"value\": \"**Hola, soy el chat con IA de {brand}.**\\n\\nPodés:\\n* buscar un estudio o trámite\\n* encontrar un profesional\\n* sacar un turno\\n* subir una orden médica\", \"custom\": false}, {\"lang\": \"fr\", \"key\": \"CHAT_GREETING_FR\", \"value\": \"**Bonjour, je suis le chat avec IA de {brand}.**\\n\\nTu peux :\\n* chercher un examen ou une démarche\\n* trouver un professionnel\\n* prendre un rendez-vous\\n* télécharger une ordonnance médicale\", \"custom\": false}, {\"lang\": \"it\", \"key\": \"CHAT_GREETING_IT\", \"value\": \"**Ciao, sono la chat con IA di {brand}.**\\n\\nPuoi:\\n* cercare un esame o una pratica\\n* trovare un professionista\\n* prenotare un appuntamento\\n* caricare un'impegnativa medica\", \"custom\": false}, {\"lang\": \"ja\", \"key\": \"CHAT_GREETING_JA\", \"value\": \"**こんにちは、{brand}のAIチャットです。**\\n\\nお手伝いできること：\\n* 検査や手続きを探す\\n* 医師を探す\\n* 予約を取る\\n* 診療情報提供書（紹介状）をアップロードする\", \"custom\": false}, {\"lang\": \"pt\", \"key\": \"CHAT_GREETING_PT\", \"value\": \"**Olá, sou o chat com IA da {brand}.**\\n\\nVocê pode:\\n* buscar um exame ou procedimento\\n* encontrar um profissional\\n* marcar uma consulta\\n* subir um pedido médico\", \"custom\": false}, {\"lang\": \"ru\", \"key\": \"CHAT_GREETING_RU\", \"value\": \"**\u041f\u0440\u0438\u0432\u0435\u0442, \u044f \u0447\u0430\u0442-\u0431\u043e\u0442 \u0441 \u0418\u0418 \u043e\u0442 {brand}.**\\n\\n\u042f \u043c\u043e\u0433\u0443 \u043f\u043e\u043c\u043e\u0447\u044c:\\n* \u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u043d\u0430\u0439\u0442\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0430\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0435\u043c\\n* \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435\", \"custom\": false}, {\"lang\": \"uk\", \"key\": \"CHAT_GREETING_UK\", \"value\": \"**\u041f\u0440\u0438\u0432\u0456\u0442, \u044f \u0447\u0430\u0442 \u0437 \u0428\u0406 \u0432\u0456\u0434 {brand}.**\\n\\n\u0422\u0438 \u043c\u043e\u0436\u0435\u0448:\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u0442\u0435\u0436\u0435\u043d\u043d\u044f \u0430\u0431\u043e \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u0444\u0430\u0445\u0456\u0432\u0446\u044f\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0439\u043e\u043c\\n* \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0438\u0442\u0438 \u043c\u0435\u0434\u0438\u0447\u043d\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044f\", \"custom\": false}, {\"lang\": \"zh\", \"key\": \"CHAT_GREETING_ZH\", \"value\": \"**你好，我是 {brand} 的 AI 助手。**\\n\\n我可以帮你：\\n* 查找检查或流程\\n* 寻找医生\\n* 预约挂号\\n* 上传医疗单\", \"custom\": false}], \"max_length\": 1200}}"
+  },
+  "borrar=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo borrar: se esperaba una lista\"}"
+  },
+  "borrar=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo borrar: se esperaba una lista\"}"
+  },
+  "borrar=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo borrar: se esperaba una lista\"}"
+  },
+  "borrar=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo borrar: se esperaba una lista\"}"
+  },
+  "borrar=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"chat\": {\"greetings\": [{\"lang\": \"de\", \"key\": \"CHAT_GREETING_DE\", \"value\": \"**Hallo, ich bin der KI-Chat von {brand}.**\\n\\nDu kannst:\\n* eine Untersuchung oder einen Vorgang suchen\\n* Fachpersonal finden\\n* einen Termin vereinbaren\\n* eine ärztliche Verordnung hochladen\", \"custom\": false}, {\"lang\": \"en\", \"key\": \"CHAT_GREETING_EN\", \"value\": \"**Hi, I’m the AI chat for {brand}.**\\n\\nI can help you:\\n* find a study or procedure\\n* find a doctor\\n* book an appointment\\n* upload a medical referral\", \"custom\": false}, {\"lang\": \"es\", \"key\": \"CHAT_GREETING_ES\", \"value\": \"**Hola, soy el chat con IA de {brand}.**\\n\\nPodés:\\n* buscar un estudio o trámite\\n* encontrar un profesional\\n* sacar un turno\\n* subir una orden médica\", \"custom\": false}, {\"lang\": \"fr\", \"key\": \"CHAT_GREETING_FR\", \"value\": \"**Bonjour, je suis le chat avec IA de {brand}.**\\n\\nTu peux :\\n* chercher un examen ou une démarche\\n* trouver un professionnel\\n* prendre un rendez-vous\\n* télécharger une ordonnance médicale\", \"custom\": false}, {\"lang\": \"it\", \"key\": \"CHAT_GREETING_IT\", \"value\": \"**Ciao, sono la chat con IA di {brand}.**\\n\\nPuoi:\\n* cercare un esame o una pratica\\n* trovare un professionista\\n* prenotare un appuntamento\\n* caricare un'impegnativa medica\", \"custom\": false}, {\"lang\": \"ja\", \"key\": \"CHAT_GREETING_JA\", \"value\": \"**こんにちは、{brand}のAIチャットです。**\\n\\nお手伝いできること：\\n* 検査や手続きを探す\\n* 医師を探す\\n* 予約を取る\\n* 診療情報提供書（紹介状）をアップロードする\", \"custom\": false}, {\"lang\": \"pt\", \"key\": \"CHAT_GREETING_PT\", \"value\": \"**Olá, sou o chat com IA da {brand}.**\\n\\nVocê pode:\\n* buscar um exame ou procedimento\\n* encontrar um profissional\\n* marcar uma consulta\\n* subir um pedido médico\", \"custom\": false}, {\"lang\": \"ru\", \"key\": \"CHAT_GREETING_RU\", \"value\": \"**\u041f\u0440\u0438\u0432\u0435\u0442, \u044f \u0447\u0430\u0442-\u0431\u043e\u0442 \u0441 \u0418\u0418 \u043e\u0442 {brand}.**\\n\\n\u042f \u043c\u043e\u0433\u0443 \u043f\u043e\u043c\u043e\u0447\u044c:\\n* \u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u0438\u043b\u0438 \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u043d\u0430\u0439\u0442\u0438 \u0441\u043f\u0435\u0446\u0438\u0430\u043b\u0438\u0441\u0442\u0430\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u044c\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0435\u043c\\n* \u0437\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044c \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u043e\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435\", \"custom\": false}, {\"lang\": \"uk\", \"key\": \"CHAT_GREETING_UK\", \"value\": \"**\u041f\u0440\u0438\u0432\u0456\u0442, \u044f \u0447\u0430\u0442 \u0437 \u0428\u0406 \u0432\u0456\u0434 {brand}.**\\n\\n\u0422\u0438 \u043c\u043e\u0436\u0435\u0448:\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u043e\u0431\u0441\u0442\u0435\u0436\u0435\u043d\u043d\u044f \u0430\u0431\u043e \u043f\u0440\u043e\u0446\u0435\u0434\u0443\u0440\u0443\\n* \u0437\u043d\u0430\u0439\u0442\u0438 \u0444\u0430\u0445\u0456\u0432\u0446\u044f\\n* \u0437\u0430\u043f\u0438\u0441\u0430\u0442\u0438\u0441\u044f \u043d\u0430 \u043f\u0440\u0438\u0439\u043e\u043c\\n* \u0437\u0430\u0432\u0430\u043d\u0442\u0430\u0436\u0438\u0442\u0438 \u043c\u0435\u0434\u0438\u0447\u043d\u0435 \u043d\u0430\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044f\", \"custom\": false}, {\"lang\": \"zh\", \"key\": \"CHAT_GREETING_ZH\", \"value\": \"**你好，我是 {brand} 的 AI 助手。**\\n\\n我可以帮你：\\n* 查找检查或流程\\n* 寻找医生\\n* 预约挂号\\n* 上传医疗单\", \"custom\": false}], \"max_length\": 1200}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/settings/probar": {
+  "empty": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"sin prueba en vivo para esta integración — revisá el cluster «Sistema».\"}"
+  },
+  "malformed": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"sin prueba en vivo para esta integración — revisá el cluster «Sistema».\"}"
+  },
+  "not utf-8": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"sin prueba en vivo para esta integración — revisá el cluster «Sistema».\"}"
+  },
+  "utf-8 bom": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"sin prueba en vivo para esta integración — revisá el cluster «Sistema».\"}"
+  },
+  "array": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"sin prueba en vivo para esta integración — revisá el cluster «Sistema».\"}"
+  },
+  "null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"sin prueba en vivo para esta integración — revisá el cluster «Sistema».\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"no hay ningún conector EMR seleccionado (CONNECTOR_EMR_SYNC).\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"no hay ningún conector EMR seleccionado (CONNECTOR_EMR_SYNC).\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"no hay ningún conector EMR seleccionado (CONNECTOR_EMR_SYNC).\"}"
+  },
+  "integracion=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo integracion: se esperaba texto\"}"
+  },
+  "integracion=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo integracion: se esperaba texto\"}"
+  },
+  "integracion=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo integracion: se esperaba texto\"}"
+  },
+  "integracion=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo integracion: se esperaba texto\"}"
+  },
+  "integracion=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false, \"detalle\": \"sin prueba en vivo para esta integración — revisá el cluster «Sistema».\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/theme": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"tema inválido\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"tema\": \"humanrounds\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"tema\": \"humanrounds\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"tema\": \"humanrounds\"}"
+  },
+  "tema=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo tema: se esperaba texto\"}"
+  },
+  "tema=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo tema: se esperaba texto\"}"
+  },
+  "tema=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo tema: se esperaba texto\"}"
+  },
+  "tema=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo tema: se esperaba texto\"}"
+  },
+  "tema=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"tema inválido\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/turnstile": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta on (true/false)\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"on\": false}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"on\": false}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"on\": false}"
+  },
+  "on=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo on: se esperaba true o false\"}"
+  },
+  "on=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo on: se esperaba true o false\"}"
+  },
+  "on=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo on: se esperaba true o false\"}"
+  },
+  "on=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo on: se esperaba true o false\"}"
+  },
+  "on=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta on (true/false)\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "PUT /api/admin/content/centers/{item_id}": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta nombre\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"zz_unknown\": 1, \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "slug=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"12345\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"True\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"[]\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"{}\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "name=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta nombre\"}"
+  },
+  "address=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"12345\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"True\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"[]\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"{}\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "address=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": null, \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"12345\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"True\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"[]\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"{}\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "phone=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": null, \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"12345\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"True\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"[]\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"{}\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": null, \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"12345\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"True\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"[]\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"{}\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "description=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": null, \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"12345\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"True\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"[]\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"{}\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jtbd=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": null, \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "jobs=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"jobs debe ser una lista de strings\"}"
+  },
+  "jobs=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": null, \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"12345\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"True\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"[]\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"{}\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "maps_url=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": null, \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=str": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": true, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": false, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": false, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "bookable=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"jobs\": [\"Atenderte en la guardia\", \"Ver a un especialista\", \"Hacerte un electrocardiograma o una ergometría\", \"Vacunarte en la campaña antigripal\"], \"jtbd\": \"Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.\", \"name\": \"Sampleton Hospital\", \"slug\": \"sampleton-hospital\", \"email\": \"hospital@sampleton.example\", \"phone\": \"(011) 4000-0001\", \"address\": \"Main Rd. 123\", \"bookable\": null, \"maps_url\": \"https://maps.google.com/?q=Main+Rd.+123\", \"description\": \"Hospital municipal ficticio. Guardia y consultorios de especialidades.\", \"_origen\": \"json+db\", \"_borrado\": false, \"_created\": \"<ts>\", \"_updated\": \"<ts>\"}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "PUT /api/admin/legal/terminos": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"el texto no puede quedar vacío\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting value: line 1 column 1 (char 0)\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"el texto no puede quedar vacío\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": \"terminos\", \"titulo\": \"Términos y condiciones\", \"pagina\": \"/terms.html\", \"cuerpo\": \"Texto de prueba de los términos.\", \"original\": \"Al usar {{sitio.brand}} aceptás estos términos. Si no estás de acuerdo, no la uses.\\n\\n## 1. Qué es {{sitio.brand}}\\n\\n{{sitio.brand}} es una app de bien público, gratuita y sin fines de lucro, para ver los servicios del {{sitio.network}} y pedir turnos con menos vueltas. Es un prototipo en desarrollo, pensado junto con la Secretaría de Salud de {{sitio.city}}.\\n\\n## 2. Urgencias\\n\\n> **{{sitio.brand}} no es un servicio de emergencias.** Ante una urgencia médica, llamá al **{{sitio.emergency_number}}** o acercate a la guardia del {{sitio.hospital}}. No uses la app para situaciones que necesiten atención inmediata.\\n\\n## 3. Se ofrece \\\"tal cual está\\\"\\n\\nEl servicio se brinda \\\"tal cual está\\\" y \\\"según disponibilidad\\\", sin garantías de ningún tipo. No garantizamos que funcione siempre, que esté libre de errores, ni que los horarios y la información de servicios sean exactos o estén actualizados.\\n\\nLos horarios y modalidades de atención pueden cambiar. **Confirmá siempre con el centro de salud** antes de presentarte.\\n\\n## 4. La solicitud no es un turno confirmado\\n\\nEnviar una solicitud desde la app **no garantiza** un turno. El hospital revisa cada solicitud y su orden de derivación, y confirma (o no) el turno según su disponibilidad y sus criterios. **La confirmación responde a las reglas del centro de salud.** En servicios configurados para confirmación automática, tu confirmación explícita del horario en la web o en el chat puede confirmar un horario disponible. La opinión de la IA no activa esa confirmación.\\n\\n## 5. Inteligencia artificial\\n\\n{{sitio.brand}} usa inteligencia artificial para **leer la orden de derivación**, **responder en el chat**, **resumir tu historia clínica** y las funciones enumeradas al final de este documento. Esa lista se genera desde el registro del producto.\\n\\nLa instalación configura dónde se procesa: puede usar un servicio alojado o un modelo local. Cuando usa servidores de proveedores externos, pueden estar fuera de la Argentina. Antes de mandar texto hacemos un esfuerzo razonable por sacarle los datos que te identifican; las imágenes completas y el audio del dictado son las excepciones indicadas en la [política de privacidad](/privacy.html). Un asistente externo que conectes con tu token MCP puede recibir tu identidad y los datos autorizados de tu cuenta sin ese filtro; elegí y revisá ese cliente antes de conectarlo.\\n\\n> **La inteligencia artificial no diagnostica ni decide turnos.** Las lecturas son preliminares y pueden equivocarse: consultalas con el equipo de salud. El profesional confirma los documentos de atención; el paciente confirma las cancelaciones en la web. No tomes una decisión médica a partir de lo que dice la app.\\n\\n## 6. Lo usás bajo tu propia responsabilidad\\n\\n**Usás {{sitio.brand}} bajo tu exclusiva responsabilidad y riesgo.** En la máxima medida permitida por la ley, no aceptamos responsabilidad por nada que surja del uso (o de la imposibilidad de uso) de la app, incluida la pérdida o el acceso no autorizado a datos, o turnos mal mostrados, vencidos o no confirmados.\\n\\n## 7. Uso correcto\\n\\nUsá {{sitio.brand}} con tus propios datos y para gestionar tus propios turnos (o los de una persona a tu cargo). No intentes vulnerar, sobrecargar ni abusar del servicio.\\n\\n## 8. Cambios y baja del servicio\\n\\nAl ser un proyecto en desarrollo, podemos modificar, suspender o dar de baja {{sitio.brand}} en cualquier momento y sin aviso, sin que eso genere responsabilidad alguna.\\n\\n## 9. A qué instalación se aplica\\n\\nEstos términos rigen para la instalación **{{sitio.brand}}**. No se aplican a las instalaciones de demostración de Human Rounds, que funcionan con datos ficticios, no atienden pacientes reales y existen sólo para mostrar cómo anda el sistema.\\n\", \"actualizado\": \"<date>\", \"actualizado_por\": \"staff.ajustes\", \"editado\": true}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": \"terminos\", \"titulo\": \"Términos y condiciones\", \"pagina\": \"/terms.html\", \"cuerpo\": \"Texto de prueba de los términos.\", \"original\": \"Al usar {{sitio.brand}} aceptás estos términos. Si no estás de acuerdo, no la uses.\\n\\n## 1. Qué es {{sitio.brand}}\\n\\n{{sitio.brand}} es una app de bien público, gratuita y sin fines de lucro, para ver los servicios del {{sitio.network}} y pedir turnos con menos vueltas. Es un prototipo en desarrollo, pensado junto con la Secretaría de Salud de {{sitio.city}}.\\n\\n## 2. Urgencias\\n\\n> **{{sitio.brand}} no es un servicio de emergencias.** Ante una urgencia médica, llamá al **{{sitio.emergency_number}}** o acercate a la guardia del {{sitio.hospital}}. No uses la app para situaciones que necesiten atención inmediata.\\n\\n## 3. Se ofrece \\\"tal cual está\\\"\\n\\nEl servicio se brinda \\\"tal cual está\\\" y \\\"según disponibilidad\\\", sin garantías de ningún tipo. No garantizamos que funcione siempre, que esté libre de errores, ni que los horarios y la información de servicios sean exactos o estén actualizados.\\n\\nLos horarios y modalidades de atención pueden cambiar. **Confirmá siempre con el centro de salud** antes de presentarte.\\n\\n## 4. La solicitud no es un turno confirmado\\n\\nEnviar una solicitud desde la app **no garantiza** un turno. El hospital revisa cada solicitud y su orden de derivación, y confirma (o no) el turno según su disponibilidad y sus criterios. **La confirmación responde a las reglas del centro de salud.** En servicios configurados para confirmación automática, tu confirmación explícita del horario en la web o en el chat puede confirmar un horario disponible. La opinión de la IA no activa esa confirmación.\\n\\n## 5. Inteligencia artificial\\n\\n{{sitio.brand}} usa inteligencia artificial para **leer la orden de derivación**, **responder en el chat**, **resumir tu historia clínica** y las funciones enumeradas al final de este documento. Esa lista se genera desde el registro del producto.\\n\\nLa instalación configura dónde se procesa: puede usar un servicio alojado o un modelo local. Cuando usa servidores de proveedores externos, pueden estar fuera de la Argentina. Antes de mandar texto hacemos un esfuerzo razonable por sacarle los datos que te identifican; las imágenes completas y el audio del dictado son las excepciones indicadas en la [política de privacidad](/privacy.html). Un asistente externo que conectes con tu token MCP puede recibir tu identidad y los datos autorizados de tu cuenta sin ese filtro; elegí y revisá ese cliente antes de conectarlo.\\n\\n> **La inteligencia artificial no diagnostica ni decide turnos.** Las lecturas son preliminares y pueden equivocarse: consultalas con el equipo de salud. El profesional confirma los documentos de atención; el paciente confirma las cancelaciones en la web. No tomes una decisión médica a partir de lo que dice la app.\\n\\n## 6. Lo usás bajo tu propia responsabilidad\\n\\n**Usás {{sitio.brand}} bajo tu exclusiva responsabilidad y riesgo.** En la máxima medida permitida por la ley, no aceptamos responsabilidad por nada que surja del uso (o de la imposibilidad de uso) de la app, incluida la pérdida o el acceso no autorizado a datos, o turnos mal mostrados, vencidos o no confirmados.\\n\\n## 7. Uso correcto\\n\\nUsá {{sitio.brand}} con tus propios datos y para gestionar tus propios turnos (o los de una persona a tu cargo). No intentes vulnerar, sobrecargar ni abusar del servicio.\\n\\n## 8. Cambios y baja del servicio\\n\\nAl ser un proyecto en desarrollo, podemos modificar, suspender o dar de baja {{sitio.brand}} en cualquier momento y sin aviso, sin que eso genere responsabilidad alguna.\\n\\n## 9. A qué instalación se aplica\\n\\nEstos términos rigen para la instalación **{{sitio.brand}}**. No se aplican a las instalaciones de demostración de Human Rounds, que funcionan con datos ficticios, no atienden pacientes reales y existen sólo para mostrar cómo anda el sistema.\\n\", \"actualizado\": \"<date>\", \"actualizado_por\": \"staff.ajustes\", \"editado\": true}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": \"terminos\", \"titulo\": \"Términos y condiciones\", \"pagina\": \"/terms.html\", \"cuerpo\": \"Texto de prueba de los términos.\", \"original\": \"Al usar {{sitio.brand}} aceptás estos términos. Si no estás de acuerdo, no la uses.\\n\\n## 1. Qué es {{sitio.brand}}\\n\\n{{sitio.brand}} es una app de bien público, gratuita y sin fines de lucro, para ver los servicios del {{sitio.network}} y pedir turnos con menos vueltas. Es un prototipo en desarrollo, pensado junto con la Secretaría de Salud de {{sitio.city}}.\\n\\n## 2. Urgencias\\n\\n> **{{sitio.brand}} no es un servicio de emergencias.** Ante una urgencia médica, llamá al **{{sitio.emergency_number}}** o acercate a la guardia del {{sitio.hospital}}. No uses la app para situaciones que necesiten atención inmediata.\\n\\n## 3. Se ofrece \\\"tal cual está\\\"\\n\\nEl servicio se brinda \\\"tal cual está\\\" y \\\"según disponibilidad\\\", sin garantías de ningún tipo. No garantizamos que funcione siempre, que esté libre de errores, ni que los horarios y la información de servicios sean exactos o estén actualizados.\\n\\nLos horarios y modalidades de atención pueden cambiar. **Confirmá siempre con el centro de salud** antes de presentarte.\\n\\n## 4. La solicitud no es un turno confirmado\\n\\nEnviar una solicitud desde la app **no garantiza** un turno. El hospital revisa cada solicitud y su orden de derivación, y confirma (o no) el turno según su disponibilidad y sus criterios. **La confirmación responde a las reglas del centro de salud.** En servicios configurados para confirmación automática, tu confirmación explícita del horario en la web o en el chat puede confirmar un horario disponible. La opinión de la IA no activa esa confirmación.\\n\\n## 5. Inteligencia artificial\\n\\n{{sitio.brand}} usa inteligencia artificial para **leer la orden de derivación**, **responder en el chat**, **resumir tu historia clínica** y las funciones enumeradas al final de este documento. Esa lista se genera desde el registro del producto.\\n\\nLa instalación configura dónde se procesa: puede usar un servicio alojado o un modelo local. Cuando usa servidores de proveedores externos, pueden estar fuera de la Argentina. Antes de mandar texto hacemos un esfuerzo razonable por sacarle los datos que te identifican; las imágenes completas y el audio del dictado son las excepciones indicadas en la [política de privacidad](/privacy.html). Un asistente externo que conectes con tu token MCP puede recibir tu identidad y los datos autorizados de tu cuenta sin ese filtro; elegí y revisá ese cliente antes de conectarlo.\\n\\n> **La inteligencia artificial no diagnostica ni decide turnos.** Las lecturas son preliminares y pueden equivocarse: consultalas con el equipo de salud. El profesional confirma los documentos de atención; el paciente confirma las cancelaciones en la web. No tomes una decisión médica a partir de lo que dice la app.\\n\\n## 6. Lo usás bajo tu propia responsabilidad\\n\\n**Usás {{sitio.brand}} bajo tu exclusiva responsabilidad y riesgo.** En la máxima medida permitida por la ley, no aceptamos responsabilidad por nada que surja del uso (o de la imposibilidad de uso) de la app, incluida la pérdida o el acceso no autorizado a datos, o turnos mal mostrados, vencidos o no confirmados.\\n\\n## 7. Uso correcto\\n\\nUsá {{sitio.brand}} con tus propios datos y para gestionar tus propios turnos (o los de una persona a tu cargo). No intentes vulnerar, sobrecargar ni abusar del servicio.\\n\\n## 8. Cambios y baja del servicio\\n\\nAl ser un proyecto en desarrollo, podemos modificar, suspender o dar de baja {{sitio.brand}} en cualquier momento y sin aviso, sin que eso genere responsabilidad alguna.\\n\\n## 9. A qué instalación se aplica\\n\\nEstos términos rigen para la instalación **{{sitio.brand}}**. No se aplican a las instalaciones de demostración de Human Rounds, que funcionan con datos ficticios, no atienden pacientes reales y existen sólo para mostrar cómo anda el sistema.\\n\", \"actualizado\": \"<date>\", \"actualizado_por\": \"staff.ajustes\", \"editado\": true}}"
+  },
+  "cuerpo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo cuerpo: se esperaba texto\"}"
+  },
+  "cuerpo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo cuerpo: se esperaba texto\"}"
+  },
+  "cuerpo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo cuerpo: se esperaba texto\"}"
+  },
+  "cuerpo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo cuerpo: se esperaba texto\"}"
+  },
+  "cuerpo=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"el texto no puede quedar vacío\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ }
+}

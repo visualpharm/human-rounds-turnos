@@ -1,0 +1,110 @@
+{
+  "baseline": "78afa83a0abc5ba0be1c81172d88ceb80b913e79",
+  "asset_url_reversals": [
+    [
+      "/static/platform/account-form.06957eac.mjs",
+      "/static/platform/account-form.af46c896.mjs"
+    ],
+    [
+      "/static/modules/turnos/service.5ea324b5.mjs",
+      "/static/modules/turnos/service.fe032aef.mjs"
+    ]
+  ],
+  "reviewed_catalog_additions": {
+    "locales/en/account.form.json": [
+      "account.form.coverage.account_link",
+      "account.form.coverage.after_title",
+      "account.form.coverage.changed",
+      "account.form.coverage.choose",
+      "account.form.coverage.dependent",
+      "account.form.coverage.edit",
+      "account.form.coverage.invalid",
+      "account.form.coverage.later",
+      "account.form.coverage.later_saved",
+      "account.form.coverage.loading",
+      "account.form.coverage.none",
+      "account.form.coverage.none_saved",
+      "account.form.coverage.reconnecting",
+      "account.form.coverage.review",
+      "account.form.coverage.save",
+      "account.form.coverage.saved",
+      "account.form.coverage.saved_named",
+      "account.form.coverage.saving",
+      "account.form.coverage.session"
+    ],
+    "locales/en/service.json": [
+      "service.success.restore_title",
+      "service.success.restore_unavailable",
+      "service.success.restoring"
+    ]
+  },
+  "reviewed_source_sha256": {
+    "static/platform/account-form.mjs": "af46c896f43a7129c43f3cd352a01211f15bb2a2b2a17fe539c2acf815c02d19",
+    "modules/turnos/service.mjs": "fe032aef6f8cffb05b1b1bbb4d86ae1d42ecd6e300b0329d4e9d7c3c8158a305"
+  },
+  "renders": [
+    {
+      "page": "es:/account",
+      "baseline_sha256": "f30396c2a5e59934e5c049b8948730aa3ab0a97d1f6e42e5d3109347e361ae35",
+      "new_sha256": "79e52e99de6f90d510962babbae51ab85833cbba8cb0e0955a135deced302ec3",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/account/reset",
+      "baseline_sha256": "fc3088926ce7918ab5cdcdf400fe9314d0aa496d81afa91cbcffd6e97ef3fb9e",
+      "new_sha256": "324f65c960e8629eb496d78657f1a5de892dc22c36b0e24ab4f49d9974ab6705",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "anon:/account",
+      "baseline_sha256": "f30396c2a5e59934e5c049b8948730aa3ab0a97d1f6e42e5d3109347e361ae35",
+      "new_sha256": "79e52e99de6f90d510962babbae51ab85833cbba8cb0e0955a135deced302ec3",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/test",
+      "baseline_sha256": "b0ed6a41c44dd41de3aa2984f765964c0c4ab0857be82e86bd088926904e0e31",
+      "new_sha256": "a6486009ff5606f69a68bac78ce276b7c3d13bd0363d27c369c38f30755e3b93",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/sso",
+      "baseline_sha256": "616ffe31bb93e5b46ccf3ee4e9b37765ff3876584534d09a5845b3444f2d1d0a",
+      "new_sha256": "c63e6237af8d917dbce5939605c247680077349b2beca6bf501a51c9c03890da",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account",
+      "baseline_sha256": "f76e07885a8c1caf03d88fa3b6eb0c17a1c4b0051b025108eefea57daa95040f",
+      "new_sha256": "b223758e251293c666ab67d9e4a707558f3e4901560a33b0d102795b70ea4764",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account/reset",
+      "baseline_sha256": "9f0457ac21edfd64d05a99de6ba19aed2c252867bbf66df467ba8e8d1d3ed1f3",
+      "new_sha256": "671ad939581a64f0cc0ca5bbb8d946d9ea5da14643fa56e4bfb291639ec20db3",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/test",
+      "baseline_sha256": "38eb7171ecf07d412edf837cdf5e79a8ddb2d2adae577926bba63e344d23a34d",
+      "new_sha256": "2fbd61ae976d8db14f74be74159f4a9d80a1f34cf98704b86ef1ee5a3444f43e",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/sso",
+      "baseline_sha256": "0a1dc7eafba74f2675891d2e5745894f6ea94dd60ef583b844af8d6f4af3d66f",
+      "new_sha256": "7345a99b73ead3185489102f6727f81e64cd3ec794c3fece4e32814e403e6ca4",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    }
+  ]
+}

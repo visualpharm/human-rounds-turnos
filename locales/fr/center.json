@@ -1,0 +1,13 @@
+{
+  "_comment": "A center's own page (/center/<slug>): services/doctors block chrome, no-booking note, photo/review folds and meta description.",
+  "center.services_title": "Services",
+  "center.no_online_booking": "Ce centre ne prend pas de rendez-vous via l'application. Contacte-le directement :",
+  "center.contact_or": "ou",
+  "center.photos": "Photos",
+  "center.neighbor_quotes": "Ce qu'en disent les voisins",
+  "center.neighbor_tips": "Conseils des voisins",
+  "center.meta_with_lede": "{lede} Consulte les services, les professionnels, les horaires et les coordonnées.",
+  "center.meta_default": "Services, professionnels, horaires et contact de {name} à {city}.",
+  "center.photo_alt": "{name}, photo {n} sur {total}",
+  "center.until": "jusqu'au {date}"
+}

@@ -1,0 +1,5 @@
+{
+  "_comment": "Shared labels around the two legal documents.",
+  "legal.demo_notice": "Tu es sur une installation de **démonstration**. Ce document est le même que celui publié par l'installation réelle, avec des données fictives et sans vrais patients : il ne s'applique pas ici et ne crée aucune obligation.",
+  "legal.updated": "Dernière mise à jour :"
+}

@@ -1,0 +1,10 @@
+{
+  "admin.chats.empty": "Диалогов пока нет.",
+  "admin.chats.failed": "Не удалось загрузить диалоги.",
+  "admin.chats.col_when": "Последняя активность",
+  "admin.chats.col_channel": "Канал",
+  "admin.chats.col_first": "Первый вопрос",
+  "admin.chats.col_turns": "Сообщения",
+  "admin.chats.channel_web": "Сайт",
+  "admin.chats.channel_whatsapp": "WhatsApp"
+}

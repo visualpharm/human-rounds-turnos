@@ -1,0 +1,9 @@
+{
+  "_comment": "Phase 2b (4/N), 2026-07-30. Maps center slugs to Mi Salud Digital institution IDs. The schema is province-level; each real municipality should override the values in its private deployment pack.",
+  "slug_to_msd": {
+    "diabetpin": 924,
+    "caps-ostende": 926,
+    "caps-valeria": 927,
+    "caps-pinamar": 928
+  }
+}

@@ -1,0 +1,10 @@
+{#- Shared first lines of every public footer: the emergency number, then the
+    installation's priority notice (sitio.json priority_notice, optional).
+    Included by _site_footer.html and the pages that still author their own
+    footer (about, privacy, terms, account, account-reset) so the notice is
+    the same on every page. Whitespace-controlled: with neither line the
+    footer's bytes are exactly what they were before this partial existed. -#}
+{%- if sitio('emergency_number_link_html') %}
+    <p class="fnotice furg">{{ t('footer.emergency', 'Urgencias: {{sitio.emergency_number_link_html}}') }}</p>{% endif -%}
+{%- if sitio('priority_notice') %}
+    <p class="fnotice">{{ sitio('priority_notice') }}</p>{% endif -%}

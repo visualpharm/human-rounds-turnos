@@ -1,0 +1,7175 @@
+{
+ "app.admin_panel._native_support.json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.admin_panel.native_json.json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.admin_panel.reports_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.ai.ai_costs_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.ai.ai_health_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.ai.chart_summary_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.ai.lab_results_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.ai.prompts_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.auth.panel_login_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.auth.password_reset_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "background": {
+   "background": true,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.connectors.puco.puco_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.core.app_modules_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.chat._native_support.json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.chat.whatsapp_chat_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.intake._native_support.json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.turnos.appointment_confirm_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.turnos.appointment_offer_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.turnos.booking_requests_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.turnos.calendar_feed_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.turnos.doctor_appointments_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.turnos.preparation_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  }
+ },
+ "app.modules.turnos.searches_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.modules.turnos.slot_holds_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.ops.demo_installation_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.patient_web.avatar_sprite_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.patient_web.branding_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "accents/404/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 404
+  },
+  "big/404/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/404/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.patient_web.doctor_photos_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.patient_web.legal_router._json_response": {
+  "accents/200": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/404": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "big/200": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/404": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "small/200": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/404": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  }
+ },
+ "app.patient_web.patient_site_router._json_response": {
+  "accents/200/-": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "accents/200/identity": {
+   "background": false,
+   "body": "{\"nombre\": \"Ñandú Pérez\", \"texto\": \"¿Cómo está? — «bien»\", \"n\": [1, 2.5, null]}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "89"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/-": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/gzip, deflate": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-encoding",
+     "gzip"
+    ],
+    [
+     "content-length",
+     "277"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ],
+    [
+     "vary",
+     "Accept-Encoding"
+    ]
+   ],
+   "status": 200
+  },
+  "big/200/identity": {
+   "background": false,
+   "body": "sha256:399506cbda9b6ac87bbe9c1c9bc431c2b3e920237d85e0c5c5f6d0e828ff2bf4 len:6901",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "6901"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/-": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/gzip, deflate": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  },
+  "small/200/identity": {
+   "background": false,
+   "body": "{\"ok\": true}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "12"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 200
+  }
+ }
+}

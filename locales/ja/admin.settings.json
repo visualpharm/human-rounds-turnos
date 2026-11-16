@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "予約可能期間（日数）",
+  "admin.settings.opening_time": "予約受付開始時間",
+  "admin.settings.horizon_range": "予約可能期間は1日から365日の間で設定してください。",
+  "admin.settings.opening_time_format": "開始時間はHH:MM形式で入力してください。",
+  "admin.settings.holidays.title": "祝日",
+  "admin.settings.holidays.lede": "その日は、すべての診療科、医師、センターで予約を受け付けません。既に入っている予約は自動的にキャンセルされませんので、個別に予約変更を行ってください。",
+  "admin.settings.holidays.empty": "登録された祝日はありません。",
+  "admin.settings.holidays.date": "日付",
+  "admin.settings.holidays.name": "名称",
+  "admin.settings.holidays.remove": "削除",
+  "admin.settings.holidays.add": "+ 祝日を追加",
+  "admin.settings.holidays.load_national": "国民の祝日を読み込む",
+  "admin.settings.holidays.appointments_one": "その日に {n} 件の予約が入っています",
+  "admin.settings.holidays.appointments": "この日に{n}件の予約があります",
+  "admin.settings.holidays.invalid": "祝日リストが正しくありません。",
+  "admin.settings.holidays.bad_date": "各祝日には有効な日付が必要です。",
+  "admin.settings.holidays.no_name": "各祝日には名称が必要です。",
+  "admin.settings.holidays.long_name": "祝日の名称は最大{max}文字までです。",
+  "admin.settings.holidays.too_many": "登録できる祝日は最大{max}件までです。"
+}

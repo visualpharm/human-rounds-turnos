@@ -1,0 +1,2483 @@
+{
+ "routes": [
+  {
+   "path": "/health",
+   "methods": [
+    "GET",
+    "HEAD"
+   ]
+  },
+  {
+   "path": "/ready",
+   "methods": [
+    "GET",
+    "HEAD"
+   ]
+  },
+  {
+   "path": "/api/admin/config",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/whoami",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/login",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/logout",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/passkeys",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/passkeys/register-options",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/passkeys/register",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/passkeys/delete",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/passkeys/reset",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/passkeys/login-options",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/passkeys/login",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/modules",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/nav",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/index.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/about.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/privacy.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/terms.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/llms.txt",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/robots.txt",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/demo",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/account/demo-access",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/demo-doctor-access",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/demo-access",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/account",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/config",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/me",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/dependents",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/register",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/login",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/logout",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/update",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/dependents/delete",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/account/reset",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/account/portal-login",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/auth/test",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/auth/sso",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/test-identities",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/test-identities/random",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/test-login",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/recover",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/reset",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/reset_otp",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/otp/send",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/otp/verify",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/admin",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/login",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/users",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/users/actions/{action}",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/users/{usuario}",
+   "methods": [
+    "DELETE",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/api/admin/roles",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/roles/{slug}",
+   "methods": [
+    "DELETE",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/api/admin/permissions",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/preferences",
+   "methods": [
+    "GET",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/admin/reset-password",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reset-password",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/account",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/account/profile",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/account/password",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/account/2fa/start",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/account/2fa/confirm",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/account/2fa/remove",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/settings",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/settings/probar",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/login-panel",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/login-panel/event",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/system",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/system/hsi",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/system",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/settings",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/users/import",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/users",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/account",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/legal",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/appearance",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/plan",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/branding",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/branding/logo",
+   "methods": [
+    "DELETE",
+    "POST"
+   ]
+  },
+  {
+   "path": "/logo.png",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/logo",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/datos",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/datos/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/legal",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/legal/{doc}",
+   "methods": [
+    "DELETE",
+    "GET",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/setup",
+   "methods": [
+    "DELETE",
+    "GET",
+    "POST",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/setup/{sub:path}",
+   "methods": [
+    "DELETE",
+    "GET",
+    "POST",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/auth/renaper",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/auth/renaper/callback",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/acerca.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/acerca.html/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin-tabla.js",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin-tabla.js/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/centros",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/centros/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/cuenta",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/cuenta/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/cuenta/reset",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/cuenta/reset/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/entrevista.css",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/entrevista.css/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/entrevista.js",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/entrevista.js/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/medicos",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/medicos/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/mis-solicitudes",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/mis-solicitudes/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/intake/admin-entrevistas.mjs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/intake/admin-entrevistas.mjs/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/intake/entrevista.css",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/intake/entrevista.css/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/intake/entrevista.js",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/intake/entrevista.js/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/turnos/service.mjs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/turnos/service.mjs/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/turnos/upload-order.mjs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/turnos/upload-order.mjs/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/turnos/wz-upload.mjs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/modules/turnos/wz-upload.mjs/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/novedades",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/novedades/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/preparacion",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/preparacion/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/privacidad.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/privacidad.html/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/services",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/services/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/static/modules/turnos/service.mjs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/static/modules/turnos/service.mjs/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/static/modules/turnos/upload-order.mjs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/static/modules/turnos/upload-order.mjs/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/static/modules/turnos/wz-upload.mjs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/static/modules/turnos/wz-upload.mjs/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/terminos.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/terminos.html/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/medico/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/centro/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/estudio/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/solicitud/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/turno/oferta/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/servicio/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/i18n/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/client-errors",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/table-export",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/openapi.json",
+   "methods": [
+    "DELETE",
+    "GET",
+    "HEAD",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/docs",
+   "methods": [
+    "DELETE",
+    "GET",
+    "HEAD",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/.well-known/oauth-protected-resource/mcp",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/.well-known/oauth-protected-resource",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/.well-known/openid-configuration",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/.well-known/oauth-authorization-server/mcp",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/.well-known/oauth-authorization-server",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/oauth/register",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/oauth/authorize",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/oauth/authorize",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/oauth/token",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/whatsapp/webhook/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/whatsapp/webhook",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/whatsapp/webhook/",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/whatsapp/webhook",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/mcp/",
+   "methods": [
+    "DELETE",
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/mcp",
+   "methods": [
+    "DELETE",
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/mcp/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/mcp",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/mcp/regenerate/",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/mcp/regenerate",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/mcp/revoke/",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/mcp/revoke",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/chat/stream/",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/chat/stream",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/chat",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/chat/whatsapp",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/chat/history",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/chat/new",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/chat-transcripts",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/chat/voice",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/chat/transcribe",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/chat-voice",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/admin/chats",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/entrevista/{sid}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/intake/case/start",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/intake/case/{token}/message",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/intake/case/{token}/finish",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/intake/t/{token}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/e/{code}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/intake/t/{token}/message",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/intake/t/{token}/reopen",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/intake/qr/{code}/start",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/consult/{cid}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/consult/{cid}/confirm",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/settings",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/my-settings",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/alerts/count",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/alerts",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/alerts/{aid}/ack",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/door/{code}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/intake/door/{code}/regenerate",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/r/{token}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/o/{token}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/consult",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/entrevistas",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/ai-register/print",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/ai-register/export",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/ai-register",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/ai-register/notify",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/admin/cola/print",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/patient-external-history",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/study",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/study/session",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/study/s/{token}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/study/s/{token}/event",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/study/s/{token}/result",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/study/s/{token}/finish",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/usability",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/usability/analyze",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/usability/findings",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/usability/findings/{finding_id}",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/services",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/doctors",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/centers",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/directory",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/links",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/service-slots/{sid:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/service/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/my-requests",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/my-requests/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/request/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/app",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/app/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/app.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/clinicas",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/clinicas/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/directorio",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/directorio/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/directorio.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/obras-sociales",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/obras-sociales/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/panel",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/panel/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/panel.html",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/clinica/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/cobertura/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/doctors",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/doctors/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/doctor/{mid:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/d/{cid:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/study/{rest:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/preparation/{pid:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/centers",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/centers/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/center/{slug:path}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/news",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/news/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/news/pedidos",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/news/pedidos/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/telemedicine",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/telemedicine/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/zoonosis",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/zoonosis/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/blood-donation",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/blood-donation/",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/specialties",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/requests",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/requests/{req_id}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/requests/{req_id}/coverage",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/requests/{req_id}/cancel",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/requests/{req_id}/reprogramar",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/requests/{req_id}/waitlist",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/analyze-order",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/orden-preview/{token}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/theme",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/auth-mode",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/turnstile",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/case-chat",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/hsi-sync",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/hsi-sync/resolver",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/hsi-sync/conflicts",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/order/{req_id}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/refeps",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/approve",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/assign",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/retry-hsi",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/reject",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/cancel",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/restore",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/campos",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/patient-data",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/requests/{req_id}/attendance",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/slot-hold",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/slot-hold/{token}",
+   "methods": [
+    "DELETE"
+   ]
+  },
+  {
+   "path": "/appointment/offer/{token}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/offer/{token}/accept",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/offer/{token}/reject",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/appointment/confirm/{token}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/confirm/{token}/{answer}",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/doctors/import",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/content/{tipo}",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/content/{tipo}/{sub}",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/content/{tipo}/{item_id}/restaurar",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/content/{tipo}/{item_id}",
+   "methods": [
+    "DELETE",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/api/admin/patients",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/dni-claims",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/dni-claims/{claim_id}/resolve",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/patients/{dni}/access-log",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/patients/{dni}/data-export",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/patients/{dni}",
+   "methods": [
+    "DELETE",
+    "GET",
+    "PUT"
+   ]
+  },
+  {
+   "path": "/api/admin/patients/{dni}/temp-password",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/patients/{dni}/dependents",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/patients/{dni}/dependents/{dni_dep}",
+   "methods": [
+    "DELETE"
+   ]
+  },
+  {
+   "path": "/api/admin/patients/{dni}/clinical-history",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/appointments",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/appointment-slots",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/hsi-extension/{name}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/doctors/{doctor}/compatible-services",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/doctors/{doctor}/appointments",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/doctors/stats",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/my-appointments",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/my-appointments/feed",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/my-appointments/feed/rotate",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/my-appointments/{req_id}/order",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/day-queue",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/day-queue/calendar",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/day-queue/changes",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/day-queue/changes/{req_id}/hide",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/day-queue/events",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/doctor-patients",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/requests.csv",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/patients",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/login-panel",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/visits",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/searches",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/reviews",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/cost-recovery",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/cost-recovery.csv",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/sumar",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/sumar.csv",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/statistics",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/statistics.csv",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/capacity",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/funnel",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/reports/funnel/steps",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/patient-summary",
+   "methods": [
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/lab-results",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/account/lab-results/open",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/lab-results/upload",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/account/lab-results/upload/{upload_id}",
+   "methods": [
+    "DELETE"
+   ]
+  },
+  {
+   "path": "/upload-order",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/preparation-studies",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/{entity}/{eid}/photo",
+   "methods": [
+    "DELETE",
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/{entity}-photo/{eid}",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/mi/foto",
+   "methods": [
+    "DELETE",
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/avatar-sprite/{h}.webp",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/doctor-thumb/{name}.webp",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/account/photo",
+   "methods": [
+    "DELETE",
+    "GET",
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/costs",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/ai-status",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/ocr-dni",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/prompts",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/prompts/{clave}",
+   "methods": [
+    "DELETE",
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/prompts/{clave}/traduccion",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/prompts/{clave}/historial",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/prompts/{clave}/guardar",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/search-log",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/ev",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/analytics/events",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/analytics/schedule",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/analytics/keys",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/analytics/keys",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/analytics/keys",
+   "methods": [
+    "DELETE"
+   ]
+  },
+  {
+   "path": "/sitemap.xml",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/puco",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/appointment/{sid}.ics",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/calendar/feed",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/calendar/feed/regenerate",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/feed/appointments/{token}.ics",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/feed/doctor/{token}.ics",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/appointment/{token}.ics",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/doctor-profile",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/api/admin/doctor-profile",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/api/admin/onboarding/complete",
+   "methods": [
+    "POST"
+   ]
+  },
+  {
+   "path": "/admin/ai-register",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/usability",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/solicitudes",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/cola",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/mis-turnos",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/my-patients",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/pacientes",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/reportes",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/preparations",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/hsi",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/services",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/centers",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/doctors",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/knowledge",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/prompts",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/roles",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/onboarding",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/admin/my-schedules",
+   "methods": [
+    "GET"
+   ]
+  },
+  {
+   "path": "/{full_path:path}",
+   "methods": [
+    "DELETE",
+    "GET",
+    "HEAD",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT"
+   ]
+  }
+ ],
+ "middleware": [
+  "Middleware(SecurityHeadersMiddleware)",
+  "Middleware(HostRedirectMiddleware)",
+  "Middleware(SiteAuthMiddleware)",
+  "Middleware(AdminLastScreenMiddleware)",
+  "Middleware(I18nMiddleware)",
+  "Middleware(LegacyUrlRewriteMiddleware)",
+  "Middleware(AdminCsrfMiddleware)",
+  "Middleware(HeadAsGetMiddleware)"
+ ]
+}

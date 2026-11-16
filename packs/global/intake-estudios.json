@@ -1,0 +1,21 @@
+{
+  "note": "Catálogo de estudios que el médico puede sugerir/pedir desde la consulta de la entrevista previa (modules/intake/intake_catalog.py). `especialidades: []` = genérico, aparece para cualquier especialidad; una lista no vacía restringe el estudio a esas especialidades (normalizado sin acentos, ver intake_catalog._norm). Portado del prototipo hermano <workspace>/sana (specialties/cardiologia/index.mjs:examCatalog) más un set genérico chico (labs/imágenes comunes).",
+  "estudios": [
+    { "id": "hemograma", "label": "Hemograma completo", "categoria": "Laboratorio", "especialidades": [] },
+    { "id": "glucemia", "label": "Glucemia", "categoria": "Laboratorio", "especialidades": [] },
+    { "id": "orina", "label": "Orina completa", "categoria": "Laboratorio", "especialidades": [] },
+    { "id": "rx-torax", "label": "Radiografía de tórax (frente y perfil)", "categoria": "Imágenes", "especialidades": [] },
+    { "id": "eco-abdominal", "label": "Ecografía abdominal", "categoria": "Imágenes", "especialidades": [] },
+
+    { "id": "ecg", "label": "Electrocardiograma (ECG) de reposo", "categoria": "Cardiología", "especialidades": ["cardiologia"] },
+    { "id": "ecocardiograma", "label": "Ecocardiograma Doppler", "categoria": "Imágenes", "especialidades": ["cardiologia"] },
+    { "id": "ergometria", "label": "Ergometría (prueba de esfuerzo)", "categoria": "Cardiología", "especialidades": ["cardiologia"] },
+    { "id": "holter", "label": "Holter de 24 horas", "categoria": "Cardiología", "especialidades": ["cardiologia"] },
+    { "id": "mapa", "label": "MAPA (presurometría 24 h)", "categoria": "Cardiología", "especialidades": ["cardiologia"] },
+    { "id": "lab-lipidico", "label": "Laboratorio: perfil lipídico", "categoria": "Laboratorio", "especialidades": ["cardiologia"] },
+    { "id": "lab-troponina", "label": "Laboratorio: troponina", "categoria": "Laboratorio", "especialidades": ["cardiologia"] },
+    { "id": "lab-bnp", "label": "Laboratorio: BNP / NT-proBNP", "categoria": "Laboratorio", "especialidades": ["cardiologia"] },
+    { "id": "lab-renal", "label": "Laboratorio: ionograma y función renal", "categoria": "Laboratorio", "especialidades": ["cardiologia"] },
+    { "id": "coronariografia", "label": "Coronariografía (derivación)", "categoria": "Hemodinamia", "especialidades": ["cardiologia"] }
+  ]
+}

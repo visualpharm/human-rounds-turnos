@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "Se a conta tiver um e-mail cadastrado, você receberá um link para escolher uma nova senha.",
+  "admin.reset.mismatch": "As senhas não coincidem.",
+  "admin.reset.failed": "Não foi possível salvar. Peça um novo link.",
+  "admin.reset.saved": "Senha salva. Ir para o painel",
+  "admin.reset.network": "Erro de rede. Tente novamente.",
+  "admin.reset.expired_title": "O link expirou",
+  "admin.reset.expired_body": "Este link expirou ou já foi usado. Peça um novo a partir do acesso ao painel.",
+  "admin.reset.login": "Acesso ao painel",
+  "admin.reset.password": "Nova senha",
+  "admin.reset.title": "Escolha uma nova senha",
+  "admin.reset.requirements": "Use pelo menos 8 caracteres. Este link só pode ser usado uma vez.",
+  "admin.reset.confirm": "Repetir senha",
+  "admin.reset.save": "Salvar senha",
+  "admin.reset.db_unavailable": "Banco de dados indisponível.",
+  "admin.reset.expired": "O link expirou ou já foi usado. Peça um novo.",
+  "admin.reset.invalid_json": "JSON inválido.",
+  "admin.reset.username": "Seu usuário"
+}

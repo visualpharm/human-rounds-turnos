@@ -1,0 +1,1894 @@
+/* Direct screen and shared-component styles. Every selector below is used by a server-routed admin screen. */
+
+  /* ONE left edge (the product owner 05.09, 15.09, 16.10: «one left edge»). The panel's
+     side gutter is this one token: the topbar inset, the content wrap and,
+     on the phone, every section that carries its own gutter read it — never a
+     literal. A table's first cell starts on that edge with no inset of its own
+     (a zebra or carded row is its own box and keeps its inner padding). Pinned
+     by test/e2e/admin-left-edge.spec.mjs at 1440 and 390. */
+  :root{--adm-gutter:16px;}
+  /* «Pacientes de hoy» (#sec-cola) keeps its own row insets until its rewrite lands. */
+  .adm-content-wrap>:not(#sec-cola) :is(.cnt-table,.sis-tabla) :is(th,td):first-child{padding-left:0;}
+  .adm-content-wrap>:not(#sec-cola) :is(.cnt-th-check,.cnt-td-check):first-child{padding-left:0!important;}
+  .adm-content-wrap>:not(#sec-cola) :is(.cnt-th-check,.cnt-td-check):first-child input{margin-left:0!important;}
+
+  /* Full-bleed sticky header (responsable del producto, 2026-09-16: "sin paddings, pegada al
+     techo y a los costados"): .adm5-main ya no acolcha, así que la barra
+     pega contra el borde superior y los dos laterales de la columna, opaca,
+     con el hairline que una barra pegada necesita cuando el contenido le
+     pasa por debajo. El look anterior (22px de página arriba, franjas de
+     página a los costados y la pastilla panel flotando sobre el gris) se
+     leía como header roto e inconsistente entre pantallas. */
+  .adm-topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:10px;
+    min-height:44px;padding:0 var(--adm-gutter);box-sizing:border-box;
+    background:var(--panel);border-bottom:1px solid var(--border);}
+  .adm-content-wrap{max-width:1040px;padding:18px var(--adm-gutter) 72px;box-sizing:border-box;}
+  /* La cola de solicitudes pide más ancho que el resto (forms, tablas de
+     contenido, reportes leen mejor a 1040): entran los campos en dos columnas
+     + la tira de la orden. Tope 1280 como el mockup — más ancho estira las
+     filas de campos hasta que el label y el valor quedan lejísimos. */
+  .adm-content-wrap:has(> #sec-solicitudes:not([style*="none"])){max-width:1240px;padding:16px var(--adm-gutter) 48px;}
+  /* admin-solicitudes.mjs deja ese wrap sin padding en todo ancho: el aviso
+     de IA dentro de la sección toma el mismo canal que la banda de filtros. */
+  #sec-solicitudes>p{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+  /* «Pacientes de hoy» tiene 8 columnas (Hora…Asistencia): usa TODO el ancho
+     disponible (sin tope) para que Prácticas y Diagnóstico entren en una sola
+     línea (responsable del producto). El sobrante lo absorben las columnas de texto (table-layout
+     fixed en admin-queue.js), no huecos entre columnas. */
+  .adm-content-wrap:has(> #sec-cola:not([style*="none"])){max-width:none;padding:16px var(--adm-gutter) 48px;}
+  /* The first /admin/cola response remains usable with JavaScript disabled.
+     Its compact phone layout belongs in this shared direct-screen stylesheet,
+     never in an inline template style. Labels use normal body contrast. */
+  .queue-server-table{width:100%;table-layout:auto;}
+  @media(max-width:640px){
+    .queue-server-table thead{display:none;}
+    .queue-server-table,.queue-server-table tbody,.queue-server-table tr,.queue-server-table td{display:block;width:100%;box-sizing:border-box;}
+    .queue-server-table tr{padding:10px 0;}
+    .queue-server-table .queue-server-group{padding-top:18px;}
+    .queue-server-table .queue-server-group th{display:block;width:100%;text-align:left;}
+    .queue-server-table td::before{content:none;}
+  }
+  .adm-content-wrap:has(> [data-list-view="1"]:not([style*="none"])){max-width:none;}
+  /* Pacientes, Mis turnos, Mis pacientes y Reportes vivían sueltos en
+     .adm5-main y tomaban su padding; desde el header full-bleed (2026-09-16)
+     main ya no acolcha y el canal lateral lo pone este wrap. Mantienen el
+     ancho completo que tenían. */
+  .adm-content-wrap:has(> :is(#sec-pacientes,#sec-mis-turnos,#sec-mis-pacientes,#sec-reportes)){max-width:none;}
+  .adm-h1{font-size:18px;font-weight:700;letter-spacing:-.01em;margin:0;min-width:0;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .adm-h1row{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding-block:8px;}
+  .adm-h1row>.adm-h1{flex:0 0 auto;max-width:100%;white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:normal;}
+  .adm-h1row>#adm-sol-tools{flex:0 0 auto;max-width:100%;overflow:visible;}
+  .adm-h1row .adm-h1-count{flex-shrink:0;overflow:visible;text-overflow:clip;}
+  .adm-h1row>.btn{flex:0 0 auto;white-space:nowrap;}
+  /* «Crear turno» sits at the right end of the title's own line at every
+     width (the product owner, 2026-11-08), the way «Nuevo paciente» does in Pacientes:
+     the title takes the room left and wraps inside it, never the button. */
+  .adm-h1row>[role="alert"]{display:flex;flex-wrap:wrap;align-items:center;gap:8px;max-width:100%;}
+  /* Miga de pan dentro del título de la barra: "Médicos / María Gabriela
+     Vidoni · Pediatría" es UNA línea, no un stack de crumb + h1 + subtítulo. */
+  .adm-crumb{font-weight:400;color:var(--hint-ink);text-decoration:none;}
+  .adm-crumb:hover{color:var(--hover-ink);}
+  .adm-crumb-sep{margin:0 6px;color:var(--hint-ink);font-weight:400;}
+  .adm-sub{max-width:720px;margin:0 0 16px;color:var(--hint-ink);font-size:13px;line-height:1.5;}
+
+  /* Mis turnos (médico, 2026-07-16) — imprimible: el médico puede querer una
+     versión en papel de su agenda del día; una sola regla basta, no hace
+     falta un layout de impresión aparte. */
+  @media print{
+    .adm5-side, .mt-cal, #mt-cal-open, .adm-band, .mt-print{ display:none !important; }
+    .mt-tools{ display:none !important; }
+    .adm-content-wrap{ max-width:none; padding:0; }
+  }
+  /* The day's heading with its «Imprimir» (HSI's A4 sheet, /admin/cola/print). */
+  #sec-mis-turnos .mt-day-head{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 10px;}
+  #sec-mis-turnos .mt-day-head .mt-day-h{margin:0;}
+  .adm-h1row>.mt-tools{display:inline-flex;align-items:center;gap:4px;}
+  .mt-sobre{display:inline-block;font-size:15px;line-height:1.35;color:var(--warn);background:var(--warn-soft);padding:0 8px;border-radius:6px;margin-right:8px;}
+  .mt-estado{white-space:nowrap;}
+  .mt-estado .attendance-dot{display:inline-block;margin-right:8px;vertical-align:1px;box-shadow:none;}
+  #sec-mis-turnos .cnt-table td{font-size:15px;}
+  #sec-mis-turnos .cnt-table td[data-col='hora']{font-weight:650;color:var(--text);}
+  #sec-mis-turnos .cnt-table td[data-col='paciente']{font-weight:600;color:var(--text);}
+  #sec-mis-turnos .cnt-contacto-de{font-size:15px;color:var(--hint-ink);}
+  /* The width engine measures each column at its natural width, then fits
+     the tables to the panel (admin-my-appointments.mjs); a column that does
+     not fit hides with its <col>. The spare width is not spread over the
+     columns: the table spans the panel and the empty last column (relleno)
+     takes it, as in Pacientes de hoy, so the columns stay together. */
+  #sec-mis-turnos .cnt-table{width:100%!important;}
+  #sec-mis-turnos .cnt-table col[data-col='relleno']{width:auto!important;}
+  #sec-mis-turnos .cnt-table [data-col='relleno']{padding:0;}
+  #sec-mis-turnos .cnt-table th[data-col='relleno'] .tbl-res{display:none;}
+  #sec-mis-turnos.mt-measuring .cnt-table{table-layout:auto!important;width:auto!important;}
+  #sec-mis-turnos.mt-measuring .cnt-table col{width:auto!important;}
+  #sec-mis-turnos .mt-hide-preparacion [data-col='preparacion'],#sec-mis-turnos .mt-hide-centro [data-col='centro'],
+  #sec-mis-turnos .mt-hide-consultorio [data-col='consultorio'],#sec-mis-turnos .mt-hide-servicio [data-col='servicio'],
+  #sec-mis-turnos .mt-hide-asistencia [data-col='asistencia'],#sec-mis-turnos .mt-hide-dni [data-col='dni'],
+  #sec-mis-turnos .mt-hide-edad [data-col='edad'],#sec-mis-turnos .mt-hide-resumen [data-col='resumen'],
+  #sec-mis-turnos .mt-hide-triage [data-col='triage']{display:none;}
+  .mt-day{margin:0 0 28px;}
+  .mt-day-h{font-size:16px;font-weight:650;color:var(--text);margin:0 0 10px;letter-spacing:-.01em;}
+  .mt-empty{max-width:560px;padding:8px 0;}
+  .mt-empty h2{margin:0 0 6px;font-size:18px;font-weight:650;color:var(--text);}
+  .mt-empty p{margin:0 0 16px;font-size:15px;line-height:1.5;color:var(--text);}
+  .mt-loading p{margin:0 0 12px;font-size:15px;color:var(--hint-ink);}
+  .mt-prep-toggle{cursor:pointer;color:var(--accent);font-size:13px;}
+  .mt-prep-body{margin-top:6px;font-size:13px;line-height:1.5;color:var(--hint-ink);max-width:320px;}
+  .mt-prep-body ul{margin:4px 0 0;padding:0 0 0 15px;}
+  .mt-prep-body li{margin:0 0 3px;}
+  .mt-prep-none{color:var(--hint-ink);}
+  .mt-edad-junto{display:none;}
+  /* La dirección del calendario se copia y se olvida: es una nota al pie, no
+     un bloque (responsable del producto, 2026-08-05 — la URL entera desbordaba la caja al final de
+     la pantalla). Chica, y la URL en UNA línea recortada; el texto completo
+     igual viaja en el botón Copiar. */
+  /* «Agregar a mi calendario» (2026-10-27): opened from the title button,
+     above the list; the address to copy, then Google / Apple / other app as
+     disclosures, then «Cambiar la dirección». One type size, key text dark. */
+  .mt-cal{max-width:640px;margin:0 0 24px;padding:16px;border:1px solid var(--border);border-radius:10px;background:var(--panel);box-sizing:border-box;font-size:15px;line-height:1.5;color:var(--text);}
+  .mt-cal[hidden]{display:none;}
+  .mt-cal-h{margin:0 0 4px;font-size:16px;font-weight:650;color:var(--text);}
+  .mt-cal p{margin:0;}
+  .mt-cal-url{display:flex;gap:8px;margin:12px 0 4px;}
+  .mt-cal-url input{flex:1;min-width:0;height:40px;padding:0 12px;font:inherit;font-size:15px;color:var(--hint-ink);background:var(--bg,#fff);border:1px solid var(--border-strong);border-radius:8px;box-sizing:border-box;}
+  .mt-cal-app{border-top:1px solid var(--border);margin-top:12px;padding-top:12px;}
+  .mt-cal-app summary{cursor:pointer;font-weight:600;color:var(--text);}
+  .mt-cal-app .btn{margin-top:12px;}
+  .mt-cal-app ol{margin:12px 0 0;padding-left:20px;}
+  .mt-cal-app li{margin:0 0 4px;}
+  .mt-cal-app p{margin-top:8px;}
+  .mt-cal-rotate{border-top:1px solid var(--border);margin-top:12px;padding-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+  .mt-cal-rotate p{flex:0 0 100%;}
+  .mt-cal-wait{color:var(--hint-ink);}
+  .mt-cal>p+p{margin-top:8px;}
+  .mt-cal .mt-cal-once{margin-top:8px;}
+  #sec-mis-turnos tr.mt-target td{background:var(--warn-soft);}
+
+  /* Estado arriba; búsqueda y filtros en una sola línea debajo. Los propios
+     bordes de los controles ya los separan: no se agrega un divisor. */
+  /* Una sola banda (handoff 2026-07-19): pestañas + búsqueda + filtros en la
+     misma fila cuando entra; en angosto los tools bajan de línea solos. */
+  .adm-band{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;}
+  /* min-width:0 + overflow-x:auto: en pantallas angostas los 4 segmentos no
+     entran — el control SCROLLEA horizontalmente dentro de su propia caja en
+     vez de empujar la página entera fuera del viewport (responsive skill:
+     cero overflow horizontal). overflow-y:hidden mantiene el recorte de las
+     puntas redondeadas. */
+  /* Búsqueda + filtros: mismo contrato que fitSelects() en listing.js (commit
+     09f3c6f) pero resuelto en CSS puro, porque cada .adm-sel YA trae su
+     ancho real medido en --control-fit-width (admin-control-fit.mjs mide la
+     opción elegida desde 2026-09-15, responsable del producto: el filtro mide lo que muestra). .adm-search-row y
+     .adm-filter-fields son dos ÍTEMS flex enteros (ya no display:contents):
+     con flex-wrap en .adm-tools, el navegador los deja en una sola línea
+     mientras entren y, si no entran, pasa el grupo de filtros COMPLETO a su
+     propia línea — nunca dos filtros en la fila de arriba y uno solo abajo,
+     porque .adm-filter-fields no se encoge (flex:0 0 auto) y por lo tanto es
+     atómico para el wrap. Reemplaza los saltos de grilla fijos a 1390/1180px
+     (responsable del producto, 2026-08-01: "que los filtros de Solicitudes entren en una línea").
+     OJO: el test de wrap de flexbox usa el flex-basis (no el ancho ya
+     encogido) como "tamaño hipotético" de cada ítem al decidir si entra en
+     la línea. Con «Ver turnos de hoy» mudado a la banda del título
+     (2026-09-15) sobra ancho acá, así que la base sube a 260px y se puede
+     encoger hasta 200px — antes bajaba a 220 fijo para que 7 filtros +
+     búsqueda + ese botón entraran juntos; sin el botón el reparto queda
+     descompensado (Sugerencia sola en su línea) si la búsqueda no toma algo
+     más de ese ancho libre. */
+  .adm-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;flex:1 1 380px;min-width:0;}
+  .adm-search-row{display:flex;align-items:center;gap:8px;flex:1 1 260px;min-width:200px;}
+  .adm-search{flex:1.35 1 220px;min-width:170px;min-height:40px;font:inherit;font-size:16px;padding:7px 13px;border:1px solid var(--border-strong);border-radius:8px;background:var(--panel);color:var(--text);}
+  .adm-search::placeholder{color:var(--text-3);}
+  .adm-filter-fields{display:flex;flex-wrap:wrap;flex:0 0 auto;max-width:100%;align-items:center;gap:8px;}
+  /* Los filtros usan el mismo fondo blanco del handoff. El estado activo
+     conserva el verde suave para cumplir la función visual de su pestaña. */
+  /* 32px a la derecha = flecha de 12px + 10px al borde + 10px de aire.
+     El texto nunca comparte el espacio reservado para el chevron. */
+  .adm-sel{font:inherit;font-size:16px;min-height:40px;padding:7px 36px 7px 12px;border:1px solid var(--border-strong);border-radius:8px;background-color:var(--panel);color:var(--text);cursor:pointer;
+    appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+  .adm-filter-fields .adm-sel{flex:0 1 var(--control-fit-width,auto);min-width:0;max-width:100%;}
+  .adm-band .adm-search,.adm-band .adm-sel{line-height:normal;}
+  #f-estado{border-color:var(--select-bd);background-color:var(--select-soft);color:var(--select);}
+  .adm-sel.on{border-color:var(--select);color:var(--select);background-color:var(--select-soft);}
+  .adm-clear{display:inline-flex;align-items:center;min-height:44px;font-size:16px;color:var(--hint-ink);text-decoration:none;cursor:pointer;padding:8px 4px;white-space:nowrap;}
+  .adm-clear:hover{color:var(--hover-ink);}
+  .adm-filter-count{position:absolute;top:4px;right:4px;min-width:16px;height:16px;box-sizing:border-box;padding:0 4px;border-radius:999px;background:var(--info);color:#fff;font:700 13px/16px var(--font);text-align:center;}
+  .adm-filter-toggle{position:relative;flex:0 0 44px;}
+  .adm-filter-toggle.on{border-color:var(--select);color:var(--select);background:var(--select-soft);}
+  @media(pointer:coarse){
+    .adm-search,.adm-sel{min-height:44px;padding-top:9px;padding-bottom:9px;}
+  }
+
+  .adm-sec-h{font-size:14px;font-weight:600;color:var(--hint-ink);margin:26px 0 12px;}
+  /* Sección «HSI»: % sincronizado + la tabla de conflictos que el resolutor
+     automático (hsi_resolver.py) no pudo cerrar solo (una fila por conflicto,
+     con su resolución recomendada y las alternativas). */
+  .hsi-hero{margin:6px 0 2px;font-size:16px;color:var(--text);}
+  .hsi-hero b{font-size:40px;font-weight:700;line-height:1;margin-right:8px;}
+  .hsi-title{display:flex;align-items:center;gap:14px;margin:26px 0 10px;}
+  .hsi-title h2{font-size:19px;margin:0;}
+  /* Without the server sending: how a turno reaches HSI here, the reason, and
+     each center's institution number («Sin número» marked where the extension
+     reads it). */
+  .hsi-modo{font-size:24px;font-weight:700;line-height:1.2;margin:6px 0 8px;color:var(--text);}
+  .hsi-motivo{font-size:16px;line-height:1.5;margin:0 0 6px;max-width:68ch;color:var(--text);}
+  .hsi-centros td{white-space:normal;font-size:16px;}
+  .hsi-falta{font-weight:600;color:var(--text);}
+  .hsi-falta-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--warn);margin-right:8px;position:relative;top:-1px;}
+  @media(max-width:600px){#sec-hsi>.hsi-modo,#sec-hsi>.hsi-motivo{margin-left:16px;margin-right:16px;}
+    /* la tabla de instituciones arranca en el mismo borde que el titulo */
+    #sec-hsi .hsi-centros :is(th,td):first-child{padding-left:var(--adm-gutter,16px)!important;}
+    #sec-hsi .hsi-centros :is(th,td):last-child{padding-right:var(--adm-gutter,16px)!important;}}
+  /* La tabla entra completa a 1280 sin scroll horizontal: el problema envuelve
+     a dos líneas, el botón recomendado también, y el desplegable va acotado. */
+  .hsi-tabla th,.hsi-tabla td{padding:9px 9px;}
+  /* el .cnt-table td base fuerza nowrap: subimos especificidad para que el
+     problema (y el registro resuelto) envuelvan y la tabla entre completa. */
+  .hsi-tabla td.hsi-td-prob{white-space:normal;max-width:250px;line-height:1.35;color:var(--text);}
+  .hsi-td-rec [data-hsi-apply]{white-space:normal;text-align:center;line-height:1.2;padding:6px 12px;max-width:160px;}
+  .hsi-alt{min-height:32px;width:136px;max-width:100%;font:500 13px var(--font);padding:5px 8px;border:1px solid var(--border);border-radius:7px;background:var(--panel);color:var(--hint-ink);}
+  .hsi-td-med .hsi-sin,.hsi-td-rec .hsi-sin,.hsi-td-alt .hsi-sin{color:var(--hint-ink);}
+  .hsi-tabla a:hover{color:var(--accent-hover);}
+  .hsi-resueltos{margin:30px 0 0;}
+  .hsi-resueltos summary{cursor:pointer;color:var(--text);font-weight:600;font-size:14px;}
+  .hsi-resueltos .cnt-table-wrap{margin-top:10px;}
+  .hsi-resueltos .cnt-table td{white-space:normal;color:var(--hint-ink);}
+  .hsi-vacio{margin:14px 0 0;font-size:14px;color:var(--hint-ink);}
+  .adm-empty{color:var(--hint-ink);font-size:16px;line-height:1.5;padding:18px 0;}
+
+  /* Progressive disclosure (the product owner, 2026-10-26), the one rule for every staff
+     list — static/platform/admin-filter-controls.mjs decides the state.
+     Empty (or not loaded yet): no search, no filters, no AI notice; the
+     title, the empty state and the primary action remain. Filters that hid
+     every row keep the band: the way back is in it. */
+  [data-disclosure="empty"] .adm-band,[data-disclosure="loading"] .adm-band,
+  [data-disclosure="empty"] [data-data-tool],[data-disclosure="loading"] [data-data-tool],
+  [data-disclosure="empty"] [data-ai-notice],[data-disclosure="loading"] [data-ai-notice],
+  [data-disclosure="no-match"] [data-ai-notice]{display:none !important;}
+  .adm-sel[hidden],.adm-band [hidden]{display:none !important;}
+  .adm-empty-state{font-size:16px;line-height:1.5;color:var(--text);padding:24px 0;max-width:60ch;}
+  .adm-empty-state p{margin:0;}
+  .adm-empty-state .adm-empty-title{font-weight:600;}
+  .adm-empty-state .adm-empty-text{margin-top:4px;}
+  .adm-empty-state .btn{margin-top:16px;}
+  .adm-ai-notice{font-size:16px;color:var(--text);margin:0 0 12px;}
+
+  /* Navegación primero, tamaño de página al extremo derecho. No lleva
+     divisor: ambos grupos ya son controles con chrome propio. */
+  .pgr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;font-size:13px;color:var(--hint-ink);}
+  .pgr-pp{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .pgr-pp label{display:flex;align-items:center;gap:8px;}
+  .pgr-pp-sel{padding:5px 32px 5px 9px;font-size:13px;width:var(--control-fit-width,auto);}
+  .pgr-pages{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
+  .pgr-num{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;padding:0 6px;
+    border-radius:7px;border:1px solid transparent;color:var(--hint-ink,var(--text-2));text-decoration:none;font-size:13px;cursor:pointer;}
+  .pgr-num:hover{background:var(--hover-bg);color:var(--hover-ink);}
+  .pgr-num.on{border-color:var(--select);background:var(--select-soft);color:var(--select);font-weight:700;}
+  .pgr-goto{width:5ch;font:inherit;font-size:13px;padding:5px 13px;margin:0 2px;border:1px solid var(--border);border-radius:7px;background:var(--panel);color:var(--text);text-align:center;}
+  .pgr-next,.pgr-last{color:var(--accent);text-decoration:none;font-size:13px;white-space:nowrap;margin-left:4px;}
+  .pgr-next:hover,.pgr-last:hover{color:var(--accent-hover);}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:0;margin-bottom:12px;overflow:hidden;font-size:13px;line-height:1.45;}
+  /* handoff 2026-07-19 (design-loop, "Pinamar Admin Solicitudes.dc.html"):
+     los CAMPOS mandan y ocupan la columna ancha a la IZQUIERDA; la foto de la
+     orden es una tira angosta de 300px a la DERECHA — revoca el reparto
+     inverso de 2026-07-16 ("la foto ocupa la parte grande"). La foto NUNCA
+     empuja el alto de la tarjeta: la columna estira con el body (el alto lo
+     dan los controles) y la imagen se escala a ese alto. Orden en el DOM =
+     orden visual, sin `order:` que lo dé vuelta. */
+  .card-body{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:0;align-items:stretch;}
+  /* Sin orden adjunta no hay columna lateral. El handoff de Claude Design
+     usa la fila completa para que paciente, contacto y decisión se puedan
+     recorrer de izquierda a derecha sin un vacío que parezca una orden rota. */
+  .card-body--solo{grid-template-columns:minmax(0,1fr);}
+  /* La tarjeta sin orden termina donde termina la columna de información de
+     las que sí tienen orden (100% - 300px de tira + 1px de borde): sin
+     documento no hay nada que justifique estirar los selects a lo ancho de
+     toda la fila, y el borde derecho alineado deja leer la columna. */
+  .card--solo{max-width:max(calc(100% - 301px),760px);}
+  /* Con orden, la tarjeta es una grilla real de dos columnas: información a la
+     izquierda, documento a la derecha. Las decisiones van ABAJO ocupando el
+     ancho completo (responsable del producto, 2026-07-22): encerradas en la columna izquierda
+     quedaban 726px en una laptop de 1280 y Rechazar caía a una segunda fila.
+     Los controles tienen ancho fijo, así que a lo ancho no se estiran. */
+  .card:not(.card--solo){display:grid;grid-template-columns:minmax(0,1fr) 300px;}
+  .card:not(.card--solo) .card-body{display:contents;}
+  .card:not(.card--solo) .card-main{grid-column:1;grid-row:1;}
+  .card:not(.card--solo) .card-side{grid-column:2;grid-row:1;}
+  .card:not(.card--solo) .card-actions{grid-column:1/-1;grid-row:2;}
+  .card-main{padding:14px 18px;min-width:0;}
+  .card--solo .card-main{padding-bottom:0;}
+  .card-actions{padding:0 18px 14px;container-type:inline-size;}
+  .card-side{position:relative;border-left:1px solid var(--border);background:var(--bg);padding:0;min-height:200px;}
+  /* header de la tarjeta: chip · nombre · veredicto · DNI/edad · timestamp
+     a la derecha — una sola línea inline (handoff 2026-07-17, revoca el
+     stack pt-head-l/pt-head-r y el banner de mismatch aparte: el ✗ no
+     coincide ya vive inline en la tabla de campos, no hace falta repetirlo
+     acá arriba). */
+  .pt-head{display:flex;align-items:center;flex-wrap:wrap;gap:10px;min-width:0;}
+  .pt-name{font-size:15px;font-weight:650;letter-spacing:-.01em;}
+  .pt-meta{font-size:13px;color:var(--hint-ink);}
+  /* servicio·centro: texto tinta NEGRITA, no-link (handoff 2026-07-17 — "not
+     clickable, so make it black and quite visible"; revoca los data-fesp/
+     data-fcen y el <a class="lnk"> de antes). */
+  .pt-svc{display:flex;align-items:center;gap:7px;font-size:13.5px;color:var(--text);font-weight:700;margin:6px 0 0;}
+  .pt-when{font-size:13px;color:var(--hint-ink);margin-left:auto;white-space:nowrap;}
+  .pt-meta .lnk{color:var(--accent);text-decoration:none;}
+  .pt-meta .lnk:hover{color:var(--accent-hover);text-decoration:none;}
+  .svc-toggle{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;padding:0;border:0;border-radius:7px;background:transparent;color:var(--hint-ink);cursor:pointer;}
+  .svc-toggle:hover{background:var(--hover-bg);color:var(--hover-ink);}
+  .svc-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+  .svc-toggle .adm-icon{font-size:18px;}
+  /* Con derivación sugerida el combo ya muestra el destino; la nota dice, en
+     peso liviano, de dónde viene la propuesta — no compite con el servicio. */
+  .svc-nota{font-weight:400;font-size:13px;color:var(--hint-ink);min-width:0;}
+  /* Atajos de resolución: quietos hasta que se los mira. Son acciones que
+     mandan un aviso al paciente, así que no pueden parecer botones primarios
+     ni confundirse con Aprobar/Rechazar, que viven en su propia fila. */
+  .fixes{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 0;}
+  .fix{font:inherit;font-size:13px;line-height:1.2;padding:6px 13px;border-radius:8px;
+       border:1px solid var(--border);background:var(--panel);color:var(--hint-ink);cursor:pointer;}
+  .fix:hover{border-color:var(--hover-bd);color:var(--hover-ink);background:var(--hover-bg);}
+  .fix:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+
+  /* juicio de la IA: UNA sola oración + la tabla de campos, directo sobre la
+     tarjeta — SIN el panel gris que las envolvía antes (handoff 2026-07-17:
+     "removí mucho ruido… sin repetición"). Nada de confianza/lecturas: eso
+     vivía en `.ai-head` (pasesLine + "conf N%"), ya no existe. */
+  .badge{display:inline-flex;align-items:center;gap:6px;font:600 13px/1 var(--font);letter-spacing:normal;padding:5px 9px;border-radius:20px;}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:currentColor;}
+  .b-ok{color:var(--done);background:var(--state-done-bg);}
+  .b-warn{color:var(--warn);background:var(--warn-soft);}
+  .b-neutral{color:var(--hint-ink);background:var(--bg-2);}
+  .ai-resumen{font-size:13.5px;line-height:1.5;color:var(--text);margin:10px 0 0;}
+  .ai-doc{margin:9px 0 0;padding:9px 11px;border-radius:9px;background:var(--warn-soft);border:1px solid var(--warn);color:var(--warn);font-size:13px;line-height:1.45;}
+  .ai-doc b{color:var(--warn);}
+  /* verificación de matrícula vs REFEPS (argentina.gob.ar), auto + cacheada */
+  /* la columna de campos se angostó para darle el ancho a la foto — este
+     texto (con el conteo de matrículas duplicadas) ya no entra en una
+     línea; que rompa en vez de desbordar el borde de la tarjeta. */
+  .refeps-inline{white-space:normal;}
+  .refeps-inline.refeps-load{color:var(--hint-ink);}
+  .refeps-inline.refeps-ok{color:var(--done);font-weight:650;}
+  .refeps-inline.refeps-warn{color:var(--warn);font-weight:650;}
+  .refeps-inline.refeps-err{color:var(--hint-ink);}
+  .refeps-refresh{color:inherit;text-decoration:none;cursor:pointer;padding:0 2px;font-weight:400;}
+  .refeps-refresh:hover{color:var(--hover-ink);}
+  /* grilla de campos: label chico apagado, valor en la tipografía normal del
+     panel (SIN mono — handoff 2026-07-17: "no fixed-width font in the admin
+     console") en weight 600 para que siga leyendo fuerte, + la marca inline
+     al lado (✓/✗/⚠) — sin columna de puntitos de acuerdo, esa columna murió
+     con acDots() (handoff 2026-07-17). */
+  /* handoff 2026-07-19: los campos se reparten en DOS columnas — pero en
+     COLUMNAS de verdad (CSS columns, no grid row-major): los pares
+     relacionados (prepaga→afiliado, médico→matrícula) quedan uno DEBAJO del
+     otro, no uno en cada punta de la tarjeta (responsable del producto, 2026-07-20: "prepaga is
+     really far from número de afiliado"). Desde 2026-08-06 el par es UNA fila
+     de dos renglones: el segundo valor cuelga del primero en `.campo-sub`, sin
+     etiqueta propia — «Swiss Medical» y abajo el número de afiliado. */
+  .campos{columns:2 300px;column-gap:28px;margin-top:11px;font-size:13px;}
+  /* `.campos .v` es inline-flex con wrap: el 100% de base es lo que le da su
+     propio renglón al valor subordinado en vez de dejarlo al lado. */
+  .campo-sub{flex:0 0 100%;margin-top:2px;font-size:13px;color:var(--hint-ink);
+    min-width:0;overflow:hidden;text-overflow:ellipsis;}
+  .campo-row{display:flex;align-items:baseline;gap:8px;min-width:0;padding:2px 0;break-inside:avoid;}
+  .campos .k{color:var(--hint-ink,var(--text-2));white-space:nowrap;width:88px;flex-shrink:0;font-size:13px;}
+  /* valores en peso normal — la negrita en TODOS los valores gritaba
+     (the product owner, 2026-07-20: "don't use bold for all the values") */
+  .campos .v{display:inline-flex;align-items:baseline;gap:4px;flex-wrap:wrap;color:var(--text);word-break:break-word;min-width:0;transition:background .12s;}
+  .campo-list{margin:0;padding-left:17px;}
+  .campo-list li{margin:0 0 2px;}
+  .campo-list li:last-child{margin-bottom:0;}
+  .ck{font-weight:700;}.ck-y{color:var(--done);}.ck-n{color:var(--danger);}
+  /* el VALOR también se pinta de rojo cuando no coincide (handoff
+     2026-07-17: "highlight the value with red too") — la marca ✗ ya lo dice,
+     esto lo hace visible de un vistazo sin tener que leer el ck. */
+  .v-bad{color:var(--danger);}
+  input.campo-edit.v-bad{color:var(--danger);}
+
+  /* campos editables (handoff 2026-07-17: "make all this data editable, and
+     show the edited states") — input sin chrome propio, sólo un guión
+     punteado al pasar el mouse y sólido en foco; nunca se ve como un input
+     hasta que hace falta (form-design: affordance sólo cuando corresponde,
+     pero acá la corrección es la excepción — por eso el title lo aclara). */
+  .campo-edit{font:inherit;font-size:13px;color:var(--text);background:transparent;
+    border:0;border-bottom:1px dashed transparent;padding:1px 13px;margin:-1px -2px;min-width:3ch;max-width:100%;border-radius:2px;}
+  /* diagnóstico largo: textarea que ENVUELVE sólo cuando de verdad no entra
+     (the product owner, 2026-07-20: "don't wrap — there's plenty of space; put it in the
+     same line"): se dimensiona al CONTENIDO y recién al tope del contenedor
+     empieza a envolver. */
+  textarea.campo-edit{display:block;resize:none;overflow:hidden;white-space:pre-wrap;line-height:1.45;min-width:8ch;max-width:100%;}
+  @supports (field-sizing: content){ textarea.campo-edit{field-sizing:content;width:auto;} }
+  /* `field-sizing:content` todavía recorta el último glifo en Chromium con
+     esta tipografía proporcional. Los inputs conservan el ancho estimado en
+     `ch` que genera campoInputHtml; el tope del contenedor evita desbordes. */
+  input.campo-edit{box-sizing:content-box;max-width:min(48ch,100%);}
+  /* fila sin etiqueta (prepaga, médico, diagnóstico): el input editable
+     arranca al mismo borde que el texto plano de al lado (Sancor Salud,
+     N° afiliado) — sin esto el padding-left:13px del input lo corría ~11px
+     de más (responsable del producto, 2026-09-15). */
+  .campo-row-nolbl .campo-edit{margin-left:-13px;}
+  .campo-edit:hover{border-bottom-color:var(--hover-bd);}
+  .campo-edit:focus{outline:none;border-bottom:1px solid var(--accent);}
+  .campos .v.v-editado{background:var(--warn-soft);}
+  .campo-tag-editado{display:inline-block;font-size:13px;font-weight:700;color:var(--warn);background:var(--panel);
+    padding:1px 6px;border-radius:999px;margin-left:5px;vertical-align:1px;}
+  /* abrir el buscador de matrículas — separado del input ahora que el valor
+     es editable (antes el número mismo era el link). */
+  .refeps-number{color:var(--accent);text-decoration:none;cursor:pointer;}
+  .refeps-number:hover{color:var(--accent-hover);}
+  /* selector de turno agendado (the product owner, 2026-07-20, ronda 2: "make a proper
+     drop-down" — murió el popup de días + checkbox "Otro horario", era una
+     interfaz complicada): un <select> común cuyas opciones son SOLO los
+     días/horas en que el servicio/médico atiende (mismos slots que ve el
+     paciente, /api/service-slots), en fecha amigable. La última opción
+     "Otro horario…" destapa el datetime-local libre, fuera de agenda. */
+  .turno-sel{max-width:100%;}
+
+  /* La orden se escala al alto de la información clínica y nunca a su tamaño
+     natural. Las decisiones ahora ocupan el ancho completo debajo: así todos
+     los tipos de tarjeta conservan Aprobar a la izquierda y Rechazar a la
+     derecha sin cortar médico, horario ni motivo. Click = zoom. */
+  .orden-prev{position:absolute;inset:0;background:var(--panel);overflow:hidden;}
+  .orden-btn{display:block;width:100%;height:100%;border:0;padding:0;margin:0;background:none;cursor:zoom-in;}
+  /* fondo transparente: con la orden ya "contenida", el sobrante lo pinta la
+     columna (.card-side) y no queda una banda de otro gris al costado. */
+  .orden-prev img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:transparent;}
+  .orden-prev embed{display:block;width:100%;height:100%;}
+  .orden-zhint{position:absolute;left:9px;bottom:9px;width:30px;height:30px;background:rgba(22,22,22,.66);color:#fff;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;pointer-events:none;opacity:.92;transition:opacity .14s,transform .14s;}
+  .orden-zhint .adm-icon{font-size:19px;}
+  .orden-btn:hover .orden-zhint{opacity:1;transform:scale(1.04);}
+  /* .orden-none sólo queda para el fallback "No se pudo cargar la orden" —
+     una tarjeta SIN orden directamente no tiene columna lateral. */
+  .orden-none{position:absolute;inset:10px;display:flex;align-items:center;justify-content:center;text-align:center;
+    font-size:13px;color:var(--hint-ink);border:1px dashed var(--border-strong);border-radius:9px;}
+
+  /* Acciones del handoff: aprobar siempre a la izquierda, rechazar + motivo
+     siempre a la derecha. No hay divisor: los propios controles ya separan
+     el contenido. La decisión sugerida se lee en el botón sólido; la
+     alternativa queda apagada pero completamente disponible. */
+  .svc-edit{display:inline-flex;align-items:center;min-width:0;}
+  .svc-edit[hidden]{display:none;}
+  .svc-edit>.cmb{max-width:min(420px,100%);}
+  .pref-slot{display:inline-flex;align-items:center;justify-content:center;width:24px;flex:0 0 24px;color:var(--hint-ink);}
+  .pref-slot--mananas{color:var(--naranja);}
+  .pref-slot--tardes,.pref-slot--noches{color:#4a5fa5;}
+  .pref-slot .adm-icon{font-size:23px;}
+  .pref-txt{font-size:14px;color:var(--hint-ink);white-space:nowrap;}
+  /* An icon-font ligature that has not rendered yet must never show its raw
+     name ("wb_sunny"): every icon is clipped to one glyph box. */
+  .adm-icon{display:inline-block;width:1em;height:1em;line-height:1;overflow:hidden;white-space:nowrap;vertical-align:middle;}
+  /* El select de turno ahora dice "Mié 29 jul, 10:00" (fecha corta, 2026-07-22):
+     con 160px entra entero y Aprobar + Rechazar quedan en la MISMA fila en una
+     laptop típica, que es lo que antes empujaba el bloque de rechazo abajo. */
+  /* `hidden` y la base de botones (.btn/.btn-ok/.btn-quiet) viven en
+     admin-gate.css — el asset compartido que las dos superficies linkean
+     arriba; las variantes only-panel siguen acá. */
+  .btn-accent{background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);border-radius:var(--btn-radius,6px);}
+  .btn-accent:hover{background-image:var(--hover-fill);}
+  .btn-no{background:transparent;color:var(--rojo);border:1px solid color-mix(in oklch,var(--danger) 40%,var(--border));}
+  .btn-no:hover{background:var(--danger-soft);}
+  .btn-sm{padding:6px 11px;font-size:13px;gap:5px;}
+  /* The panel's on/off switch: «Límites» of doctors and services
+     (admin-hours-editor.mjs switchHtml) and «Entrevista previa» of the
+     doctor's «Pacientes de hoy». One component, one geometry. */
+  .hor-switch{position:relative;display:block;width:48px;height:28px;flex:none;cursor:pointer;}
+  .hor-switch input{position:absolute;inset:0;opacity:0;margin:0;width:100%;height:100%;cursor:pointer;}
+  .hor-switch span{display:block;width:48px;height:28px;border-radius:14px;background:#7E857E;pointer-events:none;}
+  .hor-switch span:after{content:'';position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 2px #0004;}
+  .hor-switch input:checked+span{background:var(--accent);}.hor-switch input:checked+span:after{left:23px;}
+  .hor-switch input:indeterminate+span{background:var(--text-2);}.hor-switch input:indeterminate+span:after{left:13px;}
+  .hor-switch input:focus-visible+span{outline:2px solid var(--focus-border);outline-offset:3px;}
+  /* Aprobar/Rechazar de la cola: outline por defecto, sólido sólo en la
+     decisión que sugiere la IA. Las reglas viven en `static/platform/admin-solicitudes.mjs`
+     (`.sol-res …`), que es el módulo dueño de esa pantalla — acá estaban
+     escopeadas a `.acts`, la tarjeta vieja que ya no se renderiza. */
+  /* reasignación al aprobar: servicio + médico (selects angostos, mismo look
+     que .adm-sel) y motivo de rechazo estandarizado (select + "Otro…") */
+  /* el nombre del médico + "libre <cuándo>" no entra en 240px y se cortaba a
+     mitad de palabra (responsable del producto, 2026-07-19): el select se dimensiona por su
+     contenido, con un techo alto que sólo actúa en nombres extremos. */
+  /* Anchos medidos contra el contenido REAL, no estimados: 13 de 123 nombres
+     de servicio pasaban los 240px ("Admisión Psicología Infantil / Desarrollo
+     Infantil") y 4 de los 9 motivos estándar pasaban los 280px. `min(…,100%)`
+     para que igual encojan en pantallas angostas. */
+  /* 420 = medido sobre el peor caso real del catálogo ("María Cecilia Urtasun
+     Viale — libre Martes 21 de julio, 13:00" ≈ 410px con esta tipografía).
+     `min(...,100%)` para que igual encoja en pantallas angostas. */
+  .motivo-sel{max-width:100%;width:var(--control-fit-width,260px);}
+  /* combos tipeables (Derivar a / Médico) — el input imita a .adm-sel */
+  .cmb{position:relative;display:inline-flex;max-width:min(420px,100%);}
+  .cmb-in{font:inherit;font-size:13px;padding:8px 30px 8px 11px;border:1px solid var(--border);border-radius:9px;background-color:var(--bg-2);color:var(--text);min-width:150px;width:100%;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 9px center;}
+  .cmb-in:focus{outline:2px solid var(--accent-soft);border-color:var(--accent);background-color:var(--panel);}
+  .cmb-list{position:absolute;top:calc(100% + 3px);left:0;z-index:40;min-width:100%;max-width:440px;max-height:280px;overflow:auto;background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:0 14px 34px -18px rgba(14,26,18,.45);}
+  .cmb-it{padding:7px 11px;font-size:13px;color:var(--text);cursor:pointer;white-space:nowrap;}
+  .cmb-it:hover{background:var(--hover-bg);}
+  .cmb-it.sel{background:var(--select-soft);}
+  .cmb-sub{color:var(--hint-ink);}
+  .cmb-none{padding:7px 11px;font-size:13px;color:var(--hint-ink);}
+  /* The shared typeable combo is used in direct admin screens as well as the
+     doctor-hours editor.  On a phone, its editable field must not trigger
+     iOS zoom and each catalog row needs a dependable finger target.  Keep
+     the desktop control compact; the open list already scrolls at 280px. */
+  @media(max-width:720px),(pointer:coarse){
+    .cmb-in{font-size:16px;min-height:44px;box-sizing:border-box;}
+    .cmb-it,.cmb-none{font-size:16px;min-height:44px;padding-block:12px;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere;}
+  }
+  .motivo-otro{min-width:180px;flex:1;}
+  .bulk-select-page input{width:17px;height:17px;margin:0;accent-color:var(--accent);}
+  /* checkbox de lote DENTRO del header de la tarjeta, sin texto: describir un
+     checkbox con "Seleccionar…" era la definición de un checkbox (responsable del producto,
+     2026-07-19) — queda el aria-label. */
+  .pt-select{width:16px;height:16px;margin:0;accent-color:var(--accent);flex-shrink:0;cursor:pointer;}
+  .bulk-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 12px;padding:9px 14px;border:1px solid var(--border);border-radius:10px;background:var(--panel);}
+  .bulk-select-page{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text);cursor:pointer;white-space:nowrap;}
+  .bulk-actions{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;}
+  .bulk-actions .btn{white-space:nowrap;min-height:0;padding:6px 14px;font-size:13px;font-weight:500;}
+  .bulk-bar .btn-ok{background:var(--panel);color:var(--text);border:1px solid var(--border-strong);}
+  .bulk-bar .btn-ok:hover{background:var(--hover-bg-soft);}
+  .bulk-bar [data-bulk-action="sugerencia"]{background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);border-color:var(--btn-bg,var(--accent));}
+  .bulk-bar [data-bulk-action="sugerencia"]:hover{background-image:var(--hover-fill);}
+  .bulk-bar .btn-no{background:var(--panel);color:var(--hint-ink);border-color:var(--border-strong);}
+  .bulk-reject-field{display:flex;flex-direction:column;gap:7px;margin:18px 0 0;}.bulk-reject-field label{font-size:14px;color:var(--hint-ink,var(--text-2));}.bulk-reject-field .adm-sel,.bulk-reject-field input{width:100%;max-width:none;box-sizing:border-box;}
+  .bulk-dialog-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px;}
+  /* Excepción explícita del operador: queda junto al horario y nunca se
+     confunde con el botón de aprobar. El servidor confirma que esa franja
+     del médico tenga sobreturnos configurados antes de aceptarla.
+     align-items:flex-start + flex:0 0 auto: con la etiqueta en dos líneas
+     el box no se corre al medio ni se achica. */
+  .overturn-ctl{display:flex;align-items:flex-start;gap:7px;font-size:13px;line-height:20px;color:var(--hint-ink,var(--text-2));cursor:pointer;}
+  .overturn-ctl[hidden]{display:none;}
+  .overturn-ctl input{width:16px;height:16px;margin-top:2px;flex:0 0 auto;accent-color:var(--accent);}
+  .turno-type-overturn{display:block;margin-top:3px;font-size:13px;font-weight:650;color:var(--text);}
+
+  /* El apilado en angosto lo resuelve ahora `.sol-res-row` (flex-wrap) en
+     `static/platform/admin-solicitudes.mjs`: los tres @container que había acá colgaban de
+     `.card-actions`, que el panel de detalle ya no renderiza. */
+
+  /* Los saltos fijos a 1390/1180/900px que forzaban .adm-tools a block y los
+     filtros a una grilla pareja quedaron obsoletos: esa grilla igualaba el
+     ancho de los 5 selects y por lo tanto podía recortar una opción larga ya
+     elegida ("Cardiologia Hospital Ejemplo" no entraba en 202px). El bloque
+     base de arriba (.adm-tools/.adm-search-row/.adm-filter-fields) ya
+     resuelve una línea vs. grupo completo abajo con flex-wrap real, content-
+     driven — nada que forzar acá. El breakpoint móvil de abajo (drawer +
+     .adm-filter-toggle, ≤1024px) es aparte y sigue intacto. */
+
+  /* resueltas */
+  .res-motivo{font-size:13px;color:var(--rojo);}
+  .chip{display:inline-flex;align-items:center;gap:5px;font:600 13px/1 var(--font);padding:4px 8px;border-radius:20px;margin-left:auto;}
+  .chip-est-aprobada{color:var(--done);background:var(--state-done-bg);}
+  .chip-est-rechazada{color:var(--danger);background:var(--danger-soft);}
+  .chip-est-cancelada{color:var(--hint-ink);background:var(--bg-2);}
+  /* Estado (Activa/Activo/No configurada, etc.): texto plano con un punto de
+     color — nunca una píldora con fondo/borde (responsable del producto review: "fewer boxes,
+     one button design"). */
+  .chip-activo,.chip-pendiente,.chip-inactivo{padding:0;border-radius:0;background:none;margin-left:0;}
+  .chip-activo::before,.chip-pendiente::before,.chip-inactivo::before{content:"";width:7px;height:7px;border-radius:50%;flex:0 0 7px;}
+  .chip-activo{color:var(--done);}
+  .chip-activo::before{background:var(--done);}
+  .chip-pendiente{color:var(--warn);}
+  .chip-pendiente::before{background:var(--warn);}
+  .chip-inactivo{color:var(--hint-ink);}
+  .chip-inactivo::before{background:var(--text-3);}
+
+  /* --- Usuarios (operadores del panel): reusa .cnt-* de Servicios/Centros/
+     Médicos (mismo look, ui-consistency) — sólo lo que es realmente nuevo:
+     el bloque copiable del secreto TOTP (se muestra UNA sola vez) y el botón
+     de copiar. */
+  .usr-totp{margin-top:10px;padding:12px 14px;border:1px solid var(--accent);border-radius:10px;background:var(--accent-soft);}
+  .usr-totp p{margin:0 0 8px;font-size:13px;color:var(--text);}
+  .usr-totp-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+  .usr-totp-row:last-child{margin-bottom:0;}
+  .usr-totp-lbl{font-size:13px;color:var(--hint-ink,var(--text-3));width:52px;flex-shrink:0;}
+  .usr-totp code{flex:1;min-width:0;font:12.5px/1.4 var(--font-mono);color:var(--text);background:var(--panel);border:1px solid var(--border);border-radius:7px;padding:6px 13px;overflow-x:auto;white-space:nowrap;}
+  .usr-2fa-remove{margin-top:10px;}
+  /* alcance por centro de una cuenta: una casilla por centro, en columnas —
+     son 10 y en una sola fila no entran */
+  .usr-centros{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 18px;}
+
+  /* --- Reportes: KPIs + gráficos CSS puro (sin librerías, tufte/dataviz) --- */
+  /* Directorio-primero (2026-07-24): el sub-nav de tabs persistente murió —
+     cada sub-reporte abre con un breadcrumb de una línea (.cnt-crumb, ya
+     definida más abajo para admin-content.js, reusada tal cual acá). */
+  .rep-controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:20px;}
+  .rep-controls label{font-size:13px;color:var(--hint-ink,var(--text-2));}
+  .rep-csv-link{font-size:13px;color:var(--accent);text-decoration:none;}
+  .rep-csv-link:hover{color:var(--accent-hover);}
+  /* The key numbers are ONE row of figures, never a box per number
+     (critical review 08.11, E10; the product owner R33 «way less bounding boxes»):
+     no frame, no fill, the gap alone separates them; two per line on the
+     phone instead of a screen of single-number cards. */
+  .rep-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px 32px;margin-bottom:28px;}
+  .rep-kpi{padding:0;border:0;border-radius:0;background:none;}
+  .rep-kpi-value{font:600 26px/1.1 var(--font);color:var(--text);letter-spacing:-0.02em;}
+  .rep-kpi-label{margin-top:6px;font-size:14px;color:var(--hint-ink,var(--text-2));}
+  @media(max-width:480px){.rep-kpis{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px;}}
+
+  .rep-section{margin-bottom:30px;}
+  .rep-h2{margin:0 0 12px;font-size:16px;font-weight:650;color:var(--text);}
+  .rep-centro-hero{margin:0 0 14px;font-size:15px;color:var(--text);line-height:1.5;max-width:680px;}
+  .rep-empty{font-size:13.5px;color:var(--text);padding:10px 0;}
+
+  .rep-bar-item{margin-bottom:14px;}
+  .rep-bar-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:4px;}
+  .rep-bar-name{font-size:13.5px;font-weight:600;color:var(--text);}
+  .rep-bar-num{font:500 13px/1 var(--font);color:var(--text);white-space:nowrap;}
+  .rep-bar-track{height:8px;background:var(--bg-2);border-radius:5px;overflow:hidden;}
+  .rep-bar-fill{height:100%;border-radius:5px;background:var(--accent);}
+  .rep-bar-fill--gap{background:var(--warn);}
+  .rep-bar-sub{margin-top:4px;font-size:13px;color:var(--hint-ink,var(--text-3));}
+
+  .rep-vol-wrap{overflow-x:auto;padding-bottom:4px;}
+  .rep-vol-bars{display:flex;align-items:flex-end;justify-content:space-between;gap:3px;height:140px;min-width:min-content;}
+  /* The bars share the whole width of the date axis under them, at every
+     width: fixed 10px columns left two thirds of a desk axis empty. A short
+     series spreads out instead of turning a day into a wide slab. */
+  .rep-vol-col{flex:1 1 4px;min-width:4px;max-width:40px;height:100%;display:flex;align-items:flex-end;cursor:default;}
+  .rep-vol-bar{width:100%;min-height:2px;background:var(--accent);border-radius:2px 2px 0 0;}
+
+  .rep-tables{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media(max-width:720px){.rep-tables{grid-template-columns:1fr;}}
+  /* «Consultas por especialidad» on a phone: one card per specialty — name
+     and consultations on the first line, the other figures under it with
+     their names; seven columns never scroll sideways (review E1). */
+  @media(max-width:720px){
+    table.cnt-table.rep-esp-table,table.cnt-table.rep-esp-table tbody{display:block;width:100%;}
+    table.cnt-table.rep-esp-table thead{display:none;}
+    table.cnt-table.rep-esp-table tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:12px;row-gap:2px;padding:10px 0;border-bottom:1px solid var(--border-soft);}
+    table.cnt-table.rep-esp-table td{display:block;padding:0;border:0;text-align:left;white-space:nowrap;font-size:13.5px;color:var(--text);}
+    table.cnt-table.rep-esp-table td:first-child{flex:1 0 calc(100% - 132px);min-width:0;white-space:normal;font-weight:650;}
+    table.cnt-table.rep-esp-table td:nth-child(2){flex:none;max-width:120px;font-weight:650;text-align:right;}
+    table.cnt-table.rep-esp-table td[data-label]::before{content:attr(data-label) " ";font-weight:400;color:var(--hint-ink,var(--text-2));}
+  }
+
+  /* --- Reportes story-driven (2026-07-20): tiles/hero/scatter/heatmap/
+     treemap/linea viven en admin-charts.mjs e inyectan su
+     propio CSS (.sana-*) — acá sólo lo que es layout de PÁGINA de admin-
+     reports.js: la grilla de tiles, las listas de acción que cierran cada
+     sección, el bloque de supuestos (Costos de IA) y las tarjetas de Centros. */
+  .rep-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:22px;}
+
+  /* Resumen (#reportes, default): una tarjeta por sub-reporte, la tarjeta
+     ENTERA es el link (accent-is-link: título en tinta, no en acento; el
+     hover sólo sube el color del borde — nada de "ver más" separado).
+     Rework 2026-07-22: TODAS las tarjetas son columnas flex, tengan o no
+     gráfico — así el título/número/hallazgo arrancan siempre en el mismo
+     punto y, cuando hay gráfico, "margin-top:auto" lo ancla abajo: en la
+     misma fila de la grilla, dos tarjetas con textos de largo distinto
+     igual terminan con la curva/dona a la misma altura. */
+  .rep-sumgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:6px;}
+  .rep-sumcard{display:flex;flex-direction:column;box-sizing:border-box;min-height:168px;padding:18px 20px 20px;border:1px solid var(--border);border-radius:12px;background:var(--panel);text-decoration:none;color:inherit;transition:border-color .15s;}
+  .rep-sumcard--chart{min-height:214px;}
+  .rep-sumcard:hover{border-color:var(--hover-bd);}
+  .rep-sumcard:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .rep-sumcard-title{font-size:14.5px;font-weight:650;color:var(--text);}
+  .rep-sumcard-value{margin-top:12px;font:600 30px/1.1 var(--font);color:var(--text);letter-spacing:-0.02em;}
+  .rep-sumcard-find{margin-top:8px;font-size:13px;color:var(--hint-ink,var(--text-2));line-height:1.5;}
+  .rep-card-chart{margin-top:auto;padding-top:16px;width:100%;box-sizing:border-box;}
+  .rep-mini-bars{height:42px;display:flex;align-items:flex-end;gap:4px;background:linear-gradient(to top,var(--bg-2),transparent);}
+  .rep-mini-bar{display:block;flex:1;min-width:3px;background:var(--accent);border-radius:3px 3px 0 0;opacity:.78;position:relative;}
+  .rep-mini-bar b{position:absolute;left:50%;top:-15px;transform:translateX(-50%);font:600 13px/1 var(--font);color:var(--text);}
+  .rep-mini-axis{display:flex;justify-content:space-between;gap:8px;padding-top:4px;font-size:13px;color:var(--hint-ink,var(--text-2));}
+  .rep-donut-wrap{height:50px;display:flex;align-items:center;}
+  .rep-donut{--p:0;width:50px;height:50px;border-radius:50%;background:conic-gradient(var(--accent) calc(var(--p)*1%),var(--bg-2) 0);position:relative;flex:none;}
+  .rep-donut::after{content:"";position:absolute;inset:8px;border-radius:50%;background:var(--panel);}
+  /* One column: a card is as tall as what it says, no reserved empty space. */
+  @media(max-width:520px){.rep-sumgrid{grid-template-columns:1fr;gap:6px;}.rep-sumcard,.rep-sumcard--chart{min-height:0;}}
+
+  .rep-action-list{margin:12px 0 0;padding:0;list-style:none;font-size:13.5px;color:var(--text);line-height:1.6;}
+  .rep-action-list li{margin-bottom:6px;padding-left:18px;position:relative;}
+  .rep-action-list li::before{content:"→";position:absolute;left:0;color:var(--accent);}
+  .rep-action{margin:12px 0 0;font-size:13.5px;color:var(--text);font-weight:600;line-height:1.6;}
+  /* Recorrido del paciente: each filter keeps its label beside its select
+     when the row wraps. The step list opens under its button, aligned to its
+     right edge; on a phone it spans the whole filter row, so it never leaves
+     the screen. Each step row is the column chooser's checkbox plus up/down
+     buttons. */
+  .rep-ctl{display:inline-flex;align-items:center;gap:8px;}
+  .rep-rec-gear .cnt-gear-pop{min-width:280px;max-width:340px;}
+  /* The three filters sit in the row on a wide screen; on a phone the period
+     and two icons make one row and the filters open under it from the funnel. */
+  .rep-rec-filtros{display:contents;}
+  .rep-controls--rec .rep-rec-gear{order:1;}
+  .adm5-main .rep-controls .rep-rec-filtrar{display:none;}
+  .cnt-gear-btn.rep-rec-filtrar .adm-icon{-webkit-mask-image:url(/static/icons/filter-sf-regular.svg);mask-image:url(/static/icons/filter-sf-regular.svg);}
+  @media(max-width:640px){
+    .rep-controls--rec{position:relative;gap:8px;}
+    .rep-controls--rec .rep-ctl{display:flex;flex:1 1 0;min-width:0;}
+    .rep-controls--rec .rep-ctl select{flex:1;min-width:0;}
+    .adm5-main .rep-controls--rec .rep-rec-filtrar{display:inline-flex;}
+    .rep-controls--rec .rep-rec-filtros{display:none;flex:0 0 100%;flex-direction:column;gap:8px;}
+    .rep-controls--rec.rep-controls--abiertos .rep-rec-filtros{display:flex;}
+    .rep-controls--rec .rep-rec-filtros .rep-ctl{flex:none;width:100%;}
+    .rep-controls--rec .rep-rec-gear{position:static;order:0;}
+    .rep-controls--rec .rep-rec-gear .cnt-gear-pop{left:0;right:0;min-width:0;}
+  }
+  .rep-rec-step{display:flex;align-items:center;gap:2px;}
+  .rep-rec-step .cnt-gear-opt{flex:1;font-size:16px;color:var(--text);}
+  .rep-rec-move{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:0;border-radius:8px;background:none;color:var(--hint-ink);cursor:pointer;}
+  .rep-rec-move .adm-icon{display:block;width:16px;height:16px;font-size:0;background:currentColor;-webkit-mask:url(/static/icons/expand-arrow-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/expand-arrow-sf-regular.svg) center/contain no-repeat;}
+  .rep-rec-move--up .adm-icon{transform:rotate(180deg);}
+  .rep-rec-move:hover:not(:disabled){color:var(--hover-ink);}
+  .rep-rec-move:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;}
+  .rep-rec-move:disabled{opacity:.3;cursor:default;}
+  .rep-rec-err{margin:0;font-size:13.5px;color:var(--danger);}
+  .rep-rec-list{margin:0;padding:0;list-style:none;font-size:13.5px;color:var(--text);line-height:1.6;}
+  .rep-rec-list li{margin-bottom:6px;}
+  .rep-rec-nota{margin:4px 0 0;font-size:15px;color:var(--text);line-height:1.5;}
+
+  .rep-quiet{margin-top:16px;font-size:13.5px;color:var(--text);line-height:1.6;}
+  .rep-quiet p{margin:0 0 4px;}
+  .rep-quiet ul{margin:0;padding:0 0 0 16px;}
+  .rep-quiet li{margin-bottom:3px;}
+  /* A secondary block of a report that opens on demand: the summary reads as
+     a link with the same chevron as the report switcher. */
+  .rep-more summary{display:inline-flex;align-items:center;gap:6px;min-height:32px;color:var(--accent);cursor:pointer;list-style:none;}
+  .rep-more summary::-webkit-details-marker{display:none;}
+  .rep-more summary::after{content:"";width:12px;height:12px;background:currentColor;-webkit-mask:url(/static/icons/expand-arrow-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/expand-arrow-sf-regular.svg) center/contain no-repeat;}
+  .rep-more[open] summary::after{transform:rotate(180deg);}
+  .rep-more[open] summary{margin-bottom:8px;}
+  @media(max-width:640px){.rep-more summary{min-height:44px;}}
+
+  /* Each center is a column of text under its name, not a framed card with
+     boxes inside it (2026-11-08, R33 «way less bounding boxes»): space keeps
+     the centers apart, the quotes sit straight under the center. */
+  .rep-centros-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:40px 48px;}
+  .rep-centro-card{min-width:0;border:0;border-radius:0;padding:0;background:none;}
+  .rep-centro-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;margin-bottom:6px;}
+  .rep-centro-title{display:inline;margin:0;font-size:18px;line-height:1.25;font-weight:700;color:var(--text);}
+  .rep-centro-rating{font:600 13px/1 var(--font);color:var(--hint-ink);margin-left:9px;}
+
+  /* Reconocimiento al personal (2026-07-22): tono cálido, no evaluativo —
+     el nombre y una cita concreta que lo reconoce, sin caja (2026-11-08,
+     R33). Sin evidencia textual no se muestra. */
+  .rep-staff{margin:16px 0 4px;}
+  .rep-staff-h{margin:0 0 10px;font-size:16px;line-height:1.3;font-weight:675;color:var(--text);}
+  .rep-staff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+  .rep-staff-card{padding:0;border-radius:0;background:none;}
+  .rep-staff-name{font-size:13.5px;font-weight:650;color:var(--text);}
+  .rep-staff-quote{margin:8px 0 0;font-size:13px;line-height:1.5;font-style:italic;color:var(--hint-ink);}
+
+  /* Triage a una sola columna de texto corrido (2026-07-22, las dos columnas
+     lado a lado murieron): cada tema es un subtítulo (ícono + nombre) más
+     grande que el cuerpo, seguido de la acción en párrafo. El ícono es una
+     máscara Icons8 (la URL va en el span) pintada con la tinta del título. */
+  .rep-triage{margin:16px 0 0;}
+  .rep-triage-grupo{display:flex;align-items:center;gap:7px;margin:20px 0 10px;font-size:16px;line-height:1.3;font-weight:675;color:var(--text);}
+  .rep-triage-grupo:first-child{margin-top:0;}
+  .rep-triage-topic{margin-bottom:14px;}
+  .rep-triage-topic-h{display:flex;align-items:center;gap:7px;margin:0 0 4px;font-size:15px;font-weight:650;color:var(--text);}
+  .rep-triage-ico{flex:none;width:18px;height:18px;background:currentColor;-webkit-mask:center/contain no-repeat;mask:center/contain no-repeat;}
+  .rep-triage-p{margin:0;font-size:13.5px;line-height:1.55;color:var(--hint-ink);max-width:620px;}
+
+  /* Cita (2026-07-22): itálica más grande, sin fondo ni caja (2026-11-08,
+     R33) y sin la comilla decorativa: el texto ya trae sus comillas, y la
+     cita empieza en el borde del nombre del centro. Nunca la tarjeta de
+     testimonio con borde de acento izquierdo que prohíbe ui-rules. */
+  .rep-quote{margin:14px 0 0;padding:0;border-radius:0;
+    background:none;font-size:15.5px;line-height:1.6;font-style:italic;color:var(--text);}
+
+  /* Direct-shell recovery state leaves Account as the only destination. */
+  body.adm-2fa-required .adm5-nav-group:not(.adm5-nav-group--standalone){display:none;}
+  body.adm-2fa-required .adm5-nav a:not([data-nav=cuenta]){display:none;}
+
+  /* --- contenido: listas (servicios/centros/médicos) --- */
+  .cnt-toolbar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin:0 0 16px;}
+  .cnt-toolbar-filters{display:flex;flex-wrap:nowrap;gap:9px;align-items:center;min-width:0;}
+  .cnt-toolbar-right{display:flex;flex-wrap:wrap;align-items:center;gap:10px;max-width:100%;}
+  .cnt-toolbar-filters .cnt-search{flex:0 1 240px;min-width:120px;font-size:16px;}
+  .cnt-toolbar-filters .adm-sel{width:var(--control-fit-width,auto);min-width:var(--control-fit-width,max-content);flex:0 0 auto;font-size:16px;}
+  @media(max-width:760px){
+    .cnt-toolbar-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;}
+    .cnt-toolbar-filters .cnt-search{grid-column:1/-1;width:100%;min-width:0;box-sizing:border-box;}
+    .cnt-toolbar-filters .adm-sel{width:100%;min-width:0;}
+    .cnt-toolbar-filters>.adm-sel:last-child:nth-child(even){grid-column:1/-1;}
+  }
+  @media(max-width:520px){
+    .cnt-toolbar-filters{grid-template-columns:minmax(0,1fr);}
+    .cnt-toolbar-filters>.adm-sel:last-child:nth-child(even){grid-column:auto;}
+  }
+  .med-bulk{display:flex;align-items:center;gap:12px;color:var(--hint-ink);font-size:13px;}
+  .med-bulk-actions{display:flex;align-items:center;gap:6px;min-width:0;}
+  .med-bulk-actions .adm-sel{width:min(29ch,100%);min-width:20ch;}
+  /* A 40px selection track has to include the checkbox and its cell inset.
+     Without this, the inherited 12px cell padding clips the checkbox into an
+     ellipsis-like dot between selection and the doctor name. */
+  .cnt-th-check,.cnt-td-check{width:40px;min-width:40px;box-sizing:border-box;padding-left:8px!important;padding-right:8px!important;text-align:center;overflow:visible!important;text-overflow:clip!important;}
+  .cnt-th-check input,.cnt-td-check input{display:block;width:18px;height:18px;margin:0 auto!important;}
+  .cnt-th-check::before,.cnt-th-check::after,.cnt-td-check::before,.cnt-td-check::after{content:none!important;display:none!important;}
+  /* Read-only facts: the label sits on the value's line, not 13px under it
+     (the padding is for labels beside an input). «Desactivar» apart. */
+  .doctor-user-summary .cnt-row{align-items:baseline;}
+  .doctor-user-summary .cnt-row>label{padding-top:0;}
+  .doctor-user-danger{margin-top:24px;}
+  .doctor-user-host{container-type:inline-size;}
+  .doctor-user-link-form{display:grid;grid-template-columns:max-content max-content;gap:12px;align-items:start;max-width:760px;margin:0 0 24px;}
+  .doctor-user-link-form .cnt-row{margin-bottom:0;}
+  .doctor-user-link-form .cnt-row>label{font-weight:500;color:var(--text);}
+  .doctor-user-host .cnt-row :is(.doctor-user-select,.cnt-field-email){width:32ch;max-width:100%;}
+  .doctor-user-link-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-left:166px;}
+  .doctor-user-link-form .doctor-user-link-actions{margin-left:0;}
+  /* Right under a bare outcome line (no label column beside it), the action
+     starts on the line's own left edge. */
+  .doctor-user-outcome+.doctor-user-link-actions{margin-left:0;}
+  .doctor-user-link-actions .btn{width:max-content;max-width:100%;}
+  .doctor-user-link-actions .btn-quiet{background:var(--panel);border-color:var(--border);color:var(--text);}
+  .doctor-user-credentials{max-width:760px;}
+  .doctor-user-credentials [role="status"]{font-size:14px;color:var(--text);}
+  .doctor-user-link-error{margin:6px 0 0;color:var(--danger);font-size:14px;line-height:1.4;}
+  .doctor-user-select[aria-invalid="true"]{border-color:var(--danger);}
+  .doctor-user-empty{margin:0 0 12px;font-size:14px;color:var(--text);}
+  /* Médico = usuario: the result of an invitation (email sent, or the link to
+     copy) and the doctor still missing data, in the same dark body text. */
+  .doctor-user-outcome{margin:0 0 12px;font-size:15px;line-height:1.4;color:var(--text);}
+  #doctor-user-outcome:empty,#med-account-outcome:empty,.med-invite-result:empty{display:none;}
+  #doctor-user-outcome{margin-top:16px;}
+  #med-account-outcome{margin:0 0 16px;outline:none;}
+  .doctor-user-link-form[hidden],.med-invite[hidden]{display:none;}
+  .med-invite{max-width:760px;margin:0 0 24px;}
+  .med-invite-form .cnt-row{margin-bottom:12px;}
+  .med-invite-form .doctor-user-link-actions{margin-bottom:16px;}
+  .med-incompleto{color:var(--text);}
+  .usr-doctors-elsewhere{margin:12px 0 0;font-size:15px;}
+  /* «Cargar lista»: the preview (and then the outcome) is a table, one row per
+     line of the list; on a phone each row stacks its cells under their names. */
+  #med-import-text{width:100%;min-height:120px;font-size:16px;}
+  .med-import-file-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px;}
+  /* «Elegir archivo» is the panel's button: the shared height, 44px on touch (2026-11-08, R4). */
+  .med-import-file-row .btn{min-height:var(--adm-btn-h,36px);width:max-content;}
+  .med-import-file-name{font-size:16px;color:var(--text);overflow-wrap:anywhere;}
+  .med-import-file-name:empty{display:none;}
+  .med-import-result:empty{display:none;}
+  .med-import-result{margin-top:12px;}
+  .med-import-summary{margin:0 0 8px;font-size:15px;line-height:1.4;color:var(--text);}
+  .med-import-table{width:100%;border-collapse:collapse;font-size:15px;color:var(--text);}
+  .med-import-table th{text-align:left;font-weight:600;padding:8px;border-bottom:1px solid var(--border);}
+  .med-import-table td{padding:8px;border-bottom:1px solid var(--border-soft, var(--border));vertical-align:top;overflow-wrap:anywhere;}
+  .med-import-table [data-state="error"] td{color:var(--danger);}
+  .med-import-link{display:block;width:100%;margin-top:6px;font-size:16px;}
+  @container(max-width:700px){
+    .doctor-user-link-form{grid-template-columns:minmax(0,1fr);gap:10px;}
+    .doctor-user-link-form .doctor-user-link-actions{margin-left:166px;}
+  }
+  @container(max-width:480px){
+    .doctor-user-host .cnt-row{grid-template-columns:minmax(0,1fr);gap:6px;}
+    .doctor-user-host .cnt-row>label{text-align:left;}
+    .doctor-user-link-form .doctor-user-link-actions{margin-left:0;}
+  }
+  @media(max-width:800px){
+    .med-bulk{align-items:stretch;flex-direction:column;}
+    .med-bulk-actions .adm-sel{flex:1 1 auto;width:auto;min-width:0;}
+    .med-bulk-actions .btn{height:40px;}
+  }
+  @media(max-width:520px){
+    .med-bulk-actions{align-items:stretch;flex-direction:column;}
+    .med-bulk-actions .adm-sel,.med-bulk-actions .btn{width:100%;}
+    /* A form's actions stay one row on a phone («Revisar lista · Cancelar»), wrapping only when they don't fit (2026-11-08). */
+    .doctor-user-link-actions{align-items:center;flex-wrap:wrap;margin-left:0;}
+    .med-import-table thead{display:none;}
+    .med-import-table tr{display:block;padding:8px 0;border-bottom:1px solid var(--border-soft, var(--border));}
+    .med-import-table td{display:block;padding:2px 0;border:0;}
+    .med-import-table td[data-label]::before{content:attr(data-label) ": ";font-weight:600;}
+  }
+  /* "Nuevo X" es un botón real, no un link — es la acción de crear, no
+     navegación (the product owner, 2026-07-11: "create new medical with a button, not a
+     link"); el resto de los links del admin (nombres, breadcrumbs, orden,
+     restaurar) se quedan como links. */
+  .cnt-add{font-size:13.5px;}
+  .cnt-search{flex:0 1 260px;max-width:280px;min-width:160px;}
+  /* ``contain`` keeps a wide data table from enlarging the page's root
+     scroll area on mobile; horizontal movement belongs only to this wrapper. */
+  .cnt-table-wrap{max-width:100%;overflow-x:auto;contain:inline-size;}
+  /* Shared data-table presentation loads from this direct-shell asset,
+     independently of JavaScript timing. The catalog routes also load
+     admin-table.js for sizing and saved-column behavior; keeping visuals here
+     gives every route padded, aligned first paint. */
+  .cnt-table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.4;}
+  .cnt-table th,.cnt-table td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border-soft);vertical-align:top;white-space:nowrap;}
+  /* Numeric metrics declare this class in their column registry. IDs, phones,
+     and dates stay ordinary data even when their characters happen to be digits. */
+  .cnt-table th.cnt-numeric,.cnt-table td.cnt-numeric{text-align:right;}
+  .cnt-table td{color:var(--text);}
+  .cnt-table thead th{padding-top:7px;padding-bottom:7px;}
+  .cnt-table th.cnt-th{color:var(--hint-ink,var(--text-2));font-weight:600;font-size:13px;letter-spacing:.01em;}
+  .cnt-th-sortable{cursor:pointer;user-select:none;}
+  .cnt-th-sortable:hover{color:var(--hover-ink);}
+  .cnt-th.on{color:var(--accent);}
+  .med-occupancy{display:inline-flex;align-items:center;gap:3px;vertical-align:middle;}
+  .med-occupancy-segment{width:10px;height:8px;border-radius:2px;background:var(--border-strong);}
+  .med-occupancy-segment.is-filled{background:var(--text-2);}
+  /* The attendance forecast («Historial», static/platform/attendance-forecast.mjs):
+     three of the occupancy bars, as many filled as the level; color only where
+     there is a risk to act on. The Information button of its header and the one
+     explanation it opens (also from a row's bars, the way in on a phone). */
+  .queue-forecast{justify-content:flex-start;min-width:0;}
+  .queue-forecast--warn .med-occupancy-segment.is-filled{background:var(--warn);}
+  .queue-forecast--bad .med-occupancy-segment.is-filled{background:var(--danger);}
+  .forecast-info{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin:-4px 0 -4px 4px;padding:0;border:0;border-radius:6px;background:none;color:var(--hint-ink);cursor:pointer;vertical-align:middle;}
+  .forecast-info:hover,.forecast-info[aria-expanded="true"]{color:var(--hover-ink);background:var(--hover-bg);}
+  .forecast-info:focus-visible,.forecast-bars-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .forecast-info-icon{display:block;width:18px;height:18px;background:currentColor;-webkit-mask:url(/static/icons/info-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/info-sf-regular.svg) center/contain no-repeat;}
+  .forecast-bars-btn{display:inline-flex;align-items:center;min-height:32px;max-width:100%;padding:0;margin:0;border:0;border-radius:6px;background:none;color:inherit;font:inherit;cursor:pointer;}
+  .forecast-pop{position:fixed;z-index:85;box-sizing:border-box;width:max-content;max-width:min(340px,calc(100vw - 16px));padding:12px 14px;background:var(--panel,#fff);border:1px solid var(--border,#dcd8d0);border-radius:10px;box-shadow:0 10px 26px rgba(0,0,0,.16);color:var(--text);font-size:14px;font-weight:400;line-height:1.4;text-align:left;white-space:normal;text-wrap:pretty;}
+  .forecast-pop[hidden]{display:none;}
+  .forecast-pop p{margin:0 0 10px;}
+  .forecast-pop-patient{font-weight:600;}
+  .forecast-pop-why{margin:-6px 0 10px;padding:0;list-style:none;}
+  .forecast-legend{display:grid;gap:6px;margin:0;padding:0;list-style:none;}
+  .forecast-legend-row{display:flex;align-items:center;gap:10px;}
+  .forecast-legend-dash{display:inline-block;width:36px;color:var(--hint-ink);}
+  .cnt-table tbody tr:hover{background:var(--hover-bg);}
+  .tbl-res{position:absolute;top:0;right:0;width:9px;height:100%;cursor:col-resize;z-index:2;}
+  .tbl-res::after{content:'';position:absolute;top:5px;bottom:5px;left:4px;width:1px;background:var(--border);}
+  .tbl-res:hover::after{background:var(--accent);width:2px;}
+  /* The last column's handle draws no divider: nothing follows it to divide
+     from (review 2026-11-09). The handle still works and lights on hover. */
+  th:is(:last-child,:has(+ th[data-col='relleno']))>.tbl-res:not(:hover)::after{background:transparent;}
+  body.tbl-resizing{cursor:col-resize;user-select:none;}
+  .tbl-anchos td,.tbl-anchos th{overflow:hidden;text-overflow:ellipsis;}
+  .tbl-anchos .tbl-corta{overflow:hidden;text-overflow:ellipsis;}
+  /* A row's name (the link that opens it) is what identifies the row: it
+     wraps onto a second line instead of ending in «…» (R26, A9 08.11).
+     Measuring still reads it on one line (.tbl-midiendo). */
+  .tbl-anchos td.cnt-td-link{white-space:normal;text-overflow:clip;overflow-wrap:break-word;}
+  .tbl-midiendo td,.tbl-midiendo th{white-space:nowrap!important;}
+  .tbl-clip-pop{position:fixed;z-index:80;display:none;box-sizing:border-box;padding:5px 8px;background:var(--panel,#fff);border:1px solid var(--border,#dcd8d0);border-radius:8px;box-shadow:0 10px 26px rgba(0,0,0,.16);white-space:pre-wrap;overflow-wrap:anywhere;pointer-events:none;}
+  .cnt-gear-wrap{position:relative;}
+  .cnt-gear-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border);border-radius:8px;background:var(--panel);color:var(--hint-ink);cursor:pointer;overflow:hidden;}
+  .cnt-gear-btn .adm-icon{display:block;width:18px;height:18px;flex:none;font-size:0;background:currentColor;-webkit-mask:url(/static/icons/table-columns-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/table-columns-sf-regular.svg) center/contain no-repeat;}
+  .cnt-gear-btn:hover{color:var(--hover-ink);border-color:var(--hover-bd);}
+  .cnt-gear-btn:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;}
+  .cnt-gear-btn .adm-icon.adm-icon-download{-webkit-mask-image:url(/static/icons/download-sf-regular.svg);mask-image:url(/static/icons/download-sf-regular.svg);}
+  .tbl-export-btn[hidden],.adm5-main .tbl-export-btn[hidden]{display:none;}
+  .rep-table-head{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .rep-table-head .rep-h2{margin:0;}
+  .cnt-gear-pop{position:absolute;top:calc(100% + 6px);right:0;z-index:20;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:10px 12px;box-shadow:0 8px 20px rgba(0,0,0,.14);min-width:200px;display:none;flex-direction:column;gap:7px;}
+  .cnt-gear-opt{display:flex;align-items:center;gap:8px;min-height:44px;font-size:16px;line-height:22px;color:var(--text);cursor:pointer;white-space:nowrap;}
+  .cnt-gear-opt input{width:44px;height:44px;margin:0;flex:0 0 auto;accent-color:var(--accent);}
+  /* On a phone a list's column button stands after the search, at the right
+     end of the row (e331c6f5d): the table engine's list opens leftwards, from
+     its button's right edge, and never wider than the screen. Other column
+     buttons that sit at the left edge of a wrapped row open to the right. */
+  @media(max-width:640px){
+    .cnt-toolbar-right .cnt-gear-pop:not([data-tblcol-pop]){left:0;right:auto;}
+    .cnt-gear-pop[data-tblcol-pop]{left:auto;right:0;max-width:calc(100vw - 32px);}
+  }
+  @media(max-width:1024px){.tbl-res{display:none;}}
+  /* Tabs: keep on one row at all widths; overflow-x:auto at narrow widths */
+  .cnt-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .cnt-tabs::-webkit-scrollbar{display:none;}
+  [role="tab"]{min-height:44px;flex-shrink:0;display:flex;align-items:center;}
+  @media(pointer:coarse),(max-width:480px){[role="tab"]{min-height:48px;}}
+  /* Búsquedas (#reportes/busquedas): la columna "Cómo lo buscaron" lista
+     variantes separadas por " · " y puede ser larga — a diferencia del resto
+     de cnt-table (una línea por celda), acá el wrap es correcto. */
+  .rep-busquedas-table .cnt-table td{white-space:normal;}
+  .cnt-th-acts{width:1%;}
+  .cnt-td-acts a{font-size:13px;color:var(--accent);text-decoration:none;}
+  .cnt-td-acts a:hover{color:var(--accent-hover);}
+  .attendance-control{display:flex;align-items:center;gap:6px;}
+  .attendance-control select{max-width:min(180px,100%);min-height:34px;}
+  .attendance-control button{min-height:34px;white-space:nowrap;}
+  .attendance-score{appearance:none;display:inline-flex;align-items:center;gap:7px;padding:5px 7px;border:0;border-radius:8px;background:transparent;color:var(--text);font:600 13px/1.2 var(--font);white-space:nowrap;cursor:pointer;}
+  .attendance-score:hover{background:var(--hover-bg);}
+  .attendance-dot{width:9px;height:9px;border-radius:50%;background:var(--text-3);box-shadow:0 0 0 2px var(--panel);}
+  .attendance-dot--good{background:var(--done);}.attendance-dot--warn{background:var(--warn);}.attendance-dot--bad{background:var(--danger);}.attendance-dot--none{background:var(--text-4);}
+  /* Ranking de asistencia (patient_ranking.py): punto + porcentaje + banda.
+     El número va con "%" y al peso del texto de la fila (responsable del producto, 2026-09-16:
+     "it's large font" — un 650 en negrita gritaba más que el nombre); la
+     banda sola esconde 71% contra 84%. */
+  .pat-rank{display:inline-flex;align-items:center;gap:7px;white-space:nowrap;}
+  .pat-rank-lbl{color:var(--hint-ink,var(--text-2));}
+  /* Entrevista previa (modules/intake/, fase 4): triage ROJO/NARANJA/
+     AMARILLO/VERDE en la cola del día. Rojo y Verde reusan --danger/--done
+     (ya son AA en los dos temas, y --done ya sale sin verde en el tema
+     "humanrounds" — mismo truco que el resto del panel). Naranja y Amarillo
+     son tokens propios (--triage-naranja/--triage-amarillo, definidos por
+     tema en human-rounds.css desde 2026-08-05 — antes vivían hardcodeados
+     acá abajo) porque no hay un tercer/cuarto tono de alerta reusable sin
+     colapsar dos niveles de triage en el mismo color: fondo claro + texto
+     oscuro saturado en los cuatro, ≥4,5:1 verificado en los dos temas. */
+  .queue-triage{display:inline-flex;align-items:center;gap:5px;font:650 13px/1 var(--font);white-space:nowrap;}
+  .queue-triage::before{content:"";width:7px;height:7px;border-radius:50%;flex:0 0 7px;}
+  .queue-triage--rojo{color:var(--danger);}
+  .queue-triage--rojo::before{background:var(--danger);}
+  .queue-triage--naranja{color:var(--triage-naranja);}
+  .queue-triage--naranja::before{background:var(--triage-naranja);}
+  .queue-triage--amarillo{color:var(--triage-amarillo);}
+  .queue-triage--amarillo::before{background:var(--triage-amarillo);}
+  .queue-triage--verde{color:var(--done);}
+  .queue-triage--verde::before{background:var(--done);}
+  .queue-triage-curso{font:600 13px/1 var(--font);color:var(--hint-ink);white-space:nowrap;}
+  /* Consulta confirmada (2026-10-23): ya tiene receta/orden emitidas — el
+     tono «hecho» del verde, sin punto de triage (no es una urgencia). */
+  .queue-triage-atendido{font:650 13px/1 var(--font);color:var(--done);white-space:nowrap;}
+  /* De quién es el contacto en «Mis turnos»/«Mis pacientes» (2026-10-23):
+     una línea chica debajo del número, mismo gris que el resto de la meta. */
+  .cnt-contacto-de{font-size:13px;color:var(--hint-ink);}
+  /* "Actualizar entrevista" (2026-08-01): el paciente agregó info nueva
+     después del primer cierre — mismo tono que el acento, nunca un color
+     de alerta (esto no es una urgencia, es sólo "hay algo nuevo para leer"). */
+  .queue-triage-actualizada{font:650 13px/1 var(--font);letter-spacing:.02em;color:var(--accent-hover);white-space:nowrap;}
+  .queue-td-triage{display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
+  /* display:block, si no el recorte no existe: un <span> en línea no tiene
+     ancho propio, así que overflow/text-overflow no tienen contra qué medir y
+     ni se ve la elipsis ni el globo del texto completo se entera (2026-08-05). */
+  .queue-triage-resumen{display:block;font-size:13px;color:var(--hint-ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;}
+  .queue-consult{margin-top:1px;}
+  /* Entrevistas por QR sin turno matcheado (fase 4, rol médico): lista real
+     arriba de la tabla, no una tira de tarjetas — un renglón por entrevista. */
+  .queue-unmatched{margin:0 0 14px;padding:12px 14px;border:1px solid var(--border);border-radius:10px;background:var(--bg-2);}
+  .queue-unmatched-h{margin:0 0 8px;font:650 13px/1.2 var(--font);color:var(--text);}
+  .queue-unmatched-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .queue-unmatched-item{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;padding:8px 10px;background:var(--panel);border:1px solid var(--border-soft);border-radius:8px;}
+  .queue-unmatched-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .queue-unmatched-name{font-weight:650;}
+  .queue-unmatched-hour{color:var(--hint-ink);font-size:13px;}
+  .queue-unmatched-resumen{color:var(--hint-ink);font-size:13px;flex:1 1 220px;min-width:0;}
+  .queue-unmatched-accion{margin-left:auto;}
+  /* Encabezado compacto de la entrevista previa en #cola (fase 7, rol
+     médico): una línea de texto, no una tarjeta — activar/desactivar y el
+     cartel son links, mismo criterio que el resto de las acciones de texto
+     del panel. */
+  .queue-entrevista-cfg{margin:0 0 12px;font-size:13px;color:var(--hint-ink);}
+  .queue-entrevista-cfg strong{color:var(--text);}
+  /* Un teléfono lleva un espacio adentro ("2254 402237") y con table-layout
+     auto el navegador lo puede partir ahí: la columna se mide entonces por
+     "402237" y el número termina recortado. Un dato corto va en un renglón. */
+  .pat-table td[data-col="contacto"],.pat-table td[data-col="edad"],
+  .pat-table td[data-col="dni"],.pat-table td[data-col="nacimiento"],
+  .pat-table td[data-col="ultimo"],.pat-table td[data-col="creado"],
+  .pat-table td[data-col="estado"],.pat-table td[data-col="ranking"]{white-space:nowrap;}
+  /* Cuando ni con todo en su mínimo entra, CAEN columnas por prioridad
+     (admin-table.js:drop) en vez de mandar la tabla a un scroll horizontal
+     que taparía justo la última, que es la que más se mira. */
+  .pat-hide-creado [data-col="creado"],.pat-hide-localidad [data-col="localidad"],
+  .pat-hide-ultimo [data-col="ultimo"],.pat-hide-turnos [data-col="turnos"],
+  .pat-hide-sexo [data-col="sexo"],.pat-hide-nacimiento [data-col="nacimiento"],
+  .pat-hide-email [data-col="email"],.pat-hide-cobertura [data-col="cobertura"],
+  .pat-hide-dni [data-col="dni"]{display:none;}
+  /* Debajo de 640px (mismo corte que Pacientes de hoy, admin-queue.js) ya no
+     hay drop de columnas que alcance: nombre+teléfono+asistencia+estado no
+     entran ni en su mínimo. Se apila una fila por paciente, "ETIQUETA" arriba
+     y el valor abajo — misma receta que esa tabla, para no inventar una
+     segunda estrategia responsive (ui-rules: reflow a tarjeta compacta,
+     nunca un scroll horizontal que tapa el control principal). */
+  @media(max-width:640px){
+    .pat-table thead{display:none;}
+    .pat-table colgroup,.pat-table col{display:none;}
+    .pat-table,.pat-table tbody,.pat-table tr{display:block;width:100%!important;}
+    .pat-table tr{border-bottom:1px solid var(--border);padding:10px 0;}
+    .pat-table tr:last-child{border-bottom:0;}
+    .pat-table td{border-bottom:0;}
+    .pat-table td[data-col]{white-space:normal;overflow:visible;text-overflow:clip;word-break:break-word;}
+    /* The no-results row has no data-col, but must wrap just like a normal
+       stacked value. Without this override the desktop table ellipsis clips
+       the explanation on 360/390px screens. */
+    .pat-table td.adm-empty{display:block;padding:2px 0;white-space:normal;overflow:visible;text-overflow:clip;word-break:normal;}
+    /* Business card (the product owner review, "fewer boxes, labels only when needed"):
+       el nombre es su propia línea en negrita; el resto de los datos corre
+       en una sola línea separada por " · ", sin rótulo salvo donde un
+       número solo sería ambiguo (DNI, fechas, "Turnos"). */
+    .pat-table td[data-col="nombre"]{display:block;padding:2px 0 4px;font-weight:650;}
+    .pat-table td[data-col]:not([data-col="nombre"]){display:inline;padding:0;font-size:13px;color:var(--hint-ink);}
+    .pat-table td[data-col]:not([data-col="nombre"]) ~ td[data-col]:not([data-col="nombre"])::before{
+      content:" · ";color:var(--hint-ink);}
+    .pat-table td[data-label]::before{content:none;}
+    .pat-table td[data-col="dni"]::before,.pat-table td[data-col="nacimiento"]::before,
+    .pat-table td[data-col="ultimo"]::before,.pat-table td[data-col="creado"]::before,
+    .pat-table td[data-col="turnos"]::before{content:attr(data-label) " ";color:var(--hint-ink,var(--text-2));}
+    .pat-table td[data-col]:not([data-col="nombre"]) ~ td[data-col="dni"]:not([data-col="nombre"])::before,
+    .pat-table td[data-col]:not([data-col="nombre"]) ~ td[data-col="nacimiento"]:not([data-col="nombre"])::before,
+    .pat-table td[data-col]:not([data-col="nombre"]) ~ td[data-col="ultimo"]:not([data-col="nombre"])::before,
+    .pat-table td[data-col]:not([data-col="nombre"]) ~ td[data-col="creado"]:not([data-col="nombre"])::before,
+    .pat-table td[data-col]:not([data-col="nombre"]) ~ td[data-col="turnos"]:not([data-col="nombre"])::before{
+      content:" · " attr(data-label) " ";color:var(--hint-ink,var(--text-2));}
+  }
+  /* A doctor's agenda can carry eleven optional columns. It already exceeds
+     the content width through the 1024px layout, so reflow at the content-driven breakpoint
+     instead of relying on the page overflow guard to hide the last columns. */
+  /* Below that, each appointment is ONE two-line row instead of a stack of
+     one cell per line (responsable del producto, 2026-10-27: «la fila se parte torcida»): time,
+     patient and status on the first line; age, DNI, attendance, contact and
+     whatever the gear turned on flow on the second, under the name, and a
+     cell with nothing to say takes no room. Same <tr>/<td> as the wide table
+     (one engine); the order and the line break are flex `order` + a 100%
+     pseudo-element. */
+  @media(max-width:1100px){
+    #sec-mis-turnos .cnt-table-wrap{overflow:visible;contain:none;border-top:1px solid var(--border);}
+    #sec-mis-turnos .cnt-table thead,#sec-mis-turnos .cnt-table colgroup{display:none;}
+    #sec-mis-turnos .cnt-table,#sec-mis-turnos .cnt-table tbody{display:block;width:100%!important;}
+    #sec-mis-turnos .cnt-table tr{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:16px;row-gap:4px;
+      padding:12px 0 12px 68px;border-bottom:1px solid var(--border);box-sizing:border-box;}
+    #sec-mis-turnos .cnt-table td{display:block;width:auto!important;min-width:0!important;max-width:none!important;border:0;padding:0;
+      white-space:nowrap;overflow:visible;text-overflow:clip;order:6;font-size:15px;color:var(--text);}
+    #sec-mis-turnos .cnt-table td.mt-vacio{display:none;}
+    #sec-mis-turnos .cnt-table td[data-col='hora']{order:1;flex:0 0 52px;margin-left:-68px;font-weight:650;}
+    #sec-mis-turnos .cnt-table td[data-col='paciente']{order:2;flex:1 1 0;white-space:normal;font-weight:600;}
+    #sec-mis-turnos .cnt-table td[data-col='estado']{order:3;flex:0 1 auto;white-space:normal;text-align:right;}
+    #sec-mis-turnos .cnt-table tr::after{content:"";order:4;flex:0 0 100%;height:0;}
+    #sec-mis-turnos .cnt-table td[data-col='consultorio']::before{content:attr(data-label) " ";}
+    /* The age rides next to the name («Sofía Herrera, 73»), so its own cell
+       is not drawn here; the DNI and the triage colour need no caption. */
+    #sec-mis-turnos .cnt-table td[data-col='edad']{display:none;}
+    #sec-mis-turnos .cnt-table .mt-edad-junto{display:inline;font-weight:400;}
+    #sec-mis-turnos .cnt-table td[data-col='dni']{order:5;}
+    #sec-mis-turnos .cnt-table td[data-col='resumen'],#sec-mis-turnos .cnt-table td[data-col='preparacion']{flex:0 0 100%;white-space:normal;}
+    #sec-mis-turnos .cnt-table td[data-col='resumen'] .queue-triage-resumen{white-space:normal;overflow:visible;font-size:15px;}
+    #sec-mis-turnos .cnt-table td[data-col='contacto']{white-space:normal;}
+    #sec-mis-turnos .cnt-table td[data-col='contacto'] br{display:none;}
+    #sec-mis-turnos .cnt-table td[data-col='contacto'] .cnt-contacto-de{margin-left:6px;}
+  @media(max-width:640px){
+    #sec-usuarios .cnt-table-wrap{overflow:visible;contain:none;}
+    #sec-usuarios .cnt-table thead{display:none;}
+    #sec-usuarios .cnt-table,#sec-usuarios .cnt-table tbody,
+    #sec-usuarios .cnt-table tr,#sec-usuarios .cnt-table td{display:block;width:100%!important;box-sizing:border-box;}
+    /* The section already sits on the gutter: the stacked row adds no inset. */
+    #sec-usuarios .cnt-table tr{border-bottom:1px solid var(--border);padding:10px 0;}
+    #sec-usuarios .cnt-table td{border:0;padding:3px 0 3px 0;white-space:normal;overflow:visible;text-overflow:clip;word-break:break-word;}
+    #sec-usuarios .cnt-table td[data-label]::before{content:attr(data-label);display:block;font-size:13px;color:var(--hint-ink,var(--text-2));margin-bottom:1px;}
+    #sec-usuarios .cnt-table td:nth-child(1)::before{content:none;}
+  }
+  }
+  .rank-box{margin:0 0 18px;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--panel);}
+  .rank-box-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .rank-box-n{font-size:20px;font-weight:620;line-height:1;}
+  .rank-box-lbl{font-weight:600;}
+  .rank-box-n-eff{color:var(--hint-ink);font-size:13px;}
+  .rank-box ul{margin:10px 0 0;padding-left:18px;color:var(--hint-ink);font-size:14px;line-height:1.5;}
+  .rank-box-nota{margin:10px 0 0;color:var(--hint-ink);font-size:13px;line-height:1.5;}
+  .attendance-dialog-porque{margin:6px 0 0;padding-left:18px;color:var(--hint-ink);font-size:14px;line-height:1.5;}
+  .attendance-dialog{width:min(520px,calc(100vw - 28px));max-height:calc(100vh - 36px);box-sizing:border-box;padding:22px;border:1px solid var(--border);border-radius:14px;background:var(--panel);color:var(--text);box-shadow:0 18px 60px rgba(0,0,0,.22);}
+  .attendance-dialog::backdrop{background:rgba(20,24,28,.42);}
+  .attendance-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;}
+  .attendance-dialog h2{margin:0;font-size:22px;line-height:1.2;}.attendance-dialog-close{appearance:none;border:0;background:transparent;color:var(--accent);font:600 14px/1.3 var(--font);cursor:pointer;}
+  .attendance-dialog-summary{display:flex;align-items:center;gap:8px;margin:12px 0 4px;font-weight:650;}.attendance-dialog-meta{margin:0;color:var(--hint-ink);font-size:14px;line-height:1.45;}
+  .attendance-dialog-list{margin:18px 0 0;padding:0;list-style:none;}.attendance-dialog-list li{padding:10px 0;border-top:1px solid var(--border);white-space:normal;}.attendance-dialog-list li:first-child{border-top:0;}.attendance-event-main{display:block;font-weight:650;}.attendance-event-meta{display:block;margin-top:2px;color:var(--hint-ink);font-size:13px;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+  .cnt-tr-borrado{opacity:.5;}
+  .cnt-tr-borrado td a{color:var(--hint-ink);}
+  .cnt-badge{display:inline-block;font:600 13px/1 var(--font);letter-spacing:.02em;padding:3px 6px;border-radius:5px;vertical-align:middle;}
+  .cnt-badge-nuevo{color:var(--done);background:var(--state-done-bg);}
+  .cnt-badge-editado{color:var(--warn);background:var(--warn-soft);}
+  .cnt-badge-borrado{color:var(--danger);background:var(--danger-soft);}
+  /* celda corta de una línea con el resumen completo en el title (agenda
+     de médicos con varios centros/franjas) — table-design: los datos cortos
+     no se parten, el detalle va al hover/click-through. */
+  .cnt-truncate{display:inline-block;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:middle;}
+
+  /* --- contenido: formularios --- */
+  /* breadcrumb ÚNICO: "Médicos › " + el nombre de la entidad como h1 de la
+     página (reusa .adm-h1) — reemplaza el stack de 4 capas de antes (h1
+     compartido "Médicos" + crumb + h2 + "id: …") (responsable del producto, 2026-07-16). El h1
+     compartido de la sección se oculta en las vistas de detalle (ver
+     admin-contenido.js:setTitle) para que quede UN solo h1 en la página. */
+  .cnt-crumb{margin:0 0 4px;font-size:13px;}
+  .cnt-crumb a{color:var(--accent);text-decoration:none;}
+  .cnt-crumb a:hover{color:var(--accent-hover);}
+  /* The OTHER reports with data open from the report's own name in the
+     breadcrumb (a native details): no row of links above the report at any
+     width (one screen header, the product owner 2026-11-08; nothing past the
+     edge, 2026-11-10), and a phone gets the same way from report to report. */
+  #rep-body .cnt-crumb{font-size:16px;line-height:22px;}
+  .rep-crumb{display:flex;flex-wrap:wrap;align-items:center;gap:0 6px;}
+  .rep-switch{position:relative;}
+  .rep-switch summary{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 8px;margin-left:-4px;border-radius:8px;color:var(--text);cursor:pointer;list-style:none;}
+  .rep-switch summary::-webkit-details-marker{display:none;}
+  .rep-switch summary:hover,.rep-switch[open] summary{background:var(--bg-2);}
+  .rep-switch summary .adm-icon{display:block;width:12px;height:12px;font-size:0;background:currentColor;-webkit-mask:url(/static/icons/expand-arrow-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/expand-arrow-sf-regular.svg) center/contain no-repeat;}
+  .rep-switch[open] summary .adm-icon{transform:rotate(180deg);}
+  .rep-nav{position:absolute;top:calc(100% + 4px);left:-4px;z-index:20;display:flex;flex-direction:column;min-width:240px;max-width:calc(100vw - 32px);padding:6px;background:var(--panel);border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.14);font-size:16px;line-height:22px;}
+  .rep-nav a{display:flex;align-items:center;min-height:40px;padding:0 10px;border-radius:6px;color:var(--accent);text-decoration:none;white-space:nowrap;}
+  .rep-nav a:hover{color:var(--accent-hover);background:var(--bg-2);}
+  @media(max-width:640px){
+    #rep-body .cnt-crumb{margin:0 0 6px;}
+    #rep-body .cnt-crumb a,.rep-switch summary{display:inline-flex;align-items:center;min-height:44px;}
+    /* On a phone the list hangs from the breadcrumb line, edge to edge: hung
+       from the name it ran past the right edge at 320-360. */
+    .rep-crumb{position:relative;}
+    .rep-switch{position:static;}
+    .rep-nav{left:0;right:0;min-width:0;max-width:none;}
+    .rep-nav a{white-space:normal;}
+  }
+  .cnt-h1{margin-top:0;text-align:left;}
+  .cnt-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 16px;align-items:start;margin-bottom:16px;}
+  .cnt-row>label{text-align:left;font-size:16px;line-height:1.25;color:var(--hint-ink,var(--text-2));padding-top:13px;}
+  .cnt-row .cnt-field{min-width:0;}
+  /* A read-only value (no input beside the label): the label sits on its line. */
+  .cnt-row.cnt-row-static>label{padding-top:0;}
+  .cnt-row .cnt-in,.cnt-row .adm-sel{max-width:100%;box-sizing:border-box;}
+  /* Catalog editors use one readable control scale. List filters remain
+     compact by design; forms carry full names, addresses, and instructions. */
+  .cnt-in,.cnt-row .adm-sel{font:inherit;font-size:20px;line-height:1.2;min-height:48px;padding:10px 13px;border:1px solid var(--border);border-radius:9px;background:var(--panel);color:var(--text);width:auto;box-sizing:border-box;}
+  .cnt-row .adm-sel{padding-right:38px;background-position:right 12px center;}
+  .cnt-row .adm-sel:focus{outline:none;border-color:var(--focus-border);box-shadow:0 0 0 3px var(--focus-ring);}
+  .cnt-in--password{width:280px;max-width:100%;}
+  /* Pacientes: cada campo del ancho de SU contenido (regla 1 de form-design),
+     nunca del ancho de la columna. Un DNI de 8 dígitos en un campo full-width
+     se lee como "no sé qué va acá". */
+  .pat-dni{width:11ch;font-size:20px;}
+  .pat-dni-fixed{font-size:20px;font-weight:600;}
+  .pat-birth{width:14ch;}
+  .pat-phone{width:16ch;}
+  .pat-name{width:22ch;max-width:100%;}
+  .pat-email{width:28ch;max-width:100%;}
+  .pat-sex{width:15ch;}
+  .pat-echo-ok{color:var(--hint-ink);}
+  .pat-echo-error{color:var(--danger);}
+  .pat-scan{font:inherit;font-size:16px;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;margin-left:12px;}
+  .pat-scan:hover{color:var(--accent-hover);}
+  /* Cobertura: una fila por cobertura, con el radio de "principal" adelante.
+     Cada campo del ancho de su contenido, igual que el resto de la ficha. */
+  .pat-coverage-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;}
+  /* align-items:flex-start: si el nombre de la cobertura envuelve a dos
+     líneas, el radio queda arriba en vez de irse al medio. */
+  .pat-coverage-main{display:inline-flex;align-items:flex-start;gap:5px;font-size:13px;line-height:20px;color:var(--hint-ink);cursor:pointer;white-space:nowrap;}
+  .pat-coverage-main input{margin:0;margin-top:2px;}
+  .pat-coverage-name{width:24ch;max-width:100%;}
+  .pat-coverage-member{width:16ch;}
+  .pat-coverage-plan{width:12ch;}
+  /* La obra que viene del padrón no es un campo: es un dato. Se lee como
+     texto, con la procedencia debajo en chico — al lado se comía el ancho del
+     nombre y lo partía en tres líneas. */
+  .pat-coverage-fixed{display:flex;flex-direction:column;gap:1px;width:24ch;font-size:15px;line-height:1.25;}
+  .pat-coverage-registry{font-size:13px;color:var(--hint-ink);}
+  .pat-coverage-remove,.pat-coverage-add{border:0;background:none;padding:0;font:inherit;font-size:13px;color:var(--accent);cursor:pointer;}
+  .pat-coverage-remove:hover,.pat-coverage-add:hover{color:var(--accent-hover);}
+  .pat-coverage-add{margin:2px 0 12px;display:inline-block;}
+  .pat-coverage-add[hidden]{display:none;}
+  /* «Quién abrió sus datos»: sus dos acciones en una fila que, si no entra,
+     baja la segunda entera debajo, sobre el mismo borde izquierdo. */
+  .pat-acc-acts{display:flex;flex-wrap:wrap;column-gap:14px;}
+  .pat-acc-acts .pat-coverage-add{text-align:left;}
+  .pat-coverage-empty{margin:0 0 6px;}
+  /* Personas a cargo: un bloque propio debajo de la ficha, no otro campo del
+     formulario — es una lista de gente, con su propia alta. */
+  .pat-deps{margin:34px 0 0;}
+  .pat-deps-h{font-size:17px;font-weight:650;margin:0 0 10px;}
+  .pat-dep-acts{display:inline-flex;gap:14px;}
+  .pat-dep-link{border:0;background:none;padding:0;font:inherit;font-size:13px;color:var(--accent);cursor:pointer;}
+  .pat-dep-link:hover{color:var(--accent-hover);}
+  .pat-dep-form{margin:16px 0 0;padding:16px 18px;background:var(--panel);border:1px solid var(--border);border-radius:12px;max-width:620px;}
+  .pat-dep-h3{font-size:15px;font-weight:650;margin:0 0 12px;}
+  .cnt-in:focus{outline:none;border-color:var(--focus-border);box-shadow:0 0 0 3px var(--focus-ring);}
+  .cnt-wide{width:100%;max-width:680px;}
+  .cnt-field-name{width:min(32ch,100%);}
+  .cnt-field-center,.cnt-field-place{width:min(38ch,100%);}
+  .cnt-field-taxonomy{width:min(30ch,100%);}
+  .cnt-field-short{width:min(28ch,100%);}
+  .cnt-field-email{width:min(36ch,100%);}
+  .cnt-field-specialty{width:min(30ch,100%);max-width:100%;}
+  .cnt-num{width:8ch;}
+  /* 12ch seguía recortando "08:00 AM"/el ícono nativo del reloj en macOS
+     Chrome (responsable del producto, 2026-07-16, screenshot); 15ch + un pelo de padding extra
+     entra completo con el ícono. */
+  .cnt-time{width:15ch;padding-right:6px;}
+  .cnt-textarea{resize:vertical;font-family:inherit;line-height:1.45;min-height:72px;}
+  .cnt-hint{font-size:16px;line-height:1.4;color:var(--hint-ink,var(--text-2));margin:6px 0 0;}
+  .cnt-hint:empty{display:none;}
+  /* The broad specialty a doctor lands in is data, not a hint: dark like the field. */
+  #med-cluster-chip,#med-cluster-chip-2{color:var(--text);}
+  .cnt-help{display:inline-block;margin-top:6px;font-size:16px;color:var(--accent);text-decoration:none;}
+  .cnt-help:hover{color:var(--accent-hover);}
+  .cnt-preview{margin-top:6px;font-size:16px;color:var(--hint-ink,var(--text-2));}
+  .cnt-preview-warn{color:var(--warn);}
+  .cnt-edad{display:flex;align-items:center;gap:8px;color:var(--hint-ink);font-size:16px;}
+  /* A label that wraps to two lines keeps its box on the FIRST line, never
+     floating to the vertical middle, and the box never shrinks: in a flex row
+     a fixed width/height without flex:none is only a suggestion, so a long
+     label squeezed it visibly smaller than its single-line siblings.
+     margin-top centres the 17px box optically on the first 22px line box. */
+  .cnt-check{display:flex;align-items:flex-start;gap:9px;font-size:16px;line-height:22px;color:var(--text);cursor:pointer;padding-top:6px;}
+  .cnt-check input{flex:0 0 auto;width:17px;height:17px;margin-top:3px;}
+
+  /* One compact photo unit: preview left; chooser and the essential file
+     guidance right. It only stacks after the preview at narrow widths. */
+  .cnt-foto-wrap{display:flex;align-items:center;gap:14px;max-width:680px;}
+  .cnt-foto-av{width:64px;height:64px;border-radius:50%;flex:0 0 64px;background:var(--bg-2) center/cover no-repeat;display:flex;align-items:center;justify-content:center;font:600 20px var(--font);color:var(--hint-ink);}
+  /* No photo and no initials (a center, a new doctor): no empty grey circle. */
+  .cnt-foto-av:empty:not([style]){display:none;}
+  .cnt-foto-av--0{background:var(--av0-bg,#eaf4ec);color:var(--av0-fg,#0e8b50);}.cnt-foto-av--1{background:var(--av1-bg,#e9f0fb);color:var(--av1-fg,#2b5cad);}
+  .cnt-foto-av--2{background:var(--av2-bg,#e0f2f0);color:var(--av2-fg,#0e9488);}.cnt-foto-av--3{background:var(--av3-bg,#f7efdd);color:var(--av3-fg,#b67a1e);}
+  .cnt-foto-av--4{background:var(--av4-bg,#eaf4ec);color:var(--av4-fg,#0b6e33);}.cnt-foto-av--5{background:var(--av5-bg,#e9f0fb);color:var(--av5-fg,#3a6bbf);}
+  /* One row of buttons beside the portrait, as in «Mi cuenta»: the native file
+     input is visually hidden and opened by its labelled button; the portrait
+     buttons sit in the same row, so none can slide under another (form audit
+     2026-10-25, Opus UI review 2026-11-03). */
+  .cnt-foto-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0;}
+  .cnt-foto-file{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);}
+  .cnt-foto-file:focus-visible+label{outline:2px solid var(--focus,var(--accent));outline-offset:2px;}
+  /* The portrait buttons are the panel's buttons: the shared height, 44px on touch (2026-11-08, R4). */
+  .cnt-foto-actions .btn{min-height:var(--adm-btn-h,36px);width:max-content;}
+  .cnt-foto-actions [role="status"]{flex-basis:100%;margin:0;font-size:16px;color:var(--text);}
+  .cnt-foto-actions [role="status"]:empty{display:none;}
+  .cnt-inline-action{font:inherit;background:none;border:0;padding:0;font-size:var(--adm-btn-font,14px);font-weight:500;color:var(--hint-ink);text-decoration:none;width:fit-content;cursor:pointer;}
+  /* Inside a list cell the action IS the datum (Médicos: the specialty sets
+     the specialty filter): it reads in the cell's own dark ink and size, like
+     its neighbours, and only the hover says it does something. */
+  td .cnt-inline-action{font-size:inherit;font-weight:inherit;color:var(--text);text-align:left;}
+  td .cnt-inline-action:hover{color:var(--hover-link);}
+
+  /* radios de `modo` con descripción — control real, no tarjeta de cita */
+  .cnt-modo-list{display:flex;flex-direction:column;gap:8px;max-width:560px;}
+  .cnt-modo-op{display:flex;align-items:flex-start;gap:10px;min-width:0;max-width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid var(--border);border-radius:10px;cursor:pointer;}
+  .cnt-modo-op:hover{border-color:var(--hover-bd);}
+  .cnt-modo-op.on{border-color:var(--select);background:var(--select-soft);}
+  .cnt-modo-op--off{opacity:.45;cursor:default;}
+  .cnt-modo-op--off:hover{border-color:var(--border);}
+  .cnt-modo-op input{margin-top:3px;flex:0 0 auto;}
+  .cnt-modo-txt{min-width:0;overflow-wrap:anywhere;font-size:16px;color:var(--text);}
+  .cnt-modo-txt .cnt-hint{margin-top:2px;}
+
+  /* editor de agenda semanal (servicios: una franja fija) */
+  .cnt-agenda{max-width:680px;}
+  .cnt-daygrid{display:flex;gap:6px;flex-wrap:wrap;}
+  .cnt-daychk{position:relative;cursor:pointer;}
+  .cnt-daychk input{position:absolute;opacity:0;}
+  .cnt-daychk span{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border-strong);border-radius:8px;font-size:16px;color:var(--hint-ink);}
+  .cnt-daychk input:checked+span{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:650;}
+  .cnt-agenda-times{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:16px;color:var(--hint-ink);}
+  .cnt-agenda-times label{display:flex;align-items:center;gap:6px;}
+  .cnt-cupos{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0 0;padding:10px 12px;border:1px solid var(--border-soft);border-radius:10px;}
+  .cnt-cupos legend{padding:0 4px;font-size:16px;font-weight:650;color:var(--text);}
+  .cnt-cupos label{display:flex;align-items:center;gap:8px;min-height:44px;font-size:16px;color:var(--hint-ink,var(--text-2));}
+  .cnt-cupos .cnt-hint{width:100%;margin:0;}
+
+  /* editor de agenda MULTI-CENTRO del médico: un bloque por centro, cada uno
+     con sus propias franjas (horarios) y excepciones (2026-07-11). Aire
+     extra abajo (margin-bottom) para que "+ Agregar centro" no quede pegado
+     a la fila de Guardar/Eliminar que sigue (responsable del producto, 2026-07-16). */
+  .cnt-centros{max-width:680px;display:flex;flex-direction:column;gap:16px;margin-bottom:28px;}
+  /* card blanca sobre el fondo gris del admin (mismo lenguaje que .card:
+     panel + borde sutil + radio 14) — antes el borde apenas se distinguía
+     del fondo, mismo gris de un lado y otro (responsable del producto, 2026-07-16). */
+  .cnt-centro-block{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px 18px;}
+  .cnt-centro-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;}
+  .cnt-centro-pair{display:grid;grid-template-columns:minmax(220px,1fr) minmax(260px,1.35fr);align-items:end;gap:12px;min-width:0;flex:1;}
+  .cnt-centro-pair>label,.cnt-franja-svc label{display:flex;flex-direction:column;align-items:stretch;gap:5px;min-width:0;font-size:16px;color:var(--hint-ink,var(--text-2));}
+  .cnt-centro-pair .adm-sel{width:100%;min-height:48px;font-size:20px;}
+  /* El primer servicio vive junto al centro; franjas adicionales conservan
+     su selector propio porque un médico puede hacer tareas distintas por día. */
+  .cnt-franja-svc{display:flex;align-items:center;margin-top:9px;font-size:16px;color:var(--hint-ink);}
+  .cnt-franja-svc--head{margin-top:0;min-width:0;}
+  .cnt-franja-svc--head label{width:100%;}
+  .cnt-franja-svc--head .cmb{display:flex;width:100%;max-width:100%;}
+  .cnt-franja-svc--head .cmb-in{width:100%!important;min-width:0;}
+  .cnt-franja-svc .cmb-list{max-width:min(440px,calc(100vw - 48px));}
+  .cnt-franja-svc .cmb-it{white-space:normal;}
+  .cnt-franja-row{padding:10px 0;border-top:1px solid var(--border-soft);}
+  .cnt-franja-row:first-child{border-top:0;padding-top:0;}
+  .cnt-excepciones{margin-top:6px;}
+  .cnt-exc-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:9px 0;border-top:1px solid var(--border-soft);}
+  .cnt-exc-row:first-child{border-top:0;}
+  .cnt-exc-tipo{display:flex;align-items:center;gap:5px;font-size:13px;color:var(--hint-ink);cursor:pointer;white-space:nowrap;}
+  /* "+ Agregar…" es un botón real (muta el form al clickear), no un link de
+     navegación — .btn.btn-quiet.btn-sm de arriba le da el look; acá sólo el
+     espaciado. "Quitar…" sigue siendo link, abajo (ui-rules: acciones =
+     botones, navegación = links). align-self:flex-start porque "+ Agregar
+     centro" es hijo directo de .cnt-centros (flex-column, que si no lo
+     estira a lo ancho) — sin esto quedaba gordo comparado con horario/
+     excepción, que no viven en un flex container. */
+  .cnt-add-sm{margin-top:8px;align-self:flex-start;}
+  .cnt-remove{min-height:44px;font:inherit;background:none;border:0;padding:0;font-size:16px;color:var(--hint-ink);text-decoration:none;white-space:nowrap;cursor:pointer;}
+  .cnt-remove:hover{color:var(--rojo);}
+
+  /* Fila de acciones del form: Guardar (primaria, más grande que el .btn de
+     siempre) a la izquierda, Eliminar (botón gris quiet — ya NO un link rojo
+     suelto, responsable del producto 2026-07-16) + "Restaurar original" (link discreto) al
+     extremo derecho, en la MISMA fila. Guardar vive fuera de <form> (usa
+     form="cnt-form") para poder compartir esta fila con Eliminar/Restaurar. */
+  /* El mensaje de guardado va PEGADO a Guardar, no en la otra punta de la
+     fila: ahí es donde está mirando quien acaba de apretar el botón. Por eso
+     la fila ya no reparte con space-between — la acción destructiva se va sola
+     al margen con margin-left:auto. */
+  .cnt-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:32px;}
+  .cnt-actions .cnt-actions-danger{margin-left:auto;}
+  /* The AI translation notice is the caption of «Guardar» (saving hands the
+     text to the AI): right above the button, not a band over the form. */
+  .cnt-ai-notice{margin:32px 0 0;}
+  .cnt-ai-notice:not([hidden])+.cnt-actions{margin-top:12px;}
+  .cnt-save-msg{margin:0;font-size:16px;line-height:1.4;color:var(--danger);max-width:46ch;}
+  /* Mensaje debajo del campo que lo causó. En positivo cuando ya está bien
+     ("Contraseña lista."), neutro mientras se escribe, y recién --danger
+     cuando el servidor rechazó ESE campo. */
+  .cnt-msg{margin:6px 0 0;font-size:16px;line-height:1.4;color:var(--hint-ink);}
+  .cnt-msg--ok{color:var(--done);}
+  .cnt-msg--mal{color:var(--danger);}
+  .cnt-in[aria-invalid="true"]{border-color:var(--danger);}
+  /* Guardar is the panel's one button (2026-11-08, R4): the shared height,
+     44px on touch — no longer the 48px of the fields above it. */
+  .cnt-actions .btn,.cnt-actions-danger .btn{min-height:var(--adm-btn-h,36px);}
+  .cnt-actions-danger{display:flex;align-items:center;gap:14px;}
+  .cnt-actions-danger>a{font-size:16px;color:var(--hint-ink);text-decoration:none;}
+  .cnt-actions-danger>button:not(.btn){min-height:44px;padding:8px 0;border:0;background:none;color:var(--hint-ink);font:inherit;font-size:16px;cursor:pointer;}
+  .cnt-actions-danger>button:not(.btn):hover{color:var(--hover-ink);}
+  .cnt-actions-danger a:hover{color:var(--hover-ink);}
+  .cnt-original{margin-top:22px;font-size:16px;}
+  .cnt-original summary{cursor:pointer;color:var(--hint-ink);}
+  .cnt-pre{margin-top:8px;padding:11px 13px;background:var(--bg);border:1px solid var(--border);border-radius:9px;font:14px/1.5 var(--font-mono);color:var(--hint-ink);overflow-x:auto;white-space:pre;}
+
+  @media(max-width:1100px){
+    .pt-head{display:grid;grid-template-columns:auto max-content minmax(0,1fr) max-content;column-gap:10px;row-gap:4px;}
+    .pt-select{grid-column:1;grid-row:1;}
+    .pt-name{grid-column:2;grid-row:1;}
+    .pt-head>.badge{grid-column:3;grid-row:1;justify-self:start;}
+    .pt-when{grid-column:4;grid-row:1;margin-left:0;}
+    .pt-meta{grid-column:2/5;grid-row:2;min-width:0;}
+  }
+
+  @media(max-width:900px){
+    .bulk-bar{display:grid;grid-template-columns:minmax(0,1fr);align-items:stretch;}
+    .bulk-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;}
+    .bulk-actions .btn{width:100%;padding-inline:8px;font-size:13px;justify-content:center;}
+  }
+  @media(max-width:520px){
+    .bulk-bar{padding-inline:var(--adm-gutter);border-radius:0;}
+    .bulk-actions{grid-template-columns:minmax(0,1fr);}
+    .bulk-actions .btn{font-size:13px;}
+    .bulk-dialog-actions{display:grid;grid-template-columns:1fr 1fr;}
+    .bulk-dialog-actions .btn{width:100%;}
+  }
+
+  @media(max-width:720px){
+    .adm-content-wrap{padding:12px 0 80px;}
+    .adm-content-wrap:has(> #sec-solicitudes:not([style*="none"])){padding:12px 0 80px;}
+    .adm-content-wrap:has(> #sec-cola:not([style*="none"])){padding:12px 0 80px;}
+    .adm-h1,.adm-sec-h{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    /* The direct shell has no drawer toggle: the topbar's own gutter is
+       the complete mobile title inset. */
+    .adm-h1row{padding-left:0;}
+    .adm-h1row>.adm-h1{flex-basis:100%;padding:0;margin:0;}
+    .adm-h1row>[role="alert"]{flex-basis:100%;}
+    .adm-h1{font-size:21px;margin-bottom:12px;}
+    .adm-h1{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere;line-height:1.25;}
+    .adm-band{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);margin-bottom:12px;gap:10px;}
+    #list>.adm-empty{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    #list>.pgr{margin-left:var(--adm-gutter);margin-right:var(--adm-gutter);}
+    #sec-cola .queue-controls,#sec-cola .queue-doctor-head,#sec-cola>.adm-empty{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    /* The rows under the controls keep the same left edge (the product owner 26/10: the
+       «Entrevista previa» line, the AI notice and the doctor's name sat on the
+       screen edge while the search sat 16px in). */
+    #sec-cola .queue-entrevista-cfg,#sec-cola .queue-ai-notice,#sec-cola>.hsi-instalar{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    /* «Qué es la captura de síntomas» too: its disclosure triangle sat past
+       the screen's left edge (demo check 07.11). */
+    #sec-cola .queue-intake-explainer{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    #sec-cola .queue-unmatched{margin-left:var(--adm-gutter);margin-right:var(--adm-gutter);}
+    /* «Ver N agendas sin ningún turno dado» is a button: its box, not only its
+       text, keeps off the edge (the gutter sweep, 26/10). */
+    #sec-cola .queue-show-empty{margin-left:var(--adm-gutter);margin-right:var(--adm-gutter);}
+    .card{border-radius:0;border-left:0;border-right:0;margin-bottom:10px;}
+    .card--solo{max-width:none;}
+    .card:not(.card--solo){display:block;}
+    .card-body,.card:not(.card--solo) .card-body{display:grid;grid-template-columns:1fr;}
+    .card-main{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    .card-actions{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    /* apilado: los campos arriba (son el trabajo), la foto abajo a todo el
+       ancho — mismo orden que en desktop, sólo que en vertical. Acá la
+       columna SÍ necesita un alto propio: sin altura de fila que copiar, la
+       imagen absoluta no tendría a qué escalarse. */
+    .card-side{border-left:0;border-top:1px solid var(--border);min-height:240px;}
+    /* The phone wrap does not pad (lists and request cards run full bleed
+       and inset their own rows): every section that has no rows of its own
+       to inset takes the gutter here, in ONE list — never its own literal.
+       `.adm-content-wrap>` beats the paddings the screen modules inject. The
+       Pacientes list stays full bleed: its rows inset themselves
+       (data-list-view). */
+    .adm-content-wrap>:is(#sec-servicios,#sec-centros,#sec-medicos,#sec-usuarios,#sec-knowledge,#sec-prompts,#sec-settings,
+      #sec-reportes,#sec-legal,#sec-sistema,#sec-preparaciones,#sec-roles,#roles-status,#sec-plan,#sec-mis-turnos),
+    .adm-content-wrap>#sec-pacientes:not([data-list-view]),
+    .adm-content-wrap.air{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);box-sizing:border-box;}
+    .adm-content-wrap>#sec-pacientes:not([data-list-view]) .adm-h1{padding-left:0;padding-right:0;}
+    .adm-content-wrap>#mt-cal{margin-left:var(--adm-gutter);margin-right:var(--adm-gutter);max-width:none;}
+    /* The patient list runs full bleed (separators span
+       the screen) and insets its own rows onto the same gutter. */
+    #sec-cola .queue-table tr{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);box-sizing:border-box;}
+    #sec-chats>.adm-empty,#sec-pacientes>.adm-empty-state{padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);}
+    /* Lo que el template pone al lado de esas secciones y de la cola (el
+       aviso de IA, el estado de carga, el subtítulo) arranca en el mismo
+       borde: un solo borde izquierdo en el celular. */
+    .adm-content-wrap:has(> :is(#sec-servicios,#sec-centros,#sec-medicos,#sec-usuarios,#sec-cola,#sec-knowledge,#sec-prompts,#sec-settings,#sec-plan))>:not([id^="sec-"]){padding-left:var(--adm-gutter);padding-right:var(--adm-gutter);box-sizing:border-box;}
+    .cnt-row{grid-template-columns:1fr;gap:5px;}
+    .cnt-row>label{text-align:left;padding-top:0;}
+    .cnt-foto-wrap{align-items:flex-start;}
+    /* Keep the commitment on the left and the reversible/destructive choice
+       on the right.  The latter may wrap within its own group, but must not
+       push the primary action into a vertical action stack. */
+    .cnt-actions{align-items:center;justify-content:flex-start;flex-direction:row;flex-wrap:nowrap;}
+    .cnt-actions-danger{margin-left:auto;justify-content:flex-end;flex-wrap:wrap;}
+    /* At phone width controls step down together: a select never looks like
+       smaller, secondary text beside a typed value. */
+    .cnt-in,.cnt-row .adm-sel{font-size:18px;}
+    .cnt-actions-danger>button:not(.btn){font-size:18px;}
+    .cnt-actions-danger{justify-content:space-between;}
+    .usr-centros{grid-template-columns:minmax(0,1fr);}
+    .cnt-centro-head{align-items:flex-start;}
+    .cnt-centro-pair{grid-template-columns:1fr;}
+    .cnt-centro-pair .adm-sel{font-size:18px;}
+  }
+  /* Direct server-rendered administration shell. */
+  .adm5-shell{display:flex;align-items:stretch;min-height:100vh;}
+  .adm5-side{flex:0 0 232px;width:232px;box-sizing:border-box;padding:18px 12px 16px;
+    border-right:1px solid var(--border);position:sticky;top:0;align-self:flex-start;
+    height:100vh;overflow-y:auto;font-size:13px;line-height:1.4;background:var(--bg-2);}
+  .adm5-brand{display:flex;align-items:center;gap:10px;padding:4px 8px 20px;text-decoration:none;color:var(--text);
+    font-size:16px;font-weight:700;letter-spacing:0;}
+  .adm5-brand::before{content:"";width:30px;height:30px;flex:0 0 30px;border-radius:8px;background:transparent url('/logo.png') center/contain no-repeat;}
+  :root[data-theme="pinamar"] .adm5-brand::before{background-image:url('/pinamar-emblema.svg');}
+  .adm5-menu{display:contents;}
+  .adm5-menu>summary{display:none;}
+  .adm5-menu>.adm5-nav{display:block;}
+  .adm5-nav-group{display:flex;flex-direction:column;gap:0;}
+  .adm5-nav-group + .adm5-nav-group{margin-top:14px;}
+  .adm5-nav-group-title{display:block;margin:2px 10px 6px;color:var(--text);font-size:13px;
+    font-weight:650;line-height:1.3;}
+  /* Menu items are navigation, not small print: the dark --hint-ink of the
+     panel labels, never the translucent --text-2 (the product owner's hub, 2026-11-08).
+     The current screen stays marked by --text, weight and its plate. */
+  .adm5-nav a{display:block;padding:6px 10px;border-radius:8px;text-decoration:none;
+    color:var(--hint-ink,var(--text-2));font-size:14px;}
+  .adm5-nav a:hover{background:var(--hover-bg);color:var(--hover-ink);}
+  .adm5-nav a.on{background:var(--panel);color:var(--text);font-weight:650;}
+  /* El ritmo horizontal lo pone .adm-content-wrap (16px, mismo canal que el
+     padding interno de .adm-topbar): main ya no acolcha para que el header
+     pegue al techo y a los costados (responsable del producto, 2026-09-16). */
+  .adm5-main{flex:1 1 auto;min-width:0;padding:0 0 60px;box-sizing:border-box;}
+  /* The direct Account screen's sidebar footer (legacy markup, see the
+     nav_footer block): the sign-out button is touch-operated on tablets, so
+     the direct shell gives it the 44px target the legacy drawer never had. */
+  /* «Cerrar sesión» reads as one more menu item (the product owner, 2026-10-27: the
+     button-plate in the menu looked off): same font, size, colour, padding
+     and left edge as .adm5-nav a, one group gap above it. */
+  .adm5-side .adm-nav-footer{margin-top:14px;padding-top:0;}
+  /* The footer note only ever rendered on Cuenta, whose Seguridad block now
+     leads with the same deadline and its action — one notice, not two. */
+  .adm5-side .adm-2fa-note{display:none;}
+  .adm5-side .adm-logout{display:flex;align-items:center;justify-content:flex-start;width:100%;min-height:44px;
+    padding:6px 10px;border:0;border-radius:8px;background:transparent;color:var(--hint-ink,var(--text-2));
+    font:400 14px/1.4 var(--font);text-align:left;cursor:pointer;}
+  .adm5-side .adm-logout:hover{background:var(--hover-bg);color:var(--hover-ink);}
+  @media(max-width:900px){
+    .adm5-shell{display:block;min-height:0;}
+    .adm5-side .adm-nav-footer{margin:0;display:flex;align-items:center;justify-content:space-between;
+      gap:6px;flex:1 0 100%;min-width:0;}
+    .adm5-side .adm-2fa-note{margin:0 4px;min-width:0;white-space:normal;overflow-wrap:anywhere;}
+    .adm5-side .adm-nav-footer-row{flex:none;margin-left:auto;}
+    .adm5-side .adm-logout{width:auto;min-height:44px;}
+    .adm5-side{position:relative;display:flex;align-items:center;flex-wrap:wrap;gap:2px;flex:none;
+      width:auto;height:auto;overflow:visible;padding:6px 10px;
+      border-right:0;border-bottom:1px solid var(--border);}
+    .adm5-brand{padding:6px 10px;white-space:nowrap;font-size:15px;}
+    .adm5-brand::before{width:28px;height:28px;flex-basis:28px;}
+    .adm5-menu{display:block;margin-left:auto;}
+    .adm5-menu>summary{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;
+      padding:0 10px;border:1px solid var(--border-strong);border-radius:9px;background:var(--panel);
+      color:var(--text);cursor:pointer;list-style:none;}
+    .adm5-menu>summary::-webkit-details-marker{display:none;}
+    .adm5-menu:not([open])>.adm5-nav{display:none;}
+    .adm5-menu[open]>.adm5-nav{position:absolute;top:100%;left:0;right:0;z-index:50;display:flex;
+      flex-direction:column;gap:10px;max-height:calc(100dvh - 58px);overflow-y:auto;padding:10px;
+      background:var(--panel);border-bottom:1px solid var(--border-strong);box-shadow:var(--shadow-pop);}
+    .adm5-nav-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;}
+    .adm5-nav-group + .adm5-nav-group{margin-top:0;}
+    .adm5-nav-group-title{grid-column:1/-1;margin:4px 10px 2px;}
+    .adm5-nav-group--standalone > a{grid-column:1/-1;}
+    .adm5-nav a{min-height:44px;display:flex;align-items:center;white-space:normal;padding:8px 10px;}
+    .adm5-main{padding:0 0 80px;}
+    /* A doctor's screens as one row of tabs under the brand (demo check
+       07.11: «Menú» hid five screens behind a tap). Every screen is visible,
+       the current one is dark with a line under it, the row scrolls sideways
+       when it is wider than the phone; Cuenta is the person icon at the
+       header's right. Other roles keep the «Menú» disclosure above. */
+    .adm5-side--tabs{padding:6px 10px 0;}
+    /* The <details> itself is the full-width row: display:contents on it
+       still leaves Chrome's inner content box, which sized the row by its
+       tabs and widened the page by ~100px. */
+    .adm5-side--tabs .adm5-menu{order:2;flex:0 0 auto;width:calc(100% + 20px);min-width:0;margin:0 -10px;}
+    .adm5-side--tabs .adm5-menu>summary{display:none;}
+    .adm5-side--tabs .adm5-menu[open]>.adm5-nav{position:static;display:flex;width:100%;min-width:0;box-sizing:border-box;
+      flex-direction:row;flex-wrap:nowrap;gap:4px;max-height:none;margin:0;padding:0 10px;
+      overflow-x:auto;overflow-y:hidden;background:none;border:0;box-shadow:none;scrollbar-width:none;}
+    .adm5-side--tabs .adm5-nav::-webkit-scrollbar{display:none;}
+    .adm5-side--tabs .adm5-nav-group{display:contents;}
+    .adm5-side--tabs .adm5-nav-group-title{display:none;}
+    /* One word per tab on the phone (Hoy · Turnos · Pacientes · Agendas):
+       the four fit 320px, so the row never scrolls and no tab sits past the
+       edge (audit 08.11); they share the row's width, label centred over its
+       line. A longer translation still scrolls inside the row. The side
+       padding is only a floor (the tabs grow to share the row), kept at 6px
+       so the row has ~30px to spare at 320px: with 10px it fitted by 1px in
+       the panel's own font on macOS and scrolled by 9px where the same
+       words are drawn wider (Linux; a fallback font) (2026-11-10). */
+    .adm5-side--tabs .adm5-nav a{flex:1 0 auto;justify-content:center;white-space:nowrap;min-height:44px;padding:0 6px;border-radius:0;
+      background:none;color:var(--hint-ink,var(--text-2));font-size:15px;box-shadow:inset 0 -2px 0 transparent;}
+    .adm5-side--tabs .adm5-nav a.on{background:none;color:var(--text);font-weight:650;box-shadow:inset 0 -2px 0 var(--text);}
+    .adm5-side--tabs .adm5-nav a.adm5-tab-account{position:absolute;top:6px;right:10px;width:44px;height:44px;
+      padding:0;justify-content:center;border-radius:9px;box-shadow:none;color:var(--text);}
+    .adm5-side--tabs .adm5-nav a.adm5-tab-account.on{background:var(--panel);}
+    .adm5-side--tabs .adm5-tab-icon{display:block;width:24px;height:24px;background:currentColor;
+      -webkit-mask:url(/static/icons/account-sf-regular.svg) center/contain no-repeat;
+      mask:url(/static/icons/account-sf-regular.svg) center/contain no-repeat;}
+    .adm5-side--tabs .adm5-tab-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+    .adm5-side--tabs .adm5-tab-full{display:none;}
+    .adm5-side--tabs .adm5-tab-short{display:inline;}
+    /* A doctor's «Cerrar sesión» closes the Account screen (base.html moves it
+       into <main>): a quiet button on the content's left edge, not a tab. */
+    .adm5-main>.adm-nav-footer{display:flex;margin:8px var(--adm-gutter,16px) 0;}
+    .adm5-main>.adm-nav-footer .adm-2fa-note{display:none;}
+    /* Moved into the menu by base.html at this width: the last menu item. */
+    .adm5-side .adm5-nav>.adm-nav-footer{flex:none;display:block;margin:0;}
+    .adm5-side .adm5-nav .adm-nav-footer-row{margin:0;}
+    .adm5-side .adm5-nav .adm-logout{width:100%;padding:8px 10px;}
+  }
+  .adm5-tab-icon{display:none;}
+  .adm5-tab-short{display:none;}
+  @media(max-width:430px){
+    .adm5-nav-group{grid-template-columns:minmax(0,1fr);}
+  }
+
+/* ---- Admin cleanup (the product owner, 2026-09-15): fewer boxes, one button system, inline filters ----
+   Loaded after every other admin rule and scoped under .adm5-main so it also
+   wins over the CSS strings screen modules inject. */
+:root{--adm-btn-font:14px;--adm-btn-h:36px;--adm-btn-radius:var(--btn-radius,8px);}
+
+/* One button system: primary (filled) · secondary (outlined) · quiet (text only). */
+.adm5-main :is(.btn,.adm-filter-toggle,.cnt-gear-btn){display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  box-sizing:border-box;padding:0 14px;border:1px solid transparent;border-radius:var(--adm-btn-radius);
+  font-family:var(--font);font-size:var(--adm-btn-font);font-weight:500;line-height:1.2;white-space:nowrap;cursor:pointer;}
+/* Height stays low-specificity so a screen's explicit 44px tap target wins. */
+:where(.adm5-main) :where(.btn,.adm-filter-toggle){min-height:var(--adm-btn-h);}
+:where(.adm5-main) :where(.btn.btn-sm){min-height:32px;padding:0 12px;}
+@media(pointer:coarse){.adm5-main :is(.btn,.adm-filter-toggle){min-height:44px;}}
+.adm5-main :is(.btn-ok,.btn-accent){border-color:transparent;}
+.adm5-main :is(.btn-quiet,.adm-filter-toggle,.cnt-gear-btn),
+.adm5-main .btn:not(.btn-ok):not(.btn-accent):not(.btn-no):not(.btn-text){background:transparent;color:var(--text);border-color:var(--border-strong);}
+.adm5-main :is(.btn-quiet,.adm-filter-toggle,.cnt-gear-btn):hover,
+.adm5-main .btn:not(.btn-ok):not(.btn-accent):not(.btn-no):not(.btn-text):hover{background:var(--bg-2);color:var(--text);border-color:var(--border-strong);}
+.adm5-main :is(.btn.on,.adm-filter-toggle.on){background:var(--bg-2);color:var(--text);border-color:var(--text-3);}
+.adm5-main .btn.btn-no{background:transparent;color:var(--rojo);border-color:color-mix(in oklch,var(--danger) 40%,var(--border));}
+.adm5-main .btn.btn-text{background:transparent;border-color:transparent;color:var(--accent);padding-left:4px;padding-right:4px;}
+.adm5-main .btn.btn-text:hover{color:var(--accent-hover,var(--accent));}
+.adm5-main .cnt-gear-btn{padding:0 8px;min-width:var(--adm-btn-h);}
+/* The screens' own secondary buttons ARE the secondary .btn (2026-11-08,
+   R4 «same font size and same design»): Servicios and Médicos «+ Agregar
+   cierre/horario/centro» (.hor-add), Ajustes «+ Agregar feriado», «Probar»,
+   «Quitar» (.set-mini), Mis agendas «+ Agregar horario», «Copiar»
+   (.dw-add-slot, .dw-copy-btn). Before: 44–46px, 15–16px type, 7–8px corners
+   on a filled panel colour beside 36px pills. «Quitar centro» stays text. */
+.adm5-main :is(.hor-add:not(.cnt-remove),.set-mini,.dw-add-slot,.dw-copy-btn,.dw-holidays>summary){display:inline-flex;align-items:center;justify-content:center;gap:6px;
+  box-sizing:border-box;min-height:var(--adm-btn-h);padding:0 14px;border:1px solid var(--border-strong);border-radius:var(--adm-btn-radius);
+  background:transparent;color:var(--text);font-family:var(--font);font-size:var(--adm-btn-font);font-weight:500;line-height:1.2;white-space:nowrap;cursor:pointer;}
+.adm5-main :is(.hor-add:not(.cnt-remove),.set-mini,.dw-add-slot,.dw-copy-btn,.dw-holidays>summary):hover{background:var(--bg-2);color:var(--text);border-color:var(--border-strong);}
+.adm5-main :is(.hor-add:not(.cnt-remove),.set-mini,.dw-add-slot,.dw-copy-btn,.dw-holidays>summary):focus-visible{outline:2px solid var(--focus-border,var(--text));outline-offset:2px;}
+@media(pointer:coarse){.adm5-main :is(.hor-add:not(.cnt-remove),.set-mini,.dw-add-slot,.dw-copy-btn,.dw-holidays>summary){min-height:44px;}}
+.adm5-main .hor-add.cnt-remove{min-height:44px;padding:0;border:0;background:none;font:inherit;font-size:16px;color:var(--hint-ink);}
+.adm5-main .hor-add.cnt-remove:hover{color:var(--rojo);}
+
+/* Filters: label + chevron right after it; the control is as wide as the
+   option it shows. No box at rest; a quiet fill marks an active filter. */
+.adm5-main :is(.adm-filter-fields,.cnt-toolbar-filters,.queue-controls) select.adm-sel{
+  flex:0 0 auto;width:var(--control-fit-width,auto);min-width:0;max-width:100%;min-height:36px;box-sizing:border-box;
+  padding:6px 30px 6px 10px;border:1px solid transparent;border-radius:8px;background-color:transparent;
+  background-position:right 8px center;color:var(--text);font-size:15px;line-height:1.3;}
+.adm5-main :is(.adm-filter-fields,.cnt-toolbar-filters,.queue-controls) select.adm-sel:hover{background-color:var(--bg-2);}
+.adm5-main :is(.adm-filter-fields,.cnt-toolbar-filters,.queue-controls) select.adm-sel:focus-visible{outline:2px solid var(--focus-border,var(--text));outline-offset:1px;}
+.adm5-main :is(.adm-filter-fields,.cnt-toolbar-filters,.queue-controls) select.adm-sel:is(.on,:has(option:checked:not(:first-child))){
+  background-color:var(--bg-2);border-color:transparent;color:var(--text);}
+
+/* One height for every list's search row (2026-11-06): the search, its
+   filters, the column gear and the row's buttons stand 44px at every width,
+   the phone's tap height. Before, the desktop row mixed a 40px search, 36px
+   filters and buttons and the 44px gear; Pacientes had fixed it on its own.
+   The rows: Solicitudes' band, the queue, every .cnt-toolbar (catalog,
+   Pacientes, Usuarios, Entrevistas, Roles), Mis pacientes' band, the doctor
+   calendar and the wiki. Height, not min-height: a 20px .cnt-in search
+   (Pacientes, Mis pacientes) would otherwise stand 48; its type is the
+   16px of every other list search. */
+:root{--adm-row-h:44px;}
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) :is(input[type=search],select.adm-sel){
+  height:var(--adm-row-h);min-height:var(--adm-row-h);box-sizing:border-box;padding-top:0;padding-bottom:0;}
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) input[type=search]{font-size:16px;}
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) :is(.btn,.cnt-gear-btn){min-height:var(--adm-row-h);}
+
+/* Row selection: a normal checkbox on the left edge of its own 44px column. */
+.adm5-main input[type=checkbox]:not([role=switch]){width:18px;height:18px;min-height:0;margin:0;padding:0;accent-color:var(--text);flex:none;}
+.adm5-main .sol-ck-hit{display:flex;align-items:center;justify-content:flex-start;align-self:stretch;}
+
+/* Fewer bounding boxes: summary tiles and cards sit on the page. The title
+   band stays OPAQUE (2026-09-15 regression fix): `.adm-topbar` is
+   `position:sticky;top:0`, so on a scrolled screen a transparent background
+   lets whatever scrolled up behind it (a doctor's own name/specialty line on
+   /admin/cola, for one) show straight through and overlap the title text.
+   Shadow still goes; desde 2026-09-16 la barra es full-bleed y le queda el
+   hairline inferior de la regla base (pegada al techo, la separación la
+   marca esa línea, no una sombra). */
+.adm5-main :is(.rep-sumcard,.pr-card,.sis-card,.set-card,.lg-card){border:0;border-radius:0;box-shadow:none;background:transparent;padding-left:0;padding-right:0;}
+.adm5-main .adm-topbar{box-shadow:none;}
+
+/* Filter collapse on the phone (2026-09-15): every filter row reduces to
+   search + ONE 44px icon button carrying the active-filter count; the
+   selects come back only while the row carries .filters-open (toggled by
+   admin-control-fit.mjs; Solicitudes' #adm-filter-toggle already does it via
+   admin-app.js). Above 640px none of this applies — filters stay inline and
+   the toggle is display:none, rótulo incluido. The .adm5-main scope also
+   rides over the grids admin-content.mjs injects at ≤1024/≤520 and over
+   admin-queue.css's full-width stack at ≤640. */
+.adm5-main .adm-filter-toggle .adm-filter-icon{display:block;flex:none;width:18px;height:18px;background:currentColor;-webkit-mask:url(/static/icons/filter-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/filter-sf-regular.svg) center/contain no-repeat;}
+@media(min-width:641px){
+  .adm5-main .adm-filter-toggle,.adm5-main #adm-filter-toggle{display:none;}
+  /* admin-solicitudes.mjs inyecta «#sec-solicitudes .adm-filter-toggle»
+     DESPUÉS de este <link> (misma especificidad 1-1-0: gana el orden) — sin
+     este doble electoral el botón de Solicitudes seguiría viéndose arriba de
+     640px. */
+  .adm5-main #adm-filter-toggle.adm-filter-toggle{display:none;}
+}
+@media(max-width:640px){
+  .adm5-main .adm-filter-toggle,.adm5-main #adm-filter-toggle{width:44px;min-width:44px;height:44px;min-height:44px;padding:0;flex:0 0 44px;position:relative;}
+  /* Misma carrera de cascada que arriba: el #id inyectado pisa padding y
+     min-height con empate 1-1-0; el doble de clases define el botón de 44. */
+  .adm5-main #adm-filter-toggle.adm-filter-toggle{width:44px;min-width:44px;height:44px;min-height:44px;padding:0;flex:0 0 44px;position:relative;}
+  /* Solicitudes: the selects live in their own .adm-filter-fields inside #tools. */
+  .adm5-main #tools:not(.filters-open) .adm-filter-fields{display:none;}
+  /* Catalog and queue rows: the selects ARE the collapsible payload. */
+  .adm5-main :is(.cnt-toolbar-filters,.queue-controls):not(.filters-open) select.adm-sel:not(.adm-picker){display:none;}
+  /* The row goes back to flex (below the module grids) so search + toggle
+     share one line; the date nav and gear keep their own full-width rules. */
+  .adm5-main :is(.cnt-toolbar-filters,.queue-controls),
+  .adm5-main .cnt-toolbar-filters:has(#pac-q){display:flex;flex-wrap:wrap;gap:8px;align-items:center;width:100%;grid-template-columns:none;}
+  .adm5-main :is(.cnt-toolbar-filters,.queue-controls) :is(input[type=search],.cnt-search,.adm-search),
+  .adm5-main .cnt-toolbar-filters:has(#pac-q) #pac-q{flex:1 1 auto;min-width:0;width:auto;box-sizing:border-box;grid-column:auto;}
+  /* Open: each select returns as an inline item with its measured width. */
+  .adm5-main :is(.cnt-toolbar-filters,.queue-controls).filters-open select.adm-sel,
+  .adm5-main .cnt-toolbar-filters:has(#pac-q).filters-open select.adm-sel{flex:0 1 auto;width:var(--control-fit-width,auto);min-width:0;max-width:100%;}
+}
+/* A row whose filters are all hidden (a short list — FILTER_MIN_ROWS in
+   admin-filter-controls.mjs — or one value each) has nothing to open: no
+   «Filtros» toggle either. */
+.adm5-main :is(.cnt-toolbar-filters,.queue-controls):not(:has(select.adm-sel:not([hidden]))) [data-filter-toggle]{display:none;}
+/* Buttons whose layout caps them at the column width wrap their label
+   instead of spilling past it (doctor account link/create actions). */
+.adm5-main :is(.doctor-user-actions,.doctor-user-link-actions) .btn{white-space:normal;text-align:center;line-height:1.3;padding-block:6px;}
+/* The doctor account's action pills wrap onto further lines at phone width:
+   the phone rule that keeps .cnt-actions on one row is for Guardar + danger.
+   At 390px «Restablecer contraseña» and «Restablecer 2FA» share the first line
+   (blind review 05.11: a one-per-line column read worse). */
+.doctor-user-actions.cnt-actions{flex-wrap:wrap;}
+/* The account's buttons are the panel's buttons (audit 2026-11-05): the
+   shared height, 44px on touch — not the catalog form's 48px Guardar. */
+.adm5-main .doctor-user-actions.cnt-actions .btn{min-height:var(--adm-btn-h);}
+@media(pointer:coarse){.adm5-main .doctor-user-actions.cnt-actions .btn{min-height:44px;}}
+/* «Cambiar la dirección del calendario» confirming: its line and its two
+   answers take a whole line of their own under the other actions, like the
+   doctor's own confirm in Mis turnos (.mt-cal-rotate). */
+.doctor-user-cal-rotate.is-confirming{flex:0 0 100%;display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.doctor-user-cal-rotate.is-confirming p{flex:0 0 100%;margin:0;color:var(--text);}
+/* The action column is sized max-content by default (docs/architecture line
+   ~613-621), which never shrinks below its own intrinsic width even when the
+   grid container is narrower — the button then spills past the viewport at
+   in-between widths like 768px. Letting the track's floor go to 0 keeps the
+   two-column layout but lets it actually shrink under a tight container.
+   Scoped to the SAME >700px container width the existing @container query
+   already reserves for the two-column layout, so the ≤700px stacked
+   single-column rule (admin-direct.css ~633) still wins on the phone. */
+@container(min-width:700.01px){
+  .adm5-main .doctor-user-link-form{grid-template-columns:max-content minmax(0,max-content);}
+}
+/* Account creation has several fields; each needs the full form row instead
+   of occupying the action track of the single-field linking layout. */
+.doctor-user-host #doctor-user-create-form{grid-template-columns:minmax(0,1fr);}
+.doctor-user-host #doctor-user-create-form .doctor-user-link-actions{margin-left:166px;}
+@container(max-width:480px){
+  .doctor-user-host #doctor-user-create-form .doctor-user-link-actions{margin-left:0;}
+}
+/* Roles reuse the catalog form and table controls. */
+#sec-roles .roles-fields{border:0;padding:0;margin:0;min-width:0}
+#sec-roles .cnt-row>label,#sec-roles .cnt-row>span{color:var(--text);font-size:16px}
+#sec-roles textarea{width:46ch;min-height:80px}
+#sec-roles .roles-permissions{display:grid;gap:12px;min-width:0}
+#sec-roles .cnt-check{align-items:flex-start;min-height:44px;gap:10px}
+#sec-roles .cnt-check span{min-width:0;text-wrap:pretty}
+#sec-roles .cnt-check input{flex-shrink:0;margin-top:5px}
+#sec-roles input,#sec-roles textarea{font-size:16px;max-width:100%;box-sizing:border-box}
+#sec-roles .cnt-table td{overflow-wrap:anywhere}
+/* A switched-off role says so after its name; the «Activo» column of «Sí»
+   in every row is gone (the product owner, 02.11: what repeats goes outside the brackets). */
+#sec-roles .roles-off{color:var(--hint-ink,var(--text-2));margin-left:.5em}
+#roles-status{color:var(--text)}
+
+/* ---- One screen header (the product owner, 2026-11-08: «a giant header where things do
+   not fit their lines and wrap onto new ones … move it right, on the title's
+   own line … then the search and those buttons: not round, just the icon,
+   the shape only on hover»). One rule for every panel screen; Pacientes de
+   hoy (/admin/cola) keeps the same look in admin-queue.css.
+   1. The screen's create action (.adm-title-action) sits at the right end of
+      the title's own line at every width; the title takes what is left and
+      wraps inside it, never the button. The screen's icon actions go there
+      too, before it.
+   2. A list row's icon actions (columns, download, invite, import…) and the
+      phone's filter toggle are a bare 20px icon in a 44px target: no frame at
+      rest; frame and fill on hover, keyboard focus, or while what it opens is
+      open or it is pressed.
+   3. The search has no frame at rest either: a magnifier on its left, the
+      frame on hover, focus or once it holds text.
+   4. On a phone the list row is one line: the search takes the room left,
+      the icons keep theirs. */
+.adm-h1row>.adm-title-action{flex:0 0 auto;margin-left:auto;white-space:nowrap;}
+.adm-h1row>.adm-title-action~.adm-title-action,
+.adm-h1row>.adm-title-action~.alert-bell-wrap{margin-left:0;}
+/* The title never gets narrower than its longest word: when the actions and
+   the triage bell do not all fit beside it (a 360px phone with a red alert),
+   the bell goes to the next line instead of squeezing the title to 46px. */
+.adm-h1row>.adm-h1:has(~ .adm-title-action){flex:1 1 0;min-width:min-content;}
+#adm-h1[style*="none"] ~ .adm-title-action{display:none;}
+.adm5-main .adm-h1row>.btn.adm-title-action{min-height:44px;}
+/* The title's line is as tall on a screen without actions as on one with a
+   44px button: the content does not jump when moving between screens. */
+.adm5-main .adm-h1row{box-sizing:border-box;min-height:60px;}
+/* Bare only in the search's own row (the product owner, 2026-11-09: «without a backing I
+   asked only for the ones that come after the search, not all of them»): the
+   icons of the title's line (Ver turnos de hoy, Agregar a mi calendario,
+   Invitar médico, Cargar lista) and of any other row (Recorrido's «Elegir
+   pasos») keep the panel's outlined button, 44px square. */
+.adm5-main :is(.cnt-gear-btn,.adm-filter-toggle){width:44px;min-width:44px;height:44px;padding:0;color:var(--text);}
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) :is(.cnt-gear-btn,.adm-filter-toggle){border-color:transparent;background:transparent;}
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) :is(.cnt-gear-btn,.adm-filter-toggle):is(:hover,:focus-visible,[aria-expanded="true"],[aria-pressed="true"],.on){border-color:var(--border-strong);background:var(--bg-2);color:var(--text);}
+.adm5-main :is(.cnt-gear-btn,.adm-filter-toggle):is([aria-expanded="true"],[aria-pressed="true"],.on){background:var(--bg-2);}
+.adm5-main .cnt-gear-btn .adm-icon,.adm5-main .adm-filter-toggle .adm-filter-icon{width:20px;height:20px;}
+.cnt-gear-btn .adm-icon.adm-icon-today{-webkit-mask-image:url(/static/icons/today-sf-regular.svg);mask-image:url(/static/icons/today-sf-regular.svg);}
+.cnt-gear-btn .adm-icon.adm-icon-calendar-plus{-webkit-mask-image:url(/static/icons/calendar-plus-sf-regular.svg);mask-image:url(/static/icons/calendar-plus-sf-regular.svg);}
+.cnt-gear-btn .adm-icon.adm-icon-invite{-webkit-mask-image:url(/static/icons/email-sf-regular.svg);mask-image:url(/static/icons/email-sf-regular.svg);}
+.cnt-gear-btn .adm-icon.adm-icon-import{-webkit-mask-image:url(/static/icons/add-list-sf-regular.svg);mask-image:url(/static/icons/add-list-sf-regular.svg);}
+.cnt-gear-btn .adm-icon.adm-icon-folder-add{-webkit-mask-image:url(/static/icons/add-folder-sf-regular.svg);mask-image:url(/static/icons/add-folder-sf-regular.svg);}
+.cnt-gear-btn .adm-icon.adm-icon-chat{-webkit-mask-image:url(/static/icons/chat-sf-regular.svg);mask-image:url(/static/icons/chat-sf-regular.svg);}
+/* Every list's search (one rule, the queue included) is its magnifier and its
+   words: the magnifier stands on the screen's left edge, under the title's
+   first letter, the words 30px after it (the product owner: one left edge). The frame that
+   shows on hover, focus and while it holds words opens --adm-search-out
+   OUTSIDE that edge (negative margin, 1px border + 10px inset), so the
+   magnifier and the words never move. */
+:root{--adm-search-out:11px;}
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) input[type=search]{margin-left:calc(-1 * var(--adm-search-out));padding-left:40px;border-color:transparent;background:transparent url(/static/icons/search-sf-regular.svg) 10px center/20px 20px no-repeat;}
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) input[type=search]:is(:hover,:focus,:not(:placeholder-shown)){border-color:var(--border-strong);background-color:var(--panel);}
+.adm5-main :is(.adm-band,.cnt-toolbar,.medcal-filters,.kn-toolbar) input[type=search]::placeholder{color:var(--text-2);opacity:1;}
+/* An empty search gives its placeholder the clear button's place: Chrome keeps
+   that place even with nothing to clear, and on a 320px phone it is what cut
+   the placeholder (test/admin-search-placeholder-fit.test.mjs). */
+.adm5-main :is(.adm-band,.cnt-toolbar,.queue-controls,.medcal-filters,.kn-toolbar) input[type=search]:placeholder-shown::-webkit-search-cancel-button{display:none;}
+.adm5-main .cnt-toolbar-right{gap:4px;}
+.adm5-main .kn-toolbar{flex-wrap:nowrap;gap:4px;}
+.adm5-main .kn-toolbar .kn-search{flex:1 1 0;min-width:0;}
+@media(max-width:640px){
+  .adm5-main .cnt-toolbar:not(:has(.med-bulk:not([hidden]))){flex-wrap:nowrap;align-items:flex-start;gap:4px;}
+  .adm5-main .cnt-toolbar:not(:has(.med-bulk:not([hidden])))>.cnt-toolbar-filters{flex:1 1 0;min-width:0;width:auto;}
+  .adm5-main .cnt-toolbar:not(:has(.med-bulk:not([hidden])))>.cnt-toolbar-right{flex:0 0 auto;flex-wrap:nowrap;width:auto;display:flex;}
+  /* The filter toggle stays beside the search until the filters are open. */
+  .adm5-main .cnt-toolbar>.cnt-toolbar-filters:not(.filters-open){flex-wrap:nowrap;gap:4px;}
+  .adm5-main .cnt-toolbar>.cnt-toolbar-filters:not(.filters-open)>.cnt-search{flex:1 1 0;min-width:0;}
+}
+
+/* One overlay card for an appointment or a request (2026-11-09): the queue's
+   turno card and the request a doctor's calendar opens read these rules, no
+   screen keeps its own copy. 760 wide; beside a referral it widens so the
+   paper is read large (document 1fr, what was read from it 340 px beside it),
+   one column under 800 px. */
+.solmod-back{position:fixed;inset:0;z-index:80;background:rgba(14,20,16,.45);display:flex;align-items:center;justify-content:center;padding:20px;}
+.solmod{background:var(--panel);border-radius:14px;box-shadow:0 24px 60px -20px rgba(0,0,0,.5);max-width:min(760px,94vw);width:100%;max-height:88vh;overflow:auto;padding:18px 20px;}
+.solmod:has(.solmod-body:not(.solmod-body--solo)){max-width:min(1200px,94vw);}
+.solmod-head{display:flex;align-items:center;gap:10px;font-size:14.5px;}
+.solmod-x{margin:-10px -12px -10px auto;}
+.solmod-svc{margin:4px 0 12px;font-size:13px;color:var(--text);font-weight:600;}
+.solmod-body{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px;}
+.solmod-body--solo{grid-template-columns:1fr;}
+@media(max-width:800px){.solmod-body{grid-template-columns:1fr;}}
+.solmod-label{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:normal;color:var(--hint-ink,var(--text-3));}
+.solmod-row{display:flex;gap:8px;font-size:13px;padding:2px 0;align-items:baseline;}
+.solmod-k{color:var(--hint-ink,var(--text-2));width:96px;flex-shrink:0;font-size:13px;}
+.solmod-v{color:var(--text);word-break:break-word;}
+.solmod-orden{display:block;width:100%;max-height:78vh;object-fit:contain;border:1px solid var(--border);border-radius:9px;background:var(--bg-2);}
+embed.solmod-orden{height:78vh;}
+.solmod-orden-link{display:block;cursor:zoom-in;}
+/* The late-load copy of the shared loader (static/platform/screen-boot.mjs), placed right
+   before a screen still loading past eight seconds: one row, readable, a full-size button. */
+.screen-load-slow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 16px;font-size:16px;color:var(--text);}
+.screen-load-late-text{margin:0;font-size:16px;color:var(--text);}
+.screen-load-slow [data-retry]{min-height:44px;min-width:44px;font-size:16px;}

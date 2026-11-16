@@ -1,0 +1,27 @@
+{
+  "name": "usability-kit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Shared usability testing: preflight checks, simulated participants, findings store and the admin panel",
+  "main": "src/index.js",
+  "bin": {
+    "usability-kit": "bin/usability-kit.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "test:py": "python3 -m pytest -q python/tests",
+    "dev": "node bin/serve-demo.js",
+    "ci": "bash scripts/ci-local.sh"
+  },
+  "optionalDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@browserbasehq/stagehand": "^3.7.1",
+    "html-validate": "^10.0.0",
+    "lighthouse": "^12.8.2",
+    "playwright": "^1.63.0"
+  },
+  "license": "UNLICENSED"
+}

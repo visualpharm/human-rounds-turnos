@@ -1,0 +1,97 @@
+{#
+  templates/admin/agenda-print.html — one doctor's day as HSI prints it
+  («Turnos programados»): GET /admin/cola/print
+  (admin_panel/admin_agenda_print_screen.py, data from
+  modules/turnos/agenda_print.py). Stands alone: no admin shell, so only the
+  sheet reaches the paper. On screen a bar with «Imprimir» sits above the
+  sheet; @media print drops it. An unknown field is an empty cell.
+#}<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if sheet %}{{ t('admin.queue.print.title', 'Turnos programados') }} · {{ sheet.profesional }} · {{ sheet.fecha_consultada }}{% else %}{{ t('admin.queue.print.title', 'Turnos programados') }}{% endif %}</title>
+<style>
+@page { size: A4 landscape; margin: 12mm 10mm; }
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#eef1f4;}
+body{font-family:Arial,Helvetica,sans-serif;color:#111;text-wrap:pretty;}
+.print-bar{position:sticky;top:0;z-index:9;display:flex;justify-content:flex-end;padding:10px 16px;background:#eef1f4;}
+.print-bar button{font:600 16px Arial,Helvetica,sans-serif;padding:10px 20px;border:0;border-radius:8px;background:#0b2231;color:#fff;cursor:pointer;}
+.sheet{width:297mm;max-width:100%;margin:0 auto 40px;padding:12mm 10mm;background:#fff;box-shadow:0 4px 24px rgba(0,0,0,.12);}
+h1{font-size:20px;margin:0 0 10px;}
+.head{display:grid;grid-template-columns:max-content 1fr;gap:4px 12px;margin:0 0 18px;font-size:15px;}
+.head dt{font-weight:700;}
+.head dd{margin:0;}
+h2{font-size:16px;margin:18px 0 6px;}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead{display:table-header-group;}
+th,td{text-align:left;vertical-align:top;padding:5px 6px;border-bottom:1px solid #c9cfd6;}
+th{font-weight:700;border-bottom:2px solid #111;}
+tr{break-inside:avoid;}
+td.time{font-weight:700;white-space:nowrap;}
+td.nowrap{white-space:nowrap;}
+.notice{font-size:16px;margin:0;}
+@media print{
+  html,body{background:#fff;}
+  .print-bar{display:none;}
+  .sheet{width:auto;margin:0;padding:0;box-shadow:none;}
+  table{font-size:10pt;}
+  .head{font-size:11pt;}
+}
+@media (max-width:700px){
+  .sheet{padding:16px;}
+  .sheet-scroll{overflow-x:auto;}
+}
+</style>
+</head>
+<body>
+{% if sheet %}<div class="print-bar"><button type="button" onclick="window.print()">{{ t('admin.queue.print.print', 'Imprimir') }}</button></div>{% endif %}
+<main class="sheet">
+{% if sheet %}
+<h1>{{ t('admin.queue.print.title', 'Turnos programados') }}</h1>
+<dl class="head">
+  <dt>{{ t('admin.queue.print.professional', 'Nombre del profesional') }}</dt><dd>{{ sheet.profesional }}</dd>
+  <dt>{{ t('admin.queue.print.date_asked', 'Fecha consultada') }}</dt><dd>{{ sheet.fecha_consultada }}</dd>
+  <dt>{{ t('admin.queue.print.printed_at', 'Fecha y horario de impresión') }}</dt><dd>{{ sheet.impreso }}</dd>
+</dl>
+{% for bloque in sheet.bloques %}
+<section class="block">
+<h2>{{ bloque.titulo }}</h2>
+<div class="sheet-scroll"><table>
+<thead><tr>
+  <th>{{ t('admin.queue.print.col.time', 'Hora') }}</th>
+  <th>{{ t('admin.queue.print.col.hsi_id', 'ID Paciente') }}</th>
+  <th>{{ t('admin.queue.print.col.document', 'Documento') }}</th>
+  <th>{{ t('admin.queue.print.col.first_names', 'Nombres') }}</th>
+  <th>{{ t('admin.queue.print.col.last_names', 'Apellidos') }}</th>
+  <th>{{ t('admin.queue.print.col.coverage', 'Cobertura médica') }}</th>
+  <th>{{ t('admin.queue.print.col.credential', 'Nro. de credencial') }}</th>
+  <th>{{ t('admin.queue.print.col.phone', 'Teléfono') }}</th>
+  <th>{{ t('admin.queue.print.col.state', 'Estado del turno') }}</th>
+</tr></thead>
+<tbody>
+{% for f in bloque.filas %}<tr>
+  <td class="time">{{ f.hora }}</td>
+  <td class="nowrap">{{ f.hsi_id }}</td>
+  <td class="nowrap">{{ f.documento }}</td>
+  <td>{{ f.nombres }}</td>
+  <td>{{ f.apellidos }}</td>
+  <td>{{ f.cobertura }}</td>
+  <td class="nowrap">{{ f.credencial }}</td>
+  <td class="nowrap">{{ f.telefono }}</td>
+  <td>{{ f.estado }}</td>
+</tr>{% endfor %}
+</tbody>
+</table></div>
+</section>
+{% else %}
+<p class="notice">{{ t('admin.queue.print.empty', 'No hay turnos para este día.') }}</p>
+{% endfor %}
+{% else %}
+<p class="notice" role="alert">{{ notice }}</p>
+{% endif %}
+</main>
+{% if sheet and auto %}<script>window.addEventListener("load", function () { window.print(); });</script>{% endif %}
+</body>
+</html>

@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "usability-kit/findings-store.v1.json",
+  "title": "Findings store v1",
+  "description": "One record per usability problem across runs: findings keyed by check|page|signature, the runs that produced them, and simulated-participant sessions. Directory layout: store.json + evidence/<finding id>/*.png|jpg + runs/<run id>/report.json.",
+  "type": "object",
+  "required": ["schema", "version", "findings", "runs", "sessions"],
+  "properties": {
+    "schema": { "const": "usability-kit/findings-store" },
+    "version": { "const": 1 },
+    "project": { "type": ["string", "null"] },
+    "updated_at": { "type": ["string", "null"], "format": "date-time" },
+    "findings": { "type": "array", "items": { "$ref": "#/definitions/finding" } },
+    "runs": { "type": "array", "items": { "$ref": "#/definitions/run" } },
+    "sessions": { "type": "array", "items": { "$ref": "#/definitions/session" } }
+  },
+  "definitions": {
+    "iso": { "type": ["string", "null"] },
+    "severity": { "enum": ["critical", "serious", "moderate", "minor"] },
+    "finding": {
+      "type": "object",
+      "required": ["id", "key", "kind", "scope", "source", "severity", "title", "status", "pages", "viewports", "rating", "fixed_at", "fix_note", "participants_hit", "participants_ran", "first_seen", "last_seen", "occurrences"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^fnd_[a-f0-9]{12}$" },
+        "key": { "type": "string", "pattern": "^[^|]*\\|[^|]*\\|[^|]*$" },
+        "kind": { "enum": ["bug", "design"] },
+        "scope": { "enum": ["product", "lab"] },
+        "source": { "enum": ["preflight", "simulated", "human"] },
+        "check": { "type": ["string", "null"] },
+        "severity": { "$ref": "#/definitions/severity" },
+        "title": { "type": "string", "minLength": 1 },
+        "detail": { "type": ["string", "null"] },
+        "pages": { "type": "array", "items": { "type": "string", "pattern": "^/" } },
+        "viewports": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "rating": { "type": ["integer", "null"], "enum": [null, 0, 1, 2, 3] },
+        "status": { "enum": ["open", "fixed", "confirmed", "failing"] },
+        "fixed_at": { "$ref": "#/definitions/iso" },
+        "fix_note": { "type": ["string", "null"] },
+        "participants_hit": { "type": "integer", "minimum": 0 },
+        "participants_ran": { "type": "integer", "minimum": 0 },
+        "suggested_fix": { "type": ["string", "null"] },
+        "first_seen": { "$ref": "#/definitions/iso" },
+        "last_seen": { "$ref": "#/definitions/iso" },
+        "occurrences": { "type": "array", "items": { "$ref": "#/definitions/occurrence" } }
+      }
+    },
+    "occurrence": {
+      "type": "object",
+      "required": ["run_id", "at", "page", "viewport", "participant", "quote", "evidence"],
+      "properties": {
+        "run_id": { "type": "string", "pattern": "^run_[a-f0-9]{12}$" },
+        "at": { "$ref": "#/definitions/iso" },
+        "page": { "type": ["string", "null"] },
+        "viewport": { "type": ["integer", "null"] },
+        "participant": { "type": ["string", "null"] },
+        "quote": { "type": ["string", "null"] },
+        "evidence": {
+          "type": "object",
+          "required": ["before", "after"],
+          "properties": {
+            "before": { "type": ["string", "null"] },
+            "after": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "run": {
+      "type": "object",
+      "required": ["id", "kind", "status", "requested_by", "requested_at"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^run_[a-f0-9]{12}$" },
+        "kind": { "enum": ["preflight", "study"] },
+        "status": { "enum": ["queued", "running", "done", "failed"] },
+        "requested_by": { "type": "string" },
+        "requested_at": { "$ref": "#/definitions/iso" },
+        "started_at": { "$ref": "#/definitions/iso" },
+        "finished_at": { "$ref": "#/definitions/iso" },
+        "base_url": { "type": ["string", "null"] },
+        "summary": {
+          "type": ["object", "null"],
+          "properties": {
+            "critical": { "type": "integer", "minimum": 0 },
+            "serious": { "type": "integer", "minimum": 0 },
+            "moderate": { "type": "integer", "minimum": 0 },
+            "minor": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "error": { "type": ["string", "null"] },
+        "ingested_at": { "$ref": "#/definitions/iso" }
+      }
+    },
+    "session": {
+      "type": "object",
+      "required": ["id", "run_id", "persona", "task", "outcome", "steps", "at"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^ses_[a-f0-9]{12}$" },
+        "run_id": { "type": ["string", "null"] },
+        "persona": { "type": "string" },
+        "task": { "type": ["string", "null"] },
+        "outcome": { "enum": ["success", "fail", "abandon"] },
+        "steps": { "type": "integer", "minimum": 0 },
+        "at": { "$ref": "#/definitions/iso" },
+        "summary": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

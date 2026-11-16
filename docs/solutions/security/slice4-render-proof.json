@@ -1,0 +1,88 @@
+{
+  "baseline_commit": "f09fe7e3b21de9de042c304389e7f303f0c835d0",
+  "asset_deltas": [
+    {
+      "name": "platform/calendar-grid.mjs",
+      "current_url": "/static/platform/calendar-grid.019573bd.mjs",
+      "prior_url": "/static/platform/calendar-grid.d0654bc9.mjs"
+    }
+  ],
+  "locale_additions": [
+    "booking.error.horizon_detail",
+    "booking.error.horizon_action"
+  ],
+  "renders": [
+    {
+      "path": "/account",
+      "lang": "es",
+      "sha256": "e3aebd8212b9a552ebf6eaf387bbff753b5cbeccb73670e5a0926deb50efa854",
+      "prior_sha256": "166730958044c942b4ad683f1564617ed8f0df457144de05826ef96780cabec9",
+      "reversed_sha256": "166730958044c942b4ad683f1564617ed8f0df457144de05826ef96780cabec9",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account/reset",
+      "lang": "es",
+      "sha256": "e4a347d944cc70aa9e82edf2296b8ebe803728cf496197f366500cf66d198fc4",
+      "prior_sha256": "b6fc3a33a1d1cdcad5b0f7ce0b84ddff8163fb71d4c7d7f27a9a04e3e6f9af83",
+      "reversed_sha256": "b6fc3a33a1d1cdcad5b0f7ce0b84ddff8163fb71d4c7d7f27a9a04e3e6f9af83",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/test",
+      "lang": "es",
+      "sha256": "635e74ca3b6faca2403641568a73079f20ec35c41acb69b0d837761f5760371b",
+      "prior_sha256": "9e6e043358d7726ebb217cbbeb9935e4d7d433e3eea6be5886dd126a752888ff",
+      "reversed_sha256": "9e6e043358d7726ebb217cbbeb9935e4d7d433e3eea6be5886dd126a752888ff",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/sso",
+      "lang": "es",
+      "sha256": "d05c6e61bd2c415fbbad037ee0dbb6539a716c9144aa321492d94530c8b2a954",
+      "prior_sha256": "268d073b22f63566053d5e51b8489fc35d205e75ab473ae709ea5fda74743143",
+      "reversed_sha256": "268d073b22f63566053d5e51b8489fc35d205e75ab473ae709ea5fda74743143",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account",
+      "lang": "en",
+      "sha256": "95410cc01ca3f52838c9011d690d9a7dc0f00c51adf6451c356f38a8f2d53309",
+      "prior_sha256": "96d085b6f79d6ebc5c8c52baad46ededb6c53a8f5505c1268914c91f6c9bdec0",
+      "reversed_sha256": "96d085b6f79d6ebc5c8c52baad46ededb6c53a8f5505c1268914c91f6c9bdec0",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account/reset",
+      "lang": "en",
+      "sha256": "afe2379c7f38e066bae1fe391323569b9a9c0db4fe370663502e68d87edbcaa8",
+      "prior_sha256": "6e265661ee76752563a2e127d0b91df60b04e0881cc971123fcace66be1dc564",
+      "reversed_sha256": "6e265661ee76752563a2e127d0b91df60b04e0881cc971123fcace66be1dc564",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/test",
+      "lang": "en",
+      "sha256": "8ea55fc2175476f73a1a64e37746cd28351ecd8001ff566145f3e547e5f745d1",
+      "prior_sha256": "8fd9c5d57efd8d191f75b1db11f10e4dda5c564b3ab97137dd5ee9d42ccbf841",
+      "reversed_sha256": "8fd9c5d57efd8d191f75b1db11f10e4dda5c564b3ab97137dd5ee9d42ccbf841",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/auth/sso",
+      "lang": "en",
+      "sha256": "b31e60882017a17aeb37e70ce296de19b1d5347679f78b86b8cb977e03091330",
+      "prior_sha256": "24bf77f9509bef81e25f5f43f9ca2470c56290cce8e56e51c6b3a53902a45f0d",
+      "reversed_sha256": "24bf77f9509bef81e25f5f43f9ca2470c56290cce8e56e51c6b3a53902a45f0d",
+      "unexpected_byte_rejected": true
+    },
+    {
+      "path": "/account",
+      "lang": "anonymous",
+      "sha256": "e3aebd8212b9a552ebf6eaf387bbff753b5cbeccb73670e5a0926deb50efa854",
+      "prior_sha256": "166730958044c942b4ad683f1564617ed8f0df457144de05826ef96780cabec9",
+      "reversed_sha256": "166730958044c942b4ad683f1564617ed8f0df457144de05826ef96780cabec9",
+      "unexpected_byte_rejected": true
+    }
+  ]
+}

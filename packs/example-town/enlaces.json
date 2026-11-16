@@ -1,0 +1,106 @@
+{
+  "enlaces": [
+    {
+      "id": "telemedicina",
+      "nombre": "Telemedicina",
+      "descripcion": "Consulta médica desde tu casa, las 24 horas.",
+      "href": "/telemedicine",
+      "accion_texto": "Consultá por telemedicina",
+      "accion_href": "/telemedicine",
+      "disponibilidad": "24 horas",
+      "palabras": [
+        "telemedicina", "videoconsulta", "consulta virtual", "médico online",
+        "videollamada", "video llamada", "teleconsulta", "consulta online",
+        "consulta por videollamada", "atención desde casa", "consulta a distancia",
+        "fiebre", "tos", "mocos", "resfrío", "resfriado", "gripe", "angina",
+        "dolor de garganta", "sarpullido", "granos", "reacción en la piel",
+        "picadura", "receta", "dolor de cabeza"
+      ],
+      "palabras_excluidas": ["cáncer", "oncología", "oncológico", "tumor"],
+      "pagina": {
+        "lede": "Una consulta por videollamada con un médico generalista, las 24 horas, desde el celular o la computadora.",
+        "quien": "Para cualquier vecino de Sampleton, con o sin obra social.",
+        "costo": "No tiene costo.",
+        "para": [
+          "Fiebre, tos, mocos o resfrío",
+          "Dudas de salud que no son urgentes",
+          "Renovar una receta"
+        ],
+        "no_para": [
+          "Dolor fuerte en el pecho, falta de aire, desmayo u otros síntomas graves",
+          "Situaciones que necesitan examen físico, estudios o un procedimiento",
+          "Emergencias o accidentes"
+        ],
+        "cta_nota": "Necesitás conexión a internet, cámara y micrófono."
+      }
+    },
+    {
+      "id": "zoonosis",
+      "nombre": "Zoonosis",
+      "descripcion": "Castración, vacunación antirrábica y tenencia responsable de mascotas.",
+      "href": "/zoonosis",
+      "accion_texto": "Coordiná por WhatsApp",
+      "accion_href": "https://wa.me/5491140000006",
+      "palabras": [
+        "zoonosis", "antirrábica", "antirrabia", "vacuna antirrábica",
+        "castración", "esterilización", "chip", "chipear",
+        "tenencia responsable", "mascota", "perro", "gato"
+      ],
+      "pagina": {
+        "lede": "El Centro de Salud Animal y Zoonosis Municipal de Sampleton.",
+        "servicios": [
+          "Castración y esterilización",
+          "Vacunación antirrábica",
+          "Consultas sobre tenencia responsable de mascotas"
+        ],
+        "castracion": [
+          "Castrar evita camadas no planificadas y reduce el abandono.",
+          "Si cuidás un animal de la calle y no podés trasladarlo con seguridad, consultá si pueden coordinar una jaula trampa.",
+          "Pedí por WhatsApp los requisitos, la preparación y el próximo turno disponible."
+        ],
+        "roedores": [
+          "Guardá alimentos, agua y residuos en recipientes cerrados.",
+          "Tapá huecos y mantené patios, galpones y depósitos sin maleza ni objetos acumulados.",
+          "No barras excrementos en seco: ventilá, humedecé con desinfectante y usá guantes."
+        ],
+        "mordedura": "Lavá la herida con abundante agua y jabón y consultá hoy mismo en un centro de salud.",
+        "nota": "Los turnos y la disponibilidad de jaulas trampa se coordinan directamente con Zoonosis, no por este portal.",
+        "whatsapp": "(011) 15-4000-0006",
+        "telefono": "(011) 4000-0007",
+        "direccion": "Boulevard Municipal 120",
+        "enlaces_oficiales": [
+          {"texto": "Castración y esterilización", "href": "https://sampleton.example/castracionzoonosis/"},
+          {"texto": "Vacunación antirrábica", "href": "https://sampleton.example/zoonosisantirrabica/"}
+        ]
+      }
+    },
+    {
+      "id": "donar-sangre",
+      "nombre": "Donar sangre",
+      "descripcion": "Sumate como donante en el Sampleton Hospital.",
+      "href": "/blood-donation",
+      "accion_texto": "Coordiná tu donación",
+      "accion_href": "tel:+541140000001",
+      "palabras": [
+        "donar sangre", "donación de sangre", "donante", "hemoterapia", "banco de sangre"
+      ],
+      "pagina": {
+        "lede": "La sangre no se fabrica. Donar lleva poco tiempo y permite que el hospital responda cuando alguien la necesita.",
+        "cuerpo": [
+          "La donación se hace en el Sampleton Hospital con material estéril y descartable. Donar no transmite enfermedades."
+        ],
+        "antes": [
+          "Llevá DNI.",
+          "No vayas en ayunas: comé algo liviano y tomá agua.",
+          "Descansá bien la noche anterior."
+        ],
+        "quienes": [
+          "En general, personas de 16 a 65 años, con buen estado de salud y más de 50 kg. Si tenés más de 65, consultá si podés donar con autorización médica.",
+          "El equipo de Hemoterapia confirma en el momento si podés donar de forma segura."
+        ],
+        "lugar": "sampleton-hospital",
+        "horario": "De lunes a viernes, de 7:30 a 11, en Hemoterapia. Sin turno."
+      }
+    }
+  ]
+}

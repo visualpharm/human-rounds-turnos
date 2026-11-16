@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "Tage im Voraus",
+  "admin.settings.opening_time": "Uhrzeit der Terminöffnung",
+  "admin.settings.horizon_range": "Die Tage im Voraus müssen zwischen 1 und 365 liegen.",
+  "admin.settings.opening_time_format": "Die Öffnungszeit muss im Format HH:MM angegeben werden.",
+  "admin.settings.holidays.title": "Feiertage",
+  "admin.settings.holidays.lede": "An diesem Tag werden in keinem Dienst, bei keinem Arzt und in keinem Zentrum Termine vergeben. Bereits vergebene Termine werden nicht automatisch storniert: Sie müssen neu vereinbart werden.",
+  "admin.settings.holidays.empty": "Es sind noch keine Feiertage eingetragen.",
+  "admin.settings.holidays.date": "Datum",
+  "admin.settings.holidays.name": "Name",
+  "admin.settings.holidays.remove": "Entfernen",
+  "admin.settings.holidays.add": "+ Feiertag hinzufügen",
+  "admin.settings.holidays.load_national": "Nationale Feiertage laden",
+  "admin.settings.holidays.appointments_one": "{n} vergebener Termin an diesem Tag",
+  "admin.settings.holidays.appointments": "{n} vergebene Termine an diesem Tag",
+  "admin.settings.holidays.invalid": "Die Liste der Feiertage ist ungültig.",
+  "admin.settings.holidays.bad_date": "Jeder Feiertag benötigt ein gültiges Datum.",
+  "admin.settings.holidays.no_name": "Jeder Feiertag benötigt einen Namen.",
+  "admin.settings.holidays.long_name": "Der Name eines Feiertags darf maximal {max} Zeichen lang sein.",
+  "admin.settings.holidays.too_many": "Es können maximal {max} Feiertage geladen werden."
+}

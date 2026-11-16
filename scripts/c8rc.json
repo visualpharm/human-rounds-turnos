@@ -1,0 +1,25 @@
+{
+  "all": true,
+  "src": ["."],
+  "reporter": ["json-summary", "text-summary"],
+  "exclude": [
+    "tests/**",
+    "vendor/**",
+    "static/vendor/**",
+    "stories/**",
+    ".storybook/**",
+    ".claude/**",
+    ".ci-asgi/**",
+    "node_modules/**",
+    "ci-artifacts/**",
+    "frontend-coverage/**",
+    "backend-coverage/**",
+    "e2e-artifacts/**",
+    "playwright-report/**",
+    "test-results/**",
+    "data/**",
+    "docs/**",
+    "playwright.config.mjs",
+    "scripts/smoke_listing_layout.mjs"
+  ]
+}

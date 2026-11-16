@@ -1,0 +1,371 @@
+/* human-rounds.css — sistema de diseño compartido (2026-08-01: renombrado
+   desde sacoturno.css, la marca del fork original — el responsable del producto: "el nombre público
+   es Human Rounds, afuera Sacoturno no existe"; las clases `stz-*` de adentro
+   quedan igual, sólo el nombre del archivo cambió).
+   ÚNICA fuente de los tokens y de los componentes reutilizables. Lo enlazan
+   todas las páginas (index, directorio, app, panel) y las páginas server-render
+   de server.py. Las clases canónicas son `stz-*` (las del handoff de Claude
+   Design). Donde había forks (`.rb-*` en rubricador, clases sueltas en app.html)
+   se convergen acá. El layout específico de cada página queda en su propio
+   <style>; esto es solo lo compartido. */
+
+/* Tokens (custom properties, ambos temas) viven en tokens.css — extracción
+   verbatim, Tier 5 slice 1 (docs/roadmap/tier5-frontend-design.md). Este
+   archivo sigue siendo el único que enlazan las páginas; el import trae los
+   tokens antes de cualquier regla de componente. Ruta relativa a propósito
+   (no absoluta): Storybook/Vite la resuelve directo del disco sin depender
+   de ningún server; server.py sirve `/static/tokens.css` como passthrough
+   literal para cuando el propio human-rounds.css se sirve fingerprinted en
+   `/static/human-rounds.<hash8>.css` (ver static_fingerprint.py). */
+@import url("tokens.css");
+/* Shared public footer: a continuation of the page, never a floating card.
+   Qualify by body so this supersedes historical shell-local footer styles. */
+/* PUBLIC FOOTER (the product owner, 2026-10-25, «Design footer»: on the phone the notice,
+   links and credit sat flush left against the specialties above them, all one
+   size). One block on ONE left edge: the footer carries NO horizontal padding or
+   margin of its own, so it starts where the page content starts, exactly like
+   «Especialidades». Rows, top to bottom: Urgencias (16px, 600, the number a theme
+   link to tel:), the installation's priority notice (15px plain ink, full footer
+   width), the links group (15px ink, 44px touch rows, NO underline: The product owner
+   2026-10-17), the platform
+   credit last (own row on a phone, right end on a wide screen), in the same ink.
+   Vertical gaps 8/16/24. Demo review 2026-11-15: the footer is key information for
+   elderly readers, so nothing in it is under 15px or grey (supersedes the 13px
+   «smaller than the page» rule of 2026-10-28). One block for both themes. */
+body footer.site,body footer.about-footer,body>.wrap>footer,#stzc-page>.wrap>footer{border:0;border-top:1px solid var(--border-strong);border-radius:0;box-shadow:none;background:transparent;margin-top:var(--space-4);margin-bottom:0;padding:var(--space-3) 0 var(--space-2);display:flex;flex-direction:column;gap:0;}
+body footer.site .fmision{margin:0 0 8px;font-size:15px;line-height:1.5;color:var(--text);}
+body footer.site .flinks{display:flex;flex-wrap:wrap;gap:0 24px;width:100%;}
+body>.wrap>footer,#stzc-page>.wrap>footer{flex-direction:row;flex-wrap:wrap;gap:0 24px;}
+body footer.site a,body footer.about-footer a,body>.wrap>footer a,#stzc-page>.wrap>footer a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;color:var(--text);text-decoration:none;}
+body footer.site a:hover,body footer.about-footer a:hover,body>.wrap>footer a:hover,#stzc-page>.wrap>footer a:hover{color:var(--link-hover,var(--text));}
+body footer .fcredit,body footer.site a.fcredit,body>.wrap>footer a.fcredit,#stzc-page>.wrap>footer a.fcredit{margin-left:auto;color:var(--text);}
+/* Aviso de la instalación (sitio.json priority_notice) y «Urgencias: 107»:
+   primeras líneas de TODO pie público (templates/_site_footer_notice.html).
+   15px en tinta plena (revisión de la demo 2026-11-15; antes 13px, «más chico
+   que la página», 2026-10-28), cada aviso en su propio renglón aunque el pie sea una fila
+   de links (páginas con listado, legales). «Urgencias» va primero, a 16px y 600:
+   es lo que alguien busca con apuro. El aviso corre a todo el ancho del pie, sin
+   columna angosta, para ocupar unas dos líneas en escritorio. El número es un link del tamaño de
+   su frase, con el afecto de link del tema (tokens.css), y su regla va con la
+   misma especificidad que su variante con #stzc-page para ganarle a los links
+   del pie. */
+body footer .fnotice{flex:0 0 100%;width:100%;box-sizing:border-box;margin:0 0 8px;font-size:15px;line-height:1.5;color:var(--text);text-wrap:pretty;}
+body footer .fnotice.furg{margin-bottom:8px;font-size:16px;line-height:1.4;font-weight:600;}
+body footer .fnotice + :not(.fnotice){margin-top:8px;}
+:root body footer .fnotice.fnotice a,
+:root #stzc-page footer .fnotice.fnotice a{display:inline;min-height:0;margin:0;font-size:inherit;color:var(--link,var(--accent));text-decoration-line:var(--link-decoration,none);}
+/* Links embebidos en texto gris que todavía gritaban acento: heredan el color
+   del párrafo y su señal es el subrayado tenue del tema (responsable del producto, 2026-09-18). */
+:root[data-theme="humanrounds"] .tile-lede-a,
+:root[data-theme="humanrounds"] .agenote a{
+  color:inherit;text-decoration-line:var(--link-decoration);}
+/* A <main class="wrap"> always ends in the shared footer, so it is a flex
+   column from its opening tag: matching only once the parser reaches the
+   footer flipped margin collapsing mid-load and shifted the page (CLS). */
+body:has(>main.wrap),body:has(>.wrap>footer),body:has(>.about-footer),body:has(footer.site)>#stzc-page,body:has(.about-footer)>#stzc-page,body:has(#stznav)>#stzc-page:has(>.wrap>footer){min-height:100dvh;display:flex;flex-direction:column;}
+body>main.wrap,#stzc-page>main.wrap,body>.wrap:has(>footer),#stzc-page>.wrap:has(>footer){width:100%;flex:1;display:flex;flex-direction:column;padding-bottom:0;}
+body>.wrap>footer,#stzc-page>.wrap>footer{margin-top:auto;}
+/* The last VISIBLE block before the footer keeps 32px above its rule. Not
+   :nth-last-child(2): a booking page ends in <script> tags and a [hidden]
+   help line, so that rule hit an invisible node and the inline «Chateá con
+   IA» button sat on the footer border (the product owner 27.10). */
+body>.wrap:has(>footer)>:not(script,style,template,link,footer,[hidden]):not(:has(~ :not(script,style,template,link,footer,[hidden]))),#stzc-page>.wrap:has(>footer)>:not(script,style,template,link,footer,[hidden]):not(:has(~ :not(script,style,template,link,footer,[hidden]))){margin-bottom:var(--space-4);}
+body>.about-wrap,#stzc-page>.about-wrap{flex:1;}
+@media(max-width:600px){body footer.site,body footer.about-footer,body>.wrap>footer,#stzc-page>.wrap>footer{padding-bottom:var(--space-3);}body:has(.stzc-booking-inline) :is(footer.site,footer.about-footer,.wrap>footer),body:has(.stzc-booking-inline) #stzc-page>.wrap>footer{padding-bottom:var(--space-2);}body footer .fcredit{flex:0 0 100%;margin-left:0;}body footer.site .flinks{column-gap:16px;}}
+*{box-sizing:border-box;}
+::selection{background:var(--selection);}
+/* Cómo se reconoce un link lo decide el TEMA, en un solo lugar (responsable del producto,
+   2026-09-14: "let's create the links… with less bright underlines and create
+   some kind of hover so they look more active" — el patrón de Linear, y la
+   vuelta de tuerca del "links never underlined" del 2026-08-06/07):
+     · "pinamar" no define ningún --link*, así que el fallback deja el link
+       con el COLOR del acento y SIN subrayado, exactamente como antes;
+     · "humanrounds" define --link (tinta), --link-decoration (underline) y
+       el par --link-underline / --link-underline-hover: el link es texto
+       tinta con un subrayado tenue que se ENCIENDE en hover.
+   En los dos casos la regla vive acá y en tokens.css: un componente NO
+   escribe `text-decoration:underline` a mano (lo vigilan
+   .claude/hooks/link-underline-guard.py y test/ui-evals.test.mjs eval 8), y
+   un link ya visitado cambia a --link-visited para que el visitante mayor
+   vea qué ya abrió. Un link nunca declara font-weight (responsable del producto, 2026-09-14):
+   hereda el peso del texto que lo rodea — la tinta y el subrayado son la
+   affordance visual. */
+a{color:var(--link,var(--accent));text-decoration-line:var(--link-decoration,none);
+  text-decoration-color:var(--link-underline,currentColor);text-decoration-thickness:1px;
+  text-underline-offset:3px;text-decoration-skip-ink:auto;
+  transition:text-decoration-color .12s,color .12s;}
+a:hover{color:var(--link-hover,var(--accent-hover));text-decoration-color:var(--link-underline-hover,currentColor);}
+/* :where() deja la regla en especificidad (0,0,1): cualquier componente que
+   pinte su propio link con una clase (.stznav-link, .tile-lede-a) le gana, y
+   el ciruela de visitado queda para los links de contenido que viajan con el
+   color global. Un a:visited pelado (0,1,1) le ganaba a TODA regla de una
+   sola clase y teñía el menú entero. a:hover (0,1,1) también le gana, así
+   que el hover sigue andando sobre un link visitado sin regla extra. */
+a:where(:visited){color:var(--link-visited);}
+/* Un teléfono nunca se corta a mitad de número («+54 / 2254 49-1777» en la
+   pantalla sin turnos a 1440, 2026-10-17): todo link tel: va en una pieza. */
+a[href^="tel:"]{white-space:nowrap;}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 var(--font);
+  /* NINGUNA línea termina en una palabra sola (responsable del producto, 2026-08-01: "there is one
+     line which breaks just one word to a new line… especially if there is a
+     space to the right"). `pretty` es exactamente eso: el navegador reparte el
+     último renglón para que no quede una viuda, sin tocar el markup. Va en
+     body porque se hereda: cualquier bloque de texto nuevo lo trae puesto y no
+     hay que acordarse regla por regla. Los títulos de 2-3 líneas piden
+     `balance` (renglones parejos), que se aplica abajo, en los headings. */
+  text-wrap:pretty;}
+h1,h2,h3,h4,.tile-titulo,.pt-title,.mt-h1{text-wrap:balance;}
+
+/* ---- nav / marca ---- */
+.stz-mark{width:45px;height:45px;background:url(/logo.png) center/contain no-repeat;flex-shrink:0;}
+/* Nav STICKY: reference-deployment counterpart (contraparte técnica del hospital) pidió que el
+   botón de chat quede alcanzable mientras se scrollea la página — el
+   lanzador flotante de esquina que hacía eso YA SE SACÓ a propósito
+   (responsable del producto, 2026-08-01) y no vuelve; la barra de navegación es la única
+   entrada que queda al chat, así que ES la barra la que se queda fija
+   (responsable del producto, 2026-08-05). Una sola regla acá cubre TODAS las páginas: es
+   `#stznav` (el host que monta nav.js), no una clase que nav.js agrega
+   recién al montar — así la barra ya nace sticky incluso durante el primer
+   paint, antes de que el script corra. `sticky`, no `fixed`: sigue en el
+   flujo del documento y no rompe las reservas de layout que ya evitan CLS
+   (`#stznav:empty{min-height:69px}` en patient_web/site_*.py). El z-index le gana
+   a la barra de búsqueda sticky de la portada (`.searchbar`, z-index:5) y a
+   cualquier contenido normal; se queda por debajo de modales/diálogos. */
+#stznav{position:sticky;top:0;z-index:20;}
+/* Logo POR TEMA (parte de la identidad, no sólo el color): el tema "pinamar"
+   usa el emblema municipal de Pinamar; el "humanrounds" la marca de Human
+   Rounds (las figuras en ronda) en SVG — el mismo trazo que el favicon
+   público, más nítido a este tamaño que el PNG de logo.png (que sigue siendo
+   el fallback de la regla base y el que usa seo.py como og:image, un formato
+   que las redes sociales no leen si es vectorial). Antes ahí vivía el
+   corazón con el pulso de "Sana" — la marca vieja, que ya no existe afuera.
+   Cubre tanto .stz-mark (sacoturno) como .stznav-mark (nav.js) — la mayor
+   especificidad ([data-theme] + clase) gana sobre la regla base de cada uno. */
+:root[data-theme="pinamar"] .stz-mark,
+:root[data-theme="pinamar"] .stznav-mark{background-image:url(/pinamar-emblema.svg);}
+:root[data-theme="humanrounds"] .stz-mark,
+:root[data-theme="humanrounds"] .stznav-mark{background-image:url(/logo.svg);}
+.stz-navlink{font-size:13.5px;font-weight:500;color:var(--text-2);text-decoration:none;padding:7px 11px;border-radius:8px;transition:background .12s,color .12s;}
+.stz-navlink:hover{background:var(--hover-bg);color:var(--hover-ink);}
+/* Botón primario: la pastilla del tema. Los tres tokens --btn-* los define
+   SÓLO "humanrounds" (negro + 999px, cursor.com); en "pinamar" no existen y
+   el fallback deja el acento verde y el radio de siempre, sin mover un píxel.
+   Mismo patrón en cada botón lleno del producto — ver tokens.css. */
+.stz-enter{display:inline-flex;align-items:center;gap:7px;background:var(--btn-bg,var(--accent));color:var(--btn-fg,#fff);text-decoration:none;
+  font:600 13.5px var(--font);letter-spacing:-.01em;padding:8px 14px;border-radius:var(--btn-radius,9px);transition:filter .12s,transform .1s,background .12s;}
+.stz-enter:hover{background-image:var(--hover-fill);color:var(--btn-fg,#fff);}
+.stz-enter:active{transform:translateY(1px);}
+/* Botón INACTIVO: la ÚNICA regla del producto (panel y sitio del paciente, los
+   dos temas). Relleno neutro plano, borde tenue y tinta legible (tokens
+   --btn-off-*), sin hover ni press y con cursor not-allowed. La segunda forma
+   (:hover/:active) existe para ganarle por especificidad a los
+   `.x:hover{background-image}` de cada componente. Un botón nuevo se suma a la
+   lista de clases; nadie escribe su propio :disabled con opacity. */
+:is(.btn,.stz-enter,.stz-cta,.wz-cta-lg,.sc-cta,.sc-scan-btn,.queue-seg>button):is(:disabled,[aria-disabled="true"]),
+:is(.btn,.stz-enter,.stz-cta,.wz-cta-lg,.sc-cta,.sc-scan-btn,.queue-seg>button):is(:disabled,[aria-disabled="true"]):is(:hover,:active){
+  background:var(--btn-off-bg);background-image:none;color:var(--btn-off-fg);
+  border-color:transparent;box-shadow:inset 0 0 0 1px var(--btn-off-bd);opacity:1;filter:none;transform:none;
+  cursor:not-allowed;}
+/* Los botones de contorno/secundarios ya descansan en gris: inactivos pierden
+   el relleno, así se distinguen del secundario activo. */
+:is(.btn-quiet,.btn-no,.sc-scan-btn,.queue-seg>button):is(:disabled,[aria-disabled="true"]),
+:is(.btn-quiet,.btn-no,.sc-scan-btn,.queue-seg>button):is(:disabled,[aria-disabled="true"]):is(:hover,:active){
+  background:transparent;}
+
+/* ---- fila / listado de médicos ---- */
+.stz-row{transition:background .12s cubic-bezier(.18,.78,.28,1);}
+.stz-row:hover{background:var(--hover-bg);}
+.stz-link{cursor:pointer;border:0;background:none;padding:0;font:inherit;text-align:left;color:inherit;}
+.stz-name{color:var(--text);font-weight:600;letter-spacing:-.01em;display:inline-block;max-width:100%;width:fit-content;transition:color .12s;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stz-row:hover .stz-name{color:var(--link,var(--accent));}
+.stz-name:hover{color:var(--link,var(--accent));}
+.stz-esp{color:var(--link,var(--accent));display:inline-block;max-width:100%;width:fit-content;cursor:pointer;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stz-rate{display:inline-flex;align-items:center;gap:2px;font:600 13px/1 var(--font-mono);color:var(--warn);white-space:nowrap;}
+.stz-go{display:inline-flex;align-items:center;gap:5px;font:600 13px var(--font);color:var(--text-3);text-decoration:none;
+  padding:6px 9px;border-radius:7px;border:1px solid transparent;transition:background .12s,color .12s,border-color .12s;white-space:nowrap;}
+.stz-row:hover .stz-go{color:var(--link,var(--accent));}
+.stz-go:hover{background:var(--hover-bg);border-color:var(--hover-bd);color:var(--hover-link);}
+
+/* ---- input de búsqueda ----
+   16px mínimo: menos dispara el zoom automático de iOS Safari al enfocar. */
+.stz-input{font-size:16px;padding:9px 12px;border:1px solid var(--border);border-radius:9px;background:var(--panel);color:var(--text);font-family:inherit;}
+.stz-input::placeholder{color:var(--text-4);}
+.stz-input:focus{outline:none;border-color:var(--focus-border);box-shadow:0 0 0 3px var(--focus-ring);}
+
+/* ---- dropdowns de filtro (especialidad / clínica / obra social / profesión) ---- */
+.stz-dd{position:relative;}
+.stz-ddbtn{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13.5px;padding:9px 12px;border:1px solid var(--border);
+  border-radius:9px;background:var(--panel);color:var(--text);cursor:pointer;min-width:150px;transition:border-color .12s,box-shadow .12s;font-family:inherit;}
+.stz-ddbtn:hover{border-color:var(--hover-bd);}
+.stz-ddbtn.on{border-color:var(--focus-border);box-shadow:0 0 0 3px var(--focus-ring);}
+.stz-ddbtn.act{color:var(--accent);font-weight:600;}
+.stz-ddbtn .lbl{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stz-caret{color:var(--text-3);font-size:13px;}
+.stz-panel{position:absolute;top:calc(100% + 6px);left:0;z-index:40;background:var(--panel);border:1px solid var(--border-strong);border-radius:11px;
+  box-shadow:0 16px 44px -14px rgba(30,20,12,.4);padding:6px;min-width:240px;max-height:400px;overflow:auto;animation:stzpop .14s ease;}
+@keyframes stzpop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.stz-cat{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;border-radius:7px;cursor:pointer;
+  font-size:13.5px;font-weight:600;color:var(--text);}
+.stz-cat:hover{background:var(--hover-bg);}
+.stz-cat.sel{background:var(--select-soft);color:var(--select);}
+.stz-sub{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 10px 6px 24px;border-radius:7px;cursor:pointer;
+  font-size:13px;color:var(--text-2);}
+.stz-sub:hover{background:var(--hover-bg);color:var(--hover-ink);}
+.stz-sub.sel{color:var(--accent);font-weight:600;}
+.stz-count{font:600 13px/1 var(--font-mono);color:var(--text-3);background:var(--bg-2);border-radius:20px;padding:3px 7px;min-width:24px;text-align:center;}
+.stz-clirate{font:600 13px/1 var(--font-mono);color:var(--warn);}
+.stz-ddback{position:fixed;inset:0;z-index:35;}
+
+/* ---- chips de filtro activo ---- */
+.stz-chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--accent);background:var(--accent-soft);
+  border:1px solid color-mix(in oklch,var(--accent) 24%,transparent);border-radius:7px;padding:5px 9px;}
+.stz-chipx{border:0;background:none;cursor:pointer;color:var(--accent);font-size:14px;line-height:1;padding:0;display:flex;}
+
+/* ---- botón de cerrar (2026-11-09) ----
+   The ONE close button of the product, panel and patient site: the Icons8
+   close glyph of the project pack as a mask (it takes the button's color),
+   never a typed «×». 44 px touch zone, no frame at rest. A component adds
+   `hr-x` next to its own class and keeps only its position (and, on a photo,
+   its own backdrop). Pinned by test/close-icon.test.mjs. */
+.hr-x{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;box-sizing:border-box;min-width:44px;min-height:44px;
+  padding:0;border:0;border-radius:8px;background:none;color:var(--hint-ink,var(--text-2));font-size:0;line-height:0;cursor:pointer;}
+.hr-x::before{content:"";display:block;width:20px;height:20px;background:currentColor;
+  -webkit-mask:url(/static/icons/close-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/close-sf-regular.svg) center/contain no-repeat;}
+.hr-x:hover{background:var(--hover-bg);color:var(--text);}
+
+/* entrevista previa (modules/intake/): the .iv-* rules that used to live
+   here (a bare-class, pre-redesign version of the interview chat) were
+   removed 2026-08-01 — dead weight that was actively leaking (a stale
+   `.iv-input{flex:1;...}` silently capped the redesigned auto-grow
+   textarea back to ~75px, since a property a more-specific #iv-host rule
+   doesn't itself declare still cascades in from a less-specific one).
+   The real, current rules live in entrevista.css, scoped under #iv-host —
+   see docs/architecture/entrevista-previa.md. */
+
+/* ---- PRINT (the product owner, 2026-11-07: «make the pages printable») -----------------
+   ONE print layer for the panel and the patient site: every page links this
+   file, so a sheet of paper looks the same wherever it was printed from.
+   Paper is A4 with the margins below. The head of every sheet is a page margin
+   box: the screen's name, the filters in force and the date and hour of the
+   print, written into --print-head by platform/print-head.mjs (the installation
+   clock, the shared date formatter); the foot carries «page / pages». Off the
+   paper go the menus and navigation bars, every control (buttons, filters,
+   search, check boxes), toasts and floating things; ink is black on white,
+   links carry no underline; a table repeats its head on every sheet and never
+   splits a row or a card across two. A screen adds a print rule of its own only
+   where the shared one cannot know its markup (the doctor's day printed as
+   HSI's sheet is its own page and does not link this file). */
+@page{
+  size:A4;margin:16mm 12mm 14mm;
+  @top-left{content:var(--print-head,"");font:8.5pt/1.3 Arial,Helvetica,sans-serif;color:#000;vertical-align:bottom;padding-bottom:3mm;}
+  @bottom-right{content:counter(page) " / " counter(pages);font:8.5pt Arial,Helvetica,sans-serif;color:#000;}
+}
+@media print{
+  :root{color-scheme:light;}
+  html,body{background:#fff !important;color:#000 !important;}
+  body{margin:0 !important;padding:0 !important;min-height:0 !important;}
+  /* Black ink on white paper: no grey text, no tinted cards, no shadows. */
+  body *,body *::before,body *::after{color:#000 !important;text-shadow:none !important;box-shadow:none !important;
+    animation:none !important;transition:none !important;}
+  body *:not(:is([class*="dot"],.rep-mini-bar,.rep-vol-bar,.rep-bar-track,.rep-bar-fill,[style*="avatar-sprite"])){
+    background-color:transparent !important;background-image:none !important;}
+  /* What a colour or a picture SAYS keeps it on paper: a status dot, the bars
+     of a chart, a doctor's portrait (a slice of the shared avatar atlas). */
+  :is([class*="dot"],.rep-mini-bar,.rep-vol-bar,.rep-bar-track,.rep-bar-fill,[style*="avatar-sprite"]){
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  a,a:visited{text-decoration:none !important;}
+  img,svg,canvas,figure,video{max-width:100% !important;break-inside:avoid;}
+  h1,h2,h3,h4,h5,h6{break-after:avoid;break-inside:avoid;}
+  p,li,dd,blockquote{orphans:3;widows:3;}
+  /* Paper has no hover to reveal what an ellipsis cut: every line that the
+     screen keeps on one row with «…» wraps instead (the wrap mode only — a
+     text kept with its own line breaks keeps them). */
+  body *{text-wrap-mode:wrap !important;text-overflow:clip !important;-webkit-line-clamp:none !important;}
+
+  /* Chrome off the paper: menus, navigation bars, banners, the chat, toasts. */
+  .adm5-side,.adm-2fa-nudge,#stznav,.stznav,.searchbar,.demo-installation,
+  #stz-chat-launcher,#stz-chat-panel,.stzc-form,.toast,dialog:not([open]),
+  footer.site .flinks,footer.site .fcredit,nav.subtabs,nav.set-subnav,
+  [data-print="off"]{display:none !important;}
+
+  /* Every control: buttons, segmented groups, filters, search, check boxes.
+     What a button SHOWS as content stays — a column head in a table, a name
+     in a cell, the column heads of the request list. */
+  button:not(th button):not(td button):not(.sol-ch):not(.sol-nm):not(.sol-cell),
+  td button.btn,td button[class*="btn"],td [role="group"]>button,td button:has(>svg:only-child),
+  .btn,a.btn,[role="button"]:not(th *):not(td *),[role="toolbar"],[role="tablist"],
+  select,input[type="search"],input[type="file"],
+  input[type="color"],input[type="range"],input[type="submit"],input[type="button"],
+  .cnt-gear-btn,.queue-seg,.queue-fix,.forecast-info,summary::marker,
+  .lst-searchgroup,.lst-more,.mt-sacar,.req-btn,.pt-calendar-link,.campaign-cta,
+  .cnt-wa-link,.queue-entrevista-cfg,.ix-details,.wz-cal,.wz-success-cal,.dni-cp-ico{display:none !important;}
+  /* A check box leaves its place empty rather than its cell: a grid list
+     (Solicitudes) would slide every later cell one track left. */
+  input[type="checkbox"],input[type="radio"]{visibility:hidden !important;}
+  summary{list-style:none;}
+  summary::-webkit-details-marker{display:none;}
+  /* A link drawn as a button that carries data (the first free time of a
+     doctor) prints as its words. */
+  .lst-time{border:0 !important;padding:0 !important;min-height:0 !important;}
+  /* A contact shown as an icon prints as the number or address itself. */
+  .cnt-ico-link{display:inline !important;width:auto !important;height:auto !important;margin:0 !important;}
+  .cnt-ico-link .cnt-ico{display:none !important;}
+  .cnt-ico-link::after{content:attr(data-copy);}
+  td .cnt-ico-link{display:block !important;}
+  /* A field that holds data prints as its text. */
+  input,textarea{border:0 !important;padding:0 !important;resize:none;font:inherit;}
+  input::placeholder,textarea::placeholder{color:transparent !important;}
+
+  /* Nothing floats over the sheet or scrolls inside it. */
+  .adm-topbar,.sol-cols,thead th,[class*="sticky"]{position:static !important;}
+  .adm5-shell,.adm5-main{display:block !important;max-width:none !important;width:auto !important;
+    height:auto !important;overflow:visible !important;margin:0 !important;padding:0 !important;}
+  .adm-content-wrap,.cnt-table-wrap,[class*="table-wrap"],[class*="scroll"]{max-width:none !important;
+    max-height:none !important;height:auto !important;overflow:visible !important;contain:none !important;}
+
+  /* Tables fill the sheet's width and wrap their text rather than lose a
+     column past the paper's edge; the head repeats on every sheet and a row
+     never splits across two. */
+  /* table[class] outweighs a screen's own `.x-table{table-layout:fixed!important}`. */
+  table,table[class]{width:100% !important;max-width:100% !important;table-layout:auto !important;border-collapse:collapse;}
+  col{width:auto !important;}
+  thead{display:table-header-group;}
+  tfoot{display:table-footer-group;}
+  tr,th,td{break-inside:avoid;}
+  th,td{overflow:visible !important;max-width:none !important;min-width:0 !important;
+    padding-top:4px !important;padding-bottom:4px !important;overflow-wrap:break-word;}
+  th{border-bottom:1px solid #000 !important;}
+  td{border-bottom:1px solid #bbb !important;}
+  th *,td *{overflow:visible !important;max-width:none !important;}
+  td button{text-align:inherit !important;}
+  /* Columns sized for paper by platform/print-head.mjs right before printing:
+     a column empty in the whole table is not printed; a column of short
+     cells (a person and the age, doctors, a date, a phone) keeps each cell
+     on one line, so it is as wide as its content and a long text wraps. */
+  [data-print-empty]{display:none !important;}
+  [data-print-nowrap],[data-print-nowrap] *{text-wrap-mode:nowrap !important;}
+  /* A name is one piece on paper: a long list of doctors wraps between the
+     names, never inside one (and never letter by letter in a squeezed flex
+     row). A list cut to «+N» on screen prints whole: paper has no hover. */
+  body :is(.pat-person,.pat-doc-n),td a[href^="tel:"]{text-wrap-mode:nowrap !important;}
+  td :is(.pat-docs,.pat-doc,.pat-doc[hidden]){display:inline !important;}
+  td .pat-docs-more{display:none !important;}
+  /* The request list is a grid, not a table: its check box track is empty on
+     paper and the AI reading («Sin orden adjunta») gets one line. */
+  @media (min-width:761px){
+    body :is(.sol-cols,.sol-row){grid-template-columns:0 160px minmax(0,1fr) minmax(0,1.2fr) 140px !important;}
+  }
+  @media (max-width:760px){
+    body :is(.sol-cols,.sol-row){grid-template-columns:0 160px minmax(0,1fr) !important;}
+  }
+  /* The Wiki tree's expand arrow is off the paper: its track goes too, or the
+     category's title falls into it one letter a line. */
+  body .kn-category-row{grid-template-columns:minmax(0,1fr) !important;}
+
+  /* A card, a list row, a tile or a grouped block stays on one sheet — a
+     block that holds a table or a list of its own is a section, not a card,
+     and flows (kept whole, it would leave the sheet before it blank). */
+  :is([class*="card"],[class*="tile"],[class*="-row"],li,article,figure,dl,.req,details):not(:has(table,li,[class*="-row"])){
+    break-inside:avoid;}
+  [class*="card"],[class*="tile"]{border-color:#bbb !important;}
+}

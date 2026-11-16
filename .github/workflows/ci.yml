@@ -1,0 +1,239 @@
+name: CI
+
+# Hosted trigger deliberately disabled — cost decision, product owner 2026-08-05.
+# Auto-running on every push/PR was burning ~$10/day of this private
+# account's Actions minutes; the account has a $0 hard stop once the
+# included minutes run out (see docs/roadmap/tier3-harness-design.md, Area
+# 4). Job definitions below are kept intact and fully runnable — this is a
+# manual-dispatch spare, not a deletion — but the ENFORCING path is now
+# local: scripts/ci_local.sh (the full ladder), run manually or by a
+# scheduled LaunchAgent on the dev machine. The blocking pre-commit hook runs only
+# frontend, retired-client-source checks and the routes tier. The LaunchAgent
+# (scripts/nightly-local.plist). Re-enable `push`/`pull_request` once
+# GitHub's included-minutes budget is restored or a paid plan is approved.
+on:
+  workflow_dispatch:
+  # Reusable-workflow trigger: nightly.yml calls this whole job graph
+  # (jobs.ci.uses: ./.github/workflows/ci.yml) instead of re-declaring the
+  # same steps a second time (Tier 3 slice 8, docs/roadmap/
+  # tier3-harness-design.md's Area 4 run-ladder table: "nightly ... Runs:
+  # Existing 3 jobs unchanged ... + routes + cassettes"). nightly.yml's own
+  # `schedule:` trigger is disabled too (see that file), so in practice this
+  # only fires on a manual `workflow_dispatch` of either workflow.
+  workflow_call:
+
+jobs:
+  backend:
+    name: backend (Python 3.12 + Postgres)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sana_turnos_test
+          POSTGRES_USER: sana
+          POSTGRES_PASSWORD: sana
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U sana"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    env:
+      TURNOS_FAKE_AI: "1"
+      # Los tests crean/dropean su propia base por módulo (ver HAVE_DB en
+      # tests/test_admin_content.py) — la URL apunta a la base de
+      # mantenimiento "postgres", nunca a sana_turnos_test directamente.
+      # Credenciales del servicio Postgres de este job, throwaway y locales
+      # a la corrida de CI — no es un secreto real (audit item 0.1).
+      DATABASE_URL: postgresql://sana:sana@localhost:5432/postgres
+      TEST_DATABASE_URL: postgresql://sana:sana@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      # poppler-utils (pdftoppm) y ffmpeg: sin ellos test_referral_pages.py y
+      # test_voice.py se auto-saltan (@unittest.skipUnless(shutil.which(...))).
+      - name: Install system deps (poppler-utils, ffmpeg)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils ffmpeg
+
+      - name: Install Python deps
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+
+      # -W error::ResourceWarning: cualquier open()/socket sin closear
+      # convierte la corrida en falla en vez de fuga silenciosa.
+      - name: Run backend tests
+        run: |
+          set -o pipefail
+          python3 -W error::ResourceWarning scripts/run_backend_tests.py --report backend-results.json 2>&1 | tee test-output.log
+
+      # 32 de 105 archivos de test dependen de Postgres y se auto-saltan
+      # SILENCIOSAMENTE si no lo alcanzan (patrón HAVE_DB/skipTest) —
+      # unittest igual imprime "OK" con exit 0. Sin este guard, un CI que
+      # se quedó sin Postgres (o llegó antes de que levante) queda VERDE
+      # habiendo corrido un tercio menos de la suite.
+      - name: Guard — fail if DB-backed tests were silently skipped
+        run: |
+          python3 scripts/check_unittest_coverage.py test-output.log --result-json backend-results.json
+
+  routes:
+    name: routes tier (Tier 3 Area 2 — parallel disposable fixtures)
+    runs-on: ubuntu-latest
+    # Its own Postgres service container, independent of `backend`'s: the
+    # routes tier owns a small pool of worker databases
+    # (sana_turnos_test_routes_w0..wN, see tests/_routes_fixture.py) that it
+    # creates/truncates itself — it must never share a live run with the
+    # `backend` job's own per-module CREATE/DROP DATABASE traffic.
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sana_turnos_test
+          POSTGRES_USER: sana
+          POSTGRES_PASSWORD: sana
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U sana"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    env:
+      TURNOS_FAKE_AI: "1"
+      # Misma URL de mantenimiento que el job `backend`/`e2e` — cada worker
+      # crea y dropea su propia base sana_turnos_test_routes_w<N> (nunca
+      # sana_turnos_test directamente). Throwaway, local a esta corrida.
+      DATABASE_URL: postgresql://sana:sana@localhost:5432/postgres
+      TEST_DATABASE_URL: postgresql://sana:sana@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install Python deps
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+
+      # Same parallel driver pre-commit already runs locally (scripts/
+      # run_routes_tests.sh) — 4 workers is this repo's own local default
+      # (min(cpu_count, 4)); pinned explicitly here so a smaller/bigger
+      # hosted runner never silently changes the worker count and the
+      # collision-freedom claim it's meant to prove.
+      - name: Run routes tier (4 workers, Postgres advisory-lock pool)
+        run: scripts/run_routes_tests.sh --workers 4
+
+  cassettes:
+    name: cassette replay (Tier 3 Area 3 — no network, no Postgres)
+    runs-on: ubuntu-latest
+    env:
+      TURNOS_FAKE_AI: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install Python deps
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+
+      # Cassettes never hit the network by design (tests/cassettes/_vcr.py's
+      # replay mode raises on any unmatched call rather than falling through
+      # to urlopen) — this job runs deterministic, no service container.
+      # test_*_cassette.py already also runs inside the `backend` job's
+      # broad `test_*.py` discover; this job is the dedicated, isolated
+      # signal that the four connector-cassette suites specifically stay
+      # green and specifically never touch the network, independent of
+      # whatever else is happening in the wider backend suite.
+      - name: Run cassette replay tests (HSI, PUCO, RENAPER, Meta)
+        run: |
+          python3 -W error::ResourceWarning -m unittest discover \
+            -s tests -p "test_*_cassette.py" -v
+
+  frontend:
+    name: frontend (Node 20)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # Sin dependencias npm — node --test corre sobre la stdlib sola.
+      - name: Run frontend tests
+        run: node --test tests/*.test.mjs
+
+  e2e:
+    name: e2e gate (Playwright + Postgres, synthetic pack)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sana_turnos_test
+          POSTGRES_USER: sana
+          POSTGRES_PASSWORD: sana
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U sana"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    env:
+      TURNOS_FAKE_AI: "1"
+      # tests/e2e/fixture.py crea/dropea su propia base sana_turnos_test_*
+      # (nunca sana_turnos_test directamente) -- misma URL de mantenimiento
+      # que el job `backend`, throwaway y local a esta corrida de CI.
+      DATABASE_URL: postgresql://sana:sana@localhost:5432/postgres
+      TEST_DATABASE_URL: postgresql://sana:sana@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Install Python deps
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install -r requirements.txt
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install npm deps
+        run: npm ci
+
+      # --with-deps: Chromium's own OS libs on a bare ubuntu-latest runner.
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      # `npm run e2e` IS the pre-move gate (Codex review, item 1): it must
+      # FAIL this job -- not skip green -- if Playwright/Chromium/Postgres
+      # ever go missing here. `npm run e2e:dev` (the skip-on-missing
+      # convenience mode) is a local-only command and is never what CI runs.
+      - name: Run E2E gate
+        run: npm run e2e

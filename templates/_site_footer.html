@@ -1,0 +1,10 @@
+  <footer class="site">
+    {%- include "_site_footer_notice.html" %}
+    <nav class="flinks">
+      <a href="/privacy.html">{{ t('footer.privacy', 'Privacidad') }}</a>
+      <a href="/terms.html">{{ t('footer.terms', 'Términos') }}</a>
+      <a href="/about.html">{{ t('footer.about', 'Acerca de') }}</a>
+      <a href="/news">{{ t('footer.news', 'Novedades') }}</a>{% if platform_credit() %}
+      <a class="fcredit" href="https://humanrounds.org/?lang={{ lang() }}">{{ t('footer.powered', 'Funciona con Human Rounds') }}</a>{% endif %}
+    </nav>
+  </footer>

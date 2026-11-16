@@ -1,0 +1,46 @@
+{# Direct platform-core twin of the legacy #settings section. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.system.settings.nav.general', 'Data and languages') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.system.settings.nav.general', 'Data and languages') }}{% endblock %}
+
+{% block head %}
+<style>
+  .set-subnav{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 18px;padding:0 16px;}
+  .set-subnav a{color:var(--accent,#0e8b50);font-size:15px;text-decoration:none;}
+  .set-subnav a:hover{color:var(--accent-hover);text-decoration:none;}
+  .set-subnav a[aria-current=page]{color:var(--text,#1c1c1c);font-weight:650;text-decoration:none;}
+  #sec-settings [role="alert"]{font-size:16px;color:var(--text);}
+  #sec-settings [data-retry]{min-height:44px;min-width:44px;font-size:16px;}
+</style>
+{% endblock %}
+
+{% block content %}
+<nav class="set-subnav" aria-label="{{ t('admin.system.settings.nav.aria_label', 'Settings sections') }}">
+  <a href="/admin/settings" data-settings-view="general" aria-current="page">{{ t('admin.system.settings.nav.general', 'Data and languages') }}</a>
+  <a href="/admin/settings?view=connectors" data-settings-view="connectors">{{ t('admin.system.settings.nav.connectors', 'Connectors') }}</a>
+  <a href="/admin/settings?view=integrations" data-settings-view="integrations">{{ t('admin.system.settings.nav.integrations', 'Integrations') }}</a>
+</nav>
+<div class="adm-content-wrap">
+  <p data-ai-notice="probe" hidden style="font-size:16px;color:var(--text);">{{ t('ai.notice.probe', 'Probar envía un mensaje técnico a la inteligencia artificial, sin datos de pacientes.') }}</p>
+  <div id="sec-settings"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<template id="settings-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.system.common.load_error', 'Could not load this section.') }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Reload') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-settings");
+  bootScreen({
+    host,
+    recovery: "settings-load-recovery",
+    load: () => import("{{ static('platform/admin-settings.mjs') }}"),
+    mount: (Settings, onError) => Settings.mount(host, { onError }),
+  });
+</script>
+{% endblock %}

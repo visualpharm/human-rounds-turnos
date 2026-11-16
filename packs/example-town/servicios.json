@@ -1,0 +1,2400 @@
+{
+  "servicios": [
+    {
+      "id": "medicina-general-riverside-clinic",
+      "top": 1,
+      "top_label": "Medicina general",
+      "nombre": "Medicina general",
+      "centro": "riverside-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Riverside Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "médico clínico",
+        "medicina general",
+        "clínica médica"
+      ],
+      "consultorio": "Consultorio 1",
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "horario": "Lunes a viernes de 8 a 12 h y domingos de 9 a 12 h"
+    },
+    {
+      "id": "medicina-general-lakeview-clinic",
+      "top": 2,
+      "top_label": "Medicina general",
+      "nombre": "Medicina general",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Lakeview Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "médico clínico",
+        "medicina general",
+        "clínica médica"
+      ],
+      "consultorio": "Consultorio 1",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "14:00",
+        "hasta": "18:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 14 a 18 h"
+    },
+    {
+      "id": "medicina-general-maternity",
+      "top": 3,
+      "top_label": "Medicina general",
+      "nombre": "Medicina general",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "médico clínico",
+        "medicina general",
+        "clínica médica"
+      ],
+      "consultorio": "Consultorio 1",
+      "agenda": {
+        "dias": [
+          1,
+          3,
+          5
+        ],
+        "desde": "09:00",
+        "hasta": "13:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes, miércoles y viernes de 9 a 13 h"
+    },
+    {
+      "id": "demanda-espontanea-riverside-clinic",
+      "top": 4,
+      "top_label": "Demanda espontánea",
+      "nombre": "Demanda espontánea",
+      "centro": "riverside-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Riverside Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "demanda espontánea",
+        "urgencia",
+        "guardia"
+      ],
+      "consultorio": "Consultorio 1",
+      "horario": "Lunes a viernes de 8 a 16 h"
+    },
+    {
+      "id": "demanda-espontanea-lakeview-clinic",
+      "top": 5,
+      "top_label": "Demanda espontánea",
+      "nombre": "Demanda espontánea",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "demanda espontánea",
+        "urgencia",
+        "guardia"
+      ],
+      "consultorio": "Consultorio 1",
+      "horario": "Lunes a viernes de 8 a 14 h"
+    },
+    {
+      "id": "curaciones-riverside-clinic",
+      "top": 6,
+      "top_label": "Curaciones y control de heridas",
+      "nombre": "Curaciones y control de heridas",
+      "centro": "riverside-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Riverside Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "curaciones",
+        "heridas",
+        "control de herida"
+      ],
+      "consultorio": "Sala de curaciones",
+      "horario": "Lunes a viernes de 8 a 16 h"
+    },
+    {
+      "id": "adulto-mayor-lakeview-clinic",
+      "top": 7,
+      "top_label": "Control de salud del adulto mayor",
+      "nombre": "Control de salud del adulto mayor",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Lakeview Clinic te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": 60,
+        "max": null
+      },
+      "pami": "Con PAMI, pedile a tu médico de cabecera la orden de derivación.",
+      "cluster": "clinica",
+      "palabras": [
+        "geriatría",
+        "adulto mayor",
+        "control geriátrico",
+        "tercera edad"
+      ],
+      "consultorio": "Consultorio 2",
+      "agenda": {
+        "dias": [
+          3
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Miércoles de 9 a 12 h"
+    },
+    {
+      "id": "enfermeria-presion-riverside-clinic",
+      "top": 8,
+      "top_label": "Enfermería - control de presión arterial",
+      "nombre": "Enfermería - control de presión arterial",
+      "centro": "riverside-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Riverside Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "presión",
+        "tensión arterial",
+        "enfermería"
+      ],
+      "consultorio": "Enfermería",
+      "horario": "Lunes a viernes de 8 a 16 h"
+    },
+    {
+      "id": "enfermeria-curaciones-lakeview-clinic",
+      "top": 9,
+      "top_label": "Consulta de enfermería y curaciones",
+      "nombre": "Consulta de enfermería y curaciones",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "enfermería",
+        "curaciones",
+        "inyectables"
+      ],
+      "consultorio": "Enfermería",
+      "horario": "Lunes a viernes de 8 a 14 h"
+    },
+    {
+      "id": "pediatria-maternity",
+      "top": 10,
+      "top_label": "Pediatría",
+      "nombre": "Pediatría",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 15
+      },
+      "pami": null,
+      "cluster": "pediatria",
+      "palabras": [
+        "pediatra",
+        "pediatría",
+        "niños",
+        "control de niño sano"
+      ],
+      "consultorio": "Consultorio 2",
+      "agenda": {
+        "dias": [
+          0,
+          6
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Sábados y domingos de 9 a 12 h"
+    },
+    {
+      "id": "pediatria-riverside-clinic",
+      "top": 11,
+      "top_label": "Pediatría",
+      "nombre": "Pediatría",
+      "centro": "riverside-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Riverside Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 15
+      },
+      "pami": null,
+      "cluster": "pediatria",
+      "palabras": [
+        "pediatra",
+        "pediatría",
+        "niños",
+        "control de niño sano"
+      ],
+      "consultorio": "Consultorio 2",
+      "agenda": {
+        "dias": [
+          2,
+          4,
+          6
+        ],
+        "desde": "08:30",
+        "hasta": "11:30",
+        "cada_min": 20
+      },
+      "horario": "Martes, jueves y sábado de 8.30 a 11.30 h"
+    },
+    {
+      "id": "pediatria-lakeview-clinic",
+      "top": 12,
+      "top_label": "Pediatría",
+      "nombre": "Pediatría",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Lakeview Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 15
+      },
+      "pami": null,
+      "cluster": "pediatria",
+      "palabras": [
+        "pediatra",
+        "pediatría",
+        "niños",
+        "control de niño sano"
+      ],
+      "consultorio": "Consultorio 2",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "07:00",
+        "hasta": "10:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes a viernes de 7 a 10 h"
+    },
+    {
+      "id": "nino-sano-maternity",
+      "top": 13,
+      "top_label": "Control de niño sano",
+      "nombre": "Control de niño sano",
+      "centro": "maternity-center",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Maternity Center.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 6
+      },
+      "pami": null,
+      "cluster": "pediatria",
+      "palabras": [
+        "control de niño sano",
+        "libreta sanitaria",
+        "control pediátrico"
+      ],
+      "consultorio": "Consultorio 2",
+      "horario": "Lunes a viernes de 8 a 13 h"
+    },
+    {
+      "id": "peso-talla-bebes-maternity",
+      "top": 14,
+      "top_label": "Control de peso y talla de bebés",
+      "nombre": "Control de peso y talla de bebés",
+      "centro": "maternity-center",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Maternity Center.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 2
+      },
+      "pami": null,
+      "cluster": "pediatria",
+      "palabras": [
+        "control de peso",
+        "control de talla",
+        "bebés",
+        "puericultura"
+      ],
+      "consultorio": "Lactario",
+      "horario": "Lunes a viernes de 8 a 13 h"
+    },
+    {
+      "id": "guardia-pediatrica-hospital",
+      "top": 15,
+      "top_label": "Consulta espontánea de guardia pediátrica",
+      "nombre": "Consulta espontánea de guardia pediátrica",
+      "centro": "sampleton-hospital",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Sampleton Hospital.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "pediatria",
+      "palabras": [
+        "guardia pediátrica",
+        "urgencia pediátrica"
+      ],
+      "consultorio": "Guardia",
+      "horario": "Las 24 horas, todos los días"
+    },
+    {
+      "id": "cardiologia-sampleton-hospital",
+      "top": 16,
+      "top_label": "Cardiología",
+      "nombre": "Cardiología",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Sampleton Hospital te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": "Con PAMI, pedile a tu médico de cabecera la orden de derivación.",
+      "cluster": "cardiologia",
+      "palabras": [
+        "cardiología",
+        "corazón",
+        "electrocardiograma",
+        "presión alta"
+      ],
+      "consultorio": "Consultorio 3",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "08:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 8 a 12 h"
+    },
+    {
+      "id": "electrocardiograma-hospital",
+      "top": 17,
+      "top_label": "Electrocardiograma",
+      "nombre": "Electrocardiograma",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "cardiologia",
+      "palabras": [
+        "electrocardiograma",
+        "ecg"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "12:00",
+        "hasta": "14:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes a viernes de 12 a 14 h"
+    },
+    {
+      "id": "ergometria-hospital",
+      "top": 18,
+      "top_label": "Ergometría",
+      "nombre": "Ergometría",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "cardiologia",
+      "palabras": [
+        "ergometría",
+        "prueba de esfuerzo"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "dias": [
+          2,
+          4
+        ],
+        "desde": "14:00",
+        "hasta": "17:00",
+        "cada_min": 30
+      },
+      "horario": "Martes y jueves de 14 a 17 h"
+    },
+    {
+      "id": "marcapasos-hospital",
+      "top": 19,
+      "top_label": "Control de marcapasos",
+      "nombre": "Control de marcapasos",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "cardiologia",
+      "palabras": [
+        "marcapasos",
+        "control de marcapasos"
+      ],
+      "consultorio": "Consultorio 3",
+      "agenda": {
+        "dias": [
+          1,
+          3,
+          5
+        ],
+        "desde": "14:00",
+        "hasta": "17:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes, miércoles y viernes de 14 a 17 h"
+    },
+    {
+      "id": "ecocardiograma-anexo",
+      "top": 20,
+      "top_label": "Ecocardiograma",
+      "nombre": "Ecocardiograma",
+      "centro": "diagnostic-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Diagnostic Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "cardiologia",
+      "palabras": [
+        "ecocardiograma",
+        "eco doppler cardíaco"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1
+            ],
+            "desde": "09:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              4
+            ],
+            "desde": "15:00",
+            "hasta": "17:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "horario": "Lunes de 9.30 a 11.30 h y jueves de 15 a 17 h"
+    },
+    {
+      "id": "nutricion-riverside-clinic",
+      "top": 21,
+      "top_label": "Nutrición",
+      "nombre": "Nutrición",
+      "centro": "riverside-clinic",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Riverside Clinic te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "endocrino",
+      "palabras": [
+        "nutrición",
+        "nutricionista",
+        "dieta",
+        "control de peso"
+      ],
+      "consultorio": "Consultorio 1",
+      "agenda": {
+        "dias": [
+          6
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Sábados de 9 a 12 h"
+    },
+    {
+      "id": "nutricion-lakeview-clinic",
+      "top": 22,
+      "top_label": "Nutrición",
+      "nombre": "Nutrición",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Lakeview Clinic te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "endocrino",
+      "palabras": [
+        "nutrición",
+        "nutricionista",
+        "dieta",
+        "control de peso"
+      ],
+      "consultorio": "Consultorio 1",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "14:00",
+        "hasta": "18:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 14 a 18 h"
+    },
+    {
+      "id": "nutricion-infantil-maternity",
+      "top": 23,
+      "top_label": "Nutrición infantil",
+      "nombre": "Nutrición infantil",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 12
+      },
+      "pami": null,
+      "cluster": "endocrino",
+      "palabras": [
+        "nutrición infantil",
+        "nutricionista de niños"
+      ],
+      "consultorio": "Consultorio 1",
+      "agenda": {
+        "dias": [
+          2,
+          4
+        ],
+        "desde": "10:00",
+        "hasta": "13:00",
+        "cada_min": 30
+      },
+      "horario": "Martes y jueves de 10 a 13 h"
+    },
+    {
+      "id": "endocrinologia-hospital",
+      "top": 24,
+      "top_label": "Endocrinología",
+      "nombre": "Endocrinología",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "endocrino",
+      "palabras": [
+        "endocrinología",
+        "diabetes",
+        "tiroides"
+      ],
+      "consultorio": "Consultorio 4",
+      "agenda": {
+        "dias": [
+          2,
+          4,
+          6
+        ],
+        "desde": "08:30",
+        "hasta": "11:30",
+        "cada_min": 20
+      },
+      "horario": "Martes, jueves y sábado de 8.30 a 11.30 h"
+    },
+    {
+      "id": "diabetes-lakeview-clinic",
+      "top": 25,
+      "top_label": "Control de diabetes (glucemia capilar)",
+      "nombre": "Control de diabetes (glucemia capilar)",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "endocrino",
+      "palabras": [
+        "glucemia",
+        "diabetes",
+        "control de azúcar"
+      ],
+      "consultorio": "Enfermería",
+      "horario": "Lunes a viernes de 8 a 14 h"
+    },
+    {
+      "id": "podologia-lakeview-clinic",
+      "top": 26,
+      "top_label": "Podología para pie diabético",
+      "nombre": "Podología para pie diabético",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "endocrino",
+      "palabras": [
+        "podología",
+        "pie diabético"
+      ],
+      "consultorio": "Consultorio 5",
+      "horario": "Lunes a viernes de 8 a 14 h"
+    },
+    {
+      "id": "ginecologia-obstetricia-maternity",
+      "top": 27,
+      "top_label": "Ginecología y Obstetricia",
+      "nombre": "Ginecología y Obstetricia",
+      "centro": "maternity-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Maternity Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "gineco",
+      "palabras": [
+        "ginecología",
+        "obstetricia",
+        "embarazo"
+      ],
+      "consultorio": "Consultorio 3",
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "horario": "Lunes a viernes de 8 a 12 h y domingos de 9 a 12 h"
+    },
+    {
+      "id": "control-prenatal-maternity",
+      "top": 28,
+      "top_label": "Control prenatal",
+      "nombre": "Control prenatal",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "gineco",
+      "palabras": [
+        "control prenatal",
+        "embarazo",
+        "obstetricia"
+      ],
+      "consultorio": "Consultorio 3",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "14:00",
+        "hasta": "18:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 14 a 18 h"
+    },
+    {
+      "id": "pap-maternity",
+      "top": 29,
+      "top_label": "Papanicolaou (PAP)",
+      "nombre": "Papanicolaou (PAP)",
+      "centro": "maternity-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Maternity Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "gineco",
+      "palabras": [
+        "papanicolaou",
+        "pap",
+        "colposcopía"
+      ],
+      "consultorio": "Consultorio 3",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "12:00",
+        "hasta": "14:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes a viernes de 12 a 14 h"
+    },
+    {
+      "id": "planificacion-familiar-riverside-clinic",
+      "top": 30,
+      "top_label": "Planificación familiar y anticoncepción",
+      "nombre": "Planificación familiar y anticoncepción",
+      "centro": "riverside-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Riverside Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "gineco",
+      "palabras": [
+        "planificación familiar",
+        "anticoncepción",
+        "métodos anticonceptivos"
+      ],
+      "consultorio": "Consultorio 4",
+      "agenda": {
+        "dias": [
+          1,
+          3,
+          5
+        ],
+        "desde": "09:00",
+        "hasta": "13:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes, miércoles y viernes de 9 a 13 h"
+    },
+    {
+      "id": "ginecologia-riverside-clinic",
+      "top": 31,
+      "top_label": "Ginecología",
+      "nombre": "Ginecología",
+      "centro": "riverside-clinic",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Riverside Clinic te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "gineco",
+      "palabras": [
+        "ginecología",
+        "control ginecológico"
+      ],
+      "consultorio": "Consultorio 4",
+      "agenda": {
+        "dias": [
+          2,
+          4,
+          6
+        ],
+        "desde": "08:30",
+        "hasta": "11:30",
+        "cada_min": 20
+      },
+      "horario": "Martes, jueves y sábado de 8.30 a 11.30 h"
+    },
+    {
+      "id": "traumatologia-hospital",
+      "top": 32,
+      "top_label": "Traumatología",
+      "nombre": "Traumatología",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "trauma-kine",
+      "palabras": [
+        "traumatología",
+        "fractura",
+        "esguince"
+      ],
+      "consultorio": "Consultorio 5",
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "horario": "Lunes a viernes de 8 a 12 h y domingos de 9 a 12 h"
+    },
+    {
+      "id": "yeso-fracturas-hospital",
+      "top": 33,
+      "top_label": "Yeso y control de fracturas",
+      "nombre": "Yeso y control de fracturas",
+      "centro": "sampleton-hospital",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Sampleton Hospital.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "trauma-kine",
+      "palabras": [
+        "yeso",
+        "control de fractura"
+      ],
+      "consultorio": "Yesería",
+      "horario": "Lunes a viernes de 8 a 18 h"
+    },
+    {
+      "id": "kinesiologia-lakeview-clinic",
+      "top": 34,
+      "top_label": "Kinesiología y rehabilitación",
+      "nombre": "Kinesiología y rehabilitación",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Lakeview Clinic te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "trauma-kine",
+      "palabras": [
+        "kinesiología",
+        "rehabilitación",
+        "fisioterapia"
+      ],
+      "consultorio": "Consultorio 6",
+      "sede": "Rehabilitation Annex",
+      "turnos_activos_max": 10,
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "14:00",
+        "hasta": "18:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 14 a 18 h"
+    },
+    {
+      "id": "kinesiologia-respiratoria-maternity",
+      "top": 35,
+      "top_label": "Kinesiología respiratoria pediátrica",
+      "nombre": "Kinesiología respiratoria pediátrica",
+      "centro": "maternity-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Maternity Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 12
+      },
+      "pami": null,
+      "cluster": "trauma-kine",
+      "palabras": [
+        "kinesiología respiratoria",
+        "bronquiolitis",
+        "kinesiología pediátrica"
+      ],
+      "consultorio": "Consultorio 4",
+      "turnos_activos_max": 10,
+      "agenda": {
+        "dias": [
+          3
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Miércoles de 9 a 12 h"
+    },
+    {
+      "id": "odontologia-riverside-clinic",
+      "top": 36,
+      "top_label": "Odontología general",
+      "nombre": "Odontología general",
+      "centro": "riverside-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Riverside Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "odontologia",
+      "palabras": [
+        "odontología",
+        "dentista",
+        "caries",
+        "limpieza dental"
+      ],
+      "consultorio": "Consultorio odontológico",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "08:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 8 a 12 h"
+    },
+    {
+      "id": "odontologia-lakeview-clinic",
+      "top": 37,
+      "top_label": "Odontología general",
+      "nombre": "Odontología general",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Lakeview Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "odontologia",
+      "palabras": [
+        "odontología",
+        "dentista",
+        "caries",
+        "limpieza dental"
+      ],
+      "consultorio": "Consultorio odontológico",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "14:00",
+        "hasta": "18:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 14 a 18 h"
+    },
+    {
+      "id": "odontopediatria-maternity",
+      "top": 38,
+      "top_label": "Odontopediatría",
+      "nombre": "Odontopediatría",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 12
+      },
+      "pami": null,
+      "cluster": "odontologia",
+      "palabras": [
+        "odontopediatría",
+        "dentista de niños"
+      ],
+      "consultorio": "Consultorio odontológico",
+      "agenda": {
+        "dias": [
+          2,
+          4
+        ],
+        "desde": "10:00",
+        "hasta": "13:00",
+        "cada_min": 30
+      },
+      "horario": "Martes y jueves de 10 a 13 h"
+    },
+    {
+      "id": "urgencias-odontologicas-riverside-clinic",
+      "top": 39,
+      "top_label": "Urgencias odontológicas",
+      "nombre": "Urgencias odontológicas",
+      "centro": "riverside-clinic",
+      "modo": "walkin_con_orden",
+      "descripcion": "Se atiende sin turno pero con orden médica, por llegada, en Riverside Clinic.",
+      "cartel": "Vení con tu orden médica. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "odontologia",
+      "palabras": [
+        "urgencia odontológica",
+        "dolor de muela"
+      ],
+      "consultorio": "Consultorio odontológico",
+      "apertura_mismo_dia": true,
+      "horario": "Lunes a viernes de 8 a 16 h"
+    },
+    {
+      "id": "urgencias-odontologicas-lakeview-clinic",
+      "top": 40,
+      "top_label": "Urgencias odontológicas",
+      "nombre": "Urgencias odontológicas",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "odontologia",
+      "palabras": [
+        "urgencia odontológica",
+        "dolor de muela"
+      ],
+      "consultorio": "Consultorio odontológico",
+      "horario": "Lunes a viernes de 8 a 14 h"
+    },
+    {
+      "id": "otorrinolaringologia-hospital",
+      "top": 41,
+      "top_label": "Otorrinolaringología",
+      "nombre": "Otorrinolaringología",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "otorrino-fono",
+      "palabras": [
+        "otorrinolaringología",
+        "oído",
+        "garganta"
+      ],
+      "consultorio": "Consultorio 6",
+      "agenda": {
+        "dias": [
+          6
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Sábados de 9 a 12 h"
+    },
+    {
+      "id": "fonoaudiologia-maternity",
+      "top": 42,
+      "top_label": "Fonoaudiología",
+      "nombre": "Fonoaudiología",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "otorrino-fono",
+      "palabras": [
+        "fonoaudiología",
+        "lenguaje",
+        "audición"
+      ],
+      "consultorio": "Consultorio 5",
+      "agenda": {
+        "dias": [
+          2,
+          4,
+          6
+        ],
+        "desde": "08:30",
+        "hasta": "11:30",
+        "cada_min": 20
+      },
+      "horario": "Martes, jueves y sábado de 8.30 a 11.30 h"
+    },
+    {
+      "id": "fonoaudiologia-infantil-riverside-clinic",
+      "top": 43,
+      "top_label": "Fonoaudiología infantil (lenguaje)",
+      "nombre": "Fonoaudiología infantil (lenguaje)",
+      "centro": "riverside-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Riverside Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 10
+      },
+      "pami": null,
+      "cluster": "otorrino-fono",
+      "palabras": [
+        "fonoaudiología infantil",
+        "trastorno del lenguaje"
+      ],
+      "consultorio": "Consultorio 5",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "07:00",
+        "hasta": "10:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes a viernes de 7 a 10 h"
+    },
+    {
+      "id": "audiometria-anexo",
+      "top": 44,
+      "top_label": "Audiometría",
+      "nombre": "Audiometría",
+      "centro": "diagnostic-center",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Diagnostic Center.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "otorrino-fono",
+      "palabras": [
+        "audiometría",
+        "evaluación auditiva"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "horario": "Lunes a viernes de 7 a 12 h"
+    },
+    {
+      "id": "otoemisiones-maternity",
+      "top": 45,
+      "top_label": "Otoemisiones acústicas (pesquisa neonatal)",
+      "nombre": "Otoemisiones acústicas (pesquisa neonatal)",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": 1
+      },
+      "pami": null,
+      "cluster": "otorrino-fono",
+      "palabras": [
+        "otoemisiones",
+        "pesquisa auditiva neonatal",
+        "oea"
+      ],
+      "consultorio": "Consultorio 5",
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1
+            ],
+            "desde": "09:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              4
+            ],
+            "desde": "15:00",
+            "hasta": "17:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "horario": "Lunes de 9.30 a 11.30 h y jueves de 15 a 17 h"
+    },
+    {
+      "id": "psicologia-riverside-clinic",
+      "top": 46,
+      "top_label": "Psicología adultos",
+      "nombre": "Psicología adultos",
+      "centro": "riverside-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Riverside Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "salud-mental",
+      "palabras": [
+        "psicología",
+        "psicólogo",
+        "salud mental"
+      ],
+      "consultorio": "Consultorio 7",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "08:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 8 a 12 h"
+    },
+    {
+      "id": "psicologia-lakeview-clinic",
+      "top": 47,
+      "top_label": "Psicología adultos",
+      "nombre": "Psicología adultos",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Lakeview Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "salud-mental",
+      "palabras": [
+        "psicología",
+        "psicólogo",
+        "salud mental"
+      ],
+      "consultorio": "Consultorio 7",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "14:00",
+        "hasta": "18:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 14 a 18 h"
+    },
+    {
+      "id": "psicologia-infantil-maternity",
+      "top": 48,
+      "top_label": "Psicología infantil",
+      "nombre": "Psicología infantil",
+      "centro": "maternity-center",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Maternity Center te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 15
+      },
+      "pami": null,
+      "cluster": "salud-mental",
+      "palabras": [
+        "psicología infantil",
+        "psicopedagogía"
+      ],
+      "consultorio": "Consultorio 6",
+      "agenda": {
+        "dias": [
+          2,
+          4
+        ],
+        "desde": "10:00",
+        "hasta": "13:00",
+        "cada_min": 30
+      },
+      "horario": "Martes y jueves de 10 a 13 h"
+    },
+    {
+      "id": "psiquiatria-hospital",
+      "top": 49,
+      "top_label": "Psiquiatría",
+      "nombre": "Psiquiatría",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "salud-mental",
+      "palabras": [
+        "psiquiatría",
+        "psiquiatra"
+      ],
+      "consultorio": "Consultorio 7",
+      "agenda": {
+        "dias": [
+          3
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Miércoles de 9 a 12 h"
+    },
+    {
+      "id": "grupo-adicciones-lakeview-clinic",
+      "top": 50,
+      "top_label": "Grupo de apoyo para adicciones",
+      "nombre": "Grupo de apoyo para adicciones",
+      "centro": "lakeview-clinic",
+      "modo": "solicitud",
+      "descripcion": "Pedí el turno desde la web y Lakeview Clinic te lo confirma.",
+      "cartel": "Pedí tu turno acá y el centro te lo confirma.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "salud-mental",
+      "palabras": [
+        "adicciones",
+        "grupo de apoyo",
+        "consumo problemático"
+      ],
+      "consultorio": "Sala de usos múltiples",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "07:00",
+        "hasta": "10:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes a viernes de 7 a 10 h"
+    },
+    {
+      "id": "laboratorio-anexo",
+      "top": 51,
+      "top_label": "Laboratorio",
+      "nombre": "Laboratorio",
+      "centro": "diagnostic-center",
+      "modo": "walkin_con_orden",
+      "descripcion": "Se atiende sin turno pero con orden médica, por llegada, en Diagnostic Center.",
+      "cartel": "Vení con tu orden médica. Se atiende por llegada.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "diagnostico",
+      "palabras": [
+        "análisis de sangre",
+        "laboratorio",
+        "análisis clínicos"
+      ],
+      "consultorio": "Laboratorio central",
+      "apertura_mismo_dia": true,
+      "horario": "Lunes a viernes de 7 a 10 h"
+    },
+    {
+      "id": "radiografia-anexo",
+      "top": 52,
+      "top_label": "Radiografía",
+      "nombre": "Radiografía",
+      "centro": "diagnostic-center",
+      "modo": "walkin_con_orden",
+      "descripcion": "Se atiende sin turno pero con orden médica, por llegada, en Diagnostic Center.",
+      "cartel": "Vení con tu orden médica. Se atiende por llegada.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "diagnostico",
+      "palabras": [
+        "radiografía",
+        "placa",
+        "rayos x",
+        "rx"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "horario": "Lunes a viernes de 7 a 12 h"
+    },
+    {
+      "id": "ecografia-general-anexo",
+      "top": 53,
+      "top_label": "Ecografía general",
+      "nombre": "Ecografía general",
+      "centro": "diagnostic-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Diagnostic Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "diagnostico",
+      "palabras": [
+        "eco",
+        "ecografía",
+        "ultrasonido"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "08:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Lunes a viernes de 8 a 12 h"
+    },
+    {
+      "id": "ecografia-abdominal-anexo",
+      "top": 54,
+      "top_label": "Ecografía abdominal",
+      "nombre": "Ecografía abdominal",
+      "centro": "diagnostic-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Diagnostic Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "diagnostico",
+      "palabras": [
+        "ecografía abdominal",
+        "eco de abdomen"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "dias": [
+          1,
+          3,
+          5
+        ],
+        "desde": "09:00",
+        "hasta": "13:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes, miércoles y viernes de 9 a 13 h"
+    },
+    {
+      "id": "ecografia-obstetrica-maternity",
+      "top": 55,
+      "top_label": "Ecografía obstétrica",
+      "nombre": "Ecografía obstétrica",
+      "centro": "maternity-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Maternity Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "diagnostico",
+      "palabras": [
+        "ecografía obstétrica",
+        "eco del embarazo"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "dias": [
+          2,
+          4,
+          6
+        ],
+        "desde": "08:30",
+        "hasta": "11:30",
+        "cada_min": 20
+      },
+      "horario": "Martes, jueves y sábado de 8.30 a 11.30 h"
+    },
+    {
+      "id": "mamografia-anexo",
+      "top": 56,
+      "top_label": "Mamografía",
+      "nombre": "Mamografía",
+      "centro": "diagnostic-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Diagnostic Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": "Con PAMI, pedile a tu médico de cabecera la orden de derivación.",
+      "cluster": "diagnostico",
+      "palabras": [
+        "mamografía",
+        "control mamario"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "07:00",
+        "hasta": "10:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes a viernes de 7 a 10 h"
+    },
+    {
+      "id": "tomografia-anexo",
+      "top": 57,
+      "top_label": "Tomografía computada",
+      "nombre": "Tomografía computada",
+      "centro": "diagnostic-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Diagnostic Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "diagnostico",
+      "palabras": [
+        "tomografía",
+        "tac",
+        "tomografía computada"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "dias": [
+          2,
+          4
+        ],
+        "desde": "10:00",
+        "hasta": "13:00",
+        "cada_min": 30
+      },
+      "horario": "Martes y jueves de 10 a 13 h"
+    },
+    {
+      "id": "entrega-resultados-anexo",
+      "top": 58,
+      "top_label": "Entrega de resultados de laboratorio",
+      "nombre": "Entrega de resultados de laboratorio",
+      "centro": "diagnostic-center",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Diagnostic Center.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "diagnostico",
+      "palabras": [
+        "resultados",
+        "retirar resultados",
+        "resultados de laboratorio"
+      ],
+      "consultorio": "Laboratorio central",
+      "horario": "Lunes a viernes de 11 a 13 h"
+    },
+    {
+      "id": "taller-gimnasia-lakeview-clinic",
+      "top": 59,
+      "top_label": "Taller de gimnasia para adultos mayores",
+      "nombre": "Taller de gimnasia para adultos mayores",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": 60,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "taller de gimnasia",
+        "adultos mayores",
+        "actividad física"
+      ],
+      "consultorio": "SUM",
+      "sede": "Lakeview Community Center",
+      "horario": "Miércoles de 13 a 14 h",
+      "foto": "/webdata/talleres/prevencion-de-caidas.jpg?v=1"
+    },
+    {
+      "id": "taller-estimulacion-maternity",
+      "top": 60,
+      "top_label": "Taller de estimulación temprana",
+      "nombre": "Taller de estimulación temprana",
+      "centro": "maternity-center",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Maternity Center.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": 3
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "estimulación temprana",
+        "taller para bebés"
+      ],
+      "consultorio": "SUM",
+      "horario": "Martes de 10 a 11:30 h",
+      "foto": "/webdata/talleres/estimulacion-temprana.jpg?v=1"
+    },
+    {
+      "id": "grupo-ansiedad-riverside-clinic",
+      "top": 61,
+      "top_label": "Grupo de ansiedad",
+      "nombre": "Grupo de ansiedad",
+      "centro": "riverside-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Riverside Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "ansiedad",
+        "grupo terapéutico",
+        "angustia"
+      ],
+      "consultorio": "4",
+      "horario": "Lunes de 12 a 14 h",
+      "foto": "/webdata/talleres/ansiedad.jpg?v=1"
+    },
+    {
+      "id": "taller-memoria-lakeview-clinic",
+      "top": 62,
+      "top_label": "Taller de estimulación cognitiva",
+      "nombre": "Taller de estimulación cognitiva",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": 60,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "memoria",
+        "estimulación cognitiva",
+        "adultos mayores"
+      ],
+      "consultorio": "SUM",
+      "horario": "Miércoles de 14 a 15 h",
+      "foto": "/webdata/talleres/estimulacion-cognitiva.jpg?v=1"
+    },
+    {
+      "id": "cesacion-tabaquica-hospital",
+      "top": 63,
+      "top_label": "Cesación tabáquica",
+      "nombre": "Cesación tabáquica",
+      "centro": "sampleton-hospital",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Sampleton Hospital.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "dejar de fumar",
+        "tabaco",
+        "cesación tabáquica"
+      ],
+      "consultorio": "6",
+      "horario": "Martes de 12:30 a 13:30 h",
+      "foto": "/webdata/talleres/cesacion-tabaquica.jpg?v=1"
+    },
+    {
+      "id": "curso-embarazo-maternity",
+      "top": 64,
+      "top_label": "Curso de acompañamiento del embarazo",
+      "nombre": "Curso de acompañamiento del embarazo",
+      "centro": "maternity-center",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Maternity Center.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "curso de embarazo",
+        "preparto",
+        "acompañamiento del embarazo"
+      ],
+      "consultorio": "SUM",
+      "horario": "Miércoles de 8 a 10 h",
+      "foto": "/webdata/talleres/acompanamiento-embarazo.jpg?v=1"
+    },
+    {
+      "id": "espacio-adolescentes-riverside-clinic",
+      "top": 65,
+      "top_label": "Espacio para adolescentes",
+      "nombre": "Espacio para adolescentes",
+      "centro": "riverside-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Riverside Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": 13,
+        "max": 18
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "adolescentes",
+        "espacio joven",
+        "salud adolescente"
+      ],
+      "consultorio": "4",
+      "horario": "Martes de 15:30 a 17 h",
+      "foto": "/webdata/talleres/adolescentes.jpg?v=1"
+    },
+    {
+      "id": "taller-escritura-lakeview-clinic",
+      "top": 66,
+      "top_label": "Taller de escritura",
+      "nombre": "Taller de escritura",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "grupos",
+      "palabras": [
+        "taller de escritura",
+        "escritura",
+        "taller literario"
+      ],
+      "consultorio": "SUM",
+      "sede": "Lakeview Community Center",
+      "horario": "Viernes de 11 a 13 h",
+      "foto": "/webdata/talleres/taller-escritura.jpg?v=1"
+    },
+    {
+      "id": "vacunacion-riverside-clinic",
+      "top": 67,
+      "top_label": "Vacunación",
+      "nombre": "Vacunación",
+      "centro": "riverside-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Riverside Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "vacunas-prevencion",
+      "palabras": [
+        "vacuna",
+        "vacunatorio",
+        "vacunación",
+        "calendario de vacunación"
+      ],
+      "consultorio": "Vacunatorio",
+      "horario": "Lunes a viernes de 8 a 16 h"
+    },
+    {
+      "id": "vacunacion-lakeview-clinic",
+      "top": 68,
+      "top_label": "Vacunación",
+      "nombre": "Vacunación",
+      "centro": "lakeview-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Lakeview Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "vacunas-prevencion",
+      "palabras": [
+        "vacuna",
+        "vacunatorio",
+        "vacunación"
+      ],
+      "consultorio": "Vacunatorio",
+      "horario": "Lunes a viernes de 8 a 14 h"
+    },
+    {
+      "id": "vacunacion-maternity",
+      "top": 69,
+      "top_label": "Vacunación",
+      "nombre": "Vacunación",
+      "centro": "maternity-center",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Maternity Center.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "vacunas-prevencion",
+      "palabras": [
+        "vacuna",
+        "vacunatorio",
+        "vacunación de bebés"
+      ],
+      "consultorio": "Vacunatorio",
+      "horario": "Lunes a viernes de 8 a 13 h"
+    },
+    {
+      "id": "vacunacion-antigripal-hospital",
+      "top": 70,
+      "top_label": "Vacunación campaña antigripal",
+      "nombre": "Vacunación campaña antigripal",
+      "centro": "sampleton-hospital",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Sampleton Hospital.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "vacunas-prevencion",
+      "palabras": [
+        "vacuna antigripal",
+        "campaña de vacunación",
+        "gripe"
+      ],
+      "consultorio": "Vacunatorio",
+      "apertura_mismo_dia": true,
+      "horario": "Lunes a viernes de 8 a 18 h"
+    },
+    {
+      "id": "calendario-vacunacion-riverside-clinic",
+      "top": 71,
+      "top_label": "Control de calendario de vacunación",
+      "nombre": "Control de calendario de vacunación",
+      "centro": "riverside-clinic",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Riverside Clinic.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "vacunas-prevencion",
+      "palabras": [
+        "calendario de vacunación",
+        "libreta sanitaria"
+      ],
+      "consultorio": "Vacunatorio",
+      "horario": "Lunes a viernes de 8 a 16 h"
+    },
+    {
+      "id": "dermatologia-hospital",
+      "top": 72,
+      "top_label": "Dermatología",
+      "nombre": "Dermatología",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "otras",
+      "palabras": [
+        "dermatología",
+        "piel",
+        "lunares"
+      ],
+      "consultorio": "Consultorio 8",
+      "agenda": {
+        "dias": [
+          6
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Sábados de 9 a 12 h"
+    },
+    {
+      "id": "oftalmologia-hospital",
+      "top": 73,
+      "top_label": "Oftalmología",
+      "nombre": "Oftalmología",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "otras",
+      "palabras": [
+        "oftalmología",
+        "ojos",
+        "vista"
+      ],
+      "consultorio": "Consultorio 8",
+      "agenda": {
+        "dias": [
+          1,
+          3,
+          5
+        ],
+        "desde": "09:00",
+        "hasta": "13:00",
+        "cada_min": 15
+      },
+      "horario": "Lunes, miércoles y viernes de 9 a 13 h"
+    },
+    {
+      "id": "agudeza-visual-escolar-hospital",
+      "top": 74,
+      "top_label": "Control de agudeza visual escolar",
+      "nombre": "Control de agudeza visual escolar",
+      "centro": "sampleton-hospital",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Sampleton Hospital.",
+      "cartel": "No necesitás turno. Se atiende por llegada.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": 18
+      },
+      "pami": null,
+      "cluster": "otras",
+      "palabras": [
+        "agudeza visual",
+        "control visual escolar"
+      ],
+      "consultorio": "Consultorio 8",
+      "horario": "Lunes a viernes de 8 a 18 h"
+    },
+    {
+      "id": "retinografia-anexo",
+      "top": 75,
+      "top_label": "Retinografía para diabéticos",
+      "nombre": "Retinografía para diabéticos",
+      "centro": "diagnostic-center",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Diagnostic Center te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "estudios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": "Con PAMI, pedile a tu médico de cabecera la orden de derivación.",
+      "cluster": "otras",
+      "palabras": [
+        "retinografía",
+        "fondo de ojo diabético"
+      ],
+      "consultorio": "Servicio de imágenes",
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1
+            ],
+            "desde": "09:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              4
+            ],
+            "desde": "15:00",
+            "hasta": "17:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "horario": "Lunes de 9.30 a 11.30 h y jueves de 15 a 17 h"
+    },
+    {
+      "id": "urologia-hospital",
+      "top": 76,
+      "top_label": "Urología",
+      "nombre": "Urología",
+      "centro": "sampleton-hospital",
+      "modo": "solicitud_con_orden",
+      "descripcion": "Subí tu orden de derivación desde la web y Sampleton Hospital te confirma el turno.",
+      "cartel": "Necesitás una orden de derivación. Subí la orden acá y el centro te confirma el turno.",
+      "categoria": "especialidades",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "otras",
+      "palabras": [
+        "urología",
+        "próstata"
+      ],
+      "consultorio": "Consultorio 8",
+      "agenda": {
+        "dias": [
+          3
+        ],
+        "desde": "09:00",
+        "hasta": "12:00",
+        "cada_min": 20
+      },
+      "horario": "Miércoles de 9 a 12 h"
+    },
+    {
+      "id": "guardia-sampleton-hospital",
+      "top": 77,
+      "top_label": "Guardia",
+      "nombre": "Guardia",
+      "centro": "sampleton-hospital",
+      "modo": "walkin",
+      "descripcion": "Se atiende sin turno, por llegada, en Sampleton Hospital.",
+      "cartel": "No necesitás turno. Guardia las 24 horas, todos los días. Se atiende primero a quien está más grave. Ante una emergencia llamá al {{sitio.emergency_number}}.",
+      "categoria": "consultorios",
+      "edad": {
+        "min": null,
+        "max": null
+      },
+      "pami": null,
+      "cluster": "clinica",
+      "palabras": [
+        "guardia",
+        "guardia del hospital",
+        "urgencias",
+        "emergencias",
+        "accidente",
+        "dolor de pecho",
+        "falta de aire"
+      ],
+      "consultorio": "Guardia",
+      "horario": "Las 24 horas, todos los días"
+    }
+  ]
+}

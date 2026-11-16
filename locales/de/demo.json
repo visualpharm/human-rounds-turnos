@@ -1,0 +1,11 @@
+{
+  "_comment": "The public demo bar and its notices.",
+  "demo.banner.admin": "Demo. Fiktive Daten; Änderungen werden zurückgesetzt.",
+  "demo.banner.aria": "Demo-Navigation",
+  "demo.banner.language_label": "Sprache",
+  "demo.banner.link_admin": "Verwaltung",
+  "demo.banner.link_doctor_demo": "Arzt-Konsole",
+  "demo.banner.link_patient_demo": "Patient",
+  "demo.banner.link_public_site": "Öffentliche Seite",
+  "demo.banner.public": "Demo. Alle Daten sind fiktiv."
+}

@@ -1,0 +1,11 @@
+{
+  "id": "waha",
+  "country": "AR",
+  "capability": "otp_transport",
+  "config_keys": [
+    "OTP_WAHA_URL",
+    "OTP_WAHA_API_KEY",
+    "OTP_WAHA_SESSION"
+  ],
+  "description": "WhatsApp OTP/free-text delivery via a WAHA instance's /api/sendText. Implementation stays in otp_send.py (NOT moved into this directory — see adapter.py for why); this manifest documents its config keys for manage.py/Settings. Selection between waha and meta is otp_send.py's own wa_provider()/OTP_PROVIDER logic, not this framework's CONNECTOR_OTP_TRANSPORT key."
+}

@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "Se l'account ha un'email registrata, riceverai un link per scegliere una nuova password.",
+  "admin.reset.mismatch": "Le password non corrispondono.",
+  "admin.reset.failed": "Impossibile salvare. Richiedi un nuovo link.",
+  "admin.reset.saved": "Password salvata. Vai al pannello",
+  "admin.reset.network": "Errore di rete. Riprova.",
+  "admin.reset.expired_title": "Il link è scaduto",
+  "admin.reset.expired_body": "Questo link è scaduto o è già stato utilizzato. Richiedine uno nuovo dalla pagina di accesso al pannello.",
+  "admin.reset.login": "Accesso al pannello",
+  "admin.reset.password": "Nuova password",
+  "admin.reset.title": "Scegli una nuova password",
+  "admin.reset.requirements": "Usa almeno 8 caratteri. Questo link può essere usato una sola volta.",
+  "admin.reset.confirm": "Ripeti la password",
+  "admin.reset.save": "Salva password",
+  "admin.reset.db_unavailable": "Database non disponibile.",
+  "admin.reset.expired": "Il link è scaduto o è già stato utilizzato. Richiedine uno nuovo.",
+  "admin.reset.invalid_json": "JSON non valido.",
+  "admin.reset.username": "Il tuo nome utente"
+}

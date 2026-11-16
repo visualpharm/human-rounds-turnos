@@ -1,0 +1,5 @@
+{
+  "_comment": "Shared labels around the two legal documents.",
+  "legal.demo_notice": "你当前处于**演示**环境。此文档与正式环境发布的文档一致，但使用的是虚拟数据且无真实患者：此处内容不生效，且不产生任何义务。",
+  "legal.updated": "最后更新："
+}

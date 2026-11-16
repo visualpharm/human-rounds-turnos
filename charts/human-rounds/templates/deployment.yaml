@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "human-rounds.fullname" . }}
+  labels:
+    {{- include "human-rounds.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "human-rounds.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "human-rounds.selectorLabels" . | nindent 8 }}
+    spec:
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: human-rounds
+          image: {{ include "human-rounds.image" . | quote }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          ports:
+            - name: http
+              # The application listens on its fixed container contract port.
+              # service.port is intentionally only the cluster-facing port.
+              containerPort: 7700
+              protocol: TCP
+          env:
+            - name: PORT
+              value: "7700"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ required "database.existingSecret is required" .Values.database.existingSecret | quote }}
+                  key: {{ required "database.existingSecretKey is required" .Values.database.existingSecretKey | quote }}
+            {{- range $name, $value := .Values.applicationEnv }}
+            - name: {{ $name | quote }}
+              value: {{ $value | toString | quote }}
+            {{- end }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: app-data
+              mountPath: /app/data
+            # The current image writes access logs under /app/logs. The image
+            # tree is root-owned while this chart runs as UID/GID 1000, so
+            # provide a writable ephemeral volume instead of weakening the
+            # container security context.
+            - name: app-logs
+              mountPath: /app/logs
+      volumes:
+        - name: app-data
+          {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ include "human-rounds.pvcName" . }}
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
+        - name: app-logs
+          emptyDir: {}

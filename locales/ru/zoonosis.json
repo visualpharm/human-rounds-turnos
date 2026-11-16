@@ -1,0 +1,14 @@
+{
+  "_comment": "/zoonosis page chrome — headings and labels. Content (lede, servicios, nota, whatsapp, enlaces_oficiales) is pack data (enlaces.json).",
+  "zoonosis.h1": "Зоонозы",
+  "zoonosis.lede_default": "Муниципальный центр здоровья животных и зооноза.",
+  "zoonosis.services_h": "Что мы предлагаем",
+  "zoonosis.contact_h": "Контакты",
+  "zoonosis.bite_h": "Если тебя укусили или поцарапали",
+  "zoonosis.neuter_h": "Кастрация — это тоже забота о районе",
+  "zoonosis.official_h": "Больше информации",
+  "zoonosis.rodent_h": "Профилактика заболеваний, переносимых грызунами",
+  "zoonosis.whatsapp_lead": "WhatsApp",
+  "zoonosis.nota_default": "Это муниципальная санитарная служба — запись для домашних животных через этот портал не ведется.",
+  "zoonosis.landline": "Городской телефон"
+}

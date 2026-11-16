@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ t('study.admin.title', 'Usabilidad') }}{% endblock %}
+{% block screen_title %}{{ t('study.admin.title', 'Usabilidad') }}{% endblock %}
+{% block content %}<div class="adm-content-wrap" id="usability"></div>{% endblock %}
+{% block scripts %}
+{% with boot_host='usability', boot_url=static('platform/admin-usability.mjs'), boot_function='mount', boot_data=false %}
+{% include 'study/boot.html' %}
+{% endwith %}
+{% endblock %}

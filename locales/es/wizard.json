@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "Comprobando para quién es la atención…",
+  "wizard.age_check.h1": "¿Para quién es la atención?",
+  "wizard.confirm.error": "No pudimos guardar tu respuesta. Probá de nuevo.",
+  "wizard.confirm.expired": "Ese turno ya no se puede confirmar.",
+  "wizard.confirm.saved": "Listo, gracias por avisar.",
+  "wizard.confirm.wait": "Un momento…",
+  "wizard.contact.call": "¿Te trabás en algún paso? Llamá a {name}:",
+  "wizard.contact.center_fallback": "el centro",
+  "wizard.contact.whatsapp": "¿Te trabás en algún paso? Escribile a {name} por WhatsApp:",
+  "wizard.contact.whatsapp_site": "¿Te trabás en algún paso? Escribinos por WhatsApp:",
+  "wizard.offer.accepted": "¡Listo! Tu turno quedó confirmado. Te llevamos a Mis turnos…",
+  "wizard.offer.error": "No pudimos procesar tu respuesta. Probá de nuevo.",
+  "wizard.offer.gone": "Este turno ya no está disponible.",
+  "wizard.offer.rejected": "Avisamos a la siguiente persona de la lista. Gracias por responder.",
+  "wizard.offer.wait": "Un momento…",
+  "wizard.title.orden": "Orden de derivación",
+  "wizard.title.solicitud": "Sacar turno",
+  "wizard.upload.sub": "El hospital la revisa y te confirma el turno."
+}

@@ -1,0 +1,370 @@
+{
+ "app.admin_panel._native_support": {
+  "api_error": {
+   "args": "(\"{'error': 'x', 'n': [1]}\",)",
+   "is_exception": true,
+   "payload": {
+    "error": "x",
+    "n": [
+     1
+    ]
+   },
+   "status": 409,
+   "str": "{'error': 'x', 'n': [1]}"
+  },
+  "gate": {
+   "dict_detail": {
+    "api_error": [
+     403,
+     {
+      "error": "solo_admin",
+      "extra": [
+       1
+      ]
+     }
+    ],
+    "args": "(\"{'error': 'solo_admin', 'extra': [1]}\",)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': 'solo_admin', 'extra': [1]}",
+    "suppressed": true
+   },
+   "identity": {
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "returned": {
+     "rol": "admin",
+     "usuario": "ana"
+    }
+   },
+   "list_detail": {
+    "api_error": [
+     418,
+     {
+      "error": "['a', 'b']"
+     }
+    ],
+    "args": "('{\\'error\\': \"[\\'a\\', \\'b\\']\"}',)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': \"['a', 'b']\"}",
+    "suppressed": true
+   },
+   "no_flags": {
+    "flags": [
+     {}
+    ]
+   },
+   "none_detail": {
+    "api_error": [
+     500,
+     {
+      "error": "Internal Server Error"
+     }
+    ],
+    "args": "(\"{'error': 'Internal Server Error'}\",)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': 'Internal Server Error'}",
+    "suppressed": true
+   },
+   "other_error": {
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "message": "boom",
+    "raised": "RuntimeError"
+   },
+   "str_detail": {
+    "api_error": [
+     401,
+     {
+      "error": "no autenticado"
+     }
+    ],
+    "args": "(\"{'error': 'no autenticado'}\",)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': 'no autenticado'}",
+    "suppressed": true
+   }
+  },
+  "not_found": {
+   "body": "{\"error\": \"not found\"}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "22"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "read_json_body": {
+   "b'   '": {
+    "message": "Expecting value: line 1 column 4 (char 3)",
+    "raised": "JSONDecodeError"
+   },
+   "b''": {
+    "value": {}
+   },
+   "b'[1, 2]'": {
+    "value": [
+     1,
+     2
+    ]
+   },
+   "b'\\xff\\xfe{}'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'not json'": {
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'null'": {
+    "value": null
+   },
+   "b'{\"a\": '": {
+    "message": "Expecting value: line 1 column 7 (char 6)",
+    "raised": "JSONDecodeError"
+   },
+   "b'{\"a\": 1, \"b\": [1, 2.5, null]}'": {
+    "value": {
+     "a": 1,
+     "b": [
+      1,
+      2.5,
+      null
+     ]
+    }
+   },
+   "b'{\"nombre\": \"\\xc3\\x91and\\xc3\\xba P\\xc3\\xa9rez \\xc2\\xbfok?\"}'": {
+    "value": {
+     "nombre": "Ñandú Pérez ¿ok?"
+    }
+   },
+   "b'{}'": {
+    "value": {}
+   }
+  }
+ },
+ "app.modules.intake._native_support": {
+  "api_error": {
+   "args": "(\"{'error': 'x', 'n': [1]}\",)",
+   "is_exception": true,
+   "payload": {
+    "error": "x",
+    "n": [
+     1
+    ]
+   },
+   "status": 409,
+   "str": "{'error': 'x', 'n': [1]}"
+  },
+  "gate": {
+   "dict_detail": {
+    "api_error": [
+     403,
+     {
+      "error": "solo_admin",
+      "extra": [
+       1
+      ]
+     }
+    ],
+    "args": "(\"{'error': 'solo_admin', 'extra': [1]}\",)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': 'solo_admin', 'extra': [1]}",
+    "suppressed": true
+   },
+   "identity": {
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "returned": {
+     "rol": "admin",
+     "usuario": "ana"
+    }
+   },
+   "list_detail": {
+    "api_error": [
+     418,
+     {
+      "error": "['a', 'b']"
+     }
+    ],
+    "args": "('{\\'error\\': \"[\\'a\\', \\'b\\']\"}',)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': \"['a', 'b']\"}",
+    "suppressed": true
+   },
+   "no_flags": {
+    "flags": [
+     {}
+    ]
+   },
+   "none_detail": {
+    "api_error": [
+     500,
+     {
+      "error": "Internal Server Error"
+     }
+    ],
+    "args": "(\"{'error': 'Internal Server Error'}\",)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': 'Internal Server Error'}",
+    "suppressed": true
+   },
+   "other_error": {
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "message": "boom",
+    "raised": "RuntimeError"
+   },
+   "str_detail": {
+    "api_error": [
+     401,
+     {
+      "error": "no autenticado"
+     }
+    ],
+    "args": "(\"{'error': 'no autenticado'}\",)",
+    "cause": "None",
+    "flags": [
+     {
+      "permitir_medico": true,
+      "solo_admin": false
+     }
+    ],
+    "str": "{'error': 'no autenticado'}",
+    "suppressed": true
+   }
+  },
+  "not_found": {
+   "body": "{\"error\": \"not found\"}",
+   "headers": [
+    [
+     "cache-control",
+     "no-store"
+    ],
+    [
+     "content-length",
+     "22"
+    ],
+    [
+     "content-type",
+     "application/json; charset=utf-8"
+    ]
+   ],
+   "status": 404
+  },
+  "read_json_body": {
+   "b'   '": {
+    "message": "Expecting value: line 1 column 4 (char 3)",
+    "raised": "JSONDecodeError"
+   },
+   "b''": {
+    "value": {}
+   },
+   "b'[1, 2]'": {
+    "value": [
+     1,
+     2
+    ]
+   },
+   "b'\\xff\\xfe{}'": {
+    "message": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+    "raised": "UnicodeDecodeError"
+   },
+   "b'not json'": {
+    "message": "Expecting value: line 1 column 1 (char 0)",
+    "raised": "JSONDecodeError"
+   },
+   "b'null'": {
+    "value": null
+   },
+   "b'{\"a\": '": {
+    "message": "Expecting value: line 1 column 7 (char 6)",
+    "raised": "JSONDecodeError"
+   },
+   "b'{\"a\": 1, \"b\": [1, 2.5, null]}'": {
+    "value": {
+     "a": 1,
+     "b": [
+      1,
+      2.5,
+      null
+     ]
+    }
+   },
+   "b'{\"nombre\": \"\\xc3\\x91and\\xc3\\xba P\\xc3\\xa9rez \\xc2\\xbfok?\"}'": {
+    "value": {
+     "nombre": "Ñandú Pérez ¿ok?"
+    }
+   },
+   "b'{}'": {
+    "value": {}
+   }
+  }
+ }
+}

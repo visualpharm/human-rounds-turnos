@@ -1,0 +1,8 @@
+{
+  "id": "ar-b",
+  "level": 3,
+  "parent": "ar",
+  "language": "es-AR",
+  "name": "Buenos Aires (provincia)",
+  "description": "Datos de nivel provincia: msd-institutions.json (mapeo de instituciones MSD, contenido de Pinamar por ahora — ver el archivo), trusted-domains.json (dominios oficiales provinciales). Nota de distritos del colegio de médicos queda pendiente — ver docs/architecture/data-packs.md."
+}

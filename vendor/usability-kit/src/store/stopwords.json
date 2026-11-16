@@ -1,0 +1,36 @@
+{
+  "en": [
+    "a", "an", "the", "and", "or", "but", "if", "then", "else", "when", "while",
+    "of", "to", "in", "on", "at", "by", "for", "with", "without", "from", "into",
+    "over", "under", "up", "down", "out", "off", "about", "against", "between",
+    "through", "during", "before", "after", "above", "below", "again", "further",
+    "once", "here", "there", "all", "any", "both", "each", "few", "more", "most",
+    "other", "others", "some", "such", "no", "nor", "not", "only", "own", "same",
+    "so", "than", "too", "very", "can", "cannot", "cant", "could", "should",
+    "would", "will", "shall", "may", "might", "must", "do", "does", "did", "doing",
+    "done", "has", "have", "had", "having", "is", "are", "was", "were", "be",
+    "been", "being", "am", "it", "its", "itself", "this", "that", "these",
+    "those", "you", "your", "yours", "he", "him", "his", "she", "her", "we",
+    "us", "our", "ours", "they", "them", "their", "what", "which", "who", "whom",
+    "whose", "why", "how", "as", "because", "until", "unless", "since", "also",
+    "just", "now", "there", "where"
+  ],
+  "es": [
+    "el", "la", "los", "las", "un", "una", "unos", "unas", "al", "del", "de",
+    "en", "con", "por", "para", "sin", "sobre", "bajo", "entre", "hasta",
+    "desde", "hacia", "contra", "mediante", "tras", "y", "o", "u", "e", "ni",
+    "que", "quien", "quienes", "cual", "cuales", "como", "cuando", "donde",
+    "porque", "pues", "pero", "sino", "si", "no", "se", "lo", "le", "les", "me",
+    "te", "nos", "os", "mi", "mis", "tu", "tus", "su", "sus", "nuestro",
+    "nuestra", "nuestros", "nuestras", "vuestro", "vuestra", "vuestros",
+    "vuestras", "este", "esta", "esto", "estos", "estas", "ese", "esa", "eso",
+    "esos", "esas", "aquel", "aquella", "aquello", "aquellos", "aquellas", "hay",
+    "muy", "mas", "menos", "tan", "tanto", "tanta", "tantos", "tantas", "todo",
+    "toda", "todos", "todas", "algo", "nada", "alguien", "nadie", "tambien",
+    "tampoco", "ser", "es", "soy", "eres", "somos", "son", "era", "eras", "eran",
+    "fue", "fueron", "sera", "estar", "estoy", "estas", "estan", "haber", "ha",
+    "han", "he", "has", "hemos", "habia", "habian", "puede", "pueden", "puedo",
+    "ver", "vez", "ya", "aun", "solo", "ello", "ellos", "ellas", "nosotros",
+    "vosotros", "usted", "ustedes", "esta", "estan", "mas"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "method": "Explicit SigV4 canonical request plus unrolled stdlib hmac.new stages; no implementation imports or expected values copied from core.backup_s3.",
+  "access_id": "synthetic-sigv4-access",
+  "secret": "synthetic-sigv4-secret",
+  "iam": {
+    "date": "20150830",
+    "region": "us-east-1",
+    "service": "iam",
+    "date_hmac": "c20ca69571961149d5ffeea72dd2a09d30717cfa924e493c94147b332827faba",
+    "region_hmac": "89391b41e8aa4d0a28b51da7832540637b4eb4226f5d34aaa0cc8f587143b091",
+    "service_hmac": "7bcd1f084311e328c61597e07a61946db8f21a8dbe5eb895dcc907379ac48136",
+    "signing_key": "4b2c9b47b2d985b926a9bcecff5534886d47495ca93edf07eb3c556cd5c4fb12"
+  },
+  "s3": {
+    "canonical_request": "GET\n/test.txt\n\nhost:examplebucket.s3.amazonaws.com\nrange:bytes=0-9\nx-amz-content-sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\nx-amz-date:20130524T000000Z\n\nhost;range;x-amz-content-sha256;x-amz-date\ne3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "canonical_request_sha256": "7344ae5b7ee6c3e7e6b0fe0640412a37625d1fbfff95c48bbb2dc43964946972",
+    "string_to_sign": "AWS4-HMAC-SHA256\n20130524T000000Z\n20130524/us-east-1/s3/aws4_request\n7344ae5b7ee6c3e7e6b0fe0640412a37625d1fbfff95c48bbb2dc43964946972",
+    "date_hmac": "e6ba4f43c4aa9c30bd86629281b4dd4980e9c848eee1e3854a58f3c9f70fd901",
+    "region_hmac": "ba1cb3478495df8d1f6018a9fd7ac484b474a9de3e1f53f04af4d5c2dbe29212",
+    "service_hmac": "3a9ea4a2b4e9767924bbe19fcaa9e9436839a1ed5994e3e938323ea4743e7646",
+    "signing_key": "31ef56752f6f88e7f0079879a347e775a064a9b98498fec7b7d933ec4411b388",
+    "signature": "51d869dd643ccd0c60504d503e9bb21723a28e2efb6fcc5430f585db8b68d4fc"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "_note": "Reseñas y consejos FICTICIOS por centro, para la instalación demo (Sampleton — todos los datos del demo son ficticios). Misma forma que el archivo de Pinamar: rating/count simulan la ficha de Google, 'quotes' son citas de vecinos inventadas, 'tips' consejos prácticos destilados. Sin 'maps': no existe ficha real que enlazar para un pueblo ficticio (la página del paciente no lo usa; el panel tampoco lo necesita).",
+  "sampleton-hospital": {
+    "rating": 4.3,
+    "count": 48,
+    "quotes": [
+      {"text": "Llevé a mi papá a la guardia un domingo a la noche y lo atendieron enseguida. El médico nos explicó todo con paciencia.", "rating": 5},
+      {"text": "Saqué turno por la página y me llegó el recordatorio por mail. En admisión me resolvieron el cambio de horario sin vueltas.", "rating": 4},
+      {"text": "La guardia estaba llena un feriado y esperamos bastante, pero el triage funcionó: a la nena con fiebre alta la pasaron primero.", "rating": 3}
+    ],
+    "tips": [
+      "La guardia atiende por triage: pasan primero los casos más graves, no el orden de llegada.",
+      "Para estudios con orden conviene ir con la orden en papel o subirla desde la página antes de ir.",
+      "El estacionamiento de la entrada principal se llena a la mañana; por la calle lateral casi siempre hay lugar."
+    ]
+  },
+  "riverside-clinic": {
+    "rating": 4.6,
+    "count": 31,
+    "quotes": [
+      {"text": "Fui sin turno por un dolor de garganta y me atendieron en el día. Las chicas de la ventanilla son muy amables.", "rating": 5},
+      {"text": "Me controlan la presión todas las semanas. El doctor te conoce por el nombre, eso no tiene precio.", "rating": 5},
+      {"text": "A veces el teléfono da ocupado, conviene ir directamente o usar la página para consultar horarios.", "rating": 4}
+    ],
+    "tips": [
+      "Medicina clínica atiende por orden de llegada: conviene llegar temprano, antes de las 8 ya hay fila.",
+      "Los certificados de salud escolar se piden a la mañana y suelen estar listos el mismo día."
+    ]
+  },
+  "lakeview-clinic": {
+    "rating": 4.4,
+    "count": 22,
+    "quotes": [
+      {"text": "Me vacunaron a los dos nenes en la campaña de invierno, rápido y sin turno. Muy bien organizado.", "rating": 5},
+      {"text": "La sala de espera es chica y en invierno se llena, pero el trato del personal compensa.", "rating": 4}
+    ],
+    "tips": [
+      "Las vacunas del calendario no necesitan turno: se aplican todas las mañanas hasta el mediodía.",
+      "Si venís en colectivo, la parada más cercana es la de la avenida — quedan dos cuadras a pie."
+    ]
+  },
+  "maternity-center": {
+    "rating": 4.7,
+    "count": 39,
+    "quotes": [
+      {"text": "Hice todo el seguimiento del embarazo acá. Las obstétricas te acompañan de verdad, nunca me sentí un número.", "rating": 5},
+      {"text": "Los controles de mi beba siempre puntuales y con la libreta al día. La pediatra responde todas las preguntas.", "rating": 5},
+      {"text": "Para turnos de pediatría conviene sacar con tiempo porque se llenan rápido los de la tarde.", "rating": 4}
+    ],
+    "tips": [
+      "Los turnos de la tarde de pediatría vuelan: los de la mañana casi siempre tienen lugar en la semana.",
+      "Llevá la libreta sanitaria a todos los controles, la piden siempre."
+    ]
+  },
+  "diagnostic-center": {
+    "rating": 4.2,
+    "count": 17,
+    "quotes": [
+      {"text": "Me hice la ecografía con turno de la página y salí en veinte minutos. El técnico muy correcto.", "rating": 5},
+      {"text": "Las extracciones son a primera hora y en ayunas; el resultado me llegó a la cuenta en dos días.", "rating": 4}
+    ],
+    "tips": [
+      "Las extracciones de laboratorio son de 7 a 9: conviene llegar en ayunas y con la orden.",
+      "Los resultados aparecen en tu cuenta de la página — no hace falta volver a retirarlos en papel."
+    ]
+  }
+}

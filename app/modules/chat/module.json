@@ -1,0 +1,40 @@
+{
+  "id": "chat",
+  "name": "Chat",
+  "description": "El motor de chat conversacional (IA con herramientas) y sus tres puertas: el widget del sitio, WhatsApp (WAHA + Meta Cloud API) y MCP. Búsqueda de servicios, horarios, creación/consulta/cancelación de solicitudes y lectura de órdenes, todo por chat en vez del wizard clásico.",
+
+  "requires": ["turnos"],
+
+  "entrypoint": null,
+
+  "routes": [
+    {"module": "app.modules.chat.chat_api", "methods": ["GET", "POST"], "after": {"GET": "app.modules.chat.whatsapp_chat", "POST": "app.ai.prompts"}},
+    {"module": "app.modules.chat.whatsapp_chat", "methods": ["GET", "POST"], "after": {"GET": "app.patient_web.legal", "POST": "app.modules.chat.chat_api"}},
+    {"module": "app.modules.chat.voice", "methods": ["GET", "POST"], "after": {"GET": "app.modules.chat.chat_api", "POST": "app.modules.chat.whatsapp_chat"}},
+    {"module": "app.modules.chat.mcp_api", "methods": ["GET", "POST", "DELETE"], "after": "app.cuentas.account_photo"},
+    {"module": "app.modules.chat.mcp_oauth_router", "methods": ["GET", "POST"], "router_attr": "router"},
+    {"module": "app.modules.chat.whatsapp_chat_router", "methods": ["GET", "POST"], "router_attr": "router"},
+    {"module": "app.modules.chat.mcp_api_router", "methods": ["GET", "POST", "DELETE"], "router_attr": "router"},
+    {"module": "app.modules.chat.chat_api_router", "methods": ["GET", "POST"], "router_attr": "router"},
+    {"module": "app.modules.chat.voice_router", "methods": ["GET", "POST"], "router_attr": "router"}
+  ],
+
+  "admin_sections": [
+    {"id": "chats", "label_key": "admin.shell.nav.chats", "label": "Chats",
+     "screen": {"path": "/admin/chats", "router_attr": "screen_router",
+                "module": "app.modules.chat.admin_chats_screen",
+                "template": "modules/chat/admin_chats.html"}}
+  ],
+
+  "nav_entries": [],
+
+  "assets": [
+    "static/platform/chat-widget.mjs"
+  ],
+
+  "locales": null,
+
+  "db_tables": ["chat_handoffs", "chat_summaries", "chat_compactions"],
+
+  "config_keys_prefixes": ["TURNOS_WA_", "TURNOS_CHAT_", "META_WA_"]
+}

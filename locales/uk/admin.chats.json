@@ -1,0 +1,10 @@
+{
+  "admin.chats.empty": "Розмов ще не було.",
+  "admin.chats.failed": "Не вдалося завантажити розмови.",
+  "admin.chats.col_when": "Остання активність",
+  "admin.chats.col_channel": "Канал",
+  "admin.chats.col_first": "Перше запитання",
+  "admin.chats.col_turns": "Повідомлення",
+  "admin.chats.channel_web": "Сайт",
+  "admin.chats.channel_whatsapp": "WhatsApp"
+}

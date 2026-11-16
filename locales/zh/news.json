@@ -1,0 +1,12 @@
+{
+  "_comment": "/news (Novedades) page chrome only — title, tabs, the site's name in the changelog. The changelog entries themselves are editorial content, machine-translated + cached via translate.py (see docs/architecture/i18n.md), not this catalog.",
+  "news.date_long": "{year}年{month}{day}日",
+  "news.desc": "{brand} 的更新记录：我们每周新增和改进的内容。",
+  "news.filter.all": "全部",
+  "news.filter.requested": "按需提供",
+  "news.h1": "最新动态",
+  "news.month_long": "{year}年{month}",
+  "news.site_phrase": "{city} 的健康预约",
+  "news.tabs": "筛选动态",
+  "news.title": "最新动态"
+}

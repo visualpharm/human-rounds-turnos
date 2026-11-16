@@ -1,0 +1,7 @@
+{
+  "_comment": "Dominios oficiales confiables para la instalación demo. catalog._load_official_sources() une los 'domains' de cada pack de la cadena; sin este archivo la cadena del demo caía al fallback hardcodeado con los dominios de PINAMAR y el editor de Conocimiento del panel rechazaba fuentes del propio pueblo demo (sampleton.example). argentina.gob.ar entra porque Sampleton es un pueblo argentino ficticio y un artículo de alcance nacional es una edición plausible en el panel demo.",
+  "domains": [
+    "sampleton.example",
+    "argentina.gob.ar"
+  ]
+}

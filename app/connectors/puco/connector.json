@@ -1,0 +1,11 @@
+{
+  "id": "puco",
+  "country": "AR",
+  "capability": "insurance_lookup",
+  "default": true,
+  "config_keys": [
+    "TURNOS_SISA_USER",
+    "TURNOS_SISA_PASS"
+  ],
+  "description": "PUCO (Padron Unico Consolidado Operativo) health-coverage lookup by DNI, against SISA (Ministerio de Salud de la Nacion) WS131. Falls back to a public no-credential GWT-RPC query (TURNOS_PUCO_PUBLIC, on by default) when TURNOS_SISA_USER/_PASS aren't set, and to TURNOS_FAKE_PUCO=1 for tests/demo. The fake/WS131/public chain is internal to this one connector, not a choice between connectors."
+}

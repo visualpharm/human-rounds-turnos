@@ -1,0 +1,41 @@
+{
+  "id": "intake",
+  "name": "Entrevista previa",
+  "description": "Entrevista previa a la consulta: chat con IA que interroga al paciente después de reservar (o al escanear el QR de la puerta del consultorio), produce un color de triage + resumen para el médico, y alimenta la consulta (diagnósticos, estudios, receta imprimible). Portado del prototipo hermano <workspace>/sana (idea, no código).",
+
+  "requires": ["turnos", "chat"],
+
+  "entrypoint": "app.modules.intake.app",
+
+  "routes": [
+    {"module": "app.modules.intake.interview_patient_router", "methods": ["GET", "POST"], "router_attr": "router"},
+    {"module": "app.modules.intake.consult_admin_router", "methods": ["GET", "POST"], "router_attr": "router"},
+    {"module": "app.modules.intake.intake_admin_router", "methods": ["GET", "POST"], "router_attr": "router"},
+    {"module": "app.modules.intake.printable_router", "methods": ["GET"], "router_attr": "router"}
+  ],
+
+  "admin_sections": [
+    {"id": "consulta", "screen": {"path": "/admin/consult", "router_attr": "screen_router",
+     "module": "app.modules.intake.admin_consult_screen", "template": "modules/intake/admin_consult.html"}},
+    {"id": "entrevistas", "label_key": "intake.nav.entrevistas", "label": "Captura de síntomas",
+     "js": "modules/intake/admin-entrevistas.mjs",
+     "screen": {"path": "/admin/entrevistas", "router_attr": "screen_router",
+                "module": "app.modules.intake.admin_entrevistas_screen",
+                "template": "modules/intake/admin_entrevistas.html"}}
+  ],
+
+  "nav_entries": [],
+
+  "assets": [
+    {"path": "modules/intake/entrevista.js", "fingerprint": true},
+    {"path": "modules/intake/entrevista.css", "fingerprint": true},
+    {"path": "modules/intake/admin-entrevistas.mjs", "fingerprint": true},
+    {"path": "modules/intake/admin-consult.mjs", "fingerprint": true}
+  ],
+
+  "locales": "modules/intake/locales",
+
+  "db_tables": ["interviews", "consultations", "patient_health_profile"],
+
+  "config_keys_prefixes": ["INTAKE_"]
+}

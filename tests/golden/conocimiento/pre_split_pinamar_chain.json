@@ -1,0 +1,386 @@
+{
+  "articles": [
+    {
+      "id": "pinamar-acceso",
+      "type": "categoria",
+      "title": "Atención en Pinamar",
+      "parent_id": null,
+      "jurisdiction": "pinamar",
+      "summary": "Acceso al Hospital, CAPS y programas municipales.",
+      "tags": ["pinamar", "hospital", "caps"],
+      "status": "publicado"
+    },
+    {
+      "id": "salud-pinamar",
+      "type": "articulo",
+      "title": "Servicios de salud de Pinamar",
+      "parent_id": "pinamar-acceso",
+      "jurisdiction": "pinamar",
+      "summary": "Directorio municipal de servicios, centros y vías de acceso.",
+      "content": "La página municipal de Salud reúne la cartelera de especialidades, centros de salud, contactos y accesos a turnos, vacunación, telemedicina y otros programas. Los horarios y las vías de atención son información operativa: confirmalos en la página vigente. Para servicios, profesionales, horarios y turnos ofrecidos por Pinamar Turnos, el asistente debe consultar sus herramientas y no completar datos desde esta referencia.",
+      "tags": ["servicios", "especialidades", "hospital", "caps", "contactos", "107"],
+      "status": "publicado",
+      "source": {
+        "title": "Salud",
+        "url": "https://pinamar.gob.ar/salud/",
+        "agency": "Municipalidad de Pinamar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 7
+      }
+    },
+    {
+      "id": "guardia-pinamar",
+      "type": "articulo",
+      "title": "Guardia y demanda espontánea en Pinamar",
+      "parent_id": "pinamar-acceso",
+      "jurisdiction": "pinamar",
+      "summary": "Dónde ir sin turno en Pinamar: la guardia del Hospital y la demanda espontánea en los CAPS.",
+      "content": "Ante una urgencia o emergencia en Pinamar, la guardia del Hospital de Pinamar (Av. Shaw 255, (02254) 49-1670) atiende todos los días, las 24 horas. Si hay peligro inmediato, llamá al 107 (emergencias médicas) o al 911.\n\nPara una consulta del mismo día que no es una emergencia — como tos, fiebre, dolor de garganta o un dolor puntual — Pinamar tiene consultorios de demanda espontánea sin turno previo en los CAPS y en la unidad móvil; los días y horarios varían por sede, confirmalos en la página municipal antes de salir. La demanda espontánea no reemplaza a la guardia: si es algo grave o urgente, andá directo al hospital.\n\nFuera de una urgencia, el CAPS de tu zona (CAPS Pinamar, CAPS Ostende, CAPS Valeria del Mar) sigue siendo la puerta de entrada para medicina general y otros servicios; para lo que se puede planificar, lo que corresponde es pedir un turno.",
+      "tags": ["guardia", "hospital de pinamar", "demanda espontanea", "caps", "107", "urgencia", "tos", "fiebre", "guardia pinamar"],
+      "status": "publicado",
+      "source": {
+        "title": "Consultorios de demanda espontánea en Salud: ¿Qué son?",
+        "url": "https://pinamar.gob.ar/demandaespontanea/",
+        "agency": "Municipalidad de Pinamar",
+        "verified_at": "2026-08-06",
+        "review_every_days": 7
+      }
+    },
+    {
+      "id": "turnos-hospital-caps",
+      "type": "articulo",
+      "title": "Turnos del Hospital y los CAPS",
+      "parent_id": "pinamar-acceso",
+      "jurisdiction": "pinamar",
+      "summary": "Vías municipales publicadas para solicitar atención.",
+      "content": "La guía municipal distingue el acceso al Hospital Comunitario del acceso a los CAPS. Publica requisitos y modalidades que pueden cambiar por servicio, y deriva los turnos de CAPS a Mi Salud Digital Bonaerense. Usá esta fuente para explicar la vía institucional; para ofrecer un turno concreto dentro de Pinamar Turnos, consultá siempre las herramientas del sistema.",
+      "tags": ["turnos", "hospital comunitario", "caps", "mi salud", "dni"],
+      "status": "publicado",
+      "source": {
+        "title": "Turnos médicos en el Hospital Comunitario de Pinamar",
+        "url": "https://pinamar.gob.ar/turnoshospital/",
+        "agency": "Municipalidad de Pinamar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 7
+      }
+    },
+    {
+      "id": "vacunacion-pinamar",
+      "type": "articulo",
+      "title": "Vacunatorios de Pinamar",
+      "parent_id": "pinamar-acceso",
+      "jurisdiction": "pinamar",
+      "summary": "Ubicación municipal de vacunatorios y documentación.",
+      "content": "La Municipalidad publica vacunatorios en los CAPS de Pinamar, Ostende y Valeria del Mar, y pide llevar la libreta o registro de vacunación. Los horarios y las campañas cambian: confirmalos en la fuente antes de trasladarte. La elegibilidad clínica y las contraindicaciones las resuelve el equipo de vacunación.",
+      "tags": ["vacunas", "vacunatorio", "libreta", "ostende", "valeria del mar"],
+      "status": "publicado",
+      "source": {
+        "title": "Vacunatorios en Pinamar",
+        "url": "https://pinamar.gob.ar/vacunatoriospinamar/",
+        "agency": "Municipalidad de Pinamar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 30
+      }
+    },
+    {
+      "id": "salud-mental-pinamar",
+      "type": "articulo",
+      "title": "Acceso local a salud mental",
+      "parent_id": "pinamar-acceso",
+      "jurisdiction": "pinamar",
+      "summary": "Puntos municipales de admisión y acompañamiento.",
+      "content": "La Municipalidad publica puntos locales de admisión y acompañamiento en salud mental y consumos problemáticos. Usá la fuente para orientar hacia el dispositivo más cercano y verificar la franja vigente. Si hay peligro inmediato, riesgo de autolesión o una emergencia, interrumpí el flujo de turnos y dirigí a la guardia o al servicio de emergencias.",
+      "tags": ["salud mental", "adicciones", "consumos", "acompañamiento", "urgencia"],
+      "status": "publicado",
+      "source": {
+        "title": "Salud mental en Pinamar",
+        "url": "https://pinamar.gob.ar/saludmentalpinamar/",
+        "agency": "Municipalidad de Pinamar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 7
+      }
+    },
+    {
+      "id": "telemedicina-pinamar",
+      "type": "articulo",
+      "title": "Telemedicina municipal",
+      "parent_id": "pinamar-acceso",
+      "jurisdiction": "pinamar",
+      "summary": "Orientación municipal sobre consultas remotas.",
+      "content": "Pinamar publica un acceso municipal de telemedicina para consultas habilitadas. Verificá en la página oficial qué especialidades y horarios están activos. La telemedicina no reemplaza la guardia ni el servicio de emergencias.",
+      "tags": ["telemedicina", "consulta remota", "pediatria", "clinica medica"],
+      "status": "publicado",
+      "source": {
+        "title": "Telemedicina",
+        "url": "https://pinamar.gob.ar/telemedicina/",
+        "agency": "Municipalidad de Pinamar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 7
+      }
+    },
+    {
+      "id": "cud-pinamar",
+      "type": "articulo",
+      "title": "Certificado Único de Discapacidad en Pinamar",
+      "parent_id": "pinamar-acceso",
+      "jurisdiction": "pinamar",
+      "summary": "Inicio local del trámite voluntario y gratuito.",
+      "content": "La Coordinación de Discapacidad municipal orienta el trámite del Certificado Único de Discapacidad. El proceso es voluntario y gratuito. Consultá la página para confirmar sede, contacto y requisitos vigentes; el chat no decide si una persona reúne los criterios médicos.",
+      "tags": ["cud", "discapacidad", "certificado", "tramite", "accesibilidad"],
+      "status": "publicado",
+      "source": {
+        "title": "Discapacidad",
+        "url": "https://pinamar.gob.ar/discapacidad/",
+        "agency": "Municipalidad de Pinamar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 30
+      }
+    },
+    {
+      "id": "provincia-acceso",
+      "type": "categoria",
+      "title": "Provincia de Buenos Aires",
+      "parent_id": null,
+      "jurisdiction": "provincia",
+      "summary": "Plataformas y redes provinciales de salud.",
+      "tags": ["provincia", "buenos aires"],
+      "status": "publicado"
+    },
+    {
+      "id": "mi-salud-digital",
+      "type": "articulo",
+      "title": "Mi Salud Digital Bonaerense",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Portal provincial para turnos y datos personales de salud.",
+      "content": "Mi Salud Digital Bonaerense permite registrar datos personales, consultar información de salud, vacunas y recetas electrónicas, y reservar o cancelar turnos en establecimientos participantes. También ofrece vías de TeleSalud. La disponibilidad depende de cada establecimiento: no prometas que una prestación o un turno de Pinamar aparezca allí sin verificarlo.",
+      "tags": ["mi salud", "turnos online", "recetas", "vacunas", "telesalud"],
+      "status": "publicado",
+      "source": {
+        "title": "Mi Salud Digital Bonaerense",
+        "url": "https://www.ms.gba.gov.ar/sitios/misalud/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 30
+      }
+    },
+    {
+      "id": "vacunacion-provincia",
+      "type": "articulo",
+      "title": "Vacunación en la Provincia",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Calendario y campañas provinciales vigentes.",
+      "content": "La Provincia informa que las vacunas del Calendario Nacional son gratuitas y están disponibles en vacunatorios públicos. Su portal concentra campañas específicas. Consultá la campaña vigente y después confirmá horarios y stock en el vacunatorio local; el chat no determina contraindicaciones.",
+      "tags": ["vacunacion", "vacunas", "campañas", "calendario"],
+      "status": "publicado",
+      "source": {
+        "title": "Vacunación",
+        "url": "https://vacunacion.gba.gob.ar/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 14
+      }
+    },
+    {
+      "id": "dengue-provincia",
+      "type": "articulo",
+      "title": "Dengue: prevención y campaña provincial",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Prevención y acceso actual a la campaña contra el dengue.",
+      "content": "El portal provincial reúne prevención, descacharrado, uso de repelente y acceso actualizado a la campaña de vacunación contra el dengue. La edad objetivo, gratuidad y modalidad pueden cambiar: verificá la página en el momento de responder. Ante signos de alarma o una urgencia, indicá atención inmediata y no continúes una conversación diagnóstica.",
+      "tags": ["dengue", "mosquito", "repelente", "descacharrado", "vacuna"],
+      "status": "publicado",
+      "source": {
+        "title": "Dengue",
+        "url": "https://dengue.gba.gob.ar/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 7
+      }
+    },
+    {
+      "id": "red-salud-mental-provincia",
+      "type": "articulo",
+      "title": "Red provincial de salud mental y consumos",
+      "parent_id": "provincia-acceso",
+      "jurisdiction": "provincia",
+      "summary": "Línea y dispositivos comunitarios provinciales.",
+      "content": "La Provincia publica una red comunitaria de salud mental y consumos problemáticos y la línea 0800 222 5462 para apoyo y derivación. Confirmá los horarios actuales en la fuente. En peligro inmediato, no uses esta línea como sustituto de la guardia o del servicio de emergencias.",
+      "tags": ["salud mental", "consumos", "0800", "derivacion", "apoyo"],
+      "status": "publicado",
+      "source": {
+        "title": "Red de dispositivos de salud mental y consumo problemático",
+        "url": "https://www.ms.gba.gov.ar/sitios/saludmental/red-de-dispositivos-de-salud-mental-y-consumo-problematico-con-base-en-la-comunidad/",
+        "agency": "Ministerio de Salud de la Provincia de Buenos Aires",
+        "verified_at": "2026-07-29",
+        "review_every_days": 90
+      }
+    },
+    {
+      "id": "nacion-derechos",
+      "type": "categoria",
+      "title": "Derechos y accesos nacionales",
+      "parent_id": null,
+      "jurisdiction": "nacion",
+      "summary": "Derechos del paciente y accesos para distintas poblaciones.",
+      "tags": ["derechos", "nacion"],
+      "status": "publicado"
+    },
+    {
+      "id": "derechos-paciente",
+      "type": "articulo",
+      "title": "Derechos del paciente",
+      "parent_id": "nacion-derechos",
+      "jurisdiction": "nacion",
+      "summary": "Trato digno, información, intimidad, consentimiento e historia clínica.",
+      "content": "La Ley 26.529 reconoce el derecho a la asistencia, al trato digno, a la intimidad, a recibir información sanitaria clara, a aceptar o rechazar tratamientos mediante consentimiento informado y a acceder a la historia clínica. El chat puede explicar el marco general y orientar al establecimiento, pero no evaluar capacidad, validez de un consentimiento ni brindar asesoramiento legal.",
+      "tags": ["ley 26529", "consentimiento informado", "historia clinica", "intimidad"],
+      "status": "publicado",
+      "source": {
+        "title": "Ley 26.529",
+        "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/160000-164999/160432/norma.htm",
+        "agency": "InfoLEG",
+        "verified_at": "2026-07-29",
+        "review_every_days": 365
+      }
+    },
+    {
+      "id": "datos-personales-salud",
+      "type": "articulo",
+      "title": "Privacidad de los datos de salud",
+      "parent_id": "nacion-derechos",
+      "jurisdiction": "nacion",
+      "summary": "Los datos de salud son datos personales sensibles.",
+      "content": "La Ley 25.326 considera sensibles los datos relativos a la salud. Deben tratarse con confidencialidad y sólo para fines legítimos. En el chat, pedí la mínima información necesaria, no expongas historias clínicas y autenticá a la persona antes de mostrar datos de su cuenta o de sus turnos.",
+      "tags": ["ley 25326", "datos sensibles", "privacidad", "confidencialidad"],
+      "status": "publicado",
+      "source": {
+        "title": "Ley 25.326, texto actualizado",
+        "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/texact.htm",
+        "agency": "InfoLEG",
+        "verified_at": "2026-07-29",
+        "review_every_days": 365
+      }
+    },
+    {
+      "id": "adolescentes-salud",
+      "type": "articulo",
+      "title": "Niñas, niños y adolescentes en la atención de salud",
+      "parent_id": "nacion-derechos",
+      "jurisdiction": "nacion",
+      "summary": "Autonomía progresiva para decisiones sobre el propio cuerpo.",
+      "content": "El artículo 26 del Código Civil y Comercial establece la autonomía progresiva de niñas, niños y adolescentes en decisiones sobre su salud. No conviertas esta regla en un bloqueo automático basado sólo en la edad. Para una situación sensible o dudosa, preservá la privacidad y derivá a personal capacitado.",
+      "tags": ["menores", "adolescentes", "autonomia progresiva", "articulo 26"],
+      "status": "publicado",
+      "source": {
+        "title": "Código Civil y Comercial de la Nación, texto actualizado",
+        "url": "https://servicios.infoleg.gob.ar/infolegInternet/anexos/235000-239999/235975/texact.htm",
+        "agency": "InfoLEG",
+        "verified_at": "2026-07-29",
+        "review_every_days": 365
+      }
+    },
+    {
+      "id": "salud-sexual-nacion",
+      "type": "articulo",
+      "title": "Salud sexual y reproductiva",
+      "parent_id": "nacion-derechos",
+      "jurisdiction": "nacion",
+      "summary": "Información oficial y orientación nacional de acceso.",
+      "content": "El portal nacional de salud sexual y reproductiva ofrece información sobre derechos, métodos y vías de consulta. Respondé de forma neutral y privada, sin inferir embarazo ni exigir consentimiento de pareja. Para disponibilidad concreta en Pinamar, consultá los servicios locales; no inventes stock ni prestaciones.",
+      "tags": ["salud sexual", "anticoncepcion", "derechos", "orientacion"],
+      "status": "publicado",
+      "source": {
+        "title": "Salud sexual y reproductiva",
+        "url": "https://www.argentina.gob.ar/salud/sexual",
+        "agency": "Ministerio de Salud de la Nación",
+        "verified_at": "2026-07-29",
+        "review_every_days": 90
+      }
+    },
+    {
+      "id": "nacion-prevencion-urgencias",
+      "type": "categoria",
+      "title": "Prevención y urgencias nacionales",
+      "parent_id": null,
+      "jurisdiction": "nacion",
+      "summary": "Calendarios y vías nacionales de emergencia.",
+      "tags": ["prevencion", "urgencias"],
+      "status": "publicado"
+    },
+    {
+      "id": "calendario-vacunacion",
+      "type": "articulo",
+      "title": "Calendario Nacional de Vacunación",
+      "parent_id": "nacion-prevencion-urgencias",
+      "jurisdiction": "nacion",
+      "summary": "Calendario oficial por etapa de la vida.",
+      "content": "El Calendario Nacional de Vacunación indica las vacunas por etapa de la vida y se actualiza en el sitio oficial. Las vacunas del calendario son gratuitas. No reproduzcas un calendario congelado como verdad permanente: consultá la versión vigente y confirmá localmente horarios y disponibilidad.",
+      "tags": ["vacunas", "calendario nacional", "gratuitas", "prevencion"],
+      "status": "publicado",
+      "source": {
+        "title": "Vacunas",
+        "url": "https://www.argentina.gob.ar/salud/vacunas",
+        "agency": "Ministerio de Salud de la Nación",
+        "verified_at": "2026-07-29",
+        "review_every_days": 30
+      }
+    },
+    {
+      "id": "emergencias-nacionales",
+      "type": "articulo",
+      "title": "Emergencias",
+      "parent_id": "nacion-prevencion-urgencias",
+      "jurisdiction": "nacion",
+      "summary": "Vías generales para una emergencia inmediata.",
+      "content": "Argentina.gob.ar publica el 911 para emergencias. En Pinamar, la fuente municipal de Salud publica el 107 y la guardia del Hospital. Si la persona describe peligro inmediato, dolor de pecho, falta de aire, signos de ACV, sangrado grave, sobredosis o riesgo de autolesión, detené el flujo de turnos y pedile que llame al servicio de emergencias o vaya a la guardia. No diagnostiques.",
+      "tags": ["911", "107", "guardia", "emergencia", "urgencia"],
+      "status": "publicado",
+      "source": {
+        "title": "Emergencias",
+        "url": "https://www.argentina.gob.ar/tema/emergencias",
+        "agency": "Argentina.gob.ar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 30
+      }
+    },
+    {
+      "id": "guardia-o-turno",
+      "type": "articulo",
+      "title": "¿Guardia o turno? Cuándo ir a la guardia y cuándo pedir un turno",
+      "parent_id": "nacion-prevencion-urgencias",
+      "jurisdiction": "nacion",
+      "summary": "Criterios para elegir entre la guardia, la demanda espontánea y un turno programado.",
+      "content": "Si hay peligro inmediato — dolor de pecho, falta de aire, signos de ACV (cara caída, un brazo que no responde, hablar raro), sangrado que no para, sobredosis o riesgo de autolesión — no reserves un turno: llamá al 911 o al 107, o andá directo a la guardia (ver también el artículo de Emergencias). En bebés y niños chicos sumá como alarma la fiebre alta, la dificultad para respirar, el llanto que no se calma o los cambios de color en la piel o los labios.\n\nUn cuadro agudo que no es una emergencia — tos, fiebre, dolor de garganta, gripe, un resfrío que te tiene mal, un dolor fuerte, un golpe, una gastroenteritis — tampoco espera un turno programado: se resuelve el mismo día, sin turno previo, en la guardia o en demanda espontánea. La guardia atiende por gravedad, no por orden de llegada, así que alguien que llegó después puede ser atendido antes que vos si su cuadro es más urgente — puede haber espera.\n\nUn turno programado es para lo que se puede planificar: controles, seguimiento de una enfermedad crónica, renovar recetas, pedir estudios, sacar un certificado, o ver a un especialista con derivación. Si tenés dudas sobre si tu caso es de guardia o de turno, priorizá la guardia — ahí un profesional te va a decir si en realidad correspondía un turno.",
+      "tags": ["guardia", "turno", "urgencia", "demanda espontanea", "tos", "fiebre", "dolor de garganta", "gripe", "resfrio", "no doy mas", "guardia o turno"],
+      "status": "publicado",
+      "source": {
+        "title": "Emergencias",
+        "url": "https://www.argentina.gob.ar/tema/emergencias",
+        "agency": "Argentina.gob.ar",
+        "verified_at": "2026-08-06",
+        "review_every_days": 30
+      }
+    },
+    {
+      "id": "linea-144",
+      "type": "articulo",
+      "title": "Línea 144",
+      "parent_id": "nacion-prevencion-urgencias",
+      "jurisdiction": "nacion",
+      "summary": "Atención, contención y asesoramiento ante violencia.",
+      "content": "La Línea 144 brinda atención, contención y asesoramiento ante situaciones de violencia. Usá lenguaje discreto y no pidas detalles innecesarios. Si el peligro es actual, priorizá además el 911. La línea no reserva turnos médicos.",
+      "tags": ["144", "violencia", "contencion", "asesoramiento"],
+      "status": "publicado",
+      "source": {
+        "title": "Línea 144",
+        "url": "https://www.argentina.gob.ar/linea-144",
+        "agency": "Argentina.gob.ar",
+        "verified_at": "2026-07-29",
+        "review_every_days": 30
+      }
+    }
+  ]
+}

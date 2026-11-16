@@ -1,0 +1,19 @@
+{
+ "schema_version": 1,
+ "files": {
+  "tests/admin-login-direct.test.mjs": {"pause": 1},
+  "tests/admin-shell-shared.test.mjs": {"pause": 1},
+  "tests/doctor-user-onboarding.browser.mjs": {"pause": 1},
+  "tests/test_ai_register_oversight.py": {"patch_dict": 2},
+  "tests/test_asgi_main_dark_mode_retirement.py": {"patch_dict": 1},
+  "tests/test_client_errors.py": {"patch_dict": 1},
+  "tests/test_demo_installation.py": {"patch_dict": 1},
+  "tests/test_formal_invariants.py": {"patch_dict": 1},
+  "tests/test_graceful_shutdown.py": {"pause": 1},
+  "tests/test_portal_identity.py": {"patch_dict": 1},
+  "tests/test_required_packs_readiness.py": {"patch_dict": 1},
+  "tests/test_salud_guards.py": {"patch_dict": 1},
+  "tests/test_slice8_verification_fixes.py": {"patch_dict": 1},
+  "tests/usecases/run.mjs": {"pause": 29}
+ }
+}

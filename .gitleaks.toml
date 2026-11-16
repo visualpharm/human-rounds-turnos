@@ -1,0 +1,16 @@
+title = "Human Rounds gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Generated translation source hashes (16 hex of each Spanish string) and the published synthetic SigV4 test vector"
+paths = [
+  '''(^|/)locales/[a-z]{2}/_source_hash\.json$''',
+  '''(^|/)docs/solutions/security/slice7-sigv4-proof\.json$''',
+]
+
+[[allowlists]]
+description = "The synthetic malformed approval id the preflight tests feed the record parser"
+regexTarget = "line"
+regexes = ['''token:hr-0123456789abcdef''']

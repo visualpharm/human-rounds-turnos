@@ -1,0 +1,310 @@
+/* Document-owned queue presentation remains available when enhancement fails. */
+/* ONE row runs the screen (the product owner, 2026-11-08: "a giant header where things do
+   not fit in their lines"): the search, the day, then the actions as bare icons at
+   the right end. The filters wait behind their funnel at every width and open
+   on a line of their own under the row; the month opens under everything. */
+.queue-controls{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;margin:0 0 18px;}
+.queue-controls>.adm-search{order:0;}
+.queue-controls>.queue-date-picker{order:1;margin-right:auto;}
+.queue-controls>[data-filter-toggle]{order:2;}
+.queue-controls>.queue-actions{order:3;}
+.queue-controls>.queue-filters{order:4;flex:1 1 100%;}
+.queue-controls:not(.filters-open)>.queue-filters{display:none;}
+.queue-actions{display:flex;align-items:center;gap:4px;flex:none;}
+/* The print icon comes and goes with the chosen doctor; its place stays, so
+   the icons beside it never jump when a doctor is picked. */
+.queue-print-slot{display:inline-flex;flex:0 0 44px;width:44px;min-height:44px;}
+.queue-filters{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap;min-width:0;max-width:100%;}
+/* A 44px square for every icon of the row. Bare only the icons that come after
+   the search — the actions and the funnel (the product owner, 2026-11-08: "no shape, light
+   the shape up only on hover"; 2026-11-09: "only for the ones after the
+   search, not all of them"); the day's controls are the panel's outlined
+   buttons. */
+.adm5-main #sec-cola .queue-controls :is(.cnt-gear-btn,.adm-filter-toggle,.queue-icon-btn){display:inline-flex;width:44px;min-width:44px;height:44px;min-height:44px;padding:0;flex:0 0 44px;color:var(--text);}
+.adm5-main #sec-cola .queue-controls :is(.queue-actions :is(.cnt-gear-btn,.queue-icon-btn),.adm-filter-toggle){border-color:transparent;background:transparent;}
+.adm5-main #sec-cola .queue-controls :is(.queue-actions :is(.cnt-gear-btn,.queue-icon-btn),.adm-filter-toggle):is(:hover,:focus-visible,[aria-expanded="true"],[aria-pressed="true"]){border-color:var(--border-strong);background:var(--bg-2);}
+.adm5-main #sec-cola .queue-controls .adm-filter-toggle.on{color:var(--select);}
+/* The day's controls: the day before / «Hoy» / the day after as ONE segmented
+   control, the month beside it, both outlined like the panel's buttons. */
+.adm5-main #sec-cola .queue-controls .queue-month-btn{border-color:var(--border-strong);background:var(--panel);}
+.adm5-main #sec-cola .queue-controls .queue-month-btn:is(:hover,:focus-visible){background:var(--bg-2);}
+.adm5-main #sec-cola .queue-controls .queue-month-btn[aria-pressed="true"]{background:var(--bg-2);}
+.queue-day-seg{display:inline-flex;align-items:stretch;height:44px;box-sizing:border-box;border:1px solid var(--border-strong);border-radius:var(--adm-btn-radius,8px);overflow:hidden;background:var(--panel);flex:none;}
+.adm5-main #sec-cola .queue-controls .queue-day-seg>button{height:auto;min-height:0;margin:0;border:0;border-left:1px solid var(--border-strong);border-radius:0;background:transparent;}
+.adm5-main #sec-cola .queue-controls .queue-day-seg>button:first-child{border-left:0;}
+.adm5-main #sec-cola .queue-controls .queue-day-seg>button:not(:disabled):is(:hover,:focus-visible){background:var(--bg-2);}
+.adm5-main #sec-cola .queue-controls .queue-day-seg>button:focus-visible{outline:2px solid var(--focus-border);outline-offset:-3px;}
+/* Nothing to filter (one value each, no free hours): no funnel either. */
+.adm5-main #sec-cola .queue-controls:not(:has(select.adm-sel:not([hidden]),.queue-free-chk)) [data-filter-toggle]{display:none;}
+.queue-icon-btn{box-sizing:border-box;align-items:center;justify-content:center;border:1px solid transparent;border-radius:var(--adm-btn-radius,8px);cursor:pointer;text-decoration:none;}
+.queue-icon-btn:disabled{cursor:default;opacity:.45;}
+.queue-icon{display:block;flex:none;width:20px;height:20px;background:currentColor;-webkit-mask:var(--queue-icon) center/contain no-repeat;mask:var(--queue-icon) center/contain no-repeat;}
+.queue-icon-print{--queue-icon:url(/static/icons/print-sf-regular.svg);}
+.queue-icon-calendar{--queue-icon:url(/static/icons/calendar-sf-regular.svg);}
+.queue-icon-info{--queue-icon:url(/static/icons/info-sf-regular.svg);}
+.queue-icon-prev,.queue-icon-next{--queue-icon:url(/static/icons/dir-card-arrow-sf-regular.svg);}
+.queue-icon-prev{transform:rotate(180deg);}
+/* The search is its magnifier and its words: the look, the magnifier on the
+   left edge and the frame opening outside it are the one rule of every list
+   (admin-direct.css, --adm-search-out); here only its width in the row. Its
+   basis sits under its width so the row breaks on what the search can give
+   up: at 768 the row is full, and a wider day name or the fallback face
+   before the web font arrives shrinks the search instead of wrapping the
+   action icons. */
+.adm5-main #sec-cola .queue-controls .adm-search{flex:1 1 200px;max-width:240px;min-width:0;}
+.adm5-main #sec-cola .queue-controls .adm-search::placeholder{color:var(--hint-ink,var(--text-2));}
+/* The day: its short date, the day before / «Hoy» / the day after, the month. */
+.queue-datenav{display:flex;align-items:center;gap:8px;margin:0;flex-wrap:nowrap;}
+.queue-date-label{font-size:16px;font-weight:600;color:var(--text);white-space:nowrap;}
+.queue-day-hoy{box-sizing:border-box;padding:0 14px;background:transparent;color:var(--text);font:inherit;font-size:16px;white-space:nowrap;cursor:pointer;}
+.queue-day-hoy[aria-current="date"]{font-weight:600;}
+.queue-free-chk{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:16px;color:var(--hint-ink);cursor:pointer;white-space:nowrap;}
+.queue-free-chk input{margin:0;flex:0 0 auto;}
+/* «Captura de síntomas» of a doctor's own day: the panel's switch
+   (.hor-switch) with its name at body size, «¿Qué es?» as an icon on the
+   same line, and the door poster only while it is on (the product owner, 2026-11-08). */
+.queue-entrevista-cfg{display:flex;align-items:center;flex-wrap:wrap;gap:4px 16px;margin:0 0 16px;font-size:16px;color:var(--text);}
+.queue-entrevista-switch{display:inline-flex;align-items:center;gap:12px;min-height:44px;cursor:pointer;}
+.queue-entrevista-cfg a{display:inline-flex;align-items:center;min-height:44px;}
+.queue-entrevista-cfg .queue-icon-btn{display:inline-flex;width:44px;height:44px;border-color:var(--border-strong);background:var(--panel);color:var(--text);}
+.queue-entrevista-cfg .queue-icon-btn:is(:hover,:focus-visible,[aria-expanded="true"]){background:var(--bg-2);}
+.queue-intake-explainer{margin:0 0 24px;}
+.queue-ai-notice{margin:0 0 12px;font-size:16px;color:var(--text);text-wrap:pretty;}
+.queue-today-link{border:0;background:none;padding:0;font:inherit;font-size:16px;min-height:44px;color:var(--text);cursor:pointer;}
+.queue-today-link:hover{color:var(--accent-hover);}
+.queue-doctor-filter{margin:0;}
+/* One doctor picked from the list: the name once above the table, its
+   specialty and centre, and the way back to everyone. */
+.queue-doctor-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 16px;margin:0 0 12px;}
+.queue-doctor-head h2{margin:0;font-size:18px;font-weight:650;color:var(--text);}
+.queue-doctor-sub{font-size:16px;color:var(--text);}
+.queue-doctor-all{display:inline-flex;align-items:center;min-height:44px;margin-left:auto;border:0;background:none;padding:0;font:inherit;font-size:16px;color:var(--accent);cursor:pointer;}
+.queue-doctor-all:hover{color:var(--accent-hover);}
+.queue-controls,#cola-results{max-width:1180px;}
+/* The doctor in a row is a link to that doctor's day: a button that reads as
+   the panel's links, its whole name at every width. */
+.queue-doctor-link{display:inline;border:0;background:none;padding:0;margin:0;font:inherit;text-align:left;color:var(--accent);text-decoration:none;cursor:pointer;}
+.queue-doctor-link:hover{color:var(--accent-hover);}
+.queue-free-who{color:var(--hint-ink,var(--text-2));margin-left:12px;}
+/* The panel's segmented control, at row height for attendance. */
+.queue-seg{display:inline-flex;align-items:stretch;height:44px;box-sizing:border-box;border:1px solid var(--border-strong);border-radius:8px;overflow:hidden;background:var(--panel);flex:none;}
+.queue-seg>button{display:inline-flex;align-items:center;justify-content:center;height:100%;min-height:0;margin:0;padding:0 16px;border:0;border-left:1px solid var(--border-strong);border-radius:0;background:transparent;color:var(--text);font:inherit;font-size:16px;line-height:1;white-space:nowrap;cursor:pointer;}
+.queue-seg>button:first-child{border-left:0;}
+.queue-seg>button:not(:disabled):hover{background:var(--hover-bg-soft);color:var(--hover-ink);}
+.queue-seg>button:focus-visible{outline:2px solid var(--focus-border);outline-offset:-3px;}
+.queue-seg>button[aria-pressed="true"]{background:var(--accent);color:#fff;}
+/* One patient a row (the product owner, 2026-11-09): «Name, N años» is one link to the
+   appointment's card, the history bars and the referral («Orden» with the
+   paperclip) follow it on the same line and wrap after it whole; the doctor
+   with the service under it. Everything else is in the card. */
+.queue-pat-line{display:inline-flex;flex-wrap:wrap;align-items:center;gap:4px 12px;max-width:100%;}
+/* The page's web font is still arriving: keep the row on its line until the columns are refitted.
+   Only where the table is a real row (wide screens): on a phone the cell must keep wrapping the name. */
+@media (min-width:1025px){
+.tbl-fuentes .queue-table td,.tbl-fuentes .queue-table td *{white-space:nowrap !important;}
+.tbl-fuentes .queue-pat-line,.tbl-fuentes .queue-table tr>td.queue-td-triage:not(.queue-td-empty){flex-wrap:nowrap;}
+}
+.queue-pat-link{display:inline;min-width:0;margin:0;padding:0;border:0;background:none;font:inherit;font-weight:500;text-align:left;white-space:normal;overflow-wrap:anywhere;color:var(--accent);text-decoration:none;cursor:pointer;}
+.queue-pat-link:hover{color:var(--accent-hover);}
+.queue-pat-line .forecast-bars-btn{min-height:24px;flex:none;}
+.queue-pat-line .med-occupancy{min-width:0;}
+.queue-orden{display:inline-flex;align-items:center;gap:4px;flex:none;min-height:24px;margin:0;padding:0;border:0;background:none;font:inherit;font-size:14px;color:var(--text);white-space:nowrap;cursor:pointer;}
+.queue-orden:hover{color:var(--hover-ink);}
+.queue-orden:focus-visible{outline:2px solid var(--focus-border);outline-offset:2px;border-radius:4px;}
+.queue-orden-ico{display:block;flex:none;width:18px;height:18px;background:currentColor;-webkit-mask:url(/static/icons/chat-attach-sf-regular.svg) center/contain no-repeat;mask:url(/static/icons/chat-attach-sf-regular.svg) center/contain no-repeat;}
+.queue-sub{display:block;margin-top:2px;font-size:14px;line-height:1.3;color:var(--hint-ink,var(--text-2));white-space:normal;}
+.queue-table td.queue-td-pat,.queue-table td.queue-td-doc{white-space:normal;}
+/* The patient's line keeps 16 px from the doctor's column even when «Orden»
+   ends it (review 2026-11-09: 10 px read as touching). */
+@media(min-width:1025px){.queue-table td.queue-td-pat{padding-right:11px;}}
+/* The card of one appointment: who and when in the head, attendance first,
+   then what the desk reads (DNI, history, the reminder answer, coverage),
+   the symptoms and the referral, each AI text under its mark. */
+/* Width, columns and the shared parts: the one .solmod block in admin-direct.css. */
+.queue-card .solmod-head{font-size:18px;}
+.queue-card .solmod-svc{font-size:16px;font-weight:400;margin:4px 0 16px;}
+.queue-card-asis{margin:0 0 16px;}
+.queue-card-asis .queue-seg--row{height:44px;}
+.queue-card-asis .queue-seg--row>button{padding:0 16px;font-size:16px;}
+.queue-card-asis .queue-attendance-marked{font-size:16px;}
+.queue-card-datos{display:grid;gap:4px;margin:0 0 16px;}
+.queue-card-datos .solmod-row{font-size:16px;align-items:center;}
+.queue-card-datos .solmod-k{width:112px;font-size:14px;}
+.queue-card-forecast{display:inline-flex;align-items:center;flex-wrap:wrap;gap:4px 10px;}
+.queue-card-forecast .med-occupancy{min-width:0;}
+.queue-card-sec{margin:0 0 16px;padding-top:16px;border-top:1px solid var(--border-soft);}
+.queue-card-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 8px;}
+.queue-card-resumen{margin:0 0 8px;font-size:16px;line-height:1.45;color:var(--text);text-wrap:pretty;white-space:pre-line;}
+.queue-card-accion{margin:8px 0 0;}
+.queue-card-ai{margin:0 0 8px;}
+/* Attendance: the day segment at row height (32px, 14px text) — one control,
+   not two tall pills; a recorded status is a dot plus plain dark text, never
+   colored text that reads as a link nor a box that reads as a button. Side by
+   side it fits the column's 150px minimum (8px padding: ~133px of 140px). */
+.queue-seg--row{height:32px;}
+.queue-seg--row>button{padding:0 8px;font-size:14px;}
+.queue-attendance-marked{display:inline-flex;align-items:center;gap:6px;font-size:14px;white-space:nowrap;}
+.queue-attendance-marked .attendance-dot{width:8px;height:8px;border-radius:50%;flex:none;}
+.queue-attendance-yes{color:var(--text);font-weight:500;}
+.queue-attendance-no{color:var(--hint-ink);font-weight:500;}
+.queue-attendance-h{color:var(--hint-ink);}
+/* The attendance forecast («Historial»): three bars and the header's
+   Information button — shared with «Pacientes», so they live in
+   admin-direct.css (static/platform/attendance-forecast.mjs). */
+.queue-fix{border:0;background:none;padding:2px;margin:0;line-height:0;border-radius:6px;color:var(--hint-ink);cursor:pointer;display:inline-flex;align-items:center;}
+.queue-fix:hover{color:var(--hover-ink);background:var(--hover-bg);}
+.queue-fix svg{display:block;}
+.queue-table td{vertical-align:middle;}
+.queue-table th,.queue-table td{padding:9px 5px;text-align:left;}
+.queue-table td{border-bottom:1px solid var(--border-soft);}
+.queue-table tbody tr:hover>td{background:var(--hover-bg);}
+.queue-wrap{overflow:visible;}
+.queue-table thead th.cnt-th{position:sticky;top:0;z-index:3;background:var(--bg);border-bottom:1px solid var(--border-strong);}
+.queue-table th.cnt-th{font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--hint-ink,var(--text-2));}
+.queue-table th:first-child,.queue-table td:first-child{padding-left:0;}
+.queue-table th:last-child,.queue-table td:last-child{padding-right:0;}
+.queue-table{box-sizing:border-box;}
+.queue-table{width:100%!important;}
+.queue-table col[data-col='relleno']{width:auto!important;}
+.queue-table th[data-col='relleno'] .tbl-res{display:none;}
+.queue-table th,.queue-table td{box-sizing:border-box;}
+.queue-hour{display:flex;align-items:center;gap:5px;white-space:nowrap;}
+.queue-hour-overdue{color:var(--warn);font-weight:500;}
+.queue-overbooking{flex:0 0 auto;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--warn);background:var(--warn-soft);border:0;border-radius:3px;padding:0 3px;line-height:14px;}
+.queue-table td.queue-now-td{border-bottom:0;padding:6px 4px;}
+.queue-now{display:flex;align-items:center;gap:10px;}
+.queue-now-t{font-size:14px;font-weight:700;color:var(--warn);}
+.queue-now-l{flex:1;height:1px;background:var(--warn-soft);}
+.queue-tr-done>td{color:var(--hint-ink);}
+.queue-table td.queue-td-clip{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.queue-table td[data-col="medico"].queue-td-clip{overflow:visible;text-overflow:clip;white-space:normal;}
+.queue-measuring .queue-table{table-layout:auto!important;width:auto!important;}
+.queue-measuring .queue-table td.queue-td-clip{overflow:visible;text-overflow:clip;}
+.queue-measuring .queue-table col{width:auto!important;}
+.queue-measuring .queue-now-tr,.queue-measuring .queue-tr-free{display:none;}
+.queue-table th.cnt-th{position:relative;overflow:hidden;text-overflow:ellipsis;}
+.queue-arrow{display:inline-block;width:11px;text-align:right;}
+.queue-table.queue-hide-confirmo [data-col='confirmo'],.queue-table.queue-hide-solicitado [data-col='solicitado'],.queue-table.queue-hide-cobertura [data-col='cobertura'],.queue-table.queue-hide-entrevista [data-col='entrevista']{display:none;}
+.queue-confirm-yes{color:var(--done);}
+.queue-confirm-no{color:var(--attendance-no);}
+.queue-confirm-none{color:var(--hint-ink);}
+.queue-tr-free>td{background:var(--bg-2);}
+.queue-tr-free .queue-hour{color:var(--hint-ink);}
+.queue-td-free{white-space:nowrap;}
+.queue-tr-give{cursor:pointer;}
+.queue-tr-give:hover .queue-give{border-color:var(--hover-bd);color:var(--hover-ink);}
+.queue-free-k{color:var(--hint-ink);font-size:13px;margin-right:12px;}
+.queue-free-txt{color:var(--hint-ink);font-size:13px;}
+.queue-show-empty{display:inline-block;margin:6px 0 20px;background:none;border:0;padding:0;font:inherit;font-size:14px;color:var(--accent);cursor:pointer;}
+.queue-show-empty:hover{color:var(--accent-hover);}
+.queue-columns{margin-left:0;}
+@media(min-width:641px) and (max-width:1024px){
+/* The tablet: fixed shares, the patient's line takes what the time, the
+   doctor and the chosen extra columns leave. */
+.queue-table{table-layout:fixed!important;width:100%!important;}
+.queue-table col[data-col='hora']{width:84px!important;}
+.queue-table col[data-col='paciente']{width:auto!important;}
+.queue-table col[data-col='medico']{width:32%!important;}
+.queue-table col:is([data-col='confirmo'],[data-col='solicitado'],[data-col='cobertura']){width:13%!important;}
+.queue-table col[data-col='entrevista']{width:18%!important;}
+.queue-table col[data-col='relleno']{width:0!important;}
+.queue-table [data-col='relleno']{padding:0!important;}
+.queue-td-triage .btn{white-space:normal;max-width:100%;text-align:left;}
+.queue-table th,.queue-table td{padding:8px 6px;vertical-align:top;}
+/* «Cargar en HSI» (the desk's extension) reserves 132px on the right of the
+   patient cell and floats its button there. Here the columns are fixed
+   and the cell already wraps, so the button goes under the name instead of
+   over it (launch plan P2), its words wrapping if the column is narrow. */
+.queue-table td[data-col='paciente']:has(> .hr-hsi){padding-right:6px!important;}
+.queue-table td[data-col='paciente']>.hr-hsi{position:relative;display:block;top:auto;right:auto;transform:none;margin-top:4px;}
+.queue-table td[data-col='paciente']>.hr-hsi .hr-hsi-boton{white-space:normal;max-width:100%;}
+}
+/* Wider screens: the button stays on the name's line when the row fits, and
+   goes under the name when it does not (admin-queue.mjs `encajarHsi`). */
+#sec-cola.queue-hsi-debajo .queue-table td[data-col='paciente']:has(> .hr-hsi){padding-right:5px!important;}
+#sec-cola.queue-hsi-debajo .queue-table td[data-col='paciente']>.hr-hsi{position:relative;display:block;top:auto;right:auto;transform:none;margin-top:4px;}
+#sec-cola.queue-hsi-debajo .queue-table td[data-col='paciente']>.hr-hsi .hr-hsi-boton{white-space:normal;max-width:100%;text-align:left;}
+@media(max-width:640px){
+/* The phone: the search and the action icons share the first line, the day
+   and the funnel the second (both lines fit 390 px with the whole
+   placeholder); the opened month and the opened filters come under
+   everything. */
+.adm5-main #sec-cola .queue-controls .adm-search{flex:1 1 0;width:auto;}
+.queue-controls>.queue-actions{order:1;}
+.queue-controls>.queue-date-picker{order:2;flex:1 1 auto;width:auto;margin-right:0;}
+.queue-controls:has(.queue-month-calendar)>.queue-date-picker{display:contents;}
+.queue-controls:has(.queue-month-calendar) .queue-datenav{order:2;flex:1 1 auto;}
+.queue-controls:has(.queue-month-calendar) :is(.queue-month-calendar,.queue-today-link){order:5;}
+.queue-controls:has(.queue-month-calendar) .queue-month-calendar{flex:0 0 100%;margin-top:0;}
+.queue-controls>[data-filter-toggle]{order:3;}
+.queue-filters .adm-sel{box-sizing:border-box;flex:1 1 100%;width:100%;min-width:0;max-width:100%;}
+.queue-table td.queue-td-empty{display:none;}
+.queue-table thead{display:none;}
+.queue-table colgroup,.queue-table col{display:none;}
+.queue-table,.queue-table tbody,.queue-table tr,.queue-table td{display:block;width:100%!important;}
+.queue-table td.queue-now-td{display:block;padding:8px 0;}
+.queue-table td[data-col='relleno']{display:none;}
+.queue-table tr{border-bottom:1px solid var(--border);padding:10px 0;}
+.queue-table tr:last-child{border-bottom:0;}
+.queue-table td{border-bottom:0;padding:2px 0;white-space:normal;}
+.queue-table td.queue-td-clip{overflow:visible;text-overflow:clip;white-space:normal;word-break:break-word;}
+.queue-table td[data-label]::before{content:none;}
+.queue-table td:is([data-col='confirmo'],[data-col='solicitado'],[data-col='cobertura'])::before{content:attr(data-label) " ";display:block;font-size:14px;color:var(--hint-ink,var(--text-2));margin-bottom:1px;}
+/* One patient in two short lines (the product owner, 2026-11-09): the time with «Name,
+   N años», the bars and «Orden»; under it the doctor with the service, at
+   the name's left edge. A chosen extra column follows with its label. */
+.queue-table tr:not(:has(>td.queue-now-td)){display:flex;flex-wrap:wrap;align-items:baseline;column-gap:12px;}
+.queue-table tr>td{flex:1 1 100%;min-width:0;}
+.queue-table tr>td[data-col='hora']{flex:0 0 auto;min-width:44px;width:auto!important;}
+.queue-table tr>td[data-col='paciente']{flex:1 1 calc(100% - 96px);width:auto!important;}
+.queue-table tr:has(>td[data-col='hora']) td:not([data-col='hora'],[data-col='paciente']){padding-left:var(--queue-hour-w,56px);}
+/* The interview on one line: the triage chip, «Actualizada» and the visit
+   button 10 px apart (09.11 — the chip touched the button's frame). */
+.queue-table tr>td.queue-td-triage:not(.queue-td-empty){display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:4px 10px;}
+.queue-controls{padding-top:10px;}
+}
+/* Under 360 px (09.11, 320 px phones): the same two lines as at 390. The
+   first keeps the whole placeholder beside two icons: the empty print place
+   lets go, and when the print icon comes the download one gives it its place
+   (a day's file is not downloaded on such a phone). The second holds the
+   longest date («Dom 30 may») with the funnel: the arrows narrow to 32 px,
+   the month and the funnel to 40 px (44 tall all), «Hoy» and the gaps close.
+   An empty box gives the placeholder the clear button's place too (the button
+   only shows once there is text to clear). */
+@media(max-width:359px){
+.adm5-main #sec-cola .queue-controls{column-gap:6px;}
+.adm5-main #sec-cola .queue-controls input[type=search]:placeholder-shown::-webkit-search-cancel-button{display:none;}
+.adm5-main #sec-cola .queue-controls .queue-print-slot:empty{display:none;}
+.adm5-main #sec-cola .queue-controls .queue-actions:has(.queue-print-slot:not(:empty)) .tbl-export-btn{display:none;}
+.adm5-main #sec-cola .queue-controls .queue-datenav{gap:4px;}
+.adm5-main #sec-cola .queue-controls .queue-seg-arrow{width:32px;min-width:32px;flex:0 0 32px;}
+.adm5-main #sec-cola .queue-controls :is(.queue-month-btn,.adm-filter-toggle){width:40px;min-width:40px;flex:0 0 40px;}
+.adm5-main #sec-cola .queue-controls .queue-day-hoy{padding:0 4px;}
+}
+.cnt-muted{color:var(--hint-ink);}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+.solmod-nota{margin:14px 0 0;font-size:13px;color:var(--hint-ink);}
+.solmod-cancel{margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.solmod-cancel-q{margin:0 0 12px;font-size:16px;color:var(--text);text-wrap:pretty;}
+.solmod-cancel-actions{display:flex;flex-wrap:wrap;gap:8px;}
+#queue-load-status:not(:empty){display:flex;align-items:center;gap:12px;margin-bottom:8px;min-width:0;}
+#queue-load-status p{margin:0;min-width:0;font-size:16px;text-wrap:pretty;}
+#queue-load-status [data-retry]{min-height:44px;min-width:44px;flex-shrink:0;}
+
+.queue-date-picker{min-width:0;max-width:100%;color:var(--text);}
+.queue-month-calendar{--queue-month-w:520px;width:var(--queue-month-w);max-width:100%;box-sizing:border-box;margin-top:12px;padding:16px;border:1px solid var(--border);border-radius:10px;background:var(--panel)}
+/* «Ver mes» open, beside the search: the month gets a line of its own under the
+   whole toolbar, at its left edge, so the search, the day and the filters keep
+   the closed row's geometry — never centred halfway down a tall calendar
+   (audit 2026-11-05). The margin fills the rest of the line, which forces the
+   break at any width; the phone keeps the month under the date. */
+@media(min-width:641px){
+.queue-controls:has(.queue-month-calendar)>.queue-date-picker{display:contents;}
+.queue-controls:has(.queue-month-calendar) .queue-datenav{order:1;margin-right:auto;}
+.queue-controls:has(.queue-month-calendar) .queue-month-calendar{order:5;margin-top:0;margin-right:calc(100% - var(--queue-month-w));}
+.queue-controls:has(.queue-month-calendar) .queue-today-link{order:5;}
+}
+.queue-month-calendar .medcal-grids{display:block;margin:0}.queue-month-calendar .medcal-mes-h{font-size:17px;font-weight:700;color:var(--text);text-align:center;margin:0 0 12px;min-height:24px;line-height:24px;text-transform:capitalize}
+.queue-month-calendar .medcal-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}.queue-month-calendar .medcal-dow{font-size:14px;color:#3D443E;text-align:center}
+.queue-month-calendar .medcal-dia{display:flex;flex-direction:column;align-items:center;justify-content:center;font:inherit;font-size:16px;height:48px;line-height:1.25;background:none;border:0;border-radius:8px;color:#3D443E;cursor:pointer;padding:0}.queue-month-calendar .medcal-count{font-size:14px;line-height:1.2;color:var(--text)}
+.queue-month-calendar .queue-calendar-occupied{background:var(--state-done-bg);color:var(--text);font-weight:500}.queue-month-calendar .queue-calendar-attends{box-shadow:inset 0 0 0 2px var(--state-done-bg);color:var(--text);font-weight:500}.queue-month-calendar .medcal-dia.is-selected{background:var(--accent);color:#fff;box-shadow:none}.queue-month-calendar .is-selected .medcal-count{color:#fff}.queue-month-calendar .medcal-hoy{outline:2px solid var(--accent);outline-offset:-2px}.queue-month-calendar .medcal-dia:focus-visible{outline:2px solid var(--focus-border);outline-offset:2px}@media(max-width:640px){.queue-date-picker{width:100%}.queue-month-calendar{width:100%}.queue-month-calendar .medcal-mes-h{font-size:15px}}

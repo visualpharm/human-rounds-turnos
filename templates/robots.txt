@@ -1,0 +1,28 @@
+# Human Rounds — turnos y servicios de la red pública de salud de {{sitio.city}}.
+# Contexto para agentes y asistentes de IA: {{sitio.public_origin}}/llms.txt
+
+User-agent: *
+Allow: /
+
+# Panel del hospital: cuentas del personal, cola de solicitudes, reportes,
+# datos de pacientes. Nada acá es público.
+Disallow: /admin
+Disallow: /api/
+Disallow: /mcp
+
+# Páginas de una persona concreta. El servidor ya las manda con
+# `noindex` (seo.py) y pide sesión; esto además ahorra el rastreo.
+Disallow: /account
+Disallow: /my-requests
+Disallow: /request/
+Disallow: /auth/
+
+# URLs donde el TOKEN es la credencial: indexarlas sería publicar la llave.
+Disallow: /feed/
+Disallow: /appointment/offer/
+
+# El asistente paso a paso para sacar un turno. Lo que hay que indexar es la
+# página informativa del servicio (/service/<id>), no cada paso del trámite.
+Disallow: /service/*/book
+
+Sitemap: {{sitio.public_origin}}/sitemap.xml

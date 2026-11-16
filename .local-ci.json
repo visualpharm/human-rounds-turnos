@@ -1,0 +1,4 @@
+{
+  "version": 1,
+  "command": ["python3", "scripts/turnos_managed_exec.py", "--profile", "local-ci"]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "patient_uploads",
+  "country": "*",
+  "capability": "clinical_history_lookup",
+  "config_keys": [],
+  "description": "Lab results the patient uploaded from their own account. Every entry is flagged `tercero: true` so the chart summary presents it as patient-supplied and unverified — it is never authoritative clinical history."
+}

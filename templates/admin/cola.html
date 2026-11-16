@@ -1,0 +1,75 @@
+{#
+  templates/admin/cola.html — direct `/admin/cola` screen ("Pacientes de
+  hoy"). Extends the shared admin shell
+  (templates/admin/base.html). The first response includes the named
+  `admin/partials/day_queue_initial.html` fragment with a real, readable
+  queue table. JavaScript hydrates the same data for filters and actions;
+  it does not own the initial document. The title is server-rendered
+  (`admin-queue.mjs`'s own `route()` also sets `#adm-h1`'s text to the SAME
+  i18n key/fallback once it runs — idempotent, not a second source of truth).
+  base.html declares
+  `window.SANA_ADMIN_SCREEN`; no client-side router is involved. No business logic lives here; the module's own
+  `doctor_appointments.py` (GET /api/admin/day-queue) is untouched and
+  still does 100% of the data work, called by the SAME client-side fetch
+  as every direct screen. The document owns its fingerprinted queue stylesheet;
+  the native controller awaits the shared table module before creating a table.
+  admin-queue.mjs dynamic-imports platform/admin-create-appointment.mjs through
+  the fingerprint manifest and holds an early doctor/day/hour click until that
+  module resolves. There is no classic overlay script or compatibility global.
+#}
+{% extends "admin/base.html" %}
+
+{% block head %}
+<link id="cola-css" rel="stylesheet" href="{{ static('platform/admin-queue.css') }}">
+{% endblock %}
+
+{% block title %}{{ t('admin.queue.titulo', 'Pacientes de hoy') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.queue.titulo', 'Pacientes de hoy') }}{% endblock %}
+
+{% block title_band %}
+<button type="button" class="btn btn-accent adm-title-action" id="adm-crear-turno">{{ t('admin.queue.create_appt.crear_turno', 'Crear turno') }}</button>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+<div id="queue-load-status" role="status" aria-live="polite"></div>
+<div id="sec-cola">{% include "admin/partials/day_queue_initial.html" %}</div>
+</div>
+<script id="queue-initial-data" type="application/json">{{ queue_data | tojson }}</script>
+{% endblock %}
+
+{% block scripts %}
+{# Filter collapse on the phone: plants the icon toggle on .queue-controls
+   and keeps every .adm-sel measured to its chosen option. Desktop is inert. #}
+<script type="module" src="{{ static('platform/admin-control-fit.mjs') }}"></script>
+<script>
+  // The server supplies the authorized role before the native controller
+  // mounts; it governs appointment creation and interview banners.
+  window.CURRENT_ROLE = "{{ rol }}";
+</script>
+<template id="queue-load-recovery">
+  <p role="alert">{{ t('admin.system.common.load_error', "Couldn't load this section.") }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Reload') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-cola");
+  const status = document.getElementById("queue-load-status");
+  const url = "{{ static('platform/admin-queue.mjs') }}";
+  // The readable server/current queue stays intact whatever happens: the late
+  // and the failure copy both go in the status line. Permission refusal is
+  // scrubbed by the controller, never restored here.
+  bootScreen({
+    host,
+    recovery: "queue-load-recovery",
+    slowIn: status,
+    failedIn: status,
+    load: () => (url ? import(url) : Promise.reject(new Error("admin-queue.mjs"))),
+    mount: (Queue, onError, context) => Queue.mount(document, { initialData: context.first }),
+    onStart: () => host.setAttribute("aria-busy", "true"),
+    onStop: () => { host.removeAttribute("aria-busy"); status.replaceChildren(); },
+    onReady: () => host.removeAttribute("aria-busy"),
+  });
+</script>
+{% endblock %}

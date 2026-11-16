@@ -1,0 +1,2729 @@
+{
+ "POST /api/admin/patients": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"DNI inválido (7 a 9 dígitos).\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"dni\": \"30999412\", \"nombre\": \"Eva\", \"apellido\": \"Ruiz\", \"nacimiento\": \"1991-02-03\", \"sexo\": \"F\", \"contacto\": \"+542254000412\", \"email\": \"eva@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"dni\": \"30999412\", \"nombre\": \"Eva\", \"apellido\": \"Ruiz\", \"nacimiento\": \"1991-02-03\", \"sexo\": \"F\", \"contacto\": \"+542254000412\", \"email\": \"eva@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"dni\": \"30999412\", \"nombre\": \"Eva\", \"apellido\": \"Ruiz\", \"nacimiento\": \"1991-02-03\", \"sexo\": \"F\", \"contacto\": \"+542254000412\", \"email\": \"eva@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "dni=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"DNI inválido (7 a 9 dígitos).\"}"
+  },
+  "password=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"dni\": \"30999412\", \"nombre\": \"Eva\", \"apellido\": \"Ruiz\", \"nacimiento\": \"1991-02-03\", \"sexo\": \"F\", \"contacto\": \"+542254000412\", \"email\": \"eva@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}, \"password_temporal\": \"<volatile>\"}"
+  },
+  "nombre=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Faltan nombre y apellido.\"}"
+  },
+  "apellido=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Faltan nombre y apellido.\"}"
+  },
+  "contacto=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"dni\": \"30999412\", \"nombre\": \"Eva\", \"apellido\": \"Ruiz\", \"nacimiento\": \"1991-02-03\", \"sexo\": \"F\", \"contacto\": null, \"email\": \"eva@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "email=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"dni\": \"30999412\", \"nombre\": \"Eva\", \"apellido\": \"Ruiz\", \"nacimiento\": \"1991-02-03\", \"sexo\": \"F\", \"contacto\": \"+542254000412\", \"email\": null, \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "sexo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Faltan fecha de nacimiento y sexo.\"}"
+  },
+  "nacimiento=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Faltan fecha de nacimiento y sexo.\"}"
+  },
+  "activo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"dni\": \"30999412\", \"nombre\": \"Eva\", \"apellido\": \"Ruiz\", \"nacimiento\": \"1991-02-03\", \"sexo\": \"F\", \"contacto\": \"+542254000412\", \"email\": \"eva@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/patients/30999411/clinical-history": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"records tiene que ser una lista\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"dni\": \"30999411\", \"source_system\": \"local_history\", \"count\": 0}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"dni\": \"30999411\", \"source_system\": \"local_history\", \"count\": 0}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"dni\": \"30999411\", \"source_system\": \"local_history\", \"count\": 0}"
+  },
+  "records=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo records: se esperaba una lista\"}"
+  },
+  "records=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo records: se esperaba una lista\"}"
+  },
+  "records=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo records: se esperaba una lista\"}"
+  },
+  "records=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo records: se esperaba una lista\"}"
+  },
+  "records=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"records tiene que ser una lista\"}"
+  },
+  "source_system=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo source_system: se esperaba texto\"}"
+  },
+  "source_system=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo source_system: se esperaba texto\"}"
+  },
+  "source_system=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo source_system: se esperaba texto\"}"
+  },
+  "source_system=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo source_system: se esperaba texto\"}"
+  },
+  "source_system=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"dni\": \"30999411\", \"source_system\": \"local_history\", \"count\": 0}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/patients/30999411/dependents": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"DNI inválido (7 a 9 dígitos).\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"40999411\", \"nombre\": \"Leo\", \"apellido\": \"Paz\", \"nacimiento\": \"2015-05-05\", \"sexo\": \"M\", \"vinculo\": \"hijo\", \"declaracion_jurada_at\": \"<volatile>\", \"created\": \"<volatile>\", \"updated\": \"<volatile>\", \"adultos\": [{\"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"vinculo\": \"hijo\"}]}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"40999411\", \"nombre\": \"Leo\", \"apellido\": \"Paz\", \"nacimiento\": \"2015-05-05\", \"sexo\": \"M\", \"vinculo\": \"hijo\", \"declaracion_jurada_at\": \"<volatile>\", \"created\": \"<volatile>\", \"updated\": \"<volatile>\", \"adultos\": [{\"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"vinculo\": \"hijo\"}]}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"40999411\", \"nombre\": \"Leo\", \"apellido\": \"Paz\", \"nacimiento\": \"2015-05-05\", \"sexo\": \"M\", \"vinculo\": \"hijo\", \"declaracion_jurada_at\": \"<volatile>\", \"created\": \"<volatile>\", \"updated\": \"<volatile>\", \"adultos\": [{\"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"vinculo\": \"hijo\"}]}}"
+  },
+  "dni=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"DNI inválido (7 a 9 dígitos).\"}"
+  },
+  "nombre=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Faltan nombre y apellido.\"}"
+  },
+  "apellido=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Faltan nombre y apellido.\"}"
+  },
+  "nacimiento=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la fecha de nacimiento (AAAA-MM-DD).\"}"
+  },
+  "sexo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta el sexo.\"}"
+  },
+  "vinculo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo vinculo: se esperaba texto\"}"
+  },
+  "vinculo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo vinculo: se esperaba texto\"}"
+  },
+  "vinculo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo vinculo: se esperaba texto\"}"
+  },
+  "vinculo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo vinculo: se esperaba texto\"}"
+  },
+  "vinculo=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"40999411\", \"nombre\": \"Leo\", \"apellido\": \"Paz\", \"nacimiento\": \"2015-05-05\", \"sexo\": \"M\", \"vinculo\": \"hijo\", \"declaracion_jurada_at\": \"<volatile>\", \"created\": \"<volatile>\", \"updated\": \"<volatile>\", \"adultos\": [{\"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"vinculo\": \"hijo\"}]}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/roles": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí un nombre para el rol.\", \"code\": \"texto_requerido\", \"field\": \"name\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"recepcion\", \"name\": \"Recepción\", \"description\": \"mesa de entrada\", \"builtin\": false, \"enabled\": true, \"locked\": false, \"permissions\": [\"pacientes\"], \"users\": 0}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"recepcion\", \"name\": \"Recepción\", \"description\": \"mesa de entrada\", \"builtin\": false, \"enabled\": true, \"locked\": false, \"permissions\": [\"pacientes\"], \"users\": 0}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"recepcion\", \"name\": \"Recepción\", \"description\": \"mesa de entrada\", \"builtin\": false, \"enabled\": true, \"locked\": false, \"permissions\": [\"pacientes\"], \"users\": 0}"
+  },
+  "name=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí un nombre para el rol.\", \"code\": \"texto_requerido\", \"field\": \"name\"}"
+  },
+  "description=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí qué hace una persona con este rol.\", \"code\": \"texto_requerido\", \"field\": \"description\"}"
+  },
+  "permissions=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Elegí qué puede hacer este rol.\", \"code\": \"permisos_invalidos\", \"field\": \"permissions\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/users": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí un nombre de usuario de al menos 2 caracteres, sin espacios.\", \"field\": \"usuario\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "usuario=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí un nombre de usuario de al menos 2 caracteres, sin espacios.\", \"field\": \"usuario\"}"
+  },
+  "password=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo password: se esperaba texto\"}"
+  },
+  "password=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"La contraseña tiene que tener al menos 8 caracteres.\", \"field\": \"password\"}"
+  },
+  "rol=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "access_mode=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo access_mode: se esperaba texto\"}"
+  },
+  "access_mode=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo access_mode: se esperaba texto\"}"
+  },
+  "access_mode=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo access_mode: se esperaba texto\"}"
+  },
+  "access_mode=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo access_mode: se esperaba texto\"}"
+  },
+  "access_mode=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "totp=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo totp.bool: se esperaba true o false\"}"
+  },
+  "totp=str": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": true, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}, \"totp\": {\"secret\": \"<volatile>\", \"otpauth_url\": \"<volatile>\"}}"
+  },
+  "totp=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo totp.bool: se esperaba true o false\"}"
+  },
+  "totp=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo totp.bool: se esperaba true o false\"}"
+  },
+  "totp=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "forzar_2fa=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "medico_id=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Elegí un médico del catálogo para esta cuenta.\", \"field\": \"medico_id\"}"
+  },
+  "email=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": null, \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "permisos_agregados=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "permisos_quitados=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "centros=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 3, \"usuario\": \"nuevo.medico\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"nuevo@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/users/actions/disable": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Seleccioná al menos un médico.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"resultados\": [{\"medico_id\": \"gonzalez-juan\", \"ok\": false, \"error\": \"Este médico todavía no tiene usuario.\"}], \"completados\": 0, \"errores\": 1}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"resultados\": [{\"medico_id\": \"gonzalez-juan\", \"ok\": false, \"error\": \"Este médico todavía no tiene usuario.\"}], \"completados\": 0, \"errores\": 1}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"resultados\": [{\"medico_id\": \"gonzalez-juan\", \"ok\": false, \"error\": \"Este médico todavía no tiene usuario.\"}], \"completados\": 0, \"errores\": 1}"
+  },
+  "medico_ids=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_ids: se esperaba una lista\"}"
+  },
+  "medico_ids=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_ids: se esperaba una lista\"}"
+  },
+  "medico_ids=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_ids: se esperaba una lista\"}"
+  },
+  "medico_ids=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_ids: se esperaba una lista\"}"
+  },
+  "medico_ids=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Seleccioná al menos un médico.\"}"
+  },
+  "emails=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo emails: se esperaba un objeto\"}"
+  },
+  "emails=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo emails: se esperaba un objeto\"}"
+  },
+  "emails=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo emails: se esperaba un objeto\"}"
+  },
+  "emails=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo emails: se esperaba un objeto\"}"
+  },
+  "emails=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"resultados\": [{\"medico_id\": \"gonzalez-juan\", \"ok\": false, \"error\": \"Este médico todavía no tiene usuario.\"}], \"completados\": 0, \"errores\": 1}"
+  },
+  "usuario=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo usuario: se esperaba texto\"}"
+  },
+  "usuario=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"resultados\": [{\"medico_id\": \"gonzalez-juan\", \"ok\": false, \"error\": \"Este médico todavía no tiene usuario.\"}], \"completados\": 0, \"errores\": 1}"
+  },
+  "email=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"resultados\": [{\"medico_id\": \"gonzalez-juan\", \"ok\": false, \"error\": \"Este médico todavía no tiene usuario.\"}], \"completados\": 0, \"errores\": 1}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "PUT /api/admin/patients/30999411": {
+  "empty": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": \"F\", \"contacto\": \"+542254000411\", \"email\": null, \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": null, \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": \"F\", \"contacto\": \"+542254000411\", \"email\": \"ana@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": \"F\", \"contacto\": \"+542254000411\", \"email\": \"ana@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": \"F\", \"contacto\": \"+542254000411\", \"email\": \"ana@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "nombre=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nombre: se esperaba texto\"}"
+  },
+  "nombre=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Nombre y apellido no pueden quedar vacíos.\"}"
+  },
+  "apellido=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo apellido: se esperaba texto\"}"
+  },
+  "apellido=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Nombre y apellido no pueden quedar vacíos.\"}"
+  },
+  "contacto=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo contacto: se esperaba texto\"}"
+  },
+  "contacto=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": \"F\", \"contacto\": null, \"email\": \"ana@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "email=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": \"F\", \"contacto\": \"+542254000411\", \"email\": null, \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "sexo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo sexo: se esperaba texto\"}"
+  },
+  "sexo=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": null, \"contacto\": \"+542254000411\", \"email\": \"ana@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "nacimiento=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo nacimiento: se esperaba texto\"}"
+  },
+  "nacimiento=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": null, \"sexo\": \"F\", \"contacto\": \"+542254000411\", \"email\": \"ana@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": true, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}}"
+  },
+  "activo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 1, \"dni\": \"30999411\", \"nombre\": \"Ana\", \"apellido\": \"Paz\", \"nacimiento\": \"1990-01-02\", \"sexo\": \"F\", \"contacto\": \"+542254000411\", \"email\": \"ana@example.com\", \"created\": \"<volatile>\", \"identity_kind\": \"dni\", \"activo\": false, \"cobertura\": null, \"domicilio\": null, \"avisos\": null, \"updated\": \"<volatile>\", \"lang\": null, \"renaper\": null, \"coverage_revision\": \"<volatile>\"}, \"turnos_cancelados\": 0}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "PUT /api/admin/roles/{slug}": {
+  "empty": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"mesa_de_tarde\", \"name\": \"Mesa de tarde\", \"description\": \"recepción\", \"builtin\": false, \"enabled\": true, \"locked\": false, \"permissions\": [], \"users\": 0}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"mesa_de_tarde\", \"name\": \"Mesa de tarde\", \"description\": \"recepción\", \"builtin\": false, \"enabled\": true, \"locked\": false, \"permissions\": [\"pacientes\"], \"users\": 0}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"mesa_de_tarde\", \"name\": \"Mesa de tarde\", \"description\": \"recepción\", \"builtin\": false, \"enabled\": true, \"locked\": false, \"permissions\": [\"pacientes\"], \"users\": 0}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"mesa_de_tarde\", \"name\": \"Mesa de tarde\", \"description\": \"recepción\", \"builtin\": false, \"enabled\": true, \"locked\": false, \"permissions\": [\"pacientes\"], \"users\": 0}"
+  },
+  "name=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo name: se esperaba texto\"}"
+  },
+  "name=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí un nombre para el rol.\", \"code\": \"texto_requerido\", \"field\": \"name\"}"
+  },
+  "description=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo description: se esperaba texto\"}"
+  },
+  "description=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Escribí qué hace una persona con este rol.\", \"code\": \"texto_requerido\", \"field\": \"description\"}"
+  },
+  "permissions=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permissions: se esperaba una lista\"}"
+  },
+  "permissions=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Elegí qué puede hacer este rol.\", \"code\": \"permisos_invalidos\", \"field\": \"permissions\"}"
+  },
+  "enabled=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo enabled: se esperaba true o false\"}"
+  },
+  "enabled=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo enabled: se esperaba true o false\"}"
+  },
+  "enabled=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo enabled: se esperaba true o false\"}"
+  },
+  "enabled=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo enabled: se esperaba true o false\"}"
+  },
+  "enabled=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"slug\": \"mesa_de_tarde\", \"name\": \"Mesa de tarde\", \"description\": \"recepción\", \"builtin\": false, \"enabled\": false, \"locked\": false, \"permissions\": [\"pacientes\"], \"users\": 0}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "PUT /api/admin/users/medico.personas": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Elegí un médico del catálogo para esta cuenta.\", \"field\": \"medico_id\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "rol=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo rol: se esperaba texto\"}"
+  },
+  "rol=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "email=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo email: se esperaba texto\"}"
+  },
+  "email=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": null, \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "medico_id=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico_id: se esperaba texto\"}"
+  },
+  "medico_id=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Elegí un médico del catálogo para esta cuenta.\", \"field\": \"medico_id\"}"
+  },
+  "centros=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo centros: se esperaba una lista\"}"
+  },
+  "centros=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "activo=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo activo: se esperaba true o false\"}"
+  },
+  "activo=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "permisos_agregados=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_agregados: se esperaba una lista\"}"
+  },
+  "permisos_agregados=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "permisos_quitados=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo permisos_quitados: se esperaba una lista\"}"
+  },
+  "permisos_quitados=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "forzar_2fa=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo forzar_2fa: se esperaba true o false\"}"
+  },
+  "forzar_2fa=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": true, \"item\": {\"id\": 2, \"usuario\": \"medico.personas\", \"rol\": \"medico\", \"activo\": true, \"creado\": \"<ts>\", \"medico_id\": \"gonzalez-juan\", \"onboarding_completed_at\": null, \"ultimo_acceso\": null, \"email\": \"medico@example.com\", \"invitado_en\": null, \"centros\": [], \"permisos_agregados\": [], \"permisos_quitados\": [], \"tiene_2fa\": false, \"cuenta_estado\": \"invitado\", \"requiere_configurar_2fa\": false, \"es_dueno\": false}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ }
+}

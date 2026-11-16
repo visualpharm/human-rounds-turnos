@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "Giorni di anticipo",
+  "admin.settings.opening_time": "Orario di apertura appuntamenti",
+  "admin.settings.horizon_range": "I giorni di anticipo devono essere compresi tra 1 e 365.",
+  "admin.settings.opening_time_format": "L'orario di apertura deve avere il formato HH:MM.",
+  "admin.settings.holidays.title": "Giorni festivi",
+  "admin.settings.holidays.lede": "In quel giorno non vengono assegnati appuntamenti in nessun servizio, medico o centro. Gli appuntamenti già fissati non vengono cancellati: devono essere riprogrammati.",
+  "admin.settings.holidays.empty": "Non ci sono giorni festivi caricati.",
+  "admin.settings.holidays.date": "Data",
+  "admin.settings.holidays.name": "Nome",
+  "admin.settings.holidays.remove": "Rimuovi",
+  "admin.settings.holidays.add": "+ Aggiungi giorno festivo",
+  "admin.settings.holidays.load_national": "Carica festività nazionali",
+  "admin.settings.holidays.appointments_one": "{n} appuntamento fissato per quel giorno",
+  "admin.settings.holidays.appointments": "{n} appuntamenti fissati per quel giorno",
+  "admin.settings.holidays.invalid": "L'elenco dei giorni festivi non è valido.",
+  "admin.settings.holidays.bad_date": "Ogni giorno festivo deve avere una data valida.",
+  "admin.settings.holidays.no_name": "Ogni giorno festivo deve avere un nome.",
+  "admin.settings.holidays.long_name": "Il nome di un giorno festivo può contenere fino a {max} caratteri.",
+  "admin.settings.holidays.too_many": "Si possono caricare fino a {max} giorni festivi."
+}

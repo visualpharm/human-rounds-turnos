@@ -1,0 +1,91 @@
+{
+  "baseline": "ad5cf453c3861dcd032fbe07856a74a7fcea408e",
+  "reviewed_assets": {
+    "static/platform/account-form.mjs": "89416f97c47c77d33975d2f1333f19722e8f6a8230d56bf6b37a9d8e3001e4d7",
+    "static/platform/account-requests.mjs": "fc1ab9702f7399fed87fe416d1ed42b671c19943a88e411ae43733bae4335263"
+  },
+  "allowed_catalog_additions": {
+    "account.form.json": [
+      "account.form.error.registration_exists",
+      "account.form.recover.identifier_required"
+    ],
+    "account.mine.json": [
+      "account.mine.requests.past_unconfirmed"
+    ]
+  },
+  "asset_url_reversals": [
+    [
+      "/static/platform/account-form.5ec3cadc.mjs",
+      "/static/platform/account-form.89416f97.mjs"
+    ],
+    [
+      "/static/platform/account-requests.03742887.mjs",
+      "/static/platform/account-requests.fc1ab970.mjs"
+    ]
+  ],
+  "renders": [
+    {
+      "page": "es:/account",
+      "baseline_sha256": "fed17b887635560e55475fcb87a8dd9b5dc05673eb31607de50801dd8b00d73c",
+      "new_sha256": "6c936597bcb7a129aa666078928a01904a3a3ab8bdd6db513525a31afe9ce206",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/account/reset",
+      "baseline_sha256": "7c22d4f394b6d8c3aca9013fc86856e32fd16a5c4b2bb197e3c151b88f6fa347",
+      "new_sha256": "1c1a6391881213e672855d79fcbf6a51b22e11d71f0fe1cb718b69f2ce91dddd",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "anon:/account",
+      "baseline_sha256": "fed17b887635560e55475fcb87a8dd9b5dc05673eb31607de50801dd8b00d73c",
+      "new_sha256": "6c936597bcb7a129aa666078928a01904a3a3ab8bdd6db513525a31afe9ce206",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/test",
+      "baseline_sha256": "a1c5b5583b8e2a2d6c3ea0a24c2b50a19d372faf15781b547f4c3094d1181be8",
+      "new_sha256": "0dc82809918b29e5f3bdc542fd108af81739ef58213f4c6d4fa19765dc293d5a",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "es:/auth/sso",
+      "baseline_sha256": "2f14ebfec899b400a73e6866fb855aaaff47cfbb7174a4861d2992c3c6eab4f6",
+      "new_sha256": "b0f8483dc67bd2886c29028d7fbe004ff787ad95962b6a63a18fce4dde1e7bf7",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account",
+      "baseline_sha256": "94d2bd2bbec6eb4b313db997445b18e8f83745da8d991d85b22792633669340a",
+      "new_sha256": "273d62527b79f076c6210acee02c478db1d321e024217ceec4793860eccc9257",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/account/reset",
+      "baseline_sha256": "8110b5c1c0eb83cfcf27ef8f1037f2b8f9c3da5744a562693bd9f3f4422c1da2",
+      "new_sha256": "0c86a2cab462f1514e97afe4477a55237f12878136ebefffea39f28f01ff29b8",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/test",
+      "baseline_sha256": "ee5c543ebb7d56302de7fadbdb3db11c5e1fa60899439298f43213d933e4163c",
+      "new_sha256": "f2f89a43ed621cff7ad92a209babd1785844dd2fc4e634e0dfb569f78c698fbc",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    },
+    {
+      "page": "en:/auth/sso",
+      "baseline_sha256": "198c849f5c89b591db5e940679642f22cc5ae8d53151d169011eb941767c2896",
+      "new_sha256": "f056c6807a5087ecceb8354891bd0e237c78e586c0f644fcac1f5746e73aa18b",
+      "exact_reversal": true,
+      "unrelated_mutation_rejected": true
+    }
+  ]
+}

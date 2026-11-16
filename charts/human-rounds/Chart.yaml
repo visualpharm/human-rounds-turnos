@@ -1,0 +1,12 @@
+apiVersion: v2
+name: human-rounds
+description: Human Rounds appointment engine for public-health networks.
+type: application
+version: 0.1.0
+appVersion: "unreleased"
+keywords:
+  - appointments
+  - public-health
+  - human-rounds
+maintainers:
+  - name: Human Rounds maintainers

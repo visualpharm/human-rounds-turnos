@@ -1,0 +1,91 @@
+{
+  "note": "Agrupación de servicios y médicos en 'clusters' para el directorio (home, /d/<id>, nav). Generado por scripts/generate_example_town_catalog.py — NO editar a mano.",
+  "clusters": [
+    {
+      "id": "clinica",
+      "nombre": "Clínica y medicina general",
+      "top": 1,
+      "icon": "/static/icons/clinica.png"
+    },
+    {
+      "id": "diagnostico",
+      "nombre": "Diagnóstico y imagen",
+      "top": 2,
+      "icon": "/static/icons/diagnostico.png"
+    },
+    {
+      "id": "trauma-kine",
+      "nombre": "Traumatología y kinesiología",
+      "top": 3,
+      "icon": "/static/icons/trauma-kine.png"
+    },
+    {
+      "id": "pediatria",
+      "nombre": "Pediatría",
+      "top": 4,
+      "icon": "/static/icons/pediatria.png"
+    },
+    {
+      "id": "salud-mental",
+      "nombre": "Salud mental",
+      "top": 5,
+      "icon": "/static/icons/salud-mental.png"
+    },
+    {
+      "id": "endocrino",
+      "nombre": "Endocrinología, diabetes y nutrición",
+      "top": 6,
+      "icon": "/static/icons/endocrino.png"
+    },
+    {
+      "id": "cardiologia",
+      "nombre": "Cardiología",
+      "top": 7,
+      "icon": "/static/icons/cardiologia.png"
+    },
+    {
+      "id": "gineco",
+      "nombre": "Ginecología y obstetricia",
+      "top": 8,
+      "icon": "/static/icons/gineco.png"
+    },
+    {
+      "id": "odontologia",
+      "nombre": "Odontología",
+      "top": 9,
+      "icon": "/static/icons/odontologia.png"
+    },
+    {
+      "id": "vacunas-prevencion",
+      "nombre": "Vacunas y prevención",
+      "top": 10,
+      "icon": "/static/icons/vacunas-prevencion.png"
+    },
+    {
+      "id": "otorrino-fono",
+      "nombre": "Otorrinolaringología y fonoaudiología",
+      "top": 11,
+      "icon": "/static/icons/otorrino-fono.png"
+    },
+    {
+      "id": "grupos",
+      "nombre": "Grupos y talleres",
+      "top": 12,
+      "icon": "/static/icons/grupos.png"
+    },
+    {
+      "id": "otras",
+      "nombre": "Otras especialidades",
+      "top": 13,
+      "icon": "/static/icons/otras.png"
+    },
+    {
+      "id": "demanda-espontanea",
+      "nombre": "Demanda espontánea",
+      "kind": "walkin",
+      "descripcion": "Sin turno: guardia las 24 horas en el hospital y, en las clínicas, medicina general, vacunación y curaciones.",
+      "top": 14,
+      "icon": "/static/icons/clinica.png"
+    }
+  ]
+}

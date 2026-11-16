@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{ '{{lang}}' }}" data-theme="{{ '{{tema}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{i18n_bootstrap}}' }}
+{{ '{{favicon}}' }}
+<title>{{ t('account.oauth.title', 'Conectar un asistente') }} | {{ '{{sitio.brand}}' }}</title>
+<meta name="robots" content="noindex,nofollow">
+{{ '{{fuentes}}' }}
+<link rel="stylesheet" href="{{ static('human-rounds.css') }}">
+<style>
+  .wrap{max-width:1120px;margin:0 auto;padding:26px 24px 80px;}
+  .oc-card{max-width:520px;margin:26px auto 0;background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;box-shadow:var(--shadow-card);}
+  .oc-h{margin:0 0 8px;font-size:24px;line-height:1.2;font-weight:700;letter-spacing:-.01em;color:var(--text);}
+  .oc-host{display:inline-block;margin:0 0 18px;font:500 13.5px "JetBrains Mono",monospace;background:var(--panel-2,#faf9f6);border:1px solid var(--border);border-radius:6px;padding:2px 8px;color:var(--text);word-break:break-all;}
+  .oc-p{margin:0 0 12px;font-size:16px;line-height:1.5;color:var(--text);}
+  .oc-list{margin:0 0 18px;padding-left:22px;font-size:16px;line-height:1.6;color:var(--text);}
+  .oc-form{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
+  .sc-cta{width:100%;display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;background:var(--accent,#0e8b50);color:#fff;font:500 16px var(--font);letter-spacing:-.01em;min-height:48px;padding:13px 20px;border-radius:11px;transition:filter .12s,transform .1s;}
+  .sc-cta:hover{background-image:var(--hover-fill);}.sc-cta:active{transform:translateY(1px);}
+  .sc-provider{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;border:1.5px solid var(--border-strong,#d6dad6);border-radius:10px;background:var(--panel,#fff);color:var(--text,#1f1f1f);font:650 16px var(--font);padding:11px 16px;cursor:pointer;}
+  .sc-provider:hover{border-color:var(--hover-bd-strong);background:var(--hover-bg-soft);}
+  a.stz-link{color:var(--link,var(--accent));}
+  a.stz-link:hover{color:var(--accent-hover);}
+  footer.site{border-top:1px solid var(--border-strong);margin-top:52px;padding-top:24px;display:flex;flex-direction:column;gap:12px;}
+  footer.site .fmision{margin:0;font-size:13.5px;color:var(--text-3);line-height:1.55;}
+  footer.site .flinks{display:flex;flex-wrap:wrap;gap:8px 24px;}
+  footer.site a{display:inline-flex;align-items:center;min-height:24px;color:var(--link,var(--accent));font-size:14px;}
+  footer.site a:hover{color:var(--link-hover,var(--accent-hover));}
+  @media(max-width:600px){.wrap{padding:18px 16px 60px;}.oc-card{margin-top:12px;padding:22px 18px;}}
+</style>
+</head>
+<body>
+<header id="stznav" data-section=""></header>
+<script type="module" src="{{ static('platform/nav.mjs') }}"></script>
+<main class="wrap">
+  <section class="oc-card">
+{% if error == "closed" %}
+    <h1 class="oc-h">{{ t("account.oauth.closed.title", "No disponible en este sitio") }}</h1>
+    <p class="oc-p">{{ t("account.oauth.closed.body", "En este sitio no se puede conectar un asistente de IA a tu cuenta.") }}</p>
+    <p class="oc-p"><a class="stz-link" href="/account">{{ t("account.oauth.error.back", "Ir a mi cuenta") }}</a></p>
+{% elif error %}
+    <h1 class="oc-h">{{ t("account.oauth.error.title", "No se pudo conectar") }}</h1>
+    <p class="oc-p">{{ t("account.oauth.error.body", "El pedido de conexión no es válido o venció. Volvé a la aplicación del asistente y probá de nuevo.") }}</p>
+    <p class="oc-p"><a class="stz-link" href="/account">{{ t("account.oauth.error.back", "Ir a mi cuenta") }}</a></p>
+{% else %}
+    <h1 class="oc-h">{{ t("account.oauth.heading", "¿Conectar {name}?", name=name) }}</h1>
+    <p class="oc-host">{{ host }}</p>
+    <p class="oc-p">{{ t("account.oauth.lead", "Este asistente va a poder, en tu nombre:") }}</p>
+    <ul class="oc-list">
+      <li>{{ t("account.oauth.can.search", "buscar servicios y horarios") }}</li>
+      <li>{{ t("account.oauth.can.request", "pedir y cancelar turnos") }}</li>
+      <li>{{ t("account.oauth.can.read", "ver tus solicitudes") }}</li>
+    </ul>
+    <p class="oc-p">{{ t("account.oauth.revoke", "Podés desconectarlo cuando quieras desde Mi cuenta.") }}</p>
+    <form class="oc-form" method="post" action="/oauth/authorize">
+      <input type="hidden" name="consent" value="{{ consent }}">
+      <button class="sc-cta" type="submit" name="decision" value="allow">{{ t("account.oauth.allow", "Permitir") }}</button>
+      <button class="sc-provider" type="submit" name="decision" value="deny">{{ t("account.oauth.deny", "Cancelar") }}</button>
+    </form>
+{% endif %}
+  </section>
+  <footer class="site">
+    {%- include "_site_footer_notice.html" %}
+    <p class="fmision">{{ t('footer.mission', 'Hecha y sostenida por vecinos de {{sitio.city}}. Gratis y sin ningún negocio detrás: solo que atenderte sea más fácil.') }}</p>
+    <nav class="flinks">
+      <a href="/privacy.html">{{ t('footer.privacy', 'Privacidad') }}</a>
+      <a href="/terms.html">{{ t('footer.terms', 'Términos') }}</a>
+      <a href="/about.html">{{ t('footer.about', 'Acerca de') }}</a>
+      <a href="/news">{{ t('footer.news', 'Novedades') }}</a>
+      <a href="https://icons8.com" target="_blank" rel="noopener">{{ t('footer.credit', 'Íconos por Icons8') }}</a>{% if platform_credit() %}
+      <a class="fcredit" href="https://humanrounds.org/?lang={{ lang() }}">{{ t('footer.powered', 'Funciona con Human Rounds') }}</a>{% endif %}
+    </nav>
+  </footer>
+</main>
+</body>
+</html>

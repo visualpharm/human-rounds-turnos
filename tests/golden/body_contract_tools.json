@@ -1,0 +1,2827 @@
+{
+ "POST /api/admin/ai-register/notify": {
+  "empty": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "array": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "null": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "string": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "number": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "valid as text/plain": {
+   "status": 409,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false}"
+  },
+  "valid": {
+   "status": 409,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false}"
+  },
+  "valid + unknown field": {
+   "status": 409,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false}"
+  },
+  "id=str": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "id=bool": {
+   "status": 409,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false}"
+  },
+  "id=list": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "id=object": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "id=null": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "reference=int": {
+   "status": 409,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false}"
+  },
+  "reference=bool": {
+   "status": 409,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"ok\": false}"
+  },
+  "reference=list": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "reference=object": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "reference=null": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "date=int": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "date=bool": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "date=list": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "date=object": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "date=null": {
+   "status": 400,
+   "content-type": null,
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "No se pudo registrar. Revisá la referencia y la fecha."
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/client-errors": {
+  "empty": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "malformed": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "not utf-8": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "utf-8 bom": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "array": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "string": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "number": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "valid as text/plain": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "valid": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "valid + unknown field": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "kind=int": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "kind=bool": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "kind=list": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "kind=object": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "kind=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "message=int": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "message=bool": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "message=list": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "message=object": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "message=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "source=int": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "source=bool": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "source=list": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "source=object": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "source=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "line=str": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "line=bool": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "line=list": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "line=object": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "line=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "col=str": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "col=bool": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "col=list": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "col=object": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "col=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "stack=int": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "stack=bool": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "stack=list": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "stack=object": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "stack=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "screen=int": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "screen=bool": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "screen=list": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "screen=object": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "screen=null": {
+   "status": 204,
+   "content-type": null,
+   "cache-control": null,
+   "content-encoding": null,
+   "body": ""
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/doctors/gonzalez-juan/photo": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta la foto\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"foto inválida\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"foto inválida\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"foto inválida\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"foto inválida\"}"
+  },
+  "valid as text/plain": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"sin foto\"}"
+  },
+  "valid": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"sin foto\"}"
+  },
+  "valid + unknown field": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"sin foto\"}"
+  },
+  "action=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta la foto\"}"
+  },
+  "action=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta la foto\"}"
+  },
+  "action=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta la foto\"}"
+  },
+  "action=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta la foto\"}"
+  },
+  "action=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta la foto\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/patient-summary": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta dni\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta dni\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta dni\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta dni\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: el cuerpo: se esperaba un objeto\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"resumen\": {\"_motivo\": \"fake\", \"fuentes\": [\"Alepo: no disponible\", \"Marqui: no disponible\"], \"titular\": \"Sin datos previos en los sistemas conectados.\", \"preguntas\": [], \"medicacion\": [], \"pendientes\": [], \"tendencias\": [], \"indicadores\": [], \"advertencias\": [], \"antecedentes\": []}, \"generado\": \"<ts>\", \"modelo\": \"fake\", \"especialidad\": \"Medicina general\", \"fuentes_estado\": {\"local_history\": \"ok\", \"alepo\": \"no_disponible\", \"marqui\": \"no_disponible\", \"patient_uploads\": \"ok\"}, \"external_history_enabled\": false}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"resumen\": {\"_motivo\": \"fake\", \"fuentes\": [\"Alepo: no disponible\", \"Marqui: no disponible\"], \"titular\": \"Sin datos previos en los sistemas conectados.\", \"preguntas\": [], \"medicacion\": [], \"pendientes\": [], \"tendencias\": [], \"indicadores\": [], \"advertencias\": [], \"antecedentes\": []}, \"generado\": \"<ts>\", \"modelo\": \"fake\", \"especialidad\": \"Medicina general\", \"fuentes_estado\": {\"local_history\": \"ok\", \"alepo\": \"no_disponible\", \"marqui\": \"no_disponible\", \"patient_uploads\": \"ok\"}, \"external_history_enabled\": false}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"resumen\": {\"_motivo\": \"fake\", \"fuentes\": [\"Alepo: no disponible\", \"Marqui: no disponible\"], \"titular\": \"Sin datos previos en los sistemas conectados.\", \"preguntas\": [], \"medicacion\": [], \"pendientes\": [], \"tendencias\": [], \"indicadores\": [], \"advertencias\": [], \"antecedentes\": []}, \"generado\": \"<ts>\", \"modelo\": \"fake\", \"especialidad\": \"Medicina general\", \"fuentes_estado\": {\"local_history\": \"ok\", \"alepo\": \"no_disponible\", \"marqui\": \"no_disponible\", \"patient_uploads\": \"ok\"}, \"external_history_enabled\": false}"
+  },
+  "dni=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo dni: se esperaba texto\"}"
+  },
+  "dni=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta dni\"}"
+  },
+  "medico=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico: se esperaba texto\"}"
+  },
+  "medico=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico: se esperaba texto\"}"
+  },
+  "medico=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico: se esperaba texto\"}"
+  },
+  "medico=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: campo medico: se esperaba texto\"}"
+  },
+  "medico=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta medico\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/reports/funnel/steps": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"pasos_config\": [{\"key\": \"pedido\", \"on\": true, \"label\": \"Pidieron turno\"}, {\"key\": \"aprobada\", \"on\": true, \"label\": \"Les dieron turno\"}, {\"key\": \"confirmada\", \"on\": false, \"label\": \"Confirmaron que van\"}, {\"key\": \"turno_paso\", \"on\": true, \"label\": \"Les llegó el turno\"}, {\"key\": \"presente\", \"on\": true, \"label\": \"Fueron al turno\"}]}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"pasos_config\": [{\"key\": \"pedido\", \"on\": true, \"label\": \"Pidieron turno\"}, {\"key\": \"aprobada\", \"on\": true, \"label\": \"Les dieron turno\"}, {\"key\": \"confirmada\", \"on\": false, \"label\": \"Confirmaron que van\"}, {\"key\": \"turno_paso\", \"on\": true, \"label\": \"Les llegó el turno\"}, {\"key\": \"presente\", \"on\": true, \"label\": \"Fueron al turno\"}]}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"pasos_config\": [{\"key\": \"pedido\", \"on\": true, \"label\": \"Pidieron turno\"}, {\"key\": \"aprobada\", \"on\": true, \"label\": \"Les dieron turno\"}, {\"key\": \"confirmada\", \"on\": false, \"label\": \"Confirmaron que van\"}, {\"key\": \"turno_paso\", \"on\": true, \"label\": \"Les llegó el turno\"}, {\"key\": \"presente\", \"on\": true, \"label\": \"Fueron al turno\"}]}"
+  },
+  "steps=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "steps=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "steps=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "steps=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "steps=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Falta la lista de pasos.\"}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/table-export": {
+  "empty": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "array": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "null": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "string": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "number": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "screen=int": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "screen=bool": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "screen=list": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "screen=object": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "screen=null": {
+   "status": 404,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Esta pantalla no se descarga: es una lista grande. Filtrala y descargá la parte que necesitás.\", \"code\": \"pantalla_sin_descarga\"}"
+  },
+  "title=int": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "title=bool": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "title=list": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "title=object": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "title=null": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "day=int": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "day=bool": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "day=list": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "day=object": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "day=null": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "columns=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "columns=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "columns=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "columns=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "columns=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "rows=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "rows=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "rows=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "rows=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "rows=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"No se pudo armar el archivo. Recargá la página y volvé a descargar.\", \"code\": \"datos_invalidos\"}"
+  },
+  "patients=int": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "patients=str": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "patients=bool": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "patients=object": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "patients=null": {
+   "status": 200,
+   "content-type": "text/csv; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "﻿Nombre;Especialidad\r\nJuan;Clínica\r\n"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/usability/analyze": {
+  "empty": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "malformed": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "not utf-8": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "utf-8 bom": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"candidates\":0}"
+  },
+  "array": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "string": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "number": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"candidates\":0}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"candidates\":0}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"candidates\":0}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/usability/findings": {
+  "empty": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "malformed": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "not utf-8": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "utf-8 bom": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "array": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "string": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "number": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "valid as text/plain": {
+   "status": 201,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"id\":1,\"number\":\"U-1\"}"
+  },
+  "valid": {
+   "status": 201,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"id\":1,\"number\":\"U-1\"}"
+  },
+  "valid + unknown field": {
+   "status": 201,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"id\":1,\"number\":\"U-1\"}"
+  },
+  "role=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "role=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "role=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "role=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "role=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "severity=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "severity=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "severity=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "severity=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "severity=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "title=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "title=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "title=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "title=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "title=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "detail=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "detail=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "detail=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "detail=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "detail=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/admin/usability/findings/1": {
+  "empty": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "malformed": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "not utf-8": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "utf-8 bom": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "array": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "string": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "number": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "valid as text/plain": {
+   "status": 404,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"not_found\"}}"
+  },
+  "valid": {
+   "status": 404,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"not_found\"}}"
+  },
+  "valid + unknown field": {
+   "status": 404,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"not_found\"}}"
+  },
+  "status=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "status=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "status=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "status=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "status=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "fix_note=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "fix_note=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "fix_note=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "fix_note=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "fix_note=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "no session: malformed": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  },
+  "no session: valid": {
+   "status": 401,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"no_autenticado\"}"
+  }
+ },
+ "POST /api/chat": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"pin-1\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"pin-1\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"pin-1\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "mensaje=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): 12345\", \"autenticado\": false, \"session_id\": \"pin-1\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "mensaje=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): True\", \"autenticado\": false, \"session_id\": \"pin-1\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "mensaje=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "mensaje=object": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "mensaje=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "session_id=int": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"12345\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "session_id=bool": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"True\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "session_id=list": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "session_id=object": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  },
+  "session_id=null": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}"
+  }
+ },
+ "POST /api/chat/stream": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"JSON inválido: se esperaba un objeto JSON\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"pin-2\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"pin-2\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"pin-2\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "mensaje=int": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): 12345\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): 12345\", \"autenticado\": false, \"session_id\": \"pin-2\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "mensaje=bool": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): True\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): True\", \"autenticado\": false, \"session_id\": \"pin-2\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "mensaje=list": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "mensaje=object": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "mensaje=null": {
+   "status": 400,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"falta el mensaje\"}"
+  },
+  "session_id=int": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"12345\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "session_id=bool": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"session_id\": \"True\", \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "session_id=list": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "session_id=object": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  },
+  "session_id=null": {
+   "status": 200,
+   "content-type": "text/event-stream; charset=utf-8",
+   "cache-control": "no-cache",
+   "content-encoding": null,
+   "body": "event: chunk\ndata: {\"texto\": \"Recibido (fake): hola\"}\n\nevent: done\ndata: {\"respuesta\": \"Recibido (fake): hola\", \"autenticado\": false, \"enlaces\": [{\"label\": \"Servicios y turnos\", \"href\": \"/\"}]}\n\n"
+  }
+ },
+ "POST /api/chat/transcribe": {
+  "empty": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  },
+  "malformed": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}"
+  },
+  "not utf-8": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\"}"
+  },
+  "utf-8 bom": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)\"}"
+  },
+  "array": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  },
+  "null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  },
+  "string": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"audio inválido\"}"
+  },
+  "number": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"audio inválido\"}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"texto\": \"Dictado simulado.\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"texto\": \"Dictado simulado.\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"texto\": \"Dictado simulado.\"}"
+  },
+  "audio=int": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  },
+  "audio=str": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  },
+  "audio=bool": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  },
+  "audio=list": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  },
+  "audio=null": {
+   "status": 400,
+   "content-type": "application/json; charset=utf-8",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"error\": \"formato de audio no compatible\"}"
+  }
+ },
+ "POST /api/study/s/{token}/event": {
+  "empty": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "malformed": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "not utf-8": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "utf-8 bom": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "array": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "string": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "number": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"accepted\":1}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"accepted\":1}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"accepted\":1}"
+  },
+  "events=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "events=str": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "events=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "events=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "events=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  }
+ },
+ "POST /api/study/s/{token}/finish": {
+  "empty": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "malformed": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "not utf-8": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "utf-8 bom": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"finished\":true}"
+  },
+  "array": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "string": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "number": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"finished\":true}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"finished\":true}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"finished\":true}"
+  },
+  "answers=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "answers=str": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "answers=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "answers=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "answers=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  }
+ },
+ "POST /api/study/s/{token}/result": {
+  "empty": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "malformed": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "not utf-8": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "utf-8 bom": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "array": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "string": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "number": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "valid as text/plain": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"task_id\":\"P1\"}"
+  },
+  "valid": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"task_id\":\"P1\"}"
+  },
+  "valid + unknown field": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"task_id\":\"P1\"}"
+  },
+  "task_id=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "task_id=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "outcome=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "outcome=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "outcome=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "outcome=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "outcome=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "ease=str": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "ease=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "ease=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "ease=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "ease=null": {
+   "status": 200,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"task_id\":\"P1\"}"
+  },
+  "comment=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "comment=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "comment=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "comment=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "comment=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "duration_ms=str": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "duration_ms=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "duration_ms=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "duration_ms=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  },
+  "duration_ms=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_study_data\"}}"
+  }
+ },
+ "POST /api/study/session": {
+  "empty": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "malformed": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "not utf-8": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "utf-8 bom": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "array": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "string": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "number": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"invalid_body\"}}"
+  },
+  "valid as text/plain": {
+   "status": 201,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"url\": \"/study/s/<token>\"}"
+  },
+  "valid": {
+   "status": 201,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"url\": \"/study/s/<token>\"}"
+  },
+  "valid + unknown field": {
+   "status": 201,
+   "content-type": "application/json",
+   "cache-control": "no-store",
+   "content-encoding": null,
+   "body": "{\"url\": \"/study/s/<token>\"}"
+  },
+  "consent=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "consent=str": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "consent=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "consent=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "consent=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "role=int": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "role=bool": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "role=list": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "role=object": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  },
+  "role=null": {
+   "status": 422,
+   "content-type": "application/json",
+   "cache-control": null,
+   "content-encoding": null,
+   "body": "{\"detail\":{\"error\":\"consent_and_role_required\"}}"
+  }
+ }
+}

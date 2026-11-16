@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "Verificando para quem é o atendimento…",
+  "wizard.age_check.h1": "Para quem é o atendimento?",
+  "wizard.confirm.error": "Não conseguimos salvar a sua resposta. Tente de novo.",
+  "wizard.confirm.expired": "Este agendamento não pode mais ser confirmado.",
+  "wizard.confirm.saved": "Pronto, obrigado por avisar.",
+  "wizard.confirm.wait": "Um momento…",
+  "wizard.contact.call": "Travou em algum passo? Ligue para {name}:",
+  "wizard.contact.center_fallback": "o centro",
+  "wizard.contact.whatsapp": "Travou em algum passo? Escreva para {name} pelo WhatsApp:",
+  "wizard.contact.whatsapp_site": "Teve dificuldade em algum passo? Escreva para nós pelo WhatsApp:",
+  "wizard.offer.accepted": "Pronto! Seu agendamento foi confirmado. Estamos te levando para Meus agendamentos…",
+  "wizard.offer.error": "Não conseguimos processar a sua resposta. Tente de novo.",
+  "wizard.offer.gone": "Este horário não está mais disponível.",
+  "wizard.offer.rejected": "Avisamos a próxima pessoa da lista. Obrigado por responder.",
+  "wizard.offer.wait": "Um momento…",
+  "wizard.title.orden": "Pedido de encaminhamento",
+  "wizard.title.solicitud": "Agendar horário",
+  "wizard.upload.sub": "O hospital vai revisar e confirmar o seu agendamento."
+}

@@ -1,0 +1,11 @@
+{
+  "_comment": "/blood-donation page chrome. Content (lede, cuerpo, lugar, horario, nota) is pack data (enlaces.json) — no invented schedules/requirements here; the place falls back to the installation's main center.",
+  "blood_donation.h1": "Blut spenden",
+  "blood_donation.before_h": "Bevor du gehst",
+  "blood_donation.call": "Unter {phone} anrufen",
+  "blood_donation.cta": "Vorab informieren",
+  "blood_donation.lede_default": "Jede Spende kann helfen, ein Leben zu retten.",
+  "blood_donation.nota_default": "Erkundige dich im Krankenhaus nach den Spendezeiten.",
+  "blood_donation.where_h": "Wo und wann du spenden kannst",
+  "blood_donation.who_h": "Wer spenden darf"
+}

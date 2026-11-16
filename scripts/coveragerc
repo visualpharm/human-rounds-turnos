@@ -1,0 +1,25 @@
+# coverage.py settings for the backend suite (scripts/run_backend_shards.py --coverage-dir).
+# Every test file runs in its own interpreter (`coverage run`), writes its own data file
+# (parallel), and the runner combines them. Run from the repository root.
+#
+# Measured: the repository's Python — every importable package (a directory with __init__.py)
+# counts even when no test imports a file of it (0 % is reported, not hidden), and the files of
+# scripts/, alembic/ and tools/ (no __init__.py) count when a test imports or runs them.
+# Not measured: the tests themselves, vendored third-party code, node_modules and agent scratch
+# directories; code run in a subprocess a test starts (the app servers of the e2e surface, the
+# worker) — those are covered by their own surfaces, not by this number.
+[run]
+branch = True
+parallel = True
+source = .
+omit =
+    tests/*
+    vendor/*
+    node_modules/*
+    .claude/*
+    .ci-asgi/*
+    ci-artifacts/*
+    backend-coverage/*
+
+[report]
+ignore_errors = True

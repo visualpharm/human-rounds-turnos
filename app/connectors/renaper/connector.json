@@ -1,0 +1,12 @@
+{
+  "id": "renaper",
+  "country": "AR",
+  "capability": "identity_verification",
+  "default": true,
+  "config_keys": [
+    "TURNOS_FAKE_RENAPER",
+    "TURNOS_RENAPER_CLIENT_ID",
+    "TURNOS_RENAPER_CLIENT_SECRET"
+  ],
+  "description": "RENAPER / Mi Argentina OIDC login (auth_renaper.py) plus the local `stub` identity-provider simulator this module implements. Production RENAPER fails closed until the municipality's OIDC credentials are configured; TURNOS_FAKE_RENAPER=1 exercises the whole login flow locally against synthetic identities."
+}

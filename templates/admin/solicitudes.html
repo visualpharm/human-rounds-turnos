@@ -1,0 +1,194 @@
+{#
+  templates/admin/solicitudes.html — Tier 5 Requests direct screen (docs/
+  roadmap/tier5-frontend-design.md): the server-routed requests queue.
+  Extends the shared admin shell (templates/admin/base.html); the actual
+  DATA, MARKUP and event wiring come from `admin-app.js` plus its renderer
+  `static/platform/admin-solicitudes.mjs`. No business logic lives here; the routes under
+  /api/admin/requests* are untouched and still do 100% of the data work.
+
+  This template's ONLY job is to give that controller the EXACT DOM it
+  already knows how to drive — base.html's own shared title band
+  (`.adm-topbar > .adm-h1row`, carrying this screen's create-appointment
+  hook through the `title_band` block) and `<div class="adm-content-wrap">`
+  around the section, plus the `#sec-solicitudes` block (the
+  tools/search/filter band, `#list`) and the
+  two GLOBAL dialogs the controller also reaches for outside the section
+  (attendance + bulk-reject). The toast is the shared admin-shell.js one
+  direct pages get. The wrappers are NOT decorative: base.html ships the
+  shared shell CSS, so the sticky
+  `.adm-topbar` and the `.adm-content-wrap:has(> #sec-solicitudes…)`
+  max-width cap (1240px — Solicitudes is wider than the rest) only apply
+  when those exact wrappers carry the section. Without them the title never
+  sticks and the queue stretches edge-to-edge past the readable measure.
+  The hidden `<p class="adm-sub" id="adm-sub">` sits inside
+  `.adm-content-wrap` right before `#sec-solicitudes`: the controller reaches
+  `#adm-sub`, so the node is present even though this screen starts hidden
+  and never writes to it.
+
+  No hash shim: base.html declares window.SANA_ADMIN_SCREEN and the
+  controller's boot reads it (same audit fix cola/reportes/pacientes/
+  mis-turnos already rely on, 2026-08-06/10). window.CURRENT_ROLE is set
+  BEFORE admin-app.js (the controller) runs — admin-app.js's applyRol()
+  normally sets it client-side off /api/admin/whoami; on this shell the
+  role is already known server-side, so seeding it up-front lets the
+  controller short-circuit its gate the same way cola seeds it for
+  admin-queue.js (see admin_cola_screen.py's "rol template context").
+
+  Script order is dependency order for the cohort this screen needs AFTER
+  base.html's shared shell
+  runtime (i18n.js -> shared module loader/toast/session/bell):
+  platform/photo-zoom.mjs -> admin-control-fit.mjs ->
+  admin-app.js. admin-app.js dynamic-imports
+  platform/admin-create-appointment.mjs through the fingerprint manifest and
+  holds an early "Crear turno" click until that module resolves. There is no
+  classic overlay script, compatibility global, or silent early-click no-op.
+  admin-create-appointment and admin-combo.mjs import platform/search.mjs
+  through the fingerprint manifest.
+  admin-app.js imports admin-combo.mjs through the fingerprint manifest before
+  rendering the "Derivar a" and "Médico" controls and registers its policies
+  on that module boundary. No compatibility global or duplicate widget exists.
+  admin-app.js imports and awaits admin-preferences.mjs before
+  hydrateRequestPrefs() restores the saved queue filters; there is no classic
+  preference global or duplicate implementation. The photo viewer follows the shell utilities because
+  ordenHtml()'s image preview emits
+  `[data-photozoom]` image links. The viewer enhances their native fallback
+  only after the canonical module is mounted.
+  admin-control-fit.mjs self-boots on
+  DOMContentLoaded, measures every `select.adm-sel` (this screen's five
+  filter dropdowns) into `--control-fit-width`, and re-measures on the
+  MutationObserver it installs — so the filter band sizes correctly only if
+  the script is present and runs before the first render mutates it. The
+  closed admin cohort (admin-table, admin-control-fit,
+  admin-solicitudes, admin-app) loads fingerprinted
+  via {{ static('...') }} (static_fingerprint.MIGRATED, same as
+  cola/reportes); photo-zoom is a fingerprinted shared
+  assets too. admin-app.js imports platform/dates.mjs and platform/format.mjs through
+  window.SANA_STATIC before boot; no classic formatter or unhashed
+  compatibility path remains.
+#}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.queue.titulo_solicitudes', 'Solicitudes') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.queue.titulo_solicitudes', 'Solicitudes') }}{% endblock %}
+
+{% block title_band %}
+{# Create an appointment at the desk or by phone: this screen's primary
+   action, beside the title (the product owner, 2026-07-24). Solicitudes only, and only
+   for roles that book (admin/operador). Hidden until the controller
+   decides the role may book — same id="adm-crear-turno" hook admin-app.js
+   reaches for in the legacy page, in the same .adm-h1row slot. #}
+{# Panorama del día (reunión hospital 2026-08-27): vive en la banda del
+   título, junto a «Crear turno» — no en la banda de filtros, donde competía
+   por espacio con la búsqueda y los 7 filtros y terminaba cayendo en medio
+   de ellos (the product owner, 2026-09-15). One screen header (the product owner, 2026-11-08): a bare
+   icon named by its tooltip, on the title's own line, so the header stays one
+   line on a phone. #sol-hoy-toggle/#sol-hoy siguen wired por admin-app.js. #}
+<button type="button" class="cnt-gear-btn adm-title-action" id="sol-hoy-toggle"
+        aria-expanded="false" aria-controls="sol-hoy"
+        aria-label="{{ t('admin.queue.solicitudes.today_toggle', 'Ver turnos de hoy') }}"
+        title="{{ t('admin.queue.solicitudes.today_toggle', 'Ver turnos de hoy') }}"><span class="adm-icon adm-icon-today" aria-hidden="true"></span></button>
+<button type="button" class="btn btn-accent adm-title-action" id="adm-crear-turno" style="display:none;">{{ t('admin.queue.create_appt.crear_turno', 'Crear turno') }}</button>
+{% endblock %}
+
+{% block content %}
+{# data-disclosure="loading": the band and the list's AI notice wait for the data —
+   admin-app.js's colaDisclosure() shows them only when there are requests
+   (progressive disclosure, product owner 2026-10-26). #}
+<div class="adm-content-wrap">
+  <p class="adm-sub" id="adm-sub" style="display:none;"></p>
+  <div id="sec-solicitudes" data-disclosure="loading">
+    <div class="adm-band">
+      <div class="adm-tools" id="tools">
+        <div class="adm-search-row">
+          <input id="q" class="adm-search" type="search" autocomplete="off"
+                 placeholder="{% if rol == 'medico' %}{{ t('admin.queue.filters.buscar_placeholder_medico', 'Paciente o DNI') }}{% else %}{{ t('admin.queue.filters.buscar_placeholder', 'Paciente o médico') }}{% endif %}">
+          <button class="adm-filter-toggle" id="adm-filter-toggle" type="button" aria-label="{{ t('admin.queue.toolbar.filtros_aria', 'Filtros') }}" aria-controls="adm-filter-fields" aria-expanded="false">
+            <span class="adm-filter-label">{{ t('admin.queue.toolbar.filtros_aria', 'Filtros') }}</span>
+            <span class="adm-filter-count" id="adm-filter-count" hidden>0</span>
+          </button>
+        </div>
+        <div class="adm-filter-fields" id="adm-filter-fields">
+          <select id="f-estado" class="adm-sel" aria-label="{{ t('admin.queue.toolbar.estado_aria', 'Estado') }}">
+            <option value="pendiente">{{ t('admin.queue.toolbar.estado_pendientes', 'Pendientes') }}</option>
+            <option value="aprobada">{{ t('admin.queue.toolbar.estado_aprobadas', 'Aprobadas') }}</option>
+            <option value="rechazada">{{ t('admin.queue.toolbar.estado_rechazadas', 'Rechazadas') }}</option>
+            <option value="todas">{{ t('admin.queue.toolbar.estado_todas', 'Todas') }}</option>
+          </select>
+          <select id="f-medico" class="adm-sel" data-key="medico" aria-label="{{ t('admin.queue.filters.filtrar_medico', 'Filtrar por médico') }}"><option value="">{{ t('admin.queue.toolbar.medico', 'Médico') }}</option></select>
+          <select id="f-especialidad" class="adm-sel" data-key="especialidad" aria-label="{{ t('admin.queue.filters.filtrar_especialidad', 'Filtrar por especialidad') }}"><option value="">{{ t('admin.queue.toolbar.especialidad', 'Especialidad') }}</option></select>
+          <select id="f-servicio" class="adm-sel" data-key="servicio" aria-label="{{ t('admin.queue.filters.filtrar_servicio', 'Filtrar por servicio') }}"><option value="">{{ t('admin.queue.toolbar.servicio', 'Servicio') }}</option></select>
+          <select id="f-centro" class="adm-sel" data-key="centro" aria-label="{{ t('admin.queue.toolbar.centro', 'Centro') }}"><option value="">{{ t('admin.queue.toolbar.centro', 'Centro') }}</option></select>
+          <select id="f-verdict" class="adm-sel" data-key="verdict" aria-label="{{ t('admin.queue.toolbar.analisis', 'Análisis') }}"><option value="">{{ t('admin.queue.toolbar.analisis', 'Análisis') }}</option></select>
+          <select id="f-sug" class="adm-sel" data-key="sug" aria-label="{{ t('admin.queue.toolbar.sugerencia', 'Sugerencia') }}">
+            <option value="">{{ t('admin.queue.toolbar.sugerencia', 'Sugerencia') }}</option>
+            <option value="aprobar">{{ t('admin.queue.toolbar.sugerido_aprobar', 'Sugerido: aprobar') }}</option>
+            <option value="rechazar">{{ t('admin.queue.toolbar.sugerido_rechazar', 'Sugerido: rechazar') }}</option>
+          </select>
+          <a id="f-clear" class="adm-clear" style="display:none;">{{ t('admin.queue.toolbar.limpiar', 'Limpiar') }}</a>
+        </div>
+      </div>
+    </div>
+    {# El toggle vive ahora en la banda del título (ver title_band); este
+       panel es el que se abre debajo, a todo el ancho de la sección, cuando
+       se lo pide — /api/admin/day-queue. #}
+    <div id="sol-hoy" class="sol-hoy" hidden></div>
+    {# Lo recién aprobado en esta pantalla, con su «Cargar en HSI» (la
+       extensión de la mesa; 2026-10-27, d1122568). Vacío, no se ve. #}
+    <div id="hsi-recientes" class="hsi-recientes" hidden></div>
+    {# No AI notice over the list: it sits only at the AI text itself, under
+       the reading of an open request (admin-solicitudes.mjs avisoIAHtml;
+       Decreto 742/2026, 2026-11-09). #}
+    <div id="list"></div>
+  </div>
+</div>
+
+{# The toast is the shared shell one now (admin-shell.js creates the node
+   lazily with the SAME screen-reader attributes — role=status,
+   aria-live=polite, aria-atomic; the hospital's appointment clerk is
+   blind, meeting 2026-07-15), styled by the shared admin-shell.css both
+   shells link. #}
+
+<dialog class="attendance-dialog" id="attendance-dialog" aria-labelledby="attendance-dialog-title">
+  <div class="attendance-dialog-head">
+    <h2 id="attendance-dialog-title">{{ t('admin.queue.attendance.historial_titulo', 'Historial de asistencia') }}</h2>
+    <button class="attendance-dialog-close" type="button" data-close-attendance>{{ t('admin.queue.common.cerrar', 'Cerrar') }}</button>
+  </div>
+  <div id="attendance-dialog-body"></div>
+</dialog>
+
+<dialog class="attendance-dialog" id="bulk-reject-dialog" aria-labelledby="bulk-reject-title">
+  <div class="attendance-dialog-head">
+    <h2 id="bulk-reject-title">{{ t('admin.queue.bulk_reject.titulo', 'Rechazar en lote') }}</h2>
+    <button class="attendance-dialog-close" type="button" data-close-bulk-reject>{{ t('admin.queue.common.cerrar', 'Cerrar') }}</button>
+  </div>
+  <p class="attendance-dialog-meta" id="bulk-reject-count"></p>
+  <div class="bulk-reject-field">
+    <label for="bulk-reject-reason">{{ t('admin.queue.bulk_reject.motivo_label', 'Motivo') }}</label>
+    <select class="adm-sel" id="bulk-reject-reason"></select>
+    <input class="adm-search" id="bulk-reject-other" type="text" placeholder="{{ t('admin.queue.bulk_reject.motivo_placeholder', 'Otro motivo…') }}" hidden>
+  </div>
+  <div class="bulk-dialog-actions">
+    <button class="btn" type="button" data-close-bulk-reject>{{ t('admin.queue.bulk_reject.cancelar', 'Cancelar') }}</button>
+    <button class="btn btn-no" type="button" id="bulk-reject-confirm">{{ t('admin.queue.bulk_reject.confirmar', 'Rechazar') }}</button>
+  </div>
+</dialog>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // CURRENT_ROLE is set BEFORE the controller (admin-app.js) runs. The role
+  // is already known server-side (the route's
+  // require_admin resolved it before this template rendered), so seeding
+  // it up-front lets the controller's gate short-circuit immediately —
+  // same "rol template context" reasoning as cola (admin_cola_screen.py).
+  // The SANA_ADMIN_SCREEN sentinel is declared by base.html.
+  window.CURRENT_ROLE = "{{ rol }}";
+</script>
+<script type="module" src="{{ static('platform/photo-zoom.mjs') }}"></script>
+<script type="module" src="{{ static('platform/admin-control-fit.mjs') }}"></script>
+{# admin-session.mjs is published in the base manifest. admin-app.js imports
+   it and awaits that promise before classifying a 401/403, returning to
+   /admin/login?next=/admin/solicitudes on a confirmed expiry. #}
+<script src="{{ static('admin-app.js') }}"></script>
+{% endblock %}

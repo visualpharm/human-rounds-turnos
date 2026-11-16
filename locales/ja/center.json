@@ -1,0 +1,13 @@
+{
+  "_comment": "A center's own page (/center/<slug>): services/doctors block chrome, no-booking note, photo/review folds and meta description.",
+  "center.services_title": "診療科・サービス",
+  "center.no_online_booking": "この施設はアプリでの予約に対応していません。こちらへ直接ご連絡ください：",
+  "center.contact_or": "または",
+  "center.photos": "写真",
+  "center.neighbor_quotes": "地域の皆さんの声",
+  "center.neighbor_tips": "地域の皆さんからのアドバイス",
+  "center.meta_with_lede": "{lede} 診療内容、担当医、診療時間、連絡先を確認できます。",
+  "center.meta_default": "{city}にある{name}の診療内容、担当医、診療時間、連絡先をご案内します。",
+  "center.photo_alt": "{name}、写真 {n} / {total}",
+  "center.until": "{date} まで"
+}

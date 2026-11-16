@@ -1,0 +1,11 @@
+{
+  "_comment": "The public demo bar and its notices.",
+  "demo.banner.admin": "Демо. Дані вигадані; зміни будуть скинуті.",
+  "demo.banner.aria": "Навігація демо-версії",
+  "demo.banner.language_label": "Мова",
+  "demo.banner.link_admin": "Керування",
+  "demo.banner.link_doctor_demo": "Консоль лікаря",
+  "demo.banner.link_patient_demo": "Пацієнт",
+  "demo.banner.link_public_site": "Публічний сайт",
+  "demo.banner.public": "Демо. Усі дані вигадані."
+}

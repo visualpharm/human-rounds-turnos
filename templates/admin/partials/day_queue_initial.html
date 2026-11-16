@@ -1,0 +1,46 @@
+{#
+  First response for /admin/cola. This is deliberately independent of
+  admin-queue.js: it remains useful before JavaScript loads or when it is
+  unavailable, while the client renderer takes over for filters and actions.
+#}
+<section class="queue-server-initial" data-queue-server-rendered="true" aria-label="{{ t('admin.queue.titulo', 'Pacientes de hoy') }}">
+  {% if queue_data.total %}
+  {# One flat list for the day, by hour, the doctor as a column (the product owner
+     2026-11-08: "list today's patients, sign each one with the doctor, do
+     not group them by doctor"): the first paint is the
+     screen the controller settles on. The row is the controller's row
+     (the product owner 2026-11-09): «Name, N años», the doctor with the service under
+     the name, no DNI and no attendance — those live in the card. A
+     doctor's own screen has no doctor column — every row is theirs — and
+     carries the service under the patient when the day mixes services. #}
+  {% set con_medico = rol != 'medico' %}
+  {% set filas = [] %}
+  {% set servicios = [] %}
+  {% for grupo in queue_data.grupos %}{% for turno in grupo.turnos or [] %}{% set _ = filas.append([turno.hora or '', grupo, turno]) %}{% if turno.servicio and turno.servicio not in servicios %}{% set _ = servicios.append(turno.servicio) %}{% endif %}{% endfor %}{% endfor %}
+  {% set servicio_bajo_nombre = not con_medico and servicios | length > 1 %}
+  <table class="cnt-table queue-table queue-server-table">
+    <thead>
+      <tr>
+        <th scope="col">{{ t('admin.queue.table.hora', 'Hora') }}</th>
+        <th scope="col">{{ t('admin.queue.table.paciente', 'Paciente') }}</th>
+        {% if con_medico %}<th scope="col">{{ t('admin.queue.table.medico', 'Médico') }}</th>{% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for fila in filas | sort(attribute='0') %}{% set grupo = fila[1] %}{% set turno = fila[2] %}
+      <tr>
+        <td data-label="{{ t('admin.queue.table.hora', 'Hora') }}">{{ turno.hora }}</td>
+        <td data-label="{{ t('admin.queue.table.paciente', 'Paciente') }}" class="queue-td-pat"><span class="queue-pat-line"><span class="queue-pat-link">{{ queue_name_age(turno) }}</span></span>{% if servicio_bajo_nombre and turno.servicio %}<span class="queue-sub">{{ turno.servicio }}</span>{% endif %}</td>
+        {% if con_medico %}<td data-label="{{ t('admin.queue.table.medico', 'Médico') }}" class="queue-td-doc">{{ queue_display_name(grupo.medico) or t('admin.queue.group.sin_medico', 'Sin médico asignado') }}{% if turno.servicio or grupo.especialidad %}<span class="queue-sub">{{ turno.servicio or grupo.especialidad }}</span>{% endif %}</td>{% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {# Free hours are hidden until «Mostrar horarios libres» (the product owner 27.10, q1044534):
+     a day of open agendas only says so and points at the checkbox, as the
+     controller does. #}
+  {% if not queue_data.total %}
+  <p class="adm-empty">{{ t('admin.queue.empty.sin_turnos', 'No hay turnos aprobados para {fecha}.', fecha=t('date.today_lower', 'hoy')) }}{% if queue_data.grupos | selectattr('libres') | list %} {{ t('admin.queue.empty.hay_libres_hint', 'Hay agendas abiertas: marcá «Mostrar horarios libres» para verlas.') }}{% endif %}</p>
+  {% endif %}
+</section>

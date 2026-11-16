@@ -1,0 +1,127 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ t('ai.register.title', 'Registro de IA') }}{% endblock %}
+{% block screen_title %}{{ t('ai.register.title', 'Registro de IA') }}{% endblock %}
+{% block head %}
+<style>
+  .air{font-size:16px;color:var(--text);text-wrap:pretty;min-width:0;}
+  .air-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:24px;}
+  .air-table-wrap{min-width:0;max-width:100%;}
+  .air-table{width:100%;border-collapse:collapse;table-layout:fixed;max-width:100%;}
+  .air-table th,.air-table td{white-space:normal;box-sizing:border-box;}
+  .air-table th,.air-table td{padding:12px;vertical-align:top;overflow-wrap:anywhere;text-align:left;font-size:16px;color:var(--text);}
+  .air-table tbody tr:nth-child(2n){background:var(--bg-2);}
+  .air-table th:nth-child(1){width:34%;}.air-table th:nth-child(2){width:26%;}
+  .air-table details{margin-top:12px;}.air-table summary{cursor:pointer;min-height:44px;}
+  .air dl{margin:0;}.air dt{font-weight:650;}.air dd{margin:4px 0 16px;overflow-wrap:anywhere;}
+  .air form{display:flex;flex-wrap:wrap;align-items:end;gap:12px;}
+  .air label{display:grid;gap:6px;min-width:0;max-width:100%;}.air input{box-sizing:border-box;font:inherit;min-height:44px;max-width:100%;width:20ch;}
+  .air-change{margin:24px 0;}.air button{font-size:16px;min-height:44px;}
+  .air .air-shared{display:grid;gap:4px;margin:0 0 24px;}
+  .air .air-shared div{display:flex;flex-wrap:wrap;gap:0 8px;}
+  .air .air-shared dt{font-weight:400;color:var(--hint-ink,var(--text-2));}.air .air-shared dd{margin:0;}
+  @media(max-width:1040px){.air-table,.air-table tbody,.air-table tr,.air-table td{display:block;width:auto;}
+    .air-table thead{display:none;}.air-table tr{padding:16px 0;}.air-table td{padding:4px 0;}
+    .air-table td:empty{display:none;}
+    .air-table td[data-label]:not(:empty)::before{content:attr(data-label) ": ";font-weight:650;}}
+  @media print{.adm5-side,.adm-topbar,.air-actions,.air form{display:none!important;}
+    .adm5-shell,.adm5-main{display:block!important;padding:0!important;}.air details>*{display:block;}
+    .air-table,.air-table tbody,.air-table tr,.air-table td{display:block;width:auto;}
+    .air-table thead{display:none;}.air-table tr{break-inside:avoid;margin-bottom:24px;}}
+</style>
+{% endblock %}
+{% block content %}
+<div class="adm-content-wrap air" id="ai-register">
+  {% if not printable %}<div class="air-actions">
+    <button type="button" class="btn btn-accent" id="air-download">{{ t('ai.register.download', 'Descargar ficha') }}</button>
+    <a href="/admin/ai-register/print">{{ t('ai.register.print', 'Ficha imprimible') }}</a>
+  </div>{% endif %}
+  {# No counter above the table (the product owner, 2026-10-14: «never make
+     counters»): each pending change says «Pendiente de notificación» on its
+     own row under «Cambios». #}
+  {# data-list-view: the list takes the full width, like Pacientes and the
+     other lists (admin-direct.css lifts the content cap for it). #}
+  {# What most functions share is said once here; a row shows only where it
+     differs (the product owner, 02.11: what repeats on every row goes outside the
+     brackets). Screen only: the printable dossier repeats it per row. #}
+  {% if shared %}<dl class="air-shared">
+    {% if shared.model %}<div><dt>{{ t('ai.register.model', 'Modelo') }}</dt><dd>{{ shared.model }}{% if shared.host %} · {{ shared.host }}{% endif %}</dd></div>{% endif %}
+    {% if shared.risk_level %}<div><dt>{{ t('ai.register.risk', 'Riesgo autoevaluado') }}</dt><dd>{{ shared.risk_level }}</dd></div>{% endif %}
+    {% if shared.runtime_state %}<div><dt>{{ t('ai.register.state', 'Estado') }}</dt><dd>{{ shared.runtime_state }}</dd></div>{% endif %}
+  </dl>{% endif %}
+  <div class="air-table-wrap" data-list-view="1">
+  <table class="air-table" id="air-table">
+    {#- A column whose cells would all be empty is not drawn (shared.hide):
+        the line above the table already says its one value. #}
+    {%- set hide = shared.hide or () -%}
+    <thead><tr><th>{{ t('ai.register.function', 'Función') }}</th>{% if 'model' not in hide %}<th>{{ t('ai.register.model', 'Modelo') }}</th>{% endif %}{% if 'risk_level' not in hide %}<th>{{ t('ai.register.risk', 'Riesgo autoevaluado') }}</th>{% endif %}{% if 'runtime_state' not in hide %}<th>{{ t('ai.register.state', 'Estado') }}</th>{% endif %}</tr></thead>
+    <tbody>{% for row in rows %}<tr><td>
+      <b>{{ row.purpose }}</b>
+      {%- if 'model' in hide and row.fallback_model %}<p>{{ t('ai.register.fallback', 'Respaldo') }}: {{ row.fallback_model }}</p>{% endif %}
+      <details{% if printable %} open{% endif %}><summary>{{ t('ai.register.details', 'Datos y supervisión') }}</summary><dl>
+        <dt>{{ t('ai.register.data', 'Datos enviados') }}</dt><dd><ul>{% for category in row.data_categories %}<li>{{ category }}</li>{% endfor %}</ul></dd>
+        <dt>{{ t('ai.register.pii', 'Protección de identidad') }}</dt><dd>{{ row.pii_handling }}</dd>
+        <dt>{{ t('ai.register.retention', 'Retención del proveedor') }}</dt><dd>{{ row.retention_risk }}</dd>
+        <dt>{{ t('ai.register.oversight', 'Supervisión humana') }}</dt><dd>{{ row.human_oversight }}</dd>
+        <dt>{{ t('ai.register.rationale', 'Criterio de riesgo') }}</dt><dd>{{ row.risk_rationale }}</dd>
+        <dt>{{ t('ai.register.notice', 'Aviso previo') }}</dt><dd>{{ row.notice_text }}</dd>
+        <dt>{{ t('ai.register.switch', 'Desactivación') }}</dt><dd><ul>{% for switch in row.kill_switch %}<li>{{ switch }}</li>{% endfor %}</ul></dd>
+        <dt>{{ t('ai.register.first', 'Primer despliegue') }}</dt><dd>{{ row.first_deployed_date or t('ai.register.unverified', 'No verificado') }}</dd>
+        <dt>{{ t('ai.register.last', 'Último cambio observado') }}</dt><dd>{{ row.last_substantial_change_date or t('ai.register.unverified', 'No verificado') }}</dd>
+        {% if row.prompt_ids %}<dt>{{ t('ai.register.prompts', 'Instrucciones editables') }}</dt><dd><ul>{% for prompt in row.prompt_ids %}<li><a href="/admin/prompts?prompt={{ prompt }}">{{ prompt }}</a></li>{% endfor %}</ul></dd>{% endif %}
+      </dl></details>
+    {# On screen a cell says only where the row differs from the line above
+       the table; the printable dossier keeps every row whole. The provider's
+       profile key («cloud_shared») is not shown anywhere: the host names it. #}
+    {%- set own_model = not shared or row.model != shared.model or row.provider.host != shared.host -%}
+    </td>{% if 'model' not in hide %}<td data-label="{{ t('ai.register.model', 'Modelo') }}">
+    {%- if own_model %}{{ row.model or t('ai.register.unverified', 'No verificado') }}{% if row.provider.host %}<p>{{ row.provider.host }}</p>{% endif %}{% endif -%}
+    {%- if row.fallback_model %}<p>{{ t('ai.register.fallback', 'Respaldo') }}: {{ row.fallback_model }}</p>{% endif -%}
+    </td>{% endif %}
+    {% if 'risk_level' not in hide %}<td data-label="{{ t('ai.register.risk', 'Riesgo autoevaluado') }}">{% if not shared or row.risk_level != shared.risk_level %}{{ row.risk_level }}{% endif %}</td>{% endif %}
+    {% if 'runtime_state' not in hide %}<td data-label="{{ t('ai.register.state', 'Estado') }}">{% if not shared or row.runtime_state != shared.runtime_state %}{{ row.runtime_state }}{% endif %}</td>{% endif %}</tr>{% endfor %}</tbody>
+  </table>
+  </div>
+  {% if changes %}<h2>{{ t('ai.register.changes', 'Cambios') }}</h2>{% endif %}
+  {% for change in changes %}<article class="air-change">
+    <p>{{ change.function_name }}: {{ change.kind_text }}{% if change.actor_text %} · {{ change.actor_text }}{% endif %}{% if change.day %} · {{ change.day }}{% endif %}</p>
+    <p>{{ t('ai.register.substantial', 'Modificación sustancial') if change.substantial else t('ai.register.recorded', 'Cambio registrado') }}:
+      {{ t('ai.register.pending_status', 'Pendiente de notificación') if change.status == 'pending' else t('ai.register.notified', 'Notificada a Gobierno Digital') if change.status == 'notified' else t('ai.register.recorded', 'Registrada') }}</p>
+    {% if change.status == 'notified' %}<p>{{ change.notification_reference }} · {{ change.notified_day or change.notified_on }} · {{ change.notified_by }}</p>{% endif %}
+    {% if change.status == 'pending' and not printable %}<form data-change-id="{{ change.id }}">
+      <label>{{ t('ai.register.reference', 'Referencia de expediente, sin datos de pacientes') }}<input name="reference" autocomplete="off" required maxlength="120" pattern="[A-Za-z0-9][A-Za-z0-9./_-]{1,119}"></label>
+      <label>{{ t('ai.register.date', 'Fecha de notificación') }}<input type="date" name="date" required></label>
+      <button type="submit" class="btn">{{ t('ai.register.notified', 'Notificada a Gobierno Digital') }}</button>
+      <p role="alert" hidden></p>
+    </form>{% endif %}
+  </article>{% endfor %}
+</div>
+{% endblock %}
+{% block scripts %}{% if not printable %}
+<script type="module">
+  const host = document.getElementById('ai-register');
+  document.getElementById('air-download').onclick = () => { location.href = '/api/admin/ai-register/export'; };
+  host.addEventListener('submit', async event => {
+    const form = event.target.closest('form[data-change-id]');
+    if (!form) return;
+    event.preventDefault();
+    const button = form.querySelector('button'), error = form.querySelector('[role=alert]');
+    button.disabled = true;
+    try {
+      const data = new FormData(form);
+      const response = await fetch('/api/admin/ai-register/notify', {method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:Number(form.dataset.changeId),reference:data.get('reference'),date:data.get('date')})});
+      if (!response.ok) throw new Error();
+      location.reload();
+    } catch (_) { error.textContent = {{ t('ai.register.invalid_notification', 'No se pudo registrar. Revisá la referencia y la fecha.')|tojson }}; error.hidden = false; button.disabled = false; }
+  });
+  let table = null, active = true;
+  function fit() {
+    window.sanaImportStatic('platform/admin-table.mjs').then(Table => {
+      if (!active || table) return;
+      table = Table.crear({clave:'ai-register',host:()=>host,medio:()=>host.querySelector('.air-table-wrap'),tablas:()=>[host.querySelector('table')],apilado:()=>matchMedia('(max-width:1040px)').matches});
+      table.programarFit();
+    }).catch(() => {});
+  }
+  window.addEventListener('pagehide', () => { active = false; if (table) table.dispose(); table = null; });
+  window.addEventListener('pageshow', event => { if (event.persisted) { active = true; fit(); } });
+  fit();
+</script>{% endif %}{% endblock %}

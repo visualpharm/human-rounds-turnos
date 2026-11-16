@@ -1,0 +1,37 @@
+{# The shared shell owns navigation and the #adm-h1 title band (the alerts bell
+   mounts into its .adm-h1row). The native controller owns this screen's
+   listeners, requests, drafts, table and styles, and borrows #adm-h1 as its
+   heading while alive — restoring the server-rendered title on exit. The
+   entry owns bounded import recovery and page-exit/restoration, without
+   publishing another global. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.content.preparations.title', 'Cómo prepararse') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.content.preparations.title', 'Cómo prepararse') }}{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-preparaciones"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<template id="preparations-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.content.preparations.load_error', 'No se pudo cargar.') }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Recargar') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-preparaciones");
+  bootScreen({
+    host,
+    recovery: "preparations-load-recovery",
+    load: () => import("{{ static('platform/admin-preparations.mjs') }}"),
+    mount: (Preparations, onError) => Preparations.mount(host, {
+      titleElement: document.getElementById("adm-h1"),
+      onError,
+    }),
+  });
+</script>
+{% endblock %}

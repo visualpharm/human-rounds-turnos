@@ -1,0 +1,1430 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sana Turnos funding and presentation opportunities</title>
+  <meta name="description" content="A ranked, sourced map of grants, investment, awards, and presentation opportunities for Sana Turnos.">
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f6f4f0;
+      --surface: #ffffff;
+      --text: #17232c;
+      --muted: #60707c;
+      --line: #dce2e5;
+      --line-strong: #c8d1d6;
+      --link: #1261a6;
+      --link-hover: #0a457b;
+      --focus: #ffb45b;
+      --open-bg: #e8f5ee;
+      --open-text: #17633a;
+      --soon-bg: #fff1d6;
+      --soon-text: #79520c;
+      --watch-bg: #eef0f4;
+      --watch-text: #475466;
+      --conditional-bg: #eee9f8;
+      --conditional-text: #5a417f;
+      --closed-bg: #eceff1;
+      --closed-text: #5b646c;
+      --not-fit-bg: #f1eeee;
+      --not-fit-text: #6c5757;
+      --page-pad: clamp(16px, 3vw, 40px);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: var(--page);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 0;
+      background: var(--page);
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration-thickness: 2px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    header {
+      background: var(--surface);
+    }
+
+    .header-inner,
+    main,
+    footer {
+      width: min(1480px, 100%);
+      margin-inline: auto;
+      padding-inline: var(--page-pad);
+    }
+
+    .header-inner {
+      padding-block: clamp(28px, 5vw, 60px);
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.75rem);
+      font-weight: 760;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+
+    .lede {
+      max-width: 850px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      line-height: 1.55;
+    }
+
+    main {
+      padding-block: clamp(28px, 5vw, 64px);
+    }
+
+    section + section {
+      margin-top: clamp(36px, 6vw, 72px);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    p {
+      line-height: 1.58;
+    }
+
+    .decision {
+      max-width: 1050px;
+      margin: 0;
+      font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+      line-height: 1.58;
+    }
+
+    .priority-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .priority-item {
+      min-width: 0;
+      padding: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .priority-number {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .priority-item p:last-child {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .guardrail {
+      max-width: 1040px;
+      margin-top: 22px;
+      padding: 18px 20px;
+      background: #fbfaf8;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      line-height: 1.55;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(240px, 1.6fr) repeat(4, minmax(160px, 1fr)) auto;
+      align-items: end;
+      gap: 12px;
+      margin-top: 22px;
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    .field {
+      min-width: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: #43515b;
+      font-size: 0.84rem;
+      font-weight: 680;
+    }
+
+    input,
+    select,
+    button {
+      min-height: 44px;
+      font: inherit;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-width: 0;
+      padding: 9px 12px;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 9px 14px;
+      color: var(--text);
+      background: #fff;
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #f2f5f6;
+    }
+
+    .results-line {
+      min-height: 24px;
+      margin: 14px 0 8px;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .table-shell {
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: auto;
+    }
+
+    th,
+    td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #42515d;
+      background: #f8f9f9;
+      font-size: 0.79rem;
+      font-weight: 720;
+      letter-spacing: 0.015em;
+    }
+
+    th button {
+      min-height: 32px;
+      padding: 2px 18px 2px 0;
+      color: inherit;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      font-size: inherit;
+      font-weight: inherit;
+      text-align: left;
+      position: relative;
+    }
+
+    th button:hover {
+      color: var(--text);
+      background: transparent;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    th button::after {
+      position: absolute;
+      right: 0;
+      color: #89959d;
+      content: "↕";
+    }
+
+    th[aria-sort="ascending"] button::after {
+      color: var(--text);
+      content: "↑";
+    }
+
+    th[aria-sort="descending"] button::after {
+      color: var(--text);
+      content: "↓";
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    tbody tr:hover {
+      background: #fbfcfc;
+    }
+
+    td {
+      font-size: 0.91rem;
+      line-height: 1.42;
+    }
+
+    td[data-key="priority"] {
+      min-width: 68px;
+      font-weight: 760;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    td[data-key="name"] {
+      min-width: 190px;
+      font-weight: 680;
+    }
+
+    td[data-key="deadline"] {
+      min-width: 132px;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    td[data-key="value"] {
+      min-width: 150px;
+    }
+
+    td[data-key="action"] {
+      min-width: 230px;
+      max-width: 340px;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 720;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .status--open {
+      color: var(--open-text);
+      background: var(--open-bg);
+    }
+
+    .status--soon {
+      color: var(--soon-text);
+      background: var(--soon-bg);
+    }
+
+    .status--watch {
+      color: var(--watch-text);
+      background: var(--watch-bg);
+    }
+
+    .status--conditional {
+      color: var(--conditional-text);
+      background: var(--conditional-bg);
+    }
+
+    .status--closed {
+      color: var(--closed-text);
+      background: var(--closed-bg);
+    }
+
+    .status--not-fit {
+      color: var(--not-fit-text);
+      background: var(--not-fit-bg);
+    }
+
+    .fit {
+      white-space: nowrap;
+      font-weight: 680;
+    }
+
+    .fit::before {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: #8a969e;
+      content: "";
+    }
+
+    .fit--high::before {
+      background: #2c8b57;
+    }
+
+    .fit--medium::before {
+      background: #c58a27;
+    }
+
+    .fit--low::before {
+      background: #8a969e;
+    }
+
+    .empty {
+      padding: 32px 18px;
+      text-align: center;
+    }
+
+    .empty p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .readiness {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(22px, 4vw, 54px);
+      max-width: 1120px;
+    }
+
+    .readiness p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin: 0.5rem 0;
+      line-height: 1.5;
+    }
+
+    .notes {
+      max-width: 1050px;
+    }
+
+    .notes p {
+      margin: 0 0 14px;
+    }
+
+    .notes p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      padding-block: 28px 42px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 1220px) {
+      .priority-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .controls {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1361px) and (max-width: 1500px) {
+      th:nth-child(4),
+      td[data-key="reachLabel"] {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1360px) {
+      .table-shell {
+        overflow: visible;
+      }
+
+      table,
+      tbody,
+      tr,
+      td {
+        display: block;
+        width: 100%;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tbody tr {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      tbody tr:last-child {
+        border-bottom: 0;
+      }
+
+      td,
+      td[data-key="name"],
+      td[data-key="deadline"],
+      td[data-key="value"],
+      td[data-key="action"] {
+        display: grid;
+        grid-template-columns: 146px minmax(0, 1fr);
+        gap: 14px;
+        min-width: 0;
+        max-width: none;
+        padding: 7px 0;
+        border: 0;
+        white-space: normal;
+      }
+
+      td::before {
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 680;
+        content: attr(data-label);
+      }
+
+      td[data-key="name"] {
+        padding-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .empty {
+        display: block;
+      }
+
+      .empty::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .priority-grid,
+      .readiness,
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
+      .priority-item {
+        padding: 17px;
+      }
+
+      .controls {
+        padding: 16px;
+      }
+
+      .table-shell {
+        margin-inline: calc(var(--page-pad) * -1);
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+      }
+
+      tbody tr {
+        padding-inline: var(--page-pad);
+      }
+    }
+
+    @media (max-width: 460px) {
+      h1 {
+        font-size: 2.15rem;
+        line-height: 1.02;
+      }
+
+      td,
+      td[data-key="name"],
+      td[data-key="deadline"],
+      td[data-key="value"],
+      td[data-key="action"] {
+        grid-template-columns: 102px minmax(0, 1fr);
+        gap: 10px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+
+    @media print {
+      :root {
+        --page: #fff;
+      }
+
+      .controls {
+        display: none;
+      }
+
+      .table-shell {
+        border-radius: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Sana Turnos funding and presentation opportunities</h1>
+      <p class="lede">A ranked map of grants, investment, awards, and stages for an Argentine municipal-health platform built around patient access, responsible AI, and HSI interoperability. Verified on <strong>29 July 2026</strong>.</p>
+    </div>
+  </header>
+
+  <main>
+    <section aria-labelledby="recommendation-title">
+      <h2 id="recommendation-title">Best path</h2>
+      <p class="decision"><strong>Lead with public-health evidence, not startup hype.</strong> The strongest route is to win visibility now, measure a real Pinamar deployment, and enter the next Argentine funding cycle with the Municipality, the hospital, and a public science partner.</p>
+
+      <div class="priority-grid">
+        <article class="priority-item">
+          <p class="priority-number">Priority 1</p>
+          <h3><a href="https://www.gba.gob.ar/ciencia/noticias/la_provincia_lanz%C3%B3_la_quinta_edici%C3%B3n_de_fitba" target="_blank" rel="noreferrer">FITBA late-entry exception</a></h3>
+          <p>Ask for an exceptional Line C entry now. It is the closest match, the highest potential grant, and the only opportunity where delay directly lowers the chance of admission.</p>
+        </article>
+
+        <article class="priority-item">
+          <p class="priority-number">Priority 2</p>
+          <h3><a href="https://wsa-global.org/country/argentina/" target="_blank" rel="noreferrer">World Summit Awards Argentina</a></h3>
+          <p>Apply now under Health &amp; Wellbeing or Government &amp; Citizen Engagement. It is the cleanest current route to global presentation.</p>
+        </article>
+
+        <article class="priority-item">
+          <p class="priority-number">Priority 3</p>
+          <h3><a href="https://aiforgood.itu.int/event/ai-for-good-innovation-factory-2026-live-pitching-session/" target="_blank" rel="noreferrer">AI for Good Innovation Factory</a></h3>
+          <p>Apply by 23 November 2026 for the 8 December 2026 online pitch and a route to the 2027 Global Summit.</p>
+        </article>
+
+        <article class="priority-item">
+          <p class="priority-number">Priority 4</p>
+          <h3><a href="https://www.saludondigital-latam.com/" target="_blank" rel="noreferrer">SaludOnDigital LATAM</a></h3>
+          <p>Request a demo or case-study role for 10 November 2026 in Buenos Aires. The audience already includes hospitals, government, startups, and pharma.</p>
+        </article>
+      </div>
+
+      <p class="guardrail"><strong>Investment is conditional.</strong> Sana Turnos is currently a philanthropic municipal project. Equity capital only makes sense after defining a separate regional business model based on implementation and support contracts. Patient data must never become the product.</p>
+    </section>
+
+    <section aria-labelledby="opportunities-title">
+      <h2 id="opportunities-title">Opportunity map</h2>
+      <p><strong>Order</strong> combines 3 factors: deadline urgency, fit for Sana Turnos, and likely benefit. Lower numbers come first. Closed or ineligible routes stay at the bottom unless an exception is being actively pursued.</p>
+
+      <div class="controls" aria-label="Opportunity filters">
+        <div class="field">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Name, program, eligibility, or next move" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="goal">Goal</label>
+          <select id="goal">
+            <option value="all">All goals</option>
+            <option value="funding">Non-dilutive funding</option>
+            <option value="investment">Investment</option>
+            <option value="present">Present the project</option>
+            <option value="partner">Build partnerships</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="timing">Timing</label>
+          <select id="timing">
+            <option value="all">All timing</option>
+            <option value="open">Apply now</option>
+            <option value="soon">Act this week</option>
+            <option value="watch">Prepare next cycle</option>
+            <option value="closed">Closed in 2026</option>
+            <option value="not-fit">Not eligible</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="reach">Reach</label>
+          <select id="reach">
+            <option value="all">All regions</option>
+            <option value="argentina">Argentina</option>
+            <option value="latam">Latin America</option>
+            <option value="global">Global</option>
+            <option value="brics">BRICS</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="fit">Fit</label>
+          <select id="fit">
+            <option value="all">All fit levels</option>
+            <option value="high">High fit</option>
+            <option value="medium">Medium fit</option>
+            <option value="low">Low fit</option>
+          </select>
+        </div>
+
+        <button id="reset" type="button">Reset filters</button>
+      </div>
+
+      <p class="results-line" id="results-count" aria-live="polite"></p>
+
+      <div class="table-shell">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col" aria-sort="ascending"><button type="button" data-sort="priority">Order</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="name">Opportunity</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="lane">Lane</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="reachLabel">Reach</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="statusLabel">Timing</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="deadlineSort">Deadline</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="value">Value</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="fit">Fit</button></th>
+              <th scope="col" aria-sort="none"><button type="button" data-sort="action">Recommended action</button></th>
+            </tr>
+          </thead>
+          <tbody id="opportunity-rows"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section aria-labelledby="readiness-title">
+      <h2 id="readiness-title">What makes Sana Turnos fundable</h2>
+      <div class="readiness">
+        <div>
+          <h3>Evidence package</h3>
+          <p>Most strong programs fund evidence and scale, not feature lists.</p>
+          <ul>
+            <li>Hospital and Municipality endorsement</li>
+            <li>Baseline and pilot comparison</li>
+            <li>Median wait and no-show rates</li>
+            <li>Administrative minutes per request</li>
+            <li>Referral error and recovery rates</li>
+            <li>HSI synchronization rate</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Reusable application kit</h3>
+          <p>Prepare once, then adapt the same verified case to each call.</p>
+          <ul>
+            <li>3-minute Spanish demo with English subtitles</li>
+            <li>8-slide deck with one measurable claim per slide</li>
+            <li>Data-governance and consent summary</li>
+            <li>Open-source and replication plan</li>
+            <li>10-month implementation budget</li>
+            <li>Letters from hospital, municipality, and science partner</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="notes" aria-labelledby="eligibility-title">
+      <h2 id="eligibility-title">Eligibility conclusions</h2>
+      <p><strong>Argentina has no high-fit national or provincial cash call still open today.</strong> FITBA 2026 closed on 20 July 2026, Merck-CONICET closed on 26 June 2026, CFI Innova closed on 26 June 2026, and Agencia I+D+i’s 2026 startup round finished accepting projects in May.</p>
+      <p><strong>BRICS is not a current route.</strong> The BRICS Solutions Awards 2026 were limited to BRICS countries and closed on 10 July 2026. Argentina is not a member, while the New Development Bank funds infrastructure through members and public-sector channels rather than open startup grants.</p>
+      <p><strong>UNICEF is real but structurally conditional.</strong> Its rolling Venture Fund offers up to USD 100,000 equity-free, but requires a private for-profit company, an existing prototype, open-source licensing, measurable public data, and a direct benefit to vulnerable children. A child-access module can qualify; a generic municipal appointment system should not be forced into that framing.</p>
+    </section>
+  </main>
+
+  <footer>
+    Sourced from official program and event pages where available. Deadlines and eligibility can change; verify the linked call before submitting.
+  </footer>
+
+  <script>
+    const opportunities = [
+      {
+        priority: 2,
+        name: "World Summit Awards Argentina 2026",
+        url: "https://wsa-global.org/country/argentina/",
+        lane: "Award + stage",
+        reach: ["argentina", "global"],
+        reachLabel: "Argentina → global",
+        status: "open",
+        statusLabel: "Open now",
+        deadline: "Local cutoff varies",
+        deadlineSort: "2026-10-15",
+        value: "Global Congress, pitch, mentoring",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Submit now under Health & Wellbeing or Government & Citizen Engagement.",
+        search: "non-monetary national expert Solange Rodriguez Soifer social impact government citizen engagement health wellbeing"
+      },
+      {
+        priority: 3,
+        name: "AI for Good Innovation Factory",
+        url: "https://aiforgood.itu.int/event/ai-for-good-innovation-factory-2026-live-pitching-session/",
+        lane: "Pitch + accelerator",
+        reach: ["global"],
+        reachLabel: "Global",
+        status: "open",
+        statusLabel: "Open now",
+        deadline: "23 Nov 2026",
+        deadlineSort: "2026-11-23",
+        value: "2027 Summit stage and accelerator",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Pitch referral analysis and patient access as governed AI, with human review and HSI integration.",
+        search: "ITU United Nations AI machine learning startup online pitch December Geneva exposure investors"
+      },
+      {
+        priority: 4,
+        name: "SaludOnDigital LATAM 2026",
+        url: "https://www.saludondigital-latam.com/",
+        lane: "Health ecosystem event",
+        reach: ["argentina", "latam"],
+        reachLabel: "Argentina + LATAM",
+        status: "open",
+        statusLabel: "Participation open",
+        deadline: "10 Nov 2026",
+        deadlineSort: "2026-11-10",
+        value: "Hospitals, government, pharma, startups",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Request a demo or municipal case-study role before buying the ARS 500,000 ticket.",
+        search: "Buenos Aires Areabeta interoperability artificial intelligence hospitals government patient associations"
+      },
+      {
+        priority: 8,
+        name: "HIMSS Global Proposal Catalog",
+        url: "https://www.himss.org/himss-global-proposal-submission-portal/",
+        lane: "Speaker catalog",
+        reach: ["global"],
+        reachLabel: "Global",
+        status: "open",
+        statusLabel: "Rolling",
+        deadline: "Year-round",
+        deadlineSort: "2026-12-31",
+        value: "12 months of speaking eligibility",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Join at the lowest valid membership level and submit a provider-led, non-commercial case.",
+        search: "health information technology thought leadership webinars podcasts regional events membership provider user participant"
+      },
+      {
+        priority: 9,
+        name: "UNICEF Venture Fund",
+        url: "https://www.unicefventurefund.org/apply-funding",
+        lane: "Equity-free grant",
+        reach: ["argentina", "global"],
+        reachLabel: "Argentina + global",
+        status: "open",
+        statusLabel: "Rolling",
+        deadline: "Rolling call",
+        deadlineSort: "2026-12-31",
+        value: "Up to USD 100,000 + 1 year mentoring",
+        fit: "medium",
+        goals: ["funding", "partner"],
+        action: "Apply only through a for-profit entity and a genuine child-access module with open-source licensing.",
+        search: "children private for profit company Argentina programme country open source prototype real time measurable public data"
+      },
+      {
+        priority: 7,
+        name: "Future of Health Grant",
+        url: "https://future-of-health.org/",
+        lane: "Equity-free grant",
+        reach: ["global"],
+        reachLabel: "Switzerland + global",
+        status: "soon",
+        statusLabel: "Act this week",
+        deadline: "31 Jul 2026",
+        deadlineSort: "2026-07-31",
+        value: "Up to CHF 90,000 across 3 levels",
+        fit: "low",
+        goals: ["funding", "partner"],
+        action: "Skip unless there is already a Swiss pilot or a credible Swiss market-entry plan.",
+        search: "EPFL CSS digital health Switzerland incorporated foreign startup market entry pilot"
+      },
+      {
+        priority: 10,
+        name: "CITES",
+        url: "https://cites-gss.com/en/",
+        lane: "Venture investment",
+        reach: ["argentina", "latam"],
+        reachLabel: "Argentina + global scale",
+        status: "conditional",
+        statusLabel: "Conditional",
+        deadline: "Rolling application",
+        deadlineSort: "2026-12-31",
+        value: "USD 25,000 to USD 3.5 million",
+        fit: "medium",
+        goals: ["investment", "partner"],
+        action: "Approach only after defining a protectable HealthTech or AI company and a repeatable revenue model.",
+        search: "deeptech healthtech AI smart city SAFE equity idea MVP pre-seed seed Series A Sunchales Argentina"
+      },
+      {
+        priority: 11,
+        name: "Impacta VC",
+        url: "https://www.impacta.vc/en/home",
+        lane: "Impact investment",
+        reach: ["latam"],
+        reachLabel: "Latin America",
+        status: "conditional",
+        statusLabel: "Conditional",
+        deadline: "Rolling application",
+        deadlineSort: "2026-12-31",
+        value: "Early-stage impact capital",
+        fit: "medium",
+        goals: ["investment", "partner"],
+        action: "Use only for a commercial spinout serving multiple municipalities without monetizing patient data.",
+        search: "Latin America impact startup SDG digital health e-health early stage venture capital"
+      },
+      {
+        priority: 5,
+        name: "Forum Salud Digital Argentina 2026",
+        url: "https://www.forumsaluddigital.com/",
+        lane: "Health industry event",
+        reach: ["argentina", "latam"],
+        reachLabel: "Argentina + LATAM",
+        status: "open",
+        statusLabel: "Registration open",
+        deadline: "7 Oct 2026",
+        deadlineSort: "2026-10-07",
+        value: "C-level health and technology network",
+        fit: "medium",
+        goals: ["present", "partner"],
+        action: "Request a public-hospital case slot; attend only if it creates decision-maker meetings.",
+        search: "Buenos Aires keynote artificial intelligence health 5.0 innovation exhibition sponsor"
+      },
+      {
+        priority: 6,
+        name: "CodeLaunch LATAM 2026",
+        url: "https://codelaunch.com/events/2026-latam/",
+        lane: "Startup competition",
+        reach: ["latam"],
+        reachLabel: "Latin America",
+        status: "open",
+        statusLabel: "Applications open",
+        deadline: "14 Oct 2026 event",
+        deadlineSort: "2026-10-14",
+        value: "Pitch stage and product support",
+        fit: "medium",
+        goals: ["present", "partner", "investment"],
+        action: "Apply only if the project is presented as a scalable software venture rather than a one-city deployment.",
+        search: "Guadalajara Mexico LATAM startup software accelerator pitch competition"
+      },
+      {
+        priority: 1,
+        name: "FITBA 2026 late-entry exception",
+        url: "https://www.gba.gob.ar/ciencia/noticias/la_provincia_lanz%C3%B3_la_quinta_edici%C3%B3n_de_fitba",
+        lane: "Provincial grant",
+        reach: ["argentina"],
+        reachLabel: "Buenos Aires Province",
+        status: "soon",
+        statusLabel: "Exception requested",
+        deadline: "Closed 20 Jul 2026",
+        deadlineSort: "2026-07-20",
+        value: "2026 cap: ARS 23 million, up to 80%",
+        fit: "high",
+        goals: ["funding", "partner"],
+        action: "Ask FITBA to accept a late Line C entry, then form the Pinamar and public-science consortium immediately.",
+        search: "Fondo Innovacion Tecnologica Buenos Aires municipality public science university line C ten months counterpart 20 percent late exception"
+      },
+      {
+        priority: 12,
+        name: "Merck-CONICET Health Innovation Prize 2027",
+        url: "https://www.conicet.gov.ar/premio-merck-conicet/",
+        lane: "National prize",
+        reach: ["argentina"],
+        reachLabel: "Argentina",
+        status: "watch",
+        statusLabel: "Prepare next cycle",
+        deadline: "2026 round closed 26 Jun",
+        deadlineSort: "2027-06-01",
+        value: "2026 prizes: ARS 13m and ARS 9.1m",
+        fit: "high",
+        goals: ["funding", "present", "partner"],
+        action: "Add a CONICET or university co-lead and enter with validated health outcomes, not a product demo alone.",
+        search: "science technology human health digital health artificial intelligence entrepreneur jury mentoring Argentina"
+      },
+      {
+        priority: 20,
+        name: "Agencia I+D+i STARTUP next round",
+        url: "https://www.argentina.gob.ar/noticias/ya-estan-disponibles-las-bases-y-condiciones-de-las-convocatorias-de-financiamiento-para",
+        lane: "National technology grant",
+        reach: ["argentina"],
+        reachLabel: "Argentina",
+        status: "watch",
+        statusLabel: "Prepare next cycle",
+        deadline: "2026 intake ended in May",
+        deadlineSort: "2027-01-02",
+        value: "2026 tiers: up to USD 500,000",
+        fit: "medium",
+        goals: ["funding", "partner"],
+        action: "Clarify legal entity, TRL, protectable technology, and commercialization before the next intake.",
+        search: "AIC startup TRL 3 4 5 6 7 9 proof concept validation commercialization scientific technology Argentina"
+      },
+      {
+        priority: 17,
+        name: "Innovations in Health LATAM",
+        url: "https://www.jnj.com/impact-ventures/innovations-in-health-latam-accelerator-cohort-announced",
+        lane: "Accelerator + funding",
+        reach: ["argentina", "latam"],
+        reachLabel: "Latin America",
+        status: "watch",
+        statusLabel: "Watch next cohort",
+        deadline: "No 2026 call open",
+        deadlineSort: "2027-10-01",
+        value: "Funding, mentoring, and investor readiness",
+        fit: "high",
+        goals: ["funding", "investment", "partner", "present"],
+        action: "Prepare for the next J&J Foundation and Village Capital cohort with access-to-care evidence.",
+        search: "Johnson Johnson Foundation Village Capital healthcare access quality early stage startups Argentina"
+      },
+      {
+        priority: 13,
+        name: "COSAPRO 2027",
+        url: "https://www.ms.gba.gov.ar/sitios/congresoprovincialdesalud/presentacion-de-trabajos/",
+        lane: "Public-health congress",
+        reach: ["argentina"],
+        reachLabel: "Buenos Aires Province",
+        status: "watch",
+        statusLabel: "Prepare next cycle",
+        deadline: "2026 submissions closed 15 Mar",
+        deadlineSort: "2027-03-01",
+        value: "Provincial public-health audience",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Submit a local integration project or experience report with hospital staff as co-authors.",
+        search: "Congreso Provincial Salud Mar del Plata scientific work local integration project experience report hospital workers"
+      },
+      {
+        priority: 14,
+        name: "CAIS at JAIIO 2027",
+        url: "https://55jaiio.sadio.org.ar/cais-congreso-argentino-de-informatica-y-salud",
+        lane: "Health informatics congress",
+        reach: ["argentina", "latam"],
+        reachLabel: "Argentina",
+        status: "watch",
+        statusLabel: "Prepare next cycle",
+        deadline: "2026 program set",
+        deadlineSort: "2027-03-01",
+        value: "Peer-reviewed talk or paper",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Submit an interoperability and usability case with measured operational results.",
+        search: "SADIO health information systems electronic records standards interoperability AI patient centered process optimization usability"
+      },
+      {
+        priority: 15,
+        name: "IHF World Hospital Congress 2027",
+        url: "https://worldhospitalcongress.org/",
+        lane: "Hospital congress",
+        reach: ["global"],
+        reachLabel: "Global",
+        status: "watch",
+        statusLabel: "Prepare next cycle",
+        deadline: "2026 calls closed 24 Apr",
+        deadlineSort: "2027-02-01",
+        value: "Talk, poster, award, or Innovation Hub",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Enter the 2027 abstract and Innovation Hub calls with a hospital co-presenter.",
+        search: "International Hospital Federation World Hospital Congress innovation AI patient care award poster ignite talk"
+      },
+      {
+        priority: 16,
+        name: "Global Digital Health Forum 2027",
+        url: "https://www.gdhf.digital/abstracts2026",
+        lane: "Digital-health forum",
+        reach: ["global"],
+        reachLabel: "Global",
+        status: "watch",
+        statusLabel: "Prepare next cycle",
+        deadline: "2026 abstracts closed 7 Jul",
+        deadlineSort: "2027-06-01",
+        value: "Government, donors, implementers, developers",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Target governance, interoperability, or AI for health access in the 2027 abstract call.",
+        search: "country led transformation governance scale interoperability artificial intelligence sustainable financing public health"
+      },
+      {
+        priority: 23,
+        name: "Global Innovation Fund",
+        url: "https://www.globalinnovation.fund/apply-for-funding",
+        lane: "Grant, debt, or equity",
+        reach: ["global"],
+        reachLabel: "Developing countries",
+        status: "watch",
+        statusLabel: "Future call",
+        deadline: "Not accepting applications",
+        deadlineSort: "2027-12-31",
+        value: "Pilot up to USD 230k; scale up to USD 15m",
+        fit: "medium",
+        goals: ["funding", "investment", "partner"],
+        action: "Wait for a new call and apply only with evidence of regional scale and low-income impact.",
+        search: "poverty five dollars PPP millions government adoption social innovation grants debt equity"
+      },
+      {
+        priority: 21,
+        name: "MIT Solve next health challenge",
+        url: "https://solve.mit.edu/challenges/future-health-challenge",
+        lane: "Global challenge",
+        reach: ["global"],
+        reachLabel: "Global",
+        status: "watch",
+        statusLabel: "Watch next cycle",
+        deadline: "2026 challenge closed",
+        deadlineSort: "2027-04-01",
+        value: "Visibility, network, and partner prizes",
+        fit: "medium",
+        goals: ["funding", "present", "partner"],
+        action: "Re-enter when a health-access or public-systems challenge matches the measured pilot.",
+        search: "MIT Solve health systems global challenge social impact partners funding prizes"
+      },
+      {
+        priority: 22,
+        name: "Start-Up Chile next call",
+        url: "https://startupchile.org/en/apply/",
+        lane: "Equity-free accelerator",
+        reach: ["latam", "global"],
+        reachLabel: "Chile + global",
+        status: "watch",
+        statusLabel: "Watch next call",
+        deadline: "No verified current intake",
+        deadlineSort: "2027-01-01",
+        value: "Equity-free grants by stage",
+        fit: "medium",
+        goals: ["funding", "partner", "present"],
+        action: "Apply only with a regional company plan and a concrete Chile pilot or market-entry rationale.",
+        search: "Build Ignite Growth CORFO foreign founders Chile equity free grant accelerator"
+      },
+      {
+        priority: 18,
+        name: "IDB Gobernarte next edition",
+        url: "https://www.iadb.org/en/how-we-can-work-together/calls-proposals",
+        lane: "Subnational government award",
+        reach: ["argentina", "latam"],
+        reachLabel: "Latin America",
+        status: "watch",
+        statusLabel: "Watch next edition",
+        deadline: "No 2026 health call open",
+        deadlineSort: "2027-03-01",
+        value: "Regional recognition and dissemination",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Have the Municipality of Pinamar apply as the subnational-government owner after deployment.",
+        search: "Inter-American Development Bank Pablo Valenti good governance municipality public management innovation vulnerable populations"
+      },
+      {
+        priority: 19,
+        name: "Pan-American Highway for Digital Health",
+        url: "https://events.iadb.org/calendar/event/30854",
+        lane: "Interoperability network",
+        reach: ["latam"],
+        reachLabel: "Latin America",
+        status: "watch",
+        statusLabel: "Build relationship",
+        deadline: "2026 event: 27–30 Jul",
+        deadlineSort: "2027-06-01",
+        value: "IDB, PAHO, governments, connectathon",
+        fit: "high",
+        goals: ["present", "partner"],
+        action: "Seek the next connectathon or case-study intake through the Argentine digital-health and interoperability teams.",
+        search: "IDB PAHO regional conference connectathon digital health interoperability government Argentina"
+      },
+      {
+        priority: 24,
+        name: "BRICS Solutions Awards",
+        url: "https://bricsbusinesscouncil.co.in/brics-solution-award.html",
+        lane: "BRICS award",
+        reach: ["brics"],
+        reachLabel: "BRICS countries",
+        status: "not-fit",
+        statusLabel: "Not eligible",
+        deadline: "2026 closed 10 Jul",
+        deadlineSort: "2027-07-10",
+        value: "Recognition only",
+        fit: "low",
+        goals: ["present"],
+        action: "Do not spend time unless Argentina becomes eligible under a future edition’s rules.",
+        search: "BRICS countries scalable inclusive solutions Argentina not member award"
+      },
+      {
+        priority: 25,
+        name: "BRICS Women’s Startups Contest",
+        url: "https://bricswomen.com/brics-womensstartups-contest-2026/",
+        lane: "BRICS startup contest",
+        reach: ["brics"],
+        reachLabel: "BRICS countries",
+        status: "not-fit",
+        statusLabel: "Not eligible",
+        deadline: "2026 cycle",
+        deadlineSort: "2027-07-01",
+        value: "Pitch and ecosystem exposure",
+        fit: "low",
+        goals: ["present", "partner"],
+        action: "Do not pursue: it is for women-led startups across eligible BRICS nations.",
+        search: "women entrepreneurs BRICS startup India Argentina eligibility"
+      },
+      {
+        priority: 26,
+        name: "New Development Bank",
+        url: "https://www.ndb.int/",
+        lane: "Development-bank finance",
+        reach: ["brics"],
+        reachLabel: "NDB members",
+        status: "not-fit",
+        statusLabel: "Not a startup call",
+        deadline: "No open application route",
+        deadlineSort: "9999-12-31",
+        value: "Large infrastructure finance",
+        fit: "low",
+        goals: ["funding", "investment"],
+        action: "Do not pursue directly; this is sovereign and infrastructure finance, not a startup grant program.",
+        search: "New Development Bank BRICS infrastructure sustainable development member countries sovereign loan"
+      }
+    ];
+
+    const labels = {
+      priority: "Order",
+      name: "Opportunity",
+      lane: "Lane",
+      reachLabel: "Reach",
+      statusLabel: "Timing",
+      deadline: "Deadline",
+      value: "Value",
+      fit: "Fit",
+      action: "Recommended action"
+    };
+
+    const filters = {
+      search: document.querySelector("#search"),
+      goal: document.querySelector("#goal"),
+      timing: document.querySelector("#timing"),
+      reach: document.querySelector("#reach"),
+      fit: document.querySelector("#fit")
+    };
+
+    const rowsHost = document.querySelector("#opportunity-rows");
+    const countHost = document.querySelector("#results-count");
+    const resetButton = document.querySelector("#reset");
+    const sortButtons = [...document.querySelectorAll("[data-sort]")];
+    let sortState = { key: "priority", direction: "ascending" };
+
+    function normalize(value) {
+      return String(value)
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
+    function statusMatches(item, timing) {
+      if (timing === "all") return true;
+      if (timing === "open") return ["open", "conditional"].includes(item.status);
+      if (timing === "closed") {
+        const deadline = item.deadline.toLowerCase();
+        return deadline.includes("closed") || deadline.includes("ended");
+      }
+      return item.status === timing;
+    }
+
+    function filteredItems() {
+      const query = normalize(filters.search.value.trim());
+      const goal = filters.goal.value;
+      const timing = filters.timing.value;
+      const reach = filters.reach.value;
+      const fit = filters.fit.value;
+
+      return opportunities.filter((item) => {
+        const haystack = normalize([
+          item.name,
+          item.lane,
+          item.reachLabel,
+          item.statusLabel,
+          item.deadline,
+          item.value,
+          item.action,
+          item.search
+        ].join(" "));
+
+        return (!query || haystack.includes(query))
+          && (goal === "all" || item.goals.includes(goal))
+          && statusMatches(item, timing)
+          && (reach === "all" || item.reach.includes(reach))
+          && (fit === "all" || item.fit === fit);
+      });
+    }
+
+    function sortItems(items) {
+      const { key, direction } = sortState;
+      const factor = direction === "ascending" ? 1 : -1;
+      const fitOrder = { high: 1, medium: 2, low: 3 };
+
+      return [...items].sort((a, b) => {
+        let left = a[key];
+        let right = b[key];
+
+        if (key === "fit") {
+          left = fitOrder[a.fit];
+          right = fitOrder[b.fit];
+        }
+
+        if (typeof left === "number" && typeof right === "number") {
+          return (left - right) * factor;
+        }
+
+        return String(left).localeCompare(String(right), "en", {
+          numeric: true,
+          sensitivity: "base"
+        }) * factor;
+      });
+    }
+
+    function makeCell(key, content) {
+      const cell = document.createElement("td");
+      cell.dataset.key = key;
+      cell.dataset.label = labels[key];
+
+      if (content instanceof Node) {
+        cell.append(content);
+      } else {
+        cell.textContent = content;
+      }
+
+      return cell;
+    }
+
+    function makeRow(item) {
+      const row = document.createElement("tr");
+
+      const link = document.createElement("a");
+      link.href = item.url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = item.name;
+
+      const status = document.createElement("span");
+      status.className = `status status--${item.status}`;
+      status.textContent = item.statusLabel;
+
+      const fit = document.createElement("span");
+      fit.className = `fit fit--${item.fit}`;
+      fit.textContent = item.fit[0].toUpperCase() + item.fit.slice(1);
+
+      row.append(
+        makeCell("priority", `#${item.priority}`),
+        makeCell("name", link),
+        makeCell("lane", item.lane),
+        makeCell("reachLabel", item.reachLabel),
+        makeCell("statusLabel", status),
+        makeCell("deadline", item.deadline),
+        makeCell("value", item.value),
+        makeCell("fit", fit),
+        makeCell("action", item.action)
+      );
+
+      return row;
+    }
+
+    function render() {
+      const items = sortItems(filteredItems());
+      const fragment = document.createDocumentFragment();
+
+      if (items.length === 0) {
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.colSpan = 9;
+        cell.className = "empty";
+
+        const message = document.createElement("p");
+        message.textContent = "No opportunities match these filters.";
+
+        const reset = document.createElement("button");
+        reset.type = "button";
+        reset.textContent = "Reset filters";
+        reset.addEventListener("click", resetFilters);
+
+        cell.append(message, reset);
+        row.append(cell);
+        fragment.append(row);
+      } else {
+        items.forEach((item) => fragment.append(makeRow(item)));
+      }
+
+      rowsHost.replaceChildren(fragment);
+      countHost.textContent = `${items.length} of ${opportunities.length} opportunities`;
+    }
+
+    function resetFilters() {
+      filters.search.value = "";
+      filters.goal.value = "all";
+      filters.timing.value = "all";
+      filters.reach.value = "all";
+      filters.fit.value = "all";
+      sortState = { key: "priority", direction: "ascending" };
+      updateSortHeaders();
+      render();
+      filters.search.focus();
+    }
+
+    function updateSortHeaders() {
+      sortButtons.forEach((button) => {
+        const header = button.closest("th");
+        header.setAttribute(
+          "aria-sort",
+          button.dataset.sort === sortState.key ? sortState.direction : "none"
+        );
+      });
+    }
+
+    Object.values(filters).forEach((control) => {
+      control.addEventListener(control.tagName === "INPUT" ? "input" : "change", render);
+    });
+
+    sortButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const key = button.dataset.sort;
+        sortState = {
+          key,
+          direction: sortState.key === key && sortState.direction === "ascending"
+            ? "descending"
+            : "ascending"
+        };
+        updateSortHeaders();
+        render();
+      });
+    });
+
+    resetButton.addEventListener("click", resetFilters);
+    render();
+  </script>
+</body>
+</html>

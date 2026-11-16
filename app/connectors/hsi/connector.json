@@ -1,0 +1,12 @@
+{
+  "id": "hsi",
+  "country": "AR",
+  "capability": "emr_sync",
+  "config_keys": [
+    "HSI_URL",
+    "HSI_EMAIL",
+    "HSI_PASS",
+    "HSI_INSTITUTION_ID"
+  ],
+  "description": "HSI (Historia de Salud Integrada, historiaclinica/hsi) — temporary legacy adapter for booked-appointment synchronization and conflict resolution. Select explicitly with CONNECTOR_EMR_SYNC=hsi; an unconfigured Core routes no EMR connector. TURNOS_SKIP_HSI=1 remains the emergency no-op for an explicitly selected HSI installation."
+}

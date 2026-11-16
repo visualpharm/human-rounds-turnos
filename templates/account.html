@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="{{ '{{lang}}' }}" data-theme="{{ '{{tema}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{i18n_bootstrap}}' }}
+{{ '{{favicon}}' }}
+<title>{{ t('account.meta.title', 'Mi cuenta y mis turnos | {{sitio.brand}}') }}</title>
+<meta name="description" content="{{ t('account.meta.description', 'Ingresá para ver tus turnos, solicitudes, datos personales y personas a cargo en el {{sitio.network}}.') }}">
+<meta name="robots" content="noindex,nofollow">
+{{ '{{fuentes}}' }}
+<link rel="stylesheet" href="{{ static('human-rounds.css') }}">
+{{ static_manifest() }}
+<style>
+  /* El wrap del dashboard vuelve a los 1120 de TODAS las páginas públicas
+     (responsable del producto, 2026-09-16: el logo tenía que alinearse con el contenido a la
+     izquierda — a 1180 el contenido del portal arrancaba 30px a la izquierda
+     de la barra y se veía desalineado). La tabla de "Mis turnos" entra por
+     su propio container query (ver my-requests.js). */
+  .wrap{max-width:1120px;margin:0 auto;padding:26px 24px 80px;}
+  #cuenta-host{min-height:min(760px,calc(100vh - 180px));}
+  .h1{margin:26px 0 8px;font-size:clamp(30px,4.1vw,44px);line-height:1.14;font-weight:700;letter-spacing:-.02em;color:#111;}
+  .lede{margin:0 0 6px;font-size:20px;line-height:1.5;color:#1f1f1f;max-width:620px;}
+  /* The native Account module can fail before it injects its component
+     styles. This is an error, not a navigational affordance: use the shared
+     danger token rather than the link accent, and announce it immediately. */
+  .account-load-error{margin:18px 0 0;font-size:16px;line-height:1.5;color:var(--danger);}
+  a.stz-link{color:var(--link,var(--accent));}
+  a.stz-link:hover{color:var(--accent-hover);}
+  /* logout / vista sin sesión: la tarjeta de registro sigue simple */
+  .acc-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-top:18px;max-width:520px;}
+  .acc-sec-s{margin:0 0 10px;font-size:13.5px;line-height:1.5;color:var(--text-2);}
+  .dcard-p.acc-mcp-lede,.acc-sec-s.acc-mcp-note{color:var(--text);font-size:15px;}
+  .acc-mcp-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;margin:0 0 8px;font-size:13.5px;}
+  .acc-mcp-row code{font:500 12.5px "JetBrains Mono",monospace;background:var(--panel-2,#faf9f6);border:1px solid var(--border);border-radius:6px;padding:2px 7px;word-break:break-all;}
+  .acc-mcp-row a{font-size:13px;}
+  .acc-links{display:flex;justify-content:flex-end;margin-top:18px;padding-top:16px;border-top:1px solid var(--border);}
+  .acc-out{border:0;background:none;color:var(--accent);cursor:pointer;
+    font:600 13px var(--font);padding:0;}
+  .acc-out:hover{color:var(--accent-hover);}
+  /* ===== Dashboard "Mi cuenta" (design system Claude Design 2026-07-16):
+     riel de identidad + menú a la izquierda, panel de contenido a la derecha. */
+  .dash{display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;margin-top:26px;align-items:start;}
+  .rail{position:sticky;top:24px;align-self:start;background:var(--panel);border:1px solid var(--border);
+    border-radius:18px;padding:24px 20px;box-shadow:var(--shadow-pop);}
+  .rail-id{display:flex;flex-direction:column;align-items:center;text-align:center;}
+  /* 70px y sin la línea de DNI (handoff Mis Turnos 2026-07-21: identidad
+     mínima — el detalle vive en Datos personales). */
+  .rail-av{position:relative;width:70px;height:70px;border-radius:50%;overflow:hidden;
+    background:linear-gradient(135deg,var(--av-hero-a,#17a46a),var(--av-hero-b,#0e8b50));color:#fff;
+    display:flex;align-items:center;justify-content:center;font:700 26px var(--font);
+    box-shadow:0 4px 14px -8px var(--av-hero-sh,rgba(14,26,18,.3));}
+  /* Con foto real la sombra pasa a gris neutro — el tinte verde es del degradé
+     de iniciales (avatar por defecto), no tiene sentido debajo de una foto. */
+  .rail-av.has-photo{box-shadow:0 10px 24px -12px rgba(30,34,31,.35);}
+  .rail-av-img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;}
+  /* Cambiar/Quitar sólo aparecen al pasar el mouse (o foco) sobre el avatar —
+     el círculo se queda limpio (foto o iniciales) el resto del tiempo. */
+  .rail-av-ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;background:rgba(10,22,15,.6);opacity:0;transition:opacity .14s;}
+  .rail-av:hover .rail-av-ov,.rail-av:focus-within .rail-av-ov{opacity:1;}
+  .rail-av-ov a{color:#fff;font:600 11px var(--font);cursor:pointer;text-decoration:none;}
+  .rail-av-ov a:hover{opacity:.85;}
+  .rail-name{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.01em;margin:14px 0 0;}
+  /* Sin divisores en el riel (divider hook + handoff 2026-07-21): el
+     whitespace ya separa identidad / menú / Cerrar sesión. */
+  .rail-nav{margin-top:20px;display:flex;flex-direction:column;gap:3px;}
+  .rail-btn{display:flex;align-items:center;gap:11px;width:100%;text-align:left;border:0;background:none;cursor:pointer;
+    font:400 15px var(--font);color:#4a524b;padding:11px 13px;border-radius:10px;transition:background .12s,color .12s;}
+  .rail-btn svg{flex-shrink:0;}
+  .rail-btn:hover{background:var(--hover-bg);color:var(--hover-ink);}
+  .rail-btn.on{background:var(--accent-soft);color:var(--accent-hover);}
+  /* Badge verde sólido (mockup Mis Turnos, design-loop 2026-07-19). */
+  .rail-badge{margin-left:auto;font:600 12px var(--font);background:var(--accent);color:#fff;
+    border-radius:999px;padding:2px 8px;min-width:20px;height:20px;display:inline-flex;
+    align-items:center;justify-content:center;}
+  .rail-foot{margin-top:14px;text-align:center;}
+  .rail-out{width:auto;border:0;background:none;color:var(--text);cursor:pointer;
+    font:500 15px var(--font);padding:10px 13px;min-height:44px;border-radius:10px;transition:background .12s,color .12s;}
+  .rail-out:hover{color:var(--hover-ink);background:var(--hover-bg);}
+  .dash-col{display:flex;flex-direction:column;gap:20px;min-width:0;}
+  .dcard{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:26px 28px;box-shadow:var(--shadow-card);}
+  .dcard-h{font-size:19px;font-weight:700;color:var(--text);letter-spacing:-.01em;margin:0 0 4px;}
+  .dcard-p{font-size:15px;color:var(--text-2);margin:0 0 18px;}
+  /* One section heading across the account: Mis turnos, Datos, Cobertura,
+     Resultados, Personas a cargo and the assistant share size and weight
+     (review 2026-11-15, item 18). Scoped to .dash-col so it outranks the
+     module-injected rules. */
+  .dash-col .mt-h1,.dash-col .dcard-h,.dash-col .sc-card-h,.dash-col .dep h2{font-size:24px;font-weight:700;letter-spacing:-.015em;line-height:1.2;color:var(--text);}
+  /* Un link suelto dentro de un párrafo del dashboard (el CTA del estado
+     vacío de laboratorio, la nota al pie con "sacá turno con un clínico")
+     no traía ninguna regla propia — sin un a{} global en human-rounds.css
+     (cada link del sitio se clasea a mano), un <a> pelado caía al azul de
+     browser default (bug real, encontrado en el pull de «Resultados de
+     laboratorio», 2026-08-05: accent-is-link). */
+  .dcard-p a{color:var(--accent);}
+  .dcard-p a:hover{color:var(--accent-hover);}
+  .dpanel{display:none;}
+  .dpanel.on{display:block;}
+  /* 900 = breakpoint del mockup (design-loop Mis Turnos): con el riel al lado,
+     a <900 la columna baja de ~460px y las acciones de las tarjetas envuelven
+     desparejo (un control colgado solo en la 2ª línea). */
+  /* Below 900 the rail becomes a section strip at the top of the page: every
+     section and «Cerrar sesión» stay one tap away on a phone (review
+     2026-11-15, item 1 — the burger alone hid them). */
+  @media(max-width:900px){
+    .dash{grid-template-columns:1fr;margin-top:12px;gap:16px;}
+    .rail{position:static;display:flex;align-items:center;gap:4px;padding:6px;border-radius:14px;
+      box-shadow:none;overflow-x:auto;scrollbar-width:none;}
+    .rail::-webkit-scrollbar{display:none;}
+    .rail-id{display:none;}
+    .rail-nav{margin-top:0;flex-direction:row;gap:4px;flex:0 0 auto;}
+    .rail-btn{width:auto;white-space:nowrap;min-height:44px;font-size:16px;padding:10px 12px;}
+    .rail-btn svg{display:none;}
+    .rail-badge{margin-left:6px;}
+    .rail-foot{margin:0;flex:0 0 auto;}
+    .rail-out{white-space:nowrap;font-size:16px;}
+  }
+  /* Standard site-footer styling, aligned with templates/_site_footer.html.
+     /account previously had a separate link-row/note variant with a muted
+     “What's new” link. */
+  footer.site{border-top:1px solid var(--border-strong);margin-top:52px;padding-top:24px;display:flex;flex-direction:column;gap:12px;}
+  footer.site .fmision{margin:0;font-size:13.5px;color:var(--text-3);line-height:1.55;}
+  footer.site .flinks{display:flex;flex-wrap:wrap;gap:8px 24px;}
+  footer.site a{display:inline-flex;align-items:center;min-height:44px;color:var(--link,var(--accent));font-size:15px;}
+  footer.site a:hover{color:var(--link-hover,var(--accent-hover));}
+  @media(max-width:600px){.wrap{padding:18px 16px 60px;}}
+</style>
+<script>window.__ACCOUNT_BOOTSTRAP__={{ account_bootstrap | default('null') }};window.__ACCOUNT_CANONICAL_PATH__={{ account_canonical | default('null') }};{% if account_portal %}window.__ACCOUNT_PORTAL__={{ account_portal }};{% endif %}</script></head>
+<body>
+<header id="stznav" data-section=""></header>
+<script type="module" src="{{ static('platform/nav.mjs') }}"></script>
+{% include "_chat_bootstrap.html" %}
+<main class="wrap">
+  <div id="cuenta-head">
+    {%- if portal_head == 'refused' %}
+    <h1 class="h1" id="cuenta-title">{{ t('account.form.portal.refused_heading', 'No pudimos abrir tu cuenta') }}</h1>
+    <p class="lede" id="cuenta-lede" hidden></p>
+    {%- elif portal_head == 'signin' %}
+    <h1 class="h1" id="cuenta-title">{{ t('account.login.title', 'Ingresar') }}</h1>
+    <p class="lede" id="cuenta-lede" hidden></p>
+    {%- else %}
+    <h1 class="h1" id="cuenta-title">{{ t('account.register.title', 'Crear cuenta') }}</h1>
+    <p class="lede" id="cuenta-lede">{{ t('account.register.lede', 'Creá una cuenta para sacar turnos. Podés ver los centros y servicios sin registrarte.') }}</p>
+    {%- endif %}
+  </div>
+  <div id="cuenta-host"></div>
+  {% include "_site_footer.html" %}
+</main>
+<template id="account-load-recovery">
+  <p class="account-load-error" role="alert">{{ t('account.error.formulario', 'The form could not load. Reload the page.') }}</p>
+  <a href="/account">{{ t('account.mine.dependents.reload', 'Reload page') }}</a>
+</template>
+<script type="module">
+var host = document.getElementById("cuenta-host");
+var dispose = null, generation = 0, timer = null;
+function stop() {
+  generation++;
+  clearTimeout(timer);
+  if (dispose) dispose();
+  dispose = null;
+}
+function start(freshSession) {
+  stop();
+  var owner = generation;
+  function showRecovery() {
+    var recovery = document.getElementById("account-load-recovery").content.cloneNode(true);
+    var reload = recovery.querySelector("a");
+    reload.href = location.href;
+    // A same-URL link with #turnos/#labs is only a fragment navigation.
+    // Explicit reload preserves the deep link and retries the failed module.
+    reload.onclick = function (event) { event.preventDefault(); location.reload(); };
+    host.replaceChildren(recovery);
+  }
+  // A refused module or session read is a failure: stop and offer the reload.
+  function failed() {
+    if (owner !== generation) return;
+    stop();
+    showRecovery();
+  }
+  // Eight seconds is only the moment to say the load is late: it keeps going,
+  // and a healthy late answer replaces the recovery copy with the form, so a
+  // slow phone or server never leaves the page stuck on «reload». Never drawn
+  // over an account that already rendered.
+  function slow() {
+    if (owner !== generation || host.children.length) return;
+    showRecovery();
+  }
+  timer = setTimeout(slow, 8000);
+  import("{{ static('platform/account.mjs') }}").then(function (Account) {
+    if (owner !== generation) return;
+    dispose = Account.mount(host, { freshSession: freshSession, onError: failed });
+    return dispose.ready;
+  }).then(function () { if (owner === generation) clearTimeout(timer); }).catch(failed);
+}
+window.addEventListener("pagehide", function () { stop(); host.replaceChildren(); });
+window.addEventListener("pageshow", function (event) { if (event.persisted) start(true); });
+start(false);
+</script>
+</body>
+</html>

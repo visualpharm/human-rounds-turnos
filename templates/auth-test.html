@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="{{ '{{lang}}' }}" data-theme="{{ '{{tema}}' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{ '{{i18n_bootstrap}}' }}
+{{ static_manifest() }}
+<script>window.SANA_COUNTRY_PHONE={{ country_phone_json() }};</script>
+<title>{{ t('account.testauth.title', 'Simulador de autenticación RENAPER') }}</title>
+<meta name="description" content="{{ t('account.testauth.meta_description', 'Entorno local de pruebas para simular una autenticación con RENAPER.') }}">
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--tid-navy:#252d4f;--tid-blue:#0072b8;--tid-blue-dark:#005a93;--tid-gold:#f9d45c;--tid-ink:#1f2937;--tid-muted:#52606d;--tid-line:#d9e1e8;--tid-surface:#fff;--tid-soft:#f4f7fa;--tid-warn:#fff3cd;--tid-warn-line:#e7c35c;--tid-danger:#b42318;--tid-focus:rgba(0,114,184,.25);}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--tid-soft);color:var(--tid-ink);font-family:Montserrat,Arial,sans-serif;font-size:15px;line-height:1.5;}
+  .tid-govbar{min-height:12px;background:var(--tid-navy);}
+  .tid-top{background:var(--tid-surface);border-bottom:4px solid var(--tid-gold);}
+  .tid-top-inner,.tid-wrap{width:100%;max-width:1400px;margin:0 auto;padding-inline:24px;}
+  .tid-top-inner{height:78px;display:flex;align-items:center;gap:20px;}
+  .tid-argentina-mark{display:block;width:166px;height:auto;max-height:39px;}
+  .tid-agency{min-height:36px;padding-left:20px;border-left:1px solid var(--tid-line);display:flex;flex-direction:column;justify-content:center;}
+  .tid-agency strong{color:var(--tid-navy);font-family:Merriweather,Georgia,serif;font-size:16px;line-height:1.16;}
+  .tid-agency span{color:var(--tid-muted);font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+  .tid-wrap{padding-top:34px;padding-bottom:72px;}
+  .tid-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;margin:0 0 22px;}
+  .tid-head-copy{max-width:720px;min-width:0;}
+  .tid-h1{font-family:Merriweather,Georgia,serif;font-size:clamp(29px,4.2vw,42px);line-height:1.16;letter-spacing:-.02em;margin:0 0 9px;color:var(--tid-navy);}
+  .tid-lede{font-size:16px;line-height:1.55;color:var(--tid-muted);margin:0;}
+  .tid-actions{display:flex;flex-wrap:nowrap;justify-content:flex-end;align-items:stretch;gap:10px;}
+  .tid-btn{border:1px solid var(--tid-blue);border-radius:4px;background:var(--tid-surface);color:var(--tid-blue);font:700 13px Montserrat,Arial,sans-serif;padding:11px 15px;min-height:44px;cursor:pointer;white-space:nowrap;}
+  .tid-btn:hover{border-color:var(--tid-blue-dark);background:#eef7fc;color:var(--tid-blue-dark);}
+  .tid-btn--primary{background:var(--tid-blue);border-color:var(--tid-blue);color:#fff;}
+  .tid-btn--primary:hover{background:var(--tid-blue-dark);border-color:var(--tid-blue-dark);color:#fff;}
+  .tid-btn:disabled{opacity:.58;cursor:wait;}
+  .tid-note{margin:0 0 20px;padding:14px 16px;border:1px solid var(--tid-warn-line);border-radius:4px;background:var(--tid-warn);color:#594800;font-size:14px;line-height:1.55;}
+  .tid-note strong{color:#3c3100;}
+  .tid-table-wrap{overflow-x:auto;border:1px solid var(--tid-line);border-radius:4px;background:var(--tid-surface);box-shadow:0 2px 8px rgba(32,42,70,.08);}
+  .tid-table{width:100%;min-width:1120px;border-collapse:collapse;font-size:13px;}
+  .tid-table th{padding:12px 13px;text-align:left;font-size:13px;line-height:1.25;color:#fff;font-weight:700;border-bottom:1px solid var(--tid-navy);background:var(--tid-navy);white-space:nowrap;text-transform:uppercase;letter-spacing:.025em;}
+  .tid-table td{padding:13px;border-bottom:1px solid var(--tid-line);color:var(--tid-ink);white-space:nowrap;vertical-align:middle;}
+  .tid-table tbody tr:last-child td{border-bottom:0;}
+  .tid-table tbody tr:hover{background:#eff7fc;}
+  .tid-person{cursor:pointer;}
+  .tid-person:focus-visible{outline:3px solid var(--tid-focus);outline-offset:-3px;background:#eff7fc;}
+  .tid-person-name{color:var(--tid-blue)!important;font-weight:700;}
+  .tid-person:hover .tid-person-name{filter:brightness(1.08);}
+  .tid-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;}
+  .tid-muted{color:var(--tid-muted);}
+  .tid-link{border:0;background:none;color:var(--tid-blue);font:700 13px Montserrat,Arial,sans-serif;padding:7px 0;min-width:44px;min-height:44px;cursor:pointer;}
+  .tid-link:hover{filter:brightness(1.08);}
+  .tid-empty{padding:32px 18px!important;text-align:center;color:var(--tid-muted)!important;}
+  .tid-msg{min-height:22px;margin:12px 0 0;font-size:14px;color:var(--tid-muted);}
+  .tid-msg.err{color:var(--tid-danger);}
+  .tid-load-slow:not([hidden]){display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 0;}
+  .tid-load-slow .screen-load-late-text{font-size:16px;color:var(--tid-ink);}
+  .tid-dialog{width:min(680px,calc(100vw - 28px));border:1px solid var(--tid-line);border-radius:4px;padding:0;background:var(--tid-surface);color:var(--tid-ink);box-shadow:0 26px 70px rgba(32,42,70,.28);}
+  .tid-dialog::backdrop{background:rgba(22,31,56,.56);}
+  .tid-form{padding:25px 26px 22px;}
+  .tid-form h2{font-family:Merriweather,Georgia,serif;font-size:22px;letter-spacing:-.015em;margin:0 0 5px;color:var(--tid-navy);}
+  .tid-form>p{margin:0 0 20px;color:var(--tid-muted);font-size:14px;line-height:1.45;}
+  .tid-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px 18px;}
+  .tid-field{display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .tid-field--wide{grid-column:1/-1;}
+  .tid-field label{font-size:13px;font-weight:700;color:var(--tid-ink);}
+  .tid-in{width:100%;min-height:44px;border:1px solid #8291a4;border-radius:4px;background:var(--tid-surface);color:var(--tid-ink);font:400 16px Montserrat,Arial,sans-serif;padding:10px 12px;}
+  .tid-in:focus{outline:0;border-color:var(--tid-blue);box-shadow:0 0 0 3px var(--tid-focus);}
+  .tid-form-actions{display:flex;align-items:center;justify-content:flex-end;gap:17px;margin-top:23px;padding-top:18px;}
+  .tid-footer{max-width:1400px;margin:0 auto;padding:0 24px 30px;color:var(--tid-muted);font-size:13px;}
+  .tid-footer p{margin:0;padding-top:18px;border-top:1px solid var(--tid-line);}
+  @media(max-width:1167px){
+    .tid-table-wrap{overflow:visible;}
+    .tid-table,.tid-table tbody,.tid-table tr,.tid-table td{display:block;width:100%;min-width:0;}
+    .tid-table thead{display:none;}
+    .tid-table tbody tr{padding:15px 16px 14px;border-bottom:1px solid var(--tid-line);}
+    .tid-table tbody tr:last-child{border-bottom:0;}
+    .tid-table td{padding:3px 0;border:0;white-space:normal;}
+    .tid-table td::before{display:inline-block;min-width:94px;color:var(--tid-muted);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.025em;}
+    .tid-table td:nth-child(1)::before{content:"DNI";}
+    .tid-table td:nth-child(2)::before{content:"{{ t('account.testauth.col_nombre', 'Nombre') }}";}
+    .tid-table td:nth-child(3)::before{content:"{{ t('account.testauth.col_apellido', 'Apellido') }}";}
+    .tid-table td:nth-child(4)::before{content:"{{ t('account.testauth.col_sesion', 'Sesión') }}";}
+    .tid-table td:nth-child(5)::before{content:"{{ t('account.testauth.col_datos', 'Datos') }}";}
+    .tid-table td:nth-child(6)::before{content:"{{ t('account.testauth.col_nacimiento', 'Nacimiento') }}";}
+    .tid-table td:nth-child(7)::before{content:"{{ t('account.testauth.col_sexo', 'Sexo') }}";}
+    .tid-table td:nth-child(8)::before{content:"{{ t('account.testauth.col_telefono', 'Teléfono') }}";}
+    .tid-table td:nth-child(9)::before{content:"{{ t('account.testauth.col_email', 'Email') }}";}
+    .tid-table td:nth-child(10)::before{content:"{{ t('account.testauth.col_domicilio', 'Domicilio') }}";}
+    .tid-table td:nth-child(11)::before{content:"{{ t('account.testauth.col_localidad', 'Localidad') }}";}
+    .tid-table td:nth-child(12)::before{content:"{{ t('account.testauth.col_origen', 'Origen') }}";}
+  }
+  @media(max-width:760px){
+    .tid-top-inner,.tid-wrap,.tid-footer{padding-inline:16px;}
+    .tid-top-inner{height:70px;gap:14px;}
+    .tid-argentina-mark{width:142px;}
+    .tid-agency{padding-left:14px;}
+    .tid-agency strong{font-size:14px;}
+    .tid-wrap{padding-top:26px;padding-bottom:44px;}
+    .tid-head{grid-template-columns:1fr;align-items:flex-start;gap:17px;}
+    .tid-actions{justify-content:flex-start;}
+    .tid-table-wrap{margin-inline:-16px;border-left:0;border-right:0;border-radius:0;box-shadow:none;}
+    .tid-grid{grid-template-columns:1fr;}
+    .tid-field--wide{grid-column:auto;}
+    .tid-form{padding:21px 18px 18px;}
+  }
+  @media(max-width:520px){
+    .tid-actions{display:grid;grid-template-columns:1fr;width:100%;}
+    .tid-actions .tid-btn{width:100%;}
+  }
+  @media(max-width:480px){
+    .tid-agency span{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="tid-govbar" aria-hidden="true"></div>
+<header class="tid-top">
+  <div class="tid-top-inner">
+    <img class="tid-argentina-mark" src="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/logo_argentina-azul.svg" alt="Argentina.gob.ar">
+    <div class="tid-agency"><strong>RENAPER</strong><span>Registro Nacional de las Personas</span></div>
+  </div>
+</header>
+<main class="tid-wrap">
+  <section class="tid-head">
+    <div class="tid-head-copy">
+      <h1 class="tid-h1" id="tid-title">{{ t('account.testauth.title', 'Simulador de autenticación RENAPER') }}</h1>
+      <p class="tid-lede">{{ t('account.testauth.lede', 'Elegí una identidad ficticia o creá otra para probar el inicio de sesión.') }}</p>
+    </div>
+    <div class="tid-actions">
+      <button class="tid-btn tid-btn--primary" id="tid-random" type="button">{{ t('account.testauth.btn_random', 'Crear persona aleatoria') }}</button>
+      <button class="tid-btn" id="tid-new" type="button">{{ t('account.testauth.btn_new', 'Crear manualmente') }}</button>
+    </div>
+  </section>
+  <p class="tid-note"><strong>{{ t('account.testauth.note_strong', 'Solo pruebas locales.') }}</strong> <span id="tid-provider"></span>{{ t('account.testauth.note_rest', ' está simulado. Estas identidades son ficticias, editables y no representan datos de RENAPER.') }}</p>
+  <div class="tid-table-wrap">
+    <table class="tid-table">
+      <thead><tr>
+        <th>DNI</th><th>{{ t('account.testauth.col_nombre', 'Nombre') }}</th><th>{{ t('account.testauth.col_apellido', 'Apellido') }}</th><th>{{ t('account.testauth.col_sesion', 'Sesión') }}</th><th>{{ t('account.testauth.col_datos', 'Datos') }}</th>
+        <th>{{ t('account.testauth.col_nacimiento', 'Nacimiento') }}</th><th>{{ t('account.testauth.col_sexo', 'Sexo') }}</th><th>{{ t('account.testauth.col_telefono', 'Teléfono') }}</th><th>{{ t('account.testauth.col_email', 'Email') }}</th><th>{{ t('account.testauth.col_domicilio', 'Domicilio') }}</th>
+        <th>{{ t('account.testauth.col_localidad', 'Localidad') }}</th><th>{{ t('account.testauth.col_origen', 'Origen') }}</th>
+      </tr></thead>
+      <tbody id="tid-rows"><tr><td class="tid-empty" colspan="12">{{ t('account.testauth.cargando', 'Cargando identidades…') }}</td></tr></tbody>
+    </table>
+  </div>
+  <p class="tid-msg" id="tid-msg" aria-live="polite"></p>
+  <div class="tid-load-slow" id="tid-load-slow" hidden></div>
+  <div id="tid-load-error" hidden role="alert">
+    <p class="tid-msg err">{{ t('account.error.formulario', 'The form could not load. Reload the page.') }}</p>
+    <button class="tid-btn" id="tid-reload" type="button">{{ t('account.mine.dependents.reload', 'Reload page') }}</button>
+  </div>
+</main>
+<footer class="tid-footer"><p>{{ t('account.testauth.footer_nota', 'Entorno de simulación local. No es un servicio oficial de RENAPER ni almacena datos reales.') }}</p></footer>
+<dialog class="tid-dialog" id="tid-dialog">
+  <form class="tid-form" id="tid-form" method="dialog" novalidate>
+    <h2 id="tid-form-title">{{ t('account.testauth.dialog_titulo', 'Crear persona') }}</h2>
+    <p>{{ t('account.testauth.dialog_intro', 'Estos datos son sintéticos y se usan únicamente para probar el flujo.') }}</p>
+    <input id="tid-original" type="hidden">
+    <div class="tid-grid">
+      <div class="tid-field"><label for="tid-dni">DNI</label><input class="tid-in tid-mono" id="tid-dni" inputmode="numeric" required></div>
+      <div class="tid-field"><label for="tid-birth">{{ t('account.testauth.col_nacimiento', 'Nacimiento') }}</label><input class="tid-in" id="tid-birth" type="date" required></div>
+      <div class="tid-field"><label for="tid-name">{{ t('account.testauth.col_nombre', 'Nombre') }}</label><input class="tid-in" id="tid-name" autocomplete="off" required></div>
+      <div class="tid-field"><label for="tid-surname">{{ t('account.testauth.col_apellido', 'Apellido') }}</label><input class="tid-in" id="tid-surname" autocomplete="off" required></div>
+      <div class="tid-field"><label for="tid-sex">{{ t('account.testauth.label_sexo_dni', 'Sexo según DNI') }}</label><select class="tid-in" id="tid-sex"><option value="F">{{ t('account.testauth.opt_femenino', 'Femenino') }}</option><option value="M">{{ t('account.testauth.opt_masculino', 'Masculino') }}</option><option value="X">{{ t('account.testauth.opt_otro', 'Otro') }}</option></select></div>
+      <div class="tid-field"><label for="tid-phone">{{ t('account.testauth.col_telefono', 'Teléfono') }}</label><input class="tid-in" id="tid-phone" inputmode="tel"></div>
+      <div class="tid-field tid-field--wide"><label for="tid-email">{{ t('account.testauth.col_email', 'Email') }}</label><input class="tid-in" id="tid-email" type="email"></div>
+      <div class="tid-field"><label for="tid-address">{{ t('account.testauth.col_domicilio', 'Domicilio') }}</label><input class="tid-in" id="tid-address"></div>
+      <div class="tid-field"><label for="tid-locality">{{ t('account.testauth.col_localidad', 'Localidad') }}</label><input class="tid-in" id="tid-locality"></div>
+    </div>
+    <p class="tid-msg" id="tid-form-msg" aria-live="polite"></p>
+    <div class="tid-form-actions"><button class="tid-link" id="tid-close" type="button">{{ t('account.testauth.btn_cerrar', 'Cerrar') }}</button><button class="tid-btn tid-btn--primary" id="tid-save" type="submit">{{ t('account.testauth.btn_guardar', 'Guardar persona') }}</button></div>
+  </form>
+</dialog>
+{% with late_button_class='tid-btn' %}{% include '_screen_load_late.html' %}{% endwith %}
+<script type="module">
+// Only loads the canonical module; no alternate controller or global API.
+import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+const error = document.getElementById('tid-load-error');
+document.getElementById('tid-reload').addEventListener('click', function () { location.reload(); });
+bootScreen({
+  host: document.querySelector('main'),
+  recovery: 'tid-load-error',
+  slowIn: document.getElementById('tid-load-slow'),
+  load: () => import({{ static('platform/auth-test.mjs')|tojson }}),
+  mount: (module) => module.mount(document),
+  onStart: () => { error.hidden = true; },
+  // A stopped page offers no action of an owner that is gone.
+  onStop: () => {
+    document.querySelectorAll('#tid-new, #tid-random, #tid-save, .tid-login, .tid-edit')
+      .forEach(function (button) { button.disabled = true; });
+  },
+});
+</script>
+</body>
+</html>

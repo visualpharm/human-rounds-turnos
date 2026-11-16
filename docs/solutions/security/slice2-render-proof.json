@@ -1,0 +1,65 @@
+[
+  {
+    "path": "/account",
+    "lang": "es",
+    "sha256": "166730958044c942b4ad683f1564617ed8f0df457144de05826ef96780cabec9",
+    "prior_sha256": "016aa974f51f17c5fac16910112d743fe4bcadff938eb431266652540220b99f",
+    "reversed_sha256": "016aa974f51f17c5fac16910112d743fe4bcadff938eb431266652540220b99f"
+  },
+  {
+    "path": "/account/reset",
+    "lang": "es",
+    "sha256": "b6fc3a33a1d1cdcad5b0f7ce0b84ddff8163fb71d4c7d7f27a9a04e3e6f9af83",
+    "prior_sha256": "a28b1f0c25358378481911046a376d1237423d8702ae9542c0a183e87a23be7c",
+    "reversed_sha256": "a28b1f0c25358378481911046a376d1237423d8702ae9542c0a183e87a23be7c"
+  },
+  {
+    "path": "/account",
+    "lang": "anonymous",
+    "sha256": "166730958044c942b4ad683f1564617ed8f0df457144de05826ef96780cabec9",
+    "prior_sha256": "016aa974f51f17c5fac16910112d743fe4bcadff938eb431266652540220b99f",
+    "reversed_sha256": "016aa974f51f17c5fac16910112d743fe4bcadff938eb431266652540220b99f"
+  },
+  {
+    "path": "/auth/test",
+    "lang": "es",
+    "sha256": "9e6e043358d7726ebb217cbbeb9935e4d7d433e3eea6be5886dd126a752888ff",
+    "prior_sha256": "b8eb7a505e04958dbafdd23e78f559e504db2e76b2d0bf4bafcea20c79063644",
+    "reversed_sha256": "b8eb7a505e04958dbafdd23e78f559e504db2e76b2d0bf4bafcea20c79063644"
+  },
+  {
+    "path": "/auth/sso",
+    "lang": "es",
+    "sha256": "268d073b22f63566053d5e51b8489fc35d205e75ab473ae709ea5fda74743143",
+    "prior_sha256": "a0f8de9cb0617db2c7fc32b7ff70eacb652e2683e47a5ba0f8fe49f437d27c4b",
+    "reversed_sha256": "a0f8de9cb0617db2c7fc32b7ff70eacb652e2683e47a5ba0f8fe49f437d27c4b"
+  },
+  {
+    "path": "/account",
+    "lang": "en",
+    "sha256": "96d085b6f79d6ebc5c8c52baad46ededb6c53a8f5505c1268914c91f6c9bdec0",
+    "prior_sha256": "b046c50834944d8dc1498d84d4a101e3b393d72009ed9c6f62a8b04e14640ba6",
+    "reversed_sha256": "b046c50834944d8dc1498d84d4a101e3b393d72009ed9c6f62a8b04e14640ba6"
+  },
+  {
+    "path": "/account/reset",
+    "lang": "en",
+    "sha256": "6e265661ee76752563a2e127d0b91df60b04e0881cc971123fcace66be1dc564",
+    "prior_sha256": "69a6f50a55ab1d6187f70bbc62c14b9e4815e447e7ceadd187c3d1d50a9a0b0a",
+    "reversed_sha256": "69a6f50a55ab1d6187f70bbc62c14b9e4815e447e7ceadd187c3d1d50a9a0b0a"
+  },
+  {
+    "path": "/auth/test",
+    "lang": "en",
+    "sha256": "8fd9c5d57efd8d191f75b1db11f10e4dda5c564b3ab97137dd5ee9d42ccbf841",
+    "prior_sha256": "58d509ebdc0745a342a1b0f2ea4e55a4462075452faa5d73b1fa97715162b3b1",
+    "reversed_sha256": "58d509ebdc0745a342a1b0f2ea4e55a4462075452faa5d73b1fa97715162b3b1"
+  },
+  {
+    "path": "/auth/sso",
+    "lang": "en",
+    "sha256": "24bf77f9509bef81e25f5f43f9ca2470c56290cce8e56e51c6b3a53902a45f0d",
+    "prior_sha256": "14668833c16446311dc038a58c2aa81740911db76c9f833267d24ea16a878660",
+    "reversed_sha256": "14668833c16446311dc038a58c2aa81740911db76c9f833267d24ea16a878660"
+  }
+]

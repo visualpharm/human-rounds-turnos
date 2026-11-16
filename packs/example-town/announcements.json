@@ -1,0 +1,11 @@
+{
+  "announcements": [
+    {
+      "id": "example-vaccine-stock",
+      "active": false,
+      "title": "Vacuna temporalmente no disponible",
+      "body": "Consultá disponibilidad antes de acercarte al vacunatorio.",
+      "cluster_ids": ["vacunas-prevencion"]
+    }
+  ]
+}

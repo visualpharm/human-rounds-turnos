@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "Es wird geprüft, für wen die Behandlung ist…",
+  "wizard.age_check.h1": "Für wen ist die Behandlung?",
+  "wizard.confirm.error": "Wir konnten deine Antwort nicht speichern. Versuche es bitte noch einmal.",
+  "wizard.confirm.expired": "Dieser Termin kann nicht mehr bestätigt werden.",
+  "wizard.confirm.saved": "Erledigt, danke für die Rückmeldung.",
+  "wizard.confirm.wait": "Einen Moment…",
+  "wizard.contact.call": "Kommst du an einem Punkt nicht weiter? Rufe {name} an:",
+  "wizard.contact.center_fallback": "das Zentrum",
+  "wizard.contact.whatsapp": "Kommst du an einem Punkt nicht weiter? Schreibe {name} per WhatsApp:",
+  "wizard.contact.whatsapp_site": "Kommst du an einem Punkt nicht weiter? Schreib uns per WhatsApp:",
+  "wizard.offer.accepted": "Fertig! Dein Termin wurde bestätigt. Wir leiten dich weiter zu Meine Termine…",
+  "wizard.offer.error": "Wir konnten deine Antwort nicht verarbeiten. Versuche es bitte noch einmal.",
+  "wizard.offer.gone": "Dieser Termin ist nicht mehr verfügbar.",
+  "wizard.offer.rejected": "Wir haben die nächste Person auf der Liste benachrichtigt. Vielen Dank für deine Antwort.",
+  "wizard.offer.wait": "Einen Moment…",
+  "wizard.title.orden": "Überweisung",
+  "wizard.title.solicitud": "Termin buchen",
+  "wizard.upload.sub": "Das Krankenhaus prüft sie und bestätigt dir den Termin."
+}

@@ -1,0 +1,12 @@
+{
+  "_comment": "/telemedicine page chrome — headings and generic CTA text. The actual content (lede, para, no_para, quien, costo, no_es) is pack data (enlaces.json), editable without a deploy; these keys are only the fallbacks/labels around it. emergency_call carries {number}: the installation's one emergency number (sitio.json emergency_number), never a literal.",
+  "telemedicine.h1": "Telemedizin",
+  "telemedicine.lede_default": "Eine Video-Beratung mit einem Allgemeinmediziner, rund um die Uhr.",
+  "telemedicine.for_h": "Wofür es gedacht ist",
+  "telemedicine.how_h": "Wie es funktioniert",
+  "telemedicine.not_for_h": "Wann du eine persönliche Behandlung vor Ort brauchst",
+  "telemedicine.not_for_label": "Nicht für Notfälle.",
+  "telemedicine.emergency_call": "Bei einem Notfall geh bitte direkt in die Notaufnahme des Krankenhauses oder ruf die {number} an.",
+  "telemedicine.cta": "Telemedizinische Beratung nutzen",
+  "telemedicine.what_h": "Was das ist"
+}

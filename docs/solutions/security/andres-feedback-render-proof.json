@@ -1,0 +1,178 @@
+{
+  "baseline": "9dbe39d682398bb3c8567036958967a4d303446b",
+  "method": "Rendered the nine pinned Account responses at the baseline and at the change with the same test helpers (test_accounts_jinja._native, same env modes); token diff of each pair reviewed.",
+  "asset_url_changes": [
+    [
+      "/static/platform/account-form.af46c896.mjs",
+      "/static/platform/account-form.5aa1bb75.mjs"
+    ]
+  ],
+  "english_catalog_changes": {
+    "changed": [
+      "account.form.password.generate",
+      "account.form.scan.title",
+      "service.success.entrevista_lead"
+    ],
+    "removed": [
+      "account.form.scan.fail",
+      "account.form.scan.generic_fail"
+    ],
+    "added": [
+      "account.form.scan.front_fail",
+      "account.form.scan.back_fail",
+      "date.input_placeholder",
+      "date.pick",
+      "date.prev_month",
+      "date.next_month",
+      "doctor.services_line"
+    ]
+  },
+  "spanish_and_anonymous": "only the account-form.mjs fingerprint URL differs",
+  "pages": {
+    "anon_account": {
+      "baseline_sha256": "79e52e99de6f90d510962babbae51ab85833cbba8cb0e0955a135deced302ec3",
+      "new_sha256": "9bdb3085d5ea49b96d0dfc283b7db16eb7a5e0aa6e0f70f913eef977a2192703"
+    },
+    "en_account": {
+      "baseline_sha256": "e92bc9bfb2019a90611ed8bb2a17f581c6dab63129aded6841ecd54716d56e04",
+      "new_sha256": "8a71e9a95a71a0f8daf936bcd145d34f13419d8ccc63893fe3c3a600c5c2fb42"
+    },
+    "en_account_reset": {
+      "baseline_sha256": "189acddb44ee62c1bf25149c83f4435014f0811c5f3745ba231856c686292f8f",
+      "new_sha256": "ab554311835e726cb1187ec1f12d1f5e4b66c2a297fbba2db64f3199e5205ef5"
+    },
+    "en_auth_sso": {
+      "baseline_sha256": "27a7f97ebdf9b2e6cf565235f2cb75a1df055041713117a6daec9b123d6c2c9d",
+      "new_sha256": "5ba8d1bb8e8942dcce620192eab14a40d88bdfb4efa4d9044cee0dd3c0213cea"
+    },
+    "en_auth_test": {
+      "baseline_sha256": "3b129c9692f5b5a28f300d0fa70bca5d89d70a561f856c17e6448be92bd3c771",
+      "new_sha256": "c5b69144f2062d8a83f1879d0db2387129c493b970dc00b7729ebacc2859bfc0"
+    },
+    "es_account": {
+      "baseline_sha256": "79e52e99de6f90d510962babbae51ab85833cbba8cb0e0955a135deced302ec3",
+      "new_sha256": "9bdb3085d5ea49b96d0dfc283b7db16eb7a5e0aa6e0f70f913eef977a2192703"
+    },
+    "es_account_reset": {
+      "baseline_sha256": "324f65c960e8629eb496d78657f1a5de892dc22c36b0e24ab4f49d9974ab6705",
+      "new_sha256": "201dd7c7e7ce06a8e8d4852425515aac93637b990f3218e74fb55774a14e7f19"
+    },
+    "es_auth_sso": {
+      "baseline_sha256": "c63e6237af8d917dbce5939605c247680077349b2beca6bf501a51c9c03890da",
+      "new_sha256": "aa2ab76a885e443b61c7c37903ac3912af245decbaa490aaa96eb6f854807ffd"
+    },
+    "es_auth_test": {
+      "baseline_sha256": "a6486009ff5606f69a68bac78ce276b7c3d13bd0363d27c369c38f30755e3b93",
+      "new_sha256": "c4b80fbbeb0b1b956f4cf1c2173f2cc2f61dd6efb73c6a9648cd57c80bc71fdc"
+    }
+  },
+  "followup_listing_ink": {
+    "baseline": "295be6133bfa3fb49deaf660ba073be25123b663",
+    "asset_url_changes": [
+      [
+        "/static/platform/listing.47b04ae9.mjs",
+        "/static/platform/listing.e12884fc.mjs"
+      ]
+    ],
+    "other_changes": "none — every page differs only by this one shared-manifest URL",
+    "pages": {
+      "anon_account": {
+        "baseline_sha256": "9bdb3085d5ea49b96d0dfc283b7db16eb7a5e0aa6e0f70f913eef977a2192703",
+        "new_sha256": "493f4f5af9c88635a9f1aa137d0042bd93b13d55c0a0f30d4cb7864c053b76fa"
+      },
+      "en_account": {
+        "baseline_sha256": "8a71e9a95a71a0f8daf936bcd145d34f13419d8ccc63893fe3c3a600c5c2fb42",
+        "new_sha256": "f5d6351d0bb28355e983f8af4a4b860efb15eaca077e80eca738e1c19c7ca4d0"
+      },
+      "en_account_reset": {
+        "baseline_sha256": "ab554311835e726cb1187ec1f12d1f5e4b66c2a297fbba2db64f3199e5205ef5",
+        "new_sha256": "30e2b87f86c5394f4ea4acea033a5df3b6dd7e1ea2d22fd8e4f3911274233e6f"
+      },
+      "en_auth_sso": {
+        "baseline_sha256": "5ba8d1bb8e8942dcce620192eab14a40d88bdfb4efa4d9044cee0dd3c0213cea",
+        "new_sha256": "ff85d929321717237d37f65df859c6f02f6eeb4649493a48b23f5ef4251f6987"
+      },
+      "en_auth_test": {
+        "baseline_sha256": "c5b69144f2062d8a83f1879d0db2387129c493b970dc00b7729ebacc2859bfc0",
+        "new_sha256": "3f569e4b70ab8127a16a02dcf7edc57ad6ae73876ae6cabece2d4502c16a4f95"
+      },
+      "es_account": {
+        "baseline_sha256": "9bdb3085d5ea49b96d0dfc283b7db16eb7a5e0aa6e0f70f913eef977a2192703",
+        "new_sha256": "493f4f5af9c88635a9f1aa137d0042bd93b13d55c0a0f30d4cb7864c053b76fa"
+      },
+      "es_account_reset": {
+        "baseline_sha256": "201dd7c7e7ce06a8e8d4852425515aac93637b990f3218e74fb55774a14e7f19",
+        "new_sha256": "595619d5d538f9d277bf038f419d8f9e9ec2ed63a3714914124fa1a0a47b6b7e"
+      },
+      "es_auth_sso": {
+        "baseline_sha256": "aa2ab76a885e443b61c7c37903ac3912af245decbaa490aaa96eb6f854807ffd",
+        "new_sha256": "98b0bb3fc1b29ac9b136a30e9a93413e28cd042a1329686d3a8f9440145c3a83"
+      },
+      "es_auth_test": {
+        "baseline_sha256": "c4b80fbbeb0b1b956f4cf1c2173f2cc2f61dd6efb73c6a9648cd57c80bc71fdc",
+        "new_sha256": "b228220f1abe537f06e7321d124df85f8ad25f0e8ac1926d0e387e359135f0e6"
+      }
+    }
+  },
+  "followup_ink_time_footer": {
+    "baseline": "0a7a19676b0a75fe8dd3c97f4a96a36260cd20dc",
+    "asset_url_changes": [
+      [
+        "/static/human-rounds.90d6944d.css",
+        "/static/human-rounds.6962e1ab.css"
+      ],
+      [
+        "/static/platform/admin-hours-editor.9003ab91.mjs",
+        "/static/platform/admin-hours-editor.256ff625.mjs"
+      ],
+      [
+        "/static/platform/listing.e12884fc.mjs",
+        "/static/platform/listing.7bc728ec.mjs"
+      ]
+    ],
+    "english_catalog_changes": {
+      "added": [
+        "date.time_placeholder"
+      ]
+    },
+    "other_changes": "none",
+    "pages": {
+      "anon_account": {
+        "baseline_sha256": "493f4f5af9c88635a9f1aa137d0042bd93b13d55c0a0f30d4cb7864c053b76fa",
+        "new_sha256": "e0fb8d386c8b44ed980e8a16f965c74845f18b2ce0fb5bf3e08a35fa770af197"
+      },
+      "en_account": {
+        "baseline_sha256": "f5d6351d0bb28355e983f8af4a4b860efb15eaca077e80eca738e1c19c7ca4d0",
+        "new_sha256": "682960a621d391cbeea9e35bcecd565c3df51860812df23e2cdd19e190e10339"
+      },
+      "en_account_reset": {
+        "baseline_sha256": "30e2b87f86c5394f4ea4acea033a5df3b6dd7e1ea2d22fd8e4f3911274233e6f",
+        "new_sha256": "18c93d9b4d452cf6a29e86687f03583ae4e7fe10d238fb45441e6e25d59d1c65"
+      },
+      "en_auth_sso": {
+        "baseline_sha256": "ff85d929321717237d37f65df859c6f02f6eeb4649493a48b23f5ef4251f6987",
+        "new_sha256": "4bbf90d0cde1dc77f365998991bd1562ca9312a85e39150cf1a646bda97edb99"
+      },
+      "en_auth_test": {
+        "baseline_sha256": "3f569e4b70ab8127a16a02dcf7edc57ad6ae73876ae6cabece2d4502c16a4f95",
+        "new_sha256": "52675452a6696124f712d33879131afaf29cf997168c23cc91a36b60bf58f0d7"
+      },
+      "es_account": {
+        "baseline_sha256": "493f4f5af9c88635a9f1aa137d0042bd93b13d55c0a0f30d4cb7864c053b76fa",
+        "new_sha256": "e0fb8d386c8b44ed980e8a16f965c74845f18b2ce0fb5bf3e08a35fa770af197"
+      },
+      "es_account_reset": {
+        "baseline_sha256": "595619d5d538f9d277bf038f419d8f9e9ec2ed63a3714914124fa1a0a47b6b7e",
+        "new_sha256": "41d86d1d00bd8297a3a54aad13e86b2c0f6ed51f4509f9776f00435cb89ebf42"
+      },
+      "es_auth_sso": {
+        "baseline_sha256": "98b0bb3fc1b29ac9b136a30e9a93413e28cd042a1329686d3a8f9440145c3a83",
+        "new_sha256": "20449639a42df33f6702e4734f1de43051e6a2916fa2f9f1109d43e8afb5153e"
+      },
+      "es_auth_test": {
+        "baseline_sha256": "b228220f1abe537f06e7321d124df85f8ad25f0e8ac1926d0e387e359135f0e6",
+        "new_sha256": "8538035b37fe391fcf7789c557da8244e4c9b16f11338093c0a3eaa199626b01"
+      }
+    }
+  }
+}

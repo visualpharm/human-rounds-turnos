@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "提前预约天数",
+  "admin.settings.opening_time": "放号时间",
+  "admin.settings.horizon_range": "提前预约天数必须在 1 到 365 天之间。",
+  "admin.settings.opening_time_format": "放号时间格式必须为 HH:MM。",
+  "admin.settings.holidays.title": "节假日",
+  "admin.settings.holidays.lede": "当天所有科室、医生和中心均不提供预约。已发放的预约不会自动取消，需要手动重新安排。",
+  "admin.settings.holidays.empty": "尚未加载节假日。",
+  "admin.settings.holidays.date": "日期",
+  "admin.settings.holidays.name": "名称",
+  "admin.settings.holidays.remove": "移除",
+  "admin.settings.holidays.add": "+ 添加节假日",
+  "admin.settings.holidays.load_national": "加载法定节假日",
+  "admin.settings.holidays.appointments_one": "当天已有 {n} 个预约",
+  "admin.settings.holidays.appointments": "当天已有 {n} 个预约",
+  "admin.settings.holidays.invalid": "节假日列表无效。",
+  "admin.settings.holidays.bad_date": "每个节假日都需要一个有效的日期。",
+  "admin.settings.holidays.no_name": "每个节假日都需要一个名称。",
+  "admin.settings.holidays.long_name": "节假日名称最多只能包含 {max} 个字符。",
+  "admin.settings.holidays.too_many": "最多只能加载 {max} 个节假日。"
+}

@@ -1,0 +1,1209 @@
+{
+  "_meta": {
+    "generado": "2026-07-09",
+    "generado_por": "Investigación con parallel.ai (psearch), fuentes de diagnóstico por imágenes y clínicas de Argentina; se usó una fuente internacional (MedlinePlus, Mayo Clinic, Quirónsalud) solo cuando no había una fuente argentina equivalente. La preparación no varía por país en lo médico, sí en horarios y trámites locales.",
+    "alcance": "Cubre los estudios estándar de una orden de derivación argentina, incluidos los que hoy no ofrece tu municipio pero pueden aparecer en la orden que sube el paciente (RMN, densitometría, Holter, MAPA, espirometría, PAP/colposcopía, endoscopía/colonoscopía, EEG, fondo de ojo).",
+    "no_ofrecidos_actualmente": [
+      "perfil-lipidico",
+      "ecografia-pelvica-ginecologica",
+      "ecografia-vesicoprostatica",
+      "ecografia-mamaria",
+      "tomografia-sin-contraste",
+      "tomografia-con-contraste",
+      "resonancia-magnetica",
+      "densitometria-osea",
+      "holter",
+      "mapa-presurometria",
+      "espirometria",
+      "endoscopia-digestiva-alta",
+      "colonoscopia",
+      "electroencefalograma"
+    ],
+    "diseno_match": "Las keywords de match van en minúscula y sin tildes: el texto de una orden escaneada u OCR puede perder tildes, igual que el PDF417 del DNI (ver CLAUDE.md del proyecto). Los estudios con calificador (ej. 'ecografia abdominal') son más específicos que su fallback genérico (ej. 'ecografia-general', para cuando la orden solo dice 'Ecografía'). Al matchear contra el texto de una orden: probá primero los estudios con match más largo/específico, y usá el '-general' solo si ninguno específico matcheó.",
+    "advertencia_general": "Ayuno, vejiga llena y suspensión de medicación varían por centro y por indicación médica puntual. Esta base es una guía de referencia, no reemplaza el volante de indicaciones que entrega el servicio de Diagnóstico por Imágenes o Laboratorio. Ante cualquier medicación a suspender (metformina, anticoagulantes, betabloqueantes, broncodilatadores), la instrucción siempre remite a 'consultá con tu médico', nunca a suspender por cuenta propia.",
+    "nota_generador": "no_ofrecidos_actualmente recalculado por scripts/generate_example_town_catalog.py contra servicios.json — no editar a mano, correr el script de nuevo."
+  },
+  "estudios": [
+    {
+      "id": "laboratorio-sangre",
+      "nombre": "Análisis de sangre / laboratorio",
+      "match": [
+        "laboratorio",
+        "analisis de sangre",
+        "analisis clinicos",
+        "extraccion de sangre",
+        "extracciones",
+        "hemograma",
+        "hepatograma",
+        "urea",
+        "creatinina",
+        "orina completa"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "Ayuno estándar de 8 horas. Para perfil lipídico (colesterol, triglicéridos) algunos laboratorios piden hasta 12 horas: confirmá con el servicio de Laboratorio de tu centro o en tu orden."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Podés tomar agua durante el ayuno.",
+        "No fumes durante el ayuno.",
+        "Si tomás medicación diaria, no la suspendas sin consultar a tu médico."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Actualización y cambios de paradigma: ya no más ayuno de 12 horas ni glucemia de 110 mg/dL — Revista Bioquímica y Patología Clínica",
+          "url": "https://www.revistabypc.org.ar/index.php/bypc/article/view/291"
+        },
+        {
+          "title": "Bioquímica Clínica: ayuno y perfil lipídico — SciELO Argentina",
+          "url": "https://www.scielo.org.ar/pdf/abcl/v59n4/0325-2957-abcl-59-4-02.pdf"
+        },
+        {
+          "title": "Ayuno — Cigna Knowledge Center",
+          "url": "https://www.cigna.com/es-us/knowledge-center/hw/temas-de-salud/ayuno-abl0422"
+        }
+      ]
+    },
+    {
+      "id": "glucemia",
+      "nombre": "Glucemia",
+      "match": [
+        "glucemia",
+        "glucosa en sangre",
+        "glucosa basal",
+        "curva de glucemia",
+        "glucemia en ayunas"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "Ayuno de 8 horas. No tomes bebidas con azúcar."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Podés tomar agua.",
+        "Tomá tu medicación habitual salvo que tu médico te indique lo contrario."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Actualización y cambios de paradigma: ya no más ayuno de 12 horas ni glucemia de 110 mg/dL — Revista Bioquímica y Patología Clínica",
+          "url": "https://www.revistabypc.org.ar/index.php/bypc/article/view/291"
+        },
+        {
+          "title": "Bioquímica Clínica: ayuno y perfil lipídico — SciELO Argentina",
+          "url": "https://www.scielo.org.ar/pdf/abcl/v59n4/0325-2957-abcl-59-4-02.pdf"
+        }
+      ]
+    },
+    {
+      "id": "perfil-lipidico",
+      "nombre": "Perfil lipídico (colesterol, triglicéridos)",
+      "match": [
+        "perfil lipidico",
+        "colesterol",
+        "trigliceridos",
+        "lipidograma"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 12,
+        "agua_permitida": true,
+        "nota": "Las guías clínicas más nuevas permiten tomar el perfil lipídico sin ayuno en la mayoría de los pacientes, pero muchos laboratorios argentinos todavía piden 12 horas. Confirmá con el laboratorio antes de ir."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Podés tomar agua durante el ayuno.",
+        "No tomes alcohol las 24 horas previas: altera el resultado."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Bioquímica Clínica: ayuno y perfil lipídico — SciELO Argentina",
+          "url": "https://www.scielo.org.ar/pdf/abcl/v59n4/0325-2957-abcl-59-4-02.pdf"
+        },
+        {
+          "title": "Actualización y cambios de paradigma: ya no más ayuno de 12 horas ni glucemia de 110 mg/dL — Revista Bioquímica y Patología Clínica",
+          "url": "https://www.revistabypc.org.ar/index.php/bypc/article/view/291"
+        }
+      ]
+    },
+    {
+      "id": "audiometria",
+      "nombre": "Audiometría",
+      "match": [
+        "audiometria",
+        "audiometria tonal",
+        "evaluacion auditiva"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Evitá exponerte a ruidos fuertes (auriculares altos, obras, recitales) al menos 14 horas antes: puede alterar el resultado."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Protocolo de evaluación de hipoacusias inducidas por ruido — SMTBA",
+          "url": "https://smtba.org.ar/wp-content/uploads/2019/07/Protocolo-de-evaluaci%C3%B3n-de-hipoacusias-inducidas-por-ruido.pdf"
+        },
+        {
+          "title": "Manual de procedimientos: hipoacusia y sordera en la infancia — Ministerio de Salud de la Provincia de Buenos Aires",
+          "url": "https://www.ms.gba.gov.ar/ssps/residencias/biblio/pdf_fono/Manual-Hipoacusia-sordera-Infancia.pdf"
+        }
+      ]
+    },
+    {
+      "id": "otoemisiones-acusticas",
+      "nombre": "Otoemisiones acústicas",
+      "match": [
+        "otoemisiones",
+        "otoemisiones acusticas",
+        "screening auditivo neonatal",
+        "oea"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI del bebé o partida de nacimiento",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Llevá al bebé alimentado y tranquilo: si está dormido o calmado, el estudio es más rápido.",
+        "Evitá ruidos fuertes en la sala de espera."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Manual de procedimientos: hipoacusia y sordera en la infancia — Ministerio de Salud de la Provincia de Buenos Aires",
+          "url": "https://www.ms.gba.gov.ar/ssps/residencias/biblio/pdf_fono/Manual-Hipoacusia-sordera-Infancia.pdf"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-general",
+      "nombre": "Ecografía (tipo no especificado)",
+      "match": [
+        "ecografia",
+        "eco",
+        "ecografia infantil",
+        "ecografia pediatrica"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "La preparación depende de qué parte del cuerpo te van a estudiar: ayuno para abdominal, vejiga llena para pélvica/obstétrica temprana, ninguna preparación para partes blandas, mama o vascular periférico."
+      },
+      "traer": [
+        "Orden médica de derivación (original), que aclare qué ecografía es",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Ecografías anteriores, si las tenés"
+      ],
+      "preparacion": [
+        "Fijate si tu orden dice abdominal, pélvica, obstétrica, mamaria o de partes blandas: cada una tiene una preparación distinta.",
+        "Si es para un chico, el ayuno suele ser más corto (unas 4 horas): consultalo al sacar el turno."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "¿Te pidieron ayuno para un estudio y no sabes por qué? — Hospital Viera",
+          "url": "https://www.facebook.com/hospitalviera/videos/te-pidieron-ayuno-para-un-estudio-y-no-sabes-por-qu%C3%A9-no-todos-los-ex%C3%A1menes-lo-re/1507265620921917/"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-abdominal",
+      "nombre": "Ecografía abdominal",
+      "match": [
+        "ecografia abdominal",
+        "eco abdominal",
+        "ecografia de abdomen",
+        "ecografia hepato bilio pancreatica",
+        "ecografia renal",
+        "ecografia hepatica",
+        "ecografia abdomen total"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "Ayuno de 6 a 8 horas. El ayuno evita que el gas intestinal tape la imagen."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Ecografías abdominales anteriores, si las tenés"
+      ],
+      "preparacion": [
+        "No comas alimentos sólidos ni tomes líquidos, salvo agua, durante el ayuno.",
+        "Si sos diabético y usás insulina, consultá a tu médico cómo ajustar el ayuno."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ayuno para ecografía abdominal: ¿qué pasa si no se cumple? — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/ayuno-para-ecografia-abdominal/"
+        },
+        {
+          "title": "Ecografía abdominal: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/abdominal-ultrasound/about/pac-20392738"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-pelvica-ginecologica",
+      "nombre": "Ecografía pélvica / ginecológica / transvaginal",
+      "match": [
+        "ecografia pelvica",
+        "ecografia ginecologica",
+        "ecografia transvaginal",
+        "eco transvaginal",
+        "ecografia uterina",
+        "ecografia de ovario",
+        "ecografia de utero"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Para la vía transvaginal no hace falta vejiga llena: orina antes si querés.",
+        "Si el médico pide también la vía abdominal, tomá 3 a 4 vasos de agua 1 hora antes y no orines hasta el estudio.",
+        "Vas a desvestirte solo de la cintura para abajo."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ecografía transvaginal — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003779.htm"
+        },
+        {
+          "title": "Preparación para una ecografía transvaginal — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/preparacion-para-una-ecografia-transvaginal/"
+        },
+        {
+          "title": "Ecografía: preparaciones — Sanatorio Argentino (San Juan)",
+          "url": "https://www.sanatorioargentino.com.ar/especialidades-medicas/ecografia.html"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-vesicoprostatica",
+      "nombre": "Ecografía prostática / vesicoprostática",
+      "match": [
+        "ecografia prostatica",
+        "ecografia vesicoprostatica",
+        "ecografia de prostata",
+        "ecografia de vejiga",
+        "eco prostatica"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Vejiga llena: 1 hora antes del turno, orina y después tomá 1 litro de agua sin gas, terminando 30 minutos antes del turno.",
+        "No orines hasta después del estudio.",
+        "Si el estudio es por vía transrectal, tu médico puede indicarte además un enema: seguí esa instrucción puntual."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Instrucciones para ecografía vesico prostática — IDIM",
+          "url": "https://www.idim.com.ar/index.php/59-servicios/imagenes/instrucciones-para-pacientes/188-instrucciones-para-ecografia-vesico-prostatica"
+        },
+        {
+          "title": "Ecografía de vejiga o próstata — Centro Rossi",
+          "url": "https://www.cdrossi.com/estudios-medicos/estudios/ecograf%EF%BF%BDas_5/ecograf%EF%BF%BDa-de-vejiga-o-pr%EF%BF%BDstata_18.html"
+        },
+        {
+          "title": "Preparación previa para estudios ecográficos — Fundación Favaloro",
+          "url": "https://www.fundacionfavaloro.org/preparacion-previa/"
+        }
+      ]
+    },
+    {
+      "id": "mamografia",
+      "nombre": "Mamografía",
+      "match": [
+        "mamografia",
+        "mastografia",
+        "tomosintesis mamaria"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Mamografías anteriores, para comparar"
+      ],
+      "preparacion": [
+        "No uses desodorante, talco, crema ni perfume en axilas o mamas el día del estudio: pueden verse como manchas en la placa.",
+        "Si podés elegir el día, hacela entre el día 5 y 10 del ciclo menstrual: duele menos.",
+        "Avisá si estás embarazada o dando de mamar."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Preparación: mamografía y tomosíntesis — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/preparacion-para-la-mamografia-convencional-digital-y-tomosintesis-3d/"
+        },
+        {
+          "title": "Preparación para mamografías — MetroWest Medical Center",
+          "url": "https://www.mwmc.com/es/services/diagnostic-imaging/mammogram-prep"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-mamaria",
+      "nombre": "Ecografía mamaria",
+      "match": [
+        "ecografia mamaria",
+        "eco de mama",
+        "ecografia de mamas",
+        "ecografia mama"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Mamografías o ecografías mamarias anteriores, si las tenés"
+      ],
+      "preparacion": [
+        "No hace falta ayuno ni vejiga llena."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Ecografía: preparaciones (partes blandas) — Sanatorio Argentino (San Juan)",
+          "url": "https://www.sanatorioargentino.com.ar/especialidades-medicas/ecografia.html"
+        }
+      ]
+    },
+    {
+      "id": "ecografia-obstetrica",
+      "nombre": "Ecografía obstétrica",
+      "match": [
+        "ecografia obstetrica",
+        "ecografia de embarazo",
+        "eco obstetrica",
+        "ecografia fetal",
+        "translucencia nucal",
+        "ecografia morfologica"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Ecografías obstétricas anteriores y carnet de control del embarazo"
+      ],
+      "preparacion": [
+        "Hasta la semana 12-14 (primer trimestre), andá con la vejiga llena o con ganas de orinar: mejora la imagen.",
+        "Del segundo trimestre en adelante no hace falta vejiga llena."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ecografía del primer trimestre: viabilidad del embarazo — Unidad de la Mujer",
+          "url": "https://www.unidaddelamujer.es/ecografia-del-primer-trimestre-viabilidad-del-embarazo-y-alteraciones-cromosomicas/"
+        },
+        {
+          "title": "Ecografía del Primer Trimestre — Instituto Dra. Gómez Roig",
+          "url": "https://www.gomezroig.com/ecografia-del-primer-trimestre/"
+        },
+        {
+          "title": "Ecografía en el embarazo — Quirónsalud",
+          "url": "https://www.quironsalud.com/es/pruebas-diagnosticas/ecografia-embarazo"
+        }
+      ]
+    },
+    {
+      "id": "ecodoppler-vascular",
+      "nombre": "Ecodoppler vascular",
+      "match": [
+        "ecodoppler",
+        "eco doppler",
+        "doppler venoso",
+        "doppler arterial",
+        "doppler de miembros inferiores",
+        "doppler carotideo",
+        "doppler vascular"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "El doppler vascular periférico (piernas, carótidas) no necesita ayuno. El eco doppler renal o abdominal sí puede pedir ayuno y, en algunos centros, una medicación previa: confirmá con quien te deriva."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Vení con ropa cómoda que permita descubrir la zona a estudiar."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Ecografía: preparaciones (vascular periférica) — Sanatorio Argentino (San Juan)",
+          "url": "https://www.sanatorioargentino.com.ar/especialidades-medicas/ecografia.html"
+        },
+        {
+          "title": "Indicaciones para estudios de cardiología (ecodoppler renal) — Sanatorio Aconcagua",
+          "url": "https://sanatorioaconcagua.com/indicaciones-para-estudios-cardiologia.html"
+        }
+      ]
+    },
+    {
+      "id": "ecocardiograma",
+      "nombre": "Ecocardiograma",
+      "match": [
+        "ecocardiograma",
+        "eco doppler cardiaco",
+        "ecocardiograma doppler",
+        "eco cardiaco"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "El ecocardiograma transtorácico habitual no necesita ayuno. Solo el transesofágico, mucho menos frecuente, pide ayuno de 6 horas: si te indicaron ese, seguí esa instrucción puntual."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Vení con ropa cómoda que permita descubrir el torso.",
+        "No hace falta suspender medicación."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Eco Doppler Cardíaco: preparación — Diagnóstico Rojas",
+          "url": "https://www.diagnosticorojas.com.ar/blog/salud/que-preparacion-debes-tener-antes-de-un-eco-doppler-cardiaco/"
+        }
+      ]
+    },
+    {
+      "id": "electrocardiograma",
+      "nombre": "Electrocardiograma",
+      "match": [
+        "electrocardiograma",
+        "ecg",
+        "ekg"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "No hace falta ayuno.",
+        "Vení con ropa cómoda que permita descubrir el torso, las muñecas y los tobillos.",
+        "No uses cremas ni aceites en el pecho ese día."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Electrocardiogram (ECG or EKG): cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/ekg/about/pac-20384983"
+        },
+        {
+          "title": "Electrocardiograma — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/electrocardiograma/"
+        }
+      ]
+    },
+    {
+      "id": "ergometria",
+      "nombre": "Ergometría (prueba de esfuerzo)",
+      "match": [
+        "ergometria",
+        "prueba de esfuerzo",
+        "test de esfuerzo",
+        "ergometria cardiaca"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "No hace falta ayuno total, pero no comas alimentos sólidos en las 2 horas previas al estudio."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios cardiológicos previos, si los tenés"
+      ],
+      "preparacion": [
+        "Usá calzado cómodo y ropa holgada para hacer ejercicio.",
+        "No fumes antes del estudio.",
+        "Consultá a tu médico si tenés que tomar tu medicación habitual ese día: algunos remedios (como betabloqueantes) pueden interferir con el resultado.",
+        "No suspendas ninguna medicación sin indicación expresa de tu médico."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Ergometría — Centro Rossi",
+          "url": "https://www.cdrossi.com/estudios-medicos/estudios/cardiologia_13/ergometria_3.html"
+        },
+        {
+          "title": "Prueba de esfuerzo con ejercicio — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003878.htm"
+        },
+        {
+          "title": "Preparación para prueba de esfuerzo (ergometría) — Quirónsalud",
+          "url": "https://www.quironsalud.com/ciudad-real/es/pacientes-visitantes/preparacion-pruebas-diagnosticas-quirurgicas/cardiologia.ficheros/3018683-HCR32.1-PPD%209%20PREPARACI%C3%93N%20ERGOMETRIA.pdf"
+        }
+      ]
+    },
+    {
+      "id": "tomografia-general",
+      "nombre": "Tomografía / TAC (sin especificar contraste)",
+      "match": [
+        "tomografia",
+        "tac",
+        "tomografia computada",
+        "tomografia axial computarizada"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 4,
+        "agua_permitida": true,
+        "nota": "Se pide ayuno preventivo de 4 horas por si el médico decide usar contraste durante el estudio. Si tu orden aclara 'sin contraste', normalmente no hace falta ayuno: confirmá con Diagnóstico por Imágenes."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios previos (radiografías, tomografías, resonancias) en CD o en papel",
+        "Análisis de función renal (creatinina) reciente, si tenés"
+      ],
+      "preparacion": [
+        "Si sos diabético y tomás metformina, avisá al llegar: puede pedirse suspenderla 48 horas después de un contraste yodado.",
+        "Avisá si sos alérgico al yodo o a estudios con contraste anteriores."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "¿Tenés turno para una tomografía? 4 tips — contenido clínico argentino",
+          "url": "https://www.instagram.com/reel/DXcQACOABs2/?hl=en"
+        },
+        {
+          "title": "TAC con y sin contraste: preparación — Quirónsalud",
+          "url": "https://www.quironsalud.com/hospital-sur/es/servicios-medicos/preparaciones-pruebas-diagnosticas-terapeuticas/tac.ficheros/2477975-TAC%20con%20y%20sin%20contraste.pdf"
+        },
+        {
+          "title": "Por qué te pedimos tus estudios previos en radiología — contenido clínico argentino",
+          "url": "https://www.instagram.com/reel/DV9orDqAE5e/"
+        }
+      ]
+    },
+    {
+      "id": "tomografia-sin-contraste",
+      "nombre": "Tomografía sin contraste",
+      "match": [
+        "tomografia sin contraste",
+        "tac sin contraste",
+        "tomografia simple"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios previos (radiografías, tomografías, resonancias) en CD o en papel"
+      ],
+      "preparacion": [
+        "No hace falta ayuno.",
+        "Sacate objetos metálicos de la zona a estudiar (aros, cadenas, ganchos)."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "TAC con y sin contraste: preparación — Quirónsalud",
+          "url": "https://www.quironsalud.com/hospital-sur/es/servicios-medicos/preparaciones-pruebas-diagnosticas-terapeuticas/tac.ficheros/2477975-TAC%20con%20y%20sin%20contraste.pdf"
+        },
+        {
+          "title": "Preparación para una tomografía computarizada — Centro médico del norte de Nevada",
+          "url": "https://es.nnmc.com/services/diagnostic-imaging/prepare-for-your-imaging-test/ct-scan/"
+        }
+      ]
+    },
+    {
+      "id": "tomografia-con-contraste",
+      "nombre": "Tomografía con contraste",
+      "match": [
+        "tomografia con contraste",
+        "tac con contraste",
+        "tomografia contrastada",
+        "tac contrastado"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 6,
+        "agua_permitida": true,
+        "nota": "El ayuno para sólidos suele ser de 4 a 6 horas; varía por centro. El contraste yodado puede provocar náuseas, por eso se pide venir con el estómago vacío."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Análisis de función renal (creatinina) reciente",
+        "Estudios previos en CD o en papel"
+      ],
+      "preparacion": [
+        "Si sos diabético y tomás metformina, suspendela 48 horas después de recibir el contraste (con función renal normal); consultá a tu médico antes de suspenderla preventivamente.",
+        "Avisá si sos alérgico al yodo, al marisco o tuviste una reacción a un contraste anterior.",
+        "Buena hidratación antes y después del estudio reduce el riesgo de toxicidad renal por el contraste."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Medios de contraste en imágenes: suspensión de metformina 48 h — Revista Argentina de Radiología (SciELO)",
+          "url": "https://www.scielo.org.ar/scielo.php?script=sci_arttext&pid=S1852-99922013000100008"
+        },
+        {
+          "title": "TAC con y sin contraste: preparación — Quirónsalud",
+          "url": "https://www.quironsalud.com/hospital-sur/es/servicios-medicos/preparaciones-pruebas-diagnosticas-terapeuticas/tac.ficheros/2477975-TAC%20con%20y%20sin%20contraste.pdf"
+        },
+        {
+          "title": "Preparaciones, medicamentos y medios de contraste — SERAM (España)",
+          "url": "https://piper.espacio-seram.com/index.php/seram/article/download/7015/5482/6922"
+        }
+      ]
+    },
+    {
+      "id": "resonancia-magnetica",
+      "nombre": "Resonancia magnética (RMN)",
+      "match": [
+        "resonancia",
+        "resonancia magnetica",
+        "rmn",
+        "rm de",
+        "resonancia nuclear magnetica"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "Solo si tu resonancia lleva contraste (gadolinio) el centro puede pedirte 3 a 4 horas de ayuno: confirmalo al sacar el turno."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Estudios previos (resonancias, tomografías) en CD o en papel"
+      ],
+      "preparacion": [
+        "Sacate todos los objetos metálicos: aros, relojes, anteojos, hebillas para el pelo, dentadura postiza, audífonos.",
+        "Avisá si tenés marcapasos, desfibrilador implantado, implante coclear, clips de aneurisma o cualquier otro implante metálico: en algunos casos no se puede hacer el estudio.",
+        "Avisá si tenés claustrofobia: pueden ofrecerte un equipo abierto o una sedación leve.",
+        "Avisá si estás embarazada."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Seguridad de la RM — RadiologyInfo.org",
+          "url": "https://www.radiologyinfo.org/es/info/safety-mr"
+        },
+        {
+          "title": "Preparación para el examen de resonancia magnética — Capitol Imaging Services",
+          "url": "https://capitolimagingservices.com/es/prepare-for-your-visit/mri-exam-preparation/"
+        },
+        {
+          "title": "Resonancia magnética (MRI Scan): guía para el paciente en español",
+          "url": "https://www.mmclc.org/docs/ahmemorialmedicalcenterlibraries/default-document-library/spanish-mri2e1fad8a-336f-4c93-8b9c-a73f39053602.pdf"
+        }
+      ]
+    },
+    {
+      "id": "radiografia",
+      "nombre": "Radiografía",
+      "match": [
+        "radiografia",
+        "rx",
+        "placa"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "No hace falta ayuno.",
+        "Sacate objetos metálicos de la zona a radiografiar: aros, cadenas, cierres, broches, monedas.",
+        "Avisá si estás embarazada o podés estarlo.",
+        "Usá ropa cómoda, sin metal en la zona a estudiar."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "¿Qué ropa y complementos son adecuados para pruebas de radiología? — Radiología Club",
+          "url": "https://radiologiaclub.com/2016/02/11/que-ropa-y-complementos-son-adecuados-para-pruebas-de-radiologia/"
+        },
+        {
+          "title": "Antes de tu examen de rayos X: 3 tips — contenido clínico argentino",
+          "url": "https://www.instagram.com/p/DXrmsG2jeYI/"
+        }
+      ]
+    },
+    {
+      "id": "densitometria-osea",
+      "nombre": "Densitometría ósea",
+      "match": [
+        "densitometria osea",
+        "densitometria",
+        "dexa",
+        "dxa",
+        "mineralometria osea"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Densitometrías anteriores, si las tenés"
+      ],
+      "preparacion": [
+        "Dejá de tomar suplementos de calcio 24 horas antes del estudio.",
+        "Avisá si te hicieron recientemente un estudio con contraste de bario o una inyección de contraste yodado o de medicina nuclear: puede haber que esperar unos días antes de la densitometría.",
+        "Usá ropa cómoda sin broches, cierres ni botones metálicos.",
+        "Avisá si estás embarazada o podés estarlo."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Preparación para un estudio de densidad ósea — Centro médico del norte de Nevada",
+          "url": "https://es.nnmc.com/services/diagnostic-imaging/prepare-for-your-imaging-test/preparing-bone-density-study/"
+        },
+        {
+          "title": "Examen de densidad ósea (DEXA o DXA) — RadiologyInfo.org",
+          "url": "https://www.radiologyinfo.org/es/info/dexa"
+        },
+        {
+          "title": "Densitometría ósea — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/densitometria-osea/"
+        }
+      ]
+    },
+    {
+      "id": "holter",
+      "nombre": "Holter (monitoreo ambulatorio de ECG)",
+      "match": [
+        "holter",
+        "holter de 24 horas",
+        "holter ecg",
+        "monitoreo ambulatorio de ecg"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "Bañate antes de ir a colocarte el equipo: después no vas a poder mojarlo durante las 24 a 48 horas que lo llevás puesto.",
+        "No uses cremas ni aceites en el pecho ese día.",
+        "Llevá una remera holgada, de algodón, fácil de sacar sin mover los electrodos.",
+        "Durante el estudio anotá tus síntomas y actividades si te dan una planilla para eso."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Monitor Holter (24 horas) — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003877.htm"
+        },
+        {
+          "title": "Monitor Holter: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/holter-monitor/about/pac-20385039"
+        },
+        {
+          "title": "Recomendaciones al paciente portador de Holter ECG — Quirónsalud",
+          "url": "https://www.quironsalud.com/ciudad-real/es/pacientes-visitantes/preparacion-pruebas-diagnosticas-quirurgicas/cardiologia.ficheros/3018684-HCR32.1-PPD10%20RECOMENDACIONES%20AL%20PACIENTE%20PORTADOR%20DE%20HOLTER.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mapa-presurometria",
+      "nombre": "MAPA / Presurometría (monitoreo ambulatorio de presión arterial)",
+      "match": [
+        "mapa",
+        "presurometria",
+        "monitoreo ambulatorio de presion arterial",
+        "holter de presion"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Lista de la medicación que tomás y a qué hora"
+      ],
+      "preparacion": [
+        "Hacé tu vida normal durante las 24 horas del estudio: el objetivo es medir tu presión en el día a día.",
+        "No mojes el equipo: sacátelo antes de bañarte y no lo sumerjas.",
+        "Usá ropa con mangas anchas: el manguito va en el brazo todo el día.",
+        "Cuando el equipo se infle, quedate quieto con el brazo relajado unos segundos."
+      ],
+      "no_preparation_needed": true,
+      "sources": [
+        {
+          "title": "Presurometría 24 hs (MAPA): monitoreo ambulatorio de presión arterial — Boskis",
+          "url": "https://boskis.com/estudios/monitoreo-ambulatorio-de-presion-arterial/"
+        },
+        {
+          "title": "Presurometría o Holter de presión — ICBA",
+          "url": "https://www.icba.com.ar/pacientes/servicios-medicos/estudios-y-preparacion/presurometria-o-holter-de-presion"
+        },
+        {
+          "title": "Capítulo 82: monitoreo ambulatorio de presión arterial — Sociedad Argentina de Hipertensión Arterial (SAHA)",
+          "url": "https://www.saha.org.ar/uploads/pdf/Cap.082.pdf"
+        }
+      ]
+    },
+    {
+      "id": "espirometria",
+      "nombre": "Espirometría",
+      "match": [
+        "espirometria",
+        "prueba de funcion pulmonar",
+        "espirometria con broncodilatador"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Tus inhaladores, para llevarlos aunque no los uses antes del estudio"
+      ],
+      "preparacion": [
+        "No fumes en las 2 horas previas al estudio.",
+        "No comas una comida abundante en las 2 horas previas.",
+        "No hagas ejercicio intenso los 30 minutos previos.",
+        "Consultá a tu médico si tenés que suspender algún inhalador o broncodilatador antes del estudio: normalmente no se suspende sin indicación expresa.",
+        "Usá ropa suelta que no te apriete el pecho o el abdomen."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Espirometría: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/spirometry/about/pac-20385201"
+        },
+        {
+          "title": "Instrucciones de la Prueba de Espirometría — National Jewish Health",
+          "url": "https://www.nationaljewish.org/education/health-information/espanol/instrucciones-de-la-prueba-de-espirometria"
+        },
+        {
+          "title": "Cómo prepararse para hacer una espirometría — semFYC",
+          "url": "https://www.semfyc.es/storage/wp-content/uploads/2021/12/10.pdf"
+        }
+      ]
+    },
+    {
+      "id": "papanicolaou-colposcopia",
+      "nombre": "Papanicolaou / Colposcopía",
+      "match": [
+        "papanicolaou",
+        "pap",
+        "colposcopia",
+        "citologia cervical"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés"
+      ],
+      "preparacion": [
+        "No tengas relaciones sexuales en las 48 horas previas.",
+        "No uses óvulos, cremas vaginales ni te hagas duchas vaginales en las 48 horas previas.",
+        "No te lo hagas mientras estás con la menstruación: esperá unos 5 días después de que termine.",
+        "Avisá si estás embarazada."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Prueba de Papanicolaou — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/pruebas-de-laboratorio/prueba-de-papanicolaou/"
+        },
+        {
+          "title": "Atlas de colposcopia: principios y práctica — IARC Screening Group",
+          "url": "https://screening.iarc.fr/atlascolpoesdetail.php?Index=14&e="
+        }
+      ]
+    },
+    {
+      "id": "endoscopia-digestiva-alta",
+      "nombre": "Endoscopía digestiva alta",
+      "match": [
+        "endoscopia digestiva alta",
+        "endoscopia",
+        "videoendoscopia digestiva alta",
+        "egd"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": false,
+        "nota": "Ayuno de sólidos de 8 horas y de líquidos (incluida el agua) las últimas 2 a 4 horas antes del estudio. El estómago tiene que estar vacío para que el médico vea bien."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Alguien que te acompañe y te lleve, si te sedan"
+      ],
+      "preparacion": [
+        "Si es con sedación o anestesia local, no manejes ni firmes trámites importantes el resto del día.",
+        "Consultá a tu médico si tomás anticoagulantes o antiagregantes: pueden pedirte suspenderlos unos días antes.",
+        "Avisá si tenés prótesis dentales, alergias o enfermedades cardíacas o respiratorias."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Me indicaron una endoscopia digestiva alta: ¿qué necesito saber? — Hospital Italiano de Buenos Aires",
+          "url": "http://www.hospitalitaliano.org.ar/hiba/es/news/me-indicaron-una-endoscopia-digestiva-alta-que-necesito-saber"
+        },
+        {
+          "title": "Endoscopia superior: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/endoscopy/about/pac-20395197"
+        }
+      ]
+    },
+    {
+      "id": "colonoscopia",
+      "nombre": "Videocolonoscopía",
+      "match": [
+        "colonoscopia",
+        "videocolonoscopia",
+        "rectosigmoidoscopia"
+      ],
+      "ayuno": {
+        "required": true,
+        "horas": 8,
+        "agua_permitida": true,
+        "nota": "Ayuno de sólidos de al menos 8 horas antes del estudio, después de completar la preparación con laxante. Los días previos vas con dieta líquida o con bajo residuo, según te indique el instructivo que te entregan al sacar el turno."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "El laxante indicado, comprado con anticipación",
+        "Alguien que te acompañe y te lleve, si te sedan"
+      ],
+      "preparacion": [
+        "Empezá la dieta líquida o de bajo residuo 1 a 2 días antes, según el instructivo específico que te den al sacar el turno.",
+        "Tomá el laxante indicado en el horario exacto que te digan: de eso depende que el estudio se pueda hacer.",
+        "Consultá a tu médico si tomás anticoagulantes, antiagregantes o hierro: pueden pedirte suspenderlos unos días antes.",
+        "Si es con sedación, no manejes el resto del día."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Endoscopía y colonoscopía: preparación — Fundación Arturo López Pérez (FALP)",
+          "url": "https://www.falp.org/wp-content/uploads/2022/12/Endoscopi%CC%81a-y-colonoscopi%CC%81a-Preparacio%CC%81n-para-colonoscopi%CC%81a-corta-noviembre2022.pdf"
+        },
+        {
+          "title": "Endoscopia superior: cómo prepararse — Mayo Clinic",
+          "url": "https://www.mayoclinic.org/es/tests-procedures/endoscopy/about/pac-20395197"
+        }
+      ]
+    },
+    {
+      "id": "electroencefalograma",
+      "nombre": "Electroencefalograma (EEG)",
+      "match": [
+        "electroencefalograma",
+        "eeg",
+        "eeg de sueno",
+        "electroencefalograma con privacion de sueno"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": "No hace falta ayuno: comé normalmente antes del estudio."
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Lista de la medicación que tomás"
+      ],
+      "preparacion": [
+        "Andá con el pelo limpio, seco y sin gel, spray ni ningún producto: los electrodos necesitan buen contacto con el cuero cabelludo.",
+        "Tomá toda tu medicación como te la recetaron, salvo indicación puntual en contrario.",
+        "Si te pidieron un EEG con privación de sueño, dormí pocas horas la noche anterior (consultá el instructivo exacto: suele ser 4 a 5 horas) y no tomes café ni mate ese día."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "EEG (electroencefalograma): instrucciones — University of New Mexico Health Sciences",
+          "url": "https://hsc.unm.edu/medicine/departments/neurology/_files/eeg-instructions-spanish.pdf"
+        },
+        {
+          "title": "Cómo prepararse para la cita de electroencefalograma — Kaiser Permanente",
+          "url": "https://mydoctor.kaiserpermanente.org/ncal/Images/EEG%20(espanol)_tcm75-1543940.pdf"
+        },
+        {
+          "title": "Electroencefalograma — MedlinePlus",
+          "url": "https://medlineplus.gov/spanish/ency/article/003931.htm"
+        }
+      ]
+    },
+    {
+      "id": "fondo-de-ojo",
+      "nombre": "Fondo de ojo",
+      "match": [
+        "fondo de ojo",
+        "examen de fondo de ojo",
+        "oftalmoscopia",
+        "dilatacion de pupilas"
+      ],
+      "ayuno": {
+        "required": false,
+        "horas": null,
+        "agua_permitida": true,
+        "nota": null
+      },
+      "traer": [
+        "Orden médica de derivación (original)",
+        "DNI",
+        "Credencial de obra social o PAMI, si tenés",
+        "Anteojos de sol",
+        "Alguien que te acompañe y maneje, si vas en auto"
+      ],
+      "preparacion": [
+        "Te van a poner gotas para dilatar la pupila: vas a ver borroso y con más sensibilidad a la luz durante varias horas.",
+        "No manejes hasta que se te pase el efecto de las gotas.",
+        "Llevá anteojos de sol para la vuelta.",
+        "Si usás lentes de contacto, consultá si podés seguir usándolos ese día."
+      ],
+      "no_preparation_needed": false,
+      "sources": [
+        {
+          "title": "Hágase un examen de los ojos con dilatación de las pupilas — National Eye Institute",
+          "url": "https://www.nei.nih.gov/espanol/informacion-sobre-la-salud-ocular/vision-saludable/encontrar-un-oculista/hagase-un-examen-de-los-ojos-con-dilatacion-de-las-pupilas"
+        },
+        {
+          "title": "Qué no hacer después de una dilatación ocular — All About Vision",
+          "url": "https://www.allaboutvision.com/es/cuidado-de-los-ojos/examen-ocular/que-no-hacer-tras-dilatacion-pupila/"
+        },
+        {
+          "title": "Examen de la vista con las pupilas dilatadas — Cigna",
+          "url": "https://www.cigna.com/es-us/knowledge-center/hw/pruebas-mdicas/examen-de-la-vista-con-las-pupilas-dilatadas-abh1895"
+        }
+      ]
+    }
+  ]
+}

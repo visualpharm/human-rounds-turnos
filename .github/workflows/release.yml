@@ -1,0 +1,366 @@
+# ============================================================================
+# Release — publish the container image to GHCR (GitHub Container Registry).
+# Tier 6. Smallest honest release path: a v<version> tag push OR a manual
+# dispatch builds the Dockerfile and publishes EXACTLY after a vulnerability
+# gate passes — promoting one immutable digest to BOTH the version tag and
+# `latest` — using ONLY the built-in GITHUB_TOKEN (no PAT, no extra secrets
+# configured beyond what GitHub injects on every run).
+#
+# Publish ORDER (the contract this workflow is built around):
+#   0. ADMISSION (fail-closed): the commit being released MUST be reachable
+#      from main (`git merge-base --is-ancestor <sha> origin/main`). A SemVer
+#      tag pushed from a commit that has not landed on main is refused BEFORE
+#      any build happens — packages:write is never reached for off-main work.
+#   1. Build ONCE, push to a UNIQUE NON-RELEASE staging ref (never a version
+#      tag, never :latest). The staging ref is `staging-run-<run_id>-<attempt>`,
+#      so it is unique per run and carries no release semantics.
+#   2. Capture the immutable manifest digest the build produced
+#      (steps.build.outputs.digest) -> IMAGE@DIGEST.
+#   3. EVERY piece of evidence and every check binds to that IMAGE@DIGEST:
+#      the digest record, the standalone SBOM, and the grype scan all scan
+#      the digest, never a mutable tag.
+#   4. Scan failure -> hard refusal, exit 1. NEITHER the version tag NOR
+#      :latest is ever created. The only thing that exists is the staging ref.
+#   5. Scan success -> `imagetools create` promotes that EXACT digest to both
+#      `$IMAGE:$VERSION` and `$IMAGE:latest` in one step. No rebuild, no
+#      mutable-tag lookup — :version and :latest resolve to the SAME digest
+#      that was scanned, and therefore to its provenance/SBOM attestations.
+#
+# !!! THIS WORKFLOW HAS NEVER RUN — NOT PROVEN RELEASE INFRASTRUCTURE !!!
+#
+# GitHub Actions billing for this account is currently BLOCKED: the included
+# minutes are spent and there is a $0 hard stop (the same cost decision that
+# disabled ci.yml's and nightly.yml's hosted triggers — the product owner 2026-08-05, see
+# those files' headers). While that block is in place this file's triggers
+# physically CANNOT fire and no image has ever been published from it. The
+# YAML below is syntactically valid and the job graph is correct on paper,
+# but "valid YAML, correct on paper" is the ONLY claim being made. Treat
+# this as UNVERIFIED SCAFFOLDING until the first real dispatch actually
+# publishes and a human confirms the tags landed on ghcr.io.
+#
+# In particular, do NOT read a green check on a tag as "a release happened":
+# while billing is blocked a real run is impossible, so any success status
+# on this workflow would have to be a forgery or a stale/cached badge, never
+# a genuine publish. The first person to run it (once billing is restored)
+# MUST verify the publish by hand — open the package on ghcr.io and
+# `docker pull` both tags — before anyone treats GHCR publishing here as
+# working infrastructure.
+#
+# The artifact-integrity steps below (build to a unique non-release staging
+# ref, provenance + SBOM attestations on that image, a downloadable SPDX SBOM,
+# evidence + a grype scan both bound to the captured IMAGE@DIGEST, a grype
+# vulnerability gate that blocks BOTH the version tag and :latest on a
+# CRITICAL fixed-upstream CVE, promotion of that exact digest to both tags
+# without rebuilding, the recorded immutable digest, and the digest-pinned
+# docker-compose.release.yml install path) are EQUALLY UNPROVEN: no hosted
+# run, no image publication, no pull, no scan result, and no real digest has
+# ever been produced from this workflow. They are correct on paper against the
+# pinned action SHAs and their documented input contracts, and verified ONLY
+# by the static contract test
+# tests/release-artifact-integrity.test.mjs (structure, not execution). The
+# first real Actions run must verify each by hand: confirm the staging ref is
+# the only thing pushed by the build, the attestations land on the image, the
+# SBOM/scan artifacts are downloadable and bind to IMAGE@DIGEST, the digest
+# matches `docker buildx imagetools inspect`, a seeded CRITICAL-fixed finding
+# blocks BOTH the version tag and :latest, and on success :version and :latest
+# resolve to the SAME scanned digest. See docs/architecture/deploy.md.
+# ============================================================================
+name: Release
+
+on:
+  # Push a tag named v<version> (e.g. v1.2.3) to publish that version.
+  push:
+    tags:
+      - 'v*'
+  # Manual escape hatch: publish an explicit version string with no tag.
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to publish as vX.Y.Z (e.g. 1.2.3 → v1.2.3). Also tagged latest.'
+        required: true
+        type: string
+
+# One release at a time: two concurrent runs would both try to move
+# `latest`, and whichever image lands last wins — a race with no good
+# outcome. Never cancel a publish mid-push either (a half-pushed manifest
+# is worse than a queued run), so cancel-in-progress stays false.
+concurrency:
+  group: release-ghcr
+  cancel-in-progress: false
+
+# Minimal scope: read the repo to build, write packages to publish. The
+# built-in GITHUB_TOKEN is the ONLY credential this workflow ever uses — no
+# PAT, no configured secret beyond the token GitHub auto-injects per run.
+# `id-token: write` is DELIBERATELY absent: keyless cosign signing needs a
+# real GitHub OIDC token, which only exists inside an Actions job this
+# account cannot run while billing is frozen. Adding the permission now would
+# imply signing works; it does not, so the permission stays off until a real
+# run is observed and `id-token: write` is added alongside actual `cosign
+# sign` steps. Provenance/SBOM attestations (buildx) do NOT need it.
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  release:
+    name: Build and publish to GHCR
+    runs-on: ubuntu-latest
+    # Independent review gate: a manual dispatch may only fire from main, and
+    # a tag push may only fire from a v-prefixed tag. Anything else is skipped
+    # rather than published.
+    if: >-
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v'))
+    steps:
+      - name: Checkout (full history — the main-ancestry admission check needs it)
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # Full clone so the admission check below can test whether the commit
+          # being released is reachable from origin/main. The default
+          # fetch-depth: 1 only fetches the triggering ref and carries no main
+          # history, so ancestry cannot be determined.
+          fetch-depth: 0
+
+      # ── Fail-closed release admission: the commit MUST be on main ──────────
+      # Independent review gate (fail-closed). The tag-push trigger fires for
+      # ANY v* tag regardless of which branch the tagged commit lives on, so a
+      # SemVer tag pushed from an unmerged feature branch would otherwise reach
+      # `packages: write` and publish. `git merge-base --is-ancestor <sha>
+      # origin/main` exits 0 ONLY when the commit being released is reachable
+      # from main — i.e. the work has actually landed there. A manual dispatch
+      # is already on main by the job-level if:, so this is belt-and-suspenders
+      # for dispatch and the real gate for a tag push. A non-ancestor commit is
+      # refused BEFORE any build, push, scan, or tag creation happens.
+      - name: Admit release only if the commit is an ancestor of main
+        env:
+          TARGET_SHA: ${{ github.sha }}
+        run: |
+          set -eu
+          if ! git merge-base --is-ancestor "$TARGET_SHA" origin/main; then
+            echo "::error::Refusing to release: commit $TARGET_SHA is not reachable from main. A SemVer tag must point at a commit that has landed on main (merge the work into main and re-tag) before it can publish."
+            exit 1
+          fi
+          echo "Admission check passed: $TARGET_SHA is reachable from main."
+
+      # Multi-arch by design: the Dockerfile is documented portable to BOTH
+      # x86_64 and arm64 (python:3.12-slim with manylinux wheels verified on
+      # each — see the Dockerfile header). Publishing amd64-only would
+      # silently under-deliver against that, so both are built. QEMU is what
+      # lets an amd64 GitHub runner emulate arm64 for the cross build.
+      - name: Set up QEMU (arm64 emulation)
+        uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130 # v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+
+      - name: Log in to GHCR
+        uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Resolve image name and version tag
+        id: meta
+        shell: bash
+        # All GitHub context that flows into the script comes through step
+        # env, never interpolated into the shell source — a malformed ref or
+        # input value cannot become executable shell this way.
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REPOSITORY: ${{ github.repository }}
+          REF_NAME: ${{ github.ref_name }}
+          INPUT_VERSION: ${{ inputs.version }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          set -eu
+          # GHCR rejects uppercase in image names. This repo
+          # (visualpharm/sana-turnos) is all-lowercase today, but lowercase
+          # explicitly so a future org rename never silently breaks the push.
+          image="ghcr.io/$(printf '%s' "$REPOSITORY" | tr '[:upper:]' '[:lower:]')"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            # Manual input is a bare X.Y.Z; the published tag always carries
+            # the leading v.
+            version="v$INPUT_VERSION"
+          else
+            # Tag push already carries the v prefix (v1.2.3); keep it as-is.
+            version="$REF_NAME"
+          fi
+          # ONE whole-string Bash regex guard replaces the two grep stages.
+          # `[[ ... =~ ... ]]` tests the entire value in a single expression
+          # anchored ^...$, so there is no line-oriented "first line" the way
+          # grep has: an embedded newline or carriage return is just an
+          # ordinary byte that fails the anchored match (CR/LF rejected).
+          # The allowed shape is Docker-safe SemVer — vX.Y.Z with an optional
+          # -prerelease. Anything else (empty, "latest", bare X.Y.Z, build
+          # metadata '+', whitespace, slash, ...) fails before any value is
+          # written to GITHUB_OUTPUT. The invalid path echoes a FIXED message
+          # and never reflects the untrusted value.
+          semver_re='^v(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(-((0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9][0-9]*|[0-9A-Za-z-]*[A-Za-z-][0-9A-Za-z-]*))*))?$'
+          if [[ ! "$version" =~ $semver_re ]]; then
+            echo "::error::Refusing to publish: version is not a Docker-safe SemVer vX.Y.Z (optional -prerelease)."
+            exit 1
+          fi
+          # UNIQUE NON-RELEASE staging ref: one per run + attempt. This is
+          # what the build pushes FIRST, before any version/latest tag. It
+          # carries no release semantics — a stranger pinning to a staging
+          # tag is pinning to a build whose scan may still fail. RUN_ID and
+          # RUN_ATTEMPT are GitHub-controlled integers, so interpolation here
+          # is safe; they cannot inject a shell metacharacter.
+          staging="$image:staging-run-${RUN_ID}-${RUN_ATTEMPT}"
+          {
+            echo "image=$image"
+            echo "version=$version"
+            echo "staging=$staging"
+          } >> "$GITHUB_OUTPUT"
+          echo "Will build to $staging, scan IMAGE@DIGEST, then promote to $image:$version and $image:latest on scan success"
+
+      # ── Build ONCE to a unique non-release staging ref ────────────────────
+      # The staging ref is the ONLY thing pushed by the build. Neither the
+      # version tag nor :latest exists yet — they are promoted from the
+      # immutable digest this build produces, and ONLY after the vulnerability
+      # gate passes. So a scan failure leaves ZERO release tags behind: the
+      # staging ref is non-release and disposable.
+      - name: Build and push staging ref (provenance + SBOM attestations)
+        id: build
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          file: ./Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          # Machine-readable provenance (SLSA) + SBOM, attached to the image
+          # in the registry as in-toto attestations (visible via
+          # `docker buildx imagetools inspect` / a cosign attestation viewer).
+          # This IS the machine-readable provenance + SBOM the artifact-
+          # integrity path produces. Cryptographic SIGNING (keyless cosign via
+          # GitHub OIDC) is the deferred step — see the permissions block above
+          # and docs/architecture/deploy.md.
+          provenance: true
+          sbom: true
+          tags: ${{ steps.meta.outputs.staging }}
+
+      # ── SBOM artifact (downloadable SPDX JSON) ────────────────────────────
+      # The build's sbom:true attestation is attached to the image; this step
+      # ALSO emits a standalone, downloadable SPDX JSON for anyone doing a
+      # compliance review without registry-attestation tooling. It binds to
+      # the captured IMAGE@DIGEST — the same bytes that get promoted if the
+      # scan passes — never to a mutable tag.
+      - name: Generate SBOM (SPDX JSON)
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+        with:
+          image: ${{ steps.meta.outputs.image }}@${{ steps.build.outputs.digest }}
+          format: spdx-json
+          artifact-name: sbom-${{ steps.meta.outputs.version }}.spdx.json
+
+      # ── Fail-closed vulnerability gate for the release ────────────────────
+      # grype scans the captured IMAGE@DIGEST — the exact bytes that would be
+      # promoted. The resulting policy is precise: refuse the release when a
+      # CRITICAL-severity vulnerability WITH a known upstream fix is present.
+      # fail-build:true + severity-cutoff:critical + only-fixed:true implement
+      # it — vulnerabilities below CRITICAL, and CRITICALs with no fix
+      # available, do NOT block. continue-on-error lets the job carry on so the
+      # SARIF is uploaded and the refusal is explicit; the next-but-one step
+      # turns a failed scan into a hard, logged refusal to create ANY release
+      # tag, and the promote step is skipped (its if: requires
+      # scan.outcome == 'success'). NEITHER the version tag NOR :latest is
+      # created on failure — only the non-release staging ref exists. The exact
+      # AND of these two grype filters against the pinned scan-action is itself
+      # part of the hand-verify acceptance gate (a seeded CRITICAL-fixed finding
+      # must block BOTH tags) — see the workflow header.
+      - name: Vulnerability scan (fail-closed gate)
+        id: scan
+        uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2 # v7.4.0
+        with:
+          image: ${{ steps.meta.outputs.image }}@${{ steps.build.outputs.digest }}
+          fail-build: true
+          severity-cutoff: critical
+          only-fixed: true
+          output-format: sarif
+        continue-on-error: true
+
+      - name: Upload vulnerability scan (SARIF)
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: vuln-scan-${{ steps.meta.outputs.version }}.sarif
+          # scan-action exposes the SARIF path even when fail-build trips.
+          path: ${{ steps.scan.outputs.sarif }}
+
+      # Hard refusal: a CRITICAL fixed-upstream CVE was found. NEITHER the
+      # version tag NOR :latest is created — the only thing that exists is
+      # the non-release staging ref. Exiting non-zero marks the run failed so
+      # the block is unmissable, not a quiet warning — this is the
+      # "fail-closed vulnerability decision".
+      - name: Refuse release — unresolved CRITICAL CVE
+        if: steps.scan.outcome == 'failure'
+        env:
+          VERSION: ${{ steps.meta.outputs.version }}
+        run: |
+          echo "::error::Refusing to release $VERSION: CRITICAL fixed-upstream CVE(s). Neither the version tag nor :latest is created; only the non-release staging ref exists. Resolve the CVEs and re-run."
+          exit 1
+
+      # ── Promote the EXACT scanned digest to version + :latest ─────────────
+      # Reached only when the scan of IMAGE@DIGEST found no critical-fixed
+      # CVE. imagetools create copies that EXACT digest to BOTH the version
+      # tag and :latest in a single step — no rebuild, no mutable-tag lookup.
+      # :version and :latest resolve to the SAME digest that was scanned, and
+      # therefore to the same provenance/SBOM attestations already attached
+      # to that digest.
+      - name: Promote scanned digest to version and :latest
+        if: steps.scan.outcome == 'success'
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}
+          VERSION: ${{ steps.meta.outputs.version }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: docker buildx imagetools create -t "$IMAGE:$VERSION" -t "$IMAGE:latest" "$IMAGE@$DIGEST"
+
+      # ── Record the immutable digest (ONLY after successful promotion) ──────
+      # A tag is mutable; the sha256 manifest digest is not. This IMAGE@DIGEST
+      # is the single source of truth: the SBOM, scan, and promotion all bound
+      # to it, never to a mutable tag. Recorded to the run summary and a
+      # release-manifest artifact ONLY on successful promotion so a rejected
+      # staging candidate is NOT recorded as a release. A human copies the
+      # recorded line into RELEASES.md on each real release — the workflow has
+      # contents:read and does NOT auto-commit (auto-committing the manifest
+      # would need contents:write, a guardrail this workflow keeps off on purpose).
+      - name: Record immutable digest (release manifest + summary)
+        if: steps.scan.outcome == 'success'
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}
+          VERSION: ${{ steps.meta.outputs.version }}
+          DIGEST: ${{ steps.build.outputs.digest }}
+        run: |
+          set -eu
+          ref="$IMAGE@$DIGEST"
+          # Publication date (UTC) for the RELEASES.md ledger's date column.
+          today="$(date -u +%Y-%m-%d)"
+          # Paste-ready row matching RELEASES.md's real-release ledger columns
+          # exactly (| version tag | immutable digest reference | date | notes |),
+          # so a human copies one line straight into the ledger. The full @ref
+          # (repository + @sha256: + digest) is the "immutable digest reference".
+          ledger_row="| $VERSION | \`$ref\` | $today | |"
+          {
+            echo "### Release artifact — $VERSION"
+            echo
+            echo "- image: \`$IMAGE\`"
+            echo "- version tag: \`$VERSION\`"
+            echo "- immutable digest ref: \`$ref\`"
+            echo
+            echo "Append this row to the RELEASES.md real-release ledger:"
+            echo
+            echo "$ledger_row"
+          } >> "$GITHUB_STEP_SUMMARY"
+          # TSV mirroring the ledger columns: version <tab> full @ref <tab> date.
+          # The @ref already carries the digest, so a separate bare-digest
+          # column is redundant.
+          printf '%s\t%s\t%s\n' "$VERSION" "$ref" "$today" > release-manifest.tsv
+
+      - name: Upload release manifest
+        if: steps.scan.outcome == 'success'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: release-manifest-${{ steps.meta.outputs.version }}.tsv
+          path: release-manifest.tsv
+          if-no-files-found: error

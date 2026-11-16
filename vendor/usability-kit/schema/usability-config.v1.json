@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "usability-kit/usability-config.v1.json",
+  "title": "usability.config.json (v1)",
+  "type": "object",
+  "required": ["version", "project", "base_url", "public_pages"],
+  "additionalProperties": true,
+  "properties": {
+    "version": { "const": 1 },
+    "project": { "type": "string", "minLength": 1 },
+    "base_url": { "$ref": "#/definitions/httpUrl" },
+    "local_url": { "$ref": "#/definitions/httpUrl" },
+    "language": { "type": "string", "minLength": 2 },
+    "viewports": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "integer", "minimum": 200, "maximum": 4000 }
+    },
+    "public_pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/pagePath" }
+    },
+    "roles": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/definitions/role" }
+    },
+    "crawl": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "max_pages": { "type": "integer", "minimum": 1 },
+        "exclude": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "lighthouse": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pages": { "type": "array", "items": { "$ref": "#/definitions/pagePath" } }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "disable": { "type": "array", "items": { "$ref": "#/definitions/checkId" } },
+        "severity_overrides": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/severity" }
+        }
+      }
+    },
+    "walkthroughs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "role", "start", "steps"],
+        "additionalProperties": true,
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "role": { "type": "string", "minLength": 1 },
+          "start": { "$ref": "#/definitions/pagePath" },
+          "steps": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "expect": { "type": "string" },
+          "driver": { "enum": ["stagehand", "playwright"] },
+          "media": { "enum": ["fake"] }
+        }
+      }
+    },
+    "personas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "language": { "type": "string" },
+          "device": { "type": "string" },
+          "brief": { "type": "string" },
+          "reading": { "type": "string" }
+        }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "role", "start", "text"],
+        "additionalProperties": true,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "role": { "type": "string", "minLength": 1 },
+          "start": { "$ref": "#/definitions/pagePath" },
+          "text": { "type": "string", "minLength": 1 },
+          "success": { "type": "object" }
+        }
+      }
+    },
+    "llm": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "openrouter_op_item": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 }
+      }
+    },
+    "store": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "path": { "type": "string", "minLength": 1 }
+      }
+    }
+  },
+  "definitions": {
+    "httpUrl": { "type": "string", "pattern": "^https?://", "minLength": 8 },
+    "pagePath": { "type": "string", "pattern": "^/", "minLength": 1 },
+    "severity": { "enum": ["critical", "serious", "moderate", "minor"] },
+    "checkId": {
+      "enum": ["links", "console", "requests", "images", "overflow", "axe", "contrast",
+               "text_density", "tap_targets", "overlays", "menu_style", "lighthouse", "html", "walkthrough"]
+    },
+    "loginStep": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 2,
+      "properties": {
+        "fill": { "type": "string", "minLength": 1 },
+        "secret": { "type": "string", "minLength": 1 },
+        "value": { "type": "string" },
+        "click": { "type": "string", "minLength": 1 },
+        "wait_url": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "role": {
+      "type": "object",
+      "required": ["login", "pages"],
+      "additionalProperties": false,
+      "properties": {
+        "login": {
+          "type": "object",
+          "required": ["url", "steps"],
+          "additionalProperties": false,
+          "properties": {
+            "url": { "$ref": "#/definitions/pagePath" },
+            "steps": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/loginStep" } },
+            "env": { "type": "object", "additionalProperties": { "type": "string", "minLength": 1 } },
+            "op_item": { "type": "string", "minLength": 1 },
+            "op_vault": { "type": "string", "minLength": 1 }
+          }
+        },
+        "pages": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/pagePath" }
+        }
+      }
+    }
+  }
+}

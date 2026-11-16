@@ -1,0 +1,54 @@
+.env
+passwords.json
+# Contraseñas generadas por scripts/local-logins.py (cuentas de login local)
+.local-logins.json
+data/availability.json
+data/watch.json
+data/watch-state.json
+data/vault.json
+data/doctor-photo-batches/
+# Atlas de avatares (avatar_sprite.py): artefacto derivado, se reconstruye
+# solo a partir de las fotos. El nombre es el hash del contenido.
+data/avatar-sprite/
+data/private/
+# Órdenes de derivación (booking_requests.REFERRALS_DIR): en producción son
+# las imágenes/PDF que sube el paciente — datos de salud, nunca versionados.
+# Correr la suite de tests las genera en local, así que sin esta regla quedan
+# como untracked esperando que un `git add -A` distraído las suba.
+data/ordenes/
+# Fotos subidas (doctor_photos.py, account_photo.py): en producción viven en
+# el volumen persistente /app/data; en local las escriben la app y los e2e
+# (center-photo-create, admin-forms-roundtrip) — nunca se versionan.
+data/centro-fotos/
+data/medico-fotos/
+data/cuenta-fotos/
+tests/fixtures/usability-private/
+.DS_Store
+__pycache__/
+*.pyc
+.playwright-mcp/
+logs/
+docs/*.png
+design-handoff/
+data/msd_turnos.json
+node_modules/
+# Salida del e2e con @playwright/test (npm run e2e)
+playwright-report/
+test-results/
+storybook-static/
+debug-storybook.log
+CLAUDE.local.md
+# Permisos locales de Claude Code de cada máquina: nunca se publican (el
+# preflight del corte público los rechaza; antes sólo los tapaba el ignore global).
+.claude/settings.local.json
+.claude/inbox/
+node_modules
+docker-compose.override.yml
+artifacts/
+.mimosa/
+
+# Test exploration / ad-hoc verification scripts (not part of official suite)
+/journey-test-*.mjs
+/test-journeys.mjs
+/verify-*.js
+/tests/e2e/*-tmp.mjs

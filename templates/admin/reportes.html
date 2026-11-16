@@ -1,0 +1,38 @@
+{# The shared shell owns navigation and title; the native controller owns Reports content. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.reports.reports.crumb_reportes', 'Reportes') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.reports.reports.crumb_reportes', 'Reportes') }}{% endblock %}
+
+{% block head %}
+<style>
+  #sec-reportes [role="alert"]{font-size:16px;color:var(--text);}
+  #sec-reportes #reports-retry,#sec-reportes [data-retry]{min-height:44px;min-width:44px;font-size:16px;}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap"><div id="sec-reportes"></div></div>
+{% endblock %}
+
+{% block scripts %}
+<template id="reports-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.reports.reports.error_generico', 'No se pudo cargar. Reintentá.') }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Recargar') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  // Once the module's dependencies are in, a slow report is the module's
+  // loading state and a failed one its data-failure message.
+  const host = document.getElementById("sec-reportes");
+  bootScreen({
+    host,
+    recovery: "reports-load-recovery",
+    load: () => import("{{ static('platform/admin-reports.mjs') }}"),
+    mount: (Reports, onError) => Reports.mountReports({
+      root: host, onError, currency: {{ reports_currency_json|safe }},
+    }),
+  });
+</script>
+{% endblock %}

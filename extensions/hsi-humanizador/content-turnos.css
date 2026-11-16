@@ -1,0 +1,37 @@
+/* Inside the panel's own table: its tokens, so both themes keep their look.
+   The cell stays a table cell (its width and borders are the table engine's);
+   the button is pinned to its right edge over reserved padding. */
+td:has(> .hr-hsi){position:relative;padding-right:132px !important;}
+.hr-hsi{position:absolute;right:8px;top:50%;transform:translateY(-50%);}
+.hr-hsi-boton{font:inherit;font-size:13px;font-weight:600;line-height:1.2;padding:5px 10px;border-radius:6px;white-space:nowrap;cursor:pointer;
+  border:1px solid var(--accent-bd,#cde7d5);background:var(--panel,#fff);color:var(--accent-hover,#0d7d48);}
+.hr-hsi-boton:hover{background:var(--hover-bg-soft,#eaf4ec);}
+.hr-hsi-boton:disabled{cursor:progress;}
+.hr-hsi-boton[data-estado="esperando"]{border-color:#b26a00;color:#8a5200;}
+.hr-hsi-boton[data-estado="guardado"]{border-color:transparent;background:none;color:var(--text,#1c1f23);cursor:default;padding-right:0;}
+.hr-hsi-boton[data-estado="error"]{border-color:#a4161a;color:#a4161a;}
+.hr-hsi-aviso{position:absolute;right:0;top:calc(100% + 4px);z-index:5;width:max-content;max-width:300px;box-sizing:border-box;
+  padding:8px 10px;border:1px solid #a4161a;border-radius:6px;background:#fff;color:#a4161a;font-size:13px;font-weight:600;
+  line-height:1.35;white-space:normal;text-align:left;box-shadow:0 6px 16px rgba(15,23,42,.14);}
+.hr-hsi-aviso:empty{display:none;}
+.hr-hsi-datos{position:fixed;z-index:2147483000;width:260px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-sizing:border-box;display:grid;gap:10px;
+  padding:12px 14px;border:1px solid #9aa2ad;border-radius:10px;background:#fff;color:#1c1f23;font-size:14px;line-height:1.35;
+  white-space:normal;text-align:left;box-shadow:0 10px 24px rgba(15,23,42,.18);}
+.hr-hsi-datos strong{font-size:15px;}
+.hr-hsi-datos label{display:grid;gap:4px;font-weight:600;}
+.hr-hsi-datos input,.hr-hsi-datos select{font:inherit;font-weight:400;width:100%;box-sizing:border-box;padding:7px 9px;
+  border:1px solid #9aa2ad;border-radius:7px;background:#fff;color:#1c1f23;}
+.hr-hsi-datos div{display:flex;gap:8px;}
+.hr-hsi-datos button{font:inherit;font-weight:600;padding:7px 12px;border-radius:7px;cursor:pointer;border:1px solid #9aa2ad;background:#fff;color:#1c1f23;}
+.hr-hsi-datos .hr-hsi-seguir{border-color:#0d7d48;background:#0d7d48;color:#fff;}
+/* Changes after the load (cancelled, moved, attended): one row each, pinned to the corner. */
+.hr-hsi-cambios{position:fixed;right:16px;bottom:16px;z-index:2147482000;width:360px;max-width:calc(100vw - 32px);box-sizing:border-box;display:grid;gap:8px;
+  padding:12px 14px;border:1px solid #9aa2ad;border-radius:10px;background:#fff;color:#1c1f23;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:14px;line-height:1.35;box-shadow:0 10px 24px rgba(15,23,42,.18);}
+.hr-hsi-cambio{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 10px;font-weight:600;}
+.hr-hsi-cambio .hr-hsi-boton{margin-left:auto;}
+.hr-hsi-cambio-error{flex-basis:100%;color:#a4161a;font-weight:600;}
+/* «Ocultar» after a refusal: quieter than the row's action, still a button. */
+.hr-hsi-ocultar{margin-left:auto;font:inherit;font-size:13px;font-weight:600;line-height:1.2;padding:5px 10px;border-radius:6px;white-space:nowrap;cursor:pointer;
+  border:1px solid #c4cad2;background:#fff;color:#3d4450;}
+.hr-hsi-ocultar:hover{background:#f1f3f5;}

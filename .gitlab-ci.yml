@@ -1,0 +1,184 @@
+# CI on the GitLab instance's shared runners (docker executor, they run
+# untagged jobs). Same five
+# surfaces as scripts/ci_local.sh — backend, frontend, routes, cassettes, e2e.
+#
+# It is a SIGNAL, never a gate on deploy: production and the demo deploy from
+# Coolify's push webhook on `main`, which does not wait for this pipeline.
+#
+# One image for every job: Playwright's own Ubuntu 24.04 image ships the
+# Chromium build the pinned playwright@1.63 expects plus Node, and noble's
+# python3 is 3.12 — the version production runs. The node --test suites both
+# drive that Chromium and shell out to python3, so every job gets both.
+#
+# No automatic trigger (2026-11-03): the gate lives on this machine
+# (`~/.claude/bin/local-ci`, the same five surfaces), so a push or a merge
+# request starts nothing here. The pipeline only runs when someone presses
+# "Run pipeline" in the GitLab UI (source `web`) or calls the pipelines API.
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "web"
+
+default:
+  image: mcr.microsoft.com/playwright:v1.63.0-noble
+  interruptible: true
+  timeout: 1h
+  cache:
+    - key:
+        prefix: pip
+        files: [requirements.txt]
+      paths: [.cache/pip]
+    - key:
+        prefix: npm
+        files: [package-lock.json]
+      paths: [.cache/npm]
+  before_script:
+    # poppler-utils (pdftoppm) and ffmpeg: without them test_referral_pages.py
+    # and test_voice.py skip themselves.
+    - apt-get update -qq
+    - apt-get install -y -qq --no-install-recommends python3-venv poppler-utils ffmpeg postgresql-client socat
+    - python3 -m venv /opt/venv
+    - export PATH="/opt/venv/bin:$PATH"
+    - pip install -q -r requirements.txt -r scripts/requirements-ci.txt
+    - npm ci --no-audit --no-fund
+    - |
+      if [ -n "${WAIT_FOR_POSTGRES:-}" ]; then
+        for i in $(seq 60); do pg_isready -q -h postgres -U sana && break; sleep 1; done
+        pg_isready -h postgres -U sana
+        # The service answers as `postgres`, but scripts/local-logins.py
+        # refuses any database that is not on localhost (its safety rule),
+        # so the job reaches the service through a loopback forward.
+        socat TCP-LISTEN:5432,bind=127.0.0.1,fork,reuseaddr TCP:postgres:5432 &
+        for i in $(seq 20); do pg_isready -q -h 127.0.0.1 -U sana && break; sleep 0.5; done
+        pg_isready -h 127.0.0.1 -U sana
+      fi
+
+variables:
+  TURNOS_FAKE_AI: "1"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  npm_config_cache: "$CI_PROJECT_DIR/.cache/npm"
+
+stages:
+  - test
+
+# Throwaway service credentials, local to one job — not a real secret. Tests
+# create and drop their own run-scoped databases; the URL is the maintenance
+# database, never a fixed test database.
+# postgres:16 is the version docker-compose.yml and INSTALL.md ship, and its
+# pg_dump matches noble's postgresql-client (a 16 client refuses a 17
+# server).
+.postgres:
+  services:
+    - name: postgres:16-alpine
+      alias: postgres
+      # Throwaway service: durability buys nothing and costs a lot — the suite
+      # creates and drops hundreds of databases, and with fsync on the DDL-heavy
+      # files (the Alembic tests: 712 s against 61 s) crawled while the lanes
+      # shared the disk. Five backend lanes (scripts/run_backend_shards.py) also hold a
+      # database and connection pools each; the image's default of 100 is thin.
+      command: ["postgres", "-c", "max_connections=300", "-c", "fsync=off",
+                "-c", "synchronous_commit=off", "-c", "full_page_writes=off"]
+  variables:
+    POSTGRES_USER: sana
+    POSTGRES_PASSWORD: sana
+    POSTGRES_DB: postgres
+    DATABASE_URL: "postgresql://sana:sana@127.0.0.1:5432/postgres"
+    TEST_DATABASE_URL: "postgresql://sana:sana@127.0.0.1:5432/postgres"
+    WAIT_FOR_POSTGRES: "1"
+
+backend:
+  stage: test
+  extends: .postgres
+  script:
+    # Not as root: root ignores file modes, so the unreadable-file tests
+    # skip themselves and the coverage guard below (rightly) rejects that.
+    # The image's own unprivileged user runs the suite, as on a laptop.
+    - chown -R pwuser:pwuser "$CI_PROJECT_DIR"
+    # Sharded by default (scripts/run_backend_shards.py: parallel processes,
+    # one database each, merged into the same report); a variable
+    # TURNOS_BACKEND_SERIAL=1 (pipeline "Run pipeline" form) keeps the one-process run.
+    - >-
+      setpriv --reuid=pwuser --regid=pwuser --init-groups env HOME=/home/pwuser
+      bash -o pipefail -c 'if [ "${TURNOS_BACKEND_SERIAL:-}" = "1" ]; then
+      python3 -W error::ResourceWarning scripts/run_backend_tests.py --report backend-results.json 2>&1 | tee test-output.log;
+      else python3 scripts/run_backend_shards.py --report backend-results.json
+      --timings-out backend-timings.json
+      --seed-out backend-timings-seed.json --log-dir backend-shard-logs
+      --coverage-dir backend-coverage 2>&1 | tee test-output.log; fi'
+    # DB-backed modules skip themselves without Postgres and unittest still
+    # prints OK; this fails a run that silently lost them, or lost more than ~3 % of
+    # the tests (min_tests in scripts/coverage_floor.json).
+    - python3 scripts/check_unittest_coverage.py test-output.log --result-json backend-results.json
+    # Line and branch coverage per package must not fall below the floors in
+    # scripts/coverage_floor.json (the sharded run measures it; the serial one does not).
+    - >-
+      if [ "${TURNOS_BACKEND_SERIAL:-}" != "1" ]; then
+      python3 scripts/coverage_floor.py check --summary backend-coverage/coverage-summary.json
+      --report backend-results.json; fi
+  artifacts:
+    when: always
+    expire_in: 14 days
+    paths: [test-output.log, backend-results.json, backend-timings.json,
+            backend-timings-seed.json, backend-shard-logs/,
+            backend-coverage/coverage-summary.json, backend-coverage/coverage-summary.txt,
+            backend-coverage/coverage-files.json]
+
+routes:
+  stage: test
+  extends: .postgres
+  script:
+    - scripts/run_routes_tests.sh --workers 4
+
+cassettes:
+  stage: test
+  script:
+    - python3 -W error::ResourceWarning -m unittest discover -s tests -p "test_*_cassette.py"
+    - python3 scripts/audit_cassettes.py
+
+frontend:
+  stage: test
+  extends: .postgres
+  script:
+    # c8 wraps the run (scripts/c8rc.json); the per-directory line and branch coverage of what the
+    # test processes execute must not fall below the js floors of scripts/coverage_floor.json.
+    # The suite goes through scripts/run_frontend_tests.mjs, as in scripts/ci_local.sh and
+    # pre-commit.sh: the floors are measured there, and its own entry block counts as covered
+    # `scripts` lines (a bare `node --test` run left it out: 73.10 % against the 82.7 % floor).
+    - >-
+      bash -o pipefail -c 'node_modules/.bin/c8 --config scripts/c8rc.json --reports-dir frontend-coverage
+      node scripts/run_frontend_tests.mjs 2>&1 | tee frontend.log'
+    # Fewer tests than min_js_tests in scripts/coverage_floor.json means the suite silently lost some.
+    - python3 scripts/coverage_floor.py count --log frontend.log
+    - python3 scripts/coverage_floor.py check --kind js --summary frontend-coverage/coverage-summary.json
+  artifacts:
+    when: always
+    expire_in: 14 days
+    paths: [frontend.log, frontend-coverage/coverage-summary.json]
+
+e2e:
+  stage: test
+  extends: .postgres
+  variables:
+    TURNOS_E2E_ARTIFACTS_DIR: "$CI_PROJECT_DIR/e2e-artifacts"
+    # Workers are capped at 4 on the shared runners: every worker is a Python
+    # server + a database + a Chromium, the runner sees 12 cores and also runs the
+    # backend job (and, for a branch with an open MR, a second pipeline). With one
+    # worker per core, a first run on the runner (two pipelines at once) had tests
+    # fail on layout/timing; 4 is the shape measured as quiet-and-fast on a 4-core
+    # container beside a looping backend suite (0 failures in 5 runs, ~5 min).
+    PW_WORKERS: "4"
+  script:
+    # Suites that still write under ~/.claude/artifacts land in the same
+    # collected directory.
+    - mkdir -p "$TURNOS_E2E_ARTIFACTS_DIR" ~/.claude
+    - ln -sfn "$TURNOS_E2E_ARTIFACTS_DIR" ~/.claude/artifacts
+    # Playwright Test (playwright.config.mjs): PW_WORKERS workers, a test that
+    # fails once and passes on a retry still FAILS the job (the failed attempt keeps
+    # its screenshot and page snapshot, the first retry the trace). Gate mode: a missing Playwright/Chromium/
+    # Postgres FAILS, never skips.
+    - npm run e2e
+  artifacts:
+    when: always
+    expire_in: 14 days
+    # playwright-report/ is the HTML report; test-results/ holds the
+    # screenshot and page snapshot of every failed attempt and the trace of the first retry.
+    paths: [e2e-artifacts/, playwright-report/, test-results/]

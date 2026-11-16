@@ -1,0 +1,4 @@
+{
+  "_comment": "Phase 2b (3/N), 2026-07-30. National official-source domains. catalog.official_sources() composes this file with the province layer and an optional private municipality layer; knowledge.py consumes the same function.",
+  "domains": ["argentina.gob.ar", "servicios.infoleg.gob.ar"]
+}

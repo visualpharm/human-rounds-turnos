@@ -1,0 +1,24 @@
+{
+  "_comment": "Which numbers take the singular («1 turno», Russian 21) in each shipped language, and for Russian and Ukrainian which take «few» (2, 3, 4) and «many» (0, 5–20); every other number is «other». Read by tests/i18n-plural.test.mjs (Intl.PluralRules through static/platform/i18n.mjs) and tests/test_i18n_plural.py (app/core/i18n.py plural_category), so the two halves cannot drift.",
+  "numbers": [0, 1, 2, 3, 4, 5, 11, 12, 14, 21, 22, 24, 25, 31, 101, 111, 112, 1.5, 0.5, 1000000],
+  "one": {
+    "es": [1],
+    "en": [1],
+    "it": [1],
+    "de": [1],
+    "fr": [0, 1, 1.5, 0.5],
+    "pt": [0, 1, 1.5, 0.5],
+    "ru": [1, 21, 31, 101],
+    "uk": [1, 21, 31, 101],
+    "ja": [],
+    "zh": []
+  },
+  "few": {
+    "ru": [2, 3, 4, 22, 24],
+    "uk": [2, 3, 4, 22, 24]
+  },
+  "many": {
+    "ru": [0, 5, 11, 12, 14, 25, 111, 112, 1000000],
+    "uk": [0, 5, 11, 12, 14, 25, 111, 112, 1000000]
+  }
+}

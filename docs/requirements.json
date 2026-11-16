@@ -1,0 +1,641 @@
+[
+  {
+    "id": "execute-dont-reanalyze",
+    "kind": "process",
+    "text": "When analysis or an inventory is already done, execute and finish the edits in the same session — never restart research, re-audit, or stop after announcing.",
+    "examples": [
+      "Write the already researched server-retirement slice 6 plan now. Do not inspect parking notes, memories, job directories, agent state, Git history, stashes, or temp directories.",
+      "Apply the already composed and evidence-verified corrections to docs/roadmap/tier7-g0-required-artifacts-plan.md now. Use the current session context; do not perform more research"
+    ],
+    "first_seen": "2026-08-18",
+    "times": 38,
+    "status": "active"
+  },
+  {
+    "id": "claims-match-current-source",
+    "kind": "process",
+    "text": "Re-derive every count, SHA, ancestry, and behavior claim from the current tree and origin/main before freezing; a previously frozen head is stale by definition.",
+    "examples": [
+      "two release-contract contradictions: an ordinary clone cannot reproduce a no-remote single-commit preflight candidate",
+      "Reconcile the exact 51-key inventory (45 account plus 6 footer), acknowledge existing /auth/test and /auth/sso parity scenarios"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 26,
+    "status": "active"
+  },
+  {
+    "id": "verify-live-before-done",
+    "kind": "process",
+    "text": "Never report done without live verification: documented runner green, real browser journeys passing, and blockers fixed, not explained away.",
+    "examples": [
+      "Human Rounds has an acceptance-criteria failure: the refactor calls FastAPI routes \"native\" even when they immediately execute the old handle(handler, method) contract",
+      "Adversarial review found an acceptance failure. Fix it now without broadening scope"
+    ],
+    "first_seen": "2026-08-26",
+    "times": 20,
+    "status": "active"
+  },
+  {
+    "id": "proceed-autonomously",
+    "kind": "process",
+    "text": "Keep working autonomously: adapt or skip blocked or denied steps, never retry denied tools, and never wait for approval of routine actions.",
+    "examples": [
+      "Use Read tools instead of approval-prone shell discovery.",
+      "Avoid the permission-blocked scratch-script approach; make the plan executable, hermetic, dependency-aware, and bounded"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 18,
+    "status": "active"
+  },
+  {
+    "id": "converge-main-thread-no-subagents",
+    "kind": "process",
+    "text": "Run audits and reviews directly in the main thread: no subagents and no provider/model or environment probing; converge from evidence already gathered.",
+    "examples": [
+      "Do not spawn subagents and do not broaden the audit. Start editing after the minimum source reads needed.",
+      "Stop probing env. JSONL already records glm-5.3. Apply the three reviewed plan corrections now, run only the safe static checks, freeze and report."
+    ],
+    "first_seen": "2026-08-17",
+    "times": 15,
+    "status": "active"
+  },
+  {
+    "id": "tests-prove-production",
+    "kind": "process",
+    "text": "Tests exercise real production code through supported seams and run unconditionally; testing a copy or source strings proves nothing; a skip is a false proof.",
+    "examples": [
+      "fix the test contract so ResourceWarning-as-error is genuinely clean and the claimed full module-gating, role, and language matrix is actually frozen",
+      "eliminate duplication and below-boundary/mock-heavy assertions, keep only trustworthy mounted-app behavior proofs"
+    ],
+    "first_seen": "2026-08-16",
+    "times": 12,
+    "status": "active"
+  },
+  {
+    "id": "advisory-lock-error-discipline",
+    "kind": "process",
+    "text": "DB error paths: rollback before advisory unlock, exactly-once lock release, search_path restored, original exception re-raised while the connection closes.",
+    "examples": [
+      "independent review found a PostgreSQL session advisory-lock leak when the yielded body aborts its transaction: the unlock currently runs before rollback and is rejected",
+      "the cleanup tries the session advisory unlock while the connection is still INERROR"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 12,
+    "status": "active"
+  },
+  {
+    "id": "hermetic-exact-verification",
+    "kind": "process",
+    "text": "Verification is hermetic and exact: runnable gates with secret-free parseable values, no inherited env or DB config, no live network, and honest skips.",
+    "examples": [
+      "replace false --help/smoke claims with hermetic writer and explicit status/Location gates",
+      "replace false/broad grep gates with exact runnable commands; define a hermetic egress-blocked boot proof"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 11,
+    "status": "active"
+  },
+  {
+    "id": "schema-completeness-semantic-proofs",
+    "kind": "process",
+    "text": "Stamp a schema COMPLETE only after semantic proofs: defaults, types, nullability, owned indexes, CHECK semantics, and PK order match by identity, not names.",
+    "examples": [
+      "legacy_state can stamp 0001 with baseline CREATE TABLE constraints/nullability/constraint-owned indexes absent",
+      "the current completeness classifier still accepts materially incomplete schemas: it does not distinguish missing/wrong defaults and types"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 10,
+    "status": "active"
+  },
+  {
+    "id": "complete-source-accurate-inventories",
+    "kind": "process",
+    "text": "Data, filesystem, and egress inventories list every real store, cache, log, and egress surface from current source; baselines exclude data/logs, scan symlinks.",
+    "examples": [
+      "Add the referral-analysis cache at `ai/data/ordenes/analysis-cache` and `/app/data/private/clinical-history.json`",
+      "Make the filesystem, browser, and egress inventories complete and source-accurate: include all app state/cache/log files identified by review"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 6,
+    "status": "active"
+  },
+  {
+    "id": "evidence-from-repo-only",
+    "kind": "process",
+    "text": "Derive evidence only from the repository and designated files — never the user's config, memories, jobs, or parking notes; never cite sibling checkouts.",
+    "examples": [
+      "remaining Spanish developer prose in notifications/otp_send.py, and a nonexistent sibling-checkout citation",
+      "Do not use parking notes. Inspect only the named worktrees' git state/diffs and existing review evidence, then write the one bounded plan and freeze."
+    ],
+    "first_seen": "2026-08-17",
+    "times": 6,
+    "status": "active"
+  },
+  {
+    "id": "plans-stop-at-frozen-diff",
+    "kind": "process",
+    "text": "Plans stop at a reviewed frozen uncommitted diff: no commit, push, merge, PR, land, or deploy instructions; correction lanes never merge or commit.",
+    "examples": [
+      "remove every instruction to commit, push, merge, or land; hand off a frozen diff to Codex instead",
+      "Replace the unsafe commit/merge/delete/stash workflow with a read-only gate proving C6 is applied and verified on the actual held-integration candidate"
+    ],
+    "first_seen": "2026-08-18",
+    "times": 6,
+    "status": "active"
+  },
+  {
+    "id": "transaction-safe-db-code",
+    "kind": "process",
+    "text": "Schema inspection and repair stay inside the caller transaction: savepoint-safe cleanup, no commit or rollback, and proofs show second-session invisibility.",
+    "examples": [
+      "keep canonicalization inside the caller transaction with temporary or savepoint-safe cleanup and no commit or rollback"
+    ],
+    "first_seen": "2026-08-18",
+    "times": 6,
+    "status": "active"
+  },
+  {
+    "id": "finish-edits-coherent",
+    "kind": "process",
+    "text": "Finish every edit to a coherent, green state: new fields built and read, references current after renames, existing fixtures still working; never stop mid-edit.",
+    "examples": [
+      "Update only the stale renamed paths/symbols and exact OTP alias wording it identified",
+      "Your first edit is incomplete and currently cannot construct `required_stamp_shape()`: its `BaselineShape(...)` call omits the new `column_types` and `column_defaults` fields."
+    ],
+    "first_seen": "2026-08-17",
+    "times": 5,
+    "status": "active"
+  },
+  {
+    "id": "obey-stop-dependencies",
+    "kind": "process",
+    "text": "Plans and packets obey approved orderings and STOP boundaries literally: a gated candidate waits until its dependency lands and is reconciled.",
+    "examples": [
+      "Align it with the approved publication packet: G0 before D1, eventual reconciled integration head rather than the divergent held base",
+      "obey the ESM facade STOP dependency and integrity-account for untracked files, replace false greps, make boot proof hermetic"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 5,
+    "status": "active"
+  },
+  {
+    "id": "real-boundaries-no-copies",
+    "kind": "process",
+    "text": "Boundaries are real: each implementation lives exactly once in its owner; renamed copies, shims, wrappers, or vendor imports across boundaries are evasion.",
+    "examples": [
+      "This is an adversarial correction: previous attempts either copied connectors/hsi/hsi_resolver.py under a new name or hid the entire resolver behind HsiConnector",
+      "Previous GLM attempts cheated by copying hsi_resolver or by hiding all resolver work behind HsiConnector."
+    ],
+    "first_seen": "2026-08-31",
+    "times": 5,
+    "status": "active"
+  },
+  {
+    "id": "shared-ui-source-of-truth",
+    "kind": "any",
+    "text": "Screens reuse the one shared stylesheet, controller, and markup (single gate stylesheet, shared #adm-h1 title); copied inline twins are rejected.",
+    "examples": [
+      "Take over the existing uncommitted /admin/login worktree and repair it. The previous implementation is rejected.",
+      "Independent verification rejected your result. Fix the same worktree, do not restart or rationalize."
+    ],
+    "first_seen": "2026-08-31",
+    "times": 5,
+    "status": "active"
+  },
+  {
+    "id": "scannable-evidence-backed-reports",
+    "kind": "report",
+    "text": "Reports lead with a short verdict and keep evidence scannable: screenshots actually embedded from unique per-run dirs, findings next to their evidence.",
+    "examples": [
+      "what is short summary of what u found and what r u doing and what r yr short term goals. Be short.",
+      "the report has no screenshots at all"
+    ],
+    "first_seen": "2026-09-02",
+    "times": 4,
+    "status": "active"
+  },
+  {
+    "id": "stay-on-assigned-scope",
+    "kind": "process",
+    "text": "Work only on the assigned slice, controller, and role (audit vs fix); never broaden scope or touch already-migrated siblings — report adjacent findings.",
+    "examples": [
+      "Did you do the audit, or did you already fix everything? What codec should do? Should it read your audit and coordinate the work based on what you wrote, or are you done",
+      "admin-patients.js (general staff patient roster, NOT already-migrated doctor-patients or my-appointments)"
+    ],
+    "first_seen": "2026-09-03",
+    "times": 4,
+    "status": "active"
+  },
+  {
+    "id": "real-3d-quality",
+    "kind": "any",
+    "text": "3D scenes embed a real player and reproduce the illustration's real items as true 3D shapes — no flat plates, plywood cutouts, or abstract blobs.",
+    "examples": [
+      "nope. i mean add a 3d player to the web page and the 3d model inside it. Also, the 3D you've created is quite unattractive.",
+      "Right, but this is some random shape, and I wanted you to include the items from the illustration. We had lots of financial institutions, investing strategies, and so on."
+    ],
+    "first_seen": "2026-09-14",
+    "times": 4,
+    "status": "active"
+  },
+  {
+    "id": "deletion-boundaries-explicit",
+    "kind": "process",
+    "text": "Deletion changes cite exact reviewed line ranges, delete only owned code, and explicitly preserve live state such as the cartilla cache files and locks.",
+    "examples": [
+      "an unsafe deletion range that would remove live cartilla cache state, forbidden unittest invocation, a non-hermetic parity gate",
+      "Apply the established review findings now: keep the live cartilla state and use the exact safe deletion boundary, replace forbidden unittest forms with discover-based gates"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 3,
+    "status": "active"
+  },
+  {
+    "id": "english-admin-routes",
+    "kind": "nav",
+    "text": "Admin direct URLs use English routes consistently; legacy Spanish names survive only as hash or DOM identifiers, never as new URL paths or fake link-buttons.",
+    "examples": [
+      "Use the English route /admin/preparations while preserving the legacy Spanish hash identifier",
+      "Make every direct URL consistently `/admin/preparations` while retaining only the legacy `#preparaciones` hash"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 3,
+    "status": "active"
+  },
+  {
+    "id": "english-developer-prose",
+    "kind": "copy",
+    "text": "All developer-facing prose (comments, docstrings, errors, test names) is English; Spanish remains only for patient- and staff-facing copy.",
+    "examples": [
+      "Resolve the remaining English-only developer prose violations, the bad architecture citation, and every contradictory or guaranteed-delivery claim",
+      "correct the synthetic file byte count and make all developer prose English. Do not weaken the approved Tier 7 gates."
+    ],
+    "first_seen": "2026-08-17",
+    "times": 3,
+    "status": "active"
+  },
+  {
+    "id": "form-sizing-touch-targets",
+    "kind": "form",
+    "text": "Forms and controls: >=16px input fonts (no iOS focus zoom), >=44px touch targets for every visible action, checkboxes aligned to a wrapped label's first line.",
+    "examples": [
+      "so .lg-ta is at least 16px (currently 14.5px, causes iOS focus zoom) and both Save plus Restore actions in .lg-actions have at least 44px usable touch targets on both direct and legacy shells",
+      "Always align the checkboxes by the first line if there are two lines. Also, they are of different sizes. Let's check it all."
+    ],
+    "first_seen": "2026-08-21",
+    "times": 3,
+    "status": "active"
+  },
+  {
+    "id": "fix-found-defects-now",
+    "kind": "process",
+    "text": "Fix defects you find immediately instead of asking or listing them for the product owner; every known failure is fixed in the same pass.",
+    "examples": [
+      "pls fix",
+      "Did you fix the fails that you found, such as created history of agendas? Do we have the editing of the roles in the admin and creating new ones? Did you fix the redirect?"
+    ],
+    "first_seen": "2026-08-26",
+    "times": 3,
+    "status": "active"
+  },
+  {
+    "id": "localized-user-facing-strings",
+    "kind": "copy",
+    "text": "Every patient- and staff-facing string renders in the visitor's language from the locale catalogs — never hardcoded Spanish or raw API text.",
+    "examples": [
+      "new native module hardcodes Spanish in COLS, table headings, form labels, fasting Yes/No/hours, Save/Restore/Enable/Disable.",
+      "English catalog-backed option labels instead of raw Spanish API text"
+    ],
+    "first_seen": "2026-09-08",
+    "times": 3,
+    "status": "active"
+  },
+  {
+    "id": "scannable-text-density",
+    "kind": "any",
+    "text": "Patient-facing pages present data as scannable graphs and infographics, not text walls; editor help stays dense with no empty or redundant helper copy.",
+    "examples": [
+      "Add nice graphsand generally more scannable inforgraphics, not just text",
+      "remove the four redundant authoring helpers for antes, traer, no_hace_falta, despues from rendered editor, without deleting those fields"
+    ],
+    "first_seen": "2026-08-02",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "never-touch-secrets",
+    "kind": "process",
+    "text": "Never locate, read, or print DB URLs or .env values; use secret-free managed profiles and leave DB proofs residual rather than touching secrets.",
+    "examples": [
+      "Do not locate, read, source, copy, or print any DB URL or .env. Implement the lock-release correction now."
+    ],
+    "first_seen": "2026-08-18",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "canonical-model-lanes",
+    "kind": "process",
+    "text": "Correction lanes run on the canonical model (glm-5.3); a diff from a misrouted model is untrusted and must be re-verified from scratch.",
+    "examples": [
+      "The current dirty diff was produced by an incorrectly routed GLM 4.7 run and is untrusted.",
+      "You are the GLM 5.3 correction owner for the isolated Human Rounds HSI Enterprise-boundary worktree. The current dirty diff was produced by an incorrectly routed GLM 4.7 run and is untrusted."
+    ],
+    "first_seen": "2026-08-31",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "consistent-buttons",
+    "kind": "form",
+    "text": "Buttons share one font size and design, never stretch full width on mobile, and avoid loud blue fills or covers that hide what was clicked.",
+    "examples": [
+      "Could u design it nicer? Esp the full width buttons on mobile, im not a fan",
+      "Cover on button is really ugly. There was some error, so people don't see what they click, and it's blue, so it's all bad."
+    ],
+    "first_seen": "2026-09-04",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "success-requires-acknowledgement",
+    "kind": "any",
+    "text": "Show success only after a persisted ok:true acknowledgement; a malformed HTTP 200 takes the failure/retry path, never renders as an empty success.",
+    "examples": [
+      "A malformed HTTP200 response (invalid JSON, absent/wrong-type list) must not be displayed as a successful empty appointment list or patient roster.",
+      "The current overlay appears to show created/saving before acknowledgement and accepts HTTP200 without requiring body.ok exactly true."
+    ],
+    "first_seen": "2026-09-07",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "consistent-tables",
+    "kind": "table",
+    "text": "Tables keep equal row heights and similar font sizes across screens; headers and cells never clip under the master pane; left edges and footer width align.",
+    "examples": [
+      "saw specialty/center header/cells cut off by the master pane. The existing page-overflow=0 metric missed this.",
+      "The table should have the same row height, no matter if it has a button or not. And different tables should have similar font sizes and row heights."
+    ],
+    "first_seen": "2026-09-09",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "chat-widget-stability",
+    "kind": "any",
+    "text": "The chat widget preserves the focused element's selection and typed value on mount, and Nuevo chat leaves a stable empty conversation with no history repour.",
+    "examples": [
+      "synchronously wraps existing body children into #stzc-page using appendChild at lines405-415, which detaches the focused input subtree.",
+      "in the chat widget, \"Nuevo chat\" flashes an empty chat and then the old conversation reappears."
+    ],
+    "first_seen": "2026-09-10",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "undo-own-damage",
+    "kind": "process",
+    "text": "Undo your own file-operation damage yourself; an auxiliary request must never damage the checkout or stall the main task — skip the risky step and continue.",
+    "examples": [
+      "r we done here",
+      "ok let's drop the task. park it and i'll clear."
+    ],
+    "first_seen": "2026-09-10",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "link-styling",
+    "kind": "any",
+    "text": "Links use ink-toned color with a faint underline and hover, inherit the surrounding text weight, and never strong blue.",
+    "examples": [
+      "Not good enough. Please analyze what I said about the footer.",
+      "Try not to make all the links bold. Keep them the same text as others."
+    ],
+    "first_seen": "2026-09-14",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "subtle-hover-states",
+    "kind": "any",
+    "text": "Hover states stay in the element's own color and only brighten slightly, verified systematically across every interactive element.",
+    "examples": [
+      "They should not change dramatically from beige to blue or blue to beige, but should just be a bit brighter.",
+      "I'd say they are quite subtle for the most looked-for specialists and links, but not for the upload order button. And chat with AI doesn't have any hover at all."
+    ],
+    "first_seen": "2026-09-15",
+    "times": 2,
+    "status": "active"
+  },
+  {
+    "id": "demo-topbar-lang-switcher",
+    "kind": "nav",
+    "text": "The demo site top bar is neatly formatted and includes a language switcher, and questionnaire flows call the real AI backend.",
+    "examples": [
+      "Also format the top bar with demo links nicely. It must have a lang switcher too"
+    ],
+    "first_seen": "2026-08-03",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "benchmark-localized-paths",
+    "kind": "process",
+    "text": "Mandatory performance proofs benchmark a representative noncanonical-language path, never only the canonical one.",
+    "examples": [
+      "its real-pack benchmark uses the canonical language and therefore bypasses localization"
+    ],
+    "first_seen": "2026-08-17",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "completion-report-format",
+    "kind": "process",
+    "text": "Completion reports state provider/model, changed files, and gate results — and write no memory or extra files unasked.",
+    "examples": [
+      "Report the frozen correction now, including exact provider/model metadata, changed files, and gate results. Do not write memory or any additional files."
+    ],
+    "first_seen": "2026-08-18",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "no-memory-or-extra-files",
+    "kind": "process",
+    "text": "Never create or edit memory, parking, or trail files or any unrequested extras; work and report only inside the approved slice's exact paths.",
+    "examples": [
+      "Do not create or edit any memory file. Return to the requested slice only."
+    ],
+    "first_seen": "2026-08-18",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "translation-parity-oracle",
+    "kind": "process",
+    "text": "Translation parity tests use collision-safe, HTML-escape-aware keyed occurrence assertions, never inverse-substitution oracles.",
+    "examples": [
+      "Replace the English inverse-substitution oracle with a collision-safe, HTML-escape-aware parity mechanism and exact keyed occurrence assertions"
+    ],
+    "first_seen": "2026-08-18",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "freeze-dont-rebase",
+    "kind": "process",
+    "text": "When the base moves, freeze the current candidate and record the required follow-up instead of rebasing or rerunning full suites.",
+    "examples": [
+      "Freeze the current candidate without rebasing or integrating; record that fresh port/reconciliation is required against 85386d49."
+    ],
+    "first_seen": "2026-08-19",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "narrow-placeholder-validation",
+    "kind": "any",
+    "text": "Placeholder rejection matches only stub values and always accepts valid records (record: approval:<id>); schema tests cover unknown keys and bad types.",
+    "examples": [
+      "narrow placeholder rejection to stub values such as record: pending or record: <fill>, never the valid record: approval:<id> field, with valid/section/boundary tests"
+    ],
+    "first_seen": "2026-08-19",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "clean-worktree",
+    "kind": "process",
+    "text": "Leave the worktree clean: remove debug scripts, scratch artifacts, and temp files you created before handing off.",
+    "examples": [
+      "First inspect it against acceptance criteria and remove your own untracked test/e2e/zz-debug.spec.mjs debug artifact."
+    ],
+    "first_seen": "2026-08-31",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "no-code-without-consumer",
+    "kind": "process",
+    "text": "Do not add production code without a real consumer; remove unused mirrors and their parity assertions when nothing outside tests uses them.",
+    "examples": [
+      "remove core/format.py dni_text and its JS/Python parity assertion if a fresh production grep confirms it has no non-test consumer"
+    ],
+    "first_seen": "2026-08-31",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "quick-create-minimal-clicks",
+    "kind": "form",
+    "text": "Admin quick-create and link forms minimize clicks: prefill the suggested username, auto-copy credentials to the clipboard, auto-search the matching user.",
+    "examples": [
+      "Make this form better (but clean). Prefill the suggested username so creating is one click, including login and password are automatically copied to the clipboard."
+    ],
+    "first_seen": "2026-09-04",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "error-colors-validation-placement",
+    "kind": "form",
+    "text": "Reserve red for errors and use a distinct accent for selection; render validation next to the offending field and clicked button, not as blocks.",
+    "examples": [
+      "Maybe we shouldn't select with red, which looks like errors. Please work on the color palette to have a different accent color. This is the weirdest error message I've seen."
+    ],
+    "first_seen": "2026-09-05",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "admin-header-title-nowrap",
+    "kind": "nav",
+    "text": "The shared admin header title never breaks midword or gets ellipsized at 360px when the alerts bell or recovery block shares the row.",
+    "examples": [
+      "Solicitudes de turno breaks midword and its summary is ellipsized because the native Alerts bell or import-recovery block crowds the title row."
+    ],
+    "first_seen": "2026-09-07",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "error-state-retry",
+    "kind": "any",
+    "text": "Error states offer an operator-facing retry control; recovery must never depend on page.reload().",
+    "examples": [
+      "The served C08 rejected catalog screenshot displays only 'No se pudo cargar. Reintentá.' and no retry action."
+    ],
+    "first_seen": "2026-09-10",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "hide-unavailable-controls",
+    "kind": "form",
+    "text": "Conditional properties hide their controls when unavailable instead of rendering them as disabled checkboxes.",
+    "examples": [
+      "walk-in service editor shows an unavailable, disabled hospital-approval checkbox instead of hiding the unavailable property."
+    ],
+    "first_seen": "2026-09-10",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "verify-identifier-meaning",
+    "kind": "process",
+    "text": "Verify what an identifier actually refers to before acting on it (a tool session ID is not an OS PID); resume handoffs without redoing finished analysis.",
+    "examples": [
+      "Note62762 was a Codex tool session ID, NOT an operating-system PID."
+    ],
+    "first_seen": "2026-09-10",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "monochrome-icons",
+    "kind": "any",
+    "text": "Icons follow the theme's monochrome Linear-like style: no multicolored icons or pastel chip backgrounds.",
+    "examples": [
+      "Please find the similar solutions for these colored icons for Linear. Maybe we should keep them black and white."
+    ],
+    "first_seen": "2026-09-14",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "no-cross-project-changes",
+    "kind": "process",
+    "text": "Never apply experimental work from one project to another site before approval; restore original assets until changes are signed off.",
+    "examples": [
+      "After I approve this illustration, please replace Human Rounds with the similar changes, like with the 3D. Meantime, please return what they had before."
+    ],
+    "first_seen": "2026-09-14",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "compact-filters-no-boxes",
+    "kind": "filter",
+    "text": "Filters are compact label-plus-chevron controls sized to the chosen option; screens avoid nested boxes, bounding-box clutter, and status chips in titles.",
+    "examples": [
+      "You see this mess? The titles have the statuses, and the statuses have some boxes. There are weird bounding boxes. The filter is a brick wall. This is horrible."
+    ],
+    "first_seen": "2026-09-15",
+    "times": 1,
+    "status": "active"
+  },
+  {
+    "id": "short-demo-values",
+    "kind": "copy",
+    "text": "Demo data values (hospital names) stay short enough that they never break layouts.",
+    "examples": [
+      "our demo contains really large hospital names. Let's shorten them because they break our own layouts."
+    ],
+    "first_seen": "2026-09-15",
+    "times": 1,
+    "status": "active"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "_comment": "The booking wizard.",
+  "wizard.age_check.checking": "Checking who this appointment is for…",
+  "wizard.age_check.h1": "Who is this appointment for?",
+  "wizard.confirm.error": "We couldn't save your answer. Try again.",
+  "wizard.confirm.expired": "That appointment can no longer be confirmed.",
+  "wizard.confirm.saved": "Done, thanks for letting us know.",
+  "wizard.confirm.wait": "One moment…",
+  "wizard.contact.call": "Stuck on a step? Call {name}:",
+  "wizard.contact.center_fallback": "the center",
+  "wizard.contact.whatsapp": "Stuck on a step? Message {name} on WhatsApp:",
+  "wizard.contact.whatsapp_site": "Stuck on a step? Message us on WhatsApp:",
+  "wizard.offer.accepted": "Done! Your appointment is confirmed. Taking you to My appointments…",
+  "wizard.offer.error": "We couldn't process your answer. Try again.",
+  "wizard.offer.gone": "This appointment is no longer available.",
+  "wizard.offer.rejected": "We let the next person on the list know. Thanks for responding.",
+  "wizard.offer.wait": "One moment…",
+  "wizard.title.orden": "Referral order",
+  "wizard.title.solicitud": "Book appointment",
+  "wizard.upload.sub": "The hospital reviews it and confirms your appointment."
+}

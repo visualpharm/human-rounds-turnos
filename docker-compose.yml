@@ -1,0 +1,87 @@
+# docker-compose.yml — Human Rounds, one command from a fresh checkout.
+#
+# `docker compose up` builds the app from the existing Dockerfile, boots a
+# Postgres 16 database next to it, and lands a brand-new install on the
+# first-run wizard at /setup (see docs/architecture/setup-wizard.md — the app
+# detects "zero operators, zero config rows" and serves the wizard instead of
+# the patient site until someone finishes it).
+#
+# Quick start:
+#   docker compose up -d
+#   open http://localhost:7700/setup
+#
+# `.env` is optional for a first run: every integration setting has a safe
+# unset/degraded default, and the setup wizard configures the installation.
+# Copy `.env.example` only when you want to preconfigure integrations.
+#
+# `/app/data` is the persistent volume for uploads (referral photos, PDFs),
+# for the install-owned packs the first-run wizard scaffolds (data/packs —
+# see docs/architecture/setup-wizard.md), AND for the installation's CANONICAL
+# config file: the image's default TURNOS_ENV_FILE=/app/data/turnos.env points
+# config._env_path() at this volume, so the boot keys the wizard writes via
+# config.save_env_keys (TURNOS_PRIVATE_PACKS_DIR / TURNOS_REQUIRED_PACKS /
+# PACK_CHAIN) survive a `docker compose up --build`. An explicit
+# `TURNOS_ENV_FILE` in `environment:` below overrides it; unset local dev
+# (`python3 asgi_main.py`, no image) is unaffected and keeps using the checkout
+# .env. `/app/data` is NOT the bundled public pack tree — that ships baked
+# into the image and is swapped by pointing `PACK_CHAIN` at a different pack,
+# not by mounting a volume over it (see docs/architecture/
+# data-packs.md).
+
+services:
+  app:
+    build: .
+    ports:
+      - "${PORT:-7700}:${PORT:-7700}"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      # Compose networking overrides — these always point at the "db"
+      # service below, regardless of what .env says (a checkout's .env is
+      # written for bare-metal Postgres, e.g. localhost:5432).
+      HOST: "0.0.0.0"
+      PORT: "${PORT:-7700}"
+      DATABASE_URL: "postgresql://sana:sana@db:5432/sana_turnos"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - app_data:/app/data
+    restart: unless-stopped
+    healthcheck:
+      # No curl in the python:3.12-slim base image — urllib is stdlib, so
+      # this needs nothing the image doesn't already have. Any response
+      # (200 on the holding page pre-setup, 200/30x once configured) means
+      # the ASGI process is alive.
+      test:
+        [
+          "CMD",
+          "python3",
+          "-c",
+          "import os,urllib.request; urllib.request.urlopen('http://localhost:' + os.environ.get('PORT', '7700') + '/', timeout=3)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: sana_turnos
+      POSTGRES_USER: sana
+      POSTGRES_PASSWORD: sana
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sana -d sana_turnos"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  db_data:
+  app_data:

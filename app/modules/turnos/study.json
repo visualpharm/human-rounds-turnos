@@ -1,0 +1,167 @@
+{
+  "roles": {
+    "patient": {
+      "label": "Paciente",
+      "entry": "/",
+      "tasks": [
+        {
+          "id": "P1",
+          "title": "Encontrá qué médicos atienden Pediatría y en qué centro.",
+          "instruction": "Encontrá qué médicos atienden Pediatría y en qué centro.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": false,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "P2",
+          "title": "Pedí un turno de Clínica médica para la semana próxima",
+          "instruction": "Pedí un turno de Clínica médica para la semana próxima (hasta el último paso, sin confirmar).",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "P3",
+          "title": "Subí la foto de una orden médica",
+          "instruction": "Subí la foto de una orden médica (cualquier imagen) para pedir un estudio y mirá qué te dice.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": false,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "P4",
+          "title": "Creá tu cuenta con un DNI de ejemplo y volvé a entrar",
+          "instruction": "Creá tu cuenta con un DNI de ejemplo y volvé a entrar (hasta la pantalla de ingreso).",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "P5",
+          "title": "Encontrá la dirección y el horario de la guardia del hospital.",
+          "instruction": "Encontrá la dirección y el horario de la guardia del hospital.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": false,
+          "threshold_ms": 120000
+        }
+      ]
+    },
+    "doctor": {
+      "label": "Médico/a",
+      "entry": "/admin/demo-doctor-access",
+      "tasks": [
+        {
+          "id": "D1",
+          "title": "Mirá tus pacientes de hoy e identificá el próximo turno.",
+          "instruction": "Mirá tus pacientes de hoy e identificá el próximo turno.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": false,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "D2",
+          "title": "Pasá al próximo día en que tenés turnos usando el calendario.",
+          "instruction": "Pasá al próximo día en que tenés turnos usando el calendario.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": false,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "D3",
+          "title": "Abrí «Mis agendas» y fijate qué horarios tenés y en qué centros.",
+          "instruction": "Abrí «Mis agendas» y fijate qué horarios tenés y en qué centros.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": false,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "D4",
+          "title": "Cambiá tu foto",
+          "instruction": "Cambiá tu foto (hasta elegir la imagen, sin guardar) y revisá si queda bien.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "D5",
+          "title": "Buscá a un paciente por DNI y abrí su resumen.",
+          "instruction": "Buscá a un paciente por DNI y abrí su resumen.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": false,
+          "threshold_ms": 120000
+        }
+      ]
+    },
+    "admin": {
+      "label": "Administrador/a",
+      "entry": "/admin/demo-access",
+      "tasks": [
+        {
+          "id": "A1",
+          "title": "Encontrá la solicitud más antigua sin atender y dejala lista para aprobar",
+          "instruction": "Encontrá la solicitud más antigua sin atender y dejala lista para aprobar (sin confirmar).",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "A2",
+          "title": "Cargá un turno nuevo por teléfono para un paciente de ejemplo",
+          "instruction": "Cargá un turno nuevo por teléfono para un paciente de ejemplo (hasta el último paso).",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "A3",
+          "title": "Cambiá el horario de un servicio y leé qué te avisa que va a pasar con los médicos.",
+          "instruction": "Cambiá el horario de un servicio y leé qué te avisa que va a pasar con los médicos.",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "A4",
+          "title": "Agregá un cierre de agenda para el 12 de noviembre en un servicio",
+          "instruction": "Agregá un cierre de agenda para el 12 de noviembre en un servicio (sin guardar).",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "A5",
+          "title": "Fijá cuántos días de anticipación se pueden sacar turnos en un médico",
+          "instruction": "Fijá cuántos días de anticipación se pueden sacar turnos en un médico (sin guardar).",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        },
+        {
+          "id": "A6",
+          "title": "Creá una cuenta nueva de médico con su email",
+          "instruction": "Creá una cuenta nueva de médico con su email (hasta el último paso).",
+          "success_hint": "Cuando llegues a lo que pide la tarea, tocá «Terminé».",
+          "stop_before_save": true,
+          "threshold_ms": 120000
+        }
+      ]
+    }
+  },
+  "final_questions": [
+    {
+      "id": "F1",
+      "title": "¿Qué fue lo más confuso? (texto libre)",
+      "type": "text"
+    },
+    {
+      "id": "F2",
+      "title": "¿Qué cambiarías primero? (texto libre)",
+      "type": "text"
+    },
+    {
+      "id": "F3",
+      "title": "¿Lo usarías en tu trabajo / para sacar un turno real? (Sí / Tal vez / No)",
+      "type": "choice"
+    }
+  ]
+}

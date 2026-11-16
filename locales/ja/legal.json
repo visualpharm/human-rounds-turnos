@@ -1,0 +1,5 @@
+{
+  "_comment": "Shared labels around the two legal documents.",
+  "legal.demo_notice": "これは**デモ**用のサイトです。この文書は実際のサイトで公開されているものと同じですが、データは架空のものであり、実際の患者さんは存在しません。ここでの内容は適用されず、いかなる義務も発生しません。",
+  "legal.updated": "最終更新日："
+}

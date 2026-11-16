@@ -1,0 +1,88 @@
+{
+  "centros": [
+    {
+      "slug": "sampleton-hospital",
+      "name": "Sampleton Hospital",
+      "address": "Main Rd. 123",
+      "phone": "(011) 4000-0001",
+      "email": "hospital@sampleton.example",
+      "description": "Hospital municipal ficticio. Guardia y consultorios de especialidades.",
+      "jtbd": "Guardia las 24 horas y consultorios de especialistas: cardiología, traumatología, dermatología, oftalmología y más.",
+      "jobs": [
+        "Atenderte en la guardia",
+        "Ver a un especialista",
+        "Hacerte un electrocardiograma o una ergometría",
+        "Vacunarte en la campaña antigripal"
+      ],
+      "maps_url": "https://maps.google.com/?q=Main+Rd.+123",
+      "bookable": true
+    },
+    {
+      "slug": "riverside-clinic",
+      "name": "Riverside Clinic",
+      "address": "Station St. 456",
+      "phone": "(011) 4000-0002",
+      "email": "riverside@sampleton.example",
+      "description": "Centro de Atención Primaria de la Salud ficticio del barrio Riverside. Medicina general, pediatría, ginecología, nutrición, odontología, psicología y vacunatorio.",
+      "jtbd": "La salita del barrio Riverside: el médico clínico con o sin turno, pediatría, ginecología, odontología y vacunas.",
+      "jobs": [
+        "Vacunarte",
+        "Ver al médico clínico sin turno",
+        "Llevar a tu hijo al pediatra",
+        "Sacar turno de ginecología o de odontología"
+      ],
+      "maps_url": "https://maps.google.com/?q=Station+St.+456",
+      "bookable": true
+    },
+    {
+      "slug": "lakeview-clinic",
+      "name": "Lakeview Clinic",
+      "address": "Harbor Ave. 789",
+      "phone": "(011) 4000-0003",
+      "email": "lakeview@sampleton.example",
+      "description": "Centro de Atención Primaria de la Salud ficticio del barrio Lakeview. Medicina general, control del adulto mayor, pediatría, nutrición, kinesiología, odontología y psicología.",
+      "jtbd": "La salita del barrio Lakeview: clínica médica, control del adulto mayor, kinesiología y talleres para adultos mayores.",
+      "jobs": [
+        "Ver al médico clínico",
+        "Consultar al nutricionista",
+        "Empezar kinesiología con orden",
+        "Ir al taller de gimnasia para adultos mayores"
+      ],
+      "maps_url": "https://maps.google.com/?q=Harbor+Ave.+789",
+      "bookable": true
+    },
+    {
+      "slug": "maternity-center",
+      "name": "Maternity Center",
+      "address": "Garden Ave. 500",
+      "phone": "(011) 4000-0004",
+      "email": "maternity@sampleton.example",
+      "description": "Centro ficticio dedicado a la salud de la mujer embarazada, los recién nacidos y los niños pequeños: obstetricia, pediatría, fonoaudiología y estimulación temprana.",
+      "jtbd": "El control del embarazo, del bebé y de los primeros años, todo en un mismo edificio.",
+      "jobs": [
+        "Hacer el control prenatal",
+        "Llevar al bebé a los controles de peso y talla",
+        "Sacar turno de pediatría",
+        "Hacer la pesquisa auditiva neonatal"
+      ],
+      "maps_url": "https://maps.google.com/?q=Garden+Ave.+500",
+      "bookable": true
+    },
+    {
+      "slug": "diagnostic-center",
+      "name": "Diagnostic Center",
+      "address": "Central Dr. 234",
+      "phone": "(011) 4000-0005",
+      "email": "diagnostic@sampleton.example",
+      "description": "Anexo ficticio de estudios, separado del edificio principal del hospital: laboratorio, radiografía, ecografías, mamografía, tomografía, ecocardiograma y audiometría.",
+      "jtbd": "Los estudios de laboratorio y de imágenes, en un edificio propio para no cruzarse con la guardia.",
+      "jobs": [
+        "Hacerte un análisis de sangre",
+        "Sacarte una radiografía o una ecografía",
+        "Retirar el resultado de un estudio"
+      ],
+      "maps_url": "https://maps.google.com/?q=Central+Dr.+234",
+      "bookable": true
+    }
+  ]
+}

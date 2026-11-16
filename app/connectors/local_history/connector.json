@@ -1,0 +1,7 @@
+{
+  "id": "local_history",
+  "country": "*",
+  "capability": "clinical_history_lookup",
+  "config_keys": [],
+  "description": "Private Postgres-backed clinical-history archive in the same normalized record format used by the Alepo and Marqui adapters. Source JSON is import data, never repository data."
+}

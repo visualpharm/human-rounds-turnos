@@ -1,0 +1,363 @@
+{
+  "connector": "hsi",
+  "scenario": "push_turno_ok",
+  "recorded_at": "2026-08-05T23:23:49.457617+00:00",
+  "source": "Hand-authored, not a live HSI recording: the local dev HSI container (historiaclinica/hsi:v2.71.2 on :8280) is not reachable from this environment. Every request/response shape below matches docs/HSI-API-NOTES.md's empirically-captured payloads (auth, patient minimalsearch/create, diary list/detail, booked-hours, appointment create) and app/connectors/hsi/hsi_client.py's real call sequence for push_turno() — produced by running the real client against a same-shape local stub server through this cassette engine's own recorder, then PII-scrubbed the same way a live recording would be. Re-record against the real container (scripts/record_cassette.py --connector hsi --scenario push_turno_ok) once it's reachable, and diff-review before committing, per Area 3's doctrine.",
+  "interactions": [
+    {
+      "method": "POST",
+      "path": "/api/auth",
+      "query": {},
+      "request_body": {
+        "username": "[email 1]",
+        "password": "[credencial 1]"
+      },
+      "request_body_kind": "json",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-type": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ],
+          [
+            "Set-Cookie",
+            "token=<redacted>; Path=/api; Secure; HttpOnly"
+          ],
+          [
+            "Set-Cookie",
+            "refreshToken=<redacted>; Path=/api/auth/refresh"
+          ]
+        ],
+        "body": true,
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/patient/minimalsearch",
+      "query": {
+        "identificationTypeId": "1",
+        "identificationNumber": "[documento 1]",
+        "genderId": "2"
+      },
+      "request_body": null,
+      "request_body_kind": null,
+      "request_headers": {
+        "Accept": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": [],
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/patient/institution/1",
+      "query": {},
+      "request_body": {
+        "birthDate": "[nacimiento 1]",
+        "firstName": "[nombre 1]",
+        "genderId": 2,
+        "identificationTypeId": 1,
+        "identificationNumber": "[documento 1]",
+        "lastName": "[nombre 2]",
+        "middleNames": null,
+        "otherLastNames": null,
+        "personAge": null,
+        "cuil": null,
+        "email": null,
+        "ethnicityId": null,
+        "educationLevelId": null,
+        "occupationId": null,
+        "genderSelfDeterminationId": null,
+        "mothersLastName": null,
+        "nameSelfDetermination": null,
+        "phonePrefix": null,
+        "phoneNumber": null,
+        "religion": null,
+        "deprivedOfLiberty": false,
+        "nationality": null,
+        "apartment": null,
+        "cityId": null,
+        "floor": null,
+        "number": null,
+        "postcode": null,
+        "quarter": null,
+        "street": null,
+        "countryId": 14,
+        "departmentId": null,
+        "provinceId": null,
+        "typeId": 7,
+        "comments": null,
+        "identityVerificationStatusId": null,
+        "generalPractitioner": {
+          "fullName": null,
+          "phoneNumber": null,
+          "generalPractitioner": true
+        },
+        "pamiDoctor": {
+          "fullName": null,
+          "phoneNumber": null,
+          "generalPractitioner": false
+        },
+        "auditType": "UNAUDITED",
+        "fileIds": [],
+        "militaryObservations": null
+      },
+      "request_body_kind": "json",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-type": "application/json"
+      },
+      "response": {
+        "status": 201,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": 136,
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/institution/1/healthcareprofessional",
+      "query": {},
+      "request_body": null,
+      "request_body_kind": null,
+      "request_headers": {
+        "Accept": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": [
+          {
+            "id": 1,
+            "licenceNumber": "[documento 2]",
+            "firstName": "[nombre 3]",
+            "lastName": "[nombre 4]",
+            "identificationNumber": "[documento 3]",
+            "fullName": "[nombre 5]"
+          }
+        ],
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/institutions/1/medicalConsultations/diary",
+      "query": {
+        "healthcareProfessionalId": "1",
+        "includeExpired": "false"
+      },
+      "request_body": null,
+      "request_body_kind": null,
+      "request_headers": {
+        "Accept": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": [
+          {
+            "id": 1,
+            "clinicalSpecialtyName": "Cardiología",
+            "doctorsOfficeDescription": "Consultorio 1",
+            "startDate": "2026-07-08",
+            "endDate": "2026-09-30",
+            "appointmentDuration": 30,
+            "isExpired": false
+          }
+        ],
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/institutions/1/medicalConsultations/diary/1",
+      "query": {},
+      "request_body": null,
+      "request_body_kind": null,
+      "request_headers": {
+        "Accept": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": {
+          "id": 1,
+          "appointmentDuration": 30,
+          "startDate": "2026-07-08",
+          "endDate": "2026-09-30",
+          "diaryOpeningHours": [
+            {
+              "openingHours": {
+                "id": 1,
+                "dayWeekId": 4,
+                "from": "08:00:00",
+                "to": "12:00:00"
+              },
+              "medicalAttentionTypeId": 1,
+              "onSiteAttentionAllowed": true,
+              "externalAppointmentsAllowed": false
+            }
+          ]
+        },
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/institutions/1/medicalConsultations/appointments/diary/1",
+      "query": {
+        "from": "2026-07-09",
+        "to": "2026-07-09"
+      },
+      "request_body": null,
+      "request_body_kind": null,
+      "request_headers": {
+        "Accept": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": [],
+        "body_kind": "json"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/institutions/1/medicalConsultations/appointments",
+      "query": {},
+      "request_body": {
+        "date": "2026-07-09",
+        "diaryId": 1,
+        "hour": "09:00:00",
+        "openingHoursId": 1,
+        "overturn": false,
+        "patientId": 136,
+        "modality": "ON_SITE_ATTENTION",
+        "patientEmail": null,
+        "applicantHealthcareProfessionalEmail": null,
+        "practices": [],
+        "transcribedServiceRequest": null,
+        "orderPending": false
+      },
+      "request_body_kind": "json",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-type": "application/json"
+      },
+      "response": {
+        "status": 200,
+        "headers": [
+          [
+            "Server",
+            "BaseHTTP/0.6 Python/3.14.6"
+          ],
+          [
+            "Date",
+            "Wed, 05 Aug 2026 23:23:49 GMT"
+          ],
+          [
+            "Content-Type",
+            "application/json"
+          ]
+        ],
+        "body": 2,
+        "body_kind": "json"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "_comment": "Fase 2b (3/N), 2026-07-30. Bloque de teléfono movido de format.py/format.mjs (antes duplicado, ambos runtimes leían un PAIS idéntico copiado a mano) — ver docs/architecture/data-packs.md. Claves en inglés (docs/rename-map.md §6); format.py/format.mjs lo proyectan a variables internas al leerlo, ver sus comentarios. Para otro país se cambia SÓLO este archivo.",
+  "name": "Argentina",
+  "iso2": "AR",
+  "phone": {
+    "code": "54",
+    "exit_prefix": "00",
+    "national_length": 10,
+    "mobile_prefix": "9",
+    "mobile_local_suffix": "15",
+    "trunk_prefix": "0",
+    "areas_2": ["11"],
+    "areas_3": ["220", "221", "223", "230", "236", "237", "249", "260", "261", "263",
+                "264", "266", "280", "291", "297", "299", "341", "342", "343", "345",
+                "348", "351", "353", "358", "362", "364", "370", "376", "379", "380",
+                "381", "383", "385", "387", "388"],
+    "area_default": 4,
+    "final_group": 4,
+    "non_geographic": ["800", "810", "600"]
+  },
+  "dni": {
+    "length_min": 7,
+    "length_max": 9,
+    "_note": "DNI argentino sin puntos: 7-8 dígitos (histórico), hasta 9 en trámites recientes. Fase 2c (2026-07-30): format.py lee este bloque (format.DNI/format.dni_valid_length) y accounts.py/puco.py/admin_appointments.py/booking_requests.py/auth_renaper.py/renaper.py ya lo usan — ver docs/architecture/data-packs.md. ocr_dni.py:153 sigue con su propio rango 7-8 a propósito (DNI físico sin trámite reciente, regla distinta al length_min/length_max genérico)."
+  },
+  "timezone": "America/Argentina/Buenos_Aires",
+  "currency": {
+    "code": "ARS",
+    "symbol": "$",
+    "locale": "es-AR",
+    "_note": "Fase 2c (2026-07-30): locale para Intl.NumberFormat/toLocaleString (admin-reports.js las tenía hardcodeadas como 'es-AR'/'AR$') — ver format.py:country_currency_json() y docs/architecture/data-packs.md. 'US$' (costos de IA, siempre en dólares) se deja sin tocar: no es moneda local."
+  },
+  "emergency_numbers": {
+    "same_ambulance": "107",
+    "fire_department": "100",
+    "police": "911"
+  }
+}

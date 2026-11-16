@@ -1,0 +1,12 @@
+{
+  "_comment": "The shared site footer.",
+  "footer.about": "このサイトについて",
+  "footer.credit": "Icons by Icons8",
+  "footer.emergency": "緊急連絡先: {{sitio.emergency_number_link_html}}",
+  "footer.mission": "{{sitio.city}}の住民によって作られ、運営されています。営利目的ではない無料のサービスです。受診をよりスムーズにすることを目指しています。",
+  "footer.news": "お知らせ",
+  "footer.powered": "Human Rounds を使用しています",
+  "footer.privacy": "プライバシー",
+  "footer.software": "Human Rounds ソフトウェアを使用しています",
+  "footer.terms": "利用規約"
+}

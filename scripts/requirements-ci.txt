@@ -1,0 +1,8 @@
+# CI-only Python dependency: never imported by the app and not in the Docker image (that is
+# requirements.txt). scripts/run_backend_shards.py --coverage-dir measures the backend suite
+# with it (scripts/coverage_floor.py gates the result); .gitlab-ci.yml installs it after
+# requirements.txt.
+coverage==7.17.0
+# The repository layout move (scripts/layout/move.py) rewrites Python with it; its tests
+# (tests/test_layout_move.py, tests/test_layout_chain.py) need it wherever the backend suite runs.
+libcst==1.9.0

@@ -1,0 +1,10 @@
+{
+  "id": "meta",
+  "country": "AR",
+  "capability": "otp_transport",
+  "config_keys": [
+    "META_WA_TOKEN",
+    "META_WA_PHONE_NUMBER_ID"
+  ],
+  "description": "WhatsApp delivery via Meta's WhatsApp Cloud API: free text (the booking chat bot's replies), approved Utility templates (the hospital-initiated confirmation and day-before reminder, gated by TURNOS_WA_NOTIFY / TURNOS_WA_TEST_RECIPIENTS) and, with OTP_PROVIDER=meta, the verification code as the approved Authentication template named by the optional META_WA_OTP_TEMPLATE (no variable = no code over Meta; not a required config key). A Meta rate limit pauses every Meta send (Retry-After, 60 s default, 15 min cap). Implementation stays in otp_send.py (NOT moved into this directory — see adapter.py for why); this manifest documents its config keys for manage.py/Settings."
+}

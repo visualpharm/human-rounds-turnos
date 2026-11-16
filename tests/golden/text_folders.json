@@ -1,0 +1,2492 @@
+{
+ "app.admin_panel.admin_users._ascii_word": {
+  "inputs": {
+   "\"O'Brien\"": "obrien",
+   "'  A   B  '": "ab",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "ninosanook",
+   "' '": "",
+   "''": "",
+   "'-_-'": "",
+   "'123 abc'": "123abc",
+   "'1\u00ba A'": "1oa",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenosairesprovincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "drdraperezguardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcialopezjosemaria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "ospbuenosairesioma",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "abc",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tabsep",
+   "'una ESPECIALIDAD m\u00e9dica'": "unaespecialidadmedica",
+   "'x (demanda espont\u00e1nea) y'": "xdemandaespontaneay",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiounu",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nanduca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dzsa21abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "",
+   "'\u0439 \u0457 \u0419 \u0407'": "",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "26b0eee6628bc4469290208fb2803a760886861aa7fa2168ca886c1f6a464f6e",
+   "16.0.0": "26b0eee6628bc4469290208fb2803a760886861aa7fa2168ca886c1f6a464f6e"
+  }
+ },
+ "app.admin_panel.reports._strip_accents": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "  a   b  ",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "  nino-sano, \u00bfok?  ",
+   "' '": " ",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1\u00ba a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "\u001f\u001c a",
+   "'\\xa0nbsp\\xa0'": "\u00a0nbsp\u00a0",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab\tsep\n",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "\u01c6",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "\u01c6 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43",
+   "'\u01c8'": "\u01c9",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "\ufb01nal",
+   "'\uff12\uff10\uff12\uff16'": "\uff12\uff10\uff12\uff16",
+   "0": "",
+   "5": "raises AttributeError",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "4c254f4767c2a1f8588b536bb7854beb375e1731b853f2f5aa3a3f910d9d8f89",
+   "16.0.0": "5edf6c5e414a8567ca90466a932196c12ea2b9bae3c4b8c51001afd8408e2e9c"
+  }
+ },
+ "app.ai.lab_analysis._normalizar": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "  a   b  ",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "  nino-sano, ok?  ",
+   "' '": " ",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "\u001f\u001c a",
+   "'\\xa0nbsp\\xa0'": " nbsp ",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab\tsep\n",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "  i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": " ",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": " ",
+   "'\u0439 \u0457 \u0419 \u0407'": "   ",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": " ",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": " ",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "4eba208188b7a1ea4fbe2fa037e09cea17d7633a1a7ed8a0a038395d444c23df",
+   "16.0.0": "4eba208188b7a1ea4fbe2fa037e09cea17d7633a1a7ed8a0a038395d444c23df"
+  }
+ },
+ "app.connectors.hsi.hsi_client._norm": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a   b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, \u00bfok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab\tsep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "0",
+   "5": "5",
+   "False": "false",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "793fbbad1291a9590b4ede40c9190995fde643b2ae215389013ede91870dad21",
+   "16.0.0": "c9b56e78370f97779c0c3b22eb99b2edc59415f138ca25f56812a0e24fdb23d9"
+  }
+ },
+ "app.connectors.msd.msd_data._msd_givens": {
+  "inputs": {
+   "\"O'Brien\"": [],
+   "'  A   B  '": [],
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": [],
+   "' '": [],
+   "''": [],
+   "'-_-'": [],
+   "'123 abc'": [],
+   "'1\u00ba A'": [],
+   "'ARGENTINA'": [],
+   "'Buenos Aires (provincia)'": [],
+   "'Cardiolog\u00eda'": [],
+   "'Dr./Dra. P\u00e9rez (guardia)'": [],
+   "'Especialid\u00e1d'": [],
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": [
+    "jose",
+    "maria"
+   ],
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": [],
+   "'S\u00ed!'": [],
+   "'\\x1f\\x1c a'": [],
+   "'\\xa0nbsp\\xa0'": [],
+   "'__x__'": [],
+   "'a,b;c'": [],
+   "'a\\u200bb'": [],
+   "'especialidad'": [],
+   "'i\u0307stanbul'": [],
+   "'tab\\tsep\\n'": [],
+   "'una ESPECIALIDAD m\u00e9dica'": [],
+   "'x (demanda espont\u00e1nea) y'": [],
+   "'x\u0301'": [],
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": [],
+   "'\u00c5'": [],
+   "'\u00d1and\u00fa \u00c7\u00e0'": [],
+   "'\u00df \u0131 \u0130'": [],
+   "'\u01c4'": [],
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": [],
+   "'\u01c8'": [],
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": [],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": [],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": [],
+   "'\u0439 \u0457 \u0419 \u0407'": [],
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": [],
+   "'\u0623\u062d\u0645\u062f'": [],
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": [],
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": [],
+   "'\ufb01nal'": [],
+   "'\uff12\uff10\uff12\uff16'": [],
+   "0": [],
+   "5": [],
+   "False": [],
+   "None": []
+  },
+  "sweep": {
+   "15.0.0": "0e9899dbb52fe6bdd4ff1fbdab347ac87cf402fbd36a48104b98b48d19de766e",
+   "16.0.0": "0e9899dbb52fe6bdd4ff1fbdab347ac87cf402fbd36a48104b98b48d19de766e"
+  }
+ },
+ "app.connectors.msd.msd_data._msd_surnames": {
+  "inputs": {
+   "\"O'Brien\"": [
+    "brien"
+   ],
+   "'  A   B  '": [],
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": [
+    "nino",
+    "sano"
+   ],
+   "' '": [],
+   "''": [],
+   "'-_-'": [],
+   "'123 abc'": [
+    "abc"
+   ],
+   "'1\u00ba A'": [],
+   "'ARGENTINA'": [
+    "argentina"
+   ],
+   "'Buenos Aires (provincia)'": [
+    "buenos",
+    "aires",
+    "provincia"
+   ],
+   "'Cardiolog\u00eda'": [
+    "cardiologia"
+   ],
+   "'Dr./Dra. P\u00e9rez (guardia)'": [
+    "perez",
+    "guardia"
+   ],
+   "'Especialid\u00e1d'": [
+    "especialidad"
+   ],
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": [
+    "garcia",
+    "lopez"
+   ],
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": [
+    "buenos",
+    "aires"
+   ],
+   "'S\u00ed!'": [],
+   "'\\x1f\\x1c a'": [],
+   "'\\xa0nbsp\\xa0'": [
+    "nbsp"
+   ],
+   "'__x__'": [],
+   "'a,b;c'": [],
+   "'a\\u200bb'": [],
+   "'especialidad'": [
+    "especialidad"
+   ],
+   "'i\u0307stanbul'": [
+    "istanbul"
+   ],
+   "'tab\\tsep\\n'": [
+    "tab",
+    "sep"
+   ],
+   "'una ESPECIALIDAD m\u00e9dica'": [
+    "una",
+    "especialidad",
+    "medica"
+   ],
+   "'x (demanda espont\u00e1nea) y'": [
+    "demanda",
+    "espontanea"
+   ],
+   "'x\u0301'": [],
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": [
+    "aeiou"
+   ],
+   "'\u00c5'": [],
+   "'\u00d1and\u00fa \u00c7\u00e0'": [
+    "nandu"
+   ],
+   "'\u00df \u0131 \u0130'": [],
+   "'\u01c4'": [],
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": [
+    "abc"
+   ],
+   "'\u01c8'": [],
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": [],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": [],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": [],
+   "'\u0439 \u0457 \u0419 \u0407'": [],
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": [],
+   "'\u0623\u062d\u0645\u062f'": [],
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": [],
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": [],
+   "'\ufb01nal'": [
+    "final"
+   ],
+   "'\uff12\uff10\uff12\uff16'": [],
+   "0": [],
+   "5": [],
+   "False": [],
+   "None": []
+  },
+  "sweep": {
+   "15.0.0": "d149dc5806cdf26aaf5fcfdfb72fbd71982e90f26ecebdf6a3246a5bd634d0c1",
+   "16.0.0": "d149dc5806cdf26aaf5fcfdfb72fbd71982e90f26ecebdf6a3246a5bd634d0c1"
+  }
+ },
+ "app.connectors.msd.msd_data._name_tokens": {
+  "inputs": {
+   "\"O'Brien\"": [
+    "brien"
+   ],
+   "'  A   B  '": [],
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": [
+    "nino",
+    "sano"
+   ],
+   "' '": [],
+   "''": [],
+   "'-_-'": [],
+   "'123 abc'": [
+    "abc"
+   ],
+   "'1\u00ba A'": [],
+   "'ARGENTINA'": [
+    "argentina"
+   ],
+   "'Buenos Aires (provincia)'": [
+    "buenos",
+    "aires",
+    "provincia"
+   ],
+   "'Cardiolog\u00eda'": [
+    "cardiologia"
+   ],
+   "'Dr./Dra. P\u00e9rez (guardia)'": [
+    "perez",
+    "guardia"
+   ],
+   "'Especialid\u00e1d'": [
+    "especialidad"
+   ],
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": [
+    "garcia",
+    "lopez",
+    "jose",
+    "maria"
+   ],
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": [
+    "buenos",
+    "aires"
+   ],
+   "'S\u00ed!'": [],
+   "'\\x1f\\x1c a'": [],
+   "'\\xa0nbsp\\xa0'": [
+    "nbsp"
+   ],
+   "'__x__'": [],
+   "'a,b;c'": [],
+   "'a\\u200bb'": [],
+   "'especialidad'": [
+    "especialidad"
+   ],
+   "'i\u0307stanbul'": [
+    "istanbul"
+   ],
+   "'tab\\tsep\\n'": [
+    "tab",
+    "sep"
+   ],
+   "'una ESPECIALIDAD m\u00e9dica'": [
+    "una",
+    "especialidad",
+    "medica"
+   ],
+   "'x (demanda espont\u00e1nea) y'": [
+    "demanda",
+    "espontanea"
+   ],
+   "'x\u0301'": [],
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": [
+    "aeiou"
+   ],
+   "'\u00c5'": [],
+   "'\u00d1and\u00fa \u00c7\u00e0'": [
+    "nandu"
+   ],
+   "'\u00df \u0131 \u0130'": [],
+   "'\u01c4'": [],
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": [
+    "abc"
+   ],
+   "'\u01c8'": [],
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": [],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": [],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": [],
+   "'\u0439 \u0457 \u0419 \u0407'": [],
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": [],
+   "'\u0623\u062d\u0645\u062f'": [],
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": [],
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": [],
+   "'\ufb01nal'": [
+    "final"
+   ],
+   "'\uff12\uff10\uff12\uff16'": [],
+   "0": [],
+   "5": [],
+   "False": [],
+   "None": []
+  },
+  "sweep": {
+   "15.0.0": "d149dc5806cdf26aaf5fcfdfb72fbd71982e90f26ecebdf6a3246a5bd634d0c1",
+   "16.0.0": "d149dc5806cdf26aaf5fcfdfb72fbd71982e90f26ecebdf6a3246a5bd634d0c1"
+  }
+ },
+ "app.connectors.msd.msd_data._norm": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, ok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "",
+   "'\u0439 \u0457 \u0419 \u0407'": "",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "a8be346a6c685507647d33930eb86de66d7c47c83135b7cde44b220a0f9941f1",
+   "16.0.0": "a8be346a6c685507647d33930eb86de66d7c47c83135b7cde44b220a0f9941f1"
+  }
+ },
+ "app.connectors.puco.puco._norm_txt": {
+  "inputs": {
+   "\"O'Brien\"": "O'BRIEN",
+   "'  A   B  '": "A B",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "NINO-SANO, \u00bfOK?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 ABC",
+   "'1\u00ba A'": "1\u00ba A",
+   "'ARGENTINA'": "ARGENTINA",
+   "'Buenos Aires (provincia)'": "BUENOS AIRES (PROVINCIA)",
+   "'Cardiolog\u00eda'": "CARDIOLOGIA",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "DR/DRA PEREZ (GUARDIA)",
+   "'Especialid\u00e1d'": "ESPECIALIDAD",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "GARCIA-LOPEZ, JOSE MARIA",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "OSP BUENOS AIRES (IOMA)",
+   "'S\u00ed!'": "SI!",
+   "'\\x1f\\x1c a'": "A",
+   "'\\xa0nbsp\\xa0'": "NBSP",
+   "'__x__'": "__X__",
+   "'a,b;c'": "A,B;C",
+   "'a\\u200bb'": "A\u200bB",
+   "'especialidad'": "ESPECIALIDAD",
+   "'i\u0307stanbul'": "ISTANBUL",
+   "'tab\\tsep\\n'": "TAB SEP",
+   "'una ESPECIALIDAD m\u00e9dica'": "UNA ESPECIALIDAD MEDICA",
+   "'x (demanda espont\u00e1nea) y'": "X (DEMANDA ESPONTANEA) Y",
+   "'x\u0301'": "X",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "AEIOU N U",
+   "'\u00c5'": "A",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "NANDU CA",
+   "'\u00df \u0131 \u0130'": "SS I I",
+   "'\u01c4'": "\u01c4",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "\u01c4 S \u00aa \u00b2 \u2460 \uff21\uff22\uff23",
+   "'\u01c8'": "\u01c7",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u041c\u041e\u0418 \u0417\u0410\u042f\u0412\u041a\u0418",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0412\u0420\u0410\u0427\u0415\u0411\u041d\u042b\u0418",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0412\u0420\u0410\u0427\u0415\u0411\u041d\u042b\u0418 \u041e\u0421\u041c\u041e\u0422\u0420",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0418 \u0406 \u0418 \u0406",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0421\u041f\u0415\u0426\u0418\u0410\u041b\u042c\u041d\u041e\u0421\u0422\u042c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "FINAL",
+   "'\uff12\uff10\uff12\uff16'": "\uff12\uff10\uff12\uff16",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "7be7cb5da280f54b9180be50bd7c5859c5d79e84761aa72f571adc0161cb7949",
+   "16.0.0": "075a27e37eb5a01a7ce58d26df1e62b44e1222e131fc2dc771f19750302a557c"
+  }
+ },
+ "app.connectors.refeps.refeps._strip_accents": {
+  "inputs": {
+   "\"O'Brien\"": "O'Brien",
+   "'  A   B  '": "  A   B  ",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "  Nino-Sano, \u00bfok?  ",
+   "' '": " ",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1\u00ba A",
+   "'ARGENTINA'": "ARGENTINA",
+   "'Buenos Aires (provincia)'": "Buenos Aires (provincia)",
+   "'Cardiolog\u00eda'": "Cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "Dr./Dra. Perez (guardia)",
+   "'Especialid\u00e1d'": "Especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "GARCIA-LOPEZ, Jose Maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "O.S.P. Buenos Aires (I.O.M.A.)",
+   "'S\u00ed!'": "Si!",
+   "'\\x1f\\x1c a'": "\u001f\u001c a",
+   "'\\xa0nbsp\\xa0'": "\u00a0nbsp\u00a0",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab\tsep\n",
+   "'una ESPECIALIDAD m\u00e9dica'": "una ESPECIALIDAD medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "AEIOU n u",
+   "'\u00c5'": "A",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "Nandu Ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 I",
+   "'\u01c4'": "\u01c4",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43",
+   "'\u01c8'": "\u01c8",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0418 \u0406",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "\ufb01nal",
+   "'\uff12\uff10\uff12\uff16'": "\uff12\uff10\uff12\uff16",
+   "0": "",
+   "5": "raises TypeError",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "110d56150895db441a9c474d40831a198cd2eb9e3f33e8973bc5947816162286",
+   "16.0.0": "9d8a73f0e6c99812c8fb4dc1ffa449ef0292f0ab723dab9988cc8688efd622af"
+  }
+ },
+ "app.core.permissions._slugify": {
+  "inputs": {
+   "\"O'Brien\"": "o_brien",
+   "'  A   B  '": "a_b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino_sano_ok",
+   "' '": "rol",
+   "''": "rol",
+   "'-_-'": "rol",
+   "'123 abc'": "rol_123_abc",
+   "'1\u00ba A'": "rol_1o_a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos_aires_provincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr_dra_perez_guardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia_lopez_jose_maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o_s_p_buenos_aires_i_o_m_a",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "a_b_c",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab_sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una_especialidad_medica",
+   "'x (demanda espont\u00e1nea) y'": "x_demanda_espontanea_y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou_n_u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu_ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz_s_a_2_1_abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "rol",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "rol",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "rol",
+   "'\u0439 \u0457 \u0419 \u0407'": "rol",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "rol",
+   "'\u0623\u062d\u0645\u062f'": "rol",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "rol",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "rol",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "rol_2026",
+   "0": "raises TypeError",
+   "5": "raises TypeError",
+   "False": "raises TypeError",
+   "None": "raises TypeError"
+  },
+  "sweep": {
+   "15.0.0": "f025c943876876c5ade00a0ffa10fd6e4aed99f8f660b8d5891c9dd3f13cf4b7",
+   "16.0.0": "f025c943876876c5ade00a0ffa10fd6e4aed99f8f660b8d5891c9dd3f13cf4b7"
+  }
+ },
+ "app.core.text_fold.ascii_words": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, ok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "",
+   "'\u0439 \u0457 \u0419 \u0407'": "",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "264e05b0c311aac61e0c15934dd72bb81ce714679d737344e1398385d17f603b",
+   "16.0.0": "264e05b0c311aac61e0c15934dd72bb81ce714679d737344e1398385d17f603b"
+  }
+ },
+ "app.core.text_fold.fold_words": {
+  "inputs": {
+   "\"O'Brien\"": "o brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino sano ok",
+   "' '": "",
+   "''": "",
+   "'-_-'": "",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires provincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr dra perez guardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia lopez jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o s p buenos aires i o m a",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "a b c",
+   "'a\\u200bb'": "a b",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x demanda espontanea y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926 \u0935\u0928 \u0917\u0930 \u0915",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "304604e78890d5df0e6bc6034d59025a1a64570760f2b86c2b43d6d16286b10a",
+   "16.0.0": "120bdc5f2754506c62ce98b0408cab4e77d817b1bc3fd7ffce16354b5bf98eed"
+  }
+ },
+ "app.core.text_fold.plain": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "  a   b  ",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "  nino-sano, \u00bfok?  ",
+   "' '": " ",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "\u001f\u001c a",
+   "'\\xa0nbsp\\xa0'": " nbsp ",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab\tsep\n",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "82530828871edb8f78c8f93a914e64c13946db1826098cbf591892a378b6dd22",
+   "16.0.0": "b74fb1c37f6d318d4414b56110e7265649fcad50cf3d96519d0129b480bd1cb4"
+  }
+ },
+ "app.cuentas.health_coverage._normalize": {
+  "inputs": {
+   "\"O'Brien\"": "o brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino sano ok",
+   "' '": "",
+   "''": "",
+   "'-_-'": "",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1 a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires provincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr dra perez guardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia lopez jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o s p buenos aires i o m a",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "a b c",
+   "'a\\u200bb'": "a b",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x demanda espontanea y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "",
+   "'\u01c8'": "",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "",
+   "'\u0439 \u0457 \u0419 \u0407'": "",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "",
+   "'\ufb01nal'": "nal",
+   "'\uff12\uff10\uff12\uff16'": "",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "baf7983fa9a0e6044c88eba1950937530c4d10235e1cc8cc0a47f5f37d7b3878",
+   "16.0.0": "340cf77ed5f8605be99c1c5f6597e80fafc041df9931292597156ddeaf38cc6e"
+  }
+ },
+ "modules.chat.chat_agent._busca[especialidad]": {
+  "inputs": {
+   "\"O'Brien\"": false,
+   "'  A   B  '": false,
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": false,
+   "' '": false,
+   "''": false,
+   "'-_-'": false,
+   "'123 abc'": false,
+   "'1\u00ba A'": false,
+   "'ARGENTINA'": false,
+   "'Buenos Aires (provincia)'": false,
+   "'Cardiolog\u00eda'": false,
+   "'Dr./Dra. P\u00e9rez (guardia)'": false,
+   "'Especialid\u00e1d'": false,
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": false,
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": false,
+   "'S\u00ed!'": false,
+   "'\\x1f\\x1c a'": false,
+   "'\\xa0nbsp\\xa0'": false,
+   "'__x__'": false,
+   "'a,b;c'": false,
+   "'a\\u200bb'": false,
+   "'especialidad'": true,
+   "'i\u0307stanbul'": false,
+   "'tab\\tsep\\n'": false,
+   "'una ESPECIALIDAD m\u00e9dica'": false,
+   "'x (demanda espont\u00e1nea) y'": false,
+   "'x\u0301'": false,
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": false,
+   "'\u00c5'": false,
+   "'\u00d1and\u00fa \u00c7\u00e0'": false,
+   "'\u00df \u0131 \u0130'": false,
+   "'\u01c4'": false,
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": false,
+   "'\u01c8'": false,
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": false,
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": false,
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": false,
+   "'\u0439 \u0457 \u0419 \u0407'": false,
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": true,
+   "'\u0623\u062d\u0645\u062f'": false,
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": false,
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": false,
+   "'\ufb01nal'": false,
+   "'\uff12\uff10\uff12\uff16'": false,
+   "0": false,
+   "5": false,
+   "False": false,
+   "None": false
+  },
+  "sweep": {
+   "15.0.0": "617fa2d2e2f3dd5b75a950795ba91397a9eba86d1d8fbd6382585098a7e98542",
+   "16.0.0": "617fa2d2e2f3dd5b75a950795ba91397a9eba86d1d8fbd6382585098a7e98542"
+  }
+ },
+ "modules.chat.chat_agent._busca[russian]": {
+  "inputs": {
+   "\"O'Brien\"": false,
+   "'  A   B  '": false,
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": false,
+   "' '": false,
+   "''": false,
+   "'-_-'": false,
+   "'123 abc'": false,
+   "'1\u00ba A'": false,
+   "'ARGENTINA'": false,
+   "'Buenos Aires (provincia)'": false,
+   "'Cardiolog\u00eda'": false,
+   "'Dr./Dra. P\u00e9rez (guardia)'": false,
+   "'Especialid\u00e1d'": false,
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": false,
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": false,
+   "'S\u00ed!'": false,
+   "'\\x1f\\x1c a'": false,
+   "'\\xa0nbsp\\xa0'": false,
+   "'__x__'": false,
+   "'a,b;c'": false,
+   "'a\\u200bb'": false,
+   "'especialidad'": false,
+   "'i\u0307stanbul'": false,
+   "'tab\\tsep\\n'": false,
+   "'una ESPECIALIDAD m\u00e9dica'": false,
+   "'x (demanda espont\u00e1nea) y'": false,
+   "'x\u0301'": false,
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": false,
+   "'\u00c5'": false,
+   "'\u00d1and\u00fa \u00c7\u00e0'": false,
+   "'\u00df \u0131 \u0130'": false,
+   "'\u01c4'": false,
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": false,
+   "'\u01c8'": false,
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": false,
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": false,
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": true,
+   "'\u0439 \u0457 \u0419 \u0407'": false,
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": false,
+   "'\u0623\u062d\u0645\u062f'": false,
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": false,
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": false,
+   "'\ufb01nal'": false,
+   "'\uff12\uff10\uff12\uff16'": false,
+   "0": false,
+   "5": false,
+   "False": false,
+   "None": false
+  },
+  "sweep": {
+   "15.0.0": "617fa2d2e2f3dd5b75a950795ba91397a9eba86d1d8fbd6382585098a7e98542",
+   "16.0.0": "617fa2d2e2f3dd5b75a950795ba91397a9eba86d1d8fbd6382585098a7e98542"
+  }
+ },
+ "app.modules.chat.chat_agent._norm_text": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, \u00bfok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "906ec199e2f994cc398ff4eb155c09ce1111aba0ac796fcf8497297592fe57a2",
+   "16.0.0": "5bdb10aa22e80442db77f745a7e981f26d3cc6a7bd6c7faec03d84037d88299e"
+  }
+ },
+ "app.modules.chat.chat_tools._norm_i18n": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, \u00bfok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "ss \u0131 i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "f87b5dc60942a4129596adc031014bdb4b561365e3bdd8c5e27664380e08e90e",
+   "16.0.0": "0fa6d3341acddd5d23bfa0f67d060916e9e51a44ad5ce5679ce2a052580a7e3a"
+  }
+ },
+ "app.modules.intake.dialogue.norm": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, \u00bfok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "f74fe1eec3acfb2c3981b6214f1d2c7d84610a719165622bde3f0f95f40d7b8a",
+   "16.0.0": "03bd63541a0728deb97cf7d98fed8cd51e51a725942a81720bc0b82232c6a367"
+  }
+ },
+ "app.modules.turnos.doctor_appointments._norm": {
+  "inputs": {
+   "\"O'Brien\"": "o brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino sano ok",
+   "' '": "",
+   "''": "",
+   "'-_-'": "",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1\u00ba a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires provincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr dra perez guardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia lopez jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o s p buenos aires i o m a",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "a b c",
+   "'a\\u200bb'": "a b",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x demanda espontanea y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "\u01c6",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "\u01c6 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43",
+   "'\u01c8'": "\u01c9",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926 \u0935\u0928 \u0917\u0930 \u0915",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "\ufb01nal",
+   "'\uff12\uff10\uff12\uff16'": "\uff12\uff10\uff12\uff16",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "f0aa91bca5121ba3925bec09bc2f4e0b8fe63c99b7791c024bee221c7e851fb7",
+   "16.0.0": "4b0aff4ed7ffec50a65fbb8c4ce1c3eb11647028da810a9e42ac2afa69e7d1ff"
+  }
+ },
+ "app.modules.turnos.remedies._norm": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, \u00bfok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1\u00ba a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "\u01c6",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "\u01c6 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43",
+   "'\u01c8'": "\u01c9",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "\ufb01nal",
+   "'\uff12\uff10\uff12\uff16'": "\uff12\uff10\uff12\uff16",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "b79b8ede1b3209d15561b3fec40f2dbd14d05a991fcfd11c3b8a7ea030832e65",
+   "16.0.0": "82b2dc656527bc0fd05757ff8013754e3f6f0a05dd6d098053f6bb00aee31546"
+  }
+ },
+ "app.modules.turnos.schedule_policy.norm_specialty": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a   b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, \u00bfok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1\u00ba a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab\tsep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "\u01c6",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "\u01c6 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43",
+   "'\u01c8'": "\u01c9",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "\ufb01nal",
+   "'\uff12\uff10\uff12\uff16'": "\uff12\uff10\uff12\uff16",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "b34342c7db3f4f30fee510fcc99db5083411f8c58bcac4c41606b85bfc5100bb",
+   "16.0.0": "1a9bb99a9f98b0572a93fe9a5b8902da963c022949f4986ee627a425bee2f11c"
+  }
+ },
+ "app.notifications.confirmations._norm": {
+  "inputs": {
+   "\"O'Brien\"": "o brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino sano ok",
+   "' '": "",
+   "''": "",
+   "'-_-'": "",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires provincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr dra perez guardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia lopez jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o s p buenos aires i o m a",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "a b c",
+   "'a\\u200bb'": "a b",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x demanda espontanea y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "",
+   "'\u0439 \u0457 \u0419 \u0407'": "",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "3050194b8c0f33d23b17f7681f61ceb75423d5712e06c24477f859e5fc09511b",
+   "16.0.0": "b11a5723b92c095ff37f970759408d3156b24913ea2903047dac8e6b960a0d97"
+  }
+ },
+ "app.ops.setup._name_key": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "a b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano, ok?",
+   "' '": "",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1o a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz s a 2 1 abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "",
+   "'\u0439 \u0457 \u0419 \u0407'": "",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "54018c884dec2bb47f7e65f26e0d5ea4ceaef9ccbfa0b2404c1ee12fe1734f69",
+   "16.0.0": "54018c884dec2bb47f7e65f26e0d5ea4ceaef9ccbfa0b2404c1ee12fe1734f69"
+  }
+ },
+ "app.ops.setup._slugify": {
+  "inputs": {
+   "\"O'Brien\"": "o-brien",
+   "'  A   B  '": "a-b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano-ok",
+   "' '": "localidad",
+   "''": "localidad",
+   "'-_-'": "localidad",
+   "'123 abc'": "123-abc",
+   "'1\u00ba A'": "1o-a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos-aires-provincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr-dra-perez-guardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez-jose-maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o-s-p-buenos-aires-i-o-m-a",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "a-b-c",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab-sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una-especialidad-medica",
+   "'x (demanda espont\u00e1nea) y'": "x-demanda-espontanea-y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou-n-u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu-ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz-s-a-2-1-abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "localidad",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "localidad",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "localidad",
+   "'\u0439 \u0457 \u0419 \u0407'": "localidad",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "localidad",
+   "'\u0623\u062d\u0645\u062f'": "localidad",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "localidad",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "localidad",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "localidad",
+   "5": "raises TypeError",
+   "False": "localidad",
+   "None": "localidad"
+  },
+  "sweep": {
+   "15.0.0": "18c9729bdcb75ed2cf2c41c0eaf1616f7568dcae067c0f54fde55853d1556743",
+   "16.0.0": "18c9729bdcb75ed2cf2c41c0eaf1616f7568dcae067c0f54fde55853d1556743"
+  }
+ },
+ "app.patient_web.catalog._slug": {
+  "inputs": {
+   "\"O'Brien\"": "o-brien",
+   "'  A   B  '": "a-b",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "nino-sano-ok",
+   "' '": "",
+   "''": "",
+   "'-_-'": "",
+   "'123 abc'": "123-abc",
+   "'1\u00ba A'": "1o-a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos-aires-provincia",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr-dra-perez-guardia",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez-jose-maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o-s-p-buenos-aires-i-o-m-a",
+   "'S\u00ed!'": "si",
+   "'\\x1f\\x1c a'": "a",
+   "'\\xa0nbsp\\xa0'": "nbsp",
+   "'__x__'": "x",
+   "'a,b;c'": "a-b-c",
+   "'a\\u200bb'": "ab",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab-sep",
+   "'una ESPECIALIDAD m\u00e9dica'": "una-especialidad-medica",
+   "'x (demanda espont\u00e1nea) y'": "x-demanda-espontanea-y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou-n-u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu-ca",
+   "'\u00df \u0131 \u0130'": "i",
+   "'\u01c4'": "dz",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "dz-s-a-2-1-abc",
+   "'\u01c8'": "lj",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "",
+   "'\u0439 \u0457 \u0419 \u0407'": "",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "",
+   "'\u0623\u062d\u0645\u062f'": "",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "",
+   "'\ufb01nal'": "final",
+   "'\uff12\uff10\uff12\uff16'": "2026",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "9f27e22f9c29e96e8e585b64070ff3507882406ce2fd36f66bdcc3627bc2d3a8",
+   "16.0.0": "9f27e22f9c29e96e8e585b64070ff3507882406ce2fd36f66bdcc3627bc2d3a8"
+  }
+ },
+ "patient_web.catalog._validate_preparation[match list]": {
+  "inputs": {
+   "\"O'Brien\"": [
+    {
+     "id": "x",
+     "match": [
+      "o'brien"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'  A   B  '": [
+    {
+     "id": "x",
+     "match": [
+      "a b"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": [
+    {
+     "id": "x",
+     "match": [
+      "nino-sano, ok?"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "' '": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "''": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'-_-'": [
+    {
+     "id": "x",
+     "match": [
+      "-_-"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'123 abc'": [
+    {
+     "id": "x",
+     "match": [
+      "123 abc"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'1\u00ba A'": [
+    {
+     "id": "x",
+     "match": [
+      "1o a"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'ARGENTINA'": [
+    {
+     "id": "x",
+     "match": [
+      "argentina"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Buenos Aires (provincia)'": [
+    {
+     "id": "x",
+     "match": [
+      "buenos aires (provincia)"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Cardiolog\u00eda'": [
+    {
+     "id": "x",
+     "match": [
+      "cardiologia"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Dr./Dra. P\u00e9rez (guardia)'": [
+    {
+     "id": "x",
+     "match": [
+      "dr./dra. perez (guardia)"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Especialid\u00e1d'": [
+    {
+     "id": "x",
+     "match": [
+      "especialidad"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": [
+    {
+     "id": "x",
+     "match": [
+      "garcia-lopez, jose maria"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": [
+    {
+     "id": "x",
+     "match": [
+      "o.s.p. buenos aires (i.o.m.a.)"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'S\u00ed!'": [
+    {
+     "id": "x",
+     "match": [
+      "si!"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\\x1f\\x1c a'": [
+    {
+     "id": "x",
+     "match": [
+      "a"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\\xa0nbsp\\xa0'": [
+    {
+     "id": "x",
+     "match": [
+      "nbsp"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'__x__'": [
+    {
+     "id": "x",
+     "match": [
+      "__x__"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'a,b;c'": [
+    {
+     "id": "x",
+     "match": [
+      "a,b;c"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'a\\u200bb'": [
+    {
+     "id": "x",
+     "match": [
+      "ab"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'especialidad'": [
+    {
+     "id": "x",
+     "match": [
+      "especialidad"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'i\u0307stanbul'": [
+    {
+     "id": "x",
+     "match": [
+      "istanbul"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'tab\\tsep\\n'": [
+    {
+     "id": "x",
+     "match": [
+      "tab sep"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'una ESPECIALIDAD m\u00e9dica'": [
+    {
+     "id": "x",
+     "match": [
+      "una especialidad medica"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'x (demanda espont\u00e1nea) y'": [
+    {
+     "id": "x",
+     "match": [
+      "x (demanda espontanea) y"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'x\u0301'": [
+    {
+     "id": "x",
+     "match": [
+      "x"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": [
+    {
+     "id": "x",
+     "match": [
+      "aeiou n u"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00c5'": [
+    {
+     "id": "x",
+     "match": [
+      "a"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00d1and\u00fa \u00c7\u00e0'": [
+    {
+     "id": "x",
+     "match": [
+      "nandu ca"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00df \u0131 \u0130'": [
+    {
+     "id": "x",
+     "match": [
+      "i"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u01c4'": [
+    {
+     "id": "x",
+     "match": [
+      "dz"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": [
+    {
+     "id": "x",
+     "match": [
+      "dz s a 2 1 abc"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u01c8'": [
+    {
+     "id": "x",
+     "match": [
+      "lj"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0439 \u0457 \u0419 \u0407'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0623\u062d\u0645\u062f'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\ufb01nal'": [
+    {
+     "id": "x",
+     "match": [
+      "final"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\uff12\uff10\uff12\uff16'": [
+    {
+     "id": "x",
+     "match": [
+      "2026"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "0": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "5": [
+    {
+     "id": "x",
+     "match": [
+      "5"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "False": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "None": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ]
+  },
+  "sweep": {
+   "15.0.0": "1791da4e772e246cb7611d74df82b4b4352d40eedf00d2d6180a2d0bd6e4f135",
+   "16.0.0": "1791da4e772e246cb7611d74df82b4b4352d40eedf00d2d6180a2d0bd6e4f135"
+  }
+ },
+ "patient_web.catalog._validate_preparation[match text]": {
+  "inputs": {
+   "\"O'Brien\"": [
+    {
+     "id": "x",
+     "match": [
+      "o'brien"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'  A   B  '": [
+    {
+     "id": "x",
+     "match": [
+      "a b"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": [
+    {
+     "id": "x",
+     "match": [
+      "nino-sano",
+      "ok?"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "' '": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "''": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'-_-'": [
+    {
+     "id": "x",
+     "match": [
+      "-_-"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'123 abc'": [
+    {
+     "id": "x",
+     "match": [
+      "123 abc"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'1\u00ba A'": [
+    {
+     "id": "x",
+     "match": [
+      "1o a"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'ARGENTINA'": [
+    {
+     "id": "x",
+     "match": [
+      "argentina"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Buenos Aires (provincia)'": [
+    {
+     "id": "x",
+     "match": [
+      "buenos aires (provincia)"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Cardiolog\u00eda'": [
+    {
+     "id": "x",
+     "match": [
+      "cardiologia"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Dr./Dra. P\u00e9rez (guardia)'": [
+    {
+     "id": "x",
+     "match": [
+      "dr./dra. perez (guardia)"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'Especialid\u00e1d'": [
+    {
+     "id": "x",
+     "match": [
+      "especialidad"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": [
+    {
+     "id": "x",
+     "match": [
+      "garcia-lopez",
+      "jose maria"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": [
+    {
+     "id": "x",
+     "match": [
+      "o.s.p. buenos aires (i.o.m.a.)"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'S\u00ed!'": [
+    {
+     "id": "x",
+     "match": [
+      "si!"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\\x1f\\x1c a'": [
+    {
+     "id": "x",
+     "match": [
+      "a"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\\xa0nbsp\\xa0'": [
+    {
+     "id": "x",
+     "match": [
+      "nbsp"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'__x__'": [
+    {
+     "id": "x",
+     "match": [
+      "__x__"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'a,b;c'": [
+    {
+     "id": "x",
+     "match": [
+      "a",
+      "b;c"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'a\\u200bb'": [
+    {
+     "id": "x",
+     "match": [
+      "ab"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'especialidad'": [
+    {
+     "id": "x",
+     "match": [
+      "especialidad"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'i\u0307stanbul'": [
+    {
+     "id": "x",
+     "match": [
+      "istanbul"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'tab\\tsep\\n'": [
+    {
+     "id": "x",
+     "match": [
+      "tab sep"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'una ESPECIALIDAD m\u00e9dica'": [
+    {
+     "id": "x",
+     "match": [
+      "una especialidad medica"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'x (demanda espont\u00e1nea) y'": [
+    {
+     "id": "x",
+     "match": [
+      "x (demanda espontanea) y"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'x\u0301'": [
+    {
+     "id": "x",
+     "match": [
+      "x"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": [
+    {
+     "id": "x",
+     "match": [
+      "aeiou n u"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00c5'": [
+    {
+     "id": "x",
+     "match": [
+      "a"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00d1and\u00fa \u00c7\u00e0'": [
+    {
+     "id": "x",
+     "match": [
+      "nandu ca"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u00df \u0131 \u0130'": [
+    {
+     "id": "x",
+     "match": [
+      "i"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u01c4'": [
+    {
+     "id": "x",
+     "match": [
+      "dz"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": [
+    {
+     "id": "x",
+     "match": [
+      "dz s a 2 1 abc"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u01c8'": [
+    {
+     "id": "x",
+     "match": [
+      "lj"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0439 \u0457 \u0419 \u0407'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0623\u062d\u0645\u062f'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": [
+    null,
+    "pon\u00e9 al menos una palabra por la cual reconocerla"
+   ],
+   "'\ufb01nal'": [
+    {
+     "id": "x",
+     "match": [
+      "final"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "'\uff12\uff10\uff12\uff16'": [
+    {
+     "id": "x",
+     "match": [
+      "2026"
+     ],
+     "nombre": "X"
+    },
+    null
+   ],
+   "0": [
+    null,
+    "las palabras para reconocerla deben ser una lista"
+   ],
+   "5": [
+    null,
+    "las palabras para reconocerla deben ser una lista"
+   ],
+   "False": [
+    null,
+    "las palabras para reconocerla deben ser una lista"
+   ],
+   "None": [
+    null,
+    "las palabras para reconocerla deben ser una lista"
+   ]
+  },
+  "sweep": {
+   "15.0.0": "057ca4524cb55a94c0b1c27a8cf009e0a85f88d4ed34d3c7eb6959ce77f7d8da",
+   "16.0.0": "057ca4524cb55a94c0b1c27a8cf009e0a85f88d4ed34d3c7eb6959ce77f7d8da"
+  }
+ },
+ "app.patient_web.knowledge._plain": {
+  "inputs": {
+   "\"O'Brien\"": "o'brien",
+   "'  A   B  '": "  a   b  ",
+   "'  Ni\u00f1o-Sano, \u00bfok?  '": "  nino-sano, \u00bfok?  ",
+   "' '": " ",
+   "''": "",
+   "'-_-'": "-_-",
+   "'123 abc'": "123 abc",
+   "'1\u00ba A'": "1\u00ba a",
+   "'ARGENTINA'": "argentina",
+   "'Buenos Aires (provincia)'": "buenos aires (provincia)",
+   "'Cardiolog\u00eda'": "cardiologia",
+   "'Dr./Dra. P\u00e9rez (guardia)'": "dr./dra. perez (guardia)",
+   "'Especialid\u00e1d'": "especialidad",
+   "'GARC\u00cdA-L\u00d3PEZ, Jos\u00e9 Mar\u00eda'": "garcia-lopez, jose maria",
+   "'O.S.P. Buenos Aires (I.O.M.A.)'": "o.s.p. buenos aires (i.o.m.a.)",
+   "'S\u00ed!'": "si!",
+   "'\\x1f\\x1c a'": "\u001f\u001c a",
+   "'\\xa0nbsp\\xa0'": "\u00a0nbsp\u00a0",
+   "'__x__'": "__x__",
+   "'a,b;c'": "a,b;c",
+   "'a\\u200bb'": "a\u200bb",
+   "'especialidad'": "especialidad",
+   "'i\u0307stanbul'": "istanbul",
+   "'tab\\tsep\\n'": "tab\tsep\n",
+   "'una ESPECIALIDAD m\u00e9dica'": "una especialidad medica",
+   "'x (demanda espont\u00e1nea) y'": "x (demanda espontanea) y",
+   "'x\u0301'": "x",
+   "'\u00c1\u00c9\u00cd\u00d3\u00da \u00f1 \u00fc'": "aeiou n u",
+   "'\u00c5'": "a",
+   "'\u00d1and\u00fa \u00c7\u00e0'": "nandu ca",
+   "'\u00df \u0131 \u0130'": "\u00df \u0131 i",
+   "'\u01c4'": "\u01c6",
+   "'\u01c5 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43'": "\u01c6 \u017f \u00aa \u00b2 \u2460 \uff41\uff42\uff43",
+   "'\u01c8'": "\u01c9",
+   "'\u041c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438'": "\u043c\u043e\u0438 \u0437\u0430\u044f\u0432\u043a\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438",
+   "'\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0439 \u043e\u0441\u043c\u043e\u0442\u0440'": "\u0432\u0440\u0430\u0447\u0435\u0431\u043d\u044b\u0438 \u043e\u0441\u043c\u043e\u0442\u0440",
+   "'\u0439 \u0457 \u0419 \u0407'": "\u0438 \u0456 \u0438 \u0456",
+   "'\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c'": "\u0441\u043f\u0435\u0446\u0438\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c",
+   "'\u0623\u062d\u0645\u062f'": "\u0627\u062d\u0645\u062f",
+   "'\u0926\u0947\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f'": "\u0926\u0935\u0928\u093e\u0917\u0930\u0940 \u0915\u093f",
+   "'\ud55c\uad6d\uc5b4 \u3072\u3089\u304c\u306a'": "\u1112\u1161\u11ab\u1100\u116e\u11a8\u110b\u1165 \u3072\u3089\u304b\u306a",
+   "'\ufb01nal'": "\ufb01nal",
+   "'\uff12\uff10\uff12\uff16'": "\uff12\uff10\uff12\uff16",
+   "0": "",
+   "5": "5",
+   "False": "",
+   "None": ""
+  },
+  "sweep": {
+   "15.0.0": "4c254f4767c2a1f8588b536bb7854beb375e1731b853f2f5aa3a3f910d9d8f89",
+   "16.0.0": "5edf6c5e414a8567ca90466a932196c12ea2b9bae3c4b8c51001afd8408e2e9c"
+  }
+ }
+}

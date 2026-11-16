@@ -1,0 +1,14 @@
+{
+  "_comment": "Fase 2b (3/N), 2026-07-30. Endpoints nacionales usados por la verificación de identidad/matrícula. Fase 2c (2026-07-30): puco.py/refeps.py/auth_renaper.py ahora leen de acá (env var > este archivo > literal hardcodeado como último fallback) — ver docs/architecture/data-packs.md.",
+  "puco": {
+    "base_url": "https://sisa.msal.gov.ar/sisa/services/rest/puco/"
+  },
+  "renaper": {
+    "authorize_url": "https://id.argentina.gob.ar/authorize/",
+    "token_url": "https://id.argentina.gob.ar/token/",
+    "userinfo_url": "https://id.argentina.gob.ar/userinfo/"
+  },
+  "refeps": {
+    "search_url": "https://www.argentina.gob.ar/salud/buscador-nacional-de-profesionales-de-la-salud"
+  }
+}

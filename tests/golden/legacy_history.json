@@ -1,0 +1,841 @@
+{
+ "alepo": {
+  "adapter": {
+   "answers": {
+    "'20456781'": {
+     "count": 4,
+     "dates_sorted": true,
+     "first": [
+      [
+       "2022-04-11",
+       "evolucion",
+       "alepo"
+      ],
+      [
+       "2022-04-11",
+       "imagen",
+       "alepo"
+      ]
+     ],
+     "sha256": "5efcd1ac42baa80344eb13e52225111dbff064f69c7bf7107539f6d1dc4ff133"
+    },
+    "'999999999'": {
+     "count": 5,
+     "dates_sorted": true,
+     "first": [
+      [
+       "2020-02-14",
+       "evolucion",
+       "alepo"
+      ],
+      [
+       "2021-08-20",
+       "vacunacion",
+       "alepo"
+      ]
+     ],
+     "sha256": "9ef8cbb0644ee73d123d7a4be2c787b8f3187e94b1bd419dc645887c9897bdb1"
+    }
+   },
+   "classes": [
+    "AlepoConnector"
+   ]
+  },
+  "cli": {
+   "known": {
+    "code": 0,
+    "stdout_head": "[\n  {\n    \"fecha\": \"2022-04-11\",\n    \"tipo\": \"evolucion\",\n    \"servicio\": \"Traum",
+    "stdout_sha256": "4c16c7b9c5fa9fc7741f0c01f45e0698f504087a0ecf53ef9fa907bbdfaaa20d"
+   },
+   "unknown": {
+    "code": 0,
+    "stdout_head": "[\n  {\n    \"fecha\": \"2020-02-14\",\n    \"tipo\": \"evolucion\",\n    \"servicio\": \"Pedia",
+    "stdout_sha256": "0cefdea9da9da1fe9cb8cf073029de6568853252e3386bf19259807cf21b0e25"
+   },
+   "usage": {
+    "code": 2,
+    "stdout_head": "uso: python3 -m connectors.alepo.alepo <dni>\n",
+    "stdout_sha256": "363dc3a023c8f18f013c13fa0476ef90545244917aa3f76a00dca8af6e55c4cb"
+   },
+   "usage_two": {
+    "code": 2,
+    "stdout_head": "uso: python3 -m connectors.alepo.alepo <dni>\n",
+    "stdout_sha256": "363dc3a023c8f18f013c13fa0476ef90545244917aa3f76a00dca8af6e55c4cb"
+   }
+  },
+  "fake": {
+   "'  '": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2021-01-11",
+      "laboratorio",
+      "alepo"
+     ],
+     [
+      "2021-01-18",
+      "evolucion",
+      "alepo"
+     ]
+    ],
+    "sha256": "acb3f5c1fc85b949eec2118db96973c9220f4cdb814ad3a22ac508fcab0c7290"
+   },
+   "' 30111222 '": {
+    "count": 4,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-09-02",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2020-09-02",
+      "receta",
+      "alepo"
+     ]
+    ],
+    "sha256": "5c5b67c2d9768965d3daac580c4b1c6fe4f68c84bf72b13b34cffdf0e9bea7c5"
+   },
+   "''": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2021-01-11",
+      "laboratorio",
+      "alepo"
+     ],
+     [
+      "2021-01-18",
+      "evolucion",
+      "alepo"
+     ]
+    ],
+    "sha256": "acb3f5c1fc85b949eec2118db96973c9220f4cdb814ad3a22ac508fcab0c7290"
+   },
+   "'00000001'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-02-14",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-08-20",
+      "vacunacion",
+      "alepo"
+     ]
+    ],
+    "sha256": "9ef8cbb0644ee73d123d7a4be2c787b8f3187e94b1bd419dc645887c9897bdb1"
+   },
+   "'1'": {
+    "count": 4,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-09-02",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2020-09-02",
+      "receta",
+      "alepo"
+     ]
+    ],
+    "sha256": "5c5b67c2d9768965d3daac580c4b1c6fe4f68c84bf72b13b34cffdf0e9bea7c5"
+   },
+   "'20456781'": {
+    "count": 4,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2022-04-11",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2022-04-11",
+      "imagen",
+      "alepo"
+     ]
+    ],
+    "sha256": "5efcd1ac42baa80344eb13e52225111dbff064f69c7bf7107539f6d1dc4ff133"
+   },
+   "'99000001'": {
+    "count": 12,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-04-14",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2020-04-20",
+      "laboratorio",
+      "alepo"
+     ]
+    ],
+    "sha256": "4fa6a2328c820ea2ddaf27aa8ba2e168d57e30686d03f71062d527ef76cde773"
+   },
+   "'99000002'": {
+    "count": 7,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-03-11",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-07-19",
+      "evolucion",
+      "alepo"
+     ]
+    ],
+    "sha256": "76cc4695f7a792490c1a38070f515ad3caa6050ca79c3eb2c822d0c9e82fa7ae"
+   },
+   "'99000003'": {
+    "count": 9,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-05-06",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2020-05-06",
+      "receta",
+      "alepo"
+     ]
+    ],
+    "sha256": "bb9df6142d470bd8d5862c56b327f29d2ec07fe77e61f10cfdcce3d1608529e1"
+   },
+   "'99306818'": {
+    "count": 7,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-06-02",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2020-06-05",
+      "epicrisis",
+      "alepo"
+     ]
+    ],
+    "sha256": "111631c4bcb40869688e586ef3a25be5680ce06bee083b3206d4236295a0d6a5"
+   },
+   "'99389856'": {
+    "count": 9,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2021-03-09",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-03-09",
+      "receta",
+      "alepo"
+     ]
+    ],
+    "sha256": "320fa5ad46e9d6de3cb61f3591438a66d070ddd262d830ddfe5432b89c09684e"
+   },
+   "'99620834'": {
+    "count": 7,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-04-08",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-03-15",
+      "evolucion",
+      "alepo"
+     ]
+    ],
+    "sha256": "578f02c2b04678ef7352c71eb93b20ccbc9d127c527352dab9e852cb38f756c6"
+   },
+   "'999999999'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-02-14",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-08-20",
+      "vacunacion",
+      "alepo"
+     ]
+    ],
+    "sha256": "9ef8cbb0644ee73d123d7a4be2c787b8f3187e94b1bd419dc645887c9897bdb1"
+   },
+   "'no-es-un-dni'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-02-14",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-08-20",
+      "vacunacion",
+      "alepo"
+     ]
+    ],
+    "sha256": "9ef8cbb0644ee73d123d7a4be2c787b8f3187e94b1bd419dc645887c9897bdb1"
+   },
+   "0": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2021-01-11",
+      "laboratorio",
+      "alepo"
+     ],
+     [
+      "2021-01-18",
+      "evolucion",
+      "alepo"
+     ]
+    ],
+    "sha256": "acb3f5c1fc85b949eec2118db96973c9220f4cdb814ad3a22ac508fcab0c7290"
+   },
+   "30111222": {
+    "count": 4,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-09-02",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2020-09-02",
+      "receta",
+      "alepo"
+     ]
+    ],
+    "sha256": "5c5b67c2d9768965d3daac580c4b1c6fe4f68c84bf72b13b34cffdf0e9bea7c5"
+   },
+   "False": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2021-01-11",
+      "laboratorio",
+      "alepo"
+     ],
+     [
+      "2021-01-18",
+      "evolucion",
+      "alepo"
+     ]
+    ],
+    "sha256": "acb3f5c1fc85b949eec2118db96973c9220f4cdb814ad3a22ac508fcab0c7290"
+   },
+   "None": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2021-01-11",
+      "laboratorio",
+      "alepo"
+     ],
+     [
+      "2021-01-18",
+      "evolucion",
+      "alepo"
+     ]
+    ],
+    "sha256": "acb3f5c1fc85b949eec2118db96973c9220f4cdb814ad3a22ac508fcab0c7290"
+   }
+  },
+  "known_dnis": [
+   "20456781",
+   "99000001",
+   "99000002",
+   "99000003",
+   "99306818",
+   "99389856",
+   "99620834"
+  ],
+  "manifest": {
+   "capability": "clinical_history_lookup",
+   "config_keys": [
+    "TURNOS_FAKE_ALEPO"
+   ],
+   "country": "AR",
+   "description": "Alepo \u2014 one of the two systems Pinamar's older clinical history (pre-HSI) was digitized into as scanned PDFs, keyed by DNI; this one covers roughly 2020-2024 (per reference-deployment counterpart, 2026-07-08 hospital meeting notes). Real mode has no access path yet \u2014 no API, no DB export, no file share has been identified \u2014 and stays an honest ProviderUnavailable until the reference-deployment counterpart points at how the records are reachable. TURNOS_FAKE_ALEPO=1 enables the demo/test fake: fully synthetic OCR-style histories (sample_historias.json) keyed by the demo DNIs, with a deterministic template fallback for unknown DNIs.",
+   "id": "alepo"
+  },
+  "sample_file_keys": [
+   "cobertura",
+   "descripcion",
+   "pacientes",
+   "plantillas",
+   "sistema"
+  ],
+  "switch": {
+   "' 1 '": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-02-14",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-08-20",
+      "vacunacion",
+      "alepo"
+     ]
+    ],
+    "sha256": "9ef8cbb0644ee73d123d7a4be2c787b8f3187e94b1bd419dc645887c9897bdb1"
+   },
+   "''": "raises ProviderUnavailable: alepo: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'0'": "raises ProviderUnavailable: alepo: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'1'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2020-02-14",
+      "evolucion",
+      "alepo"
+     ],
+     [
+      "2021-08-20",
+      "vacunacion",
+      "alepo"
+     ]
+    ],
+    "sha256": "9ef8cbb0644ee73d123d7a4be2c787b8f3187e94b1bd419dc645887c9897bdb1"
+   },
+   "'11'": "raises ProviderUnavailable: alepo: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'true'": "raises ProviderUnavailable: alepo: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'yes'": "raises ProviderUnavailable: alepo: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "None": "raises ProviderUnavailable: alepo: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable"
+  }
+ },
+ "marqui": {
+  "adapter": {
+   "answers": {
+    "'20456781'": {
+     "count": 9,
+     "dates_sorted": true,
+     "first": [
+      [
+       "1996-04-03",
+       "epicrisis",
+       "marqui"
+      ],
+      [
+       "1996-04-10",
+       "evolucion",
+       "marqui"
+      ]
+     ],
+     "sha256": "0ed9d55ea334d54f017db58b5eb40e57631914274d4cb149c34c14f8f45c2db0"
+    },
+    "'999999999'": {
+     "count": 5,
+     "dates_sorted": true,
+     "first": [
+      [
+       "2001-03-05",
+       "evolucion",
+       "marqui"
+      ],
+      [
+       "2001-09-12",
+       "evolucion",
+       "marqui"
+      ]
+     ],
+     "sha256": "4768d5b3589b0071563b3678710453d4192a4bbe864f6f5d357dd955d7528a99"
+    }
+   },
+   "classes": [
+    "MarquiConnector"
+   ]
+  },
+  "cli": {
+   "known": {
+    "code": 0,
+    "stdout_head": "[\n  {\n    \"fecha\": \"1996-04-03\",\n    \"tipo\": \"epicrisis\",\n    \"servicio\": \"Cirug",
+    "stdout_sha256": "4c6bfc52ba8ded5161472c666073bcae4eeecc5e9a60c70f05324bc2aa81dd14"
+   },
+   "unknown": {
+    "code": 0,
+    "stdout_head": "[\n  {\n    \"fecha\": \"2001-03-05\",\n    \"tipo\": \"evolucion\",\n    \"servicio\": \"Pedia",
+    "stdout_sha256": "b09f7412d667f226cb9afd697c5648ac729f202df1717de2f5d57abc591ca2c4"
+   },
+   "usage": {
+    "code": 2,
+    "stdout_head": "uso: python3 -m connectors.marqui.marqui <dni>\n",
+    "stdout_sha256": "7c0d50cfeefbe34fb8dc9fb2b0139aff0b66d6712553300cb314cb2e29c4b20a"
+   },
+   "usage_two": {
+    "code": 2,
+    "stdout_head": "uso: python3 -m connectors.marqui.marqui <dni>\n",
+    "stdout_sha256": "7c0d50cfeefbe34fb8dc9fb2b0139aff0b66d6712553300cb314cb2e29c4b20a"
+   }
+  },
+  "fake": {
+   "'  '": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2003-02-11",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2003-02-11",
+      "receta",
+      "marqui"
+     ]
+    ],
+    "sha256": "227e3ef7505ea972d85d4079ecf300f3bcefb30ac1e2b7506e7df29635faa9fa"
+   },
+   "' 30111222 '": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "1999-05-10",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "1999-05-20",
+      "laboratorio",
+      "marqui"
+     ]
+    ],
+    "sha256": "54f96ea4b60288dd9a4500d83fd3d533a878dc8f7ffe374a26b554a62a925012"
+   },
+   "''": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2003-02-11",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2003-02-11",
+      "receta",
+      "marqui"
+     ]
+    ],
+    "sha256": "227e3ef7505ea972d85d4079ecf300f3bcefb30ac1e2b7506e7df29635faa9fa"
+   },
+   "'00000001'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2001-03-05",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2001-09-12",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "4768d5b3589b0071563b3678710453d4192a4bbe864f6f5d357dd955d7528a99"
+   },
+   "'1'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "1999-05-10",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "1999-05-20",
+      "laboratorio",
+      "marqui"
+     ]
+    ],
+    "sha256": "54f96ea4b60288dd9a4500d83fd3d533a878dc8f7ffe374a26b554a62a925012"
+   },
+   "'20456781'": {
+    "count": 9,
+    "dates_sorted": true,
+    "first": [
+     [
+      "1996-04-03",
+      "epicrisis",
+      "marqui"
+     ],
+     [
+      "1996-04-10",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "0ed9d55ea334d54f017db58b5eb40e57631914274d4cb149c34c14f8f45c2db0"
+   },
+   "'99000001'": {
+    "count": 16,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2005-03-14",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2008-06-02",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "1a810db509e1bacf31d18dc0ab0950ae9ae56160803b8f782b8e152f40f86553"
+   },
+   "'99000002'": {
+    "count": 7,
+    "dates_sorted": true,
+    "first": [
+     [
+      "1996-07-22",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "1996-07-22",
+      "receta",
+      "marqui"
+     ]
+    ],
+    "sha256": "8cee895b7722b9a3c7eccdb9bd569e8d673bc5806f46fa818cf4f9ca4d193e16"
+   },
+   "'99000003'": {
+    "count": 2,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2015-12-10",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2016-11-08",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "71ade7cedb0e7573a884405c247e52ca6c59d958be91085345bd53816ab22b0e"
+   },
+   "'99389856'": {
+    "count": 1,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2016-11-22",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "628883511be7c13d9d6707b8eaaae7ef325296aada4dba8999b6cd49edbfe92b"
+   },
+   "'999999999'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2001-03-05",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2001-09-12",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "4768d5b3589b0071563b3678710453d4192a4bbe864f6f5d357dd955d7528a99"
+   },
+   "'no-es-un-dni'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2001-03-05",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2001-09-12",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "4768d5b3589b0071563b3678710453d4192a4bbe864f6f5d357dd955d7528a99"
+   },
+   "0": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2003-02-11",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2003-02-11",
+      "receta",
+      "marqui"
+     ]
+    ],
+    "sha256": "227e3ef7505ea972d85d4079ecf300f3bcefb30ac1e2b7506e7df29635faa9fa"
+   },
+   "30111222": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "1999-05-10",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "1999-05-20",
+      "laboratorio",
+      "marqui"
+     ]
+    ],
+    "sha256": "54f96ea4b60288dd9a4500d83fd3d533a878dc8f7ffe374a26b554a62a925012"
+   },
+   "False": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2003-02-11",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2003-02-11",
+      "receta",
+      "marqui"
+     ]
+    ],
+    "sha256": "227e3ef7505ea972d85d4079ecf300f3bcefb30ac1e2b7506e7df29635faa9fa"
+   },
+   "None": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2003-02-11",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2003-02-11",
+      "receta",
+      "marqui"
+     ]
+    ],
+    "sha256": "227e3ef7505ea972d85d4079ecf300f3bcefb30ac1e2b7506e7df29635faa9fa"
+   }
+  },
+  "known_dnis": [
+   "20456781",
+   "99000001",
+   "99000002",
+   "99000003",
+   "99389856"
+  ],
+  "manifest": {
+   "capability": "clinical_history_lookup",
+   "config_keys": [
+    "TURNOS_FAKE_MARQUI"
+   ],
+   "country": "AR",
+   "description": "Marqui \u2014 the older of the two systems Pinamar's paper clinical history was digitized into as scanned PDFs, keyed by DNI; covers roughly 1996-2016 (per reference-deployment counterpart, 2026-07-08 hospital meeting notes). Real mode has no access path yet \u2014 no API, no DB export, no file share has been identified \u2014 and stays an honest ProviderUnavailable until the reference-deployment counterpart points at how the records are reachable. TURNOS_FAKE_MARQUI=1 enables the demo/test fake: fully synthetic OCR-style histories (sample_historias.json) keyed by the demo DNIs, with a deterministic template fallback for unknown DNIs.",
+   "id": "marqui"
+  },
+  "sample_file_keys": [
+   "cobertura",
+   "descripcion",
+   "pacientes",
+   "plantillas",
+   "sistema"
+  ],
+  "switch": {
+   "' 1 '": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2001-03-05",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2001-09-12",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "4768d5b3589b0071563b3678710453d4192a4bbe864f6f5d357dd955d7528a99"
+   },
+   "''": "raises ProviderUnavailable: marqui: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'0'": "raises ProviderUnavailable: marqui: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'1'": {
+    "count": 5,
+    "dates_sorted": true,
+    "first": [
+     [
+      "2001-03-05",
+      "evolucion",
+      "marqui"
+     ],
+     [
+      "2001-09-12",
+      "evolucion",
+      "marqui"
+     ]
+    ],
+    "sha256": "4768d5b3589b0071563b3678710453d4192a4bbe864f6f5d357dd955d7528a99"
+   },
+   "'11'": "raises ProviderUnavailable: marqui: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'true'": "raises ProviderUnavailable: marqui: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "'yes'": "raises ProviderUnavailable: marqui: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable",
+   "None": "raises ProviderUnavailable: marqui: no access path configured yet \u2014 needs reference-deployment counterpart to identify how these records are reachable"
+  }
+ }
+}

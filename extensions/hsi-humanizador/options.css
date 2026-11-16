@@ -1,0 +1,34 @@
+:root{color-scheme:light;}
+body{margin:0;background:#f6f7f9;color:#1c1f23;font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-wrap:pretty;}
+main{max-width:560px;margin:48px auto;padding:0 24px;}
+h1{font-size:28px;line-height:1.2;margin:0 0 28px;}
+.tarjeta{border:1px solid #c9ced6;border-radius:12px;background:#fff;margin:0 0 24px;padding:16px 20px 12px;}
+fieldset{border:0;margin:0;padding:0;min-width:0;}
+.tarjeta > fieldset + fieldset{margin-top:24px;}
+legend{font-weight:650;padding:0;margin-bottom:4px;}
+.opcion{display:flex;align-items:center;gap:12px;padding:8px 0;cursor:pointer;}
+.opcion[hidden]{display:none;}
+.opcion input{width:20px;height:20px;flex:none;margin:0;accent-color:#0b5cad;}
+input[type="url"],input[type="text"],select{font:inherit;box-sizing:border-box;padding:10px 12px;border:1px solid #9aa2ad;border-radius:8px;background:#fff;color:#1c1f23;}
+input[type="url"]{width:100%;margin:4px 0 8px;}
+select{margin:4px 0 8px;max-width:100%;}
+.numero{display:flex;align-items:center;gap:8px;margin:0 0 8px;}
+.numero[hidden],.ayuda[hidden]{display:none;}
+#institucionId{width:12ch;}
+.info{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border-radius:50%;background:transparent;}
+.info:hover{background:#eef1f5;}
+.info[aria-expanded="true"]{background:#e3ecf6;}
+.info img{display:block;width:24px;height:24px;}
+.ayuda{border:1px solid #c9ced6;border-radius:8px;padding:12px 16px;margin:0 0 8px;background:#f6f7f9;}
+.ayuda ol{margin:0 0 8px;padding-left:22px;}
+.ayuda li{padding:2px 0;}
+.ayuda a{color:#0b5cad;text-decoration:none;font-weight:600;}
+.ayuda a:hover{color:#0a4a8a;}
+#version{margin:32px 0 0;color:#1c1f23;}
+input:focus-visible,button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f5a623;outline-offset:2px;}
+.pie{display:flex;align-items:center;gap:16px;}
+button{font:inherit;font-weight:650;padding:11px 22px;border:0;border-radius:8px;background:#0b5cad;color:#fff;cursor:pointer;}
+button:hover{background:#0a4a8a;}
+#estado{margin:0;font-weight:600;}
+#estado[data-tono="bien"]{color:#0a6238;}
+#estado[data-tono="error"]{color:#a4161a;}

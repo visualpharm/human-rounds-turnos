@@ -1,0 +1,390 @@
+/* tokens.css — the published design contract: every CSS custom property for
+   BOTH live themes, and nothing else (Tier 5 slice 1,
+   docs/roadmap/tier5-frontend-design.md, "tokens.css as the published design
+   contract"). Extracted VERBATIM out of human-rounds.css, which now
+   `@import`s this file first — component rules and layout stay there.
+   Both themes stay ONE file, ONE selector scheme
+   (:root[data-theme="pinamar"|"humanrounds"]) — splitting per theme would
+   reintroduce the "two deployments" shape design-icons-y-temas.md says this
+   product does NOT have. `design-loop.json`'s design-system sync diffs the
+   Claude Design project's exported tokens against THIS file now — the old
+   hand-maintained mirror at docs/design-system/tokens/*.css is retired.
+   Deliberately NOT solved by this file: favicons, hardcoded font-family
+   lists elsewhere, and branding.py's email accent copy are real brand
+   surfaces outside CSS custom properties — see
+   docs/solutions/design/marca-por-tema-copias-a-mano.md. */
+
+/* ===== TEMAS (2026-07-16) =========================================
+   Dos temas conmutables desde el admin (Configuración): la identidad
+   visual entera —paleta + tipografía— sale de tokens, así que cambiar
+   `data-theme` en <html> re-skinea TODO el sitio de una.
+     · "pinamar" = verde + Ubuntu (handoff Claude Design, DEFAULT)
+     · "humanrounds" = papel + bermellón + Manrope (la marca pública real,
+       la misma que sirve humanrounds.org — es el tema de la demo pública)
+   El tema activo lo inyecta el servidor en <html data-theme="…"> (tema.py),
+   sin parpadeo. Los tokens DERIVADOS (focus/selection via color-mix, sombras,
+   danger, ancho) son iguales en ambos y viven una sola vez acá. */
+:root{
+  --danger:#c2452d; --danger-soft:#fbf4f2;
+  /* "No vino"/"avisó que no viene" (admin-queue.js, cola del día): un hecho
+     del día, no un error ni una alarma (handoff 2026-07-27) — por eso NO usa
+     --danger. Un solo valor para los dos temas, como --danger: ya es un
+     ladrillo apagado, de baja saturación, que no compite con ningún acento
+     de ninguna paleta (2026-08-05, movido a token desde el hardcode en
+     admin-queue.js — mismo hex, cero corrimiento de píxeles). */
+  --attendance-no:#8c5a4a;
+  /* Report charts: one hue per group (a scatter coloured by centre), fixed
+     order, the same in both themes. Charts used to borrow the avatar slots,
+     which the humanrounds theme folded into one grey (2026-09-14), so «one
+     colour per centre» painted every centre alike (ui-expert 15.11).
+     Validated on #f4f1ea and #fff: >= 3:1 each, normal-vision floor 17,
+     worst CVD pair 6.7 (legal with the legend and the direct names). */
+  --cat-1:#2a78d6; --cat-2:#d95926; --cat-3:#12855e;
+  --cat-4:#6250d6; --cat-5:#a87000; --cat-6:#c94a7a;
+  /* Escala vertical de las páginas del paciente (responsable del producto 27.10, revisar las
+     distancias verticales en el móvil): 8 · 16 · 24 · 32. Un hueco
+     entre bloques sale de acá, no de un número suelto. */
+  --space-1:8px; --space-2:16px; --space-3:24px; --space-4:32px;
+  /* Título de sección de las páginas del paciente (responsable del producto 05.11: «Centros de
+     salud» a 13,5px se perdía): uno solo para «Centros de salud», los grupos
+     del directorio y «Guías y trámites». */
+  --section-h-size:18px; --section-h-weight:650;
+  --maxw:1180px; /* ancho del contenedor de las páginas de navegación (home/directorio/app/panel) */
+  --shadow-card:0 8px 30px -22px rgba(20,24,20,.5);
+  --shadow-pop:0 14px 44px -32px rgba(20,24,20,.55);
+  --focus-ring:color-mix(in oklch, var(--accent) 14%, transparent);
+  --focus-border:color-mix(in oklch, var(--accent) 45%, var(--border));
+  --selection:color-mix(in oklch, var(--accent) 26%, transparent);
+  /* Alto real de la barra de nav, medido por nav.js#layout() en cada mount y
+     resize (the reference-deployment counterpart pidió que el botón de chat quede alcanzable mientras
+     se scrollea — 2026-08-05). El 69px es el mismo número que ya usaba la
+     reserva de layout de #stznav:empty (patient_web/site_*.py) antes de que nav.js
+     pinte, así que cualquier página que consulte esta var antes del primer
+     layout() ya tiene el valor correcto. */
+  --stznav-h:69px;
+  /* ===== HOVER (the product owner, 2026-09-15) ===================================
+     "They should not change dramatically from beige to blue or blue to
+     beige, but should just be a bit brighter. Barely noticeable if we place
+     items next to each other, but visible when hovering."
+     ONE hover contract for the whole product: a hovered element moves one
+     step inside its OWN family — never into another hue. Before this, a
+     hover routinely repainted a beige surface with --accent-soft (blue wash
+     in "humanrounds") or swapped a neutral border for --accent, so the page
+     flickered blue under the pointer. No component invents its own hover
+     colour any more: every :hover rule consumes one of these eight tokens,
+     and both themes get the same restraint for free.
+       --hover-bg        surface under a hovered row / option / menu item /
+                         ghost button (replaces --bg-2, --panel, --accent-soft)
+       --hover-selected  the same quiet lift for something ALREADY selected
+       --hover-bd        a border steps up one notch (rest = --border)
+       --hover-bd-strong … when the rest border is ALREADY --border-strong
+       --hover-ink       a muted label/icon steps up to full ink
+       --hover-link      text that already reads as a link (per-theme:
+                         "pinamar" brightens the green, "humanrounds" the ink)
+       --hover-bg-soft   half step, for controls resting on paper or --bg-2
+       --hover-fill      filled buttons: a white veil over the fill — it
+                         brightens black, green and red alike, never darkens.
+     La ÚNICA excepción viva es la familia --danger: un botón destructivo
+     ("Rechazar", "Quitar", la campana de alerta) sí se pinta con
+     --danger-soft en hover, porque ahí el cambio de tono ES el mensaje —
+     avisa que la acción borra algo antes de que el dedo baje. Todo lo demás
+     se queda dentro de su propio color. */
+  /* --hover-bg arranca del tinte de fila de cada tema y le suma un 3% de
+     tinta: --row-hover pelado medía ΔE94 1,7 sobre el fondo de "pinamar" —
+     invisible, que es el otro modo de fallar la regla. Con el 3% los dos
+     temas quedan en la misma banda medida en el navegador: ~3,5 ΔE94 contra
+     la página y ~5 contra una tarjeta de papel.
+     Las mezclas van en **srgb, NO en oklch**: todos estos colores son
+     casi-neutros, y en un espacio polar el tono de un casi-gris es inestable
+     —mezclar el beige #efebe1 con la tinta en oklch devolvía #eadee1, un
+     rosado, justo el salto de tono que esta regla existe para prohibir—. En
+     srgb la mezcla sólo baja luminosidad y el tono no se mueve. */
+  --hover-bg:color-mix(in srgb,var(--row-hover) 97%,var(--text));
+  --hover-selected:color-mix(in srgb,var(--accent-soft) 58%,var(--panel));
+  --hover-bd:var(--border-strong);
+  /* Un borde admite un poco más de salto que una superficie (es una línea
+     fina, no un área), pero no mucho: con 38% de gris el borde saltaba 15-17
+     ΔE94 y el elemento parecía otro. El 15% lo deja en ~6. */
+  --hover-bd-strong:color-mix(in srgb,var(--border-strong) 85%,var(--text-3));
+  --hover-ink:var(--text);
+  --hover-link:var(--link-hover,var(--accent-hover));
+  /* --hover-fill (the product owner, 2026-09-15: "the dark buttons don't have any hover at
+     all"): un velo blanco del 8% PINTADO ENCIMA del color del botón. El
+     brightness() anterior multiplicaba el color, y el casi-negro de las
+     pastillas de "humanrounds" (#191614) multiplicado sigue siendo negro:
+     el hover existía en el CSS y no se veía. Un velo SUMA luz, así que
+     aclara igual el negro, el verde, el rojo y el verde de WhatsApp, sin
+     tocar el texto (un filter re-rasteriza la letra y la hace saltar) y sin
+     pisar la sombra del botón. Se usa como background-image, nunca como
+     background: el color de reposo sigue debajo. Con 10% el casi-negro
+     saltaba ~9,5 ΔE94 (arriba de la banda 4-8); con 8% queda ~7,5 en el negro
+     y ~4 en el verde. */
+  --hover-fill:linear-gradient(rgba(255,255,255,.08),rgba(255,255,255,.08));
+  /* --hover-bg-soft: medio escalón para lo que YA descansa sobre papel
+     (--panel) o sobre --bg-2. --hover-bg entero medía 8,6 ΔE94 contra una
+     tarjeta de papel —el botón "Subí tu orden" se leía como otro botón— y
+     contra --bg-2 no se movía nada (#e9e5da → #e9e5db). La mitad entre el
+     papel y --hover-bg cae en la banda en los dos casos. */
+  --hover-bg-soft:color-mix(in srgb,var(--panel) 45%,var(--hover-bg));
+  /* ===== BOTÓN INACTIVO (the product owner, 2026-10-24) ============================
+     Un botón deshabilitado ("Crear turno" antes de elegir paciente y hora) se
+     veía igual que uno activo. ONE inactive look for every button of both
+     surfaces and both themes: flat neutral fill, a quiet border and an ink
+     that still reads (≥4,5:1 sobre el relleno: el público es mayor — nada de
+     gris clarito). Never an opacity wash: that kept the brand fill and only
+     dimmed it. Lo consume UNA regla en human-rounds.css; ningún componente
+     escribe su propio :disabled. */
+  --btn-off-bg:var(--bg-2); --btn-off-fg:var(--index-ink); --btn-off-bd:var(--border-strong);
+}
+/* Tema por defecto = pinamar: aplica al :root pelado (sin data-theme) y al
+   explícito, así una página que todavía no inyectó el atributo sale verde. */
+:root, :root[data-theme="pinamar"]{
+  --panel:#fff;
+  --bg:#f6f7f5; --bg-2:#eef0ee; --row-hover:#f1f5f1;
+  --border:#eaeaea; --border-soft:#f1f3f1; --border-strong:#d6dad6;
+  /* Contraste WCAG AA (2026-07-28). Antes reprobaban 4,5:1 sobre --bg TODOS
+     los links del sitio (--accent 4,05:1) y los dos grises más claros
+     (--text-3 3,58:1, --text-4 2,29:1 — el contador de las filas del
+     directorio era ilegible). Los tonos son los mismos: sólo baja la
+     luminosidad en HLS, así que la marca no cambia a ojo.
+     La escala de grises se RE-ESPACIÓ en vez de sólo empujar el más claro:
+     con los cuatro apretados contra el piso de 4,5 no se distinguían entre
+     sí. Ahora 7,0 / 5,6 / 4,6 — tres escalones que se ven Y que pasan AA
+     sobre las cuatro superficies donde se usan (--bg, --bg-2, --accent-soft
+     y --panel). Va en la dirección que el proyecto ya pedía para su público:
+     nada de gris clarito sobre información que hace falta leer. */
+  --text:#1f1f1f; --text-2:#4c524c; --text-3:#5a605b; --text-4:#656e67;
+  /* Numeración de bloques (/about.html «01», «02»…): el gris más suave que aún pasa AA sobre --bg (4,9:1). Estudio de usabilidad 2026-10-16: con #9aa29b daba 2,44:1. */
+  --index-ink:#656e67;
+  /* Tinta de ayuda del panel (2026-11-04): gris oscuro bajo los campos de los formularios; en este tema ya es --text-2. */
+  --hint-ink:#3d443e;
+  --accent:#0d7d48; --accent-hover:#008149; --accent-soft:#eaf4ec; --accent-bd:#cde7d5;
+  /* --accent-hover (2026-08-07): el hover ACLARA en vez de oscurecer (responsable del producto:
+     "quiero un hover un poco más brillante") — mismo verde con más croma,
+     4,61:1 sobre --bg, sigue AA. El subrayado en hover se retiró el mismo
+     día (ver human-rounds.css): el cambio de color es TODA la señal, por
+     eso el salto tiene que verse.
+     --link-visited (2026-08-07): un link ya visitado se lee distinto
+     (Nielsen: el visitante mayor no recuerda qué ya abrió). Ciruela
+     apagado, 5,50:1 sobre --bg — pariente del acento en peso, no compite
+     con --danger ni con los estados. */
+  --link-visited:#6d5a96;
+  /* AA 4,5:1 sobre --bg/--bg-2/--panel (y --warn también sobre
+     --warn-soft, que es su propio fondo). Antes: 3,80 y 3,17. */
+  --done:#0d7d48; --warn:#946318; --warn-soft:#f7efdd;
+  /* --info (2026-08-05): "pizarra", el 4º color de estado del rediseño
+     Human Rounds — datos neutros (estudios, derivaciones, referencias), no
+     éxito/alerta/error. Nuevo, sin consumidor todavío en el CSS de ningún
+     componente: agregarlo acá no mueve un solo píxel de "pinamar" hoy. */
+  --info:#296eaa; --info-soft:#eaf0f6;
+  /* --select (2026-09-05): el estado ELEGIDO tiene su propio color, separado
+     del acento de marca. En "pinamar" el acento es terracota (#a15030) y
+     --danger es casi el mismo rojo (#c2452d), así que una tarjeta elegida
+     pintada con --accent-soft se leía como un error (responsable del producto: "no deberíamos
+     seleccionar con rojo, parece un error"). El azul pizarra no compite con
+     ningún estado y dice "esto es lo que elegiste", no "esto está mal".
+     Un solo rol para los dos temas: elegir es la misma acción en ambos. */
+  --select:#296eaa; --select-soft:#eaf0f6; --select-bd:#c3d5e6;
+  --chip-bg:#eef0ee; --state-done-bg:#eaf4ec; --state-done-bd:#cde7d5;
+  /* Fira Sans = la letra de pinamar.gob.ar (2026-10-16, pedido del hospital vía
+     the hospital technical counterpart). Ubuntu Mono queda para los datos monoespaciados. */
+  --font:'Fira Sans','Fira Sans Fallback',system-ui,sans-serif; --font-mono:'Ubuntu Mono','Ubuntu Mono Fallback',ui-monospace,monospace;
+  /* Barra de navegación verde del municipio #007342 (mismo pedido): letra
+     blanca, píldora activa blanca con texto verde, logo en blanco. */
+  --nav-bg:#007342; --nav-bd:#007342; --nav-ink:#fff; --nav-name:#fff;
+  --nav-hover:rgba(255,255,255,.16); --nav-hover-ink:#fff; --nav-hover-bar:rgba(255,255,255,.16);
+  --nav-on-ink:#fff; --nav-on-bar:#fff; --nav-on-text:#fff; --nav-focus:#fff;
+  --nav-mark-filter:brightness(0) invert(1); --nav-icon-filter:brightness(0) invert(1);
+  --nav-btn-bg:transparent; --nav-btn-ink:#fff; --nav-btn-bd:rgba(255,255,255,.75);
+  --nav-btn-hover:rgba(255,255,255,.16); --nav-btn-hover-bd:#fff; --nav-btn-hover-ink:#fff; --nav-btn-on:#fff;
+  /* Links de la barra en negrita, como el macheo de la oficina de prensa (2026-10-17). */
+  --nav-weight:700;
+  /* Letra de la barra más grande (responsable del producto, 2026-10-17: «la letra del menú es muy
+     chica»): 17px para links, botones, Mi cuenta e idioma, todos a la vez. */
+  --nav-size:17px;
+  /* Avatares de iniciales: 6 slots (hash del nombre % 6) + placeholder de foto.
+     Consumidores: .lst-av--N (listado.js), .mp-av--N/.avx--N (hospital.py),
+     .cnt-foto-av--N (admin-contenido.js) — TODOS leen estos tokens, la paleta
+     es parte del tema, no de cada componente. --av-hero-* es el avatar grande
+     del riel de Mi cuenta (gradiente + sombra tintada). */
+  --av0-bg:#eaf4ec; --av0-fg:#0d7e49; --av1-bg:#e9f0fb; --av1-fg:#2b5cad;
+  --av2-bg:#e0f2f0; --av2-fg:#0b7970; --av3-bg:#f7efdd; --av3-fg:#946318;
+  --av4-bg:#eaf4ec; --av4-fg:#0b6e33; --av5-bg:#e9f0fb; --av5-fg:#3a6bbf;
+  --av-ph:#eef0ee;
+  --av-hero-a:#17a46a; --av-hero-b:#0e8b50; --av-hero-sh:rgba(14,139,80,.8);
+  /* Triage naranja/amarillo (2026-08-05, movido acá desde admin.html): eran
+     los dos únicos hardcodes que las dos pasadas de paleta previas dejaron
+     sin tocar por miedo a mover el color vivo del hospital. Quedan iguales
+     bit-a-bit — es el mismo valor que admin.html traía desde Fase 4,
+     simplemente ahora vive en el tema en vez de en el <style> del panel. */
+  --triage-naranja:#a8480a; --triage-naranja-soft:#fbeee1;
+  --triage-amarillo:#7a6300; --triage-amarillo-soft:#fbf3d0;
+}
+/* Entre 1024 y 1199px la barra a 17px no entra entera y layout() la mandaba
+   al burger: un punto menos ahí mantiene el menú a la vista (medido). */
+@media(max-width:1199px){:root, :root[data-theme="pinamar"]{--nav-size:16px;}}
+/* Tema "humanrounds" = la marca pública REAL, la misma que sirve
+   humanrounds.org. RECOLOR 2026-08-05 (design-loop, mockup aprobado por
+   The product owner: proyecto Claude Design "Human Rounds", archivos "… - Paleta.dc.html"
+   y "… - Front Page.dc.html"): el bermellón vivo del rebrand del
+   2026-08-01 pintaba todo lo tocable —links, menú, chips, botones— y la
+   página entera se leía roja. La paleta nueva baja el croma, corre el tono
+   hacia la arcilla y reparte el trabajo entre CUATRO colores que comparten
+   luminosidad/croma (oklch .525 .116, salvo salvia a .500 por contraste
+   real): arcilla (acento — links y el botón primario, nada más), salvia
+   (--done — confirmado/asiste), bronce (--warn — pendiente/vence pronto) y
+   pizarra (--info — dato neutro: estudios, derivaciones, referencias).
+   Ninguno grita más fuerte que otro. Reglas de uso (verbatim de la Paleta):
+   "arcilla sólo para links y el botón primario"; "un solo botón lleno por
+   pantalla, el segundo es contorno sobre papel"; "salvia/bronce/pizarra son
+   estado, no decoración"; "las tarjetas se separan con borde, no con
+   sombra". Manrope + IBM Plex Mono ya estaban correctos desde el rebrand
+   anterior — esto es sólo color. */
+:root[data-theme="humanrounds"]{
+  /* La barra verde #007342 es del tema pinamar: acá `initial` anula los --nav-*
+     heredados del :root pelado y la barra vuelve a ser papel (nav.mjs usa el
+     fallback de cada var()). */
+  --nav-bg:initial; --nav-bd:initial; --nav-ink:initial; --nav-name:initial;
+  --nav-hover:initial; --nav-hover-ink:initial; --nav-hover-bar:initial;
+  --nav-on-ink:initial; --nav-on-bar:initial; --nav-on-text:initial; --nav-focus:initial;
+  --nav-mark-filter:initial; --nav-icon-filter:initial;
+  --nav-btn-bg:initial; --nav-btn-ink:initial; --nav-btn-bd:initial;
+  --nav-btn-hover:initial; --nav-btn-hover-bd:initial; --nav-btn-hover-ink:initial; --nav-btn-on:initial;
+  --nav-weight:initial; --nav-size:initial;
+  --panel:#fffdf8; /* papel de tarjeta más cálido que pinamar (#fff) — sólo humanrounds lo necesitaba distinto, por eso --panel pasó de :root pelado a por-tema */
+  --bg:#f4f1ea; --bg-2:#e9e5da; --row-hover:#efebe1;
+  --border:#ddd7ca; --border-soft:#e9e4d8; --border-strong:#cbc4b4;
+  --text:#1a1714;
+  /* Numeración de bloques: la escala de tinta transparente (--text-4 = 38%) queda en ~2,9:1 sobre --bg; un índice de 13px necesita AA, así que lleva su propio tono (5,2:1 sobre --bg, 4,7:1 sobre --bg-2). */
+  --index-ink:#6a6459;
+  /* ESCALA DE GRISES v2 (2026-09-16, product owner: "more light, to get 50% of
+     contrast, NOT MORE"). La escala pasa a TINTA con transparencia real:
+     el 50% compone exactamente media tinta sobre cualquier fondo (panel,
+     bg, chips) — eso ES el 50% de contraste pedido, y no un pelo más.
+     --text-2 = 50% (≈3,4:1 sobre panel), --text-3 44%, --text-4 38%.
+     Trade-off consciente: 3,4:1 queda por debajo de AA 4,5:1 para texto
+     de 15px — directriz explícita del responsable del producto para el piso descriptivo (lede
+     de /centers, jtbd de las tiles); el texto clave sigue en tinta plena.
+     Tema pinamar no cambia. */
+  --text-2:color-mix(in srgb,var(--text) 50%,transparent);
+  --text-3:color-mix(in srgb,var(--text) 44%,transparent);
+  --text-4:color-mix(in srgb,var(--text) 38%,transparent);
+  /* TINTA DE TÍTULO (2026-09-16, product owner: "the dark gray I asked for should be
+     a little bit lighter, a bit more lighter"). Los títulos de card/tile
+     pasaron a --text pleno el 2026-09-15 y quedó demasiado negro; este paso
+     intermedio (#2e2924, ~13,6:1 sobre --panel) sigue siendo el dato más
+     oscuro de la card — un escalón entero arriba de --text-3 — pero ya no
+     compite con el cuerpo en tinta llena. */
+  --title-ink:#2e2924;
+  /* TINTA DE AYUDA DEL PANEL (2026-11-04, responsable del producto: las ayudas bajo los campos se leían en gris claro). Las ayudas de formularios del panel (.cnt-hint, límites de Horarios) llevan gris oscuro (~9:1 sobre --panel), no la escala de tinta transparente de arriba: esa es para el piso descriptivo del sitio público. */
+  --hint-ink:#4a443d;
+  /* ACENTO CORAL (2026-09-15, product owner: "check the contrast with the new coral
+     scheme so we don't have blue on beige of the same tone"). El acento
+     vuelve a la familia arcilla/coral del sitio público (landing.css de
+     humanrounds.org: oklch(.52 .085 52) = #8f5a39). Sobre el beige nuevo el
+     denim apagado se leía como un azul sin contraste de tono; el coral es la
+     misma temperatura que el papel y se distingue por croma. Un paso más
+     oscuro que el público para el texto (#874f2e ≈ L .49: 5,7:1 sobre --bg,
+     5,1:1 sobre --bg-2, 6,5:1 con texto blanco encima); el hover es el coral
+     público exacto (más claro, como pide eval 8c). Wash y borde en la misma
+     hue (L .94 / L .84). */
+  --accent:#874f2e; --accent-hover:#8f5a39; --accent-soft:#f8e8de; --accent-bd:#e6c2ad;
+  /* ITERACIÓN 2026-09-14 (the product owner, mismo día: "blue is too strong… be more
+     careful about the color and less contrast. Or maybe let's create the
+     links like on the screenshot with less bright underlines and create some
+     kind of hover"). El link deja de ser AZUL y pasa a ser TINTA con un
+     subrayado tenue —el patrón de Linear— y el hover es el subrayado que se
+     enciende, no un cambio de color. El azul queda sólo como acento de
+     estado/foco, desaturado a denim apagado (#2c5673, 6,93:1 sobre --bg).
+     Los tokens --link* los define SÓLO este tema; la regla base de a los consume
+     con fallback al acento sin subrayar, así que "pinamar" no cambia.
+     NOTA: esto REEMPLAZA la prohibición de subrayar links (2026-08-06/07).
+     El subrayado ahora es parte del tema y vive en UN solo lugar: nadie lo
+     escribe a mano en un componente — eso sigue prohibido y lo vigilan
+     .claude/hooks/link-underline-guard.py y ui-evals eval 8. */
+  --link:currentColor; --link-hover:#000000; --link-decoration:underline;
+  /* LINKS DEL COLOR DE SU TEXTO (the product owner, 2026-09-18: "if the text is gray, make
+     the links the same color and make the underline even less, even lighter").
+     --link pasa a currentColor: un link hereda el color del texto que lo
+     rodea — gris adentro de gris, tinta adentro de tinta — y el subrayado es
+     la única marca en reposo, ahora aún más tenue (.26 → .14 de tinta). El
+     hover sigue siendo la revelación: a tinta plena con el subrayado que se
+     enciende (.62). */
+  --link-underline:rgba(26,23,20,.14); --link-underline-hover:rgba(26,23,20,.62);
+  /* RECOLOR 2026-09-14 (the product owner: "redesign the hr default theme to more cursor
+     like — black buttons of that shape, shades of beige; take the blue link
+     color from here <devin.ai/blog/windsurf-wave-9-swe-1>"). Tres movidas:
+       · papel → BEIGE de verdad (#f4f1ea/#e9e5da sobre tarjeta #fffdf8), la
+         escala cálida de cursor.com en vez del casi-blanco anterior;
+       · el acento dejó de ser arcilla y pasó al azul de esa página
+         (--text-blue medido en vivo = #337df4, bajado a #1a5ccc por AA).
+         Ese azul duró unas horas: la iteración de arriba lo saca de los
+         links y lo deja apagado como acento de estado/foco;
+       · el botón primario ya no se pinta con el acento: es la pastilla
+         NEGRA de cursor.com (--btn-*, abajo). */
+  /* Visitado: misma familia tinta, un paso más claro (8,52:1) — se distingue
+     sin traer un color ajeno a una paleta monocroma. */
+  --link-visited:#4a443d;
+  /* Botones (nuevo par de roles, 2026-09-14). El primario es una pastilla
+     negra sobre papel y el secundario la misma pastilla en beige con borde
+     —exactamente el par "Download for macOS" / "Request a demo" de
+     cursor.com—, así que el acento vuelve a servir SÓLO para links, que es
+     lo que la Paleta pedía desde el principio ("arcilla sólo para links y
+     el botón primario" se reparte: links al azul, botón al negro).
+     --btn-radius es la forma: 999px = pastilla.
+     Estos tokens NO existen en "pinamar": cada regla los consume con
+     fallback (`var(--btn-bg,var(--accent))`, `var(--btn-radius,11px)`), así
+     que el tema verde queda bit-a-bit igual que antes. */
+  --btn-bg:#191614; --btn-bg-hover:#312b26; --btn-fg:#fdfbf6; --btn-radius:999px;
+  --btn2-bg:#eae6db; --btn2-bg-hover:#e2ddd0; --btn2-fg:#2b2520; --btn2-bd:#d8d2c4;
+  /* --done (salvia): confirmado/aprobado/asiste — un turno que salió bien.
+     --warn (bronce): pendiente, vence pronto, falta algo — no es un error.
+     --warn-soft no cambia: el wash existente (#f6edd6) ya da 4,77:1 con el
+     bronce nuevo (#955b00), sigue pasando AA sin retocar. ITERACIÓN 2026-09-14:
+     --done pasa a verde DESATURADO (#2c6442, 6,19:1 sobre --bg, 5,55:1 sobre
+     --bg-2, 5,91:1 sobre su propio wash), y --state-done-bg/bd bajan a
+     #e7eee8/#cdd9cf (mismas proporciones de contraste). */
+  /* --warn bajó un escalón (#955b00 → #8f5700) con el papel nuevo: el beige
+     de --bg-2 es más oscuro que el casi-blanco anterior y el bronce viejo
+     caía a 4,42:1 ahí (test_theme.test_texto_pasa_AA_en_los_dos_temas). */
+  --done:#2c6442; --warn:#8f5700; --warn-soft:#f6edd6;
+  /* --info (pizarra): dato neutro — estudios, derivaciones, referencias.
+     Recolor 2026-09-14: el azul pizarra vivo quedaba a un paso del acento
+     nuevo (también azul) y encima reprobaba AA sobre el beige de --bg-2
+     (4,27:1). Ahora es pizarra DESATURADA (5,79:1 sobre --bg-2): sigue
+     leyéndose como dato neutro y no se confunde con un link. */
+  --info:#3c5a6e; --info-soft:#eaf0f6;
+  /* --select (recolor 2026-09-14): ELEGIDO pasa a TINTA sobre beige. Antes
+     era el azul pizarra, que con el acento nuevo —también azul— dejaba de
+     distinguir "esto es un link" de "esto es lo que elegiste". El negro de
+     la pastilla ya es el color de la acción de este tema, así que el estado
+     elegido lo hereda y no inventa un quinto color. */
+  --select:#2c2724; --select-soft:#eae6dc; --select-bd:#cdc6b6;
+  --chip-bg:#e9e5da; --state-done-bg:#e7eee8; --state-done-bd:#cdd9cf;
+  /* "<familia> Fallback" = Arial / Courier New con las métricas de la letra web
+     (static/fonts/humanrounds.css): hasta que llega la letra, el texto ocupa
+     en promedio el mismo ancho y no se re-acomoda. */
+  --font:'Manrope','Manrope Fallback',system-ui,sans-serif; --font-mono:'IBM Plex Mono','IBM Plex Mono Fallback',ui-monospace,monospace;
+  /* Avatares: colapso a UN SOLO par neutral (2026-09-14, responsable del producto: "Linear-style
+     restraint"). Todos los seis slots --av0 a --av5 reutilizan el mismo
+     par: surface #ece8df, glyph #4a443d (con el mismo nombre de token en
+     cada slot, así las pruebas no fallan por cambio de nombre). --av-ph
+     (placeholder foto) mismo neutral. No decoración de color. */
+  --av0-bg:#ece8df; --av0-fg:#4a443d; --av1-bg:#ece8df; --av1-fg:#4a443d;
+  --av2-bg:#ece8df; --av2-fg:#4a443d; --av3-bg:#ece8df; --av3-fg:#4a443d;
+  --av4-bg:#ece8df; --av4-fg:#4a443d; --av5-bg:#ece8df; --av5-fg:#4a443d;
+  --av-ph:#ece8df;
+  /* av-hero: mismo método que el set anterior (lightening + desaturación de
+     --accent, no un swatch del mockup — la home no usa el hero de Mi
+     cuenta) — av-hero-sh es av-hero-b en rgba(.8), igual que antes. */
+  --av-hero-a:#b88e73; --av-hero-b:#96684b; --av-hero-sh:rgba(150,104,75,.8);
+  /* Triage naranja/amarillo (2026-08-05): mismo par de tonos propios que
+     pinamar (no había un 3º/4º nivel de alerta — reusar --warn/--info los
+     colapsaría en el mismo token y perdería la distinción entre niveles,
+     algo que el CLAUDE.md prohíbe explícitamente), recoloreados a la
+     familia de la paleta aprobada (misma L≈.525/C≈.116 que arcilla/salvia/
+     bronce/pizarra, hue propio para cada uno — verificado ≥4,5:1 contra su
+     propio fondo y contra --bg/--panel). */
+  --triage-naranja:#9c4700; --triage-naranja-soft:#ffecdf;
+  --triage-amarillo:#7d5e00; --triage-amarillo-soft:#faf1d7;
+}

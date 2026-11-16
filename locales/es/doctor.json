@@ -1,0 +1,21 @@
+{
+  "_comment": "Doctor directory and doctor profile page (/doctors, /doctor/<id>) and Grupos y talleres (/d/grupos).",
+  "doctor.agenda_heading": "Cuándo atiende",
+  "doctor.close_photo": "Cerrar foto",
+  "doctor.cta_see_centers": "Ver los centros",
+  "doctor.demo_note": "Agenda de demostración — datos no reales.",
+  "doctor.doctors_meta_desc": "Médicos y profesionales del sistema público de salud de {city}, por especialidad, centro y próxima disponibilidad.",
+  "doctor.meta_intro": "{name}, {specialty} en el sistema público de salud de {city}.",
+  "doctor.next_slot_heading": "Primer turno libre",
+  "doctor.next_slot_heading_service": "Primer turno libre en {service}",
+  "doctor.next_slot_note": "Es el más próximo, no el único: podés elegir otro día u horario.",
+  "doctor.no_appointment_fallback": "Sin turno",
+  "doctor.search_placeholder": "Buscar médico o especialidad",
+  "doctor.service_link": "Ver el servicio: {service}",
+  "doctor.sees_at": "Atiende en",
+  "doctor.title_f": "Dra.",
+  "doctor.title_m": "Dr.",
+  "doctor.title_specialty_city": "{name} — {specialty} en {city}",
+  "doctor.workshops_meta_desc": "Grupos y talleres gratuitos del {network}: cuándo se reúnen, dónde y cómo participar.",
+  "doctor.services_line": "Atiende: {services}"
+}

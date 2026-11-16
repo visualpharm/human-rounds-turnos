@@ -1,0 +1,60 @@
+# docker-compose.release.yml — thin override: install the PUBLISHED image
+# instead of building from source.
+#
+# Layered ON TOP OF docker-compose.yml (which keeps `build: .` as the dev
+# default — a from-source checkout should build from source):
+#
+#   docker compose -f docker-compose.yml -f docker-compose.release.yml up -d
+#
+# Pin what you run by setting SANA_IMAGE_DIGEST_HEX to the 64-character hex digest
+# value ONLY (no sha256: prefix, no @ separator, no repository) — the override
+# REFUSES to start if it is unset or empty. That is a NONEMPTY check only: the
+# 64-hex shape is NOT validated at config time (see NOTE below). The fixed image
+# reference hardcodes the repository and the @sha256: prefix, so even a malformed
+# value like "latest" becomes ghcr.io/visualpharm/sana-turnos@sha256:latest, which
+# cannot resolve to a mutable tag and will fail at runtime pull (Docker rejects
+# malformed digests).
+#
+#   SANA_IMAGE_DIGEST_HEX=<64-hex-digest> \
+#     docker compose -f docker-compose.yml -f docker-compose.release.yml up -d
+#
+# The override only constructs a digest-addressed reference (repository + @sha256:
+# prefix are fixed, variable provides hex payload), while Compose does not
+# regex-validate the payload. It records what actually shipped (the immutable
+# sha256 manifest digest), not a tag that can be moved.
+#
+# NOTE: Docker Compose has NO regex validation, so config parsing accepts any
+# string. Malformed values (e.g. "latest", "v1.0.0") fail later at runtime pull,
+# not at config parse time. The structural hardening here prevents ANY value from
+# becoming a mutable tag reference.
+#
+# Requires Docker Compose v2.24+ for the `!reset` tag used to cancel the base
+# file's `build: .` (without it, Compose with both `build:` and `image:` set
+# would BUILD locally and tag it with the published name — the opposite of
+# installing the published artifact).
+#
+# UNPROVEN: no image has ever been published from this repo (the release
+# workflow cannot run while GitHub Actions billing is frozen — see
+# .github/workflows/release.yml's header), so this override has never actually
+# pulled an artifact. It is verified only as valid Compose structure by
+# tests/release-artifact-integrity.test.mjs, not by a real install. The first
+# real release must be exercised end to end (a clean machine `docker pull` +
+# `docker compose ... up` reaching /setup) before this path is trusted.
+services:
+  app:
+    # `!reset` cancels docker-compose.yml's `build: .`; only the published
+    # image is used. The ${SANA_IMAGE_DIGEST_HEX:?...} interpolation fails the
+    # `docker compose` invocation with the message below ONLY when the variable
+    # is unset OR EMPTY. That nonempty check is Compose's ENTIRE config-time
+    # guarantee: it does NOT regex-validate the 64-hex shape (see the NOTE
+    # below). The 64-hex contract is a documented expectation, enforced at
+    # runtime pull, not at config parse.
+    #
+    # The repository and @sha256: prefix are FIXED in this file — the variable
+    # provides ONLY the 64-character hex digest payload. This structural hardening
+    # prevents ANY value from becoming a mutable tag reference (even a malformed
+    # value like "latest" becomes @sha256:latest, which cannot resolve to :latest
+    # or @latest and fails at runtime pull).
+    image: "ghcr.io/visualpharm/sana-turnos@sha256:${SANA_IMAGE_DIGEST_HEX:?SANA_IMAGE_DIGEST_HEX is required (must be nonempty) — provide the 64-hex sha256 digest payload with no sha256: prefix; Compose checks only that it is set, the format is rejected at runtime pull if malformed. See RELEASES.md for the recorded digest of each release}"
+    build: !reset null
+    pull_policy: missing

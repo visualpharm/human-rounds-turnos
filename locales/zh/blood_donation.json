@@ -1,0 +1,11 @@
+{
+  "_comment": "/blood-donation page chrome. Content (lede, cuerpo, lugar, horario, nota) is pack data (enlaces.json) — no invented schedules/requirements here; the place falls back to the installation's main center.",
+  "blood_donation.h1": "献血",
+  "blood_donation.before_h": "前往之前",
+  "blood_donation.call": "致电 {phone}",
+  "blood_donation.cta": "前往前请先咨询",
+  "blood_donation.lede_default": "每一次献血都能帮助挽救生命。",
+  "blood_donation.nota_default": "请向医院咨询献血时间。",
+  "blood_donation.where_h": "捐血地点与时间",
+  "blood_donation.who_h": "谁可以献血"
+}

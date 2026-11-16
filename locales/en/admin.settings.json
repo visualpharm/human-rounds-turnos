@@ -1,0 +1,21 @@
+{
+  "admin.settings.horizon_days": "Booking horizon (days)",
+  "admin.settings.opening_time": "Appointment opening time",
+  "admin.settings.horizon_range": "The booking horizon must be between 1 and 365 days.",
+  "admin.settings.opening_time_format": "The opening time must use HH:MM.",
+  "admin.settings.holidays.title": "Holidays",
+  "admin.settings.holidays.lede": "No appointments are offered that day in any service, doctor or center. Appointments already given are not cancelled: reschedule them.",
+  "admin.settings.holidays.empty": "No holidays yet.",
+  "admin.settings.holidays.date": "Date",
+  "admin.settings.holidays.name": "Name",
+  "admin.settings.holidays.remove": "Remove",
+  "admin.settings.holidays.add": "+ Add holiday",
+  "admin.settings.holidays.load_national": "Load national holidays",
+  "admin.settings.holidays.appointments_one": "1 appointment given that day",
+  "admin.settings.holidays.appointments": "{n} appointments given that day",
+  "admin.settings.holidays.invalid": "The holiday list is not valid.",
+  "admin.settings.holidays.bad_date": "Each holiday needs a valid date.",
+  "admin.settings.holidays.no_name": "Each holiday needs a name.",
+  "admin.settings.holidays.long_name": "A holiday name can be up to {max} characters.",
+  "admin.settings.holidays.too_many": "Up to {max} holidays can be loaded."
+}

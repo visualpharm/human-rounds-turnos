@@ -1,0 +1,4405 @@
+{
+  "nota": "Médicos ficticios de ejemplo (Sampleton), sólo para demostrar el motor sin datos reales de ninguna municipalidad. Generado por scripts/generate_example_town_catalog.py — NO editar a mano, correr el script de nuevo.",
+  "nota_agendas": "68 médicos ficticios. Cada uno atiende en la agenda de los servicios que lo programan (la copia el generador); los que ningún servicio con agenda programa conservan una de las 9 plantillas de _PLANTILLAS.",
+  "fuente": "packs/example-town — datos inventados",
+  "medicos": [
+    {
+      "id": "gonzalez-juan",
+      "nombre_pila": "Juan",
+      "apellido": "González",
+      "nombre": "Juan González",
+      "genero": "m",
+      "especialidad": "Medicina general",
+      "cluster": "clinica",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "40000",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "wu-carlos",
+      "nombre_pila": "Carlos",
+      "apellido": "Wu",
+      "nombre": "Carlos Wu",
+      "genero": "m",
+      "especialidad": "Medicina general",
+      "cluster": "clinica",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "medicina-general-lakeview-clinic"
+            },
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "adulto-mayor-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "medicina-general-lakeview-clinic"
+          },
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "adulto-mayor-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "40173",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "kowalski-miguel",
+      "nombre_pila": "Miguel",
+      "apellido": "Kowalski",
+      "nombre": "Miguel Kowalski",
+      "genero": "m",
+      "especialidad": "Medicina general",
+      "cluster": "clinica",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "40346",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "haddad-maria",
+      "nombre_pila": "María",
+      "apellido": "Haddad",
+      "nombre": "María Haddad",
+      "genero": "f",
+      "especialidad": "Medicina general",
+      "cluster": "clinica",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "medicina-general-lakeview-clinic"
+            },
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "adulto-mayor-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "medicina-general-lakeview-clinic"
+          },
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "adulto-mayor-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "40519",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "katz-laura",
+      "nombre_pila": "Laura",
+      "apellido": "Katz",
+      "nombre": "Laura Katz",
+      "genero": "f",
+      "especialidad": "Medicina general",
+      "cluster": "clinica",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "40692",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "martinez-patricia",
+      "nombre_pila": "Patricia",
+      "apellido": "Martínez",
+      "nombre": "Patricia Martínez",
+      "genero": "f",
+      "especialidad": "Medicina general",
+      "cluster": "clinica",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "medicina-general-lakeview-clinic"
+            },
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "adulto-mayor-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "medicina-general-lakeview-clinic"
+          },
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "adulto-mayor-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "40865",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "garcia-jorge",
+      "nombre_pila": "Jorge",
+      "apellido": "García",
+      "nombre": "Jorge García",
+      "genero": "m",
+      "especialidad": "Geriatría",
+      "cluster": "clinica",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "medicina-general-lakeview-clinic"
+            },
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "adulto-mayor-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "medicina-general-lakeview-clinic"
+          },
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "adulto-mayor-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "41038",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "singh-silvia",
+      "nombre_pila": "Silvia",
+      "apellido": "Singh",
+      "nombre": "Silvia Singh",
+      "genero": "f",
+      "especialidad": "Geriatría",
+      "cluster": "clinica",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "medicina-general-lakeview-clinic"
+            },
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "adulto-mayor-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "medicina-general-lakeview-clinic"
+          },
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "adulto-mayor-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "41211",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "sanchez-pablo",
+      "nombre_pila": "Pablo",
+      "apellido": "Sánchez",
+      "nombre": "Pablo Sánchez",
+      "genero": "m",
+      "especialidad": "Pediatría",
+      "cluster": "pediatria",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                0,
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              0,
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "41384",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "romero-roberto",
+      "nombre_pila": "Roberto",
+      "apellido": "Romero",
+      "nombre": "Roberto Romero",
+      "genero": "m",
+      "especialidad": "Pediatría",
+      "cluster": "pediatria",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "41557",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "diallo-luis",
+      "nombre_pila": "Luis",
+      "apellido": "Diallo",
+      "nombre": "Luis Diallo",
+      "genero": "m",
+      "especialidad": "Pediatría",
+      "cluster": "pediatria",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                0,
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              0,
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "41730",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "torres-claudia",
+      "nombre_pila": "Claudia",
+      "apellido": "Torres",
+      "nombre": "Claudia Torres",
+      "genero": "f",
+      "especialidad": "Pediatría",
+      "cluster": "pediatria",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "41903",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "chen-valentina",
+      "nombre_pila": "Valentina",
+      "apellido": "Chen",
+      "nombre": "Valentina Chen",
+      "genero": "f",
+      "especialidad": "Pediatría",
+      "cluster": "pediatria",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                0,
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              0,
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "42076",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "ruiz-sergio",
+      "nombre_pila": "Sergio",
+      "apellido": "Ruiz",
+      "nombre": "Sergio Ruiz",
+      "genero": "m",
+      "especialidad": "Cardiología",
+      "cluster": "cardiologia",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "cardiologia-sampleton-hospital"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "12:00",
+              "hasta": "14:00",
+              "cada_min": 15,
+              "servicio": "electrocardiograma-hospital"
+            },
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 30,
+              "servicio": "ergometria-hospital"
+            },
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 20,
+              "servicio": "marcapasos-hospital"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "cardiologia-sampleton-hospital"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "12:00",
+            "hasta": "14:00",
+            "cada_min": 15,
+            "servicio": "electrocardiograma-hospital"
+          },
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 30,
+            "servicio": "ergometria-hospital"
+          },
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 20,
+            "servicio": "marcapasos-hospital"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "42249",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "walsh-diego",
+      "nombre_pila": "Diego",
+      "apellido": "Walsh",
+      "nombre": "Diego Walsh",
+      "genero": "m",
+      "especialidad": "Cardiología",
+      "cluster": "cardiologia",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "cardiologia-sampleton-hospital"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "12:00",
+              "hasta": "14:00",
+              "cada_min": 15,
+              "servicio": "electrocardiograma-hospital"
+            },
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 30,
+              "servicio": "ergometria-hospital"
+            },
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 20,
+              "servicio": "marcapasos-hospital"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "cardiologia-sampleton-hospital"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "12:00",
+            "hasta": "14:00",
+            "cada_min": 15,
+            "servicio": "electrocardiograma-hospital"
+          },
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 30,
+            "servicio": "ergometria-hospital"
+          },
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 20,
+            "servicio": "marcapasos-hospital"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "42422",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "levin-camila",
+      "nombre_pila": "Camila",
+      "apellido": "Levin",
+      "nombre": "Camila Levin",
+      "genero": "f",
+      "especialidad": "Cardiología",
+      "cluster": "cardiologia",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "cardiologia-sampleton-hospital"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "12:00",
+              "hasta": "14:00",
+              "cada_min": 15,
+              "servicio": "electrocardiograma-hospital"
+            },
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 30,
+              "servicio": "ergometria-hospital"
+            },
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 20,
+              "servicio": "marcapasos-hospital"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "cardiologia-sampleton-hospital"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "12:00",
+            "hasta": "14:00",
+            "cada_min": 15,
+            "servicio": "electrocardiograma-hospital"
+          },
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 30,
+            "servicio": "ergometria-hospital"
+          },
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 20,
+            "servicio": "marcapasos-hospital"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "42595",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "acosta-florencia",
+      "nombre_pila": "Florencia",
+      "apellido": "Acosta",
+      "nombre": "Florencia Acosta",
+      "genero": "f",
+      "especialidad": "Cardiología",
+      "cluster": "cardiologia",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "cardiologia-sampleton-hospital"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "12:00",
+              "hasta": "14:00",
+              "cada_min": 15,
+              "servicio": "electrocardiograma-hospital"
+            },
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 30,
+              "servicio": "ergometria-hospital"
+            },
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "17:00",
+              "cada_min": 20,
+              "servicio": "marcapasos-hospital"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "cardiologia-sampleton-hospital"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "12:00",
+            "hasta": "14:00",
+            "cada_min": 15,
+            "servicio": "electrocardiograma-hospital"
+          },
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 30,
+            "servicio": "ergometria-hospital"
+          },
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "17:00",
+            "cada_min": 20,
+            "servicio": "marcapasos-hospital"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "42768",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "benitez-hernan",
+      "nombre_pila": "Hernán",
+      "apellido": "Benítez",
+      "nombre": "Hernán Benítez",
+      "genero": "m",
+      "especialidad": "Nutrición",
+      "cluster": "endocrino",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "42941",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "medina-martin",
+      "nombre_pila": "Martín",
+      "apellido": "Medina",
+      "nombre": "Martín Medina",
+      "genero": "m",
+      "especialidad": "Nutrición",
+      "cluster": "endocrino",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "43114",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "nazar-gabriela",
+      "nombre_pila": "Gabriela",
+      "apellido": "Nazar",
+      "nombre": "Gabriela Nazar",
+      "genero": "f",
+      "especialidad": "Nutrición",
+      "cluster": "endocrino",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "43287",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "suarez-fernando",
+      "nombre_pila": "Fernando",
+      "apellido": "Suárez",
+      "nombre": "Fernando Suárez",
+      "genero": "m",
+      "especialidad": "Endocrinología",
+      "cluster": "endocrino",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "43460",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "park-veronica",
+      "nombre_pila": "Verónica",
+      "apellido": "Park",
+      "nombre": "Verónica Park",
+      "genero": "f",
+      "especialidad": "Endocrinología",
+      "cluster": "endocrino",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "43633",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "molina-emiliano",
+      "nombre_pila": "Emiliano",
+      "apellido": "Molina",
+      "nombre": "Emiliano Molina",
+      "genero": "m",
+      "especialidad": "Ginecología y Obstetricia",
+      "cluster": "gineco",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "ginecologia-obstetricia-maternity"
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "ginecologia-obstetricia-maternity"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "control-prenatal-maternity"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "12:00",
+              "hasta": "14:00",
+              "cada_min": 15,
+              "servicio": "pap-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "ginecologia-obstetricia-maternity"
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "ginecologia-obstetricia-maternity"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "control-prenatal-maternity"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "12:00",
+            "hasta": "14:00",
+            "cada_min": 15,
+            "servicio": "pap-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "43806",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "ibarra-gustavo",
+      "nombre_pila": "Gustavo",
+      "apellido": "Ibarra",
+      "nombre": "Gustavo Ibarra",
+      "genero": "m",
+      "especialidad": "Ginecología y Obstetricia",
+      "cluster": "gineco",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "ginecologia-obstetricia-maternity"
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "ginecologia-obstetricia-maternity"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "control-prenatal-maternity"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "12:00",
+              "hasta": "14:00",
+              "cada_min": 15,
+              "servicio": "pap-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "ginecologia-obstetricia-maternity"
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "ginecologia-obstetricia-maternity"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "control-prenatal-maternity"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "12:00",
+            "hasta": "14:00",
+            "cada_min": 15,
+            "servicio": "pap-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "43979",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "petrenko-lucia",
+      "nombre_pila": "Lucía",
+      "apellido": "Petrenko",
+      "nombre": "Lucía Petrenko",
+      "genero": "f",
+      "especialidad": "Ginecología y Obstetricia",
+      "cluster": "gineco",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "ginecologia-obstetricia-maternity"
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "ginecologia-obstetricia-maternity"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "control-prenatal-maternity"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "12:00",
+              "hasta": "14:00",
+              "cada_min": 15,
+              "servicio": "pap-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "ginecologia-obstetricia-maternity"
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "ginecologia-obstetricia-maternity"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "control-prenatal-maternity"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "12:00",
+            "hasta": "14:00",
+            "cada_min": 15,
+            "servicio": "pap-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "44152",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "rojas-ana",
+      "nombre_pila": "Ana",
+      "apellido": "Rojas",
+      "nombre": "Ana Rojas",
+      "genero": "f",
+      "especialidad": "Traumatología",
+      "cluster": "trauma-kine",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "44325",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "dominguez-ricardo",
+      "nombre_pila": "Ricardo",
+      "apellido": "Domínguez",
+      "nombre": "Ricardo Domínguez",
+      "genero": "m",
+      "especialidad": "Traumatología",
+      "cluster": "trauma-kine",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "44498",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "kim-daniel",
+      "nombre_pila": "Daniel",
+      "apellido": "Kim",
+      "nombre": "Daniel Kim",
+      "genero": "m",
+      "especialidad": "Traumatología",
+      "cluster": "trauma-kine",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            },
+            {
+              "dias": [
+                0
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          },
+          {
+            "dias": [
+              0
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "44671",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "quispe-alejandro",
+      "nombre_pila": "Alejandro",
+      "apellido": "Quispe",
+      "nombre": "Alejandro Quispe",
+      "genero": "m",
+      "especialidad": "Kinesiología",
+      "cluster": "trauma-kine",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "44844",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "bustos-marina",
+      "nombre_pila": "Marina",
+      "apellido": "Bustos",
+      "nombre": "Marina Bustos",
+      "genero": "f",
+      "especialidad": "Kinesiología",
+      "cluster": "trauma-kine",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "45017",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "sharma-fernanda",
+      "nombre_pila": "Fernanda",
+      "apellido": "Sharma",
+      "nombre": "Fernanda Sharma",
+      "genero": "f",
+      "especialidad": "Kinesiología",
+      "cluster": "trauma-kine",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "45190",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "nunez-mariana",
+      "nombre_pila": "Mariana",
+      "apellido": "Núñez",
+      "nombre": "Mariana Núñez",
+      "genero": "f",
+      "especialidad": "Odontología",
+      "cluster": "odontologia",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "45363",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "nowak-marcelo",
+      "nombre_pila": "Marcelo",
+      "apellido": "Nowak",
+      "nombre": "Marcelo Nowak",
+      "genero": "m",
+      "especialidad": "Odontología",
+      "cluster": "odontologia",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "45536",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "karam-adrian",
+      "nombre_pila": "Adrián",
+      "apellido": "Karam",
+      "nombre": "Adrián Karam",
+      "genero": "m",
+      "especialidad": "Odontología",
+      "cluster": "odontologia",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "45709",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "arias-paula",
+      "nombre_pila": "Paula",
+      "apellido": "Arias",
+      "nombre": "Paula Arias",
+      "genero": "f",
+      "especialidad": "Odontología",
+      "cluster": "odontologia",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "45882",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "caceres-julieta",
+      "nombre_pila": "Julieta",
+      "apellido": "Cáceres",
+      "nombre": "Julieta Cáceres",
+      "genero": "f",
+      "especialidad": "Otorrinolaringología",
+      "cluster": "otorrino-fono",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "46055",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "schmidt-nicolas",
+      "nombre_pila": "Nicolás",
+      "apellido": "Schmidt",
+      "nombre": "Nicolás Schmidt",
+      "genero": "m",
+      "especialidad": "Otorrinolaringología",
+      "cluster": "otorrino-fono",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "46228",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "ferreyra-ezequiel",
+      "nombre_pila": "Ezequiel",
+      "apellido": "Ferreyra",
+      "nombre": "Ezequiel Ferreyra",
+      "genero": "m",
+      "especialidad": "Fonoaudiología",
+      "cluster": "otorrino-fono",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "fonoaudiologia-maternity"
+            },
+            {
+              "dias": [
+                1
+              ],
+              "desde": "09:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "otoemisiones-maternity"
+            },
+            {
+              "dias": [
+                4
+              ],
+              "desde": "15:00",
+              "hasta": "17:00",
+              "cada_min": 20,
+              "servicio": "otoemisiones-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "fonoaudiologia-maternity"
+          },
+          {
+            "dias": [
+              1
+            ],
+            "desde": "09:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "otoemisiones-maternity"
+          },
+          {
+            "dias": [
+              4
+            ],
+            "desde": "15:00",
+            "hasta": "17:00",
+            "cada_min": 20,
+            "servicio": "otoemisiones-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "46401",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "grynberg-cecilia",
+      "nombre_pila": "Cecilia",
+      "apellido": "Grynberg",
+      "nombre": "Cecilia Grynberg",
+      "genero": "f",
+      "especialidad": "Fonoaudiología",
+      "cluster": "otorrino-fono",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "fonoaudiologia-maternity"
+            },
+            {
+              "dias": [
+                1
+              ],
+              "desde": "09:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "otoemisiones-maternity"
+            },
+            {
+              "dias": [
+                4
+              ],
+              "desde": "15:00",
+              "hasta": "17:00",
+              "cada_min": 20,
+              "servicio": "otoemisiones-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "fonoaudiologia-maternity"
+          },
+          {
+            "dias": [
+              1
+            ],
+            "desde": "09:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "otoemisiones-maternity"
+          },
+          {
+            "dias": [
+              4
+            ],
+            "desde": "15:00",
+            "hasta": "17:00",
+            "cada_min": 20,
+            "servicio": "otoemisiones-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "46574",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "villalba-carolina",
+      "nombre_pila": "Carolina",
+      "apellido": "Villalba",
+      "nombre": "Carolina Villalba",
+      "genero": "f",
+      "especialidad": "Psicología",
+      "cluster": "salud-mental",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "46747",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "bianchi-federico",
+      "nombre_pila": "Federico",
+      "apellido": "Bianchi",
+      "nombre": "Federico Bianchi",
+      "genero": "m",
+      "especialidad": "Psicología",
+      "cluster": "salud-mental",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "46920",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "ferraro-rocio",
+      "nombre_pila": "Rocío",
+      "apellido": "Ferraro",
+      "nombre": "Rocío Ferraro",
+      "genero": "f",
+      "especialidad": "Psicología",
+      "cluster": "salud-mental",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "47093",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "rossi-matias",
+      "nombre_pila": "Matías",
+      "apellido": "Rossi",
+      "nombre": "Matías Rossi",
+      "genero": "m",
+      "especialidad": "Psiquiatría",
+      "cluster": "salud-mental",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "47266",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "colombo-victoria",
+      "nombre_pila": "Victoria",
+      "apellido": "Colombo",
+      "nombre": "Victoria Colombo",
+      "genero": "f",
+      "especialidad": "Psiquiatría",
+      "cluster": "salud-mental",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "47439",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "conti-agustina",
+      "nombre_pila": "Agustina",
+      "apellido": "Conti",
+      "nombre": "Agustina Conti",
+      "genero": "f",
+      "especialidad": "Dermatología",
+      "cluster": "otras",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "47612",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "bruno-gonzalo",
+      "nombre_pila": "Gonzalo",
+      "apellido": "Bruno",
+      "nombre": "Gonzalo Bruno",
+      "genero": "m",
+      "especialidad": "Dermatología",
+      "cluster": "otras",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                6
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              6
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "47785",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "marino-rodrigo",
+      "nombre_pila": "Rodrigo",
+      "apellido": "Marino",
+      "nombre": "Rodrigo Marino",
+      "genero": "m",
+      "especialidad": "Oftalmología",
+      "cluster": "otras",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "09:00",
+              "hasta": "13:00",
+              "cada_min": 15
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "09:00",
+            "hasta": "13:00",
+            "cada_min": 15
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "47958",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "costa-antonella",
+      "nombre_pila": "Antonella",
+      "apellido": "Costa",
+      "nombre": "Antonella Costa",
+      "genero": "f",
+      "especialidad": "Oftalmología",
+      "cluster": "otras",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "09:00",
+              "hasta": "13:00",
+              "cada_min": 15
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "09:00",
+            "hasta": "13:00",
+            "cada_min": 15
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "48131",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "greco-milagros",
+      "nombre_pila": "Milagros",
+      "apellido": "Greco",
+      "nombre": "Milagros Greco",
+      "genero": "f",
+      "especialidad": "Diagnóstico por imágenes",
+      "cluster": "diagnostico",
+      "centro": "diagnostic-center",
+      "centros": [
+        {
+          "centro": "diagnostic-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "10:00",
+              "hasta": "13:00",
+              "cada_min": 30
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "10:00",
+            "hasta": "13:00",
+            "cada_min": 30
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "48304",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "moretti-sabrina",
+      "nombre_pila": "Sabrina",
+      "apellido": "Moretti",
+      "nombre": "Sabrina Moretti",
+      "genero": "f",
+      "especialidad": "Laboratorio",
+      "cluster": "diagnostico",
+      "centro": "diagnostic-center",
+      "centros": [
+        {
+          "centro": "diagnostic-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "48477",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "olmedo-andrea",
+      "nombre_pila": "Andrea",
+      "apellido": "Olmedo",
+      "nombre": "Andrea Olmedo",
+      "genero": "f",
+      "especialidad": "Medicina general",
+      "cluster": "clinica",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "09:00",
+              "hasta": "13:00",
+              "cada_min": 15,
+              "servicio": "medicina-general-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "09:00",
+            "hasta": "13:00",
+            "cada_min": 15,
+            "servicio": "medicina-general-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "48650",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "barreiro-tomas",
+      "nombre_pila": "Tomás",
+      "apellido": "Barreiro",
+      "nombre": "Tomás Barreiro",
+      "genero": "m",
+      "especialidad": "Pediatría",
+      "cluster": "pediatria",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "07:00",
+              "hasta": "10:00",
+              "cada_min": 15,
+              "servicio": "pediatria-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "07:00",
+            "hasta": "10:00",
+            "cada_min": 15,
+            "servicio": "pediatria-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "48823",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "paredes-lorena",
+      "nombre_pila": "Lorena",
+      "apellido": "Paredes",
+      "nombre": "Lorena Paredes",
+      "genero": "f",
+      "especialidad": "Nutrición",
+      "cluster": "endocrino",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "10:00",
+              "hasta": "13:00",
+              "cada_min": 30,
+              "servicio": "nutricion-infantil-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "10:00",
+            "hasta": "13:00",
+            "cada_min": 30,
+            "servicio": "nutricion-infantil-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "48996",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "cardozo-noelia",
+      "nombre_pila": "Noelia",
+      "apellido": "Cardozo",
+      "nombre": "Noelia Cardozo",
+      "genero": "f",
+      "especialidad": "Ginecología y Obstetricia",
+      "cluster": "gineco",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "09:00",
+              "hasta": "13:00",
+              "cada_min": 15,
+              "servicio": "planificacion-familiar-riverside-clinic"
+            },
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "ginecologia-riverside-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "09:00",
+            "hasta": "13:00",
+            "cada_min": 15,
+            "servicio": "planificacion-familiar-riverside-clinic"
+          },
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "ginecologia-riverside-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "49169",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "mansilla-silvina",
+      "nombre_pila": "Silvina",
+      "apellido": "Mansilla",
+      "nombre": "Silvina Mansilla",
+      "genero": "f",
+      "especialidad": "Ginecología y Obstetricia",
+      "cluster": "gineco",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "09:00",
+              "hasta": "13:00",
+              "cada_min": 15,
+              "servicio": "planificacion-familiar-riverside-clinic"
+            },
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "ginecologia-riverside-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "09:00",
+            "hasta": "13:00",
+            "cada_min": 15,
+            "servicio": "planificacion-familiar-riverside-clinic"
+          },
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "ginecologia-riverside-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "49342",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "echeverria-bruno",
+      "nombre_pila": "Bruno",
+      "apellido": "Echeverría",
+      "nombre": "Bruno Echeverría",
+      "genero": "m",
+      "especialidad": "Kinesiología",
+      "cluster": "trauma-kine",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "kinesiologia-respiratoria-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "kinesiologia-respiratoria-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "49515",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "funes-natalia",
+      "nombre_pila": "Natalia",
+      "apellido": "Funes",
+      "nombre": "Natalia Funes",
+      "genero": "f",
+      "especialidad": "Odontología",
+      "cluster": "odontologia",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "10:00",
+              "hasta": "13:00",
+              "cada_min": 30,
+              "servicio": "odontopediatria-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "10:00",
+            "hasta": "13:00",
+            "cada_min": 30,
+            "servicio": "odontopediatria-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "49688",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "soria-micaela",
+      "nombre_pila": "Micaela",
+      "apellido": "Soria",
+      "nombre": "Micaela Soria",
+      "genero": "f",
+      "especialidad": "Fonoaudiología",
+      "cluster": "otorrino-fono",
+      "centro": "riverside-clinic",
+      "centros": [
+        {
+          "centro": "riverside-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "07:00",
+              "hasta": "10:00",
+              "cada_min": 15,
+              "servicio": "fonoaudiologia-infantil-riverside-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "07:00",
+            "hasta": "10:00",
+            "cada_min": 15,
+            "servicio": "fonoaudiologia-infantil-riverside-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "49861",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "lagos-esteban",
+      "nombre_pila": "Esteban",
+      "apellido": "Lagos",
+      "nombre": "Esteban Lagos",
+      "genero": "m",
+      "especialidad": "Psicología",
+      "cluster": "salud-mental",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "psicologia-lakeview-clinic"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "07:00",
+              "hasta": "10:00",
+              "cada_min": 15,
+              "servicio": "grupo-adicciones-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "psicologia-lakeview-clinic"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "07:00",
+            "hasta": "10:00",
+            "cada_min": 15,
+            "servicio": "grupo-adicciones-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "50034",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "avendano-julia",
+      "nombre_pila": "Julia",
+      "apellido": "Avendaño",
+      "nombre": "Julia Avendaño",
+      "genero": "f",
+      "especialidad": "Psicología",
+      "cluster": "salud-mental",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "10:00",
+              "hasta": "13:00",
+              "cada_min": 30,
+              "servicio": "psicologia-infantil-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "10:00",
+            "hasta": "13:00",
+            "cada_min": 30,
+            "servicio": "psicologia-infantil-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "50207",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "gimenez-raul",
+      "nombre_pila": "Raúl",
+      "apellido": "Gimenez",
+      "nombre": "Raúl Gimenez",
+      "genero": "m",
+      "especialidad": "Psicología",
+      "cluster": "salud-mental",
+      "centro": "lakeview-clinic",
+      "centros": [
+        {
+          "centro": "lakeview-clinic",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "14:00",
+              "hasta": "18:00",
+              "cada_min": 20,
+              "servicio": "psicologia-lakeview-clinic"
+            },
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "07:00",
+              "hasta": "10:00",
+              "cada_min": 15,
+              "servicio": "grupo-adicciones-lakeview-clinic"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "14:00",
+            "hasta": "18:00",
+            "cada_min": 20,
+            "servicio": "psicologia-lakeview-clinic"
+          },
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "07:00",
+            "hasta": "10:00",
+            "cada_min": 15,
+            "servicio": "grupo-adicciones-lakeview-clinic"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "50380",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "herrero-monica",
+      "nombre_pila": "Mónica",
+      "apellido": "Herrero",
+      "nombre": "Mónica Herrero",
+      "genero": "f",
+      "especialidad": "Diagnóstico por imágenes",
+      "cluster": "diagnostico",
+      "centro": "diagnostic-center",
+      "centros": [
+        {
+          "centro": "diagnostic-center",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "08:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "ecografia-general-anexo"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "08:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "ecografia-general-anexo"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "50553",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "ledesma-facundo",
+      "nombre_pila": "Facundo",
+      "apellido": "Ledesma",
+      "nombre": "Facundo Ledesma",
+      "genero": "m",
+      "especialidad": "Diagnóstico por imágenes",
+      "cluster": "diagnostico",
+      "centro": "diagnostic-center",
+      "centros": [
+        {
+          "centro": "diagnostic-center",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                3,
+                5
+              ],
+              "desde": "09:00",
+              "hasta": "13:00",
+              "cada_min": 15,
+              "servicio": "ecografia-abdominal-anexo"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              3,
+              5
+            ],
+            "desde": "09:00",
+            "hasta": "13:00",
+            "cada_min": 15,
+            "servicio": "ecografia-abdominal-anexo"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "50726",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "quiroga-belen",
+      "nombre_pila": "Belén",
+      "apellido": "Quiroga",
+      "nombre": "Belén Quiroga",
+      "genero": "f",
+      "especialidad": "Diagnóstico por imágenes",
+      "cluster": "diagnostico",
+      "centro": "maternity-center",
+      "centros": [
+        {
+          "centro": "maternity-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4,
+                6
+              ],
+              "desde": "08:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "ecografia-obstetrica-maternity"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4,
+              6
+            ],
+            "desde": "08:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "ecografia-obstetrica-maternity"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "50899",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "pereyra-graciela",
+      "nombre_pila": "Graciela",
+      "apellido": "Pereyra",
+      "nombre": "Graciela Pereyra",
+      "genero": "f",
+      "especialidad": "Diagnóstico por imágenes",
+      "cluster": "diagnostico",
+      "centro": "diagnostic-center",
+      "centros": [
+        {
+          "centro": "diagnostic-center",
+          "franjas": [
+            {
+              "dias": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "desde": "07:00",
+              "hasta": "10:00",
+              "cada_min": 15,
+              "servicio": "mamografia-anexo"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "desde": "07:00",
+            "hasta": "10:00",
+            "cada_min": 15,
+            "servicio": "mamografia-anexo"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "51072",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "ojeda-leandro",
+      "nombre_pila": "Leandro",
+      "apellido": "Ojeda",
+      "nombre": "Leandro Ojeda",
+      "genero": "m",
+      "especialidad": "Diagnóstico por imágenes",
+      "cluster": "diagnostico",
+      "centro": "diagnostic-center",
+      "centros": [
+        {
+          "centro": "diagnostic-center",
+          "franjas": [
+            {
+              "dias": [
+                2,
+                4
+              ],
+              "desde": "10:00",
+              "hasta": "13:00",
+              "cada_min": 30,
+              "servicio": "tomografia-anexo"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              2,
+              4
+            ],
+            "desde": "10:00",
+            "hasta": "13:00",
+            "cada_min": 30,
+            "servicio": "tomografia-anexo"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "51245",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "vallejos-soledad",
+      "nombre_pila": "Soledad",
+      "apellido": "Vallejos",
+      "nombre": "Soledad Vallejos",
+      "genero": "f",
+      "especialidad": "Oftalmología",
+      "cluster": "otras",
+      "centro": "diagnostic-center",
+      "centros": [
+        {
+          "centro": "diagnostic-center",
+          "franjas": [
+            {
+              "dias": [
+                1
+              ],
+              "desde": "09:30",
+              "hasta": "11:30",
+              "cada_min": 20,
+              "servicio": "retinografia-anexo"
+            },
+            {
+              "dias": [
+                4
+              ],
+              "desde": "15:00",
+              "hasta": "17:00",
+              "cada_min": 20,
+              "servicio": "retinografia-anexo"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              1
+            ],
+            "desde": "09:30",
+            "hasta": "11:30",
+            "cada_min": 20,
+            "servicio": "retinografia-anexo"
+          },
+          {
+            "dias": [
+              4
+            ],
+            "desde": "15:00",
+            "hasta": "17:00",
+            "cada_min": 20,
+            "servicio": "retinografia-anexo"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "51418",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    },
+    {
+      "id": "peralta-ignacio",
+      "nombre_pila": "Ignacio",
+      "apellido": "Peralta",
+      "nombre": "Ignacio Peralta",
+      "genero": "m",
+      "especialidad": "Urología",
+      "cluster": "otras",
+      "centro": "sampleton-hospital",
+      "centros": [
+        {
+          "centro": "sampleton-hospital",
+          "franjas": [
+            {
+              "dias": [
+                3
+              ],
+              "desde": "09:00",
+              "hasta": "12:00",
+              "cada_min": 20,
+              "servicio": "urologia-hospital"
+            }
+          ],
+          "excepciones": []
+        }
+      ],
+      "agenda": {
+        "franjas": [
+          {
+            "dias": [
+              3
+            ],
+            "desde": "09:00",
+            "hasta": "12:00",
+            "cada_min": 20,
+            "servicio": "urologia-hospital"
+          }
+        ],
+        "excepciones": []
+      },
+      "matricula": {
+        "numero": "51591",
+        "provincia": "Buenos Aires",
+        "estado": "Activo",
+        "confianza": "high",
+        "fuente": "ficticio"
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "_comment": "Localidades conocidas del pueblo demo, para recortar sufijos ', <ciudad>, Argentina' de direcciones al mostrarlas (server._KNOWN_CITIES). Espeja las localities de example-localities.json; sin este archivo el demo usaba el fallback hardcodeado con las ciudades de Pinamar y las direcciones de Sampleton quedaban sin recortar.",
+  "cities": [
+    "Sampleton",
+    "Riverside",
+    "Lakeview"
+  ]
+}

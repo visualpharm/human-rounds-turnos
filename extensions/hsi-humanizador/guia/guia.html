@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HSI Humanizador — guía para la mesa de entradas</title>
+  <style>
+    @page{size:A4;margin:16mm 15mm;}
+    body{margin:0;color:#1c1f23;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-wrap:pretty;}
+    main{max-width:760px;margin:0 auto;padding:24px;}
+    h1{font-size:30px;line-height:1.15;margin:0 0 8px;}
+    .bajada{font-size:18px;margin:0 0 26px;}
+    h2{font-size:21px;margin:30px 0 12px;break-after:avoid;}
+    ol{margin:0;padding:0;list-style:none;counter-reset:paso;}
+    ol > li{counter-increment:paso;position:relative;padding:0 0 18px 44px;break-inside:avoid;}
+    ol > li::before{content:counter(paso);position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:50%;
+      background:#0b5cad;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+    li p{margin:0 0 10px;}
+    img{display:block;width:100%;height:auto;border:1px solid #c9ced6;border-radius:8px;}
+    b{font-weight:700;}
+    code{font:inherit;font-weight:600;background:#eef1f5;padding:1px 6px;border-radius:4px;}
+    ul{margin:0;padding-left:20px;}
+    ul li{padding:0 0 8px;}
+    section{break-inside:avoid-page;}
+  </style>
+</head>
+<body>
+<main>
+  <h1>HSI Humanizador</h1>
+  <p class="bajada">Un toque en «Pacientes de hoy» y el turno se carga en HSI. No hace falta volver a tipear el DNI, el profesional ni el horario.</p>
+
+  <h2>Instalarla, una sola vez</h2>
+  <ol>
+    <li><p>En Chrome abrí <a href="https://chromewebstore.google.com/detail/jjnbmfhllglgplkphafoppdogikeegni">HSI Humanizador en Chrome Web Store</a> y tocá <b>Agregar a Chrome</b>. Si Chrome no te deja, pedíselo a quien administra la computadora.</p></li>
+    <li>
+      <p>Se abren los ajustes. La <b>HSI de la Provincia</b>, la institución <b>según el centro de cada turno</b> y <b>salud.pinamar.gob.ar</b> ya vienen marcadas: tocá <b>Guardar</b>. Chrome te pide permiso para esas direcciones: aceptalo.</p>
+      <img src="img/ajustes.png" alt="Ajustes de HSI Humanizador: la HSI, la institución y dónde ves los turnos, y Guardar">
+    </li>
+    <li><p>Recargá las pestañas de salud.pinamar.gob.ar y de HSI que ya tenías abiertas.</p></li>
+  </ol>
+
+  <section id="zip">
+    <h2>Sin Chrome Web Store: instalar desde el ZIP</h2>
+    <p>Si la computadora no puede usar la tienda de Chrome, la extensión se instala desde el archivo ZIP.</p>
+    <ol>
+      <li><p>Descomprimí el ZIP en una carpeta que no vayas a borrar.</p></li>
+      <li><p>En Chrome escribí <b>chrome://extensions</b> y activá <b>Modo de desarrollador</b>.</p></li>
+      <li><p>Tocá <b>Cargar descomprimida</b> y elegí la carpeta que contiene <b>manifest.json</b>. Si Chrome bloquea esta opción, pedile a quien administra la computadora que instale la extensión aprobada.</p></li>
+      <li><p>Fijá la extensión desde el ícono de extensiones y seguí desde el paso 2 de arriba: ajustes, permiso y recarga de las pestañas.</p></li>
+    </ol>
+  </section>
+
+  <section id="institucion">
+    <h2>La institución en HSI</h2>
+    <p>Cada centro es una institución distinta en HSI, con su número. Cada turno va solo a la de su centro:</p>
+    <ul>
+      <li>Hospital de Pinamar: <b>1086</b></li>
+      <li>CAPS Pinamar: <b>1068</b></li>
+      <li>CAPS Ostende: <b>1073</b></li>
+      <li>CAPS Valeria del Mar: <b>1077</b></li>
+      <li>CAPS DiabetPin: <b>1084</b></li>
+      <li>Discapacidad: <b>1082</b></li>
+    </ul>
+    <p>Para otro centro, la primera vez te pide que elijas su institución en HSI y la recuerda.</p>
+    <p>Si tu institución no está en la lista, elegí <b>Otra, escribo el número</b> en los ajustes. El número lo encontrás así:</p>
+    <ol>
+      <li><p>Entrá a HSI con tu usuario.</p></li>
+      <li><p>En «Instituciones», elegí la tuya.</p></li>
+      <li><p>Mirá la barra de direcciones: el número va después de <b>/institucion/</b>, por ejemplo …/institucion/<b>1086</b>/…</p></li>
+    </ol>
+  </section>
+
+  <h2>Cargar un turno</h2>
+  <ol>
+    <li>
+      <p>En «Pacientes de hoy», tocá <b>Cargar en HSI</b> en la fila del paciente.</p>
+      <img src="img/pacientes-de-hoy.png" alt="Pacientes de hoy con el botón Cargar en HSI en cada fila">
+    </li>
+    <li>
+      <p>Se abre HSI y se completa solo, paso a paso. La primera vez entrá con tu usuario. Si falta tu usuario, tu institución o «Gestión de turnos», el administrador municipal de HSI tiene que habilitarlo.</p>
+      <img src="img/hsi-completo.png" alt="HSI con el turno completo y el botón Confirmar resaltado">
+    </li>
+    <li>
+      <p>Revisá los datos y tocá <b>Confirmar</b>. La fila queda en <b>Guardado en HSI</b>.</p>
+      <img src="img/fila-guardada.png" alt="La fila del paciente dice Guardado en HSI">
+    </li>
+  </ol>
+
+  <section id="cambios">
+    <h2>Si el turno cambia después de cargarlo</h2>
+    <p>Si un turno que cargaste en HSI se cancela, el paciente lo cambia de lugar o llega al centro, aparece un recuadro en la esquina con lo que cambió y un botón por cada turno:</p>
+    <ul>
+      <li><b>Cancelar en HSI:</b> abre el turno en la agenda de HSI y llega hasta «Cancelar turno». El último paso, <b>Sí, cancelar turno</b>, lo tocás siempre vos.</li>
+      <li><b>Mover en HSI:</b> cancela el lugar viejo, igual que arriba, y carga el turno en el lugar nuevo.</li>
+      <li><b>Marcar presente en HSI:</b> deja el turno en «Confirmado».</li>
+    </ul>
+    <p>Un turno que no cargaste desde esta computadora no se toca. Si HSI no confirma el cambio, el recuadro lo dice y lo hacés a mano.</p>
+  </section>
+
+  <section>
+    <h2>Cuando te pide ayuda</h2>
+    <ul>
+      <li><b>No encuentra al profesional o hay más de una agenda:</b> elegilo vos en HSI y sigue sola.</li>
+      <li><b>El horario está ocupado:</b> elegí otro horario en la agenda y sigue sola.</li>
+      <li><b>HSI no tiene al paciente:</b> la extensión abre el alta de HSI con el DNI, el nombre y la fecha de nacimiento ya cargados, y aprieta <b>Buscar</b> sola. Revisá los datos y tocá <b>Guardar</b>: con el paciente guardado, el turno sigue solo hasta <b>Confirmar</b>. Si dejás el alta a medias, la fila vuelve con el motivo. Si a la fila le falta un dato, te lo pregunta ahí mismo y sigue.</li>
+      <li><b>HSI te hace una pregunta:</b> respondela vos. La extensión nunca contesta por vos.</li>
+      <li><b>Querés frenar:</b> tocá <b>Cancelar</b> en el recuadro. No se guarda nada.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Si falta algo</h2>
+    <ul>
+      <li><b>No aparece el botón Cargar en HSI:</b> fijate en <code>chrome://extensions</code> que la extensión esté activada y recargá «Pacientes de hoy». En salud.pinamar.gob.ar, tocá el ícono de la extensión y después <b>Activar en salud.pinamar.gob.ar</b>. Si ves los turnos en otra dirección, marcala en los ajustes, en <b>¿Dónde ves los turnos?</b> → <b>Otra dirección</b>.</li>
+      <li><b>«HSI no abrió Gestión de turnos»:</b> tu usuario de HSI no tiene «Turnos» en esa institución. Lo habilita el administrador municipal de HSI.</li>
+      <li><b>HSI no responde:</b> revisá en los ajustes de la extensión la dirección de HSI, entrá a HSI con tu usuario, recargá la pestaña y tocá de nuevo.</li>
+      <li><b>Dice que HSI está cargando otro turno:</b> terminá o cancelá esa carga y después tocá de nuevo.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Que guarde solo</h2>
+    <p>Después de guardar un turno te pregunta si querés que la próxima vez toque Confirmar por vos. Si decís que sí, carga, guarda y te avisa en la fila. Lo apagás cuando quieras en los ajustes de la extensión.</p>
+    <img src="img/guardar-solo.png" alt="El recuadro pregunta si querés que la próxima vez lo guarde solo">
+  </section>
+
+  <section>
+    <h2>Cómo querés trabajar</h2>
+    <p>En los ajustes de la extensión elegís entre tres modos:</p>
+    <ul>
+      <li><b>Cargar el turno con un toque en la fila:</b> tocás «Cargar en HSI» y se carga todo el turno. Es el modo de siempre.</li>
+      <li><b>Solo copiar el DNI:</b> el botón de la fila copia el DNI y abre HSI. Nada se carga solo.</li>
+      <li><b>Completar mientras escribís el DNI en HSI:</b> abrís vos el horario en HSI, escribís el DNI y, al pasar a otro campo, se completan solos el sexo y el contacto.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Las últimas cargas</h2>
+    <p>Tocá el ícono de la extensión y ves las últimas cargas: quién era, a qué hora y cómo terminó cada una. Si una no se guardó, <b>Abrir en HSI</b> te lleva a HSI con el DNI ya copiado, listo para pegarlo.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "admin.reset.request_received": "アカウントにメールアドレスが登録されている場合、新しいパスワードを設定するためのリンクが送信されます。",
+  "admin.reset.mismatch": "パスワードが一致しません。",
+  "admin.reset.failed": "保存できませんでした。新しいリンクを再度リクエストしてください。",
+  "admin.reset.saved": "パスワードを保存しました。管理画面へ移動",
+  "admin.reset.network": "ネットワークエラーです。もう一度試してください。",
+  "admin.reset.expired_title": "リンクの有効期限が切れました",
+  "admin.reset.expired_body": "このリンクは有効期限が切れているか、既に使用されています。管理パネルのログイン画面から新しいリンクをリクエストしてください。",
+  "admin.reset.login": "管理パネルへログイン",
+  "admin.reset.password": "新しいパスワード",
+  "admin.reset.title": "新しいパスワードを設定してください",
+  "admin.reset.requirements": "8文字以上で入力してください。このリンクは一度しか使えません。",
+  "admin.reset.confirm": "パスワードの再入力",
+  "admin.reset.save": "パスワードを保存",
+  "admin.reset.db_unavailable": "データベースを利用できません。",
+  "admin.reset.expired": "リンクの有効期限が切れているか、既に使用されています。新しいものをリクエストしてください。",
+  "admin.reset.invalid_json": "無効なJSONです。",
+  "admin.reset.username": "ユーザー名"
+}

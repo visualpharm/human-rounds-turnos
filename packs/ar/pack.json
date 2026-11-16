@@ -1,0 +1,8 @@
+{
+  "id": "ar",
+  "level": 2,
+  "parent": "global",
+  "language": "es-AR",
+  "name": "Argentina",
+  "description": "Datos de nivel país (country.json: teléfono/DNI/timezone/moneda/emergencias; trusted-domains.json: dominios oficiales; endpoints.json: PUCO/RENAPER/REFEPS; feriados-nacionales.json: calendario oficial de feriados, lo carga Configuración › Feriados). Districtos del colegio de médicos quedan pendientes — ver docs/architecture/data-packs.md."
+}

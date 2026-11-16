@@ -1,0 +1,56 @@
+{# Native platform-core staff Account. The shared shell owns its title and
+   navigation. This entry owns controller readiness, recovery and page lifetime;
+   account mutations retain their existing authenticated API boundaries. #}
+{% extends "admin/base.html" %}
+
+{% block title %}{{ t('admin.system.account.title', 'Account') }}{% endblock %}
+
+{% block screen_title %}{{ t('admin.system.account.title', 'Account') }}{% endblock %}
+
+{% block nav_footer %}
+<div class="adm-nav-footer">
+  <p class="adm-2fa-note" id="adm-2fa-note" hidden></p>
+  <div class="adm-nav-footer-row">
+    {# On a portal installation our sign-out cannot end the portal's session
+       (the gateway signs the next request straight back in): the button
+       exists only when the portal's own sign-out address is known. #}
+    {% if portal_logout is none or portal_logout %}
+    <button class="adm-logout btn btn-quiet" id="adm-logout" type="button"{% if portal_logout %} data-portal-logout="{{ portal_logout }}"{% endif %} aria-label="{{ t('admin.shell.logout', 'Sign out') }}" title="{{ t('admin.shell.logout', 'Sign out') }}">
+      {{ t('admin.shell.logout', 'Sign out') }}
+    </button>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="adm-content-wrap">
+  <div id="sec-cuenta"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.CURRENT_USER = {{ current_user | tojson }};
+</script>
+<template id="account-load-recovery">
+  <p class="adm-empty" role="alert">{{ t('admin.system.common.load_error', "Couldn't load this section.") }}</p>
+  <button type="button" class="btn" data-retry>{{ t('admin.content.common.reload', 'Reload') }}</button>
+</template>
+<script type="module">
+  import { bootScreen } from "{{ static('platform/screen-boot.mjs') }}";
+  const host = document.getElementById("sec-cuenta");
+  bootScreen({
+    host,
+    recovery: "account-load-recovery",
+    // Import concurrently with the first font cohort, but mount only with
+    // settled metrics; stalled fonts are a late load, not a failure.
+    load: () => Promise.all([
+      import("{{ static('platform/admin-account.mjs') }}"),
+      document.fonts ? document.fonts.ready : Promise.resolve(),
+    ]).then((values) => values[0]),
+    mount: (Account, onError) => Account.mount(host, { onError }),
+    onStop: () => host.replaceChildren(),
+  });
+</script>
+{% endblock %}

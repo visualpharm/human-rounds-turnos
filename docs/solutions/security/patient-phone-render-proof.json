@@ -1,0 +1,96 @@
+{
+  "baseline": "271a39ab",
+  "change": "task/mr-k4-telefono-solicitud (2026-10-23): format.mjs gains contactoQuienHtml (which phone leads and whose it is on the doctor screens), so its fingerprint moves on every Account page. No markup change.",
+  "spanish_and_anonymous": "reversing only the format.mjs URL restores every baseline byte",
+  "english": "reversing only the format.mjs URL restores every baseline byte (no catalog key reaches the Account pages)",
+  "renders": [
+    {
+      "page": "es /account",
+      "baseline_sha256": "ef4c139e56833c3f80b92caaa4c5d6fd1b35599e2ba604d304e403cd1299720b",
+      "new_sha256": "456244b82636ec379d0624f23a0e9c4817a7c7ed0f5f4dac2e01c8935e6e66c7",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    },
+    {
+      "page": "es /account/reset",
+      "baseline_sha256": "dd59bfc82ecd0e7e983a16fd6846682bd0ec41be116867189d0eb4d01f28cc21",
+      "new_sha256": "de0b2fbae48c7c89f71b049ac8bdd445188a58e27a295906c0d8a6a0100d8fa1",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    },
+    {
+      "page": "es /auth/test",
+      "baseline_sha256": "04ee9787576d83806c1df94ea96e58b9d045805b7acd50c4acf2391829987eff",
+      "new_sha256": "c0b56f2f30afd701f9f8d617c8bcec35e53129ab89a940fe007dc9ec7ce7e4d6",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    },
+    {
+      "page": "es /auth/sso",
+      "baseline_sha256": "a5200a908b49ed5b6d2d141c549f11161978bcb2f842b9ad985fe1b6a62f00e2",
+      "new_sha256": "87dd616b256d004980e51fb5c3363df46d7d69757bb71481b2a2e12d707d0f6b",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    },
+    {
+      "page": "en /account",
+      "baseline_sha256": "db8fed2025587dc08a496bea546c1eeb86a5f0398e42eeecc39d11bbe8aa6dfd",
+      "new_sha256": "47e402665e3dcbfe02f3d428c43843d2798926b1c9c7e14ba4606bcd83763d9a",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    },
+    {
+      "page": "en /account/reset",
+      "baseline_sha256": "30b6ee5c51483f4ef45c45d14566e04bbdae8dc32b3d00fd093c1ebe35eb70d0",
+      "new_sha256": "6eb4d81b48f281d25942dc09fcfd4acff02a1e9df744939121398e0f717e6dd2",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    },
+    {
+      "page": "en /auth/test",
+      "baseline_sha256": "6606a0f4836e51b490afa199cf83ad4727aaf583ae492364ab9ae540ffdd28f2",
+      "new_sha256": "0ec40a7b5c2c5c0eaaed422520a6b8e21515aa43996a3e341cc04442ee817c98",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    },
+    {
+      "page": "en /auth/sso",
+      "baseline_sha256": "110154994d2a5650732e59afd8dda492b388553479117f65721a7408caf55153",
+      "new_sha256": "37de509cfd24eafeb4f9ad04472c41e2c608cf75656849ab1af28d9cef83209c",
+      "moved_assets": [
+        "/static/platform/format.cc6ed67b.mjs"
+      ],
+      "url_reversal_restores_baseline": true,
+      "added_catalog_keys": [],
+      "url_reversal_minus_added_keys_restores_baseline": true
+    }
+  ]
+}

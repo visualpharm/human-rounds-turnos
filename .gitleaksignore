@@ -1,0 +1,20 @@
+# Reviewed gitleaks findings (2026-11-10): prose in the architecture docs and
+# synthetic fixtures in tests (fake passwords, keys and tokens that never
+# matched a real credential). A line that moves shows up again as a new
+# finding and is re-reviewed before it is added here.
+docs/architecture/ia-y-ordenes.md:generic-api-key:22
+docs/architecture/i18n.md:generic-api-key:202
+tests/admin-create-appointment-native.test.mjs:generic-api-key:232
+tests/e2e/fixture.py:generic-api-key:444
+tests/test_backup_s3.py:generic-api-key:77
+tests/test_disable_orphan_doctor_accounts.py:generic-api-key:85
+tests/test_doctor_account_unify.py:generic-api-key:164
+tests/test_email_transport.py:generic-api-key:60
+tests/test_foreign_keys.py:generic-api-key:227
+tests/test_logs_pii.py:generic-api-key:37
+tests/test_logs_pii.py:generic-api-key:40
+tests/test_managed_exec.py:generic-api-key:250
+tests/test_password_link_login.py:generic-api-key:53
+tests/test_password_reset_router.py:generic-api-key:80
+tests/test_settings_admin.py:generic-api-key:148
+tests/test_test_portal.py:generic-api-key:140

@@ -1,0 +1,23 @@
+{% extends "study/base.html" %}
+{% block content %}
+<h1>{{ t('study.who', '¿Quién sos?') }}</h1>
+<form id="study-consent">
+<select name="role" aria-label="{{ t('study.who', '¿Quién sos?') }}">
+<option value="">{{ t('study.choose_role', 'Elegí tu rol') }}</option>
+{% for role, group in definition.roles.items() %}<option value="{{ role }}" {% if selected_role==role %}selected{% endif %}>{{ group.label }}</option>{% endfor %}
+</select>
+<p>{{ t('study.invitation', 'Ayudanos a mejorar Human Rounds: después de esta pantalla te esperan tareas con instrucciones para hacer en el demo. Lleva unos 8 minutos. Usá datos de ejemplo, nunca tus datos ni los de un paciente.') }}</p>
+<h2>{{ t('study.privacy_title', 'Qué se guarda') }}</h2>
+<ul><li>{{ t('study.stored', 'Tu rol, las páginas que visitás, los clics, el tiempo por tarea y tus respuestas.') }}</li>
+<li>{{ t('study.not_stored', 'No guardamos tu nombre, DNI, IP, contraseñas, valores de formularios ni imágenes. No grabamos tu pantalla.') }}</li>
+<li>{{ t('study.retention', 'Las respuestas se borran a los {days} días. No escribas datos personales en los comentarios.', days=retention_days) }}</li></ul>
+<p>{{ t('study.voluntary', 'Participar es voluntario y anónimo. Podés salir en cualquier momento con «Dejar de participar» o cerrar esta página. Lo ya enviado se conserva hasta su borrado.') }}</p>
+<label><input type="checkbox" name="consent">{{ t('study.consent', 'Entendí qué se guarda y acepto participar.') }}</label>
+<div class="study-actions"><button class="btn" type="submit">{{ t('study.start', 'Empezar') }}</button></div>
+<p role="alert" id="study-error" hidden></p>
+</form>
+{% endblock %}
+{% block scripts %}<script type="module">
+import { mountLanding } from "{{ module_static('modules/turnos/study-runner.mjs') }}";
+mountLanding(document.getElementById('study-consent'));
+</script>{% endblock %}
